@@ -1,0 +1,12 @@
+{
+    "name": "waubesa",
+    "description": "Start automation over from scratch for new home",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flow.json",
+            "credentialsFile": "flow_cred.json"
+        }
+    }
+}
