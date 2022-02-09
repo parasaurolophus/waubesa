@@ -1,8 +1,10 @@
 {
     "name": "waubesa",
-    "description": "Start automation over from scratch for new home",
-    "version": "0.0.1",
-    "dependencies": {},
+    "description": "Integrate Hue lights and other home automation devices and services with HomeKit",
+    "version": "1.0.0",
+    "dependencies": {
+        "node-red-contrib-homekit-bridged": "1.4.3"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",

@@ -1,9 +1,8 @@
 waubesa
 =======
 
-Start automation over from scratch for new home
+Integrate Hue lights and other home automation devices and services with HomeKit.
 
 ### About
 
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+This primarily exists to expose more of the Philips Hue Bridge API to Apple HomeKit than is directly supported by either the Philips or Apple mobile applications. For example, this allows starting a "dynamic scene" via a HomeKit automation, instead of only manually as is the case with the Hue application.
