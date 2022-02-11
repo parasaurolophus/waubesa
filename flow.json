@@ -103,7 +103,7 @@
         ],
         "x": 14,
         "y": 119,
-        "w": 672,
+        "w": 652,
         "h": 122
     },
     {
@@ -224,73 +224,8 @@
         ],
         "x": 14,
         "y": 19,
-        "w": 852,
+        "w": 912,
         "h": 122
-    },
-    {
-        "id": "80d261408b874f66",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
-        "name": "Set global.zones",
-        "style": {
-            "label": true,
-            "label-position": "ne",
-            "stroke": "#000000",
-            "color": "#000000"
-        },
-        "nodes": [
-            "683f6cebfb0435bc",
-            "31c9ea53a0d37ea7",
-            "e495f44190643f71"
-        ],
-        "x": 234,
-        "y": 379,
-        "w": 612,
-        "h": 82
-    },
-    {
-        "id": "7a55063ddf374382",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
-        "name": "Set global.rooms",
-        "style": {
-            "label": true,
-            "label-position": "ne",
-            "stroke": "#000000",
-            "color": "#000000"
-        },
-        "nodes": [
-            "0a2180fde03cef3e",
-            "a5b364ab8daf0bef",
-            "3f29cffcea9929fe"
-        ],
-        "x": 234,
-        "y": 479,
-        "w": 632,
-        "h": 82
-    },
-    {
-        "id": "5a5b40d00ccb63a6",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
-        "name": "Set global.scenes",
-        "style": {
-            "label": true,
-            "label-position": "ne",
-            "color": "#000000"
-        },
-        "nodes": [
-            "3126ce3cfc3287eb",
-            "6859e44cb623bf19",
-            "1e2f2b3580fc2b87"
-        ],
-        "x": 234,
-        "y": 579,
-        "w": 632,
-        "h": 82
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -313,7 +248,7 @@
         ],
         "x": 14,
         "y": 19,
-        "w": 792,
+        "w": 852,
         "h": 122
     },
     {
@@ -337,7 +272,7 @@
         ],
         "x": 14,
         "y": 159,
-        "w": 752,
+        "w": 812,
         "h": 122
     },
     {
@@ -361,7 +296,7 @@
         ],
         "x": 14,
         "y": 299,
-        "w": 792,
+        "w": 852,
         "h": 122
     },
     {
@@ -385,7 +320,7 @@
         ],
         "x": 14,
         "y": 19,
-        "w": 812,
+        "w": 872,
         "h": 122
     },
     {
@@ -409,7 +344,7 @@
         ],
         "x": 14,
         "y": 19,
-        "w": 852,
+        "w": 892,
         "h": 122
     },
     {
@@ -433,8 +368,73 @@
         ],
         "x": 14,
         "y": 19,
-        "w": 872,
+        "w": 932,
         "h": 122
+    },
+    {
+        "id": "80d261408b874f66",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "g": "704de1d2e359f638",
+        "name": "Set global.zones",
+        "style": {
+            "label": true,
+            "label-position": "ne",
+            "stroke": "#000000",
+            "color": "#000000"
+        },
+        "nodes": [
+            "683f6cebfb0435bc",
+            "31c9ea53a0d37ea7",
+            "e495f44190643f71"
+        ],
+        "x": 234,
+        "y": 379,
+        "w": 592,
+        "h": 82
+    },
+    {
+        "id": "7a55063ddf374382",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "g": "704de1d2e359f638",
+        "name": "Set global.rooms",
+        "style": {
+            "label": true,
+            "label-position": "ne",
+            "stroke": "#000000",
+            "color": "#000000"
+        },
+        "nodes": [
+            "0a2180fde03cef3e",
+            "a5b364ab8daf0bef",
+            "3f29cffcea9929fe"
+        ],
+        "x": 234,
+        "y": 479,
+        "w": 612,
+        "h": 82
+    },
+    {
+        "id": "5a5b40d00ccb63a6",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "g": "704de1d2e359f638",
+        "name": "Set global.scenes",
+        "style": {
+            "label": true,
+            "label-position": "ne",
+            "color": "#000000"
+        },
+        "nodes": [
+            "3126ce3cfc3287eb",
+            "6859e44cb623bf19",
+            "1e2f2b3580fc2b87"
+        ],
+        "x": 234,
+        "y": 579,
+        "w": 632,
+        "h": 82
     },
     {
         "id": "b98a758a1473104d",
@@ -578,7 +578,7 @@
         "proxy": "",
         "authType": "",
         "senderr": false,
-        "x": 530,
+        "x": 510,
         "y": 160,
         "wires": [
             [
@@ -613,7 +613,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
+        "x": 340,
         "y": 160,
         "wires": [
             [
@@ -651,7 +651,7 @@
             "20ac42d7649c260a"
         ],
         "uncaught": false,
-        "x": 550,
+        "x": 530,
         "y": 200,
         "wires": [
             [
@@ -693,7 +693,7 @@
         "name": "hue response",
         "mode": "return",
         "links": [],
-        "x": 645,
+        "x": 625,
         "y": 180,
         "wires": []
     },
@@ -843,7 +843,7 @@
             "4977f4086e670c54"
         ],
         "timeout": "30",
-        "x": 510,
+        "x": 490,
         "y": 420,
         "wires": [
             [
@@ -935,7 +935,7 @@
             "4977f4086e670c54"
         ],
         "timeout": "30",
-        "x": 510,
+        "x": 490,
         "y": 520,
         "wires": [
             [
@@ -955,7 +955,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
+        "x": 700,
         "y": 420,
         "wires": [
             [
@@ -975,7 +975,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
+        "x": 710,
         "y": 520,
         "wires": [
             [
@@ -1292,13 +1292,13 @@
         "bridge": "b98a758a1473104d",
         "accessoryId": "",
         "parentService": "",
-        "name": "Front Yard Sunset",
+        "name": "Front Yard Sunset Dynamic",
         "serviceName": "Switch",
         "topic": "",
         "filter": false,
         "manufacturer": "RADER",
         "model": "1.4.3",
-        "serialNo": "003",
+        "serialNo": "001",
         "firmwareRev": "1.4.3",
         "hardwareRev": "1.4.3",
         "softwareRev": "1.4.3",
@@ -1326,7 +1326,7 @@
         "characteristicProperties": "{}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 130,
+        "x": 160,
         "y": 100,
         "wires": [
             [
@@ -1353,7 +1353,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 440,
+        "x": 500,
         "y": 100,
         "wires": [
             [
@@ -1377,7 +1377,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 290,
+        "x": 350,
         "y": 100,
         "wires": [
             [
@@ -1406,7 +1406,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 530,
         "y": 60,
         "wires": [
             [
@@ -1424,7 +1424,7 @@
             "1192b096e08ed0bc"
         ],
         "timeout": "30",
-        "x": 680,
+        "x": 740,
         "y": 60,
         "wires": [
             []
@@ -1440,757 +1440,7 @@
         "bridge": "b98a758a1473104d",
         "accessoryId": "",
         "parentService": "",
-        "name": "Front Yard Jolly",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "004",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 120,
-        "y": 240,
-        "wires": [
-            [
-                "ee087bcc1cf93ac1"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "aa7c316c8e9e288a",
-        "type": "trigger",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "auto off",
-        "op1": "",
-        "op2": "{\"On\":false}",
-        "op1type": "nul",
-        "op2type": "json",
-        "duration": "1",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 420,
-        "y": 240,
-        "wires": [
-            [
-                "ca1e17d731e4816a"
-            ]
-        ]
-    },
-    {
-        "id": "ee087bcc1cf93ac1",
-        "type": "switch",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "is on",
-        "property": "payload.On",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 270,
-        "y": 240,
-        "wires": [
-            [
-                "aa7c316c8e9e288a",
-                "349e515099465f99"
-            ]
-        ]
-    },
-    {
-        "id": "349e515099465f99",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "front yard jolly",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "12571f23-7714-4b47-8e75-a3040389b788",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 200,
-        "wires": [
-            [
-                "074874e0ff13a7b1"
-            ]
-        ]
-    },
-    {
-        "id": "074874e0ff13a7b1",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "",
-        "links": [
-            "1192b096e08ed0bc"
-        ],
-        "timeout": "30",
-        "x": 640,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "61d42601aace19ae",
-        "type": "homekit-service",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "b98a758a1473104d",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Front Yard Spooky",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "005",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 130,
-        "y": 380,
-        "wires": [
-            [
-                "2ba34b44c6ddee1e",
-                "2ba34b44c6ddee1e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "263f5bf8e034edd0",
-        "type": "trigger",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "auto off",
-        "op1": "",
-        "op2": "{\"On\":false}",
-        "op1type": "nul",
-        "op2type": "json",
-        "duration": "1",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 440,
-        "y": 380,
-        "wires": [
-            [
-                "61d42601aace19ae",
-                "61d42601aace19ae"
-            ]
-        ]
-    },
-    {
-        "id": "2ba34b44c6ddee1e",
-        "type": "switch",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "is on",
-        "property": "payload.On",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 290,
-        "y": 380,
-        "wires": [
-            [
-                "263f5bf8e034edd0",
-                "80cb0279cf42046f",
-                "263f5bf8e034edd0",
-                "80cb0279cf42046f"
-            ]
-        ]
-    },
-    {
-        "id": "80cb0279cf42046f",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "front yard spooky",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 470,
-        "y": 340,
-        "wires": [
-            [
-                "3dc20d8212996ca2",
-                "3dc20d8212996ca2"
-            ]
-        ]
-    },
-    {
-        "id": "3dc20d8212996ca2",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "",
-        "links": [
-            "1192b096e08ed0bc"
-        ],
-        "timeout": "30",
-        "x": 680,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3c96a94179497124",
-        "type": "homekit-service",
-        "z": "b9c60ff63fc6388d",
-        "g": "cd63dc8a5bea4a7b",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "b98a758a1473104d",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Living Room Sunset",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "006",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 140,
-        "y": 100,
-        "wires": [
-            [
-                "b3eaba60aadcc106"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "ab526d2fd9a6a47a",
-        "type": "trigger",
-        "z": "b9c60ff63fc6388d",
-        "g": "cd63dc8a5bea4a7b",
-        "name": "auto off",
-        "op1": "",
-        "op2": "{\"On\":false}",
-        "op1type": "nul",
-        "op2type": "json",
-        "duration": "1",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 460,
-        "y": 100,
-        "wires": [
-            [
-                "3c96a94179497124"
-            ]
-        ]
-    },
-    {
-        "id": "b3eaba60aadcc106",
-        "type": "switch",
-        "z": "b9c60ff63fc6388d",
-        "g": "cd63dc8a5bea4a7b",
-        "name": "is on",
-        "property": "payload.On",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 310,
-        "y": 100,
-        "wires": [
-            [
-                "ab526d2fd9a6a47a",
-                "29e4a6d373cc4edb"
-            ]
-        ]
-    },
-    {
-        "id": "29e4a6d373cc4edb",
-        "type": "change",
-        "z": "b9c60ff63fc6388d",
-        "g": "cd63dc8a5bea4a7b",
-        "name": "living room sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "b838037e-54a0-4a60-aa0f-a5991f18f759",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 60,
-        "wires": [
-            [
-                "ab8db82fa17e24fa"
-            ]
-        ]
-    },
-    {
-        "id": "ab8db82fa17e24fa",
-        "type": "link call",
-        "z": "b9c60ff63fc6388d",
-        "g": "cd63dc8a5bea4a7b",
-        "name": "",
-        "links": [
-            "1192b096e08ed0bc"
-        ],
-        "timeout": "30",
-        "x": 700,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9ca0fc73ca40603b",
-        "type": "homekit-service",
-        "z": "1344247d533f754a",
-        "g": "09145a35749b6075",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "b98a758a1473104d",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Main Bathroom Sunset",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "008",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 150,
-        "y": 100,
-        "wires": [
-            [
-                "9eb6e47182bd8d51"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "d387a1fc049b2aad",
-        "type": "trigger",
-        "z": "1344247d533f754a",
-        "g": "09145a35749b6075",
-        "name": "auto off",
-        "op1": "",
-        "op2": "{\"On\":false}",
-        "op1type": "nul",
-        "op2type": "json",
-        "duration": "1",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 480,
-        "y": 100,
-        "wires": [
-            [
-                "9ca0fc73ca40603b"
-            ]
-        ]
-    },
-    {
-        "id": "9eb6e47182bd8d51",
-        "type": "switch",
-        "z": "1344247d533f754a",
-        "g": "09145a35749b6075",
-        "name": "is on",
-        "property": "payload.On",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 330,
-        "y": 100,
-        "wires": [
-            [
-                "d387a1fc049b2aad",
-                "b0cc298f4bf029da"
-            ]
-        ]
-    },
-    {
-        "id": "b0cc298f4bf029da",
-        "type": "change",
-        "z": "1344247d533f754a",
-        "g": "09145a35749b6075",
-        "name": "main bathroom sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "5e7c58e6-6352-4568-9153-4a069b7bf53a",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 60,
-        "wires": [
-            [
-                "463ea2b34e8d3372"
-            ]
-        ]
-    },
-    {
-        "id": "463ea2b34e8d3372",
-        "type": "link call",
-        "z": "1344247d533f754a",
-        "g": "09145a35749b6075",
-        "name": "",
-        "links": [
-            "1192b096e08ed0bc"
-        ],
-        "timeout": "30",
-        "x": 740,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f92e98d9c28e208b",
-        "type": "homekit-service",
-        "z": "0d3b88f2d4667ad9",
-        "g": "edf005842650203c",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "b98a758a1473104d",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Master Bedroom Sunset",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "007",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 150,
-        "y": 100,
-        "wires": [
-            [
-                "362043ed7cf750d6",
-                "362043ed7cf750d6"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "824fceadafef4cd3",
-        "type": "trigger",
-        "z": "0d3b88f2d4667ad9",
-        "g": "edf005842650203c",
-        "name": "auto off",
-        "op1": "",
-        "op2": "{\"On\":false}",
-        "op1type": "nul",
-        "op2type": "json",
-        "duration": "1",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 480,
-        "y": 100,
-        "wires": [
-            [
-                "f92e98d9c28e208b",
-                "f92e98d9c28e208b"
-            ]
-        ]
-    },
-    {
-        "id": "362043ed7cf750d6",
-        "type": "switch",
-        "z": "0d3b88f2d4667ad9",
-        "g": "edf005842650203c",
-        "name": "is on",
-        "property": "payload.On",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 330,
-        "y": 100,
-        "wires": [
-            [
-                "824fceadafef4cd3",
-                "4b344a7208718d13",
-                "824fceadafef4cd3",
-                "4b344a7208718d13"
-            ]
-        ]
-    },
-    {
-        "id": "4b344a7208718d13",
-        "type": "change",
-        "z": "0d3b88f2d4667ad9",
-        "g": "edf005842650203c",
-        "name": "master bedroom sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "0d5459f5-c2c7-40da-b811-e0b0e629f8a2",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 530,
-        "y": 60,
-        "wires": [
-            [
-                "1f59bfdbb638943b",
-                "1f59bfdbb638943b"
-            ]
-        ]
-    },
-    {
-        "id": "1f59bfdbb638943b",
-        "type": "link call",
-        "z": "0d3b88f2d4667ad9",
-        "g": "edf005842650203c",
-        "name": "",
-        "links": [
-            "1192b096e08ed0bc"
-        ],
-        "timeout": "30",
-        "x": 760,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "161076791f776aef",
-        "type": "homekit-service",
-        "z": "68a0c85ae721ed85",
-        "g": "cf878f58f6360a07",
-        "isParent": true,
-        "hostType": "0",
-        "bridge": "b98a758a1473104d",
-        "accessoryId": "",
-        "parentService": "",
-        "name": "Guest Bedroom Sunset",
+        "name": "Front Yard Jolly Dynamic",
         "serviceName": "Switch",
         "topic": "",
         "filter": false,
@@ -2225,6 +1475,756 @@
         "waitForSetupMsg": false,
         "outputs": 2,
         "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "ee087bcc1cf93ac1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "aa7c316c8e9e288a",
+        "type": "trigger",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "ca1e17d731e4816a"
+            ]
+        ]
+    },
+    {
+        "id": "ee087bcc1cf93ac1",
+        "type": "switch",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "aa7c316c8e9e288a",
+                "349e515099465f99"
+            ]
+        ]
+    },
+    {
+        "id": "349e515099465f99",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "front yard jolly",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "12571f23-7714-4b47-8e75-a3040389b788",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "074874e0ff13a7b1"
+            ]
+        ]
+    },
+    {
+        "id": "074874e0ff13a7b1",
+        "type": "link call",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 700,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61d42601aace19ae",
+        "type": "homekit-service",
+        "z": "adfd8ae4a2eaf844",
+        "g": "03822925b892df4a",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Front Yard Spooky Dynamic",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "003",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "2ba34b44c6ddee1e",
+                "2ba34b44c6ddee1e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "263f5bf8e034edd0",
+        "type": "trigger",
+        "z": "adfd8ae4a2eaf844",
+        "g": "03822925b892df4a",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "61d42601aace19ae",
+                "61d42601aace19ae"
+            ]
+        ]
+    },
+    {
+        "id": "2ba34b44c6ddee1e",
+        "type": "switch",
+        "z": "adfd8ae4a2eaf844",
+        "g": "03822925b892df4a",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "263f5bf8e034edd0",
+                "80cb0279cf42046f",
+                "263f5bf8e034edd0",
+                "80cb0279cf42046f"
+            ]
+        ]
+    },
+    {
+        "id": "80cb0279cf42046f",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "03822925b892df4a",
+        "name": "front yard spooky",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "3dc20d8212996ca2",
+                "3dc20d8212996ca2"
+            ]
+        ]
+    },
+    {
+        "id": "3dc20d8212996ca2",
+        "type": "link call",
+        "z": "adfd8ae4a2eaf844",
+        "g": "03822925b892df4a",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 740,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c96a94179497124",
+        "type": "homekit-service",
+        "z": "b9c60ff63fc6388d",
+        "g": "cd63dc8a5bea4a7b",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Living Room Sunset Dynamic",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "004",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "b3eaba60aadcc106"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ab526d2fd9a6a47a",
+        "type": "trigger",
+        "z": "b9c60ff63fc6388d",
+        "g": "cd63dc8a5bea4a7b",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "3c96a94179497124"
+            ]
+        ]
+    },
+    {
+        "id": "b3eaba60aadcc106",
+        "type": "switch",
+        "z": "b9c60ff63fc6388d",
+        "g": "cd63dc8a5bea4a7b",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "ab526d2fd9a6a47a",
+                "29e4a6d373cc4edb"
+            ]
+        ]
+    },
+    {
+        "id": "29e4a6d373cc4edb",
+        "type": "change",
+        "z": "b9c60ff63fc6388d",
+        "g": "cd63dc8a5bea4a7b",
+        "name": "living room sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "b838037e-54a0-4a60-aa0f-a5991f18f759",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "ab8db82fa17e24fa"
+            ]
+        ]
+    },
+    {
+        "id": "ab8db82fa17e24fa",
+        "type": "link call",
+        "z": "b9c60ff63fc6388d",
+        "g": "cd63dc8a5bea4a7b",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 760,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ca0fc73ca40603b",
+        "type": "homekit-service",
+        "z": "1344247d533f754a",
+        "g": "09145a35749b6075",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Main Bathroom Sunset Dynamic",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "005",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "9eb6e47182bd8d51"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d387a1fc049b2aad",
+        "type": "trigger",
+        "z": "1344247d533f754a",
+        "g": "09145a35749b6075",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "9ca0fc73ca40603b"
+            ]
+        ]
+    },
+    {
+        "id": "9eb6e47182bd8d51",
+        "type": "switch",
+        "z": "1344247d533f754a",
+        "g": "09145a35749b6075",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "d387a1fc049b2aad",
+                "b0cc298f4bf029da"
+            ]
+        ]
+    },
+    {
+        "id": "b0cc298f4bf029da",
+        "type": "change",
+        "z": "1344247d533f754a",
+        "g": "09145a35749b6075",
+        "name": "main bathroom sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "5e7c58e6-6352-4568-9153-4a069b7bf53a",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 60,
+        "wires": [
+            [
+                "463ea2b34e8d3372"
+            ]
+        ]
+    },
+    {
+        "id": "463ea2b34e8d3372",
+        "type": "link call",
+        "z": "1344247d533f754a",
+        "g": "09145a35749b6075",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 780,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f92e98d9c28e208b",
+        "type": "homekit-service",
+        "z": "0d3b88f2d4667ad9",
+        "g": "edf005842650203c",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Master Bedroom Sunset Dynamic",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "006",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "362043ed7cf750d6",
+                "362043ed7cf750d6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "824fceadafef4cd3",
+        "type": "trigger",
+        "z": "0d3b88f2d4667ad9",
+        "g": "edf005842650203c",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 540,
+        "y": 100,
+        "wires": [
+            [
+                "f92e98d9c28e208b",
+                "f92e98d9c28e208b"
+            ]
+        ]
+    },
+    {
+        "id": "362043ed7cf750d6",
+        "type": "switch",
+        "z": "0d3b88f2d4667ad9",
+        "g": "edf005842650203c",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 390,
+        "y": 100,
+        "wires": [
+            [
+                "824fceadafef4cd3",
+                "4b344a7208718d13",
+                "824fceadafef4cd3",
+                "4b344a7208718d13"
+            ]
+        ]
+    },
+    {
+        "id": "4b344a7208718d13",
+        "type": "change",
+        "z": "0d3b88f2d4667ad9",
+        "g": "edf005842650203c",
+        "name": "master bedroom sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0d5459f5-c2c7-40da-b811-e0b0e629f8a2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 60,
+        "wires": [
+            [
+                "1f59bfdbb638943b",
+                "1f59bfdbb638943b"
+            ]
+        ]
+    },
+    {
+        "id": "1f59bfdbb638943b",
+        "type": "link call",
+        "z": "0d3b88f2d4667ad9",
+        "g": "edf005842650203c",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 820,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "161076791f776aef",
+        "type": "homekit-service",
+        "z": "68a0c85ae721ed85",
+        "g": "cf878f58f6360a07",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Guest Bedroom Sunset Dynamic",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "008",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 180,
         "y": 100,
         "wires": [
             [
@@ -2251,7 +2251,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 480,
+        "x": 540,
         "y": 100,
         "wires": [
             [
@@ -2275,7 +2275,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 330,
+        "x": 390,
         "y": 100,
         "wires": [
             [
@@ -2304,7 +2304,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
+        "x": 580,
         "y": 60,
         "wires": [
             [
@@ -2322,7 +2322,7 @@
             "1192b096e08ed0bc"
         ],
         "timeout": "30",
-        "x": 740,
+        "x": 800,
         "y": 60,
         "wires": [
             []
