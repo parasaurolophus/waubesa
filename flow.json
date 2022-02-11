@@ -19,6 +19,25 @@
         ]
     },
     {
+        "id": "75541c4a48b055d1",
+        "type": "tab",
+        "label": "Hue SSE",
+        "disabled": false,
+        "info": "",
+        "env": [
+            {
+                "name": "KEY",
+                "value": "EhKZJjy5vLvz-3bz06K9a8MLfCaSSzR5WxSK8a-y",
+                "type": "str"
+            },
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.12",
+                "type": "str"
+            }
+        ]
+    },
+    {
         "id": "68a0c85ae721ed85",
         "type": "tab",
         "label": "Dynamic Scenes",
@@ -78,7 +97,7 @@
         "id": "c0f3c1d199bc708d",
         "type": "group",
         "z": "a00ccef1301f21e3",
-        "name": "Get hue resources",
+        "name": "Get Hue resources",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -111,21 +130,15 @@
             "color": "#000000"
         },
         "nodes": [
-            "683f6cebfb0435bc",
-            "31c9ea53a0d37ea7",
-            "3126ce3cfc3287eb",
-            "6859e44cb623bf19",
-            "0a2180fde03cef3e",
-            "a5b364ab8daf0bef",
-            "e495f44190643f71",
-            "3f29cffcea9929fe",
-            "1e2f2b3580fc2b87",
-            "70f531b5deb1ec1a"
+            "57c0a546e705eb8c",
+            "80d261408b874f66",
+            "7a55063ddf374382",
+            "5a5b40d00ccb63a6"
         ],
         "x": 14,
-        "y": 459,
-        "w": 812,
-        "h": 202
+        "y": 353,
+        "w": 878,
+        "h": 334
     },
     {
         "id": "cad4802047f76343",
@@ -150,7 +163,7 @@
             "a30b207efed9b272"
         ],
         "x": 14,
-        "y": 679,
+        "y": 699,
         "w": 752,
         "h": 142
     },
@@ -173,7 +186,7 @@
             "0b44cc9e32170bd8"
         ],
         "x": 14,
-        "y": 359,
+        "y": 859,
         "w": 522,
         "h": 82
     },
@@ -181,7 +194,7 @@
         "id": "405b624730f13e84",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start front yard sunset dynamic scene",
+        "name": "Start front yard sunset dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -193,20 +206,17 @@
             "9f11b0a34b12aeed",
             "ca44e64bd5eb08d5",
             "bc51a385ea3a9f4d",
-            "f98a96a42a04374e",
             "a4ca8af66413f4ae",
             "c40f655a759479bb"
         ],
         "x": 14,
-        "y": 19,
-        "w": 972,
-        "h": 122
+        "y": 19
     },
     {
         "id": "292bab40ea02a6f9",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start front yard jolly dynamic scene",
+        "name": "Start front yard jolly dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -218,20 +228,17 @@
             "8dc082f268067c7d",
             "46e031908080bccb",
             "346f7e5b9e7ad29b",
-            "b4b2719dc82999f0",
             "81572873f288dde3",
             "a49ca0a24aba7daf"
         ],
         "x": 14,
-        "y": 159,
-        "w": 932,
-        "h": 122
+        "y": 159
     },
     {
         "id": "61845a06011905ec",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start living room sunset dynamic scene",
+        "name": "Start living room sunset dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -243,20 +250,17 @@
             "2587012de99aa5f4",
             "6479e651ae0abe9e",
             "5eb1e0b9de5bb7b0",
-            "9ad646a7d4d7640d",
             "8c7a47c913e58bf7",
             "06175110eb064ba5"
         ],
         "x": 14,
-        "y": 439,
-        "w": 992,
-        "h": 122
+        "y": 439
     },
     {
         "id": "5e5a0d54cd36857c",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start master bedroom sunset dynamic scene",
+        "name": "Start master bedroom sunset dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -268,20 +272,17 @@
             "caf4e9d054e242fe",
             "1b8a78842c69d486",
             "da822555b6862b5d",
-            "b8d34a5e6e25333b",
             "d1e3538a1798b0b5",
             "af631eb3aa02b9d4"
         ],
         "x": 14,
-        "y": 579,
-        "w": 1052,
-        "h": 122
+        "y": 579
     },
     {
         "id": "cf878f58f6360a07",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start guest bedroom sunset dynamic scene",
+        "name": "Start guest bedroom sunset dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -293,20 +294,17 @@
             "161076791f776aef",
             "799732214b487233",
             "ddb30b7e12994f9f",
-            "16292d7a6aa763d5",
             "9fb68bd4e9d72ba1",
             "079b41faaf05de0c"
         ],
         "x": 14,
-        "y": 719,
-        "w": 1032,
-        "h": 122
+        "y": 719
     },
     {
         "id": "8a5418169860cd08",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start main bathroom sunset dynamic scene",
+        "name": "Start main bathroom sunset dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -318,20 +316,17 @@
             "a00af0a49fee52f5",
             "f142314d7fcddd22",
             "546cdf4bfcb241d0",
-            "e0b370acf1ecb7f0",
             "3b83da74294d4176",
             "c5452dc45a2b8c76"
         ],
         "x": 14,
-        "y": 859,
-        "w": 1032,
-        "h": 122
+        "y": 859
     },
     {
         "id": "e002d431b0480f62",
         "type": "group",
         "z": "68a0c85ae721ed85",
-        "name": "Start front yard spooky dynamic scene",
+        "name": "Start front yard spooky dynamic scene via HomeKit",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -343,38 +338,159 @@
             "a4771e8e2359c1c2",
             "20a884f75e5ca9dc",
             "b1242486cc80338a",
-            "eb921f06f7b79c71",
             "64038a922dc5e414",
             "3517404bed36125c"
         ],
         "x": 14,
-        "y": 299,
-        "w": 972,
-        "h": 122
+        "y": 299
     },
     {
-        "id": "60c9dd9588383ba3",
+        "id": "521bef1f1253e5fb",
         "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "EXPERIMENTAL: handle Hue SSE stream",
+        "z": "75541c4a48b055d1",
+        "name": "EXPERIMENTAL: Hue SSE to MQTT",
         "style": {
-            "stroke": "#000000",
+            "stroke": "#ff0000",
             "fill": "#ff0000",
             "fill-opacity": "0.1",
             "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "3dba4e17a486d650",
+            "afc70abb381dead3",
+            "e850380bc3049b22",
+            "318f7c6cd9265451",
+            "af297c0612911b23",
+            "af3e61f5781ea3a8"
+        ],
+        "x": 8,
+        "y": 13,
+        "w": 884,
+        "h": 668
+    },
+    {
+        "id": "80d261408b874f66",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "g": "704de1d2e359f638",
+        "name": "Set global.zones",
+        "style": {
+            "label": true,
+            "label-position": "ne",
+            "stroke": "#000000",
             "color": "#000000"
         },
         "nodes": [
-            "cf5ca41597f4caa6",
-            "d8270516ec706da6",
-            "570f2eed05a6468b",
-            "d01412560a473f6a",
-            "4213861bb677b3c4"
+            "683f6cebfb0435bc",
+            "31c9ea53a0d37ea7",
+            "e495f44190643f71"
         ],
-        "x": 14,
-        "y": 839,
-        "w": 792,
+        "x": 234,
+        "y": 379,
+        "w": 612,
         "h": 82
+    },
+    {
+        "id": "7a55063ddf374382",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "g": "704de1d2e359f638",
+        "name": "Set global.rooms",
+        "style": {
+            "label": true,
+            "label-position": "ne",
+            "stroke": "#000000",
+            "color": "#000000"
+        },
+        "nodes": [
+            "0a2180fde03cef3e",
+            "a5b364ab8daf0bef",
+            "3f29cffcea9929fe"
+        ],
+        "x": 234,
+        "y": 479,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "5a5b40d00ccb63a6",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "g": "704de1d2e359f638",
+        "name": "Set global.scenes",
+        "style": {
+            "label": true,
+            "label-position": "ne",
+            "color": "#000000"
+        },
+        "nodes": [
+            "3126ce3cfc3287eb",
+            "6859e44cb623bf19",
+            "1e2f2b3580fc2b87"
+        ],
+        "x": 234,
+        "y": 579,
+        "w": 632,
+        "h": 82
+    },
+    {
+        "id": "3dba4e17a486d650",
+        "type": "group",
+        "z": "75541c4a48b055d1",
+        "g": "521bef1f1253e5fb",
+        "name": "Process event",
+        "style": {
+            "label": true,
+            "stroke": "#ff0000",
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "c9275e1711fc2894",
+            "bc9a7556df55997a",
+            "77451f39550f8086",
+            "5b921f87451fa342",
+            "b2ddd2607ccd3369",
+            "ba42509f5030bcf1",
+            "955bf394bc21ad08",
+            "8bc8e5fca749144c",
+            "caa6900524c79eb8",
+            "091037fab22e3029"
+        ],
+        "x": 34,
+        "y": 319,
+        "w": 832,
+        "h": 282
+    },
+    {
+        "id": "e850380bc3049b22",
+        "type": "group",
+        "z": "75541c4a48b055d1",
+        "g": "521bef1f1253e5fb",
+        "name": "Listen for events",
+        "style": {
+            "label": true,
+            "stroke": "#ff0000",
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "ca35362134773029",
+            "5f5ac0e285c08071",
+            "1d730d01a90f9188",
+            "cd62d6525265b64c",
+            "cdeb6aed3296e4c8",
+            "b809b46556b152f0",
+            "6bc58e628be38a0a",
+            "cd7785a0dd06e404",
+            "88d6913ec8bb3eeb",
+            "3be7bf5980d39002",
+            "fa39deb80eee7eeb",
+            "32e371285fec3679"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 832,
+        "h": 262
     },
     {
         "id": "b98a758a1473104d",
@@ -413,6 +529,36 @@
         "servername": "",
         "verifyservercert": false,
         "alpnprotocol": ""
+    },
+    {
+        "id": "67f94c1d45ed5686",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "tls": "e79e0110c2317edb",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     },
     {
         "id": "580a03ddbe1a86e1",
@@ -749,7 +895,7 @@
         "id": "683f6cebfb0435bc",
         "type": "change",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "80d261408b874f66",
         "name": "get zones",
         "rules": [
             {
@@ -765,8 +911,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
-        "y": 500,
+        "x": 320,
+        "y": 420,
         "wires": [
             [
                 "31c9ea53a0d37ea7"
@@ -777,14 +923,14 @@
         "id": "31c9ea53a0d37ea7",
         "type": "link call",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "80d261408b874f66",
         "name": "",
         "links": [
             "4977f4086e670c54"
         ],
         "timeout": "30",
-        "x": 470,
-        "y": 500,
+        "x": 510,
+        "y": 420,
         "wires": [
             [
                 "e495f44190643f71"
@@ -795,7 +941,7 @@
         "id": "3126ce3cfc3287eb",
         "type": "change",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "5a5b40d00ccb63a6",
         "name": "get scenes",
         "rules": [
             {
@@ -811,7 +957,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
+        "x": 330,
         "y": 620,
         "wires": [
             [
@@ -823,13 +969,13 @@
         "id": "6859e44cb623bf19",
         "type": "link call",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "5a5b40d00ccb63a6",
         "name": "",
         "links": [
             "4977f4086e670c54"
         ],
         "timeout": "30",
-        "x": 470,
+        "x": 510,
         "y": 620,
         "wires": [
             [
@@ -841,7 +987,7 @@
         "id": "0a2180fde03cef3e",
         "type": "change",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "7a55063ddf374382",
         "name": "get rooms",
         "rules": [
             {
@@ -857,8 +1003,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
-        "y": 560,
+        "x": 320,
+        "y": 520,
         "wires": [
             [
                 "a5b364ab8daf0bef"
@@ -869,14 +1015,14 @@
         "id": "a5b364ab8daf0bef",
         "type": "link call",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "7a55063ddf374382",
         "name": "",
         "links": [
             "4977f4086e670c54"
         ],
         "timeout": "30",
-        "x": 450,
-        "y": 560,
+        "x": 510,
+        "y": 520,
         "wires": [
             [
                 "3f29cffcea9929fe"
@@ -887,7 +1033,7 @@
         "id": "e495f44190643f71",
         "type": "function",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "80d261408b874f66",
         "name": "processZoneMetadata",
         "func": "let zones = {}\n\nmsg.payload.forEach(zone => {\n    zones[zone.id] = zone\n})\n\nglobal.set(\"zones\", zones)\nreturn {payload: zones}",
         "outputs": 1,
@@ -895,8 +1041,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 500,
+        "x": 720,
+        "y": 420,
         "wires": [
             [
                 "0a2180fde03cef3e"
@@ -907,7 +1053,7 @@
         "id": "3f29cffcea9929fe",
         "type": "function",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "7a55063ddf374382",
         "name": "processRoomMetadata",
         "func": "let rooms = {}\n\nmsg.payload.forEach(room => {\n    rooms[room.id] = room\n})\n\nglobal.set(\"rooms\", rooms)\nreturn {payload: rooms}",
         "outputs": 1,
@@ -915,8 +1061,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 560,
+        "x": 730,
+        "y": 520,
         "wires": [
             [
                 "3126ce3cfc3287eb"
@@ -927,7 +1073,7 @@
         "id": "1e2f2b3580fc2b87",
         "type": "function",
         "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
+        "g": "5a5b40d00ccb63a6",
         "name": "processSceneMetadata",
         "func": "let scenes = {}\nlet rooms = global.get(\"rooms\") || {}\nlet zones = global.get(\"zones\") || {}\n\nlet findGroup = (id, groups) => {\n\n    for (let rid in groups) {\n\n        let group = groups[rid]\n\n        if (group.id == id) {\n            return group\n        }\n    }\n    \n    return undefined\n}\n\nmsg.payload.forEach(scene => {\n\n    scenes[scene.id] = scene\n    \n    let group = findGroup(scene.group.rid, zones)\n    \n    if (group === undefined) {\n        group = findGroup(scene.group.rid, rooms)\n    }\n    \n    if (group !== undefined) {\n        scene.group.name = group.metadata.name\n    }\n    \n    let services = group.grouped_services\n    \n    for (let index = 0; index < services.length; ++index) {\n        \n        let service = services[index]\n        \n        if (service.rtype == \"grouped_light\") {\n            scene.group.grouped_light = service.rid\n        }\n    }\n})\n\nglobal.set(\"scenes\", scenes)\nreturn {payload: scenes}",
         "outputs": 1,
@@ -935,36 +1081,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 730,
         "y": 620,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "70f531b5deb1ec1a",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "704de1d2e359f638",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 500,
-        "wires": [
-            [
-                "683f6cebfb0435bc"
-            ]
         ]
     },
     {
@@ -986,7 +1106,7 @@
         "payload": "scenes",
         "payloadType": "global",
         "x": 130,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "7f851489fa9e120b"
@@ -1007,7 +1127,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 650,
-        "y": 780,
+        "y": 800,
         "wires": []
     },
     {
@@ -1027,7 +1147,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 310,
-        "y": 780,
+        "y": 800,
         "wires": [
             [
                 "a30b207efed9b272"
@@ -1047,7 +1167,7 @@
         "stream": false,
         "addname": "",
         "x": 270,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "668a56f0c07f4cff"
@@ -1067,7 +1187,7 @@
         "template": "{\n    \"scene_name\": \"{{payload.metadata.name}}\",\n    \"scene_id\": \"{{payload.id}}\",\n    \"group_name\": \"{{payload.group.name}}\",\n    \"group_id\": \"{{payload.group.rid}}\",\n    \"group_lights\": \"{{payload.group.grouped_light}}\"\n}",
         "output": "json",
         "x": 400,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "025aa8be977c56bf"
@@ -1092,7 +1212,7 @@
         "count": "",
         "reduceRight": false,
         "x": 530,
-        "y": 720,
+        "y": 740,
         "wires": [
             [
                 "d56b9ae3f0b87fb9"
@@ -1112,7 +1232,7 @@
         "finalize": "",
         "libs": [],
         "x": 160,
-        "y": 780,
+        "y": 800,
         "wires": [
             [
                 "d42c44a6687bf3d5"
@@ -1131,7 +1251,7 @@
         "overwriteFile": "true",
         "encoding": "utf8",
         "x": 470,
-        "y": 780,
+        "y": 800,
         "wires": [
             [
                 "6fd93b1e22105d03"
@@ -1173,7 +1293,7 @@
         "to": "",
         "reg": false,
         "x": 200,
-        "y": 400,
+        "y": 900,
         "wires": [
             [
                 "17af4b7db724335a",
@@ -1192,7 +1312,7 @@
         ],
         "timeout": "30",
         "x": 390,
-        "y": 400,
+        "y": 900,
         "wires": [
             [
                 "0b44cc9e32170bd8",
@@ -1208,7 +1328,7 @@
         "name": "start dynamic scene",
         "links": [],
         "x": 55,
-        "y": 400,
+        "y": 900,
         "wires": [
             [
                 "8e2a8f5d759f7920",
@@ -1225,14 +1345,400 @@
         "mode": "return",
         "links": [],
         "x": 495,
-        "y": 400,
+        "y": 900,
         "wires": []
     },
     {
-        "id": "cf5ca41597f4caa6",
-        "type": "sse-client",
+        "id": "57c0a546e705eb8c",
+        "type": "function",
         "z": "a00ccef1301f21e3",
-        "g": "60c9dd9588383ba3",
+        "g": "704de1d2e359f638",
+        "name": "fetchHueMetadata",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// function like an inject node that fires\n// on start up but compatibly with being\n// placed in a subflow\n\nsetTimeout(() => {\n    node.send({})\n}, 500)",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "683f6cebfb0435bc"
+            ]
+        ]
+    },
+    {
+        "id": "c9275e1711fc2894",
+        "type": "switch",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "event",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "color",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "button",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "dynamics",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "dimming",
+                "vt": "str"
+            },
+            {
+                "t": "hask",
+                "v": "color_temperature",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 7,
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "77451f39550f8086"
+            ],
+            [
+                "ba42509f5030bcf1"
+            ],
+            [
+                "8bc8e5fca749144c"
+            ],
+            [
+                "caa6900524c79eb8"
+            ],
+            [
+                "bc9a7556df55997a"
+            ],
+            [
+                "955bf394bc21ad08"
+            ],
+            [
+                "af3e61f5781ea3a8"
+            ]
+        ]
+    },
+    {
+        "id": "bc9a7556df55997a",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "dimming",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic & '/dimming'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "move",
+                "p": "payload.dimming",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 520,
+        "wires": [
+            [
+                "5b921f87451fa342"
+            ]
+        ]
+    },
+    {
+        "id": "77451f39550f8086",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic & '/on'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "move",
+                "p": "payload.on",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "5b921f87451fa342"
+            ]
+        ]
+    },
+    {
+        "id": "5b921f87451fa342",
+        "type": "rbe",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 670,
+        "y": 440,
+        "wires": [
+            [
+                "091037fab22e3029"
+            ]
+        ]
+    },
+    {
+        "id": "b2ddd2607ccd3369",
+        "type": "mqtt out",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "67f94c1d45ed5686",
+        "x": 790,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ba42509f5030bcf1",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "color",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic & '/color'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "move",
+                "p": "payload.color",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 400,
+        "wires": [
+            [
+                "5b921f87451fa342"
+            ]
+        ]
+    },
+    {
+        "id": "955bf394bc21ad08",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "color_temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic & '/color_temperature'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "move",
+                "p": "payload.color_temperature",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 560,
+        "wires": [
+            [
+                "5b921f87451fa342"
+            ]
+        ]
+    },
+    {
+        "id": "8bc8e5fca749144c",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "button",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic & '/button'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "move",
+                "p": "payload.button",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "5b921f87451fa342"
+            ]
+        ]
+    },
+    {
+        "id": "caa6900524c79eb8",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "dynamics",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic & '/dynamics'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "move",
+                "p": "payload.dynamics",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "5b921f87451fa342"
+            ]
+        ]
+    },
+    {
+        "id": "091037fab22e3029",
+        "type": "delay",
+        "z": "75541c4a48b055d1",
+        "g": "3dba4e17a486d650",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "2",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 500,
+        "wires": [
+            [
+                "b2ddd2607ccd3369"
+            ]
+        ]
+    },
+    {
+        "id": "afc70abb381dead3",
+        "type": "debug",
+        "z": "75541c4a48b055d1",
+        "g": "521bef1f1253e5fb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ca35362134773029",
+        "type": "sse-client",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
         "name": "",
         "url": "",
         "events": [],
@@ -1242,84 +1748,38 @@
         "rejectUnauthorized": false,
         "withCredentials": true,
         "timeout": "60",
-        "x": 290,
-        "y": 880,
+        "x": 530,
+        "y": 140,
         "wires": [
             [
-                "d01412560a473f6a"
+                "5f5ac0e285c08071",
+                "5f5ac0e285c08071"
             ]
         ]
     },
     {
-        "id": "d8270516ec706da6",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "60c9dd9588383ba3",
-        "name": "start listening",
-        "props": [
-            {
-                "p": "headers",
-                "v": "{\"hue-application-key\": $env('KEY')}",
-                "vt": "jsonata"
-            },
-            {
-                "p": "url",
-                "v": "'https://' & $env('ADDRESS') & '/eventstream/clip/v2'",
-                "vt": "jsonata"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 130,
-        "y": 880,
-        "wires": [
-            [
-                "cf5ca41597f4caa6"
-            ]
-        ]
-    },
-    {
-        "id": "570f2eed05a6468b",
-        "type": "debug",
-        "z": "a00ccef1301f21e3",
-        "g": "60c9dd9588383ba3",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "d01412560a473f6a",
+        "id": "5f5ac0e285c08071",
         "type": "json",
-        "z": "a00ccef1301f21e3",
-        "g": "60c9dd9588383ba3",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
         "name": "",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 430,
-        "y": 880,
+        "x": 670,
+        "y": 140,
         "wires": [
             [
-                "4213861bb677b3c4"
+                "1d730d01a90f9188",
+                "1d730d01a90f9188"
             ]
         ]
     },
     {
-        "id": "4213861bb677b3c4",
+        "id": "1d730d01a90f9188",
         "type": "split",
-        "z": "a00ccef1301f21e3",
-        "g": "60c9dd9588383ba3",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -1327,11 +1787,296 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 550,
-        "y": 880,
+        "x": 790,
+        "y": 140,
         "wires": [
             [
-                "570f2eed05a6468b"
+                "cd62d6525265b64c",
+                "cd62d6525265b64c"
+            ]
+        ]
+    },
+    {
+        "id": "cd62d6525265b64c",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "b809b46556b152f0"
+            ]
+        ]
+    },
+    {
+        "id": "cdeb6aed3296e4c8",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'hue/' & payload.type & '/' & payload.id",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 260,
+        "wires": [
+            [
+                "c9275e1711fc2894"
+            ]
+        ]
+    },
+    {
+        "id": "b809b46556b152f0",
+        "type": "split",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 410,
+        "y": 220,
+        "wires": [
+            [
+                "6bc58e628be38a0a"
+            ]
+        ]
+    },
+    {
+        "id": "6bc58e628be38a0a",
+        "type": "switch",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "is array",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "array",
+                "vt": "array"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 540,
+        "y": 220,
+        "wires": [
+            [
+                "cd7785a0dd06e404"
+            ],
+            [
+                "cdeb6aed3296e4c8"
+            ]
+        ]
+    },
+    {
+        "id": "cd7785a0dd06e404",
+        "type": "split",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 670,
+        "y": 200,
+        "wires": [
+            [
+                "cdeb6aed3296e4c8"
+            ]
+        ]
+    },
+    {
+        "id": "88d6913ec8bb3eeb",
+        "type": "function",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "startListeningForSSE",
+        "func": "\nreturn {\n    payload: \"\"\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// function like an inject node that fires\n// on start up but compatibly with being\n// placed in a subflow\n\nsetTimeout(() => {\n    node.send({\n        payload: \"\"\n    })\n}, 500)",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "3be7bf5980d39002"
+            ]
+        ]
+    },
+    {
+        "id": "3be7bf5980d39002",
+        "type": "change",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{\"hue-application-key\": $env('KEY')}",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'https://' & $env('ADDRESS') & '/eventstream/clip/v2'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "ca35362134773029"
+            ]
+        ]
+    },
+    {
+        "id": "318f7c6cd9265451",
+        "type": "file",
+        "z": "75541c4a48b055d1",
+        "g": "521bef1f1253e5fb",
+        "name": "",
+        "filename": "/data/hue-events.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 420,
+        "y": 640,
+        "wires": [
+            [
+                "afc70abb381dead3"
+            ]
+        ]
+    },
+    {
+        "id": "af297c0612911b23",
+        "type": "json",
+        "z": "75541c4a48b055d1",
+        "g": "521bef1f1253e5fb",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 250,
+        "y": 640,
+        "wires": [
+            [
+                "318f7c6cd9265451"
+            ]
+        ]
+    },
+    {
+        "id": "af3e61f5781ea3a8",
+        "type": "rbe",
+        "z": "75541c4a48b055d1",
+        "g": "521bef1f1253e5fb",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 130,
+        "y": 640,
+        "wires": [
+            [
+                "af297c0612911b23"
+            ]
+        ]
+    },
+    {
+        "id": "fa39deb80eee7eeb",
+        "type": "catch",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "scope": [
+            "ca35362134773029"
+        ],
+        "uncaught": false,
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "32e371285fec3679"
+            ]
+        ]
+    },
+    {
+        "id": "32e371285fec3679",
+        "type": "delay",
+        "z": "75541c4a48b055d1",
+        "g": "e850380bc3049b22",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 240,
+        "y": 80,
+        "wires": [
+            [
+                "88d6913ec8bb3eeb"
             ]
         ]
     },
@@ -1440,23 +2185,6 @@
         ]
     },
     {
-        "id": "f98a96a42a04374e",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "405b624730f13e84",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 60,
-        "wires": []
-    },
-    {
         "id": "a4ca8af66413f4ae",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -1497,9 +2225,7 @@
         "x": 680,
         "y": 60,
         "wires": [
-            [
-                "f98a96a42a04374e"
-            ]
+            []
         ]
     },
     {
@@ -1607,23 +2333,6 @@
         ]
     },
     {
-        "id": "b4b2719dc82999f0",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "292bab40ea02a6f9",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "81572873f288dde3",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -1664,9 +2373,7 @@
         "x": 640,
         "y": 200,
         "wires": [
-            [
-                "b4b2719dc82999f0"
-            ]
+            []
         ]
     },
     {
@@ -1774,23 +2481,6 @@
         ]
     },
     {
-        "id": "9ad646a7d4d7640d",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "61845a06011905ec",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 890,
-        "y": 480,
-        "wires": []
-    },
-    {
         "id": "8c7a47c913e58bf7",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -1831,9 +2521,7 @@
         "x": 700,
         "y": 480,
         "wires": [
-            [
-                "9ad646a7d4d7640d"
-            ]
+            []
         ]
     },
     {
@@ -1941,23 +2629,6 @@
         ]
     },
     {
-        "id": "b8d34a5e6e25333b",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "5e5a0d54cd36857c",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 950,
-        "y": 620,
-        "wires": []
-    },
-    {
         "id": "d1e3538a1798b0b5",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -1998,9 +2669,7 @@
         "x": 760,
         "y": 620,
         "wires": [
-            [
-                "b8d34a5e6e25333b"
-            ]
+            []
         ]
     },
     {
@@ -2108,23 +2777,6 @@
         ]
     },
     {
-        "id": "16292d7a6aa763d5",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "cf878f58f6360a07",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 760,
-        "wires": []
-    },
-    {
         "id": "9fb68bd4e9d72ba1",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -2165,9 +2817,7 @@
         "x": 740,
         "y": 760,
         "wires": [
-            [
-                "16292d7a6aa763d5"
-            ]
+            []
         ]
     },
     {
@@ -2275,23 +2925,6 @@
         ]
     },
     {
-        "id": "e0b370acf1ecb7f0",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "8a5418169860cd08",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 900,
-        "wires": []
-    },
-    {
         "id": "3b83da74294d4176",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -2332,9 +2965,7 @@
         "x": 740,
         "y": 900,
         "wires": [
-            [
-                "e0b370acf1ecb7f0"
-            ]
+            []
         ]
     },
     {
@@ -2446,23 +3077,6 @@
         ]
     },
     {
-        "id": "eb921f06f7b79c71",
-        "type": "debug",
-        "z": "68a0c85ae721ed85",
-        "g": "e002d431b0480f62",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "64038a922dc5e414",
         "type": "change",
         "z": "68a0c85ae721ed85",
@@ -2504,10 +3118,7 @@
         "x": 680,
         "y": 340,
         "wires": [
-            [
-                "eb921f06f7b79c71",
-                "eb921f06f7b79c71"
-            ]
+            []
         ]
     }
 ]
