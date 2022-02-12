@@ -27,6 +27,14 @@
         "env": []
     },
     {
+        "id": "e8bcfd6a4a4a6002",
+        "type": "tab",
+        "label": "Porch",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "b9c60ff63fc6388d",
         "type": "tab",
         "label": "Living Room",
@@ -35,9 +43,41 @@
         "env": []
     },
     {
+        "id": "c6feba6b4b754115",
+        "type": "tab",
+        "label": "Dining Room",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c0e9cd86c26f48cd",
+        "type": "tab",
+        "label": "Kitchen",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "196a892f41e64a64",
+        "type": "tab",
+        "label": "Hall",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1344247d533f754a",
         "type": "tab",
         "label": "Main Bathroom",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d182f255d0172f82",
+        "type": "tab",
+        "label": "Studio",
         "disabled": false,
         "info": "",
         "env": []
@@ -435,6 +475,102 @@
         "y": 579,
         "w": 632,
         "h": 82
+    },
+    {
+        "id": "f025bfd6f097a4fb",
+        "type": "group",
+        "z": "c6feba6b4b754115",
+        "name": "Start dining room sunset dynamic scene via HomeKit",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "a454f20b5a3cb7e6",
+            "6d7cfac70213b109",
+            "f087dd8d5c50f5c8",
+            "496a709f50b2efce",
+            "da2999606ed19959"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 872,
+        "h": 122
+    },
+    {
+        "id": "cf5ee15f74249e75",
+        "type": "group",
+        "z": "c0e9cd86c26f48cd",
+        "name": "Start kitchen sunset dynamic scene via HomeKit",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3f55a4060fb585c7",
+            "04c4c7d0d337b8a8",
+            "0175a96092308dcf",
+            "6a8acce9ac37a587",
+            "805f9419fca267f1"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 812,
+        "h": 122
+    },
+    {
+        "id": "8b872b3ffa26442a",
+        "type": "group",
+        "z": "196a892f41e64a64",
+        "name": "Start hall sunset dynamic scene via HomeKit",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "353b1b24b556622c",
+            "ee27e0048253bc8e",
+            "36e0debd0c0c2467",
+            "7aa1db8822bc3e63",
+            "ccede71d48fd41dd"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 772,
+        "h": 122
+    },
+    {
+        "id": "306c4351d83922a0",
+        "type": "group",
+        "z": "d182f255d0172f82",
+        "name": "Start studio sunset dynamic scene via HomeKit",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "7afddc8f0d9f134d",
+            "493fbfe3c411fdd6",
+            "5774a259e3ef2dcc",
+            "16c60efe6365ac91",
+            "7c9c107bf8049e17"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 812,
+        "h": 122
     },
     {
         "id": "b98a758a1473104d",
@@ -1880,6 +2016,450 @@
         ]
     },
     {
+        "id": "a454f20b5a3cb7e6",
+        "type": "homekit-service",
+        "z": "c6feba6b4b754115",
+        "g": "f025bfd6f097a4fb",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Dining Room Dynamic Sunset",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "008",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "f087dd8d5c50f5c8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6d7cfac70213b109",
+        "type": "trigger",
+        "z": "c6feba6b4b754115",
+        "g": "f025bfd6f097a4fb",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "a454f20b5a3cb7e6"
+            ]
+        ]
+    },
+    {
+        "id": "f087dd8d5c50f5c8",
+        "type": "switch",
+        "z": "c6feba6b4b754115",
+        "g": "f025bfd6f097a4fb",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "6d7cfac70213b109",
+                "496a709f50b2efce"
+            ]
+        ]
+    },
+    {
+        "id": "496a709f50b2efce",
+        "type": "change",
+        "z": "c6feba6b4b754115",
+        "g": "f025bfd6f097a4fb",
+        "name": "dining room sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "12cbdfa6-8f24-47ec-98dc-ddd549669f09",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "da2999606ed19959"
+            ]
+        ]
+    },
+    {
+        "id": "da2999606ed19959",
+        "type": "link call",
+        "z": "c6feba6b4b754115",
+        "g": "f025bfd6f097a4fb",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 760,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f55a4060fb585c7",
+        "type": "homekit-service",
+        "z": "c0e9cd86c26f48cd",
+        "g": "cf5ee15f74249e75",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Kitchen Dynamic Sunset",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "009",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "0175a96092308dcf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "04c4c7d0d337b8a8",
+        "type": "trigger",
+        "z": "c0e9cd86c26f48cd",
+        "g": "cf5ee15f74249e75",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "3f55a4060fb585c7"
+            ]
+        ]
+    },
+    {
+        "id": "0175a96092308dcf",
+        "type": "switch",
+        "z": "c0e9cd86c26f48cd",
+        "g": "cf5ee15f74249e75",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "04c4c7d0d337b8a8",
+                "6a8acce9ac37a587"
+            ]
+        ]
+    },
+    {
+        "id": "6a8acce9ac37a587",
+        "type": "change",
+        "z": "c0e9cd86c26f48cd",
+        "g": "cf5ee15f74249e75",
+        "name": "kitchen sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "d1f2478f-c3ad-4ef6-a1b0-5b2f980c7d2f",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 60,
+        "wires": [
+            [
+                "805f9419fca267f1"
+            ]
+        ]
+    },
+    {
+        "id": "805f9419fca267f1",
+        "type": "link call",
+        "z": "c0e9cd86c26f48cd",
+        "g": "cf5ee15f74249e75",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 700,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "353b1b24b556622c",
+        "type": "homekit-service",
+        "z": "196a892f41e64a64",
+        "g": "8b872b3ffa26442a",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Hall Dynamic Sunset",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "010",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "36e0debd0c0c2467"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ee27e0048253bc8e",
+        "type": "trigger",
+        "z": "196a892f41e64a64",
+        "g": "8b872b3ffa26442a",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 460,
+        "y": 100,
+        "wires": [
+            [
+                "353b1b24b556622c"
+            ]
+        ]
+    },
+    {
+        "id": "36e0debd0c0c2467",
+        "type": "switch",
+        "z": "196a892f41e64a64",
+        "g": "8b872b3ffa26442a",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 100,
+        "wires": [
+            [
+                "ee27e0048253bc8e",
+                "7aa1db8822bc3e63"
+            ]
+        ]
+    },
+    {
+        "id": "7aa1db8822bc3e63",
+        "type": "change",
+        "z": "196a892f41e64a64",
+        "g": "8b872b3ffa26442a",
+        "name": "hall sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1cb6e9ce-052c-43bc-aecb-e922beaafe83",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "ccede71d48fd41dd"
+            ]
+        ]
+    },
+    {
+        "id": "ccede71d48fd41dd",
+        "type": "link call",
+        "z": "196a892f41e64a64",
+        "g": "8b872b3ffa26442a",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 660,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "9ca0fc73ca40603b",
         "type": "homekit-service",
         "z": "1344247d533f754a",
@@ -2022,6 +2602,154 @@
         ],
         "timeout": "30",
         "x": 780,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7afddc8f0d9f134d",
+        "type": "homekit-service",
+        "z": "d182f255d0172f82",
+        "g": "306c4351d83922a0",
+        "isParent": true,
+        "hostType": "0",
+        "bridge": "b98a758a1473104d",
+        "accessoryId": "",
+        "parentService": "",
+        "name": "Studio Dynamic Sunset",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "011",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "5774a259e3ef2dcc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "493fbfe3c411fdd6",
+        "type": "trigger",
+        "z": "d182f255d0172f82",
+        "g": "306c4351d83922a0",
+        "name": "auto off",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "7afddc8f0d9f134d"
+            ]
+        ]
+    },
+    {
+        "id": "5774a259e3ef2dcc",
+        "type": "switch",
+        "z": "d182f255d0172f82",
+        "g": "306c4351d83922a0",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "493fbfe3c411fdd6",
+                "16c60efe6365ac91"
+            ]
+        ]
+    },
+    {
+        "id": "16c60efe6365ac91",
+        "type": "change",
+        "z": "d182f255d0172f82",
+        "g": "306c4351d83922a0",
+        "name": "studio sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "bf491300-bc56-4700-8963-8bcb3d9637f4",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 60,
+        "wires": [
+            [
+                "7c9c107bf8049e17"
+            ]
+        ]
+    },
+    {
+        "id": "7c9c107bf8049e17",
+        "type": "link call",
+        "z": "d182f255d0172f82",
+        "g": "306c4351d83922a0",
+        "name": "",
+        "links": [
+            "1192b096e08ed0bc"
+        ],
+        "timeout": "30",
+        "x": 700,
         "y": 60,
         "wires": [
             []
