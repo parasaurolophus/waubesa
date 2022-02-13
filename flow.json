@@ -110,8 +110,8 @@
         "id": "a03a3519abf4e656",
         "type": "subflow",
         "name": "Hue Scene Auto-Off",
-        "info": "",
-        "category": "wabesa",
+        "info": "If the incoming message indicates that the corresponding HomeKit virtual switch was turned on, activate the corresponding Hue dynamic scene using the first output and send a message to turn the virtual switch off after a delay using the second output.\n\nBoth the scene id and auto-off delay are configurable using environment variables defined by this subflow. The default delay is 1000 milliseconds. There is no default scene id.",
+        "category": "waubesa",
         "in": [
             {
                 "x": 40,
@@ -125,17 +125,17 @@
         ],
         "out": [
             {
-                "x": 430,
+                "x": 490,
                 "y": 40,
                 "wires": [
                     {
-                        "id": "a35f8019aa29b014",
+                        "id": "39c7e64c9e23526f",
                         "port": 0
                     }
                 ]
             },
             {
-                "x": 430,
+                "x": 830,
                 "y": 120,
                 "wires": [
                     {
@@ -150,6 +150,11 @@
                 "name": "SCENE_ID",
                 "type": "str",
                 "value": ""
+            },
+            {
+                "name": "DELAY",
+                "type": "num",
+                "value": "1000"
             }
         ],
         "meta": {},
@@ -212,29 +217,6 @@
         "h": 82
     },
     {
-        "id": "c261059e2aaf6258",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "Start dynamic scene",
-        "style": {
-            "stroke": "#000000",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8e2a8f5d759f7920",
-            "17af4b7db724335a",
-            "1192b096e08ed0bc",
-            "0b44cc9e32170bd8"
-        ],
-        "x": 14,
-        "y": 259,
-        "w": 522,
-        "h": 82
-    },
-    {
         "id": "cf878f58f6360a07",
         "type": "group",
         "z": "68a0c85ae721ed85",
@@ -255,7 +237,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 822,
+        "w": 762,
         "h": 122
     },
     {
@@ -279,7 +261,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 782,
+        "w": 722,
         "h": 122
     },
     {
@@ -303,7 +285,7 @@
         ],
         "x": 24,
         "y": 159,
-        "w": 762,
+        "w": 702,
         "h": 122
     },
     {
@@ -327,7 +309,7 @@
         ],
         "x": 24,
         "y": 299,
-        "w": 782,
+        "w": 722,
         "h": 122
     },
     {
@@ -351,7 +333,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 802,
+        "w": 742,
         "h": 122
     },
     {
@@ -375,7 +357,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 802,
+        "w": 742,
         "h": 122
     },
     {
@@ -399,7 +381,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 822,
+        "w": 762,
         "h": 122
     },
     {
@@ -423,7 +405,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 802,
+        "w": 742,
         "h": 122
     },
     {
@@ -447,7 +429,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 762,
+        "w": 702,
         "h": 122
     },
     {
@@ -471,7 +453,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 742,
+        "w": 682,
         "h": 122
     },
     {
@@ -495,7 +477,7 @@
         ],
         "x": 24,
         "y": 19,
-        "w": 762,
+        "w": 702,
         "h": 122
     },
     {
@@ -693,8 +675,8 @@
         "y": 80,
         "wires": [
             [
-                "73c278982d46a137",
-                "a35f8019aa29b014"
+                "84e4cd1d8c126701",
+                "39c7e64c9e23526f"
             ]
         ]
     },
@@ -702,36 +684,36 @@
         "id": "73c278982d46a137",
         "type": "trigger",
         "z": "a03a3519abf4e656",
-        "name": "auto off",
+        "name": "send {\"On\":false} after $DELAY milliseconds",
         "op1": "",
         "op2": "{\"On\":false}",
         "op1type": "nul",
         "op2type": "json",
         "duration": "1",
         "extend": true,
-        "overrideDelay": false,
+        "overrideDelay": true,
         "units": "s",
         "reset": "",
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 280,
+        "x": 570,
         "y": 120,
         "wires": [
             []
         ]
     },
     {
-        "id": "a35f8019aa29b014",
+        "id": "84e4cd1d8c126701",
         "type": "change",
         "z": "a03a3519abf4e656",
-        "name": "hue sunset",
+        "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "delay",
                 "pt": "msg",
-                "to": "SCENE_ID",
+                "to": "DELAY",
                 "tot": "env"
             }
         ],
@@ -740,7 +722,48 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "73c278982d46a137"
+            ]
+        ]
+    },
+    {
+        "id": "39c7e64c9e23526f",
+        "type": "change",
+        "z": "a03a3519abf4e656",
+        "name": "start dynamic scene",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"resource/scene/\" & $env('SCENE_ID')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
         "y": 40,
         "wires": [
             []
@@ -1465,96 +1488,6 @@
         ]
     },
     {
-        "id": "8e2a8f5d759f7920",
-        "type": "change",
-        "z": "a00ccef1301f21e3",
-        "g": "c261059e2aaf6258",
-        "name": "start dynamic scene",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "\"resource/scene/\" & payload",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 200,
-        "y": 300,
-        "wires": [
-            [
-                "17af4b7db724335a",
-                "17af4b7db724335a"
-            ]
-        ]
-    },
-    {
-        "id": "17af4b7db724335a",
-        "type": "link call",
-        "z": "a00ccef1301f21e3",
-        "g": "c261059e2aaf6258",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 390,
-        "y": 300,
-        "wires": [
-            [
-                "0b44cc9e32170bd8",
-                "0b44cc9e32170bd8"
-            ]
-        ]
-    },
-    {
-        "id": "1192b096e08ed0bc",
-        "type": "link in",
-        "z": "a00ccef1301f21e3",
-        "g": "c261059e2aaf6258",
-        "name": "start dynamic scene",
-        "links": [],
-        "x": 55,
-        "y": 300,
-        "wires": [
-            [
-                "8e2a8f5d759f7920",
-                "8e2a8f5d759f7920"
-            ]
-        ]
-    },
-    {
-        "id": "0b44cc9e32170bd8",
-        "type": "link out",
-        "z": "a00ccef1301f21e3",
-        "g": "c261059e2aaf6258",
-        "name": "",
-        "mode": "return",
-        "links": [],
-        "x": 495,
-        "y": 300,
-        "wires": []
-    },
-    {
         "id": "e2139e7bb021147f",
         "type": "homekit-service",
         "z": "adfd8ae4a2eaf844",
@@ -1614,10 +1547,10 @@
         "g": "ea7b9754db9fd0cd",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 680,
+        "x": 650,
         "y": 60,
         "wires": [
             []
@@ -1683,10 +1616,10 @@
         "g": "afbdc8b60c682c85",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 660,
+        "x": 630,
         "y": 200,
         "wires": [
             []
@@ -1752,10 +1685,10 @@
         "g": "03822925b892df4a",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 680,
+        "x": 650,
         "y": 340,
         "wires": [
             []
@@ -1986,10 +1919,10 @@
         "g": "cd63dc8a5bea4a7b",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 700,
+        "x": 670,
         "y": 60,
         "wires": [
             []
@@ -2110,10 +2043,10 @@
         "g": "f025bfd6f097a4fb",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 700,
+        "x": 670,
         "y": 60,
         "wires": [
             []
@@ -2234,10 +2167,10 @@
         "g": "cf5ee15f74249e75",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 660,
+        "x": 630,
         "y": 60,
         "wires": [
             []
@@ -2358,10 +2291,10 @@
         "g": "8b872b3ffa26442a",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 640,
+        "x": 610,
         "y": 60,
         "wires": [
             []
@@ -2482,10 +2415,10 @@
         "g": "09145a35749b6075",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 700,
+        "x": 670,
         "y": 60,
         "wires": [
             []
@@ -2606,10 +2539,10 @@
         "g": "306c4351d83922a0",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 660,
+        "x": 630,
         "y": 60,
         "wires": [
             []
@@ -2730,10 +2663,10 @@
         "g": "edf005842650203c",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 720,
+        "x": 690,
         "y": 60,
         "wires": [
             []
@@ -2854,10 +2787,10 @@
         "g": "cf878f58f6360a07",
         "name": "",
         "links": [
-            "1192b096e08ed0bc"
+            "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 720,
+        "x": 690,
         "y": 60,
         "wires": [
             []
