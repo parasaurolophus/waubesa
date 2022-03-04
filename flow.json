@@ -179,6 +179,77 @@
                 "name": "DELAY",
                 "type": "num",
                 "value": "1000"
+            },
+            {
+                "name": "ACTION",
+                "type": "str",
+                "value": "dynamic_palette"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "inputLabels": [
+            "from HomeKit"
+        ],
+        "outputLabels": [
+            "to Hue",
+            "to HomeKit"
+        ]
+    },
+    {
+        "id": "c2b1af43d2d083aa",
+        "type": "subflow",
+        "name": "Hue Group Auto-Off",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "3305bd18b342186b"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 490,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "8fdcb6029f991956",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 830,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "63779ff30b60e45f",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "GROUPED_LIGHT_ID",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "DELAY",
+                "type": "str",
+                "value": "1000"
+            },
+            {
+                "name": "STATE",
+                "type": "bool",
+                "value": "false"
             }
         ],
         "meta": {},
@@ -236,9 +307,7 @@
             "8831ddc00ec107b7"
         ],
         "x": 104,
-        "y": 219,
-        "w": 902,
-        "h": 122
+        "y": 219
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -1007,9 +1076,7 @@
             "e1beb535798372cf"
         ],
         "x": 104,
-        "y": 119,
-        "w": 542,
-        "h": 82
+        "y": 119
     },
     {
         "id": "96d10522d52f4c67",
@@ -1030,9 +1097,7 @@
             "b5af0f817be71911"
         ],
         "x": 104,
-        "y": 19,
-        "w": 542,
-        "h": 82
+        "y": 19
     },
     {
         "id": "afb4738a833a66f0",
@@ -1111,7 +1176,9 @@
             "616f8850787931da"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 1312,
+        "h": 482
     },
     {
         "id": "acd8dfba6d718657",
@@ -1158,15 +1225,17 @@
         },
         "nodes": [
             "07ccb0b07e6fada8",
-            "53896c6ccbb38daf",
-            "ef4934ae5d33ba45",
             "a03344fb9a787ea4",
-            "04ac337e1df1e0f5"
+            "04ac337e1df1e0f5",
+            "5698cb3902975118",
+            "f965bbf79663681e",
+            "13dadc0fade8c5f9",
+            "46fa3c75d5fa6109"
         ],
         "x": 104,
         "y": 19,
-        "w": 592,
-        "h": 82
+        "w": 742,
+        "h": 122
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1182,15 +1251,17 @@
         },
         "nodes": [
             "3ed1a4d37d1548b4",
-            "8df41f8cb1704898",
-            "9d6b6d6e6652b261",
             "53509cbc2f897eb4",
-            "29f18353270c8144"
+            "29f18353270c8144",
+            "f761e899c90315af",
+            "59ea234c7c46c4df",
+            "1f8161330cfe56fd",
+            "80113bac5531b428"
         ],
         "x": 104,
-        "y": 219,
-        "w": 632,
-        "h": 82
+        "y": 299,
+        "w": 822,
+        "h": 122
     },
     {
         "id": "7b6a4d96f09a8132",
@@ -1211,7 +1282,9 @@
             "665d199299fb357e"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "37f9190eb1a5f555",
@@ -1232,7 +1305,9 @@
             "39745d9a5b6bda0e"
         ],
         "x": 104,
-        "y": 119
+        "y": 219,
+        "w": 512,
+        "h": 82
     },
     {
         "id": "fc8dab80af70dbe7",
@@ -1253,7 +1328,9 @@
             "3102f0e3b1f6f9aa"
         ],
         "x": 104,
-        "y": 219
+        "y": 319,
+        "w": 492,
+        "h": 82
     },
     {
         "id": "54005f131191d07d",
@@ -1274,7 +1351,9 @@
             "e0b19f1b2a69b6b3"
         ],
         "x": 104,
-        "y": 319
+        "y": 419,
+        "w": 512,
+        "h": 82
     },
     {
         "id": "4699dcb62a5f0b27",
@@ -1295,7 +1374,9 @@
             "a8294e046fa06858"
         ],
         "x": 104,
-        "y": 419
+        "y": 519,
+        "w": 502,
+        "h": 82
     },
     {
         "id": "5fc59a3213472236",
@@ -1335,7 +1416,9 @@
             "9cacf8469798d590"
         ],
         "x": 14,
-        "y": 519
+        "y": 519,
+        "w": 1232,
+        "h": 562
     },
     {
         "id": "80e068d5fcb614bd",
@@ -1404,8 +1487,8 @@
             "4b9d0f81d3a59f32"
         ],
         "x": 104,
-        "y": 319,
-        "w": 842,
+        "y": 439,
+        "w": 852,
         "h": 122
     },
     {
@@ -1422,14 +1505,39 @@
         },
         "nodes": [
             "bf4e9fee336ef936",
-            "b5cde2396f73af0a",
-            "b83ed6ca1bc2b192",
             "3fd4ceb10de1cfab",
-            "c5d4d69d8f162e46"
+            "c5d4d69d8f162e46",
+            "af2437cdf2b8ab4f",
+            "9b2070f55ade82e4",
+            "b42def8140b0cba0",
+            "cc1c4fb16748fe41"
+        ],
+        "x": 104,
+        "y": 159,
+        "w": 762,
+        "h": 122
+    },
+    {
+        "id": "27ea51b68dd32fdf",
+        "type": "group",
+        "z": "bbd6e1207d3b5780",
+        "name": "Exterior bright",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "367a2accbc58bb3e",
+            "85adb1a497fb1f91",
+            "1d7a72c54ae4d821",
+            "064a376469bdecd6"
         ],
         "x": 104,
         "y": 119,
-        "w": 602,
+        "w": 512,
         "h": 82
     },
     {
@@ -2236,7 +2344,7 @@
         "allowInsecureRequest": false,
         "manufacturer": "RADER",
         "model": "1.4.3",
-        "serialNo": "1101",
+        "serialNo": "1104",
         "firmwareRev": "1.4.3",
         "hardwareRev": "1.4.3",
         "softwareRev": "1.4.3",
@@ -2260,6 +2368,84 @@
         "width": "6",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "052cfd13a707aad1",
+        "type": "homekit-standalone",
+        "accessoryCategory": "8",
+        "bridgeName": "Upstairs Off",
+        "hostType": 1,
+        "pinCode": "212-16-400",
+        "port": "",
+        "advertiser": "bonjour-hap",
+        "allowInsecureRequest": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "1101",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "customMdnsConfig": false,
+        "mdnsMulticast": true,
+        "mdnsInterface": "",
+        "mdnsPort": "",
+        "mdnsIp": "",
+        "mdnsTtl": "",
+        "mdnsLoopback": true,
+        "mdnsReuseAddr": true,
+        "allowMessagePassthrough": true
+    },
+    {
+        "id": "39acd5bf358c69ce",
+        "type": "homekit-standalone",
+        "accessoryCategory": "8",
+        "bridgeName": "Upstairs Bright",
+        "hostType": 1,
+        "pinCode": "602-78-403",
+        "port": "",
+        "advertiser": "bonjour-hap",
+        "allowInsecureRequest": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "1102",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "customMdnsConfig": false,
+        "mdnsMulticast": true,
+        "mdnsInterface": "",
+        "mdnsPort": "",
+        "mdnsIp": "",
+        "mdnsTtl": "",
+        "mdnsLoopback": true,
+        "mdnsReuseAddr": true,
+        "allowMessagePassthrough": true
+    },
+    {
+        "id": "c8f602591c954447",
+        "type": "homekit-standalone",
+        "accessoryCategory": "8",
+        "bridgeName": "Upstairs Night Light",
+        "hostType": 1,
+        "pinCode": "192-64-213",
+        "port": "",
+        "advertiser": "bonjour-hap",
+        "allowInsecureRequest": false,
+        "manufacturer": "RADER",
+        "model": "1.4.3",
+        "serialNo": "1103",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "customMdnsConfig": false,
+        "mdnsMulticast": true,
+        "mdnsInterface": "",
+        "mdnsPort": "",
+        "mdnsIp": "",
+        "mdnsTtl": "",
+        "mdnsLoopback": true,
+        "mdnsReuseAddr": true,
+        "allowMessagePassthrough": true
     },
     {
         "id": "3111257f22032077",
@@ -2352,8 +2538,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
+                "to": "{\"recall\":{\"action\":$env('ACTION')}}",
+                "tot": "jsonata"
             },
             {
                 "t": "set",
@@ -2370,6 +2556,119 @@
         "reg": false,
         "x": 320,
         "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3305bd18b342186b",
+        "type": "switch",
+        "z": "c2b1af43d2d083aa",
+        "name": "is on",
+        "property": "payload.On",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "6753bca7e57c0a11",
+                "8fdcb6029f991956"
+            ]
+        ]
+    },
+    {
+        "id": "8fdcb6029f991956",
+        "type": "change",
+        "z": "c2b1af43d2d083aa",
+        "name": "set grouped light state",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "\"resource/grouped_light/\" & $env('GROUPED_LIGHT_ID')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":$env('STATE')}}",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6753bca7e57c0a11",
+        "type": "change",
+        "z": "c2b1af43d2d083aa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "delay",
+                "pt": "msg",
+                "to": "DELAY",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "63779ff30b60e45f"
+            ]
+        ]
+    },
+    {
+        "id": "63779ff30b60e45f",
+        "type": "trigger",
+        "z": "c2b1af43d2d083aa",
+        "name": "send {\"On\":false} after $DELAY milliseconds",
+        "op1": "",
+        "op2": "{\"On\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": true,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 570,
+        "y": 120,
         "wires": [
             []
         ]
@@ -9439,76 +9738,10 @@
         "name": "upstairs nightlight",
         "links": [],
         "x": 145,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
                 "29f18353270c8144"
-            ]
-        ]
-    },
-    {
-        "id": "53896c6ccbb38daf",
-        "type": "link out",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "",
-        "mode": "return",
-        "links": [],
-        "x": 655,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "8df41f8cb1704898",
-        "type": "link out",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "",
-        "mode": "return",
-        "links": [],
-        "x": 695,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "9d6b6d6e6652b261",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "activate nightlight",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/48c39b9f-1599-4a5c-b7f6-bad6cad4029a",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"active\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 410,
-        "y": 260,
-        "wires": [
-            [
-                "53509cbc2f897eb4"
             ]
         ]
     },
@@ -9522,54 +9755,10 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 590,
-        "y": 260,
+        "x": 830,
+        "y": 340,
         "wires": [
-            [
-                "8df41f8cb1704898"
-            ]
-        ]
-    },
-    {
-        "id": "ef4934ae5d33ba45",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "turn upstairs off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light/9c1c7975-2f47-4552-bac8-c19b643cd678",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":false}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 60,
-        "wires": [
-            [
-                "a03344fb9a787ea4"
-            ]
+            []
         ]
     },
     {
@@ -9582,12 +9771,10 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 550,
+        "x": 750,
         "y": 60,
         "wires": [
-            [
-                "53896c6ccbb38daf"
-            ]
+            []
         ]
     },
     {
@@ -9611,11 +9798,11 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 230,
+        "x": 240,
         "y": 60,
         "wires": [
             [
-                "ef4934ae5d33ba45"
+                "5698cb3902975118"
             ]
         ]
     },
@@ -9641,10 +9828,10 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 240,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
-                "9d6b6d6e6652b261"
+                "f761e899c90315af"
             ]
         ]
     },
@@ -9692,8 +9879,8 @@
         "characteristicProperties": "{}",
         "waitForSetupMsg": false,
         "outputs": 2,
-        "x": 430,
-        "y": 380,
+        "x": 440,
+        "y": 500,
         "wires": [
             [
                 "92f57517e3b8ec13"
@@ -9711,8 +9898,8 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 850,
-        "y": 360,
+        "x": 860,
+        "y": 480,
         "wires": [
             []
         ]
@@ -9730,8 +9917,8 @@
                 "type": "str"
             }
         ],
-        "x": 660,
-        "y": 380,
+        "x": 670,
+        "y": 500,
         "wires": [
             [
                 "03d1ba21a2aff238"
@@ -9750,8 +9937,8 @@
         "links": [
             "ff3198be7493caff"
         ],
-        "x": 285,
-        "y": 400,
+        "x": 295,
+        "y": 520,
         "wires": [
             [
                 "6c0b68a0f9d57b70"
@@ -9769,7 +9956,7 @@
             "ea614e4cb18d655b"
         ],
         "x": 805,
-        "y": 400,
+        "y": 520,
         "wires": []
     },
     {
@@ -9793,8 +9980,8 @@
         "payloadType": "json",
         "topic": "topic",
         "topicType": "msg",
-        "x": 240,
-        "y": 360,
+        "x": 250,
+        "y": 480,
         "wires": [
             [
                 "6c0b68a0f9d57b70"
@@ -9809,7 +9996,7 @@
         "name": "upstairs dynamic sunset",
         "links": [],
         "x": 145,
-        "y": 360,
+        "y": 480,
         "wires": [
             [
                 "943b552f11e2c580"
@@ -9824,64 +10011,10 @@
         "name": "upstairs bright",
         "links": [],
         "x": 145,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
                 "c5d4d69d8f162e46"
-            ]
-        ]
-    },
-    {
-        "id": "b5cde2396f73af0a",
-        "type": "link out",
-        "z": "e44149a93fbe9b1b",
-        "g": "83a2d6e5f2f3347b",
-        "name": "",
-        "mode": "return",
-        "links": [],
-        "x": 665,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "b83ed6ca1bc2b192",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "83a2d6e5f2f3347b",
-        "name": "activate bright",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/8c5f011c-bc6f-49a8-8d82-9d1db302c87c",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"active\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 160,
-        "wires": [
-            [
-                "3fd4ceb10de1cfab"
             ]
         ]
     },
@@ -9895,12 +10028,10 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 560,
-        "y": 160,
+        "x": 770,
+        "y": 200,
         "wires": [
-            [
-                "b5cde2396f73af0a"
-            ]
+            []
         ]
     },
     {
@@ -9925,12 +10056,346 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 230,
-        "y": 160,
+        "y": 200,
         "wires": [
             [
-                "b83ed6ca1bc2b192"
+                "9b2070f55ade82e4"
             ]
         ]
+    },
+    {
+        "id": "5698cb3902975118",
+        "type": "homekit-service",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "isParent": true,
+        "hostType": "1",
+        "bridge": "",
+        "accessoryId": "052cfd13a707aad1",
+        "parentService": "",
+        "name": "Upstairs Off",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "NRCHKB",
+        "model": "1.4.3",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "f965bbf79663681e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "af2437cdf2b8ab4f",
+        "type": "subflow:a03a3519abf4e656",
+        "z": "e44149a93fbe9b1b",
+        "g": "83a2d6e5f2f3347b",
+        "name": "",
+        "env": [
+            {
+                "name": "SCENE_ID",
+                "value": "8c5f011c-bc6f-49a8-8d82-9d1db302c87c",
+                "type": "str"
+            },
+            {
+                "name": "ACTION",
+                "value": "active",
+                "type": "str"
+            }
+        ],
+        "x": 580,
+        "y": 220,
+        "wires": [
+            [
+                "3fd4ceb10de1cfab"
+            ],
+            [
+                "cc1c4fb16748fe41"
+            ]
+        ]
+    },
+    {
+        "id": "9b2070f55ade82e4",
+        "type": "homekit-service",
+        "z": "e44149a93fbe9b1b",
+        "g": "83a2d6e5f2f3347b",
+        "isParent": true,
+        "hostType": "1",
+        "bridge": "",
+        "accessoryId": "39acd5bf358c69ce",
+        "parentService": "",
+        "name": "Upstairs Bright",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "NRCHKB",
+        "model": "1.4.3",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "af2437cdf2b8ab4f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b42def8140b0cba0",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "83a2d6e5f2f3347b",
+        "name": "upstairs bright auto-off",
+        "links": [
+            "cc1c4fb16748fe41"
+        ],
+        "x": 265,
+        "y": 240,
+        "wires": [
+            [
+                "9b2070f55ade82e4"
+            ]
+        ]
+    },
+    {
+        "id": "cc1c4fb16748fe41",
+        "type": "link out",
+        "z": "e44149a93fbe9b1b",
+        "g": "83a2d6e5f2f3347b",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "b42def8140b0cba0"
+        ],
+        "x": 715,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f761e899c90315af",
+        "type": "homekit-service",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "isParent": true,
+        "hostType": "1",
+        "bridge": "",
+        "accessoryId": "c8f602591c954447",
+        "parentService": "",
+        "name": "Upstairs Night Light",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "NRCHKB",
+        "model": "1.4.3",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "1f8161330cfe56fd"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "59ea234c7c46c4df",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "upstairs nightlight auto-off",
+        "links": [
+            "80113bac5531b428"
+        ],
+        "x": 285,
+        "y": 380,
+        "wires": [
+            [
+                "f761e899c90315af"
+            ]
+        ]
+    },
+    {
+        "id": "1f8161330cfe56fd",
+        "type": "subflow:a03a3519abf4e656",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "",
+        "env": [
+            {
+                "name": "SCENE_ID",
+                "value": "48c39b9f-1599-4a5c-b7f6-bad6cad4029a",
+                "type": "str"
+            },
+            {
+                "name": "ACTION",
+                "value": "active",
+                "type": "str"
+            }
+        ],
+        "x": 640,
+        "y": 360,
+        "wires": [
+            [
+                "53509cbc2f897eb4"
+            ],
+            [
+                "80113bac5531b428"
+            ]
+        ]
+    },
+    {
+        "id": "80113bac5531b428",
+        "type": "link out",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "59ea234c7c46c4df"
+        ],
+        "x": 775,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f965bbf79663681e",
+        "type": "subflow:c2b1af43d2d083aa",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "",
+        "env": [
+            {
+                "name": "GROUPED_LIGHT_ID",
+                "value": "9c1c7975-2f47-4552-bac8-c19b643cd678",
+                "type": "str"
+            }
+        ],
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "a03344fb9a787ea4"
+            ],
+            [
+                "46fa3c75d5fa6109"
+            ]
+        ]
+    },
+    {
+        "id": "13dadc0fade8c5f9",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "upstairs off auto-off",
+        "links": [
+            "46fa3c75d5fa6109"
+        ],
+        "x": 275,
+        "y": 100,
+        "wires": [
+            [
+                "5698cb3902975118"
+            ]
+        ]
+    },
+    {
+        "id": "46fa3c75d5fa6109",
+        "type": "link out",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "13dadc0fade8c5f9"
+        ],
+        "x": 695,
+        "y": 100,
+        "wires": []
     },
     {
         "id": "07987419335624ad",
@@ -9967,7 +10432,7 @@
         "name": "exterior dynamic sunset",
         "links": [],
         "x": 145,
-        "y": 160,
+        "y": 260,
         "wires": [
             [
                 "39745d9a5b6bda0e"
@@ -9983,7 +10448,7 @@
         "mode": "return",
         "links": [],
         "x": 575,
-        "y": 160,
+        "y": 260,
         "wires": []
     },
     {
@@ -9994,7 +10459,7 @@
         "name": "exterior dynamic tribal",
         "links": [],
         "x": 145,
-        "y": 260,
+        "y": 360,
         "wires": [
             [
                 "3102f0e3b1f6f9aa"
@@ -10010,7 +10475,7 @@
         "mode": "return",
         "links": [],
         "x": 555,
-        "y": 260,
+        "y": 360,
         "wires": []
     },
     {
@@ -10084,7 +10549,7 @@
         ],
         "timeout": "30",
         "x": 470,
-        "y": 160,
+        "y": 260,
         "wires": [
             [
                 "024349b236dcc7a7"
@@ -10102,7 +10567,7 @@
         ],
         "timeout": "30",
         "x": 450,
-        "y": 260,
+        "y": 360,
         "wires": [
             [
                 "b2d188bc1f4597f4"
@@ -10144,7 +10609,7 @@
         "to": "",
         "reg": false,
         "x": 280,
-        "y": 160,
+        "y": 260,
         "wires": [
             [
                 "ff30039514afa80f"
@@ -10186,7 +10651,7 @@
         "to": "",
         "reg": false,
         "x": 270,
-        "y": 260,
+        "y": 360,
         "wires": [
             [
                 "3e35d1ae595317cd"
@@ -10201,7 +10666,7 @@
         "name": "exterior dynamic spooky",
         "links": [],
         "x": 145,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "e0b19f1b2a69b6b3"
@@ -10217,7 +10682,7 @@
         "mode": "return",
         "links": [],
         "x": 575,
-        "y": 360,
+        "y": 460,
         "wires": []
     },
     {
@@ -10231,7 +10696,7 @@
         ],
         "timeout": "30",
         "x": 470,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "22311d2f89d14cea"
@@ -10273,7 +10738,7 @@
         "to": "",
         "reg": false,
         "x": 280,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "7b87464fad0f249d"
@@ -10288,7 +10753,7 @@
         "name": "exterior dynamic jolly",
         "links": [],
         "x": 145,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "a8294e046fa06858"
@@ -10304,7 +10769,7 @@
         "mode": "return",
         "links": [],
         "x": 565,
-        "y": 460,
+        "y": 560,
         "wires": []
     },
     {
@@ -10318,7 +10783,7 @@
         ],
         "timeout": "30",
         "x": 460,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "a58919c2ef958bac"
@@ -10360,10 +10825,97 @@
         "to": "",
         "reg": false,
         "x": 270,
-        "y": 460,
+        "y": 560,
         "wires": [
             [
                 "44286bf375cd44bc"
+            ]
+        ]
+    },
+    {
+        "id": "367a2accbc58bb3e",
+        "type": "link in",
+        "z": "bbd6e1207d3b5780",
+        "g": "27ea51b68dd32fdf",
+        "name": "exterior bright",
+        "links": [],
+        "x": 145,
+        "y": 160,
+        "wires": [
+            [
+                "1d7a72c54ae4d821"
+            ]
+        ]
+    },
+    {
+        "id": "85adb1a497fb1f91",
+        "type": "link out",
+        "z": "bbd6e1207d3b5780",
+        "g": "27ea51b68dd32fdf",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 575,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1d7a72c54ae4d821",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "27ea51b68dd32fdf",
+        "name": "activate exterior bright",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light/27e1e1eb-6b72-434e-a301-47fab0ec5f1b",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "064a376469bdecd6"
+            ]
+        ]
+    },
+    {
+        "id": "064a376469bdecd6",
+        "type": "link call",
+        "z": "bbd6e1207d3b5780",
+        "g": "27ea51b68dd32fdf",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "85adb1a497fb1f91"
             ]
         ]
     }
