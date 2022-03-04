@@ -8,14 +8,6 @@
         "env": []
     },
     {
-        "id": "a486b18e63bb548a",
-        "type": "tab",
-        "label": "Hue Utilities",
-        "disabled": false,
-        "info": "Register Node-RED as an authorized client for the Hue Bridge API. Access Hue configuration metadata.",
-        "env": []
-    },
-    {
         "id": "a00ccef1301f21e3",
         "type": "tab",
         "label": "Hue API",
@@ -133,7 +125,7 @@
     {
         "id": "a03a3519abf4e656",
         "type": "subflow",
-        "name": "Hue Scene Auto-Off",
+        "name": "HomeKit Switch Auto-Off",
         "info": "If the incoming message indicates that the corresponding HomeKit virtual switch was turned on, activate the corresponding Hue dynamic scene using the first output and send a message to turn the virtual switch off after a delay using the second output.\n\nBoth the scene id and auto-off delay are configurable using environment variables defined by this subflow. The default delay is 1000 milliseconds. There is no default scene id.",
         "category": "waubesa",
         "in": [
@@ -149,109 +141,27 @@
         ],
         "out": [
             {
-                "x": 490,
+                "x": 550,
                 "y": 40,
-                "wires": [
-                    {
-                        "id": "39c7e64c9e23526f",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 830,
-                "y": 120,
                 "wires": [
                     {
                         "id": "73c278982d46a137",
                         "port": 0
                     }
                 ]
-            }
-        ],
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "type": "str",
-                "value": ""
             },
             {
-                "name": "DELAY",
-                "type": "num",
-                "value": "1000"
-            },
-            {
-                "name": "ACTION",
-                "type": "str",
-                "value": "dynamic_palette"
-            }
-        ],
-        "meta": {},
-        "color": "#DDAA99",
-        "inputLabels": [
-            "from HomeKit"
-        ],
-        "outputLabels": [
-            "to Hue",
-            "to HomeKit"
-        ]
-    },
-    {
-        "id": "c2b1af43d2d083aa",
-        "type": "subflow",
-        "name": "Hue Group Auto-Off",
-        "info": "",
-        "category": "waubesa",
-        "in": [
-            {
-                "x": 40,
-                "y": 80,
-                "wires": [
-                    {
-                        "id": "3305bd18b342186b"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 490,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "8fdcb6029f991956",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 830,
+                "x": 570,
                 "y": 120,
                 "wires": [
                     {
-                        "id": "63779ff30b60e45f",
-                        "port": 0
+                        "id": "73c278982d46a137",
+                        "port": 1
                     }
                 ]
             }
         ],
-        "env": [
-            {
-                "name": "GROUPED_LIGHT_ID",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "DELAY",
-                "type": "str",
-                "value": "1000"
-            },
-            {
-                "name": "STATE",
-                "type": "bool",
-                "value": "false"
-            }
-        ],
+        "env": [],
         "meta": {},
         "color": "#DDAA99",
         "inputLabels": [
@@ -283,7 +193,7 @@
             "cd3d6cfea67f490b"
         ],
         "x": 24,
-        "y": 119,
+        "y": 379,
         "w": 652,
         "h": 162
     },
@@ -306,10 +216,13 @@
             "c8b57ca242b2ae3f",
             "516b3f2c9acec645",
             "50168734c0b29b78",
-            "8831ddc00ec107b7"
+            "8831ddc00ec107b7",
+            "dfb11f408f97f019"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 1142,
+        "h": 122
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -330,10 +243,13 @@
             "b33691546f7f459a",
             "fb7fed76720fc92b",
             "bce7890124363cda",
-            "756da2d89c35b6e7"
+            "756da2d89c35b6e7",
+            "7bac63592e9b8ed2"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 1062,
+        "h": 122
     },
     {
         "id": "afbdc8b60c682c85",
@@ -354,10 +270,13 @@
             "edbb89b1218fdd21",
             "a5ed6c2a7a6ecc4b",
             "f3b5b3504bed2a9f",
-            "1ee3abdcfb6e4f66"
+            "1ee3abdcfb6e4f66",
+            "fc49d70fecf99c3f"
         ],
         "x": 104,
-        "y": 359
+        "y": 359,
+        "w": 1002,
+        "h": 122
     },
     {
         "id": "03822925b892df4a",
@@ -378,10 +297,13 @@
             "58da5eea28596fe8",
             "44286bc52974ad2c",
             "78740188db3dbb4f",
-            "c80785a904efef43"
+            "c80785a904efef43",
+            "ed213c0451c27d57"
         ],
         "x": 104,
-        "y": 499
+        "y": 499,
+        "w": 1062,
+        "h": 122
     },
     {
         "id": "cd63dc8a5bea4a7b",
@@ -402,10 +324,13 @@
             "121066d736217b6f",
             "ed6c0a1774b28970",
             "fe1d9d0bf695b5ae",
-            "3df57be73bf0dbab"
+            "3df57be73bf0dbab",
+            "80fcc505d2b2855b"
         ],
         "x": 104,
-        "y": 319
+        "y": 319,
+        "w": 1122,
+        "h": 122
     },
     {
         "id": "09145a35749b6075",
@@ -426,11 +351,12 @@
             "b39327cac7d0963b",
             "d680abaf581704e2",
             "69a6d0ff17b658f6",
-            "0b7b6bf3af94c4e2"
+            "0b7b6bf3af94c4e2",
+            "dad70d5e61ee644a"
         ],
         "x": 104,
         "y": 319,
-        "w": 882,
+        "w": 1122,
         "h": 122
     },
     {
@@ -452,10 +378,13 @@
             "e487f7c92198e2d9",
             "92494a06e41a9e67",
             "2b08e528f83d530f",
-            "dcbc5164a2353882"
+            "dcbc5164a2353882",
+            "8b4e14741c89105a"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 1142,
+        "h": 122
     },
     {
         "id": "f025bfd6f097a4fb",
@@ -476,10 +405,13 @@
             "341ee6d1ad26420a",
             "5533dd23e42b175e",
             "5fcdc1f62b3f9591",
-            "c91a75ea0372c809"
+            "c91a75ea0372c809",
+            "4addd031d3d6b37a"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 1122,
+        "h": 122
     },
     {
         "id": "cf5ee15f74249e75",
@@ -500,10 +432,13 @@
             "bac3ee63c643d149",
             "fb54f26f0dad49e1",
             "94909a14345aa280",
-            "ceb9e298287ac885"
+            "ceb9e298287ac885",
+            "741739b5fef7b4ae"
         ],
         "x": 104,
-        "y": 319
+        "y": 319,
+        "w": 1082,
+        "h": 122
     },
     {
         "id": "8b872b3ffa26442a",
@@ -524,10 +459,13 @@
             "5a3f99ce6e37c342",
             "9a1abd81306e27d8",
             "9f773d2383d16f4a",
-            "b1de879ae3a55694"
+            "b1de879ae3a55694",
+            "830596ceee24c19d"
         ],
         "x": 104,
-        "y": 319
+        "y": 319,
+        "w": 1062,
+        "h": 122
     },
     {
         "id": "306c4351d83922a0",
@@ -548,37 +486,13 @@
             "b4685677eba44b14",
             "b279797e4ff9583c",
             "35a8a1bfbb990780",
-            "0999c6d637cad78f"
+            "0999c6d637cad78f",
+            "2785e315bcd41864"
         ],
         "x": 104,
-        "y": 219
-    },
-    {
-        "id": "e492e53de9a6a4b2",
-        "type": "group",
-        "z": "a486b18e63bb548a",
-        "name": "Format essential scene metadata as CSV file",
-        "style": {
-            "stroke": "#000000",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "dd68349964d923f0",
-            "b546410469e09dfd",
-            "df324f1d8f91bad6",
-            "9a8785bef4a3c216",
-            "f4363b0dee3f28c2",
-            "aae7f13fb4983752",
-            "b19b665551629c84",
-            "921482153cc4cbee"
-        ],
-        "x": 14,
-        "y": 19,
-        "w": 732,
-        "h": 142
+        "y": 219,
+        "w": 1082,
+        "h": 122
     },
     {
         "id": "ce88172c5dbc9f67",
@@ -604,73 +518,6 @@
         "h": 82
     },
     {
-        "id": "ece1d46940da4c28",
-        "type": "group",
-        "z": "a486b18e63bb548a",
-        "name": "Fetch metadata from Hue Bridge",
-        "style": {
-            "stroke": "#000000",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "92cb4539546013c7",
-            "d266dcd11293e764",
-            "c9813b05be6fdd1d",
-            "b5aeec64abdb74b3",
-            "7433b28f05c7123c",
-            "66ac7daa73b49c74",
-            "5f1de1e8eac5c36c",
-            "2b40e5c5f409eb73",
-            "7af3735c8d01417b",
-            "b7f8794da2645383",
-            "1811e6179bcf3a2a",
-            "acf4b02eb9c2944f",
-            "a8d9ae979a79a291",
-            "c8a641228f77df4a",
-            "eb1e6772883ed59a",
-            "e9c782f71d955fea",
-            "492127c278e834ff",
-            "a2bf65b06c9693cb",
-            "d5bd1ae920d31f6a",
-            "602a08f07bb5c4eb",
-            "30a1621d28e3aefd",
-            "aba8c693e9c8c260",
-            "814e92b2e34636f7",
-            "ea06e68a3003aba2"
-        ],
-        "x": 14,
-        "y": 279,
-        "w": 872,
-        "h": 382
-    },
-    {
-        "id": "4dcd09b062dc8b2d",
-        "type": "group",
-        "z": "a486b18e63bb548a",
-        "name": "Format grouped_light metadata as CSV",
-        "style": {
-            "stroke": "#000000",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "a9da1154f9d7a5a3",
-            "375e379656676db6",
-            "b27a4703e288b18a",
-            "bcf129601f3aaec6",
-            "9978eaa0b565f999"
-        ],
-        "x": 14,
-        "y": 179,
-        "w": 892,
-        "h": 82
-    },
-    {
         "id": "22ee265ebc8f4145",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -689,7 +536,9 @@
             "0138e7e799f43a70"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "9863f7d0e5e02f04",
@@ -710,7 +559,9 @@
             "010de9f85ddb70d8"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "d37d044d78f03aa0",
@@ -731,7 +582,9 @@
             "452b71ab2b6b9cbc"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "da475be517aa88b5",
@@ -752,7 +605,9 @@
             "24b893ce1e23ced8"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 562,
+        "h": 82
     },
     {
         "id": "f90e7066853a3096",
@@ -773,7 +628,9 @@
             "7ebd070e1179e8e6"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "baae18f80925c38f",
@@ -794,7 +651,9 @@
             "739e6a9575ac98d1"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "d538e86fd87df7da",
@@ -815,7 +674,9 @@
             "c6cb3c9e25d64167"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "553924701c899b16",
@@ -836,7 +697,9 @@
             "c58f62fd1cd84853"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "59c585708304460f",
@@ -857,7 +720,9 @@
             "03f541eb16e84d2c"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 562,
+        "h": 82
     },
     {
         "id": "015eb20255ea124a",
@@ -878,7 +743,9 @@
             "52c607e4b5b367b3"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "df6fa7a4e32b9dcb",
@@ -899,7 +766,9 @@
             "acdcef9eabb80c6f"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "d61cf941ed6e2f41",
@@ -920,7 +789,9 @@
             "e5f5b7f992f2f993"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 562,
+        "h": 82
     },
     {
         "id": "05adbe53c647f6a0",
@@ -1010,7 +881,9 @@
             "09e66137f5534a94"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "2a2f4872a0b61c96",
@@ -1031,7 +904,9 @@
             "97b5441cbdc61d34"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "21216ba2bb64783b",
@@ -1052,7 +927,9 @@
             "795bd722da40d263"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "1569ee47c2914e47",
@@ -1073,7 +950,9 @@
             "79b71756a922dd7b"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "04892aa6b468d829",
@@ -1094,7 +973,9 @@
             "e1beb535798372cf"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "96d10522d52f4c67",
@@ -1115,7 +996,9 @@
             "b5af0f817be71911"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "afb4738a833a66f0",
@@ -1136,7 +1019,9 @@
             "a226276cc09f7be7"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "fa1c2bd7ca5ab8cc",
@@ -1157,7 +1042,9 @@
             "0c1f1f91441234e8"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "b4ef3182e14fb20f",
@@ -1228,7 +1115,7 @@
             "98ca5e2a43a51ba6"
         ],
         "x": 14,
-        "y": 299,
+        "y": 559,
         "w": 912,
         "h": 322
     },
@@ -1249,13 +1136,14 @@
             "a03344fb9a787ea4",
             "04ac337e1df1e0f5",
             "5698cb3902975118",
-            "f965bbf79663681e",
             "13dadc0fade8c5f9",
-            "46fa3c75d5fa6109"
+            "46fa3c75d5fa6109",
+            "3b999d05ee2f3e39",
+            "07d2539e60d53063"
         ],
         "x": 104,
         "y": 19,
-        "w": 732,
+        "w": 962,
         "h": 122
     },
     {
@@ -1277,11 +1165,12 @@
             "f761e899c90315af",
             "59ea234c7c46c4df",
             "1f8161330cfe56fd",
-            "80113bac5531b428"
+            "80113bac5531b428",
+            "b281f4fa1ec7d5a6"
         ],
         "x": 104,
         "y": 299,
-        "w": 822,
+        "w": 1042,
         "h": 122
     },
     {
@@ -1303,11 +1192,12 @@
             "833c49adadf8a7de",
             "744bdeb0874221fa",
             "0556eb1362f54b0e",
-            "65a8e5f3e6aac863"
+            "65a8e5f3e6aac863",
+            "cc37ef8f3a838181"
         ],
         "x": 104,
         "y": 299,
-        "w": 842,
+        "w": 1082,
         "h": 122
     },
     {
@@ -1329,11 +1219,12 @@
             "2632f1c970c5b775",
             "4b0337b646b32207",
             "4d0bed4baebdfc11",
-            "290b13c645ba6d83"
+            "290b13c645ba6d83",
+            "a9b06ca98c889310"
         ],
         "x": 104,
         "y": 439,
-        "w": 822,
+        "w": 1042,
         "h": 122
     },
     {
@@ -1355,11 +1246,12 @@
             "a1aa13c83159c9fb",
             "2f920f2d90af3a23",
             "e8d26688fdb3dc99",
-            "9751f26fd63938dd"
+            "9751f26fd63938dd",
+            "7a9777b958620aa0"
         ],
         "x": 104,
         "y": 579,
-        "w": 842,
+        "w": 1082,
         "h": 122
     },
     {
@@ -1381,11 +1273,12 @@
             "88a44520a6e88d1e",
             "bcbb21561f70c39c",
             "27a6590ea08d0cd3",
-            "cef5ed063ab91cbd"
+            "cef5ed063ab91cbd",
+            "ad10b924bf13e161"
         ],
         "x": 104,
         "y": 719,
-        "w": 802,
+        "w": 1022,
         "h": 122
     },
     {
@@ -1414,12 +1307,13 @@
             "9cacf8469798d590",
             "5454b97d7f3dec40",
             "8d8b5763b18fd2ef",
-            "1f72b1041f4ebf31"
+            "1f72b1041f4ebf31",
+            "c497540ee43ca72b"
         ],
         "x": 14,
         "y": 519,
-        "w": 968,
-        "h": 668
+        "w": 1078,
+        "h": 896
     },
     {
         "id": "80e068d5fcb614bd",
@@ -1440,7 +1334,9 @@
             "762031db9913f8a2"
         ],
         "x": 104,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "7872f889f870b7ea",
@@ -1461,10 +1357,13 @@
             "1b86868f195f85f4",
             "1e9eea60806a6dc1",
             "e1a00de59a8b2fff",
-            "69e6cbf94331b8e7"
+            "69e6cbf94331b8e7",
+            "dc7a211772050136"
         ],
         "x": 104,
-        "y": 639
+        "y": 639,
+        "w": 1022,
+        "h": 122
     },
     {
         "id": "a76cb5337e8a2ff0",
@@ -1485,11 +1384,12 @@
             "ea614e4cb18d655b",
             "ff3198be7493caff",
             "943b552f11e2c580",
-            "4b9d0f81d3a59f32"
+            "4b9d0f81d3a59f32",
+            "e8bb733e9e38bb56"
         ],
         "x": 104,
         "y": 439,
-        "w": 842,
+        "w": 1082,
         "h": 122
     },
     {
@@ -1511,11 +1411,12 @@
             "af2437cdf2b8ab4f",
             "9b2070f55ade82e4",
             "b42def8140b0cba0",
-            "cc1c4fb16748fe41"
+            "cc1c4fb16748fe41",
+            "8e1a1e8c143be16d"
         ],
         "x": 104,
         "y": 159,
-        "w": 762,
+        "w": 962,
         "h": 122
     },
     {
@@ -1537,11 +1438,12 @@
             "d751ef890196434e",
             "9744753ad712956d",
             "e9fac1e138b905f5",
-            "9f455b49edca7924"
+            "9f455b49edca7924",
+            "9c0f0fa02267d0cf"
         ],
         "x": 104,
         "y": 159,
-        "w": 762,
+        "w": 962,
         "h": 122
     },
     {
@@ -1558,16 +1460,17 @@
         },
         "nodes": [
             "3ea0d053fe04c90c",
-            "b89c95c113e8b0ed",
             "65354cde7927a4f3",
             "4e5d71543542a20d",
             "663a44209444b705",
             "5bedbe838f471946",
-            "07987419335624ad"
+            "07987419335624ad",
+            "d4ec4fdfc7cf627d",
+            "dc88f32db415a607"
         ],
         "x": 104,
         "y": 19,
-        "w": 722,
+        "w": 962,
         "h": 122
     },
     {
@@ -1575,11 +1478,12 @@
         "type": "group",
         "z": "a767582f3959afc9",
         "g": "5fc59a3213472236",
-        "name": "activate theme at sunset",
+        "name": "theme at sunset",
         "style": {
             "stroke": "#000000",
             "label": true,
-            "color": "#000000"
+            "color": "#000000",
+            "label-position": "sw"
         },
         "nodes": [
             "1caaa7c147984747",
@@ -1589,10 +1493,10 @@
             "c0f8dbc5f54fa68a",
             "050497e834313a83"
         ],
-        "x": 734,
-        "y": 899,
+        "x": 844,
+        "y": 959,
         "w": 222,
-        "h": 242
+        "h": 250
     },
     {
         "id": "8d8b5763b18fd2ef",
@@ -1603,17 +1507,18 @@
         "style": {
             "label": true,
             "stroke": "#000000",
-            "color": "#000000"
+            "color": "#000000",
+            "label-position": "sw"
         },
         "nodes": [
             "1fa973a7d8e65e3c",
             "f455df4aef69f558",
             "ab13215949b2a295"
         ],
-        "x": 584,
-        "y": 999,
+        "x": 844,
+        "y": 1219,
         "w": 82,
-        "h": 162
+        "h": 170
     },
     {
         "id": "1f72b1041f4ebf31",
@@ -1624,17 +1529,112 @@
         "style": {
             "stroke": "#000000",
             "label": true,
-            "color": "#000000"
+            "color": "#000000",
+            "label-position": "sw"
         },
         "nodes": [
             "f597e3f10639062f",
             "a0432bc469c97be7",
             "909e36f9b6744c0f"
         ],
-        "x": 644,
-        "y": 759,
+        "x": 844,
+        "y": 779,
         "w": 89,
-        "h": 162
+        "h": 170
+    },
+    {
+        "id": "0e773b929fa611fc",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "name": "Fetch metadata from Hue Bridge",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "47c0025fa5554760",
+            "f3799f4ff14bea51",
+            "c2fd65f81f68d756",
+            "a76c08fa04553169",
+            "a98b4a1d87f1dbb3",
+            "d727f20d5c05cc20",
+            "7d82f751637a5a1a",
+            "7aa5117877bb9be3",
+            "a7d71b3f6c391dfe",
+            "b1a0ee2cac4ff377",
+            "99d6fe19c2ac8b00",
+            "577ec01858a1dd1c",
+            "09d40e0502e98f9e",
+            "6c0f886bd924f3c8",
+            "4bf5068d0a1ab439",
+            "c36f99ba5a694765",
+            "3c5035a33e0c30ec",
+            "5b4b25ccdbacafb0",
+            "7271e14257e6298d",
+            "66997012e5ec2dcc",
+            "cd209179cce4b89c",
+            "6ebd8b10206b2004",
+            "1661dd9deef32371",
+            "cef155cb1aab4bb7"
+        ],
+        "x": 14,
+        "y": 899,
+        "w": 872,
+        "h": 382
+    },
+    {
+        "id": "d10c2cc141685d58",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "name": "Format essential scene metadata as CSV file",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "4943f5af73a5bf48",
+            "d4d50a9a54f8b94d",
+            "b28b203648befad7",
+            "119af3d06a1a5822",
+            "de56180ba8217181",
+            "c8b228bf5d62b9ca",
+            "238f5dde3170c623",
+            "556a3b5f92d47a39"
+        ],
+        "x": 14,
+        "y": 119,
+        "w": 732,
+        "h": 142
+    },
+    {
+        "id": "4cc5ac453c0d392d",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "name": "Format grouped_light metadata as CSV",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "815e607b4d03acec",
+            "f7e8659bca155f16",
+            "7ee5e814ee0fdcde",
+            "cb4524c3ccdc8e45",
+            "16ecbc4b7aeb938c"
+        ],
+        "x": 14,
+        "y": 279,
+        "w": 892,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -2750,8 +2750,7 @@
         "y": 80,
         "wires": [
             [
-                "84e4cd1d8c126701",
-                "39c7e64c9e23526f"
+                "73c278982d46a137"
             ]
         ]
     },
@@ -2759,201 +2758,23 @@
         "id": "73c278982d46a137",
         "type": "trigger",
         "z": "a03a3519abf4e656",
-        "name": "send {\"On\":false} after $DELAY milliseconds",
+        "name": "send {\"On\":false} after 1 second",
         "op1": "",
         "op2": "{\"On\":false}",
-        "op1type": "nul",
+        "op1type": "pay",
         "op2type": "json",
         "duration": "1",
         "extend": true,
-        "overrideDelay": true,
+        "overrideDelay": false,
         "units": "s",
         "reset": "",
         "bytopic": "all",
         "topic": "topic",
-        "outputs": 1,
-        "x": 570,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "84e4cd1d8c126701",
-        "type": "change",
-        "z": "a03a3519abf4e656",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "delay",
-                "pt": "msg",
-                "to": "DELAY",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 120,
-        "wires": [
-            [
-                "73c278982d46a137"
-            ]
-        ]
-    },
-    {
-        "id": "39c7e64c9e23526f",
-        "type": "change",
-        "z": "a03a3519abf4e656",
-        "name": "start dynamic scene",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "\"resource/scene/\" & $env('SCENE_ID')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":$env('ACTION')}}",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 320,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3305bd18b342186b",
-        "type": "switch",
-        "z": "c2b1af43d2d083aa",
-        "name": "is on",
-        "property": "payload.On",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 130,
+        "outputs": 2,
+        "x": 330,
         "y": 80,
         "wires": [
-            [
-                "6753bca7e57c0a11",
-                "8fdcb6029f991956"
-            ]
-        ]
-    },
-    {
-        "id": "8fdcb6029f991956",
-        "type": "change",
-        "z": "c2b1af43d2d083aa",
-        "name": "set grouped light state",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "\"resource/grouped_light/\" & $env('GROUPED_LIGHT_ID')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":$env('STATE')}}",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 320,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6753bca7e57c0a11",
-        "type": "change",
-        "z": "c2b1af43d2d083aa",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "delay",
-                "pt": "msg",
-                "to": "DELAY",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 120,
-        "wires": [
-            [
-                "63779ff30b60e45f"
-            ]
-        ]
-    },
-    {
-        "id": "63779ff30b60e45f",
-        "type": "trigger",
-        "z": "c2b1af43d2d083aa",
-        "name": "send {\"On\":false} after $DELAY milliseconds",
-        "op1": "",
-        "op2": "{\"On\":false}",
-        "op1type": "nul",
-        "op2type": "json",
-        "duration": "1",
-        "extend": true,
-        "overrideDelay": true,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 570,
-        "y": 120,
-        "wires": [
+            [],
             []
         ]
     },
@@ -3550,7 +3371,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 490,
+        "x": 610,
         "y": 840,
         "wires": []
     },
@@ -3582,7 +3403,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 470,
+        "x": 590,
         "y": 900,
         "wires": [
             [
@@ -3632,8 +3453,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 810,
-        "y": 1040,
+        "x": 920,
+        "y": 1100,
         "wires": [
             [
                 "dd66897cbe03b9f7"
@@ -3659,8 +3480,8 @@
         "links": [
             "f647a32cfdc486f6"
         ],
-        "x": 685,
-        "y": 800,
+        "x": 885,
+        "y": 820,
         "wires": []
     },
     {
@@ -3673,8 +3494,8 @@
         "links": [
             "29334538c0d9b995"
         ],
-        "x": 625,
-        "y": 1120,
+        "x": 885,
+        "y": 1340,
         "wires": []
     },
     {
@@ -3699,7 +3520,7 @@
         "topic": "nodered/time",
         "payload": "night",
         "payloadType": "str",
-        "x": 280,
+        "x": 400,
         "y": 920,
         "wires": [
             [
@@ -3725,7 +3546,7 @@
         "y": 700,
         "wires": [
             [
-                "73dbbeffa4fd70f8"
+                "c497540ee43ca72b"
             ]
         ]
     },
@@ -3772,7 +3593,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 6,
-        "x": 270,
+        "x": 390,
         "y": 700,
         "wires": [
             [
@@ -3816,7 +3637,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
+        "x": 630,
         "y": 740,
         "wires": [
             [
@@ -3838,7 +3659,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 670,
+        "x": 790,
         "y": 740,
         "wires": []
     },
@@ -3856,7 +3677,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 480,
+        "x": 600,
         "y": 680,
         "wires": []
     },
@@ -3874,7 +3695,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 480,
+        "x": 600,
         "y": 640,
         "wires": []
     },
@@ -3892,7 +3713,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 470,
+        "x": 590,
         "y": 600,
         "wires": []
     },
@@ -3910,7 +3731,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 470,
+        "x": 590,
         "y": 560,
         "wires": []
     },
@@ -3923,7 +3744,7 @@
         "pauseType": "rate",
         "timeout": "5",
         "timeoutUnits": "seconds",
-        "rate": "2",
+        "rate": "4",
         "nbRateUnits": "1",
         "rateUnits": "second",
         "randomFirst": "1",
@@ -3950,8 +3771,8 @@
         "links": [
             "3ed1a4d37d1548b4"
         ],
-        "x": 625,
-        "y": 1040,
+        "x": 885,
+        "y": 1260,
         "wires": []
     },
     {
@@ -3964,8 +3785,8 @@
         "links": [
             "07987419335624ad"
         ],
-        "x": 625,
-        "y": 1080,
+        "x": 885,
+        "y": 1300,
         "wires": []
     },
     {
@@ -3978,8 +3799,8 @@
         "links": [
             "4b9d0f81d3a59f32"
         ],
-        "x": 915,
-        "y": 940,
+        "x": 1025,
+        "y": 1000,
         "wires": []
     },
     {
@@ -3992,8 +3813,8 @@
         "links": [
             "cfc9ead710a85bfc"
         ],
-        "x": 915,
-        "y": 980,
+        "x": 1025,
+        "y": 1040,
         "wires": []
     },
     {
@@ -4006,8 +3827,8 @@
         "links": [
             "1c8c72b47cb25bb3"
         ],
-        "x": 915,
-        "y": 1020,
+        "x": 1025,
+        "y": 1080,
         "wires": []
     },
     {
@@ -4020,8 +3841,8 @@
         "links": [
             "db4bc79190f17a6f"
         ],
-        "x": 915,
-        "y": 1060,
+        "x": 1025,
+        "y": 1120,
         "wires": []
     },
     {
@@ -4034,8 +3855,8 @@
         "links": [
             "3022851ad2ddc6ce"
         ],
-        "x": 915,
-        "y": 1100,
+        "x": 1025,
+        "y": 1160,
         "wires": []
     },
     {
@@ -4048,8 +3869,8 @@
         "links": [
             "07ccb0b07e6fada8"
         ],
-        "x": 685,
-        "y": 840,
+        "x": 885,
+        "y": 860,
         "wires": []
     },
     {
@@ -4062,923 +3883,30 @@
         "links": [
             "07987419335624ad"
         ],
-        "x": 685,
-        "y": 880,
+        "x": 885,
+        "y": 900,
         "wires": []
     },
     {
-        "id": "dd68349964d923f0",
-        "type": "inject",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
+        "id": "c497540ee43ca72b",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "g": "5fc59a3213472236",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "scenes",
-        "payloadType": "global",
-        "x": 130,
-        "y": 60,
-        "wires": [
-            [
-                "9a8785bef4a3c216"
-            ]
-        ]
-    },
-    {
-        "id": "b546410469e09dfd",
-        "type": "debug",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "df324f1d8f91bad6",
-        "type": "csv",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\n",
-        "temp": "group_id,group_name,scene_id,scene_name,group_lights",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 290,
-        "y": 120,
-        "wires": [
-            [
-                "921482153cc4cbee"
-            ]
-        ]
-    },
-    {
-        "id": "9a8785bef4a3c216",
-        "type": "split",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 270,
-        "y": 60,
-        "wires": [
-            [
-                "f4363b0dee3f28c2"
-            ]
-        ]
-    },
-    {
-        "id": "f4363b0dee3f28c2",
-        "type": "template",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\n    \"scene_name\": \"{{payload.metadata.name}}\",\n    \"scene_id\": \"{{payload.id}}\",\n    \"group_name\": \"{{payload.group.name}}\",\n    \"group_id\": \"{{payload.group.rid}}\",\n    \"group_lights\": \"{{payload.group.grouped_light}}\"\n}",
-        "output": "json",
-        "x": 400,
-        "y": 60,
-        "wires": [
-            [
-                "aae7f13fb4983752"
-            ]
-        ]
-    },
-    {
-        "id": "aae7f13fb4983752",
-        "type": "join",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "",
-        "mode": "auto",
-        "build": "object",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
         "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": "false",
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "x": 530,
-        "y": 60,
-        "wires": [
-            [
-                "b19b665551629c84"
-            ]
-        ]
-    },
-    {
-        "id": "b19b665551629c84",
-        "type": "function",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "entriesToArray",
-        "func": "let response = []\n\nfor (let id in msg.payload) {\n    response.push(msg.payload[id])\n}\nreturn {payload: response};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 140,
-        "y": 120,
-        "wires": [
-            [
-                "df324f1d8f91bad6"
-            ]
-        ]
-    },
-    {
-        "id": "921482153cc4cbee",
-        "type": "file",
-        "z": "a486b18e63bb548a",
-        "g": "e492e53de9a6a4b2",
-        "name": "",
-        "filename": "/data/scenes.csv",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "utf8",
-        "x": 450,
-        "y": 120,
-        "wires": [
-            [
-                "b546410469e09dfd"
-            ]
-        ]
-    },
-    {
-        "id": "92cb4539546013c7",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "get rooms",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/room",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "GET",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 120,
-        "y": 440,
-        "wires": [
-            [
-                "1811e6179bcf3a2a"
-            ]
-        ]
-    },
-    {
-        "id": "d266dcd11293e764",
-        "type": "function",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "processRoomMetadata",
-        "func": "let rooms = {}\n\nmsg.payload.forEach(room => {\n    rooms[room.id] = room\n})\n\nglobal.set(\"rooms\", rooms)\nreturn {payload: rooms}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 710,
-        "y": 440,
-        "wires": [
-            [
-                "c8a641228f77df4a"
-            ]
-        ]
-    },
-    {
-        "id": "c9813b05be6fdd1d",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "get scenes",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "GET",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 130,
-        "y": 560,
-        "wires": [
-            [
-                "acf4b02eb9c2944f"
-            ]
-        ]
-    },
-    {
-        "id": "b5aeec64abdb74b3",
-        "type": "function",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "processSceneMetadata",
-        "func": "let scenes = {}\nlet rooms = global.get(\"rooms\") || {}\nlet zones = global.get(\"zones\") || {}\n\nlet findGroup = (id, groups) => {\n\n    for (let rid in groups) {\n\n        let group = groups[rid]\n\n        if (group.id == id) {\n            return group\n        }\n    }\n    \n    return undefined\n}\n\nmsg.payload.forEach(scene => {\n\n    scenes[scene.id] = scene\n    \n    let group = findGroup(scene.group.rid, zones)\n    \n    if (group === undefined) {\n        group = findGroup(scene.group.rid, rooms)\n    }\n    \n    if (group !== undefined) {\n        scene.group.name = group.metadata.name\n    }\n    \n    let services = group.grouped_services\n    \n    for (let index = 0; index < services.length; ++index) {\n        \n        let service = services[index]\n        \n        if (service.rtype == \"grouped_light\") {\n            scene.group.grouped_light = service.rid\n        }\n    }\n})\n\nglobal.set(\"scenes\", scenes)\nreturn {payload: scenes}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 560,
-        "wires": [
-            [
-                "30a1621d28e3aefd"
-            ]
-        ]
-    },
-    {
-        "id": "7433b28f05c7123c",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.data",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 470,
-        "y": 440,
-        "wires": [
-            [
-                "d266dcd11293e764"
-            ]
-        ]
-    },
-    {
-        "id": "66ac7daa73b49c74",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.data",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 560,
-        "wires": [
-            [
-                "b5aeec64abdb74b3"
-            ]
-        ]
-    },
-    {
-        "id": "5f1de1e8eac5c36c",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "get zones",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/zone",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "GET",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 120,
-        "y": 380,
-        "wires": [
-            [
-                "b7f8794da2645383"
-            ]
-        ]
-    },
-    {
-        "id": "2b40e5c5f409eb73",
-        "type": "function",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "processZoneMetadata",
-        "func": "let zones = {}\n\nmsg.payload.forEach(zone => {\n    zones[zone.id] = zone\n})\n\nglobal.set(\"zones\", zones)\nreturn {payload: zones}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 380,
-        "wires": [
-            [
-                "92cb4539546013c7"
-            ]
-        ]
-    },
-    {
-        "id": "7af3735c8d01417b",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.data",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 470,
-        "y": 380,
-        "wires": [
-            [
-                "2b40e5c5f409eb73"
-            ]
-        ]
-    },
-    {
-        "id": "b7f8794da2645383",
-        "type": "link call",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
+        "topi": "topic",
         "x": 270,
-        "y": 380,
+        "y": 700,
         "wires": [
             [
-                "7af3735c8d01417b"
+                "73dbbeffa4fd70f8"
             ]
         ]
-    },
-    {
-        "id": "1811e6179bcf3a2a",
-        "type": "link call",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 270,
-        "y": 440,
-        "wires": [
-            [
-                "7433b28f05c7123c"
-            ]
-        ]
-    },
-    {
-        "id": "acf4b02eb9c2944f",
-        "type": "link call",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 290,
-        "y": 560,
-        "wires": [
-            [
-                "66ac7daa73b49c74"
-            ]
-        ]
-    },
-    {
-        "id": "a8d9ae979a79a291",
-        "type": "inject",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 320,
-        "wires": [
-            [
-                "a2bf65b06c9693cb"
-            ]
-        ]
-    },
-    {
-        "id": "c8a641228f77df4a",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "get groups",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "GET",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 130,
-        "y": 500,
-        "wires": [
-            [
-                "492127c278e834ff"
-            ]
-        ]
-    },
-    {
-        "id": "eb1e6772883ed59a",
-        "type": "function",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "processGroupMetadata",
-        "func": "let groups = {}\n\nlet findContainer = (groupId, containers) => {\n\n    for (let containerId in containers) {\n\n        let container = containers[containerId]\n\n        let services = container.grouped_services\n\n        for (let index = 0; index < services.length; ++index) {\n            \n            let service = services[index]\n\n            if (service.rid == groupId) {\n                return container\n            }\n        }\n    }\n\n    return undefined\n}\n\nmsg.payload.forEach(group => {\n\n    let container = findContainer(group.id, global.get('rooms'))\n    \n    if (container === undefined) {\n        container = findContainer(group.id, global.get('zones'))\n    }\n    \n    if (container !== undefined) {\n        group.containerName = container.metadata.name\n        group.containerType = container.type\n    }\n\n    groups[group.id] = group\n})\n\nglobal.set(\"groups\", groups)\nreturn {payload: groups}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 500,
-        "wires": [
-            [
-                "c9813b05be6fdd1d"
-            ]
-        ]
-    },
-    {
-        "id": "e9c782f71d955fea",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.data",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 500,
-        "wires": [
-            [
-                "eb1e6772883ed59a"
-            ]
-        ]
-    },
-    {
-        "id": "492127c278e834ff",
-        "type": "link call",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 290,
-        "y": 500,
-        "wires": [
-            [
-                "e9c782f71d955fea"
-            ]
-        ]
-    },
-    {
-        "id": "a2bf65b06c9693cb",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "get bridge_home",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/bridge_home",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "GET",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 310,
-        "y": 320,
-        "wires": [
-            [
-                "d5bd1ae920d31f6a"
-            ]
-        ]
-    },
-    {
-        "id": "d5bd1ae920d31f6a",
-        "type": "link call",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 490,
-        "y": 320,
-        "wires": [
-            [
-                "602a08f07bb5c4eb"
-            ]
-        ]
-    },
-    {
-        "id": "602a08f07bb5c4eb",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.data",
-                "pt": "msg",
-                "to": "bridge_home",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 690,
-        "y": 320,
-        "wires": [
-            [
-                "5f1de1e8eac5c36c"
-            ]
-        ]
-    },
-    {
-        "id": "a9da1154f9d7a5a3",
-        "type": "debug",
-        "z": "a486b18e63bb548a",
-        "g": "4dcd09b062dc8b2d",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "375e379656676db6",
-        "type": "inject",
-        "z": "a486b18e63bb548a",
-        "g": "4dcd09b062dc8b2d",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "groups",
-        "payloadType": "global",
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "9978eaa0b565f999"
-            ]
-        ]
-    },
-    {
-        "id": "b27a4703e288b18a",
-        "type": "csv",
-        "z": "a486b18e63bb548a",
-        "g": "4dcd09b062dc8b2d",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\n",
-        "temp": "id,id_v1,containerName,containerType",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 450,
-        "y": 220,
-        "wires": [
-            [
-                "bcf129601f3aaec6"
-            ]
-        ]
-    },
-    {
-        "id": "bcf129601f3aaec6",
-        "type": "file",
-        "z": "a486b18e63bb548a",
-        "g": "4dcd09b062dc8b2d",
-        "name": "",
-        "filename": "/data/groups.csv",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "utf8",
-        "x": 610,
-        "y": 220,
-        "wires": [
-            [
-                "a9da1154f9d7a5a3"
-            ]
-        ]
-    },
-    {
-        "id": "30a1621d28e3aefd",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "groups",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 420,
-        "y": 620,
-        "wires": [
-            [
-                "aba8c693e9c8c260"
-            ]
-        ]
-    },
-    {
-        "id": "aba8c693e9c8c260",
-        "type": "split",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "topic",
-        "x": 570,
-        "y": 620,
-        "wires": [
-            [
-                "814e92b2e34636f7"
-            ]
-        ]
-    },
-    {
-        "id": "814e92b2e34636f7",
-        "type": "change",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "'hue/grouped_light/' & topic",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 620,
-        "wires": [
-            [
-                "ea06e68a3003aba2"
-            ]
-        ]
-    },
-    {
-        "id": "9978eaa0b565f999",
-        "type": "function",
-        "z": "a486b18e63bb548a",
-        "g": "4dcd09b062dc8b2d",
-        "name": "entriesToArray",
-        "func": "let response = []\n\nfor (let id in msg.payload) {\n    response.push(msg.payload[id])\n}\nreturn {payload: response};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 220,
-        "wires": [
-            [
-                "b27a4703e288b18a"
-            ]
-        ]
-    },
-    {
-        "id": "ea06e68a3003aba2",
-        "type": "link out",
-        "z": "a486b18e63bb548a",
-        "g": "ece1d46940da4c28",
-        "name": "send hue group metadata as mqtt",
-        "mode": "link",
-        "links": [
-            "a0c7a5e9d9780699"
-        ],
-        "x": 845,
-        "y": 620,
-        "wires": []
     },
     {
         "id": "20ac42d7649c260a",
@@ -4996,7 +3924,7 @@
         "authType": "",
         "senderr": false,
         "x": 510,
-        "y": 160,
+        "y": 420,
         "wires": [
             [
                 "cd3d6cfea67f490b"
@@ -5031,7 +3959,7 @@
         "to": "",
         "reg": false,
         "x": 340,
-        "y": 160,
+        "y": 420,
         "wires": [
             [
                 "20ac42d7649c260a"
@@ -5048,7 +3976,7 @@
             "b38ce20acaea849c"
         ],
         "x": 65,
-        "y": 160,
+        "y": 420,
         "wires": [
             [
                 "c9c806d81ab63ac4"
@@ -5069,7 +3997,7 @@
         ],
         "uncaught": false,
         "x": 530,
-        "y": 240,
+        "y": 500,
         "wires": [
             [
                 "cd3d6cfea67f490b"
@@ -5095,7 +4023,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 170,
-        "y": 160,
+        "y": 420,
         "wires": [
             [
                 "fa870f94fa1ea10b"
@@ -5111,7 +4039,7 @@
         "mode": "return",
         "links": [],
         "x": 635,
-        "y": 200,
+        "y": 460,
         "wires": []
     },
     {
@@ -5218,7 +4146,7 @@
         "withCredentials": true,
         "timeout": "60",
         "x": 570,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "8fdd49d33035acfc"
@@ -5235,7 +4163,7 @@
         "action": "",
         "pretty": false,
         "x": 710,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "650f8e88044d4e0a"
@@ -5277,7 +4205,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "ecafd1d544ef5932"
@@ -5295,7 +4223,7 @@
         ],
         "uncaught": false,
         "x": 90,
-        "y": 340,
+        "y": 600,
         "wires": [
             [
                 "0bd42ca625cb2e0d"
@@ -5321,7 +4249,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 220,
-        "y": 340,
+        "y": 600,
         "wires": [
             [
                 "eefef926c64f8c52"
@@ -5341,7 +4269,7 @@
         "stream": false,
         "addname": "",
         "x": 830,
-        "y": 380,
+        "y": 640,
         "wires": [
             [
                 "a2faf39a80ec7a79"
@@ -5369,7 +4297,7 @@
         "to": "",
         "reg": false,
         "x": 570,
-        "y": 460,
+        "y": 720,
         "wires": [
             [
                 "ef91f919ddca526b"
@@ -5389,7 +4317,7 @@
         "stream": false,
         "addname": "",
         "x": 190,
-        "y": 540,
+        "y": 800,
         "wires": [
             [
                 "44da57190a781760"
@@ -5417,7 +4345,7 @@
         "to": "",
         "reg": false,
         "x": 340,
-        "y": 540,
+        "y": 800,
         "wires": [
             [
                 "9567f601ad32e7dc"
@@ -5440,7 +4368,7 @@
         "expiry": "",
         "broker": "17ac72dd26b80ec7",
         "x": 850,
-        "y": 560,
+        "y": 820,
         "wires": []
     },
     {
@@ -5452,7 +4380,7 @@
         "pauseType": "rate",
         "timeout": "3",
         "timeoutUnits": "seconds",
-        "rate": "2",
+        "rate": "4",
         "nbRateUnits": "1",
         "rateUnits": "second",
         "randomFirst": "1",
@@ -5462,7 +4390,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 710,
-        "y": 560,
+        "y": 820,
         "wires": [
             [
                 "d0f5860d92ae466d"
@@ -5482,7 +4410,7 @@
         "finalize": "",
         "libs": [],
         "x": 530,
-        "y": 560,
+        "y": 820,
         "wires": [
             [
                 "8775dcb36f13b86b"
@@ -5497,10 +4425,11 @@
         "name": "send retained mqtt messages",
         "links": [
             "a1d924eb91dad4cc",
-            "ea06e68a3003aba2"
+            "ea06e68a3003aba2",
+            "cef155cb1aab4bb7"
         ],
         "x": 405,
-        "y": 580,
+        "y": 840,
         "wires": [
             [
                 "9567f601ad32e7dc"
@@ -5526,10 +4455,924 @@
         "payload": "",
         "payloadType": "date",
         "x": 210,
-        "y": 420,
+        "y": 680,
         "wires": [
             [
                 "eefef926c64f8c52"
+            ]
+        ]
+    },
+    {
+        "id": "47c0025fa5554760",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "get rooms",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/room",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 1060,
+        "wires": [
+            [
+                "99d6fe19c2ac8b00"
+            ]
+        ]
+    },
+    {
+        "id": "f3799f4ff14bea51",
+        "type": "function",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "processRoomMetadata",
+        "func": "let rooms = {}\n\nmsg.payload.forEach(room => {\n    rooms[room.id] = room\n})\n\nglobal.set(\"rooms\", rooms)\nreturn {payload: rooms}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1060,
+        "wires": [
+            [
+                "6c0f886bd924f3c8"
+            ]
+        ]
+    },
+    {
+        "id": "c2fd65f81f68d756",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "get scenes",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 130,
+        "y": 1180,
+        "wires": [
+            [
+                "577ec01858a1dd1c"
+            ]
+        ]
+    },
+    {
+        "id": "a76c08fa04553169",
+        "type": "function",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "processSceneMetadata",
+        "func": "let scenes = {}\nlet rooms = global.get(\"rooms\") || {}\nlet zones = global.get(\"zones\") || {}\n\nlet findGroup = (id, groups) => {\n\n    for (let rid in groups) {\n\n        let group = groups[rid]\n\n        if (group.id == id) {\n            return group\n        }\n    }\n    \n    return undefined\n}\n\nmsg.payload.forEach(scene => {\n\n    scenes[scene.id] = scene\n    \n    let group = findGroup(scene.group.rid, zones)\n    \n    if (group === undefined) {\n        group = findGroup(scene.group.rid, rooms)\n    }\n    \n    if (group !== undefined) {\n        scene.group.name = group.metadata.name\n    }\n    \n    let services = group.grouped_services\n    \n    for (let index = 0; index < services.length; ++index) {\n        \n        let service = services[index]\n        \n        if (service.rtype == \"grouped_light\") {\n            scene.group.grouped_light = service.rid\n        }\n    }\n})\n\nglobal.set(\"scenes\", scenes)\nreturn {payload: scenes}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1180,
+        "wires": [
+            [
+                "cd209179cce4b89c"
+            ]
+        ]
+    },
+    {
+        "id": "a98b4a1d87f1dbb3",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 1060,
+        "wires": [
+            [
+                "f3799f4ff14bea51"
+            ]
+        ]
+    },
+    {
+        "id": "d727f20d5c05cc20",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 1180,
+        "wires": [
+            [
+                "a76c08fa04553169"
+            ]
+        ]
+    },
+    {
+        "id": "7d82f751637a5a1a",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "get zones",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/zone",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 120,
+        "y": 1000,
+        "wires": [
+            [
+                "b1a0ee2cac4ff377"
+            ]
+        ]
+    },
+    {
+        "id": "7aa5117877bb9be3",
+        "type": "function",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "processZoneMetadata",
+        "func": "let zones = {}\n\nmsg.payload.forEach(zone => {\n    zones[zone.id] = zone\n})\n\nglobal.set(\"zones\", zones)\nreturn {payload: zones}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1000,
+        "wires": [
+            [
+                "47c0025fa5554760"
+            ]
+        ]
+    },
+    {
+        "id": "a7d71b3f6c391dfe",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 1000,
+        "wires": [
+            [
+                "7aa5117877bb9be3"
+            ]
+        ]
+    },
+    {
+        "id": "b1a0ee2cac4ff377",
+        "type": "link call",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 270,
+        "y": 1000,
+        "wires": [
+            [
+                "a7d71b3f6c391dfe"
+            ]
+        ]
+    },
+    {
+        "id": "99d6fe19c2ac8b00",
+        "type": "link call",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 270,
+        "y": 1060,
+        "wires": [
+            [
+                "a98b4a1d87f1dbb3"
+            ]
+        ]
+    },
+    {
+        "id": "577ec01858a1dd1c",
+        "type": "link call",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 290,
+        "y": 1180,
+        "wires": [
+            [
+                "d727f20d5c05cc20"
+            ]
+        ]
+    },
+    {
+        "id": "09d40e0502e98f9e",
+        "type": "inject",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 940,
+        "wires": [
+            [
+                "5b4b25ccdbacafb0"
+            ]
+        ]
+    },
+    {
+        "id": "6c0f886bd924f3c8",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "get groups",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 130,
+        "y": 1120,
+        "wires": [
+            [
+                "3c5035a33e0c30ec"
+            ]
+        ]
+    },
+    {
+        "id": "4bf5068d0a1ab439",
+        "type": "function",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "processGroupMetadata",
+        "func": "let groups = {}\n\nlet findContainer = (groupId, containers) => {\n\n    for (let containerId in containers) {\n\n        let container = containers[containerId]\n\n        let services = container.grouped_services\n\n        for (let index = 0; index < services.length; ++index) {\n            \n            let service = services[index]\n\n            if (service.rid == groupId) {\n                return container\n            }\n        }\n    }\n\n    return undefined\n}\n\nmsg.payload.forEach(group => {\n\n    let container = findContainer(group.id, global.get('rooms'))\n    \n    if (container === undefined) {\n        container = findContainer(group.id, global.get('zones'))\n    }\n    \n    if (container !== undefined) {\n        group.containerName = container.metadata.name\n        group.containerType = container.type\n    }\n\n    groups[group.id] = group\n})\n\nglobal.set(\"groups\", groups)\nreturn {payload: groups}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1120,
+        "wires": [
+            [
+                "c2fd65f81f68d756"
+            ]
+        ]
+    },
+    {
+        "id": "c36f99ba5a694765",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 1120,
+        "wires": [
+            [
+                "4bf5068d0a1ab439"
+            ]
+        ]
+    },
+    {
+        "id": "3c5035a33e0c30ec",
+        "type": "link call",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 290,
+        "y": 1120,
+        "wires": [
+            [
+                "c36f99ba5a694765"
+            ]
+        ]
+    },
+    {
+        "id": "5b4b25ccdbacafb0",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "get bridge_home",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/bridge_home",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 940,
+        "wires": [
+            [
+                "7271e14257e6298d"
+            ]
+        ]
+    },
+    {
+        "id": "7271e14257e6298d",
+        "type": "link call",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 490,
+        "y": 940,
+        "wires": [
+            [
+                "66997012e5ec2dcc"
+            ]
+        ]
+    },
+    {
+        "id": "66997012e5ec2dcc",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "bridge_home",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 940,
+        "wires": [
+            [
+                "7d82f751637a5a1a"
+            ]
+        ]
+    },
+    {
+        "id": "cd209179cce4b89c",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "groups",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1240,
+        "wires": [
+            [
+                "6ebd8b10206b2004"
+            ]
+        ]
+    },
+    {
+        "id": "6ebd8b10206b2004",
+        "type": "split",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "topic",
+        "x": 570,
+        "y": 1240,
+        "wires": [
+            [
+                "1661dd9deef32371"
+            ]
+        ]
+    },
+    {
+        "id": "1661dd9deef32371",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'hue/grouped_light/' & topic",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 1240,
+        "wires": [
+            [
+                "cef155cb1aab4bb7"
+            ]
+        ]
+    },
+    {
+        "id": "cef155cb1aab4bb7",
+        "type": "link out",
+        "z": "a00ccef1301f21e3",
+        "g": "0e773b929fa611fc",
+        "name": "send hue group metadata as mqtt",
+        "mode": "link",
+        "links": [
+            "a0c7a5e9d9780699"
+        ],
+        "x": 845,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "4943f5af73a5bf48",
+        "type": "inject",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "scenes",
+        "payloadType": "global",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "119af3d06a1a5822"
+            ]
+        ]
+    },
+    {
+        "id": "d4d50a9a54f8b94d",
+        "type": "debug",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b28b203648befad7",
+        "type": "csv",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "group_id,group_name,scene_id,scene_name,group_lights",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "556a3b5f92d47a39"
+            ]
+        ]
+    },
+    {
+        "id": "119af3d06a1a5822",
+        "type": "split",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 270,
+        "y": 160,
+        "wires": [
+            [
+                "de56180ba8217181"
+            ]
+        ]
+    },
+    {
+        "id": "de56180ba8217181",
+        "type": "template",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"scene_name\": \"{{payload.metadata.name}}\",\n    \"scene_id\": \"{{payload.id}}\",\n    \"group_name\": \"{{payload.group.name}}\",\n    \"group_id\": \"{{payload.group.rid}}\",\n    \"group_lights\": \"{{payload.group.grouped_light}}\"\n}",
+        "output": "json",
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "c8b228bf5d62b9ca"
+            ]
+        ]
+    },
+    {
+        "id": "c8b228bf5d62b9ca",
+        "type": "join",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 530,
+        "y": 160,
+        "wires": [
+            [
+                "238f5dde3170c623"
+            ]
+        ]
+    },
+    {
+        "id": "238f5dde3170c623",
+        "type": "function",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "entriesToArray",
+        "func": "let response = []\n\nfor (let id in msg.payload) {\n    response.push(msg.payload[id])\n}\nreturn {payload: response};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "b28b203648befad7"
+            ]
+        ]
+    },
+    {
+        "id": "556a3b5f92d47a39",
+        "type": "file",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "filename": "/data/scenes.csv",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "d4d50a9a54f8b94d"
+            ]
+        ]
+    },
+    {
+        "id": "815e607b4d03acec",
+        "type": "debug",
+        "z": "a00ccef1301f21e3",
+        "g": "4cc5ac453c0d392d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f7e8659bca155f16",
+        "type": "inject",
+        "z": "a00ccef1301f21e3",
+        "g": "4cc5ac453c0d392d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "groups",
+        "payloadType": "global",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "16ecbc4b7aeb938c"
+            ]
+        ]
+    },
+    {
+        "id": "7ee5e814ee0fdcde",
+        "type": "csv",
+        "z": "a00ccef1301f21e3",
+        "g": "4cc5ac453c0d392d",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "id,id_v1,containerName,containerType",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "cb4524c3ccdc8e45"
+            ]
+        ]
+    },
+    {
+        "id": "cb4524c3ccdc8e45",
+        "type": "file",
+        "z": "a00ccef1301f21e3",
+        "g": "4cc5ac453c0d392d",
+        "name": "",
+        "filename": "/data/groups.csv",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 610,
+        "y": 320,
+        "wires": [
+            [
+                "815e607b4d03acec"
+            ]
+        ]
+    },
+    {
+        "id": "16ecbc4b7aeb938c",
+        "type": "function",
+        "z": "a00ccef1301f21e3",
+        "g": "4cc5ac453c0d392d",
+        "name": "entriesToArray",
+        "func": "let response = []\n\nfor (let id in msg.payload) {\n    response.push(msg.payload[id])\n}\nreturn {payload: response};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 320,
+        "wires": [
+            [
+                "7ee5e814ee0fdcde"
             ]
         ]
     },
@@ -5596,7 +5439,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 830,
+        "x": 1070,
         "y": 260,
         "wires": [
             []
@@ -5665,7 +5508,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 790,
+        "x": 1010,
         "y": 400,
         "wires": [
             []
@@ -5734,7 +5577,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 830,
+        "x": 1070,
         "y": 540,
         "wires": [
             []
@@ -5753,11 +5596,11 @@
                 "type": "str"
             }
         ],
-        "x": 640,
+        "x": 650,
         "y": 280,
         "wires": [
             [
-                "af712bf4ec4004b4"
+                "7bac63592e9b8ed2"
             ],
             [
                 "fb7fed76720fc92b"
@@ -5791,7 +5634,7 @@
         "links": [
             "b33691546f7f459a"
         ],
-        "x": 775,
+        "x": 795,
         "y": 300,
         "wires": []
     },
@@ -5808,11 +5651,11 @@
                 "type": "str"
             }
         ],
-        "x": 600,
+        "x": 610,
         "y": 420,
         "wires": [
             [
-                "074874e0ff13a7b1"
+                "fc49d70fecf99c3f"
             ],
             [
                 "a5ed6c2a7a6ecc4b"
@@ -5846,7 +5689,7 @@
         "links": [
             "edbb89b1218fdd21"
         ],
-        "x": 735,
+        "x": 755,
         "y": 440,
         "wires": []
     },
@@ -5863,11 +5706,11 @@
                 "type": "str"
             }
         ],
-        "x": 640,
+        "x": 650,
         "y": 560,
         "wires": [
             [
-                "3dc20d8212996ca2"
+                "ed213c0451c27d57"
             ],
             [
                 "58da5eea28596fe8"
@@ -5884,7 +5727,7 @@
         "links": [
             "44286bc52974ad2c"
         ],
-        "x": 775,
+        "x": 795,
         "y": 580,
         "wires": []
     },
@@ -6229,7 +6072,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 810,
+        "x": 1030,
         "y": 680,
         "wires": [
             []
@@ -6248,11 +6091,11 @@
                 "type": "str"
             }
         ],
-        "x": 620,
+        "x": 630,
         "y": 700,
         "wires": [
             [
-                "f52db1057ce1acdf"
+                "dc7a211772050136"
             ],
             [
                 "1b86868f195f85f4"
@@ -6269,7 +6112,7 @@
         "links": [
             "1e9eea60806a6dc1"
         ],
-        "x": 755,
+        "x": 775,
         "y": 720,
         "wires": []
     },
@@ -6406,6 +6249,174 @@
         "wires": [
             [
                 "e1a00de59a8b2fff"
+            ]
+        ]
+    },
+    {
+        "id": "7bac63592e9b8ed2",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/9b6935e2-f8ed-4f91-83a2-2bff1850da99",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 260,
+        "wires": [
+            [
+                "af712bf4ec4004b4"
+            ]
+        ]
+    },
+    {
+        "id": "fc49d70fecf99c3f",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "start dynamic jolly",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/12571f23-7714-4b47-8e75-a3040389b788",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "074874e0ff13a7b1"
+            ]
+        ]
+    },
+    {
+        "id": "ed213c0451c27d57",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "03822925b892df4a",
+        "name": "start dynamic spooky",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "3dc20d8212996ca2"
+            ]
+        ]
+    },
+    {
+        "id": "dc7a211772050136",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "7872f889f870b7ea",
+        "name": "start dynamic tribal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/c4681d32-3368-43cd-9cf1-436132521068",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 680,
+        "wires": [
+            [
+                "f52db1057ce1acdf"
             ]
         ]
     },
@@ -6676,7 +6687,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 890,
+        "x": 1130,
         "y": 360,
         "wires": [
             []
@@ -6695,11 +6706,11 @@
                 "type": "str"
             }
         ],
-        "x": 700,
+        "x": 710,
         "y": 380,
         "wires": [
             [
-                "ab8db82fa17e24fa"
+                "80fcc505d2b2855b"
             ],
             [
                 "121066d736217b6f"
@@ -6716,7 +6727,7 @@
         "links": [
             "ed6c0a1774b28970"
         ],
-        "x": 835,
+        "x": 855,
         "y": 400,
         "wires": []
     },
@@ -7088,6 +7099,48 @@
         ]
     },
     {
+        "id": "80fcc505d2b2855b",
+        "type": "change",
+        "z": "b9c60ff63fc6388d",
+        "g": "cd63dc8a5bea4a7b",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/b838037e-54a0-4a60-aa0f-a5991f18f759",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 360,
+        "wires": [
+            [
+                "ab8db82fa17e24fa"
+            ]
+        ]
+    },
+    {
         "id": "a454f20b5a3cb7e6",
         "type": "homekit-service",
         "z": "c6feba6b4b754115",
@@ -7150,7 +7203,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 890,
+        "x": 1130,
         "y": 260,
         "wires": [
             []
@@ -7169,11 +7222,11 @@
                 "type": "str"
             }
         ],
-        "x": 700,
+        "x": 710,
         "y": 280,
         "wires": [
             [
-                "da2999606ed19959"
+                "4addd031d3d6b37a"
             ],
             [
                 "341ee6d1ad26420a"
@@ -7190,7 +7243,7 @@
         "links": [
             "5533dd23e42b175e"
         ],
-        "x": 835,
+        "x": 855,
         "y": 300,
         "wires": []
     },
@@ -7460,6 +7513,48 @@
         ]
     },
     {
+        "id": "4addd031d3d6b37a",
+        "type": "change",
+        "z": "c6feba6b4b754115",
+        "g": "f025bfd6f097a4fb",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/12cbdfa6-8f24-47ec-98dc-ddd549669f09",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 260,
+        "wires": [
+            [
+                "da2999606ed19959"
+            ]
+        ]
+    },
+    {
         "id": "3f55a4060fb585c7",
         "type": "homekit-service",
         "z": "c0e9cd86c26f48cd",
@@ -7522,7 +7617,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 850,
+        "x": 1090,
         "y": 360,
         "wires": [
             []
@@ -7541,11 +7636,11 @@
                 "type": "str"
             }
         ],
-        "x": 660,
+        "x": 670,
         "y": 380,
         "wires": [
             [
-                "805f9419fca267f1"
+                "741739b5fef7b4ae"
             ],
             [
                 "fb54f26f0dad49e1"
@@ -7579,7 +7674,7 @@
         "links": [
             "bac3ee63c643d149"
         ],
-        "x": 795,
+        "x": 815,
         "y": 400,
         "wires": []
     },
@@ -7934,6 +8029,48 @@
         ]
     },
     {
+        "id": "741739b5fef7b4ae",
+        "type": "change",
+        "z": "c0e9cd86c26f48cd",
+        "g": "cf5ee15f74249e75",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/d1f2478f-c3ad-4ef6-a1b0-5b2f980c7d2f",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 360,
+        "wires": [
+            [
+                "805f9419fca267f1"
+            ]
+        ]
+    },
+    {
         "id": "353b1b24b556622c",
         "type": "homekit-service",
         "z": "196a892f41e64a64",
@@ -7996,7 +8133,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 830,
+        "x": 1070,
         "y": 360,
         "wires": [
             []
@@ -8015,11 +8152,11 @@
                 "type": "str"
             }
         ],
-        "x": 640,
+        "x": 650,
         "y": 380,
         "wires": [
             [
-                "ccede71d48fd41dd"
+                "830596ceee24c19d"
             ],
             [
                 "5a3f99ce6e37c342"
@@ -8036,7 +8173,7 @@
         "links": [
             "9a1abd81306e27d8"
         ],
-        "x": 775,
+        "x": 795,
         "y": 400,
         "wires": []
     },
@@ -8408,6 +8545,48 @@
         ]
     },
     {
+        "id": "830596ceee24c19d",
+        "type": "change",
+        "z": "196a892f41e64a64",
+        "g": "8b872b3ffa26442a",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/1cb6e9ce-052c-43bc-aecb-e922beaafe83",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 360,
+        "wires": [
+            [
+                "ccede71d48fd41dd"
+            ]
+        ]
+    },
+    {
         "id": "9ca0fc73ca40603b",
         "type": "homekit-service",
         "z": "1344247d533f754a",
@@ -8470,7 +8649,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 890,
+        "x": 1130,
         "y": 360,
         "wires": [
             []
@@ -8489,11 +8668,11 @@
                 "type": "str"
             }
         ],
-        "x": 700,
+        "x": 710,
         "y": 380,
         "wires": [
             [
-                "463ea2b34e8d3372"
+                "dad70d5e61ee644a"
             ],
             [
                 "b39327cac7d0963b"
@@ -8510,7 +8689,7 @@
         "links": [
             "d680abaf581704e2"
         ],
-        "x": 835,
+        "x": 855,
         "y": 400,
         "wires": []
     },
@@ -8887,6 +9066,48 @@
         ]
     },
     {
+        "id": "dad70d5e61ee644a",
+        "type": "change",
+        "z": "1344247d533f754a",
+        "g": "09145a35749b6075",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/5e7c58e6-6352-4568-9153-4a069b7bf53a",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 360,
+        "wires": [
+            [
+                "463ea2b34e8d3372"
+            ]
+        ]
+    },
+    {
         "id": "7afddc8f0d9f134d",
         "type": "homekit-service",
         "z": "d182f255d0172f82",
@@ -8949,7 +9170,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 850,
+        "x": 1090,
         "y": 260,
         "wires": [
             []
@@ -8968,11 +9189,11 @@
                 "type": "str"
             }
         ],
-        "x": 660,
+        "x": 670,
         "y": 280,
         "wires": [
             [
-                "7c9c107bf8049e17"
+                "2785e315bcd41864"
             ],
             [
                 "b279797e4ff9583c"
@@ -9006,7 +9227,7 @@
         "links": [
             "b4685677eba44b14"
         ],
-        "x": 795,
+        "x": 815,
         "y": 300,
         "wires": []
     },
@@ -9259,6 +9480,48 @@
         ]
     },
     {
+        "id": "2785e315bcd41864",
+        "type": "change",
+        "z": "d182f255d0172f82",
+        "g": "306c4351d83922a0",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/e545edf8-4d33-4c99-b170-e09f11ce3eca",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "7c9c107bf8049e17"
+            ]
+        ]
+    },
+    {
         "id": "f92e98d9c28e208b",
         "type": "homekit-service",
         "z": "0d3b88f2d4667ad9",
@@ -9321,7 +9584,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 910,
+        "x": 1150,
         "y": 260,
         "wires": [
             []
@@ -9340,11 +9603,11 @@
                 "type": "str"
             }
         ],
-        "x": 720,
+        "x": 730,
         "y": 280,
         "wires": [
             [
-                "1f59bfdbb638943b"
+                "8b4e14741c89105a"
             ],
             [
                 "e487f7c92198e2d9"
@@ -9361,7 +9624,7 @@
         "links": [
             "92494a06e41a9e67"
         ],
-        "x": 855,
+        "x": 875,
         "y": 300,
         "wires": []
     },
@@ -9631,6 +9894,48 @@
         ]
     },
     {
+        "id": "8b4e14741c89105a",
+        "type": "change",
+        "z": "0d3b88f2d4667ad9",
+        "g": "edf005842650203c",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/0d5459f5-c2c7-40da-b811-e0b0e629f8a2",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 260,
+        "wires": [
+            [
+                "1f59bfdbb638943b"
+            ]
+        ]
+    },
+    {
         "id": "161076791f776aef",
         "type": "homekit-service",
         "z": "68a0c85ae721ed85",
@@ -9693,7 +9998,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 910,
+        "x": 1150,
         "y": 260,
         "wires": [
             []
@@ -9716,7 +10021,7 @@
         "y": 280,
         "wires": [
             [
-                "079b41faaf05de0c"
+                "dfb11f408f97f019"
             ],
             [
                 "516b3f2c9acec645"
@@ -9750,7 +10055,7 @@
         "links": [
             "c8b57ca242b2ae3f"
         ],
-        "x": 855,
+        "x": 875,
         "y": 300,
         "wires": []
     },
@@ -10003,6 +10308,48 @@
         ]
     },
     {
+        "id": "dfb11f408f97f019",
+        "type": "change",
+        "z": "68a0c85ae721ed85",
+        "g": "cf878f58f6360a07",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/817e9cd7-75a6-4278-be9e-b67b3460a899",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 260,
+        "wires": [
+            [
+                "079b41faaf05de0c"
+            ]
+        ]
+    },
+    {
         "id": "07987419335624ad",
         "type": "link in",
         "z": "bbd6e1207d3b5780",
@@ -10151,7 +10498,7 @@
         "y": 80,
         "wires": [
             [
-                "b89c95c113e8b0ed"
+                "dc88f32db415a607"
             ],
             []
         ]
@@ -10263,30 +10610,6 @@
         ]
     },
     {
-        "id": "b89c95c113e8b0ed",
-        "type": "subflow:c2b1af43d2d083aa",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "",
-        "env": [
-            {
-                "name": "GROUPED_LIGHT_ID",
-                "value": "2b3a58a9-593d-47d0-888c-f2dbb531c974",
-                "type": "str"
-            }
-        ],
-        "x": 550,
-        "y": 80,
-        "wires": [
-            [
-                "65354cde7927a4f3"
-            ],
-            [
-                "4e5d71543542a20d"
-            ]
-        ]
-    },
-    {
         "id": "65354cde7927a4f3",
         "type": "link call",
         "z": "bbd6e1207d3b5780",
@@ -10296,7 +10619,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 730,
+        "x": 970,
         "y": 60,
         "wires": [
             []
@@ -10312,7 +10635,7 @@
         "links": [
             "663a44209444b705"
         ],
-        "x": 675,
+        "x": 715,
         "y": 100,
         "wires": []
     },
@@ -10426,11 +10749,11 @@
                 "type": "str"
             }
         ],
-        "x": 580,
+        "x": 590,
         "y": 220,
         "wires": [
             [
-                "e9fac1e138b905f5"
+                "9c0f0fa02267d0cf"
             ],
             [
                 "9f455b49edca7924"
@@ -10447,7 +10770,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 770,
+        "x": 970,
         "y": 200,
         "wires": [
             []
@@ -10463,7 +10786,7 @@
         "links": [
             "d751ef890196434e"
         ],
-        "x": 715,
+        "x": 735,
         "y": 240,
         "wires": []
     },
@@ -10523,7 +10846,7 @@
         "links": [
             "833c49adadf8a7de"
         ],
-        "x": 795,
+        "x": 815,
         "y": 380,
         "wires": []
     },
@@ -10540,11 +10863,11 @@
                 "type": "str"
             }
         ],
-        "x": 660,
+        "x": 670,
         "y": 360,
         "wires": [
             [
-                "65a8e5f3e6aac863"
+                "cc37ef8f3a838181"
             ],
             [
                 "744bdeb0874221fa"
@@ -10561,7 +10884,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 850,
+        "x": 1090,
         "y": 340,
         "wires": [
             []
@@ -10662,11 +10985,11 @@
                 "type": "str"
             }
         ],
-        "x": 640,
+        "x": 650,
         "y": 500,
         "wires": [
             [
-                "4b0337b646b32207"
+                "a9b06ca98c889310"
             ],
             [
                 "4d0bed4baebdfc11"
@@ -10683,7 +11006,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 830,
+        "x": 1050,
         "y": 480,
         "wires": [
             []
@@ -10699,7 +11022,7 @@
         "links": [
             "290b13c645ba6d83"
         ],
-        "x": 775,
+        "x": 795,
         "y": 520,
         "wires": []
     },
@@ -10759,7 +11082,7 @@
         "links": [
             "5d4585f41c636812"
         ],
-        "x": 795,
+        "x": 815,
         "y": 660,
         "wires": []
     },
@@ -10773,7 +11096,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 850,
+        "x": 1090,
         "y": 620,
         "wires": [
             []
@@ -10792,11 +11115,11 @@
                 "type": "str"
             }
         ],
-        "x": 660,
+        "x": 670,
         "y": 640,
         "wires": [
             [
-                "e8d26688fdb3dc99"
+                "7a9777b958620aa0"
             ],
             [
                 "9751f26fd63938dd"
@@ -10912,7 +11235,7 @@
         "links": [
             "88a44520a6e88d1e"
         ],
-        "x": 755,
+        "x": 775,
         "y": 800,
         "wires": []
     },
@@ -10926,7 +11249,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 810,
+        "x": 1030,
         "y": 760,
         "wires": [
             []
@@ -10945,11 +11268,11 @@
                 "type": "str"
             }
         ],
-        "x": 620,
+        "x": 630,
         "y": 780,
         "wires": [
             [
-                "27a6590ea08d0cd3"
+                "ad10b924bf13e161"
             ],
             [
                 "cef5ed063ab91cbd"
@@ -11027,6 +11350,275 @@
         ]
     },
     {
+        "id": "d4ec4fdfc7cf627d",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "9c99756236afe446",
+        "name": "grouped_light off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light/2b3a58a9-593d-47d0-888c-f2dbb531c974",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 60,
+        "wires": [
+            [
+                "65354cde7927a4f3"
+            ]
+        ]
+    },
+    {
+        "id": "dc88f32db415a607",
+        "type": "subflow:a03a3519abf4e656",
+        "z": "bbd6e1207d3b5780",
+        "g": "9c99756236afe446",
+        "name": "",
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "d4ec4fdfc7cf627d"
+            ],
+            [
+                "4e5d71543542a20d"
+            ]
+        ]
+    },
+    {
+        "id": "9c0f0fa02267d0cf",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "27ea51b68dd32fdf",
+        "name": "activate bright",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/27e1e1eb-6b72-434e-a301-47fab0ec5f1b",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"active\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 200,
+        "wires": [
+            [
+                "e9fac1e138b905f5"
+            ]
+        ]
+    },
+    {
+        "id": "cc37ef8f3a838181",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "37f9190eb1a5f555",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/a14f4a38-9577-44d3-bcec-702b05a0a8ba",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 340,
+        "wires": [
+            [
+                "65a8e5f3e6aac863"
+            ]
+        ]
+    },
+    {
+        "id": "a9b06ca98c889310",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "fc8dab80af70dbe7",
+        "name": "start dynamic tribal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/f6f78784-27c2-40e4-86f0-c83066b6f4b5",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "4b0337b646b32207"
+            ]
+        ]
+    },
+    {
+        "id": "7a9777b958620aa0",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "54005f131191d07d",
+        "name": "start dynamic spooky",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/a9c8048e-c050-4008-9f78-0f66fbf2f745",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 620,
+        "wires": [
+            [
+                "e8d26688fdb3dc99"
+            ]
+        ]
+    },
+    {
+        "id": "ad10b924bf13e161",
+        "type": "change",
+        "z": "bbd6e1207d3b5780",
+        "g": "4699dcb62a5f0b27",
+        "name": "start dynamic jolly",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/669b5463-7a9d-4cbc-a894-155b9f45f6b8",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 760,
+        "wires": [
+            [
+                "27a6590ea08d0cd3"
+            ]
+        ]
+    },
+    {
         "id": "07ccb0b07e6fada8",
         "type": "link in",
         "z": "e44149a93fbe9b1b",
@@ -11070,7 +11662,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 830,
+        "x": 1050,
         "y": 340,
         "wires": [
             []
@@ -11086,7 +11678,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 740,
+        "x": 970,
         "y": 60,
         "wires": [
             []
@@ -11213,7 +11805,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 850,
+        "x": 1090,
         "y": 480,
         "wires": [
             []
@@ -11232,11 +11824,11 @@
                 "type": "str"
             }
         ],
-        "x": 660,
+        "x": 670,
         "y": 500,
         "wires": [
             [
-                "03d1ba21a2aff238"
+                "e8bb733e9e38bb56"
             ],
             [
                 "ff3198be7493caff"
@@ -11270,7 +11862,7 @@
         "links": [
             "ea614e4cb18d655b"
         ],
-        "x": 795,
+        "x": 815,
         "y": 520,
         "wires": []
     },
@@ -11345,7 +11937,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 770,
+        "x": 970,
         "y": 200,
         "wires": [
             []
@@ -11428,7 +12020,7 @@
         "y": 80,
         "wires": [
             [
-                "f965bbf79663681e"
+                "07d2539e60d53063"
             ],
             []
         ]
@@ -11451,11 +12043,11 @@
                 "type": "str"
             }
         ],
-        "x": 580,
+        "x": 590,
         "y": 220,
         "wires": [
             [
-                "3fd4ceb10de1cfab"
+                "8e1a1e8c143be16d"
             ],
             [
                 "cc1c4fb16748fe41"
@@ -11542,7 +12134,7 @@
         "links": [
             "b42def8140b0cba0"
         ],
-        "x": 715,
+        "x": 735,
         "y": 240,
         "wires": []
     },
@@ -11634,11 +12226,11 @@
                 "type": "str"
             }
         ],
-        "x": 640,
+        "x": 650,
         "y": 360,
         "wires": [
             [
-                "53509cbc2f897eb4"
+                "b281f4fa1ec7d5a6"
             ],
             [
                 "80113bac5531b428"
@@ -11655,33 +12247,9 @@
         "links": [
             "59ea234c7c46c4df"
         ],
-        "x": 775,
+        "x": 795,
         "y": 380,
         "wires": []
-    },
-    {
-        "id": "f965bbf79663681e",
-        "type": "subflow:c2b1af43d2d083aa",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "",
-        "env": [
-            {
-                "name": "GROUPED_LIGHT_ID",
-                "value": "9c1c7975-2f47-4552-bac8-c19b643cd678",
-                "type": "str"
-            }
-        ],
-        "x": 560,
-        "y": 80,
-        "wires": [
-            [
-                "a03344fb9a787ea4"
-            ],
-            [
-                "46fa3c75d5fa6109"
-            ]
-        ]
     },
     {
         "id": "13dadc0fade8c5f9",
@@ -11710,8 +12278,193 @@
         "links": [
             "13dadc0fade8c5f9"
         ],
-        "x": 685,
+        "x": 715,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "e8bb733e9e38bb56",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "a76cb5337e8a2ff0",
+        "name": "start dynamic sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/6eff0801-01e2-4803-9840-e31c06cee079",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 480,
+        "wires": [
+            [
+                "03d1ba21a2aff238"
+            ]
+        ]
+    },
+    {
+        "id": "b281f4fa1ec7d5a6",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "activate nightlight",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/48c39b9f-1599-4a5c-b7f6-bad6cad4029a",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"active\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 340,
+        "wires": [
+            [
+                "53509cbc2f897eb4"
+            ]
+        ]
+    },
+    {
+        "id": "8e1a1e8c143be16d",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "83a2d6e5f2f3347b",
+        "name": "activate bright",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/8c5f011c-bc6f-49a8-8d82-9d1db302c87c",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"active\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 200,
+        "wires": [
+            [
+                "3fd4ceb10de1cfab"
+            ]
+        ]
+    },
+    {
+        "id": "3b999d05ee2f3e39",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "grouped_light off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light/9c1c7975-2f47-4552-bac8-c19b643cd678",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 60,
+        "wires": [
+            [
+                "a03344fb9a787ea4"
+            ]
+        ]
+    },
+    {
+        "id": "07d2539e60d53063",
+        "type": "subflow:a03a3519abf4e656",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "",
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "3b999d05ee2f3e39"
+            ],
+            [
+                "46fa3c75d5fa6109"
+            ]
+        ]
     }
 ]
