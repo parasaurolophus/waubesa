@@ -126,7 +126,7 @@
         "id": "a03a3519abf4e656",
         "type": "subflow",
         "name": "HomeKit Switch Auto-Off",
-        "info": "If the incoming message indicates that the corresponding HomeKit virtual switch was turned on, activate the corresponding Hue dynamic scene using the first output and send a message to turn the virtual switch off after a delay using the second output.\n\nBoth the scene id and auto-off delay are configurable using environment variables defined by this subflow. The default delay is 1000 milliseconds. There is no default scene id.",
+        "info": "If the incoming payload is `{\"On\":true}`, pass it through to the first output and then send `{\"On\":false}` one second later on the second output. Otherwise, ignore the incoming message.",
         "category": "waubesa",
         "in": [
             {
@@ -141,7 +141,7 @@
         ],
         "out": [
             {
-                "x": 550,
+                "x": 590,
                 "y": 40,
                 "wires": [
                     {
@@ -151,7 +151,7 @@
                 ]
             },
             {
-                "x": 570,
+                "x": 610,
                 "y": 120,
                 "wires": [
                     {
@@ -2735,7 +2735,7 @@
         "id": "3111257f22032077",
         "type": "switch",
         "z": "a03a3519abf4e656",
-        "name": "is on",
+        "name": "{\"On\":true}",
         "property": "payload.On",
         "propertyType": "msg",
         "rules": [
@@ -2746,7 +2746,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 130,
+        "x": 150,
         "y": 80,
         "wires": [
             [
@@ -2771,7 +2771,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 330,
+        "x": 370,
         "y": 80,
         "wires": [
             [],
