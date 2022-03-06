@@ -220,7 +220,17 @@
             }
         ],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "status": {
+            "x": 180,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "5ce3cf7899b8f7b2",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "5785c8d9f39df67e",
@@ -268,7 +278,17 @@
             }
         ],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "status": {
+            "x": 180,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "1e35b6e766e6b3d1",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "75bc72a16c4da2c8",
@@ -312,7 +332,17 @@
             }
         ],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "status": {
+            "x": 180,
+            "y": 100,
+            "wires": [
+                {
+                    "id": "64ad1b43047cb836",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "56958a2df5371bdc",
@@ -346,7 +376,17 @@
             }
         ],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "status": {
+            "x": 180,
+            "y": 320,
+            "wires": [
+                {
+                    "id": "570a8d6ec2d899d6",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "a1143ee0209d015c",
@@ -379,7 +419,60 @@
         ],
         "env": [],
         "meta": {},
-        "color": "#DDAA99"
+        "color": "#DDAA99",
+        "status": {
+            "x": 180,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "3ee62c29977379e8",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "d77715b1263170cf",
+        "type": "subflow",
+        "name": "Entries to Array",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "16ecbc4b7aeb938c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 280,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "16ecbc4b7aeb938c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 180,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "6357678ef97562e1",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "1ccf0bc875015428",
@@ -1219,7 +1312,9 @@
             "fccdf56d6380d96b"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 1422,
+        "h": 482
     },
     {
         "id": "acd8dfba6d718657",
@@ -1237,8 +1332,8 @@
             "45c1cf7ef6b02456",
             "032904aa9c744f7e"
         ],
-        "x": 14,
-        "y": 319,
+        "x": 454,
+        "y": 119,
         "w": 302,
         "h": 82
     },
@@ -1422,7 +1517,9 @@
             "c497540ee43ca72b"
         ],
         "x": 14,
-        "y": 519
+        "y": 519,
+        "w": 1078,
+        "h": 896
     },
     {
         "id": "80e068d5fcb614bd",
@@ -1610,7 +1707,7 @@
             "a3b2239de57f8cf7"
         ],
         "x": 14,
-        "y": 579,
+        "y": 479,
         "w": 932,
         "h": 382
     },
@@ -1633,11 +1730,11 @@
             "119af3d06a1a5822",
             "de56180ba8217181",
             "c8b228bf5d62b9ca",
-            "238f5dde3170c623",
-            "556a3b5f92d47a39"
+            "556a3b5f92d47a39",
+            "7748f188c87491b0"
         ],
         "x": 14,
-        "y": 419,
+        "y": 319,
         "w": 732,
         "h": 142
     },
@@ -1658,7 +1755,7 @@
             "f7e8659bca155f16",
             "7ee5e814ee0fdcde",
             "cb4524c3ccdc8e45",
-            "16ecbc4b7aeb938c"
+            "56afdea850e9cf89"
         ],
         "x": 14,
         "y": 219,
@@ -1708,7 +1805,9 @@
             "050497e834313a83"
         ],
         "x": 844,
-        "y": 959
+        "y": 959,
+        "w": 222,
+        "h": 250
     },
     {
         "id": "8d8b5763b18fd2ef",
@@ -1728,7 +1827,9 @@
             "ab13215949b2a295"
         ],
         "x": 844,
-        "y": 1219
+        "y": 1219,
+        "w": 82,
+        "h": 170
     },
     {
         "id": "1f72b1041f4ebf31",
@@ -1748,7 +1849,9 @@
             "909e36f9b6744c0f"
         ],
         "x": 844,
-        "y": 779
+        "y": 779,
+        "w": 89,
+        "h": 170
     },
     {
         "id": "e79e0110c2317edb",
@@ -2900,7 +3003,7 @@
         "func": "let periodic = context.get('periodic')\n\nperiodic()\nreturn null",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "let delay = env.get('DELAY') || 1000\nlet interval = env.get('INTERVAL') || 0\nlet topic = env.get('TOPIC') || 'timer'\nlet payload = env.get('PAYLOAD')\n\nlet periodic = () => {\n\n    if (payload) {\n\n        node.send({topic: topic, payload: payload})\n\n    } else {\n\n        node.send({topic: topic, payload: Date.now()})\n\n    }\n}\n\ncontext.set('periodic', periodic)\n\nsetTimeout(() => {\n\n        periodic()\n\n        if (interval > 0) {\n\n            setInterval(periodic, interval)\n\n        }\n    },\n\n    delay)\n",
+        "initialize": "let delay = env.get('DELAY') || 1000\nlet interval = env.get('INTERVAL') || 0\nlet topic = env.get('TOPIC') || 'timer'\nlet payload = env.get('PAYLOAD')\n\nlet periodic = () => {\n    \n    let p = payload || Date.now()\n    \n    node.status({text: p, fill: \"green\", shape: \"dot\"})\n    node.send({topic: topic, payload: p})\n\n}\n\ncontext.set('periodic', periodic)\n\nsetTimeout(() => {\n\n        periodic()\n\n        if (interval > 0) {\n\n            setInterval(periodic, interval)\n\n        }\n    },\n\n    delay)\n",
         "finalize": "",
         "libs": [],
         "x": 130,
@@ -2909,6 +3012,20 @@
             []
         ],
         "info": "Send a message when the flow starts and, optionally, at a fixed interval thereafter.\n\nSubsequent messages can also be generated on demand by sending anything to this function node's input. In the latter case, the input message is ignored and the triggered message will have the same content as those generated by timers.\n\nUse in subflows where `trigger` nodes are not allowed.\n\n| Environment Variable | Default   | Description                                                                       |\n|----------------------|-----------|-----------------------------------------------------------------------------------|\n| `DELAY`              | `1000`    | Milliseconds to wait at start before sending a message                            |\n| `INTERVAL`           | `0`       | If greater than 0, milliseconds to wait between subsequent messages               |\n| `TOPIC`              | `\"timer\"` | Value for `msg.topic`                                                             |\n| `PAYLOAD`            | `null`    | Value for `msg.topic`; if `null`, then payload will contain the current timestamp |"
+    },
+    {
+        "id": "5ce3cf7899b8f7b2",
+        "type": "status",
+        "z": "6a33e7d5ed73d885",
+        "name": "",
+        "scope": [
+            "c59810b74aa3b081"
+        ],
+        "x": 80,
+        "y": 120,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -3005,6 +3122,20 @@
         ]
     },
     {
+        "id": "1e35b6e766e6b3d1",
+        "type": "status",
+        "z": "5785c8d9f39df67e",
+        "name": "",
+        "scope": [
+            "c9c806d81ab63ac4"
+        ],
+        "x": 80,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "e4718ecfdb248cc7",
         "type": "http request",
         "z": "75bc72a16c4da2c8",
@@ -3072,6 +3203,20 @@
             [
                 "e4718ecfdb248cc7"
             ]
+        ]
+    },
+    {
+        "id": "64ad1b43047cb836",
+        "type": "status",
+        "z": "75bc72a16c4da2c8",
+        "name": "",
+        "scope": [
+            "e4718ecfdb248cc7"
+        ],
+        "x": 80,
+        "y": 100,
+        "wires": [
+            []
         ]
     },
     {
@@ -3324,8 +3469,23 @@
         "id": "314ed5b79fa10e3d",
         "type": "subflow:a1143ee0209d015c",
         "z": "56958a2df5371bdc",
+        "name": "",
         "x": 540,
         "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "570a8d6ec2d899d6",
+        "type": "status",
+        "z": "56958a2df5371bdc",
+        "name": "",
+        "scope": [
+            "ecafd1d544ef5932"
+        ],
+        "x": 80,
+        "y": 320,
         "wires": [
             []
         ]
@@ -3335,7 +3495,7 @@
         "type": "function",
         "z": "a1143ee0209d015c",
         "name": "generateMessages",
-        "func": "let messages = (m, result) => {\n    \n    for (let k in m.payload) {\n        \n        let v = m.payload[k]\n        let t = m.topic + '/' + k\n        let n = {topic: t, payload: v}\n    \n        if ((typeof v) == 'object') {\n\n            let a = messages(n, [])\n            result = result.concat(a)\n\n        } else {\n            \n            result.push(n)\n    \n        }\n    }\n\n    return result\n}\n\nreturn [messages(msg, [])]",
+        "func": "let messages = (m, result) => {\n    \n    for (let k in m.payload) {\n        \n        let v = m.payload[k]\n        let t = m.topic + '/' + k\n        let n = {topic: t, payload: v}\n        \n        node.status({text: t, shape: \"dot\", fill: \"green\"})\n    \n        if ((typeof v) == 'object') {\n\n            let a = messages(n, [])\n            result = result.concat(a)\n\n        } else {\n            \n            result.push(n)\n    \n        }\n    }\n\n    return result\n}\n\nreturn [messages(msg, [])]",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3346,7 +3506,52 @@
         "wires": [
             []
         ],
-        "info": "Generate a sequence of \"atomic\" MQTT messages by recursively walking the payload of the input.\n\nFor example, given:\n\n```\n{\n    \"payload\":\n    {\n      \"foo\": \"bar\",\n      {\n        \"baz\": 1,\n        \"waka\": 2\n      }\n    }\n}\n```\n\nthis function node will emit the following sequence of messages:\n\n```\n{\"topic\":\"foo\", \"payload\": \"bar\"}\n\n{\"topic\":\"foo/baz\", \"payload\": 1}\n\n{\"topic\":\"foo/waka\", \"payload\": 2}\n```"
+        "info": "Generate a sequence of \"atomic\" MQTT messages by recursively walking the payload of the input.\n\nFor example, given:\n\n```\n{\n    \"topic\": \"foo\",\n    \"payload\":\n    {\n      \"bar\": \"baz\",\n      {\n        \"waka\": 1,\n        \"hoo\": 2\n      }\n    }\n}\n```\n\nThis function node will emit the following sequence of messages:\n\n```\n{\"topic\":\"foo/bar\", \"payload\": \"baz\"}\n\n{\"topic\":\"foo/bar/waka\", \"payload\": 1}\n\n{\"topic\":\"foo/bar/hoo\", \"payload\": 2}\n```"
+    },
+    {
+        "id": "3ee62c29977379e8",
+        "type": "status",
+        "z": "a1143ee0209d015c",
+        "name": "",
+        "scope": [
+            "9567f601ad32e7dc"
+        ],
+        "x": 80,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16ecbc4b7aeb938c",
+        "type": "function",
+        "z": "d77715b1263170cf",
+        "name": "entriesToArray",
+        "func": "let response = []\n\nfor (let id in msg.payload) {\n\n    node.status({text: id, fill: \"green\", shape: \"dot\"})\n    response.push(msg.payload[id])\n\n}\nreturn {payload: response};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6357678ef97562e1",
+        "type": "status",
+        "z": "d77715b1263170cf",
+        "name": "",
+        "scope": [
+            "16ecbc4b7aeb938c"
+        ],
+        "x": 80,
+        "y": 120,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "2f916ece29ce9d57",
@@ -4637,7 +4842,7 @@
         "to": "",
         "reg": false,
         "x": 120,
-        "y": 740,
+        "y": 640,
         "wires": [
             [
                 "99d6fe19c2ac8b00"
@@ -4657,7 +4862,7 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 740,
+        "y": 640,
         "wires": [
             [
                 "6c0f886bd924f3c8"
@@ -4699,7 +4904,7 @@
         "to": "",
         "reg": false,
         "x": 130,
-        "y": 860,
+        "y": 760,
         "wires": [
             [
                 "577ec01858a1dd1c"
@@ -4719,7 +4924,7 @@
         "finalize": "",
         "libs": [],
         "x": 810,
-        "y": 860,
+        "y": 760,
         "wires": [
             [
                 "cd209179cce4b89c"
@@ -4747,7 +4952,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 740,
+        "y": 640,
         "wires": [
             [
                 "f3799f4ff14bea51"
@@ -4775,7 +4980,7 @@
         "to": "",
         "reg": false,
         "x": 570,
-        "y": 860,
+        "y": 760,
         "wires": [
             [
                 "a76c08fa04553169"
@@ -4817,7 +5022,7 @@
         "to": "",
         "reg": false,
         "x": 120,
-        "y": 680,
+        "y": 580,
         "wires": [
             [
                 "b1a0ee2cac4ff377"
@@ -4837,7 +5042,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 680,
+        "y": 580,
         "wires": [
             [
                 "47c0025fa5554760"
@@ -4865,7 +5070,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 680,
+        "y": 580,
         "wires": [
             [
                 "7aa5117877bb9be3"
@@ -4883,7 +5088,7 @@
         ],
         "timeout": "30",
         "x": 310,
-        "y": 680,
+        "y": 580,
         "wires": [
             [
                 "a7d71b3f6c391dfe"
@@ -4901,7 +5106,7 @@
         ],
         "timeout": "30",
         "x": 310,
-        "y": 740,
+        "y": 640,
         "wires": [
             [
                 "a98b4a1d87f1dbb3"
@@ -4919,7 +5124,7 @@
         ],
         "timeout": "30",
         "x": 330,
-        "y": 860,
+        "y": 760,
         "wires": [
             [
                 "d727f20d5c05cc20"
@@ -4945,7 +5150,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 620,
+        "y": 520,
         "wires": [
             [
                 "5b4b25ccdbacafb0"
@@ -4987,7 +5192,7 @@
         "to": "",
         "reg": false,
         "x": 130,
-        "y": 800,
+        "y": 700,
         "wires": [
             [
                 "3c5035a33e0c30ec"
@@ -5007,7 +5212,7 @@
         "finalize": "",
         "libs": [],
         "x": 810,
-        "y": 800,
+        "y": 700,
         "wires": [
             [
                 "c2fd65f81f68d756"
@@ -5035,7 +5240,7 @@
         "to": "",
         "reg": false,
         "x": 570,
-        "y": 800,
+        "y": 700,
         "wires": [
             [
                 "4bf5068d0a1ab439"
@@ -5053,7 +5258,7 @@
         ],
         "timeout": "30",
         "x": 330,
-        "y": 800,
+        "y": 700,
         "wires": [
             [
                 "c36f99ba5a694765"
@@ -5095,7 +5300,7 @@
         "to": "",
         "reg": false,
         "x": 310,
-        "y": 620,
+        "y": 520,
         "wires": [
             [
                 "7271e14257e6298d"
@@ -5113,7 +5318,7 @@
         ],
         "timeout": "30",
         "x": 530,
-        "y": 620,
+        "y": 520,
         "wires": [
             [
                 "66997012e5ec2dcc"
@@ -5141,7 +5346,7 @@
         "to": "",
         "reg": false,
         "x": 770,
-        "y": 620,
+        "y": 520,
         "wires": [
             [
                 "7d82f751637a5a1a"
@@ -5169,7 +5374,7 @@
         "to": "",
         "reg": false,
         "x": 140,
-        "y": 920,
+        "y": 820,
         "wires": [
             [
                 "6ebd8b10206b2004"
@@ -5189,7 +5394,7 @@
         "stream": false,
         "addname": "topic",
         "x": 290,
-        "y": 920,
+        "y": 820,
         "wires": [
             [
                 "1661dd9deef32371"
@@ -5217,7 +5422,7 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 920,
+        "y": 820,
         "wires": [
             [
                 "a3961e93c9710d63"
@@ -5243,7 +5448,7 @@
         "payload": "scenes",
         "payloadType": "global",
         "x": 130,
-        "y": 460,
+        "y": 360,
         "wires": [
             [
                 "119af3d06a1a5822"
@@ -5264,7 +5469,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 630,
-        "y": 520,
+        "y": 420,
         "wires": []
     },
     {
@@ -5284,7 +5489,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 290,
-        "y": 520,
+        "y": 420,
         "wires": [
             [
                 "556a3b5f92d47a39"
@@ -5304,7 +5509,7 @@
         "stream": false,
         "addname": "",
         "x": 270,
-        "y": 460,
+        "y": 360,
         "wires": [
             [
                 "de56180ba8217181"
@@ -5324,7 +5529,7 @@
         "template": "{\n    \"scene_name\": \"{{payload.metadata.name}}\",\n    \"scene_id\": \"{{payload.id}}\",\n    \"group_name\": \"{{payload.group.name}}\",\n    \"group_id\": \"{{payload.group.rid}}\",\n    \"group_lights\": \"{{payload.group.grouped_light}}\"\n}",
         "output": "json",
         "x": 400,
-        "y": 460,
+        "y": 360,
         "wires": [
             [
                 "c8b228bf5d62b9ca"
@@ -5349,30 +5554,10 @@
         "count": "",
         "reduceRight": false,
         "x": 530,
-        "y": 460,
+        "y": 360,
         "wires": [
             [
-                "238f5dde3170c623"
-            ]
-        ]
-    },
-    {
-        "id": "238f5dde3170c623",
-        "type": "function",
-        "z": "a00ccef1301f21e3",
-        "g": "d10c2cc141685d58",
-        "name": "entriesToArray",
-        "func": "let response = []\n\nfor (let id in msg.payload) {\n    response.push(msg.payload[id])\n}\nreturn {payload: response};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 140,
-        "y": 520,
-        "wires": [
-            [
-                "b28b203648befad7"
+                "7748f188c87491b0"
             ]
         ]
     },
@@ -5388,7 +5573,7 @@
         "overwriteFile": "true",
         "encoding": "utf8",
         "x": 450,
-        "y": 520,
+        "y": 420,
         "wires": [
             [
                 "d4d50a9a54f8b94d"
@@ -5435,7 +5620,7 @@
         "y": 260,
         "wires": [
             [
-                "16ecbc4b7aeb938c"
+                "56afdea850e9cf89"
             ]
         ]
     },
@@ -5479,26 +5664,6 @@
         "wires": [
             [
                 "815e607b4d03acec"
-            ]
-        ]
-    },
-    {
-        "id": "16ecbc4b7aeb938c",
-        "type": "function",
-        "z": "a00ccef1301f21e3",
-        "g": "4cc5ac453c0d392d",
-        "name": "entriesToArray",
-        "func": "let response = []\n\nfor (let id in msg.payload) {\n    response.push(msg.payload[id])\n}\nreturn {payload: response};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 300,
-        "y": 260,
-        "wires": [
-            [
-                "7ee5e814ee0fdcde"
             ]
         ]
     },
@@ -5572,8 +5737,8 @@
                 "type": "str"
             }
         ],
-        "x": 140,
-        "y": 360,
+        "x": 580,
+        "y": 160,
         "wires": [
             [
                 "032904aa9c744f7e"
@@ -5587,7 +5752,7 @@
         "g": "0e773b929fa611fc",
         "name": "",
         "x": 660,
-        "y": 920,
+        "y": 820,
         "wires": [
             [
                 "a3b2239de57f8cf7"
@@ -5622,8 +5787,8 @@
         "links": [
             "ae0037b45f04112d"
         ],
-        "x": 275,
-        "y": 360,
+        "x": 715,
+        "y": 160,
         "wires": []
     },
     {
@@ -5637,8 +5802,36 @@
             "ae0037b45f04112d"
         ],
         "x": 815,
-        "y": 920,
+        "y": 820,
         "wires": []
+    },
+    {
+        "id": "56afdea850e9cf89",
+        "type": "subflow:d77715b1263170cf",
+        "z": "a00ccef1301f21e3",
+        "g": "4cc5ac453c0d392d",
+        "name": "",
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "7ee5e814ee0fdcde"
+            ]
+        ]
+    },
+    {
+        "id": "7748f188c87491b0",
+        "type": "subflow:d77715b1263170cf",
+        "z": "a00ccef1301f21e3",
+        "g": "d10c2cc141685d58",
+        "name": "",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "b28b203648befad7"
+            ]
+        ]
     },
     {
         "id": "e2139e7bb021147f",
