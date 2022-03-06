@@ -963,18 +963,16 @@
             "color": "#000000"
         },
         "nodes": [
-            "bf4e9fee336ef936",
             "3fd4ceb10de1cfab",
             "af2437cdf2b8ab4f",
             "9b2070f55ade82e4",
             "b42def8140b0cba0",
             "cc1c4fb16748fe41",
-            "8e1a1e8c143be16d",
-            "48b5cc845a76bb18"
+            "8e1a1e8c143be16d"
         ],
-        "x": 104,
+        "x": 284,
         "y": 159,
-        "w": 1102,
+        "w": 922,
         "h": 122
     },
     {
@@ -995,13 +993,11 @@
             "9744753ad712956d",
             "e9fac1e138b905f5",
             "9f455b49edca7924",
-            "9c0f0fa02267d0cf",
-            "d93eb79b040c5ff5",
-            "c26f9558e2a105fa"
+            "9c0f0fa02267d0cf"
         ],
-        "x": 104,
+        "x": 284,
         "y": 159,
-        "w": 1102,
+        "w": 922,
         "h": 122
     },
     {
@@ -6948,49 +6944,6 @@
         ]
     },
     {
-        "id": "d93eb79b040c5ff5",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 200,
-        "wires": [
-            [
-                "cbb65c7a562ba8df"
-            ]
-        ]
-    },
-    {
-        "id": "c26f9558e2a105fa",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "exterior bright",
-        "links": [],
-        "x": 145,
-        "y": 200,
-        "wires": [
-            [
-                "d93eb79b040c5ff5"
-            ]
-        ]
-    },
-    {
         "id": "386bcda361463ded",
         "type": "change",
         "z": "bbd6e1207d3b5780",
@@ -7461,21 +7414,6 @@
         "wires": [
             [
                 "cca53c3a44867817"
-            ]
-        ]
-    },
-    {
-        "id": "bf4e9fee336ef936",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "83a2d6e5f2f3347b",
-        "name": "upstairs bright",
-        "links": [],
-        "x": 145,
-        "y": 200,
-        "wires": [
-            [
-                "48b5cc845a76bb18"
             ]
         ]
     },
@@ -8015,34 +7953,6 @@
         "wires": [
             [
                 "5698cb3902975118"
-            ]
-        ]
-    },
-    {
-        "id": "48b5cc845a76bb18",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "83a2d6e5f2f3347b",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 200,
-        "wires": [
-            [
-                "9b2070f55ade82e4"
             ]
         ]
     },
