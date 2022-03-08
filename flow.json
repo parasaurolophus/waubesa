@@ -1,13 +1,5 @@
 [
     {
-        "id": "ea1713617e7b2270",
-        "type": "tab",
-        "label": "MQTT",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "a767582f3959afc9",
         "type": "tab",
         "label": "Timer",
@@ -351,7 +343,9 @@
             "a9378d8ba74f3f4f"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 415,
+        "h": 82
     },
     {
         "id": "cf878f58f6360a07",
@@ -624,7 +618,9 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 632,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -905,7 +901,9 @@
             "66997012e5ec2dcc"
         ],
         "x": 14,
-        "y": 479
+        "y": 479,
+        "w": 932,
+        "h": 322
     },
     {
         "id": "d10c2cc141685d58",
@@ -930,7 +928,9 @@
             "7748f188c87491b0"
         ],
         "x": 14,
-        "y": 319
+        "y": 319,
+        "w": 732,
+        "h": 142
     },
     {
         "id": "4cc5ac453c0d392d",
@@ -952,7 +952,9 @@
             "56afdea850e9cf89"
         ],
         "x": 14,
-        "y": 219
+        "y": 219,
+        "w": 892,
+        "h": 82
     },
     {
         "id": "4699dcb62a5f0b27",
@@ -1018,30 +1020,6 @@
         ],
         "x": 104,
         "y": 299
-    },
-    {
-        "id": "e09e7a47ee9f4337",
-        "type": "group",
-        "z": "ea1713617e7b2270",
-        "name": "Safely send MQTT message",
-        "style": {
-            "stroke": "#000000",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "2857bf1c451150ea",
-            "7138525bbcc1e8c1",
-            "df107ada321895fd",
-            "c4efbfe6802324b9",
-            "529555c7422e7e68"
-        ],
-        "x": 24,
-        "y": 19,
-        "w": 592,
-        "h": 82
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1768,35 +1746,6 @@
         "allowMessagePassthrough": true
     },
     {
-        "id": "107b5941385b4ae1",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "localhost",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
         "id": "3111257f22032077",
         "type": "switch",
         "z": "a03a3519abf4e656",
@@ -2078,96 +2027,6 @@
         "y": 120,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "2857bf1c451150ea",
-        "type": "link in",
-        "z": "ea1713617e7b2270",
-        "g": "e09e7a47ee9f4337",
-        "name": "send mqtt",
-        "links": [],
-        "x": 65,
-        "y": 60,
-        "wires": [
-            [
-                "529555c7422e7e68"
-            ]
-        ]
-    },
-    {
-        "id": "7138525bbcc1e8c1",
-        "type": "link out",
-        "z": "ea1713617e7b2270",
-        "g": "e09e7a47ee9f4337",
-        "name": "",
-        "mode": "return",
-        "links": [],
-        "x": 575,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "df107ada321895fd",
-        "type": "complete",
-        "z": "ea1713617e7b2270",
-        "g": "e09e7a47ee9f4337",
-        "name": "",
-        "scope": [
-            "c4efbfe6802324b9"
-        ],
-        "uncaught": false,
-        "x": 470,
-        "y": 60,
-        "wires": [
-            [
-                "7138525bbcc1e8c1"
-            ]
-        ]
-    },
-    {
-        "id": "c4efbfe6802324b9",
-        "type": "mqtt out",
-        "z": "ea1713617e7b2270",
-        "g": "e09e7a47ee9f4337",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "107b5941385b4ae1",
-        "x": 310,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "529555c7422e7e68",
-        "type": "delay",
-        "z": "ea1713617e7b2270",
-        "g": "e09e7a47ee9f4337",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "4",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 170,
-        "y": 60,
-        "wires": [
-            [
-                "c4efbfe6802324b9"
-            ]
         ]
     },
     {
