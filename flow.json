@@ -1173,12 +1173,13 @@
             "3422471d39e0060c",
             "226f64e3485a40a0",
             "b3792f229ab026e4",
-            "5645abe054ad2ced"
+            "22215c11d8006662",
+            "66d63df0972916d2"
         ],
         "x": 14,
         "y": 19,
-        "w": 832,
-        "h": 442
+        "w": 862,
+        "h": 462
     },
     {
         "id": "e79e0110c2317edb",
@@ -2424,7 +2425,9 @@
         "x": 730,
         "y": 240,
         "wires": [
-            []
+            [
+                "22215c11d8006662"
+            ]
         ]
     },
     {
@@ -2692,7 +2695,7 @@
         "y": 380,
         "wires": [
             [
-                "5645abe054ad2ced"
+                "22215c11d8006662"
             ]
         ]
     },
@@ -2706,30 +2709,68 @@
         "links": [
             "026de08455ec7f42"
         ],
-        "x": 795,
-        "y": 380,
+        "x": 835,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "5645abe054ad2ced",
-        "type": "delay",
+        "id": "22215c11d8006662",
+        "type": "join",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "pauseType": "delay",
-        "timeout": "1",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 700,
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 730,
         "y": 380,
+        "wires": [
+            [
+                "66d63df0972916d2"
+            ]
+        ]
+    },
+    {
+        "id": "66d63df0972916d2",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "b4ef3182e14fb20f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.nodered/time",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/time",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 440,
         "wires": [
             [
                 "b3792f229ab026e4"
