@@ -1232,7 +1232,8 @@
             "49cb0c6c9ff699d3",
             "093ba559ba44c7a9",
             "413acf449ffef1d5",
-            "5663f746f8ce7c34"
+            "5663f746f8ce7c34",
+            "37fe7061661efdfd"
         ],
         "x": 14,
         "y": 19,
@@ -2896,7 +2897,8 @@
                 "664c687881845b07",
                 "88efb926f22c77b2",
                 "6f7032969495e160",
-                "49cb0c6c9ff699d3"
+                "49cb0c6c9ff699d3",
+                "37fe7061661efdfd"
             ],
             []
         ]
@@ -3235,7 +3237,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 360,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "093ba559ba44c7a9"
@@ -3261,7 +3263,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 360,
-        "y": 340,
+        "y": 360,
         "wires": [
             [
                 "093ba559ba44c7a9"
@@ -3295,7 +3297,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
+        "x": 580,
         "y": 320,
         "wires": [
             [
@@ -3314,7 +3316,7 @@
             "36aa9e5c3bbc1a11"
         ],
         "x": 595,
-        "y": 400,
+        "y": 420,
         "wires": []
     },
     {
@@ -3331,10 +3333,36 @@
         "property": "payload",
         "topi": "topic",
         "x": 510,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "413acf449ffef1d5"
+            ]
+        ]
+    },
+    {
+        "id": "37fe7061661efdfd",
+        "type": "moment",
+        "z": "a767582f3959afc9",
+        "g": "b4ef3182e14fb20f",
+        "name": "",
+        "topic": "nodered/time/now",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "MMMM D, YYYY; h:mm a",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
             ]
         ]
     },
