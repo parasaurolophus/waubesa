@@ -442,6 +442,168 @@
         }
     },
     {
+        "id": "c6cb427069082080",
+        "type": "subflow",
+        "name": "Theme",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "664c687881845b07"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 720,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "3422471d39e0060c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "IN_TIME_ZONE",
+                "type": "str",
+                "value": "ETC/utc"
+            },
+            {
+                "name": "OUT_TIME_ZONE",
+                "type": "str",
+                "value": "America/Chicago"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 720,
+            "y": 220,
+            "wires": [
+                {
+                    "id": "3422471d39e0060c",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "4c63d9433bfd1ab3",
+        "type": "subflow",
+        "name": "Time of Day",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "88efb926f22c77b2"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 680,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "ab88262d3d7a90df",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "IN_TIME_ZONE",
+                "type": "str",
+                "value": "ETC/utc"
+            },
+            {
+                "name": "OUT_TIME_ZONE",
+                "type": "str",
+                "value": "America/Chicago"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 680,
+            "y": 220,
+            "wires": [
+                {
+                    "id": "ab88262d3d7a90df",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "6b1e93ee94582206",
+        "type": "subflow",
+        "name": "Timer Labels",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "d89713c09ec0db27"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 820,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "5663f746f8ce7c34",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "IN_TIME_ZONE",
+                "type": "str",
+                "value": "ETC/utc"
+            },
+            {
+                "name": "OUT_TIME_ZONE",
+                "type": "str",
+                "value": "America/Chicago"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 580,
+            "y": 240,
+            "wires": [
+                {
+                    "id": "46e8a3676e6dcb21",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "1ccf0bc875015428",
         "type": "group",
         "z": "a00ccef1301f21e3",
@@ -484,9 +646,7 @@
             "dfb11f408f97f019"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1082,
-        "h": 122
+        "y": 19
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -509,9 +669,7 @@
             "7bac63592e9b8ed2"
         ],
         "x": 24,
-        "y": 39,
-        "w": 1002,
-        "h": 122
+        "y": 39
     },
     {
         "id": "afbdc8b60c682c85",
@@ -534,9 +692,7 @@
             "fc49d70fecf99c3f"
         ],
         "x": 24,
-        "y": 179,
-        "w": 962,
-        "h": 122
+        "y": 179
     },
     {
         "id": "03822925b892df4a",
@@ -559,9 +715,7 @@
             "ed213c0451c27d57"
         ],
         "x": 24,
-        "y": 319,
-        "w": 1002,
-        "h": 122
+        "y": 319
     },
     {
         "id": "cd63dc8a5bea4a7b",
@@ -584,9 +738,7 @@
             "80fcc505d2b2855b"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1062,
-        "h": 122
+        "y": 19
     },
     {
         "id": "09145a35749b6075",
@@ -609,9 +761,7 @@
             "dad70d5e61ee644a"
         ],
         "x": 104,
-        "y": 39,
-        "w": 1062,
-        "h": 122
+        "y": 39
     },
     {
         "id": "edf005842650203c",
@@ -634,9 +784,7 @@
             "8b4e14741c89105a"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1082,
-        "h": 122
+        "y": 19
     },
     {
         "id": "f025bfd6f097a4fb",
@@ -659,9 +807,7 @@
             "4addd031d3d6b37a"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1062,
-        "h": 122
+        "y": 19
     },
     {
         "id": "cf5ee15f74249e75",
@@ -684,9 +830,7 @@
             "741739b5fef7b4ae"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1022,
-        "h": 122
+        "y": 19
     },
     {
         "id": "8b872b3ffa26442a",
@@ -709,9 +853,7 @@
             "830596ceee24c19d"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1002,
-        "h": 122
+        "y": 19
     },
     {
         "id": "306c4351d83922a0",
@@ -734,9 +876,7 @@
             "2785e315bcd41864"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1022,
-        "h": 122
+        "y": 19
     },
     {
         "id": "ce88172c5dbc9f67",
@@ -783,9 +923,7 @@
             "bad6370b3539d5ca"
         ],
         "x": 104,
-        "y": 19,
-        "w": 1122,
-        "h": 122
+        "y": 19
     },
     {
         "id": "3483ce20c1996e6c",
@@ -810,9 +948,7 @@
             "7b10a17dd5bc4c0f"
         ],
         "x": 104,
-        "y": 299,
-        "w": 1162,
-        "h": 122
+        "y": 299
     },
     {
         "id": "37f9190eb1a5f555",
@@ -837,9 +973,7 @@
             "0eddce197d35d0c2"
         ],
         "x": 104,
-        "y": 299,
-        "w": 1202,
-        "h": 122
+        "y": 299
     },
     {
         "id": "fc8dab80af70dbe7",
@@ -864,9 +998,7 @@
             "386bcda361463ded"
         ],
         "x": 104,
-        "y": 439,
-        "w": 1182,
-        "h": 122
+        "y": 439
     },
     {
         "id": "54005f131191d07d",
@@ -891,9 +1023,7 @@
             "df37b8f8d0c15d72"
         ],
         "x": 104,
-        "y": 579,
-        "w": 1202,
-        "h": 122
+        "y": 579
     },
     {
         "id": "7872f889f870b7ea",
@@ -916,9 +1046,7 @@
             "dc7a211772050136"
         ],
         "x": 24,
-        "y": 459,
-        "w": 982,
-        "h": 122
+        "y": 459
     },
     {
         "id": "a76cb5337e8a2ff0",
@@ -943,9 +1071,7 @@
             "cca53c3a44867817"
         ],
         "x": 104,
-        "y": 439,
-        "w": 1222,
-        "h": 122
+        "y": 439
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -968,9 +1094,7 @@
             "8e1a1e8c143be16d"
         ],
         "x": 104,
-        "y": 159,
-        "w": 942,
-        "h": 122
+        "y": 159
     },
     {
         "id": "27ea51b68dd32fdf",
@@ -993,9 +1117,7 @@
             "9c0f0fa02267d0cf"
         ],
         "x": 104,
-        "y": 159,
-        "w": 922,
-        "h": 122
+        "y": 159
     },
     {
         "id": "9c99756236afe446",
@@ -1020,9 +1142,7 @@
             "7fa14903b4bc95cd"
         ],
         "x": 104,
-        "y": 19,
-        "w": 1102,
-        "h": 122
+        "y": 19
     },
     {
         "id": "4699dcb62a5f0b27",
@@ -1047,9 +1167,7 @@
             "891958a515fa0376"
         ],
         "x": 104,
-        "y": 719,
-        "w": 1162,
-        "h": 122
+        "y": 719
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1069,9 +1187,7 @@
             "d79164592fe44617"
         ],
         "x": 104,
-        "y": 179,
-        "w": 462,
-        "h": 82
+        "y": 179
     },
     {
         "id": "2ed951c0d82b2bc1",
@@ -1091,9 +1207,7 @@
             "fbd53f7f18ca6655"
         ],
         "x": 104,
-        "y": 299,
-        "w": 522,
-        "h": 82
+        "y": 299
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1208,37 +1322,18 @@
         },
         "nodes": [
             "120cbeb83d419a2e",
-            "88efb926f22c77b2",
-            "f24b1abc7fa7b4d9",
-            "f4cd012decec20fd",
-            "ab75bb7bc70fa7e5",
-            "9faf5182c18ea1f0",
-            "f30ab834bf201e89",
-            "ab88262d3d7a90df",
-            "664c687881845b07",
-            "79030c660640eaa8",
-            "f19fc407e32b3505",
-            "93963397eb0e582e",
-            "d9bed4df6531d2e5",
-            "c8e1aed4fd756133",
-            "d2a8dd6a8f64543c",
-            "3422471d39e0060c",
             "226f64e3485a40a0",
             "22215c11d8006662",
             "66d63df0972916d2",
             "e68284fd5306469f",
-            "39b7687321ba8601",
-            "6f7032969495e160",
-            "49cb0c6c9ff699d3",
-            "093ba559ba44c7a9",
-            "413acf449ffef1d5",
-            "5663f746f8ce7c34",
-            "37fe7061661efdfd"
+            "5c6e4cb8063ff548",
+            "308a16df86393edf",
+            "f021aed61d19c325"
         ],
         "x": 14,
         "y": 19,
-        "w": 842,
-        "h": 622
+        "w": 742,
+        "h": 242
     },
     {
         "id": "f0c548d0322b61eb",
@@ -1306,7 +1401,6 @@
             "a831f70b17eae2e8",
             "775e75e198e92976",
             "313b6cc6cf98adbb",
-            "15d263f15c1ff8ae",
             "08e52f60d62f2527"
         ],
         "x": 14,
@@ -2526,6 +2620,745 @@
         ]
     },
     {
+        "id": "79030c660640eaa8",
+        "type": "change",
+        "z": "c6cb427069082080",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map($split($trim(payload), ' '), $number)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "f19fc407e32b3505"
+            ]
+        ]
+    },
+    {
+        "id": "664c687881845b07",
+        "type": "moment",
+        "z": "c6cb427069082080",
+        "name": "",
+        "topic": "nodered/time/theme",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "M D",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 360,
+        "y": 40,
+        "wires": [
+            [
+                "79030c660640eaa8"
+            ]
+        ]
+    },
+    {
+        "id": "f19fc407e32b3505",
+        "type": "switch",
+        "z": "c6cb427069082080",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "jsonata_exp",
+                "v": "payload[0] = 7 and payload[1] <= 4",
+                "vt": "jsonata"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "payload[0] = 10",
+                "vt": "jsonata"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "payload[0] = 12",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "c8e1aed4fd756133"
+            ],
+            [
+                "d9bed4df6531d2e5"
+            ],
+            [
+                "93963397eb0e582e"
+            ],
+            [
+                "d2a8dd6a8f64543c"
+            ]
+        ],
+        "inputLabels": [
+            "month day"
+        ],
+        "outputLabels": [
+            "tribal",
+            "spooky",
+            "jolly",
+            "standard"
+        ]
+    },
+    {
+        "id": "c8e1aed4fd756133",
+        "type": "change",
+        "z": "c6cb427069082080",
+        "name": "tribal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tribal",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "3422471d39e0060c"
+            ]
+        ]
+    },
+    {
+        "id": "d9bed4df6531d2e5",
+        "type": "change",
+        "z": "c6cb427069082080",
+        "name": "spooky",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "spooky",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "3422471d39e0060c"
+            ]
+        ]
+    },
+    {
+        "id": "93963397eb0e582e",
+        "type": "change",
+        "z": "c6cb427069082080",
+        "name": "jolly",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "jolly",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 200,
+        "wires": [
+            [
+                "3422471d39e0060c"
+            ]
+        ]
+    },
+    {
+        "id": "d2a8dd6a8f64543c",
+        "type": "change",
+        "z": "c6cb427069082080",
+        "name": "standard",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "standard",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "3422471d39e0060c"
+            ]
+        ]
+    },
+    {
+        "id": "3422471d39e0060c",
+        "type": "rbe",
+        "z": "c6cb427069082080",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 610,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3afa55ec0eee3e9f",
+        "type": "change",
+        "z": "c6cb427069082080",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inTz",
+                "pt": "msg",
+                "to": "IN_TIME_ZONE",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "outTz",
+                "pt": "msg",
+                "to": "OUT_TIME_ZONE",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88efb926f22c77b2",
+        "type": "moment",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "topic": "nodered/time",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H",
+        "locale": "en-US",
+        "output": "hour",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 340,
+        "y": 40,
+        "wires": [
+            [
+                "f24b1abc7fa7b4d9"
+            ]
+        ]
+    },
+    {
+        "id": "f24b1abc7fa7b4d9",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "hour",
+                "pt": "msg",
+                "to": "$number(hour)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "f4cd012decec20fd"
+            ]
+        ]
+    },
+    {
+        "id": "f4cd012decec20fd",
+        "type": "switch",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "hour >= 12 and hour < 22",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "ab75bb7bc70fa7e5"
+            ],
+            [
+                "9faf5182c18ea1f0"
+            ],
+            [
+                "f30ab834bf201e89"
+            ]
+        ],
+        "inputLabels": [
+            "suncalc"
+        ],
+        "outputLabels": [
+            "day",
+            "evening",
+            "night"
+        ]
+    },
+    {
+        "id": "ab75bb7bc70fa7e5",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "day",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "day",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "ab88262d3d7a90df"
+            ]
+        ]
+    },
+    {
+        "id": "9faf5182c18ea1f0",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "evening",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "evening",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 180,
+        "wires": [
+            [
+                "ab88262d3d7a90df"
+            ]
+        ]
+    },
+    {
+        "id": "f30ab834bf201e89",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "night",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "night",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "ab88262d3d7a90df"
+            ]
+        ]
+    },
+    {
+        "id": "ab88262d3d7a90df",
+        "type": "rbe",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 570,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "483056783c2f5134",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inTz",
+                "pt": "msg",
+                "to": "IN_TIME_ZONE",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "outTz",
+                "pt": "msg",
+                "to": "OUT_TIME_ZONE",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f7032969495e160",
+        "type": "moment",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "topic": "nodered/time/sunrise",
+        "input": "start",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "h:mm a",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 440,
+        "y": 40,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
+            ]
+        ]
+    },
+    {
+        "id": "49cb0c6c9ff699d3",
+        "type": "moment",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "topic": "nodered/time/sunset",
+        "input": "end",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "h:mm a",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 440,
+        "y": 80,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
+            ]
+        ]
+    },
+    {
+        "id": "093ba559ba44c7a9",
+        "type": "change",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "5663f746f8ce7c34"
+            ]
+        ]
+    },
+    {
+        "id": "5663f746f8ce7c34",
+        "type": "rbe",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 730,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37fe7061661efdfd",
+        "type": "moment",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "topic": "nodered/time/day",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "dddd",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
+            ]
+        ]
+    },
+    {
+        "id": "d89713c09ec0db27",
+        "type": "change",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inTz",
+                "pt": "msg",
+                "to": "IN_TIME_ZONE",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "outTz",
+                "pt": "msg",
+                "to": "OUT_TIME_ZONE",
+                "tot": "env"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "49cb0c6c9ff699d3",
+                "6f7032969495e160",
+                "37fe7061661efdfd",
+                "af3d468ee1e29c98",
+                "46e8a3676e6dcb21"
+            ]
+        ]
+    },
+    {
+        "id": "af3d468ee1e29c98",
+        "type": "moment",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "topic": "nodered/time/date",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "MMMM D, YYYY",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
+            ]
+        ]
+    },
+    {
+        "id": "46e8a3676e6dcb21",
+        "type": "moment",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "topic": "nodered/time/time",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "h:mm a",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
+            ]
+        ]
+    },
+    {
         "id": "36aa9e5c3bbc1a11",
         "type": "link in",
         "z": "8eb6795ee675e1a0",
@@ -2592,239 +3425,6 @@
         ]
     },
     {
-        "id": "79030c660640eaa8",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map($split($trim(payload), ' '), $number)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 120,
-        "wires": [
-            [
-                "f19fc407e32b3505"
-            ]
-        ]
-    },
-    {
-        "id": "f19fc407e32b3505",
-        "type": "switch",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "jsonata_exp",
-                "v": "payload[0] = 7 and payload[1] <= 4",
-                "vt": "jsonata"
-            },
-            {
-                "t": "jsonata_exp",
-                "v": "payload[0] = 10",
-                "vt": "jsonata"
-            },
-            {
-                "t": "jsonata_exp",
-                "v": "payload[0] = 12",
-                "vt": "jsonata"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 430,
-        "y": 120,
-        "wires": [
-            [
-                "c8e1aed4fd756133"
-            ],
-            [
-                "d9bed4df6531d2e5"
-            ],
-            [
-                "93963397eb0e582e"
-            ],
-            [
-                "d2a8dd6a8f64543c"
-            ]
-        ],
-        "inputLabels": [
-            "month day"
-        ],
-        "outputLabels": [
-            "tribal",
-            "spooky",
-            "jolly",
-            "standard"
-        ]
-    },
-    {
-        "id": "c8e1aed4fd756133",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "tribal",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "tribal",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 590,
-        "y": 60,
-        "wires": [
-            [
-                "3422471d39e0060c"
-            ]
-        ]
-    },
-    {
-        "id": "d9bed4df6531d2e5",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "spooky",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "spooky",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 100,
-        "wires": [
-            [
-                "3422471d39e0060c"
-            ]
-        ]
-    },
-    {
-        "id": "93963397eb0e582e",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "jolly",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "jolly",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 590,
-        "y": 140,
-        "wires": [
-            [
-                "3422471d39e0060c"
-            ]
-        ]
-    },
-    {
-        "id": "d2a8dd6a8f64543c",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "standard",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "standard",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 180,
-        "wires": [
-            [
-                "3422471d39e0060c"
-            ]
-        ]
-    },
-    {
-        "id": "3422471d39e0060c",
-        "type": "rbe",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 750,
-        "y": 120,
-        "wires": [
-            [
-                "226f64e3485a40a0",
-                "39b7687321ba8601"
-            ]
-        ]
-    },
-    {
         "id": "226f64e3485a40a0",
         "type": "change",
         "z": "a767582f3959afc9",
@@ -2844,37 +3444,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 710,
-        "y": 260,
+        "x": 450,
+        "y": 160,
         "wires": [
             [
                 "22215c11d8006662"
-            ]
-        ]
-    },
-    {
-        "id": "664c687881845b07",
-        "type": "moment",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "topic": "nodered/time/theme",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "M D",
-        "locale": "en-US",
-        "output": "payload",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 320,
-        "y": 200,
-        "wires": [
-            [
-                "79030c660640eaa8"
             ]
         ]
     },
@@ -2891,237 +3465,14 @@
         "soff": "0",
         "eoff": "0",
         "x": 110,
-        "y": 240,
+        "y": 140,
         "wires": [
             [
-                "664c687881845b07",
-                "88efb926f22c77b2",
-                "6f7032969495e160",
-                "49cb0c6c9ff699d3",
-                "37fe7061661efdfd"
+                "5c6e4cb8063ff548",
+                "308a16df86393edf",
+                "f021aed61d19c325"
             ],
             []
-        ]
-    },
-    {
-        "id": "88efb926f22c77b2",
-        "type": "moment",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "topic": "nodered/time",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H",
-        "locale": "en-US",
-        "output": "hour",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 320,
-        "y": 440,
-        "wires": [
-            [
-                "f24b1abc7fa7b4d9"
-            ]
-        ]
-    },
-    {
-        "id": "f24b1abc7fa7b4d9",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "hour",
-                "pt": "msg",
-                "to": "$number(hour)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 160,
-        "y": 540,
-        "wires": [
-            [
-                "f4cd012decec20fd"
-            ]
-        ]
-    },
-    {
-        "id": "f4cd012decec20fd",
-        "type": "switch",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            },
-            {
-                "t": "jsonata_exp",
-                "v": "hour >= 12 and hour < 22",
-                "vt": "jsonata"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 310,
-        "y": 540,
-        "wires": [
-            [
-                "ab75bb7bc70fa7e5"
-            ],
-            [
-                "9faf5182c18ea1f0"
-            ],
-            [
-                "f30ab834bf201e89"
-            ]
-        ],
-        "inputLabels": [
-            "suncalc"
-        ],
-        "outputLabels": [
-            "day",
-            "evening",
-            "night"
-        ]
-    },
-    {
-        "id": "ab75bb7bc70fa7e5",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "day",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "day",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 500,
-        "wires": [
-            [
-                "ab88262d3d7a90df"
-            ]
-        ]
-    },
-    {
-        "id": "9faf5182c18ea1f0",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "evening",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "evening",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 540,
-        "wires": [
-            [
-                "ab88262d3d7a90df"
-            ]
-        ]
-    },
-    {
-        "id": "f30ab834bf201e89",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "night",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "night",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 580,
-        "wires": [
-            [
-                "ab88262d3d7a90df"
-            ]
-        ]
-    },
-    {
-        "id": "ab88262d3d7a90df",
-        "type": "rbe",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 590,
-        "y": 540,
-        "wires": [
-            [
-                "22215c11d8006662"
-            ]
         ]
     },
     {
@@ -3145,8 +3496,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 750,
-        "y": 540,
+        "x": 490,
+        "y": 220,
         "wires": [
             [
                 "66d63df0972916d2"
@@ -3180,8 +3531,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 600,
+        "x": 640,
+        "y": 220,
         "wires": [
             [
                 "e68284fd5306469f"
@@ -3199,170 +3550,48 @@
             "36aa9e5c3bbc1a11",
             "cb7a97db9b3023e5"
         ],
-        "x": 815,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "39b7687321ba8601",
-        "type": "link out",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "36aa9e5c3bbc1a11",
-            "cb7a97db9b3023e5"
-        ],
-        "x": 805,
+        "x": 715,
         "y": 60,
         "wires": []
     },
     {
-        "id": "6f7032969495e160",
-        "type": "moment",
+        "id": "5c6e4cb8063ff548",
+        "type": "subflow:c6cb427069082080",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "topic": "nodered/time/sunrise",
-        "input": "start",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "h:mm a",
-        "locale": "en-US",
-        "output": "payload",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 360,
-        "y": 280,
+        "x": 290,
+        "y": 140,
         "wires": [
             [
-                "093ba559ba44c7a9"
+                "226f64e3485a40a0",
+                "e68284fd5306469f"
             ]
         ]
     },
     {
-        "id": "49cb0c6c9ff699d3",
-        "type": "moment",
+        "id": "308a16df86393edf",
+        "type": "subflow:4c63d9433bfd1ab3",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
-        "name": "",
-        "topic": "nodered/time/sunset",
-        "input": "end",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "h:mm a",
-        "locale": "en-US",
-        "output": "payload",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 360,
-        "y": 360,
+        "x": 310,
+        "y": 220,
         "wires": [
             [
-                "093ba559ba44c7a9"
+                "22215c11d8006662"
             ]
         ]
     },
     {
-        "id": "093ba559ba44c7a9",
-        "type": "change",
+        "id": "f021aed61d19c325",
+        "type": "subflow:6b1e93ee94582206",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 320,
+        "x": 310,
+        "y": 60,
         "wires": [
             [
-                "5663f746f8ce7c34"
-            ]
-        ]
-    },
-    {
-        "id": "413acf449ffef1d5",
-        "type": "link out",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "36aa9e5c3bbc1a11"
-        ],
-        "x": 595,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "5663f746f8ce7c34",
-        "type": "rbe",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 510,
-        "y": 420,
-        "wires": [
-            [
-                "413acf449ffef1d5"
-            ]
-        ]
-    },
-    {
-        "id": "37fe7061661efdfd",
-        "type": "moment",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "topic": "nodered/time/now",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "MMMM D, YYYY; h:mm a",
-        "locale": "en-US",
-        "output": "payload",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 350,
-        "y": 320,
-        "wires": [
-            [
-                "093ba559ba44c7a9"
+                "e68284fd5306469f"
             ]
         ]
     },
@@ -3914,7 +4143,7 @@
                 "p": "payload"
             }
         ],
-        "repeat": "",
+        "repeat": "3600",
         "crontab": "",
         "once": true,
         "onceDelay": "10",
@@ -4923,32 +5152,6 @@
         "wires": [
             [
                 "2b1564ff1c7c7aa9"
-            ]
-        ]
-    },
-    {
-        "id": "15d263f15c1ff8ae",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "6291a1c0cc88a94a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 12 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 330,
-        "y": 360,
-        "wires": [
-            [
-                "c17adde8af9dd573"
             ]
         ]
     },
