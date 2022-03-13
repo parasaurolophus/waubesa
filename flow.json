@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "d2913f0403d16a2e",
+        "type": "tab",
+        "label": "Weather",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "a767582f3959afc9",
         "type": "tab",
         "label": "Timer",
@@ -558,7 +566,7 @@
         "in": [
             {
                 "x": 40,
-                "y": 120,
+                "y": 180,
                 "wires": [
                     {
                         "id": "d89713c09ec0db27"
@@ -569,7 +577,7 @@
         "out": [
             {
                 "x": 820,
-                "y": 240,
+                "y": 320,
                 "wires": [
                     {
                         "id": "5663f746f8ce7c34",
@@ -594,10 +602,80 @@
         "color": "#DDAA99",
         "status": {
             "x": 580,
-            "y": 240,
+            "y": 320,
             "wires": [
                 {
                     "id": "46e8a3676e6dcb21",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "14b96f50ea6ac2b0",
+        "type": "subflow",
+        "name": "OpenWeather",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "aa57052ec3dc9c6d"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 800,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "2a8f92933cb50b60",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "KEY",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "LATITUDE",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "LONGITUDE",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "UNITS",
+                "type": "str",
+                "value": "imperial"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "inputLabels": [
+            "anything"
+        ],
+        "outputLabels": [
+            "weather"
+        ],
+        "status": {
+            "x": 760,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "85aa17fa4b3134a0",
                     "port": 0
                 }
             ]
@@ -621,9 +699,7 @@
             "a9378d8ba74f3f4f"
         ],
         "x": 14,
-        "y": 119,
-        "w": 415,
-        "h": 82
+        "y": 119
     },
     {
         "id": "cf878f58f6360a07",
@@ -896,9 +972,7 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19,
-        "w": 632,
-        "h": 82
+        "y": 19
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1229,9 +1303,7 @@
             "7c34456044c111e6"
         ],
         "x": 34,
-        "y": 239,
-        "w": 492,
-        "h": 170
+        "y": 239
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1253,9 +1325,7 @@
             "c897f7f0ee8680dc"
         ],
         "x": 574,
-        "y": 479,
-        "w": 232,
-        "h": 170
+        "y": 479
     },
     {
         "id": "73991d26373b19c7",
@@ -1280,9 +1350,7 @@
             "76224ffd6895171f"
         ],
         "x": 574,
-        "y": 219,
-        "w": 272,
-        "h": 250
+        "y": 219
     },
     {
         "id": "b940bf3a0df755de",
@@ -1304,9 +1372,7 @@
             "f12fbd86617caaf9"
         ],
         "x": 574,
-        "y": 19,
-        "w": 232,
-        "h": 170
+        "y": 19
     },
     {
         "id": "b4ef3182e14fb20f",
@@ -1331,9 +1397,7 @@
             "f021aed61d19c325"
         ],
         "x": 14,
-        "y": 19,
-        "w": 742,
-        "h": 242
+        "y": 19
     },
     {
         "id": "f0c548d0322b61eb",
@@ -1352,9 +1416,7 @@
             "a86ff5bf27db6612"
         ],
         "x": 14,
-        "y": 219,
-        "w": 400,
-        "h": 82
+        "y": 219
     },
     {
         "id": "6291a1c0cc88a94a",
@@ -1404,9 +1466,7 @@
             "08e52f60d62f2527"
         ],
         "x": 14,
-        "y": 319,
-        "w": 1012,
-        "h": 662
+        "y": 319
     },
     {
         "id": "ed06ddb70f539baf",
@@ -1428,6 +1488,28 @@
         "x": 104,
         "y": 19,
         "w": 362,
+        "h": 82
+    },
+    {
+        "id": "fba64f0c34d8188a",
+        "type": "group",
+        "z": "d2913f0403d16a2e",
+        "name": "Periodically fetch weather data from OpenWeather API",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ac32f969e98868bc",
+            "4b40afaf89133b59",
+            "0cab03f3b39e0df7"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 442,
         "h": 82
     },
     {
@@ -2044,6 +2126,134 @@
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
+    },
+    {
+        "id": "e30bfc23aef6835c",
+        "type": "ui_tab",
+        "name": "Status",
+        "icon": "settings",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2d635d796ac40e4a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#d357fe",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#d357fe",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#d357fe",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#e7a3fe",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#d357fe",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Chez Nous",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "MM/DD/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f743d15869404728",
+        "type": "ui_group",
+        "name": "Time",
+        "tab": "e30bfc23aef6835c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "6f82dd9e98bb09db",
+        "type": "ui_group",
+        "name": "Weather",
+        "tab": "e30bfc23aef6835c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
     },
     {
         "id": "3111257f22032077",
@@ -3161,7 +3371,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 440,
-        "y": 40,
+        "y": 120,
         "wires": [
             [
                 "093ba559ba44c7a9"
@@ -3186,7 +3396,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 440,
-        "y": 80,
+        "y": 160,
         "wires": [
             [
                 "093ba559ba44c7a9"
@@ -3219,8 +3429,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 120,
+        "x": 760,
+        "y": 180,
         "wires": [
             [
                 "5663f746f8ce7c34"
@@ -3240,7 +3450,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 730,
-        "y": 240,
+        "y": 320,
         "wires": [
             []
         ]
@@ -3263,7 +3473,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 430,
-        "y": 120,
+        "y": 200,
         "wires": [
             [
                 "093ba559ba44c7a9"
@@ -3297,14 +3507,15 @@
         "to": "",
         "reg": false,
         "x": 160,
-        "y": 120,
+        "y": 180,
         "wires": [
             [
                 "49cb0c6c9ff699d3",
                 "6f7032969495e160",
                 "37fe7061661efdfd",
                 "af3d468ee1e29c98",
-                "46e8a3676e6dcb21"
+                "46e8a3676e6dcb21",
+                "60fb188c580caff7"
             ]
         ]
     },
@@ -3326,7 +3537,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 430,
-        "y": 160,
+        "y": 240,
         "wires": [
             [
                 "093ba559ba44c7a9"
@@ -3338,7 +3549,7 @@
         "type": "moment",
         "z": "6b1e93ee94582206",
         "name": "",
-        "topic": "nodered/time/time",
+        "topic": "nodered/time/now",
         "input": "now",
         "inputType": "msg",
         "inTz": "ETC/utc",
@@ -3351,11 +3562,189 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 430,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "093ba559ba44c7a9"
             ]
+        ]
+    },
+    {
+        "id": "60fb188c580caff7",
+        "type": "change",
+        "z": "6b1e93ee94582206",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "moon.icon",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/time/moon",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 80,
+        "wires": [
+            [
+                "093ba559ba44c7a9"
+            ]
+        ]
+    },
+    {
+        "id": "aa57052ec3dc9c6d",
+        "type": "change",
+        "z": "14b96f50ea6ac2b0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'https://api.openweathermap.org/data/2.5/onecall?lat=' & $env('LATITUDE') & '&lon=' & $env('LONGITUDE') & '&units=' & $env('UNITS') & '&appid=' & $env('KEY')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "41c2d4652f3c744d"
+            ]
+        ]
+    },
+    {
+        "id": "41c2d4652f3c744d",
+        "type": "http request",
+        "z": "14b96f50ea6ac2b0",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "e79e0110c2317edb",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "699e28e26d4d8db3"
+            ]
+        ]
+    },
+    {
+        "id": "699e28e26d4d8db3",
+        "type": "json",
+        "z": "14b96f50ea6ac2b0",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "85aa17fa4b3134a0",
+                "2a8f92933cb50b60"
+            ]
+        ]
+    },
+    {
+        "id": "85aa17fa4b3134a0",
+        "type": "change",
+        "z": "14b96f50ea6ac2b0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.current.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2a8f92933cb50b60",
+        "type": "change",
+        "z": "14b96f50ea6ac2b0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "openweather",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 40,
+        "wires": [
+            []
         ]
     },
     {
@@ -3369,7 +3758,8 @@
             "e68284fd5306469f",
             "39b7687321ba8601",
             "08e52f60d62f2527",
-            "413acf449ffef1d5"
+            "413acf449ffef1d5",
+            "0cab03f3b39e0df7"
         ],
         "x": 145,
         "y": 60,
@@ -3423,6 +3813,151 @@
                 "4c821cf703902769"
             ]
         ]
+    },
+    {
+        "id": "ac32f969e98868bc",
+        "type": "inject",
+        "z": "d2913f0403d16a2e",
+        "g": "fba64f0c34d8188a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "30",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "4b40afaf89133b59"
+            ]
+        ]
+    },
+    {
+        "id": "4b40afaf89133b59",
+        "type": "subflow:14b96f50ea6ac2b0",
+        "z": "d2913f0403d16a2e",
+        "g": "fba64f0c34d8188a",
+        "name": "",
+        "env": [
+            {
+                "name": "KEY",
+                "value": "8e65117f5209ea2857215b8f80eac5b3",
+                "type": "str"
+            },
+            {
+                "name": "LATITUDE",
+                "value": "43.02021",
+                "type": "str"
+            },
+            {
+                "name": "LONGITUDE",
+                "value": "-89.30352",
+                "type": "str"
+            }
+        ],
+        "x": 300,
+        "y": 60,
+        "wires": [
+            [
+                "0cab03f3b39e0df7"
+            ]
+        ]
+    },
+    {
+        "id": "0cab03f3b39e0df7",
+        "type": "link out",
+        "z": "d2913f0403d16a2e",
+        "g": "fba64f0c34d8188a",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "36aa9e5c3bbc1a11"
+        ],
+        "x": 415,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "dcbed163fb169281",
+        "type": "mqtt in",
+        "z": "d2913f0403d16a2e",
+        "name": "",
+        "topic": "openweather",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "b339750e6766584f",
+                "f1fcec614bb172af",
+                "d112a7064b3f58a3"
+            ]
+        ]
+    },
+    {
+        "id": "b339750e6766584f",
+        "type": "debug",
+        "z": "d2913f0403d16a2e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload.current.temp",
+        "statusType": "msg",
+        "x": 330,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f1fcec614bb172af",
+        "type": "ui_text",
+        "z": "d2913f0403d16a2e",
+        "group": "6f82dd9e98bb09db",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "Temperature",
+        "format": "{{msg.payload.current.temp}}&deg; F",
+        "layout": "col-center",
+        "className": "",
+        "x": 330,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d112a7064b3f58a3",
+        "type": "ui_text",
+        "z": "d2913f0403d16a2e",
+        "group": "6f82dd9e98bb09db",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "Feels Like",
+        "format": "{{msg.payload.current.feels_like}}&deg; F",
+        "layout": "col-center",
+        "className": "",
+        "x": 320,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "226f64e3485a40a0",
@@ -3551,7 +4086,7 @@
             "cb7a97db9b3023e5"
         ],
         "x": 715,
-        "y": 60,
+        "y": 140,
         "wires": []
     },
     {
@@ -3587,6 +4122,7 @@
         "type": "subflow:6b1e93ee94582206",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
+        "name": "",
         "x": 310,
         "y": 60,
         "wires": [
@@ -3594,6 +4130,358 @@
                 "e68284fd5306469f"
             ]
         ]
+    },
+    {
+        "id": "d40a7a17bfba339d",
+        "type": "ui_template",
+        "z": "a767582f3959afc9",
+        "group": "f743d15869404728",
+        "name": "Moon",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "format": "<i class=\"wi {{msg.payload}}\" style=\"width:100%;text-align:center;height:100%;vertial-align:middle;\"></i>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ef50fae4de6d1d4",
+        "type": "mqtt in",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "topic": "nodered/time/moon",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "a882e934bf838ee3"
+            ]
+        ]
+    },
+    {
+        "id": "039e2632f81291a2",
+        "type": "mqtt in",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "topic": "nodered/time",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 380,
+        "wires": [
+            [
+                "ccce328f74a13bfc"
+            ]
+        ]
+    },
+    {
+        "id": "a882e934bf838ee3",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 330,
+        "y": 320,
+        "wires": [
+            [
+                "d40a7a17bfba339d"
+            ]
+        ]
+    },
+    {
+        "id": "ccce328f74a13bfc",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "7f793776942b6dcd"
+            ]
+        ]
+    },
+    {
+        "id": "9f3ea94eebe0c019",
+        "type": "mqtt in",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "topic": "nodered/time/theme",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "871f4984160e6b03"
+            ]
+        ]
+    },
+    {
+        "id": "871f4984160e6b03",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 330,
+        "y": 440,
+        "wires": [
+            [
+                "66090b60103074d2"
+            ]
+        ]
+    },
+    {
+        "id": "5cdf5b5a8180ef74",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "group": "f743d15869404728",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "Sunrise",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 460,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a7f252dec52c10a7",
+        "type": "mqtt in",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "topic": "nodered/time/sunrise",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [
+                "4238c44d9b182374"
+            ]
+        ]
+    },
+    {
+        "id": "4238c44d9b182374",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 330,
+        "y": 500,
+        "wires": [
+            [
+                "5cdf5b5a8180ef74"
+            ]
+        ]
+    },
+    {
+        "id": "478f1c3edef86350",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "group": "f743d15869404728",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "Now",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 450,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9f199b95631af84d",
+        "type": "mqtt in",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "topic": "nodered/time/now",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 560,
+        "wires": [
+            [
+                "cbec35aea23197e2"
+            ]
+        ]
+    },
+    {
+        "id": "cbec35aea23197e2",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "478f1c3edef86350"
+            ]
+        ]
+    },
+    {
+        "id": "a3a937e59f4ffa3c",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "group": "f743d15869404728",
+        "order": 6,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "Sunset",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 460,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a9a9ebe5f59b2f50",
+        "type": "mqtt in",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "topic": "nodered/time/sunset",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "107b5941385b4ae1",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 620,
+        "wires": [
+            [
+                "615be8e12f4c2b30"
+            ]
+        ]
+    },
+    {
+        "id": "615be8e12f4c2b30",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 330,
+        "y": 620,
+        "wires": [
+            [
+                "a3a937e59f4ffa3c"
+            ]
+        ]
+    },
+    {
+        "id": "7f793776942b6dcd",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "group": "f743d15869404728",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 450,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "66090b60103074d2",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "group": "f743d15869404728",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "name": "",
+        "label": "Theme",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 450,
+        "y": 440,
+        "wires": []
     },
     {
         "id": "93398f788c096cb3",
