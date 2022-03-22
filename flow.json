@@ -399,7 +399,7 @@
         "in": [
             {
                 "x": 40,
-                "y": 140,
+                "y": 120,
                 "wires": [
                     {
                         "id": "fbeda1fcb9c9695d"
@@ -410,7 +410,7 @@
         "out": [
             {
                 "x": 750,
-                "y": 60,
+                "y": 40,
                 "wires": [
                     {
                         "id": "8fd22e76f7dfeb81",
@@ -420,7 +420,7 @@
             },
             {
                 "x": 480,
-                "y": 180,
+                "y": 160,
                 "wires": [
                     {
                         "id": "07951e1312d46fe6",
@@ -433,7 +433,7 @@
             {
                 "name": "RANGE",
                 "type": "num",
-                "value": "6"
+                "value": "4"
             }
         ],
         "meta": {},
@@ -447,7 +447,7 @@
         ],
         "status": {
             "x": 680,
-            "y": 140,
+            "y": 120,
             "wires": [
                 {
                     "id": "8fd22e76f7dfeb81",
@@ -499,7 +499,7 @@
             {
                 "name": "RANGE",
                 "type": "num",
-                "value": "6"
+                "value": "4"
             }
         ],
         "meta": {},
@@ -540,9 +540,7 @@
             "a9378d8ba74f3f4f"
         ],
         "x": 14,
-        "y": 119,
-        "w": 415,
-        "h": 82
+        "y": 119
     },
     {
         "id": "cf878f58f6360a07",
@@ -815,9 +813,7 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19,
-        "w": 632,
-        "h": 82
+        "y": 19
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1223,7 +1219,7 @@
         "id": "b4ef3182e14fb20f",
         "type": "group",
         "z": "a767582f3959afc9",
-        "name": "Trigger time based automation",
+        "name": "Trigger time-based lighting automation",
         "style": {
             "stroke": "#000000",
             "fill": "#000000",
@@ -1238,18 +1234,12 @@
             "66d63df0972916d2",
             "e68284fd5306469f",
             "5c6e4cb8063ff548",
-            "308a16df86393edf",
-            "89206273762b4f31",
-            "28aad489d3a85e35",
-            "13f8b7bd21eb598b",
-            "0159b596bfe6f882",
-            "8fe8cfb435f10899",
-            "f3346e7f8dde6621"
+            "308a16df86393edf"
         ],
         "x": 14,
         "y": 19,
-        "w": 802,
-        "h": 602
+        "w": 762,
+        "h": 162
     },
     {
         "id": "6291a1c0cc88a94a",
@@ -1295,9 +1285,33 @@
             "2e6e76722a793f26"
         ],
         "x": 14,
-        "y": 219,
-        "w": 1012,
-        "h": 502
+        "y": 219
+    },
+    {
+        "id": "2670a3653ecb9db3",
+        "type": "group",
+        "z": "a767582f3959afc9",
+        "name": "Trigger time-based window shade automation",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "89206273762b4f31",
+            "28aad489d3a85e35",
+            "13f8b7bd21eb598b",
+            "0159b596bfe6f882",
+            "8fe8cfb435f10899",
+            "f3346e7f8dde6621",
+            "67ef9cf130a59bbd"
+        ],
+        "x": 14,
+        "y": 199,
+        "w": 752,
+        "h": 322
     },
     {
         "id": "e79e0110c2317edb",
@@ -2674,7 +2688,7 @@
         "finalize": "",
         "libs": [],
         "x": 160,
-        "y": 140,
+        "y": 120,
         "wires": [
             [
                 "7d6cce1757df5999",
@@ -2705,7 +2719,7 @@
         "repair": false,
         "outputs": 2,
         "x": 330,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "c6fc5a5f612f2db9"
@@ -2735,7 +2749,7 @@
         "to": "",
         "reg": false,
         "x": 450,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "8fd22e76f7dfeb81"
@@ -2762,7 +2776,7 @@
         "to": "",
         "reg": false,
         "x": 450,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "8fd22e76f7dfeb81"
@@ -2782,7 +2796,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 570,
-        "y": 100,
+        "y": 80,
         "wires": [
             []
         ]
@@ -2800,7 +2814,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 330,
-        "y": 180,
+        "y": 160,
         "wires": [
             []
         ]
@@ -2968,7 +2982,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 430,
         "y": 60,
         "wires": [
             [
@@ -2981,7 +2995,7 @@
         "type": "sunrise",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
-        "name": "",
+        "name": "golden hours",
         "lat": "43.02021",
         "lon": "-89.30352",
         "start": "goldenHourEnd",
@@ -2989,13 +3003,11 @@
         "soff": "0",
         "eoff": "0",
         "x": 110,
-        "y": 300,
+        "y": 100,
         "wires": [
             [
                 "5c6e4cb8063ff548",
-                "308a16df86393edf",
-                "13f8b7bd21eb598b",
-                "8fe8cfb435f10899"
+                "308a16df86393edf"
             ],
             []
         ]
@@ -3021,8 +3033,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 510,
-        "y": 220,
+        "x": 470,
+        "y": 140,
         "wires": [
             [
                 "66d63df0972916d2"
@@ -3056,8 +3068,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 220,
+        "x": 620,
+        "y": 140,
         "wires": [
             [
                 "e68284fd5306469f"
@@ -3074,8 +3086,8 @@
         "links": [
             "1993fd8165053adf"
         ],
-        "x": 775,
-        "y": 220,
+        "x": 735,
+        "y": 140,
         "wires": []
     },
     {
@@ -3084,7 +3096,7 @@
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "x": 310,
+        "x": 270,
         "y": 60,
         "wires": [
             [
@@ -3097,8 +3109,8 @@
         "type": "subflow:4c63d9433bfd1ab3",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
-        "x": 330,
-        "y": 220,
+        "x": 290,
+        "y": 140,
         "wires": [
             [
                 "22215c11d8006662"
@@ -3109,7 +3121,7 @@
         "id": "89206273762b4f31",
         "type": "debug",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "2670a3653ecb9db3",
         "name": "dining room shades",
         "active": true,
         "tosidebar": true,
@@ -3119,15 +3131,15 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 590,
-        "y": 340,
+        "x": 630,
+        "y": 240,
         "wires": []
     },
     {
         "id": "28aad489d3a85e35",
         "type": "debug",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "2670a3653ecb9db3",
         "name": "living room shades",
         "active": true,
         "tosidebar": true,
@@ -3137,18 +3149,25 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 590,
-        "y": 500,
+        "x": 630,
+        "y": 400,
         "wires": []
     },
     {
         "id": "13f8b7bd21eb598b",
         "type": "subflow:5642751fc7ef75e9",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "2670a3653ecb9db3",
         "name": "Dining Room Shades",
-        "x": 360,
-        "y": 380,
+        "env": [
+            {
+                "name": "RANGE",
+                "value": "4",
+                "type": "num"
+            }
+        ],
+        "x": 400,
+        "y": 280,
         "wires": [
             [
                 "89206273762b4f31"
@@ -3162,7 +3181,7 @@
         "id": "0159b596bfe6f882",
         "type": "debug",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "2670a3653ecb9db3",
         "name": "hours after start",
         "active": true,
         "tosidebar": true,
@@ -3172,18 +3191,25 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 580,
-        "y": 420,
+        "x": 620,
+        "y": 320,
         "wires": []
     },
     {
         "id": "8fe8cfb435f10899",
         "type": "subflow:ecab3ee60cb91a4c",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "2670a3653ecb9db3",
         "name": "Living Room Shades",
-        "x": 360,
-        "y": 540,
+        "env": [
+            {
+                "name": "RANGE",
+                "value": "4",
+                "type": "num"
+            }
+        ],
+        "x": 400,
+        "y": 440,
         "wires": [
             [
                 "28aad489d3a85e35"
@@ -3197,7 +3223,7 @@
         "id": "f3346e7f8dde6621",
         "type": "debug",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "2670a3653ecb9db3",
         "name": "hours before end",
         "active": true,
         "tosidebar": true,
@@ -3207,9 +3233,31 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 590,
-        "y": 580,
+        "x": 630,
+        "y": 480,
         "wires": []
+    },
+    {
+        "id": "67ef9cf130a59bbd",
+        "type": "sunrise",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "actual sun rise/set",
+        "lat": "43.02021",
+        "lon": "-89.30352",
+        "start": "sunrise",
+        "end": "sunsetStart",
+        "soff": "0",
+        "eoff": "0",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "13f8b7bd21eb598b",
+                "8fe8cfb435f10899"
+            ],
+            []
+        ]
     },
     {
         "id": "93398f788c096cb3",
