@@ -540,7 +540,9 @@
             "a9378d8ba74f3f4f"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 415,
+        "h": 82
     },
     {
         "id": "cf878f58f6360a07",
@@ -813,7 +815,9 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 632,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1285,7 +1289,9 @@
             "2e6e76722a793f26"
         ],
         "x": 14,
-        "y": 219
+        "y": 219,
+        "w": 1012,
+        "h": 502
     },
     {
         "id": "2670a3653ecb9db3",
@@ -1300,18 +1306,43 @@
             "color": "#000000"
         },
         "nodes": [
-            "89206273762b4f31",
-            "28aad489d3a85e35",
             "13f8b7bd21eb598b",
             "0159b596bfe6f882",
             "8fe8cfb435f10899",
             "f3346e7f8dde6621",
-            "67ef9cf130a59bbd"
+            "67ef9cf130a59bbd",
+            "d2764f00051de24f",
+            "38610e4c3f8e50d8",
+            "b47e87a7cf037e17",
+            "b8228d51ad6fa66a",
+            "c4f8dec05e48db33",
+            "41ab0637160542ac"
         ],
         "x": 14,
         "y": 199,
         "w": 752,
-        "h": 322
+        "h": 402
+    },
+    {
+        "id": "38b2c8f8b084de31",
+        "type": "group",
+        "z": "a00ccef1301f21e3",
+        "name": "",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "656dea6b74619b8b",
+            "2e0f8b19c2802c5c"
+        ],
+        "x": 14,
+        "y": 739,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -2788,7 +2819,7 @@
         "type": "rbe",
         "z": "5642751fc7ef75e9",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -2931,7 +2962,7 @@
         "type": "rbe",
         "z": "ecab3ee60cb91a4c",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
@@ -3118,42 +3149,6 @@
         ]
     },
     {
-        "id": "89206273762b4f31",
-        "type": "debug",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "dining room shades",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 630,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "28aad489d3a85e35",
-        "type": "debug",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "living room shades",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 630,
-        "y": 400,
-        "wires": []
-    },
-    {
         "id": "13f8b7bd21eb598b",
         "type": "subflow:5642751fc7ef75e9",
         "z": "a767582f3959afc9",
@@ -3163,7 +3158,7 @@
         "y": 280,
         "wires": [
             [
-                "89206273762b4f31"
+                "b47e87a7cf037e17"
             ],
             [
                 "0159b596bfe6f882"
@@ -3176,7 +3171,7 @@
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
         "name": "hours after start",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3198,7 +3193,7 @@
         "y": 440,
         "wires": [
             [
-                "28aad489d3a85e35"
+                "b8228d51ad6fa66a"
             ],
             [
                 "f3346e7f8dde6621"
@@ -3211,7 +3206,7 @@
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
         "name": "hours before end",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -3243,6 +3238,122 @@
                 "8fe8cfb435f10899"
             ],
             []
+        ]
+    },
+    {
+        "id": "d2764f00051de24f",
+        "type": "inject",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 22 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "c4f8dec05e48db33"
+            ]
+        ]
+    },
+    {
+        "id": "38610e4c3f8e50d8",
+        "type": "link out",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "to all shades",
+        "mode": "link",
+        "links": [],
+        "x": 355,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b47e87a7cf037e17",
+        "type": "link out",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "to dining room shades",
+        "mode": "link",
+        "links": [],
+        "x": 555,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b8228d51ad6fa66a",
+        "type": "link out",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "to living room shades",
+        "mode": "link",
+        "links": [],
+        "x": 555,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c4f8dec05e48db33",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "close",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "close",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 540,
+        "wires": [
+            [
+                "38610e4c3f8e50d8"
+            ]
+        ]
+    },
+    {
+        "id": "41ab0637160542ac",
+        "type": "inject",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 02 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 560,
+        "wires": [
+            [
+                "c4f8dec05e48db33"
+            ]
         ]
     },
     {
@@ -4585,6 +4696,49 @@
                 "2b1564ff1c7c7aa9"
             ]
         ]
+    },
+    {
+        "id": "656dea6b74619b8b",
+        "type": "inject",
+        "z": "a00ccef1301f21e3",
+        "g": "38b2c8f8b084de31",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "chez_nous_main",
+        "payloadType": "flow",
+        "x": 160,
+        "y": 780,
+        "wires": [
+            [
+                "2e0f8b19c2802c5c"
+            ]
+        ]
+    },
+    {
+        "id": "2e0f8b19c2802c5c",
+        "type": "debug",
+        "z": "a00ccef1301f21e3",
+        "g": "38b2c8f8b084de31",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 350,
+        "y": 780,
+        "wires": []
     },
     {
         "id": "e2139e7bb021147f",
