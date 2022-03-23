@@ -302,7 +302,7 @@
         "out": [
             {
                 "x": 720,
-                "y": 140,
+                "y": 80,
                 "wires": [
                     {
                         "id": "3422471d39e0060c",
@@ -311,23 +311,12 @@
                 ]
             }
         ],
-        "env": [
-            {
-                "name": "IN_TIME_ZONE",
-                "type": "str",
-                "value": "ETC/utc"
-            },
-            {
-                "name": "OUT_TIME_ZONE",
-                "type": "str",
-                "value": "America/Chicago"
-            }
-        ],
+        "env": [],
         "meta": {},
         "color": "#DDAA99",
         "status": {
             "x": 720,
-            "y": 220,
+            "y": 160,
             "wires": [
                 {
                     "id": "3422471d39e0060c",
@@ -356,7 +345,7 @@
         "out": [
             {
                 "x": 680,
-                "y": 140,
+                "y": 80,
                 "wires": [
                     {
                         "id": "ab88262d3d7a90df",
@@ -365,23 +354,12 @@
                 ]
             }
         ],
-        "env": [
-            {
-                "name": "IN_TIME_ZONE",
-                "type": "str",
-                "value": "ETC/utc"
-            },
-            {
-                "name": "OUT_TIME_ZONE",
-                "type": "str",
-                "value": "America/Chicago"
-            }
-        ],
+        "env": [],
         "meta": {},
         "color": "#DDAA99",
         "status": {
             "x": 680,
-            "y": 220,
+            "y": 160,
             "wires": [
                 {
                     "id": "ab88262d3d7a90df",
@@ -399,31 +377,21 @@
         "in": [
             {
                 "x": 40,
-                "y": 120,
+                "y": 220,
                 "wires": [
                     {
-                        "id": "fbeda1fcb9c9695d"
+                        "id": "e1c59c0ea37e8e09"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 750,
+                "x": 670,
                 "y": 40,
                 "wires": [
                     {
-                        "id": "8fd22e76f7dfeb81",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 480,
-                "y": 160,
-                "wires": [
-                    {
-                        "id": "07951e1312d46fe6",
+                        "id": "d7b1e17d988b9e9d",
                         "port": 0
                     }
                 ]
@@ -433,7 +401,7 @@
             {
                 "name": "RANGE",
                 "type": "num",
-                "value": "4"
+                "value": "300"
             }
         ],
         "meta": {},
@@ -442,15 +410,14 @@
             "from suncalc"
         ],
         "outputLabels": [
-            "shade command",
-            "hours after start"
+            "shade command"
         ],
         "status": {
-            "x": 680,
+            "x": 780,
             "y": 120,
             "wires": [
                 {
-                    "id": "8fd22e76f7dfeb81",
+                    "id": "fdbfa56601137b1e",
                     "port": 0
                 }
             ]
@@ -465,31 +432,21 @@
         "in": [
             {
                 "x": 40,
-                "y": 120,
+                "y": 220,
                 "wires": [
                     {
-                        "id": "f4f5d3c2d43bb88e"
+                        "id": "02624549f2780315"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 750,
+                "x": 790,
                 "y": 40,
                 "wires": [
                     {
-                        "id": "6cc18f3350a372a4",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 490,
-                "y": 160,
-                "wires": [
-                    {
-                        "id": "85fb6b7f8ef2286a",
+                        "id": "585e68c0a4d94cf7",
                         "port": 0
                     }
                 ]
@@ -499,7 +456,7 @@
             {
                 "name": "RANGE",
                 "type": "num",
-                "value": "4"
+                "value": "300"
             }
         ],
         "meta": {},
@@ -508,15 +465,14 @@
             "from suncalc"
         ],
         "outputLabels": [
-            "shades command",
-            "hours before end"
+            "shades command"
         ],
         "status": {
-            "x": 680,
+            "x": 900,
             "y": 120,
             "wires": [
                 {
-                    "id": "6cc18f3350a372a4",
+                    "id": "3bfcf910ee4301aa",
                     "port": 0
                 }
             ]
@@ -540,9 +496,7 @@
             "a9378d8ba74f3f4f"
         ],
         "x": 14,
-        "y": 119,
-        "w": 415,
-        "h": 82
+        "y": 119
     },
     {
         "id": "cf878f58f6360a07",
@@ -815,9 +769,7 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19,
-        "w": 632,
-        "h": 82
+        "y": 19
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1289,9 +1241,7 @@
             "2e6e76722a793f26"
         ],
         "x": 14,
-        "y": 219,
-        "w": 1012,
-        "h": 502
+        "y": 219
     },
     {
         "id": "2670a3653ecb9db3",
@@ -1307,21 +1257,15 @@
         },
         "nodes": [
             "13f8b7bd21eb598b",
-            "0159b596bfe6f882",
             "8fe8cfb435f10899",
-            "f3346e7f8dde6621",
             "67ef9cf130a59bbd",
-            "d2764f00051de24f",
-            "38610e4c3f8e50d8",
             "b47e87a7cf037e17",
-            "b8228d51ad6fa66a",
-            "c4f8dec05e48db33",
-            "41ab0637160542ac"
+            "b8228d51ad6fa66a"
         ],
         "x": 14,
         "y": 199,
-        "w": 752,
-        "h": 402
+        "w": 522,
+        "h": 162
     },
     {
         "id": "38b2c8f8b084de31",
@@ -1340,9 +1284,47 @@
             "2e0f8b19c2802c5c"
         ],
         "x": 14,
-        "y": 739,
-        "w": 452,
-        "h": 82
+        "y": 739
+    },
+    {
+        "id": "23326394bdf298bd",
+        "type": "group",
+        "z": "b9c60ff63fc6388d",
+        "name": "TODO: Control living room shades",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "9f9a2d4e2371b466",
+            "3064bb7944a443ae",
+            "2c6d764573672597"
+        ],
+        "x": 104,
+        "y": 159
+    },
+    {
+        "id": "70ad19a161b89a20",
+        "type": "group",
+        "z": "c6feba6b4b754115",
+        "name": "TODO: Control dining room shades",
+        "style": {
+            "stroke": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "f4bfa77252ae420b",
+            "d57f33b230fb3aa9",
+            "1d7251db522b4649"
+        ],
+        "x": 104,
+        "y": 159
     },
     {
         "id": "e79e0110c2317edb",
@@ -2217,7 +2199,7 @@
         "to": "",
         "reg": false,
         "x": 140,
-        "y": 180,
+        "y": 120,
         "wires": [
             [
                 "f19fc407e32b3505"
@@ -2241,7 +2223,7 @@
         "output": "payload",
         "outputType": "msg",
         "outTz": "America/Chicago",
-        "x": 360,
+        "x": 180,
         "y": 40,
         "wires": [
             [
@@ -2280,7 +2262,7 @@
         "repair": false,
         "outputs": 4,
         "x": 290,
-        "y": 180,
+        "y": 120,
         "wires": [
             [
                 "c8e1aed4fd756133"
@@ -2325,7 +2307,7 @@
         "to": "",
         "reg": false,
         "x": 450,
-        "y": 120,
+        "y": 60,
         "wires": [
             [
                 "3422471d39e0060c"
@@ -2352,7 +2334,7 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 160,
+        "y": 100,
         "wires": [
             [
                 "3422471d39e0060c"
@@ -2379,7 +2361,7 @@
         "to": "",
         "reg": false,
         "x": 450,
-        "y": 200,
+        "y": 140,
         "wires": [
             [
                 "3422471d39e0060c"
@@ -2406,7 +2388,7 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 240,
+        "y": 180,
         "wires": [
             [
                 "3422471d39e0060c"
@@ -2426,39 +2408,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 610,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3afa55ec0eee3e9f",
-        "type": "change",
-        "z": "c6cb427069082080",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "inTz",
-                "pt": "msg",
-                "to": "IN_TIME_ZONE",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "outTz",
-                "pt": "msg",
-                "to": "OUT_TIME_ZONE",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 160,
-        "y": 40,
+        "y": 120,
         "wires": [
             []
         ]
@@ -2480,7 +2430,7 @@
         "output": "hour",
         "outputType": "msg",
         "outTz": "America/Chicago",
-        "x": 340,
+        "x": 160,
         "y": 40,
         "wires": [
             [
@@ -2522,7 +2472,7 @@
         "to": "",
         "reg": false,
         "x": 140,
-        "y": 180,
+        "y": 120,
         "wires": [
             [
                 "f4cd012decec20fd"
@@ -2555,7 +2505,7 @@
         "repair": false,
         "outputs": 3,
         "x": 290,
-        "y": 180,
+        "y": 120,
         "wires": [
             [
                 "ab75bb7bc70fa7e5"
@@ -2596,7 +2546,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 140,
+        "y": 80,
         "wires": [
             [
                 "ab88262d3d7a90df"
@@ -2623,7 +2573,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 180,
+        "y": 120,
         "wires": [
             [
                 "ab88262d3d7a90df"
@@ -2650,7 +2600,7 @@
         "to": "",
         "reg": false,
         "x": 430,
-        "y": 220,
+        "y": 160,
         "wires": [
             [
                 "ab88262d3d7a90df"
@@ -2670,30 +2620,80 @@
         "property": "payload",
         "topi": "topic",
         "x": 570,
-        "y": 180,
+        "y": 120,
         "wires": [
             []
         ]
     },
     {
-        "id": "483056783c2f5134",
+        "id": "e1c59c0ea37e8e09",
+        "type": "moment",
+        "z": "5642751fc7ef75e9",
+        "name": "hour",
+        "topic": "",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "hour",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "31ad51658f661897"
+            ]
+        ]
+    },
+    {
+        "id": "31ad51658f661897",
+        "type": "moment",
+        "z": "5642751fc7ef75e9",
+        "name": "sunrise",
+        "topic": "",
+        "input": "start",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunrise",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "862f992b815655e1"
+            ]
+        ]
+    },
+    {
+        "id": "862f992b815655e1",
         "type": "change",
-        "z": "4c63d9433bfd1ab3",
+        "z": "5642751fc7ef75e9",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "inTz",
+                "p": "hour",
                 "pt": "msg",
-                "to": "IN_TIME_ZONE",
-                "tot": "env"
+                "to": "(\t$parts := $map($split(hour, ':'), $number);\t$parts[0] * 60 + $parts[1] \t)",
+                "tot": "jsonata"
             },
             {
                 "t": "set",
-                "p": "outTz",
+                "p": "sunrise",
                 "pt": "msg",
-                "to": "OUT_TIME_ZONE",
-                "tot": "env"
+                "to": "(\t$parts := $map($split(sunrise, ':'), $number);\t$parts[0] * 60 + $parts[1] \t)",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -2701,94 +2701,84 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
+        "x": 420,
+        "y": 220,
+        "wires": [
+            [
+                "be11cb3249475e45"
+            ]
+        ]
+    },
+    {
+        "id": "be11cb3249475e45",
+        "type": "switch",
+        "z": "5642751fc7ef75e9",
+        "name": "hour",
+        "property": "hour",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "jsonata_exp",
+                "v": "hour < (sunrise + $env('RANGE'))",
+                "vt": "jsonata"
+            },
+            {
+                "t": "btwn",
+                "v": "1320",
+                "vt": "num",
+                "v2": "1440",
+                "v2t": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "435a2c7738036f19"
+            ],
+            [
+                "435a2c7738036f19"
+            ],
+            [
+                "ac41df39b08dfa47"
+            ]
+        ]
+    },
+    {
+        "id": "435a2c7738036f19",
+        "type": "change",
+        "z": "5642751fc7ef75e9",
+        "name": "close",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "close",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
         "y": 40,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fbeda1fcb9c9695d",
-        "type": "function",
-        "z": "5642751fc7ef75e9",
-        "name": "hoursAfterStart",
-        "func": "let start = new Date(msg.start)\nlet now = new Date(msg.now)\n\nmsg.payload = Math.floor((((now - start) / 1000) / 60) / 60)\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 160,
-        "y": 120,
-        "wires": [
             [
-                "7d6cce1757df5999",
-                "07951e1312d46fe6"
+                "d7b1e17d988b9e9d"
             ]
         ]
     },
     {
-        "id": "7d6cce1757df5999",
-        "type": "switch",
-        "z": "5642751fc7ef75e9",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "btwn",
-                "v": "0",
-                "vt": "num",
-                "v2": "RANGE",
-                "v2t": "env"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 330,
-        "y": 80,
-        "wires": [
-            [
-                "c6fc5a5f612f2db9"
-            ],
-            [
-                "807c91f0a6b2668a"
-            ]
-        ]
-    },
-    {
-        "id": "c6fc5a5f612f2db9",
-        "type": "change",
-        "z": "5642751fc7ef75e9",
-        "name": "close",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "close",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 60,
-        "wires": [
-            [
-                "8fd22e76f7dfeb81"
-            ]
-        ]
-    },
-    {
-        "id": "807c91f0a6b2668a",
+        "id": "ac41df39b08dfa47",
         "type": "change",
         "z": "5642751fc7ef75e9",
         "name": "open",
@@ -2806,34 +2796,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
-        "y": 100,
+        "x": 350,
+        "y": 120,
         "wires": [
             [
-                "8fd22e76f7dfeb81"
+                "d7b1e17d988b9e9d"
             ]
         ]
     },
     {
-        "id": "8fd22e76f7dfeb81",
-        "type": "rbe",
-        "z": "5642751fc7ef75e9",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 570,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "07951e1312d46fe6",
+        "id": "d7b1e17d988b9e9d",
         "type": "rbe",
         "z": "5642751fc7ef75e9",
         "name": "",
@@ -2844,67 +2816,183 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 330,
-        "y": 160,
+        "x": 490,
+        "y": 80,
+        "wires": [
+            [
+                "fdbfa56601137b1e"
+            ]
+        ]
+    },
+    {
+        "id": "fdbfa56601137b1e",
+        "type": "change",
+        "z": "5642751fc7ef75e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload & ' | ' & hour & ' | ' & sunrise & ' | ' & (sunrise + $env('RANGE'))",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 120,
         "wires": [
             []
         ]
     },
     {
-        "id": "f4f5d3c2d43bb88e",
-        "type": "function",
+        "id": "02624549f2780315",
+        "type": "moment",
         "z": "ecab3ee60cb91a4c",
-        "name": "hoursBeforeEnd",
-        "func": "let end = new Date(msg.end)\nlet now = new Date(msg.now)\n\nmsg.payload = Math.floor((((end - now) / 1000) / 60) / 60)\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 160,
-        "y": 120,
+        "name": "hour",
+        "topic": "",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "hour",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 130,
+        "y": 220,
         "wires": [
             [
-                "0b1c117b1067daab",
-                "85fb6b7f8ef2286a"
+                "e785486a44a0c36d"
             ]
         ]
     },
     {
-        "id": "0b1c117b1067daab",
-        "type": "switch",
+        "id": "e785486a44a0c36d",
+        "type": "moment",
+        "z": "ecab3ee60cb91a4c",
+        "name": "sunrise",
+        "topic": "",
+        "input": "start",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunrise",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 260,
+        "y": 220,
+        "wires": [
+            [
+                "f1289cf2d452c688"
+            ]
+        ]
+    },
+    {
+        "id": "8496593226d1709e",
+        "type": "change",
         "z": "ecab3ee60cb91a4c",
         "name": "",
-        "property": "payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "hour",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(hour, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sunrise",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(sunrise, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sunset",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 220,
+        "wires": [
+            [
+                "faa20748e0d317b1"
+            ]
+        ]
+    },
+    {
+        "id": "faa20748e0d317b1",
+        "type": "switch",
+        "z": "ecab3ee60cb91a4c",
+        "name": "hour",
+        "property": "hour",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "btwn",
-                "v": "0",
+                "v": "sunset - $env('RANGE')",
+                "vt": "jsonata",
+                "v2": "sunset",
+                "v2t": "msg"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "hour < sunrise",
+                "vt": "jsonata"
+            },
+            {
+                "t": "btwn",
+                "v": "1320",
                 "vt": "num",
-                "v2": "RANGE",
-                "v2t": "env"
+                "v2": "1440",
+                "v2t": "num"
             },
             {
                 "t": "else"
             }
         ],
-        "checkall": "true",
+        "checkall": "false",
         "repair": false,
-        "outputs": 2,
+        "outputs": 4,
         "x": 330,
         "y": 80,
         "wires": [
             [
-                "966b1c6ec70af92e"
+                "c93bffe180a9a16b"
             ],
             [
-                "6e37f549675b10f4"
+                "c93bffe180a9a16b"
+            ],
+            [
+                "c93bffe180a9a16b"
+            ],
+            [
+                "697fe35d0d318a2c"
             ]
         ]
     },
     {
-        "id": "966b1c6ec70af92e",
+        "id": "c93bffe180a9a16b",
         "type": "change",
         "z": "ecab3ee60cb91a4c",
         "name": "close",
@@ -2922,16 +3010,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
-        "y": 60,
+        "x": 470,
+        "y": 40,
         "wires": [
             [
-                "6cc18f3350a372a4"
+                "585e68c0a4d94cf7"
             ]
         ]
     },
     {
-        "id": "6e37f549675b10f4",
+        "id": "697fe35d0d318a2c",
         "type": "change",
         "z": "ecab3ee60cb91a4c",
         "name": "open",
@@ -2949,34 +3037,16 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 450,
-        "y": 100,
+        "x": 470,
+        "y": 120,
         "wires": [
             [
-                "6cc18f3350a372a4"
+                "585e68c0a4d94cf7"
             ]
         ]
     },
     {
-        "id": "6cc18f3350a372a4",
-        "type": "rbe",
-        "z": "ecab3ee60cb91a4c",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 570,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "85fb6b7f8ef2286a",
+        "id": "585e68c0a4d94cf7",
         "type": "rbe",
         "z": "ecab3ee60cb91a4c",
         "name": "",
@@ -2987,8 +3057,60 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 330,
-        "y": 160,
+        "x": 610,
+        "y": 80,
+        "wires": [
+            [
+                "3bfcf910ee4301aa"
+            ]
+        ]
+    },
+    {
+        "id": "f1289cf2d452c688",
+        "type": "moment",
+        "z": "ecab3ee60cb91a4c",
+        "name": "sunset",
+        "topic": "",
+        "input": "end",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunset",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "8496593226d1709e"
+            ]
+        ]
+    },
+    {
+        "id": "3bfcf910ee4301aa",
+        "type": "change",
+        "z": "ecab3ee60cb91a4c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload & ' | ' & hour & ' | ' & (sunset - $env('RANGE')) & ' | ' & sunset",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 120,
         "wires": [
             []
         ]
@@ -3154,34 +3276,13 @@
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
         "name": "Dining Room Shades",
-        "x": 400,
-        "y": 280,
+        "x": 360,
+        "y": 240,
         "wires": [
             [
                 "b47e87a7cf037e17"
-            ],
-            [
-                "0159b596bfe6f882"
             ]
         ]
-    },
-    {
-        "id": "0159b596bfe6f882",
-        "type": "debug",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "hours after start",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 620,
-        "y": 320,
-        "wires": []
     },
     {
         "id": "8fe8cfb435f10899",
@@ -3189,34 +3290,13 @@
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
         "name": "Living Room Shades",
-        "x": 400,
-        "y": 440,
+        "x": 360,
+        "y": 320,
         "wires": [
             [
                 "b8228d51ad6fa66a"
-            ],
-            [
-                "f3346e7f8dde6621"
             ]
         ]
-    },
-    {
-        "id": "f3346e7f8dde6621",
-        "type": "debug",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "hours before end",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 630,
-        "y": 480,
-        "wires": []
     },
     {
         "id": "67ef9cf130a59bbd",
@@ -3231,7 +3311,7 @@
         "soff": "0",
         "eoff": "0",
         "x": 130,
-        "y": 360,
+        "y": 280,
         "wires": [
             [
                 "13f8b7bd21eb598b",
@@ -3241,52 +3321,16 @@
         ]
     },
     {
-        "id": "d2764f00051de24f",
-        "type": "inject",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 22 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 520,
-        "wires": [
-            [
-                "c4f8dec05e48db33"
-            ]
-        ]
-    },
-    {
-        "id": "38610e4c3f8e50d8",
-        "type": "link out",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "to all shades",
-        "mode": "link",
-        "links": [],
-        "x": 355,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "b47e87a7cf037e17",
         "type": "link out",
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
-        "name": "to dining room shades",
+        "name": "",
         "mode": "link",
-        "links": [],
-        "x": 555,
+        "links": [
+            "f4bfa77252ae420b"
+        ],
+        "x": 495,
         "y": 240,
         "wires": []
     },
@@ -3295,66 +3339,14 @@
         "type": "link out",
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
-        "name": "to living room shades",
-        "mode": "link",
-        "links": [],
-        "x": 555,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "c4f8dec05e48db33",
-        "type": "change",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
-        "name": "close",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "close",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 540,
-        "wires": [
-            [
-                "38610e4c3f8e50d8"
-            ]
-        ]
-    },
-    {
-        "id": "41ab0637160542ac",
-        "type": "inject",
-        "z": "a767582f3959afc9",
-        "g": "2670a3653ecb9db3",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
+        "mode": "link",
+        "links": [
+            "9f9a2d4e2371b466"
         ],
-        "repeat": "",
-        "crontab": "00 02 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 560,
-        "wires": [
-            [
-                "c4f8dec05e48db33"
-            ]
-        ]
+        "x": 495,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "93398f788c096cb3",
@@ -5571,6 +5563,63 @@
         ]
     },
     {
+        "id": "9f9a2d4e2371b466",
+        "type": "link in",
+        "z": "b9c60ff63fc6388d",
+        "g": "23326394bdf298bd",
+        "name": "living room shades",
+        "links": [
+            "38610e4c3f8e50d8",
+            "b8228d51ad6fa66a"
+        ],
+        "x": 145,
+        "y": 200,
+        "wires": [
+            [
+                "3064bb7944a443ae"
+            ]
+        ]
+    },
+    {
+        "id": "3064bb7944a443ae",
+        "type": "rbe",
+        "z": "b9c60ff63fc6388d",
+        "g": "23326394bdf298bd",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "2c6d764573672597"
+            ]
+        ]
+    },
+    {
+        "id": "2c6d764573672597",
+        "type": "debug",
+        "z": "b9c60ff63fc6388d",
+        "g": "23326394bdf298bd",
+        "name": "living room shades",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 390,
+        "y": 200,
+        "wires": []
+    },
+    {
         "id": "a454f20b5a3cb7e6",
         "type": "homekit-service",
         "z": "c6feba6b4b754115",
@@ -5735,6 +5784,63 @@
                 "da2999606ed19959"
             ]
         ]
+    },
+    {
+        "id": "f4bfa77252ae420b",
+        "type": "link in",
+        "z": "c6feba6b4b754115",
+        "g": "70ad19a161b89a20",
+        "name": "living room shades",
+        "links": [
+            "38610e4c3f8e50d8",
+            "b47e87a7cf037e17"
+        ],
+        "x": 145,
+        "y": 200,
+        "wires": [
+            [
+                "d57f33b230fb3aa9"
+            ]
+        ]
+    },
+    {
+        "id": "d57f33b230fb3aa9",
+        "type": "rbe",
+        "z": "c6feba6b4b754115",
+        "g": "70ad19a161b89a20",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "1d7251db522b4649"
+            ]
+        ]
+    },
+    {
+        "id": "1d7251db522b4649",
+        "type": "debug",
+        "z": "c6feba6b4b754115",
+        "g": "70ad19a161b89a20",
+        "name": "dining room shades",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 390,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "3f55a4060fb585c7",
@@ -7699,11 +7805,8 @@
         "g": "9c99756236afe446",
         "name": "exterior off",
         "links": [
-            "ab13215949b2a295",
-            "909e36f9b6744c0f",
-            "14276d736fdd3c2d",
-            "8e8390b13cc5c45b",
-            "6c3e6b4543f8c9ac"
+            "6c3e6b4543f8c9ac",
+            "8e8390b13cc5c45b"
         ],
         "x": 145,
         "y": 60,
@@ -7961,7 +8064,7 @@
         "type": "link in",
         "z": "bbd6e1207d3b5780",
         "g": "9c99756236afe446",
-        "name": "",
+        "name": "exterior off auto-off",
         "links": [
             "4e5d71543542a20d"
         ],
@@ -7978,7 +8081,7 @@
         "type": "link in",
         "z": "bbd6e1207d3b5780",
         "g": "27ea51b68dd32fdf",
-        "name": "",
+        "name": "exterior bright auto-off",
         "links": [
             "9f455b49edca7924"
         ],
@@ -8054,7 +8157,7 @@
         "type": "link in",
         "z": "bbd6e1207d3b5780",
         "g": "37f9190eb1a5f555",
-        "name": "",
+        "name": "exterior sunset auto-off",
         "links": [
             "744bdeb0874221fa"
         ],
@@ -8232,7 +8335,7 @@
         "type": "link in",
         "z": "bbd6e1207d3b5780",
         "g": "fc8dab80af70dbe7",
-        "name": "",
+        "name": "exterior tribal auto-off",
         "links": [
             "4d0bed4baebdfc11"
         ],
@@ -8356,7 +8459,7 @@
         "type": "link in",
         "z": "bbd6e1207d3b5780",
         "g": "54005f131191d07d",
-        "name": "",
+        "name": "exterior spooky auto-off",
         "links": [
             "9751f26fd63938dd"
         ],
@@ -8783,7 +8886,7 @@
         "type": "link in",
         "z": "bbd6e1207d3b5780",
         "g": "4699dcb62a5f0b27",
-        "name": "",
+        "name": "exterior jolly auto-off",
         "links": [
             "cef5ed063ab91cbd"
         ],
