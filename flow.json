@@ -377,17 +377,17 @@
         "in": [
             {
                 "x": 40,
-                "y": 220,
+                "y": 80,
                 "wires": [
                     {
-                        "id": "e1c59c0ea37e8e09"
+                        "id": "be11cb3249475e45"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 670,
+                "x": 630,
                 "y": 40,
                 "wires": [
                     {
@@ -413,7 +413,7 @@
             "shade command"
         ],
         "status": {
-            "x": 780,
+            "x": 740,
             "y": 120,
             "wires": [
                 {
@@ -432,17 +432,17 @@
         "in": [
             {
                 "x": 40,
-                "y": 220,
+                "y": 80,
                 "wires": [
                     {
-                        "id": "02624549f2780315"
+                        "id": "faa20748e0d317b1"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 790,
+                "x": 630,
                 "y": 40,
                 "wires": [
                     {
@@ -468,11 +468,60 @@
             "shades command"
         ],
         "status": {
-            "x": 900,
+            "x": 740,
             "y": 120,
             "wires": [
                 {
                     "id": "3bfcf910ee4301aa",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "7db9a658ff875590",
+        "type": "subflow",
+        "name": "Time Strings to Minutes",
+        "info": "Add `msg.minutes`, `msg.sunrise` and `msg.sunset` properties based on `msg.now`, `msg.start` and `msg.end` output from a suncalc `Sun rise/set` message. Each of the added properties are the number of minutes after midnight represented by the corresponding ISO timestamp strings.",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "5bcfd4f5743c88a3"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 760,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "73539dbae5a815a9",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "inputLabels": [
+            "from suncalc"
+        ],
+        "outputLabels": [
+            "to automation"
+        ],
+        "status": {
+            "x": 880,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "852f15b7b991d6ae",
                     "port": 0
                 }
             ]
@@ -1260,11 +1309,12 @@
             "8fe8cfb435f10899",
             "67ef9cf130a59bbd",
             "b47e87a7cf037e17",
-            "b8228d51ad6fa66a"
+            "b8228d51ad6fa66a",
+            "43013b335347b71d"
         ],
         "x": 14,
         "y": 199,
-        "w": 522,
+        "w": 762,
         "h": 162
     },
     {
@@ -2626,100 +2676,16 @@
         ]
     },
     {
-        "id": "e1c59c0ea37e8e09",
-        "type": "moment",
-        "z": "5642751fc7ef75e9",
-        "name": "hour",
-        "topic": "",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "hour",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "31ad51658f661897"
-            ]
-        ]
-    },
-    {
-        "id": "31ad51658f661897",
-        "type": "moment",
-        "z": "5642751fc7ef75e9",
-        "name": "sunrise",
-        "topic": "",
-        "input": "start",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunrise",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 260,
-        "y": 220,
-        "wires": [
-            [
-                "862f992b815655e1"
-            ]
-        ]
-    },
-    {
-        "id": "862f992b815655e1",
-        "type": "change",
-        "z": "5642751fc7ef75e9",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "hour",
-                "pt": "msg",
-                "to": "(\t$parts := $map($split(hour, ':'), $number);\t$parts[0] * 60 + $parts[1] \t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunrise",
-                "pt": "msg",
-                "to": "(\t$parts := $map($split(sunrise, ':'), $number);\t$parts[0] * 60 + $parts[1] \t)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 420,
-        "y": 220,
-        "wires": [
-            [
-                "be11cb3249475e45"
-            ]
-        ]
-    },
-    {
         "id": "be11cb3249475e45",
         "type": "switch",
         "z": "5642751fc7ef75e9",
-        "name": "hour",
-        "property": "hour",
+        "name": "minutes",
+        "property": "minutes",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "jsonata_exp",
-                "v": "hour < (sunrise + $env('RANGE'))",
+                "v": "minutes < (sunrise + $env('RANGE'))",
                 "vt": "jsonata"
             },
             {
@@ -2736,7 +2702,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 210,
+        "x": 140,
         "y": 80,
         "wires": [
             [
@@ -2769,7 +2735,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 310,
         "y": 40,
         "wires": [
             [
@@ -2796,7 +2762,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 350,
+        "x": 310,
         "y": 120,
         "wires": [
             [
@@ -2816,7 +2782,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 490,
+        "x": 450,
         "y": 80,
         "wires": [
             [
@@ -2834,7 +2800,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload & ' | ' & hour & ' | ' & sunrise & ' | ' & (sunrise + $env('RANGE'))",
+                "to": "payload & ' | ' & minutes & ' | ' & sunrise & ' | ' & (sunrise + $env('RANGE'))",
                 "tot": "jsonata"
             }
         ],
@@ -2843,109 +2809,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
+        "x": 620,
         "y": 120,
         "wires": [
             []
         ]
     },
     {
-        "id": "02624549f2780315",
-        "type": "moment",
-        "z": "ecab3ee60cb91a4c",
-        "name": "hour",
-        "topic": "",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "hour",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 130,
-        "y": 220,
-        "wires": [
-            [
-                "e785486a44a0c36d"
-            ]
-        ]
-    },
-    {
-        "id": "e785486a44a0c36d",
-        "type": "moment",
-        "z": "ecab3ee60cb91a4c",
-        "name": "sunrise",
-        "topic": "",
-        "input": "start",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunrise",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 260,
-        "y": 220,
-        "wires": [
-            [
-                "f1289cf2d452c688"
-            ]
-        ]
-    },
-    {
-        "id": "8496593226d1709e",
-        "type": "change",
-        "z": "ecab3ee60cb91a4c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "hour",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(hour, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunrise",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(sunrise, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunset",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 220,
-        "wires": [
-            [
-                "faa20748e0d317b1"
-            ]
-        ]
-    },
-    {
         "id": "faa20748e0d317b1",
         "type": "switch",
         "z": "ecab3ee60cb91a4c",
-        "name": "hour",
-        "property": "hour",
+        "name": "minutes",
+        "property": "minutes",
         "propertyType": "msg",
         "rules": [
             {
@@ -2957,7 +2832,7 @@
             },
             {
                 "t": "jsonata_exp",
-                "v": "hour < sunrise",
+                "v": "minutes < sunrise",
                 "vt": "jsonata"
             },
             {
@@ -2974,7 +2849,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 330,
+        "x": 140,
         "y": 80,
         "wires": [
             [
@@ -3010,7 +2885,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 310,
         "y": 40,
         "wires": [
             [
@@ -3037,7 +2912,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 310,
         "y": 120,
         "wires": [
             [
@@ -3057,36 +2932,11 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 610,
+        "x": 450,
         "y": 80,
         "wires": [
             [
                 "3bfcf910ee4301aa"
-            ]
-        ]
-    },
-    {
-        "id": "f1289cf2d452c688",
-        "type": "moment",
-        "z": "ecab3ee60cb91a4c",
-        "name": "sunset",
-        "topic": "",
-        "input": "end",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunset",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 390,
-        "y": 220,
-        "wires": [
-            [
-                "8496593226d1709e"
             ]
         ]
     },
@@ -3100,7 +2950,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload & ' | ' & hour & ' | ' & (sunset - $env('RANGE')) & ' | ' & sunset",
+                "to": "payload & ' | ' & minutes & ' | ' & (sunset - $env('RANGE')) & ' | ' & sunset",
                 "tot": "jsonata"
             }
         ],
@@ -3109,7 +2959,148 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
+        "x": 620,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bcfd4f5743c88a3",
+        "type": "moment",
+        "z": "7db9a658ff875590",
+        "name": "minutes",
+        "topic": "",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "minutes",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "eeffa21bae6073b9"
+            ]
+        ]
+    },
+    {
+        "id": "eeffa21bae6073b9",
+        "type": "moment",
+        "z": "7db9a658ff875590",
+        "name": "sunrise",
+        "topic": "",
+        "input": "start",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunrise",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            [
+                "22028c02f6a3fd6a"
+            ]
+        ]
+    },
+    {
+        "id": "22028c02f6a3fd6a",
+        "type": "moment",
+        "z": "7db9a658ff875590",
+        "name": "sunset",
+        "topic": "",
+        "input": "end",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunset",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "73539dbae5a815a9"
+            ]
+        ]
+    },
+    {
+        "id": "73539dbae5a815a9",
+        "type": "change",
+        "z": "7db9a658ff875590",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "minutes",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(minutes, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sunrise",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(sunrise, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sunset",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1] \t\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "852f15b7b991d6ae"
+            ]
+        ]
+    },
+    {
+        "id": "852f15b7b991d6ae",
+        "type": "change",
+        "z": "7db9a658ff875590",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "minutes & ' | ' & sunrise & ' | ' & sunset",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
         "y": 120,
         "wires": [
             []
@@ -3276,7 +3267,7 @@
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
         "name": "Dining Room Shades",
-        "x": 360,
+        "x": 600,
         "y": 240,
         "wires": [
             [
@@ -3290,7 +3281,7 @@
         "z": "a767582f3959afc9",
         "g": "2670a3653ecb9db3",
         "name": "Living Room Shades",
-        "x": 360,
+        "x": 600,
         "y": 320,
         "wires": [
             [
@@ -3314,8 +3305,7 @@
         "y": 280,
         "wires": [
             [
-                "13f8b7bd21eb598b",
-                "8fe8cfb435f10899"
+                "43013b335347b71d"
             ],
             []
         ]
@@ -3330,7 +3320,7 @@
         "links": [
             "f4bfa77252ae420b"
         ],
-        "x": 495,
+        "x": 735,
         "y": 240,
         "wires": []
     },
@@ -3344,9 +3334,24 @@
         "links": [
             "9f9a2d4e2371b466"
         ],
-        "x": 495,
+        "x": 735,
         "y": 320,
         "wires": []
+    },
+    {
+        "id": "43013b335347b71d",
+        "type": "subflow:7db9a658ff875590",
+        "z": "a767582f3959afc9",
+        "g": "2670a3653ecb9db3",
+        "name": "",
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "13f8b7bd21eb598b",
+                "8fe8cfb435f10899"
+            ]
+        ]
     },
     {
         "id": "93398f788c096cb3",
