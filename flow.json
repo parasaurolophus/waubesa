@@ -31,6 +31,14 @@
         "info": "Helper subroutine flows for accessing the Hue Bridge API on Chez Nous Main."
     },
     {
+        "id": "1cf0490e7de2f93d",
+        "type": "tab",
+        "label": "Chez Nous Shades",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "c6feba6b4b754115",
         "type": "tab",
         "label": "Dining Room",
@@ -904,6 +912,155 @@
         }
     },
     {
+        "id": "c930ca19d66e430d",
+        "type": "subflow",
+        "name": "Get PowerView Rooms",
+        "info": "",
+        "category": "powerview",
+        "in": [],
+        "out": [
+            {
+                "x": 680,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "b716edcd37c1e93b",
+                        "port": 0
+                    },
+                    {
+                        "id": "a1e93b0a11ef71a5",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 680,
+            "y": 280,
+            "wires": [
+                {
+                    "id": "68115d50b5cdb27d",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "1a6413355bbb49cc",
+        "type": "subflow",
+        "name": "Get PowerView Scenes",
+        "info": "",
+        "category": "powerview",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "643e95dd6df2d982"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 700,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "233e95db4a2e39b3",
+                        "port": 0
+                    },
+                    {
+                        "id": "1ea0cbef01c0daaa",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 700,
+            "y": 280,
+            "wires": [
+                {
+                    "id": "013c4b7388921d23",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "9c4e4702e4660adf",
+        "type": "subflow",
+        "name": "Activate PowerView Scene",
+        "info": "",
+        "category": "powerview",
+        "in": [
+            {
+                "x": 40,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "dcd553804e687131"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 620,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "8dc3bcf508fc6c98",
+                        "port": 0
+                    },
+                    {
+                        "id": "9391004cf711e2ea",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 620,
+            "y": 200,
+            "wires": [
+                {
+                    "id": "728ab503eb1eb941",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "1ccf0bc875015428",
         "type": "group",
         "z": "a00ccef1301f21e3",
@@ -944,9 +1101,7 @@
             "dfb11f408f97f019"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1082,
-        "h": 122
+        "y": 19
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -968,9 +1123,7 @@
             "7bac63592e9b8ed2"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1002,
-        "h": 122
+        "y": 19
     },
     {
         "id": "afbdc8b60c682c85",
@@ -992,9 +1145,7 @@
             "fc49d70fecf99c3f"
         ],
         "x": 24,
-        "y": 159,
-        "w": 962,
-        "h": 122
+        "y": 159
     },
     {
         "id": "03822925b892df4a",
@@ -1016,9 +1167,7 @@
             "ed213c0451c27d57"
         ],
         "x": 24,
-        "y": 299,
-        "w": 1002,
-        "h": 122
+        "y": 299
     },
     {
         "id": "cd63dc8a5bea4a7b",
@@ -1064,9 +1213,7 @@
             "dad70d5e61ee644a"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1062,
-        "h": 122
+        "y": 19
     },
     {
         "id": "edf005842650203c",
@@ -1088,20 +1235,19 @@
             "8b4e14741c89105a"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1082,
-        "h": 122
+        "y": 19
     },
     {
         "id": "f025bfd6f097a4fb",
         "type": "group",
         "z": "c6feba6b4b754115",
-        "name": "",
+        "name": "Activate dynamic sunset scene on Chez Nous Main bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": false
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
             "a454f20b5a3cb7e6",
@@ -1136,9 +1282,7 @@
             "741739b5fef7b4ae"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1022,
-        "h": 122
+        "y": 19
     },
     {
         "id": "8b872b3ffa26442a",
@@ -1160,9 +1304,7 @@
             "830596ceee24c19d"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1002,
-        "h": 122
+        "y": 19
     },
     {
         "id": "306c4351d83922a0",
@@ -1184,9 +1326,7 @@
             "2785e315bcd41864"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1022,
-        "h": 122
+        "y": 19
     },
     {
         "id": "ce88172c5dbc9f67",
@@ -1207,7 +1347,7 @@
         ],
         "x": 14,
         "y": 19,
-        "w": 632,
+        "w": 832,
         "h": 82
     },
     {
@@ -1232,9 +1372,7 @@
             "bad6370b3539d5ca"
         ],
         "x": 104,
-        "y": 19,
-        "w": 1122,
-        "h": 122
+        "y": 19
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1258,9 +1396,7 @@
             "7b10a17dd5bc4c0f"
         ],
         "x": 104,
-        "y": 299,
-        "w": 1162,
-        "h": 122
+        "y": 299
     },
     {
         "id": "37f9190eb1a5f555",
@@ -1284,9 +1420,7 @@
             "0eddce197d35d0c2"
         ],
         "x": 104,
-        "y": 299,
-        "w": 1202,
-        "h": 122
+        "y": 299
     },
     {
         "id": "fc8dab80af70dbe7",
@@ -1310,9 +1444,7 @@
             "386bcda361463ded"
         ],
         "x": 104,
-        "y": 439,
-        "w": 1182,
-        "h": 122
+        "y": 439
     },
     {
         "id": "54005f131191d07d",
@@ -1336,9 +1468,7 @@
             "df37b8f8d0c15d72"
         ],
         "x": 104,
-        "y": 579,
-        "w": 1202,
-        "h": 122
+        "y": 579
     },
     {
         "id": "7872f889f870b7ea",
@@ -1360,9 +1490,7 @@
             "dc7a211772050136"
         ],
         "x": 24,
-        "y": 439,
-        "w": 982,
-        "h": 122
+        "y": 439
     },
     {
         "id": "a76cb5337e8a2ff0",
@@ -1386,9 +1514,7 @@
             "cca53c3a44867817"
         ],
         "x": 104,
-        "y": 439,
-        "w": 1222,
-        "h": 122
+        "y": 439
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1410,9 +1536,7 @@
             "8e1a1e8c143be16d"
         ],
         "x": 104,
-        "y": 159,
-        "w": 942,
-        "h": 122
+        "y": 159
     },
     {
         "id": "27ea51b68dd32fdf",
@@ -1434,9 +1558,7 @@
             "9c0f0fa02267d0cf"
         ],
         "x": 104,
-        "y": 159,
-        "w": 922,
-        "h": 122
+        "y": 159
     },
     {
         "id": "9c99756236afe446",
@@ -1460,9 +1582,7 @@
             "7fa14903b4bc95cd"
         ],
         "x": 104,
-        "y": 19,
-        "w": 1102,
-        "h": 122
+        "y": 19
     },
     {
         "id": "4699dcb62a5f0b27",
@@ -1486,9 +1606,7 @@
             "891958a515fa0376"
         ],
         "x": 104,
-        "y": 719,
-        "w": 1162,
-        "h": 122
+        "y": 719
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1507,9 +1625,7 @@
             "d79164592fe44617"
         ],
         "x": 104,
-        "y": 159,
-        "w": 462,
-        "h": 82
+        "y": 159
     },
     {
         "id": "2ed951c0d82b2bc1",
@@ -1528,9 +1644,7 @@
             "fbd53f7f18ca6655"
         ],
         "x": 104,
-        "y": 259,
-        "w": 522,
-        "h": 82
+        "y": 259
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1550,9 +1664,7 @@
             "1993fd8165053adf"
         ],
         "x": 74,
-        "y": 239,
-        "w": 452,
-        "h": 162
+        "y": 239
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1572,9 +1684,7 @@
             "c897f7f0ee8680dc"
         ],
         "x": 574,
-        "y": 459,
-        "w": 232,
-        "h": 162
+        "y": 459
     },
     {
         "id": "73991d26373b19c7",
@@ -1597,9 +1707,7 @@
             "76224ffd6895171f"
         ],
         "x": 574,
-        "y": 199,
-        "w": 272,
-        "h": 242
+        "y": 199
     },
     {
         "id": "b940bf3a0df755de",
@@ -1619,9 +1727,7 @@
             "f12fbd86617caaf9"
         ],
         "x": 574,
-        "y": 19,
-        "w": 232,
-        "h": 162
+        "y": 19
     },
     {
         "id": "b4ef3182e14fb20f",
@@ -1644,9 +1750,7 @@
             "308a16df86393edf"
         ],
         "x": 14,
-        "y": 19,
-        "w": 762,
-        "h": 162
+        "y": 19
     },
     {
         "id": "6291a1c0cc88a94a",
@@ -1725,9 +1829,7 @@
             "e4866ec4b53aef10"
         ],
         "x": 14,
-        "y": 199,
-        "w": 772,
-        "h": 422
+        "y": 199
     },
     {
         "id": "23326394bdf298bd",
@@ -1749,7 +1851,7 @@
             "dc19621ee49d376d",
             "f5efecdff7b47cad"
         ],
-        "x": 104,
+        "x": 174,
         "y": 359,
         "w": 442,
         "h": 182
@@ -1816,7 +1918,7 @@
             "2e207c278f3523d2",
             "7931ca5cf51400c8"
         ],
-        "x": 94,
+        "x": 174,
         "y": 359,
         "w": 442,
         "h": 182
@@ -1847,7 +1949,7 @@
         ],
         "x": 34,
         "y": 939,
-        "w": 1052,
+        "w": 1132,
         "h": 282
     },
     {
@@ -1914,9 +2016,7 @@
             "97b6d2c421e20531"
         ],
         "x": 14,
-        "y": 579,
-        "w": 1172,
-        "h": 82
+        "y": 579
     },
     {
         "id": "cd7da4a49f7e871d",
@@ -1936,9 +2036,7 @@
             "d83f16327d5a5bd7"
         ],
         "x": 14,
-        "y": 679,
-        "w": 792,
-        "h": 82
+        "y": 679
     },
     {
         "id": "4a3961a2965ec07f",
@@ -1966,12 +2064,13 @@
         "id": "c9163acf011c5242",
         "type": "group",
         "z": "c6feba6b4b754115",
-        "name": "",
+        "name": "Dining room lights group toggle switch",
         "style": {
-            "label": false,
+            "label": true,
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1"
+            "fill-opacity": "0.1",
+            "color": "#000000"
         },
         "nodes": [
             "d3da04f04e863b3e",
@@ -1990,12 +2089,13 @@
         "id": "49d1b83457681d92",
         "type": "group",
         "z": "c6feba6b4b754115",
-        "name": "",
+        "name": "Activate dining room lighting scene as selected on the dashboard",
         "style": {
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": false
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
             "83efbce09d426adf",
@@ -2028,9 +2128,7 @@
             "bdce47a966e9a071"
         ],
         "x": 114,
-        "y": 859,
-        "w": 1212,
-        "h": 82
+        "y": 859
     },
     {
         "id": "073462d4fb7e6673",
@@ -2050,9 +2148,7 @@
             "0a3ecc7815df4c5c"
         ],
         "x": 114,
-        "y": 959,
-        "w": 812,
-        "h": 82
+        "y": 959
     },
     {
         "id": "29e213dca39ccade",
@@ -2074,9 +2170,7 @@
             "b29d76c492abb04b"
         ],
         "x": 114,
-        "y": 579,
-        "w": 1232,
-        "h": 82
+        "y": 579
     },
     {
         "id": "3495f05f0f012ee3",
@@ -2096,9 +2190,7 @@
             "2cba470706ce46e1"
         ],
         "x": 114,
-        "y": 679,
-        "w": 842,
-        "h": 82
+        "y": 679
     },
     {
         "id": "4b1336ccf13ceeca",
@@ -2120,9 +2212,7 @@
             "ac9583de94c441ae"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1212,
-        "h": 82
+        "y": 159
     },
     {
         "id": "95fb3067972c187f",
@@ -2142,9 +2232,7 @@
             "6971d508ee486cbe"
         ],
         "x": 34,
-        "y": 259,
-        "w": 822,
-        "h": 82
+        "y": 259
     },
     {
         "id": "b74e1de7a002ef36",
@@ -2166,9 +2254,7 @@
             "3ab3a9175bb09874"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1152,
-        "h": 82
+        "y": 159
     },
     {
         "id": "7a1697f5db36e66c",
@@ -2188,9 +2274,7 @@
             "116cf841b85238d8"
         ],
         "x": 34,
-        "y": 259,
-        "w": 802,
-        "h": 82
+        "y": 259
     },
     {
         "id": "6df0053fb48ee0ed",
@@ -2212,9 +2296,7 @@
             "e24ef0c970b9e111"
         ],
         "x": 34,
-        "y": 379,
-        "w": 1292,
-        "h": 82
+        "y": 379
     },
     {
         "id": "1327de99a460d571",
@@ -2234,9 +2316,7 @@
             "cea67f041526e808"
         ],
         "x": 34,
-        "y": 479,
-        "w": 872,
-        "h": 82
+        "y": 479
     },
     {
         "id": "0660873e37c6bd69",
@@ -2258,9 +2338,7 @@
             "cb8d8fe6ea44ae1e"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1312,
-        "h": 82
+        "y": 159
     },
     {
         "id": "4156489ccf3d5d3b",
@@ -2280,9 +2358,7 @@
             "07e79f1666ee11af"
         ],
         "x": 34,
-        "y": 259,
-        "w": 862,
-        "h": 82
+        "y": 259
     },
     {
         "id": "9942c95fb8c63807",
@@ -2304,9 +2380,7 @@
             "df339b32718a9adc"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1312,
-        "h": 82
+        "y": 159
     },
     {
         "id": "feb1e24170cb3999",
@@ -2326,9 +2400,7 @@
             "0e0ed5f7ccb1887e"
         ],
         "x": 34,
-        "y": 259,
-        "w": 862,
-        "h": 82
+        "y": 259
     },
     {
         "id": "4203f05bc0f246b6",
@@ -2350,9 +2422,7 @@
             "d289d4d57fe90241"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1192,
-        "h": 82
+        "y": 159
     },
     {
         "id": "792372988bb464a0",
@@ -2372,9 +2442,7 @@
             "52cf13b87a6f8856"
         ],
         "x": 34,
-        "y": 259,
-        "w": 812,
-        "h": 82
+        "y": 259
     },
     {
         "id": "38f417a0c4679917",
@@ -2396,9 +2464,7 @@
             "cae4d82cf511eaeb"
         ],
         "x": 14,
-        "y": 19,
-        "w": 1172,
-        "h": 82
+        "y": 19
     },
     {
         "id": "9a05cd7378410a29",
@@ -2418,8 +2484,144 @@
             "d4cef6b9ce0591ef"
         ],
         "x": 14,
+        "y": 119
+    },
+    {
+        "id": "27170352107b80c4",
+        "type": "group",
+        "z": "1cf0490e7de2f93d",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "577c54a2be0d38c9",
+            "67d809df8ea595ac",
+            "fac99573a09374b0"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 492,
+        "h": 82
+    },
+    {
+        "id": "74e5e744f4916ec1",
+        "type": "group",
+        "z": "1cf0490e7de2f93d",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "536874de79956f84",
+            "200356634769bc16",
+            "ae68890eacc4bc55",
+            "a04e672d01b8e45a",
+            "c6ac9ab0f8d59464",
+            "0fabcc5d191eec89",
+            "8b485b0a17768479",
+            "81b1279162b44c84",
+            "754fc323e1afe4d2",
+            "6c88044a748d6e33",
+            "986a93941fd0726d",
+            "1cee4f351bd59563"
+        ],
+        "x": 34,
         "y": 119,
-        "w": 822,
+        "w": 802,
+        "h": 202
+    },
+    {
+        "id": "c49a717c63369963",
+        "type": "group",
+        "z": "1cf0490e7de2f93d",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "ff97f036e34831b8",
+            "03385520953758c9",
+            "db81cf75a2ca1776"
+        ],
+        "x": 24,
+        "y": 479,
+        "w": 392,
+        "h": 82
+    },
+    {
+        "id": "c2ab0e65f8616042",
+        "type": "group",
+        "z": "1cf0490e7de2f93d",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "d3ccc1eda779170e",
+            "0c1c885d29b4c1e8",
+            "baea50703f48a556"
+        ],
+        "x": 234,
+        "y": 359,
+        "w": 672,
+        "h": 82
+    },
+    {
+        "id": "f406f446ee780306",
+        "type": "group",
+        "z": "c6feba6b4b754115",
+        "name": "Activate dining room shade scene as selected on the dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "4d76e69a8f5bec6e",
+            "47cffe0e2de266ef",
+            "d84b97ebd830cdb0",
+            "eec0d869c57ab9c5"
+        ],
+        "x": 164,
+        "y": 559,
+        "w": 682,
+        "h": 82
+    },
+    {
+        "id": "1c2fe205e5e65ebc",
+        "type": "group",
+        "z": "b9c60ff63fc6388d",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "fc67f5603654a4fc",
+            "0228d0e4a6fa3fb2",
+            "989a9e33b984e04b",
+            "8f81529a6736cd54"
+        ],
+        "x": 164,
+        "y": 559,
+        "w": 682,
         "h": 82
     },
     {
@@ -3013,7 +3215,7 @@
         "type": "ui_tab",
         "name": "Logs",
         "icon": "bug_report",
-        "order": 2,
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
@@ -3291,6 +3493,48 @@
         "name": "Porch",
         "tab": "1ee2dc1b0cb04f90",
         "order": 10,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "0ac704504ffba46c",
+        "type": "ui_tab",
+        "name": "Shades",
+        "icon": "wi-wu-sunny",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "cc3b7d568b9f7648",
+        "type": "ui_group",
+        "name": "Living Room",
+        "tab": "0ac704504ffba46c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "7abb52e1d0d4e4f8",
+        "type": "ui_group",
+        "name": "Dining Room",
+        "tab": "0ac704504ffba46c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "f86d0eafb164a9c5",
+        "type": "ui_group",
+        "name": "All",
+        "tab": "0ac704504ffba46c",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -5442,6 +5686,502 @@
         ]
     },
     {
+        "id": "f6dd79192e142da8",
+        "type": "change",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'http://' & $env('ADDRESS') & '/api/rooms/'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 40,
+        "wires": [
+            [
+                "c5daa27f12b90801"
+            ]
+        ]
+    },
+    {
+        "id": "c5daa27f12b90801",
+        "type": "http request",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "154570a3d2d8d404"
+            ]
+        ]
+    },
+    {
+        "id": "154570a3d2d8d404",
+        "type": "json",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "75a9ea27882a0d6d"
+            ]
+        ]
+    },
+    {
+        "id": "75a9ea27882a0d6d",
+        "type": "change",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.roomData",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "c32ed953ad953c08"
+            ]
+        ]
+    },
+    {
+        "id": "c32ed953ad953c08",
+        "type": "split",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "5a4fa813fbb18022"
+            ]
+        ]
+    },
+    {
+        "id": "5a4fa813fbb18022",
+        "type": "base64",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "action": "b64",
+        "property": "payload.name",
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "b716edcd37c1e93b"
+            ]
+        ]
+    },
+    {
+        "id": "b716edcd37c1e93b",
+        "type": "template",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\"id\":{{payload.id}},\"name\":\"{{payload.name}}\"}",
+        "output": "json",
+        "x": 560,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5d79d2b0db14f93",
+        "type": "subflow:6a33e7d5ed73d885",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "x": 80,
+        "y": 40,
+        "wires": [
+            [
+                "f6dd79192e142da8"
+            ]
+        ]
+    },
+    {
+        "id": "68115d50b5cdb27d",
+        "type": "status",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "scope": [
+            "c5daa27f12b90801"
+        ],
+        "x": 580,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1e93b0a11ef71a5",
+        "type": "catch",
+        "z": "c930ca19d66e430d",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 560,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "643e95dd6df2d982",
+        "type": "change",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rooms",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'http://' & $env('ADDRESS') & '/api/scenes/'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 160,
+        "y": 40,
+        "wires": [
+            [
+                "f9e32f55c8917d91"
+            ]
+        ]
+    },
+    {
+        "id": "f9e32f55c8917d91",
+        "type": "http request",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 40,
+        "wires": [
+            [
+                "87d401bcdb8bde5a"
+            ]
+        ]
+    },
+    {
+        "id": "87d401bcdb8bde5a",
+        "type": "json",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 470,
+        "y": 40,
+        "wires": [
+            [
+                "b47b1889ebf029bd"
+            ]
+        ]
+    },
+    {
+        "id": "b47b1889ebf029bd",
+        "type": "change",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.sceneData",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "86ceba4b5ba11d2e"
+            ]
+        ]
+    },
+    {
+        "id": "86ceba4b5ba11d2e",
+        "type": "split",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "18956352f21a6233"
+            ]
+        ]
+    },
+    {
+        "id": "18956352f21a6233",
+        "type": "base64",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "action": "b64",
+        "property": "payload.name",
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "233e95db4a2e39b3"
+            ]
+        ]
+    },
+    {
+        "id": "013c4b7388921d23",
+        "type": "status",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "scope": [
+            "f9e32f55c8917d91"
+        ],
+        "x": 600,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ea0cbef01c0daaa",
+        "type": "catch",
+        "z": "1a6413355bbb49cc",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 580,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "233e95db4a2e39b3",
+        "type": "function",
+        "z": "1a6413355bbb49cc",
+        "name": "formatOption",
+        "func": "let rooms = flow.get('rooms')\n\nlet findRoom = id => {\n    \n    for (let index = 0; index < rooms.length; ++index) {\n        \n        let room = rooms[index]\n        \n        if (room.id == id) {\n            \n            return room\n            \n        }\n    }\n    \n    throw 'no room found with id ' + id\n    \n}\n\nlet room = findRoom(msg.payload.roomId)\n\nmsg.topic = room.name\nlet option = {}\noption[msg.payload.name] = msg.payload.id\nmsg.payload = option\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd442f62fd059172",
+        "type": "change",
+        "z": "9c4e4702e4660adf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'http://' & $env('ADDRESS') & '/api/scenes?sceneId=' & payload",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "8dc3bcf508fc6c98"
+            ]
+        ]
+    },
+    {
+        "id": "8dc3bcf508fc6c98",
+        "type": "http request",
+        "z": "9c4e4702e4660adf",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 490,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "728ab503eb1eb941",
+        "type": "status",
+        "z": "9c4e4702e4660adf",
+        "name": "",
+        "scope": [
+            "8dc3bcf508fc6c98"
+        ],
+        "x": 520,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9391004cf711e2ea",
+        "type": "catch",
+        "z": "9c4e4702e4660adf",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 500,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dcd553804e687131",
+        "type": "delay",
+        "z": "9c4e4702e4660adf",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "cd442f62fd059172"
+            ]
+        ]
+    },
+    {
         "id": "49a3148e23e3ff94",
         "type": "link in",
         "z": "9dc76a6cd57f18b8",
@@ -6408,7 +7148,7 @@
         "type": "debug",
         "z": "a00ccef1301f21e3",
         "g": "ce88172c5dbc9f67",
-        "name": "",
+        "name": "chez nous main register access token",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -6417,7 +7157,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "msg",
-        "x": 550,
+        "x": 650,
         "y": 60,
         "wires": []
     },
@@ -7430,7 +8170,7 @@
         "type": "debug",
         "z": "a00ccef1301f21e3",
         "g": "feea332415047613",
-        "name": "",
+        "name": "chez nous main metadata",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -7439,7 +8179,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
+        "x": 1010,
         "y": 980,
         "wires": []
     },
@@ -7705,6 +8445,490 @@
         ]
     },
     {
+        "id": "577c54a2be0d38c9",
+        "type": "subflow:c930ca19d66e430d",
+        "z": "1cf0490e7de2f93d",
+        "g": "27170352107b80c4",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
+        ],
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "fac99573a09374b0"
+            ]
+        ]
+    },
+    {
+        "id": "67d809df8ea595ac",
+        "type": "join",
+        "z": "1cf0490e7de2f93d",
+        "g": "27170352107b80c4",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "536874de79956f84"
+            ]
+        ]
+    },
+    {
+        "id": "536874de79956f84",
+        "type": "subflow:1a6413355bbb49cc",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
+        ],
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "986a93941fd0726d",
+                "200356634769bc16"
+            ]
+        ]
+    },
+    {
+        "id": "fac99573a09374b0",
+        "type": "switch",
+        "z": "1cf0490e7de2f93d",
+        "g": "27170352107b80c4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "jsonata_exp",
+                "v": "payload.name = 'Living Room' or payload.name = 'Dining Room' or payload.name = 'Default Room'",
+                "vt": "jsonata"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "67d809df8ea595ac"
+            ]
+        ]
+    },
+    {
+        "id": "200356634769bc16",
+        "type": "switch",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Living Room",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Dining Room",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Default Room",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": true,
+        "outputs": 3,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "ae68890eacc4bc55"
+            ],
+            [
+                "a04e672d01b8e45a"
+            ],
+            [
+                "c6ac9ab0f8d59464"
+            ]
+        ]
+    },
+    {
+        "id": "ae68890eacc4bc55",
+        "type": "join",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 510,
+        "y": 160,
+        "wires": [
+            [
+                "0fabcc5d191eec89"
+            ]
+        ]
+    },
+    {
+        "id": "a04e672d01b8e45a",
+        "type": "join",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 510,
+        "y": 200,
+        "wires": [
+            [
+                "8b485b0a17768479"
+            ]
+        ]
+    },
+    {
+        "id": "c6ac9ab0f8d59464",
+        "type": "join",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "81b1279162b44c84"
+            ]
+        ]
+    },
+    {
+        "id": "0fabcc5d191eec89",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "options",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 160,
+        "wires": [
+            [
+                "754fc323e1afe4d2"
+            ]
+        ]
+    },
+    {
+        "id": "8b485b0a17768479",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "options",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 200,
+        "wires": [
+            [
+                "6c88044a748d6e33"
+            ]
+        ]
+    },
+    {
+        "id": "81b1279162b44c84",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "options",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 240,
+        "wires": [
+            [
+                "d3ccc1eda779170e"
+            ]
+        ]
+    },
+    {
+        "id": "754fc323e1afe4d2",
+        "type": "link out",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "540d732da2d9fcf8",
+            "0228d0e4a6fa3fb2"
+        ],
+        "x": 795,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6c88044a748d6e33",
+        "type": "link out",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "fdaa346ca92cb4b8",
+            "47cffe0e2de266ef"
+        ],
+        "x": 795,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ff97f036e34831b8",
+        "type": "subflow:9c4e4702e4660adf",
+        "z": "1cf0490e7de2f93d",
+        "g": "c49a717c63369963",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
+        ],
+        "x": 220,
+        "y": 520,
+        "wires": [
+            [
+                "db81cf75a2ca1776"
+            ]
+        ]
+    },
+    {
+        "id": "03385520953758c9",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "c49a717c63369963",
+        "name": "activate powerview scene",
+        "links": [],
+        "x": 65,
+        "y": 520,
+        "wires": [
+            [
+                "ff97f036e34831b8"
+            ]
+        ]
+    },
+    {
+        "id": "db81cf75a2ca1776",
+        "type": "link out",
+        "z": "1cf0490e7de2f93d",
+        "g": "c49a717c63369963",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 375,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d3ccc1eda779170e",
+        "type": "ui_dropdown",
+        "z": "1cf0490e7de2f93d",
+        "g": "c2ab0e65f8616042",
+        "name": "All Shades",
+        "label": "",
+        "tooltip": "",
+        "place": "Scene",
+        "group": "f86d0eafb164a9c5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 330,
+        "y": 400,
+        "wires": [
+            [
+                "0c1c885d29b4c1e8"
+            ]
+        ]
+    },
+    {
+        "id": "0c1c885d29b4c1e8",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "c2ab0e65f8616042",
+        "name": "",
+        "links": [
+            "03385520953758c9"
+        ],
+        "timeout": "30",
+        "x": 530,
+        "y": 400,
+        "wires": [
+            [
+                "baea50703f48a556"
+            ]
+        ]
+    },
+    {
+        "id": "baea50703f48a556",
+        "type": "debug",
+        "z": "1cf0490e7de2f93d",
+        "g": "c2ab0e65f8616042",
+        "name": "all shades response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "986a93941fd0726d",
+        "type": "join",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "",
+        "mode": "auto",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": "false",
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "x": 370,
+        "y": 280,
+        "wires": [
+            [
+                "1cee4f351bd59563"
+            ]
+        ]
+    },
+    {
+        "id": "1cee4f351bd59563",
+        "type": "debug",
+        "z": "1cf0490e7de2f93d",
+        "g": "74e5e744f4916ec1",
+        "name": "powerview scenes",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 280,
+        "wires": []
+    },
+    {
         "id": "a454f20b5a3cb7e6",
         "type": "homekit-service",
         "z": "c6feba6b4b754115",
@@ -7880,7 +9104,7 @@
             "38610e4c3f8e50d8",
             "b47e87a7cf037e17"
         ],
-        "x": 135,
+        "x": 215,
         "y": 440,
         "wires": [
             [
@@ -7902,7 +9126,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 240,
+        "x": 320,
         "y": 400,
         "wires": [
             [
@@ -7924,7 +9148,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 400,
+        "x": 480,
         "y": 400,
         "wires": []
     },
@@ -7942,7 +9166,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 440,
+        "x": 520,
         "y": 460,
         "wires": []
     },
@@ -7966,7 +9190,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 270,
+        "x": 350,
         "y": 480,
         "wires": [
             [
@@ -7985,7 +9209,7 @@
         "links": [
             "49a3148e23e3ff94"
         ],
-        "x": 385,
+        "x": 465,
         "y": 500,
         "wires": []
     },
@@ -8270,6 +9494,87 @@
         "statusType": "auto",
         "x": 760,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4d76e69a8f5bec6e",
+        "type": "ui_dropdown",
+        "z": "c6feba6b4b754115",
+        "g": "f406f446ee780306",
+        "name": "Dining Room Shades",
+        "label": "",
+        "tooltip": "",
+        "place": "Scene",
+        "group": "7abb52e1d0d4e4f8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 340,
+        "y": 600,
+        "wires": [
+            [
+                "d84b97ebd830cdb0"
+            ]
+        ]
+    },
+    {
+        "id": "47cffe0e2de266ef",
+        "type": "link in",
+        "z": "c6feba6b4b754115",
+        "g": "f406f446ee780306",
+        "name": "dining room shade scenes",
+        "links": [
+            "6c88044a748d6e33"
+        ],
+        "x": 205,
+        "y": 600,
+        "wires": [
+            [
+                "4d76e69a8f5bec6e"
+            ]
+        ]
+    },
+    {
+        "id": "d84b97ebd830cdb0",
+        "type": "link call",
+        "z": "c6feba6b4b754115",
+        "g": "f406f446ee780306",
+        "name": "",
+        "links": [
+            "03385520953758c9"
+        ],
+        "timeout": "30",
+        "x": 570,
+        "y": 600,
+        "wires": [
+            [
+                "eec0d869c57ab9c5"
+            ]
+        ]
+    },
+    {
+        "id": "eec0d869c57ab9c5",
+        "type": "debug",
+        "z": "c6feba6b4b754115",
+        "g": "f406f446ee780306",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 600,
         "wires": []
     },
     {
@@ -11322,7 +12627,7 @@
             "38610e4c3f8e50d8",
             "b8228d51ad6fa66a"
         ],
-        "x": 145,
+        "x": 215,
         "y": 440,
         "wires": [
             [
@@ -11344,7 +12649,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 250,
+        "x": 320,
         "y": 400,
         "wires": [
             [
@@ -11366,7 +12671,7 @@
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 410,
+        "x": 480,
         "y": 400,
         "wires": []
     },
@@ -11384,7 +12689,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 450,
+        "x": 520,
         "y": 460,
         "wires": []
     },
@@ -11408,7 +12713,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
+        "x": 350,
         "y": 480,
         "wires": [
             [
@@ -11427,7 +12732,7 @@
         "links": [
             "49a3148e23e3ff94"
         ],
-        "x": 395,
+        "x": 465,
         "y": 500,
         "wires": []
     },
@@ -11712,6 +13017,87 @@
         "statusType": "auto",
         "x": 770,
         "y": 300,
+        "wires": []
+    },
+    {
+        "id": "fc67f5603654a4fc",
+        "type": "ui_dropdown",
+        "z": "b9c60ff63fc6388d",
+        "g": "1c2fe205e5e65ebc",
+        "name": "Living Room Shades",
+        "label": "",
+        "tooltip": "",
+        "place": "Scene",
+        "group": "cc3b7d568b9f7648",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 340,
+        "y": 600,
+        "wires": [
+            [
+                "989a9e33b984e04b"
+            ]
+        ]
+    },
+    {
+        "id": "0228d0e4a6fa3fb2",
+        "type": "link in",
+        "z": "b9c60ff63fc6388d",
+        "g": "1c2fe205e5e65ebc",
+        "name": "living room shade scenes",
+        "links": [
+            "754fc323e1afe4d2"
+        ],
+        "x": 205,
+        "y": 600,
+        "wires": [
+            [
+                "fc67f5603654a4fc"
+            ]
+        ]
+    },
+    {
+        "id": "989a9e33b984e04b",
+        "type": "link call",
+        "z": "b9c60ff63fc6388d",
+        "g": "1c2fe205e5e65ebc",
+        "name": "",
+        "links": [
+            "03385520953758c9"
+        ],
+        "timeout": "30",
+        "x": 570,
+        "y": 600,
+        "wires": [
+            [
+                "8f81529a6736cd54"
+            ]
+        ]
+    },
+    {
+        "id": "8f81529a6736cd54",
+        "type": "debug",
+        "z": "b9c60ff63fc6388d",
+        "g": "1c2fe205e5e65ebc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 600,
         "wires": []
     },
     {
