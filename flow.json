@@ -374,7 +374,7 @@
         "in": [
             {
                 "x": 40,
-                "y": 80,
+                "y": 220,
                 "wires": [
                     {
                         "id": "f199b2544440f34b"
@@ -384,8 +384,8 @@
         ],
         "out": [
             {
-                "x": 760,
-                "y": 40,
+                "x": 900,
+                "y": 80,
                 "wires": [
                     {
                         "id": "ab88262d3d7a90df",
@@ -398,11 +398,11 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 760,
-            "y": 120,
+            "x": 740,
+            "y": 240,
             "wires": [
                 {
-                    "id": "ab88262d3d7a90df",
+                    "id": "e6c535688974e5c1",
                     "port": 0
                 }
             ]
@@ -537,11 +537,21 @@
         ],
         "out": [
             {
-                "x": 740,
-                "y": 80,
+                "x": 760,
+                "y": 40,
                 "wires": [
                     {
                         "id": "73539dbae5a815a9",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 790,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "06d438b399c6e492",
                         "port": 0
                     }
                 ]
@@ -554,8 +564,19 @@
             "from suncalc"
         ],
         "outputLabels": [
-            "to automation"
-        ]
+            "to automation",
+            "status"
+        ],
+        "status": {
+            "x": 760,
+            "y": 220,
+            "wires": [
+                {
+                    "id": "06d438b399c6e492",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "6a33e7d5ed73d885",
@@ -1077,8 +1098,8 @@
         ],
         "out": [
             {
-                "x": 820,
-                "y": 380,
+                "x": 800,
+                "y": 160,
                 "wires": [
                     {
                         "id": "c0cafedc668548ec",
@@ -1097,8 +1118,8 @@
             "shade scene id"
         ],
         "status": {
-            "x": 880,
-            "y": 220,
+            "x": 860,
+            "y": 360,
             "wires": [
                 {
                     "id": "88c60b9a7f100404",
@@ -1703,9 +1724,7 @@
             "1993fd8165053adf"
         ],
         "x": 74,
-        "y": 239,
-        "w": 452,
-        "h": 162
+        "y": 239
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1725,9 +1744,7 @@
             "c897f7f0ee8680dc"
         ],
         "x": 574,
-        "y": 459,
-        "w": 232,
-        "h": 162
+        "y": 459
     },
     {
         "id": "73991d26373b19c7",
@@ -1750,9 +1767,7 @@
             "76224ffd6895171f"
         ],
         "x": 574,
-        "y": 199,
-        "w": 272,
-        "h": 242
+        "y": 199
     },
     {
         "id": "b940bf3a0df755de",
@@ -1772,9 +1787,7 @@
             "f12fbd86617caaf9"
         ],
         "x": 574,
-        "y": 19,
-        "w": 232,
-        "h": 162
+        "y": 19
     },
     {
         "id": "b4ef3182e14fb20f",
@@ -1795,12 +1808,15 @@
             "66d63df0972916d2",
             "e68284fd5306469f",
             "5c6e4cb8063ff548",
-            "308a16df86393edf"
+            "308a16df86393edf",
+            "e0e3458d2921b219",
+            "63c6d7d2e1d374bc",
+            "464b8dfa2071f8dc"
         ],
         "x": 14,
         "y": 19,
-        "w": 762,
-        "h": 162
+        "w": 932,
+        "h": 222
     },
     {
         "id": "6291a1c0cc88a94a",
@@ -1864,9 +1880,7 @@
             "f396b2d570589eea"
         ],
         "x": 134,
-        "y": 39,
-        "w": 462,
-        "h": 82
+        "y": 39
     },
     {
         "id": "716a5e2d5b07383b",
@@ -2565,30 +2579,6 @@
         "y": 359
     },
     {
-        "id": "b99b5460332bf873",
-        "type": "group",
-        "z": "a767582f3959afc9",
-        "name": "Window shade automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "0e03f7b1c487930f",
-            "e8f1b65f059cc6d6",
-            "41240c4df4743495",
-            "f03d89a8340d6a5a",
-            "1a8e1c3ec9f5238f"
-        ],
-        "x": 14,
-        "y": 199,
-        "w": 892,
-        "h": 142
-    },
-    {
         "id": "7dc3d45ec3c52923",
         "type": "group",
         "z": "c7141ffb22d64190",
@@ -2625,7 +2615,36 @@
             "1c95ddcf58382f2f"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 862,
+        "h": 522
+    },
+    {
+        "id": "b99b5460332bf873",
+        "type": "group",
+        "z": "a767582f3959afc9",
+        "name": "Window shade automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0e03f7b1c487930f",
+            "e8f1b65f059cc6d6",
+            "41240c4df4743495",
+            "f03d89a8340d6a5a",
+            "709e7f94ef4559a2",
+            "343eff6eb2f2a71d",
+            "d4e1d2ba1ea4139d",
+            "0dd499a16f894a85"
+        ],
+        "x": 14,
+        "y": 259,
+        "w": 1052,
+        "h": 242
     },
     {
         "id": "e79e0110c2317edb",
@@ -3536,10 +3555,32 @@
         "type": "ui_group",
         "name": "Bedtime",
         "tab": "ec4d94df679f3b11",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "25c7f0078ed443dd",
+        "type": "ui_group",
+        "name": "Lighting Status",
+        "tab": "ec4d94df679f3b11",
         "order": 1,
         "disp": true,
         "width": "6",
         "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "6f855c597472e66b",
+        "type": "ui_group",
+        "name": "Shades Status",
+        "tab": "ec4d94df679f3b11",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
         "className": ""
     },
     {
@@ -4068,7 +4109,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 370,
+        "x": 310,
         "y": 80,
         "wires": [
             [
@@ -4102,6 +4143,13 @@
                 "pt": "msg",
                 "to": "day",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunset",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -4109,11 +4157,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
+        "x": 470,
         "y": 40,
         "wires": [
             [
-                "ab88262d3d7a90df"
+                "a8d365d42ebd2e85"
             ]
         ]
     },
@@ -4129,6 +4177,13 @@
                 "pt": "msg",
                 "to": "evening",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "bedtime.value",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -4136,11 +4191,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
+        "x": 460,
         "y": 80,
         "wires": [
             [
-                "ab88262d3d7a90df"
+                "a8d365d42ebd2e85"
             ]
         ]
     },
@@ -4156,6 +4211,13 @@
                 "pt": "msg",
                 "to": "night",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunrise",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -4163,11 +4225,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 510,
+        "x": 470,
         "y": 120,
         "wires": [
             [
-                "ab88262d3d7a90df"
+                "a8d365d42ebd2e85"
             ]
         ]
     },
@@ -4183,10 +4245,12 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 650,
+        "x": 770,
         "y": 80,
         "wires": [
-            []
+            [
+                "3a333967a7108591"
+            ]
         ]
     },
     {
@@ -4195,10 +4259,93 @@
         "z": "4c63d9433bfd1ab3",
         "name": "",
         "x": 190,
-        "y": 80,
+        "y": 220,
         "wires": [
             [
                 "f4cd012decec20fd"
+            ],
+            [
+                "3a333967a7108591"
+            ]
+        ]
+    },
+    {
+        "id": "3a333967a7108591",
+        "type": "join",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "e6c535688974e5c1"
+            ]
+        ]
+    },
+    {
+        "id": "e6c535688974e5c1",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.time & ' | ' & payload.status & ' | ' & next",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8d365d42ebd2e85",
+        "type": "change",
+        "z": "4c63d9433bfd1ab3",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "$formatInteger($floor(next / 60), '00') & ':' & $formatInteger(next % 60, '00')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 80,
+        "wires": [
+            [
+                "ab88262d3d7a90df"
             ]
         ]
     },
@@ -4609,6 +4756,40 @@
         "reg": false,
         "x": 560,
         "y": 80,
+        "wires": [
+            [
+                "06d438b399c6e492"
+            ]
+        ]
+    },
+    {
+        "id": "06d438b399c6e492",
+        "type": "change",
+        "z": "7db9a658ff875590",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "minutes & ' | ' & sunrise & ' | ' & sunset",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "status",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 180,
         "wires": [
             []
         ]
@@ -6122,26 +6303,26 @@
                 "t": "btwn",
                 "v": "sunrise",
                 "vt": "msg",
-                "v2": "msg.sunrise + 300",
+                "v2": "sunrise + 300",
                 "v2t": "jsonata"
             },
             {
                 "t": "btwn",
-                "v": "msg.sunrise + 300",
+                "v": "sunrise + 300",
                 "vt": "jsonata",
-                "v2": "msg.sunset - 300",
+                "v2": "sunset - 300",
                 "v2t": "jsonata"
             },
             {
                 "t": "btwn",
-                "v": "msg.sunset - 300",
+                "v": "sunset - 300",
                 "vt": "jsonata",
-                "v2": "msg.sunset - 180",
+                "v2": "sunset - 240",
                 "v2t": "jsonata"
             },
             {
                 "t": "btwn",
-                "v": "msg.sunset - 180",
+                "v": "sunset - 240",
                 "vt": "jsonata",
                 "v2": "sunset",
                 "v2t": "msg"
@@ -6213,6 +6394,13 @@
                 "pt": "msg",
                 "to": "dawn",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunrise + 300",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -6220,11 +6408,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
+        "x": 290,
         "y": 160,
         "wires": [
             [
-                "fbefeb2902accd67"
+                "b46cf6a392238b95"
             ]
         ]
     },
@@ -6247,6 +6435,13 @@
                 "pt": "msg",
                 "to": "midday",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunset - 300",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -6254,11 +6449,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 300,
         "y": 200,
         "wires": [
             [
-                "fbefeb2902accd67"
+                "b46cf6a392238b95"
             ]
         ]
     },
@@ -6281,6 +6476,13 @@
                 "pt": "msg",
                 "to": "early afternoon",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunset - 240",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -6288,11 +6490,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 320,
         "y": 240,
         "wires": [
             [
-                "fbefeb2902accd67"
+                "b46cf6a392238b95"
             ]
         ]
     },
@@ -6315,6 +6517,13 @@
                 "pt": "msg",
                 "to": "late afternoon",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunset",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -6322,11 +6531,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 320,
         "y": 280,
         "wires": [
             [
-                "fbefeb2902accd67"
+                "b46cf6a392238b95"
             ]
         ]
     },
@@ -6349,6 +6558,13 @@
                 "pt": "msg",
                 "to": "evening",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "bedtime.value",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -6356,11 +6572,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 300,
         "y": 320,
         "wires": [
             [
-                "fbefeb2902accd67"
+                "b46cf6a392238b95"
             ]
         ]
     },
@@ -6383,6 +6599,13 @@
                 "pt": "msg",
                 "to": "night",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunrise",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -6390,11 +6613,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
+        "x": 290,
         "y": 360,
         "wires": [
             [
-                "fbefeb2902accd67"
+                "b46cf6a392238b95"
             ]
         ]
     },
@@ -6403,31 +6626,17 @@
         "type": "rbe",
         "z": "cec0ef6d268245de",
         "name": "",
-        "func": "rbei",
+        "func": "rbe",
         "gap": "",
         "start": "",
         "inout": "out",
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 730,
-        "y": 300,
+        "x": 750,
+        "y": 220,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "fbefeb2902accd67",
-        "type": "fan",
-        "z": "cec0ef6d268245de",
-        "name": "",
-        "x": 590,
-        "y": 260,
-        "wires": [
-            [
-                "c0cafedc668548ec",
-                "88c60b9a7f100404"
-            ]
         ]
     },
     {
@@ -6440,7 +6649,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "topic & ' | ' & payload",
+                "to": "topic & ' | ' & payload & ' | ' & next",
                 "tot": "jsonata"
             }
         ],
@@ -6449,8 +6658,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 220,
+        "x": 780,
+        "y": 300,
         "wires": [
             []
         ]
@@ -6465,6 +6674,35 @@
         "wires": [
             [
                 "7af79fc85daf2271"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b46cf6a392238b95",
+        "type": "change",
+        "z": "cec0ef6d268245de",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "$formatInteger($floor(next / 60), '00') & ':' & $formatInteger(next % 60, '00')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "c0cafedc668548ec",
+                "88c60b9a7f100404"
             ]
         ]
     },
@@ -6557,11 +6795,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
+        "x": 450,
         "y": 60,
         "wires": [
             [
-                "22215c11d8006662"
+                "22215c11d8006662",
+                "e0e3458d2921b219"
             ]
         ]
     },
@@ -6578,7 +6817,7 @@
         "soff": "0",
         "eoff": "0",
         "x": 110,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "5c6e4cb8063ff548",
@@ -6608,8 +6847,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 470,
-        "y": 140,
+        "x": 490,
+        "y": 160,
         "wires": [
             [
                 "66d63df0972916d2"
@@ -6657,11 +6896,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 620,
-        "y": 140,
+        "x": 640,
+        "y": 160,
         "wires": [
             [
-                "e68284fd5306469f"
+                "e68284fd5306469f",
+                "63c6d7d2e1d374bc",
+                "464b8dfa2071f8dc"
             ]
         ]
     },
@@ -6675,8 +6916,8 @@
         "links": [
             "1993fd8165053adf"
         ],
-        "x": 735,
-        "y": 140,
+        "x": 775,
+        "y": 120,
         "wires": []
     },
     {
@@ -6685,7 +6926,7 @@
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "x": 270,
+        "x": 290,
         "y": 60,
         "wires": [
             [
@@ -6699,13 +6940,49 @@
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "x": 290,
-        "y": 140,
+        "x": 310,
+        "y": 160,
         "wires": [
             [
                 "22215c11d8006662"
             ]
         ]
+    },
+    {
+        "id": "e0e3458d2921b219",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "b4ef3182e14fb20f",
+        "group": "25c7f0078ed443dd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Theme",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 650,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "63c6d7d2e1d374bc",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "b4ef3182e14fb20f",
+        "group": "25c7f0078ed443dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "State",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 810,
+        "y": 160,
+        "wires": []
     },
     {
         "id": "0e03f7b1c487930f",
@@ -6720,7 +6997,7 @@
         "soff": "0",
         "eoff": "0",
         "x": 130,
-        "y": 240,
+        "y": 360,
         "wires": [
             [
                 "e8f1b65f059cc6d6"
@@ -6756,7 +7033,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 240,
+        "y": 360,
         "wires": [
             [
                 "f03d89a8340d6a5a"
@@ -6773,12 +7050,10 @@
             "03385520953758c9"
         ],
         "timeout": "30",
-        "x": 750,
-        "y": 240,
+        "x": 910,
+        "y": 300,
         "wires": [
-            [
-                "1a8e1c3ec9f5238f"
-            ]
+            []
         ]
     },
     {
@@ -6788,7 +7063,47 @@
         "g": "b99b5460332bf873",
         "name": "",
         "x": 520,
-        "y": 240,
+        "y": 360,
+        "wires": [
+            [
+                "343eff6eb2f2a71d",
+                "d4e1d2ba1ea4139d"
+            ]
+        ]
+    },
+    {
+        "id": "709e7f94ef4559a2",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "b99b5460332bf873",
+        "group": "6f855c597472e66b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "State",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 930,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "343eff6eb2f2a71d",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "g": "b99b5460332bf873",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 730,
+        "y": 300,
         "wires": [
             [
                 "41240c4df4743495"
@@ -6796,21 +7111,68 @@
         ]
     },
     {
-        "id": "1a8e1c3ec9f5238f",
-        "type": "debug",
+        "id": "d4e1d2ba1ea4139d",
+        "type": "change",
         "z": "a767582f3959afc9",
         "g": "b99b5460332bf873",
-        "name": "shade timer",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "topic",
-        "statusType": "msg",
-        "x": 790,
-        "y": 300,
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "709e7f94ef4559a2",
+                "0dd499a16f894a85"
+            ]
+        ]
+    },
+    {
+        "id": "0dd499a16f894a85",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "b99b5460332bf873",
+        "group": "6f855c597472e66b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Next Transition",
+        "format": "{{msg.next}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 960,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "464b8dfa2071f8dc",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "b4ef3182e14fb20f",
+        "group": "25c7f0078ed443dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Next Transition",
+        "format": "{{msg.next}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 840,
+        "y": 200,
         "wires": []
     },
     {
