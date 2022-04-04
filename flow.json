@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "45323c0c4bbc21f0",
+        "type": "tab",
+        "label": "Window Shades",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "a00ccef1301f21e3",
         "type": "tab",
         "label": "Chez Nous Main",
@@ -957,7 +965,7 @@
     {
         "id": "cec0ef6d268245de",
         "type": "subflow",
-        "name": "Select Shade Scene",
+        "name": "Shade Scene",
         "info": "",
         "category": "powerview",
         "in": [
@@ -2275,7 +2283,9 @@
             "1cee4f351bd59563"
         ],
         "x": 34,
-        "y": 219
+        "y": 219,
+        "w": 802,
+        "h": 202
     },
     {
         "id": "c49a717c63369963",
@@ -2295,7 +2305,9 @@
             "db81cf75a2ca1776"
         ],
         "x": 24,
-        "y": 19
+        "y": 19,
+        "w": 417,
+        "h": 82
     },
     {
         "id": "c2ab0e65f8616042",
@@ -2316,7 +2328,9 @@
             "baea50703f48a556"
         ],
         "x": 234,
-        "y": 459
+        "y": 459,
+        "w": 672,
+        "h": 90
     },
     {
         "id": "f406f446ee780306",
@@ -2379,7 +2393,9 @@
             "cae953f2c04362ad"
         ],
         "x": 24,
-        "y": 119
+        "y": 119,
+        "w": 652,
+        "h": 82
     },
     {
         "id": "41cef0af2772c23a",
@@ -2452,20 +2468,18 @@
             "e0e3458d2921b219",
             "63c6d7d2e1d374bc",
             "464b8dfa2071f8dc",
-            "41240c4df4743495",
-            "343eff6eb2f2a71d",
             "f03d89a8340d6a5a",
             "0dd499a16f894a85",
             "d4e1d2ba1ea4139d",
             "709e7f94ef4559a2",
             "b7c07468a216a94b",
             "0e03f7b1c487930f",
-            "a42a43602e14bdc6"
+            "e8131653ac25be3d"
         ],
         "x": 14,
         "y": 19,
-        "w": 892,
-        "h": 482
+        "w": 912,
+        "h": 502
     },
     {
         "id": "7dc3d45ec3c52923",
@@ -2515,7 +2529,7 @@
         ],
         "x": 74,
         "y": 19,
-        "w": 392,
+        "w": 432,
         "h": 82
     },
     {
@@ -2588,6 +2602,31 @@
         "y": 1079,
         "w": 692,
         "h": 82
+    },
+    {
+        "id": "3ebfc22e4e8e324c",
+        "type": "group",
+        "z": "45323c0c4bbc21f0",
+        "name": "Window shade automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "90850e4306b94c68",
+            "44dd387f0863baf6",
+            "05fdab0d3035ea98",
+            "b898ebadb9806a53",
+            "034e06f49fb571c4",
+            "8a18f3726a987816"
+        ],
+        "x": 104,
+        "y": 39,
+        "w": 742,
+        "h": 162
     },
     {
         "id": "e79e0110c2317edb",
@@ -6708,27 +6747,11 @@
         "soff": "0",
         "eoff": "0",
         "x": 110,
-        "y": 60,
+        "y": 160,
         "wires": [
             [
                 "b7c07468a216a94b"
             ],
-            []
-        ]
-    },
-    {
-        "id": "41240c4df4743495",
-        "type": "link call",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "links": [
-            "03385520953758c9"
-        ],
-        "timeout": "30",
-        "x": 770,
-        "y": 300,
-        "wires": [
             []
         ]
     },
@@ -6738,12 +6761,12 @@
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "x": 360,
-        "y": 400,
+        "x": 440,
+        "y": 420,
         "wires": [
             [
-                "343eff6eb2f2a71d",
-                "d4e1d2ba1ea4139d"
+                "d4e1d2ba1ea4139d",
+                "e8131653ac25be3d"
             ]
         ]
     },
@@ -6761,30 +6784,9 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 730,
-        "y": 460,
+        "x": 790,
+        "y": 480,
         "wires": []
-    },
-    {
-        "id": "343eff6eb2f2a71d",
-        "type": "rbe",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 550,
-        "y": 360,
-        "wires": [
-            [
-                "a42a43602e14bdc6"
-            ]
-        ]
     },
     {
         "id": "d4e1d2ba1ea4139d",
@@ -6806,8 +6808,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 440,
+        "x": 640,
+        "y": 460,
         "wires": [
             [
                 "709e7f94ef4559a2",
@@ -6829,8 +6831,8 @@
         "format": "{{msg.next}}",
         "layout": "row-spread",
         "className": "",
-        "x": 760,
-        "y": 420,
+        "x": 820,
+        "y": 440,
         "wires": []
     },
     {
@@ -6883,8 +6885,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 590,
-        "y": 140,
+        "x": 610,
+        "y": 240,
         "wires": [
             [
                 "66d63df0972916d2"
@@ -6932,8 +6934,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 200,
+        "x": 620,
+        "y": 300,
         "wires": [
             [
                 "e68284fd5306469f",
@@ -6952,8 +6954,8 @@
         "links": [
             "1993fd8165053adf"
         ],
-        "x": 735,
-        "y": 160,
+        "x": 755,
+        "y": 260,
         "wires": []
     },
     {
@@ -6976,8 +6978,8 @@
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "x": 410,
-        "y": 140,
+        "x": 430,
+        "y": 240,
         "wires": [
             [
                 "22215c11d8006662"
@@ -7016,8 +7018,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 770,
-        "y": 200,
+        "x": 790,
+        "y": 300,
         "wires": []
     },
     {
@@ -7034,8 +7036,8 @@
         "format": "{{msg.next}}",
         "layout": "row-spread",
         "className": "",
-        "x": 800,
-        "y": 240,
+        "x": 820,
+        "y": 340,
         "wires": []
     },
     {
@@ -7045,7 +7047,7 @@
         "g": "b4ef3182e14fb20f",
         "name": "",
         "x": 170,
-        "y": 140,
+        "y": 240,
         "wires": [
             [
                 "5c6e4cb8063ff548",
@@ -7055,28 +7057,19 @@
         ]
     },
     {
-        "id": "a42a43602e14bdc6",
-        "type": "switch",
+        "id": "e8131653ac25be3d",
+        "type": "link out",
         "z": "a767582f3959afc9",
         "g": "b4ef3182e14fb20f",
         "name": "",
-        "property": "enableAutomation",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "true"
-            }
+        "mode": "link",
+        "links": [
+            "e39a8bbb255be99f",
+            "8a18f3726a987816"
         ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 670,
-        "y": 360,
-        "wires": [
-            [
-                "41240c4df4743495"
-            ]
-        ]
+        "x": 575,
+        "y": 380,
+        "wires": []
     },
     {
         "id": "e9ef01d0b72aa777",
@@ -7731,15 +7724,16 @@
         "type": "debug",
         "z": "63d8cb10398da04b",
         "g": "632ab06eab6fb5c3",
-        "name": "",
+        "name": "lighting automation",
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 350,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "msg",
+        "x": 370,
         "y": 60,
         "wires": []
     },
@@ -7754,8 +7748,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "Automation disabled",
-                "tot": "str"
+                "to": "'Automation disabled for ' & payload",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -7768,6 +7762,136 @@
         "wires": [
             [
                 "cdc14bf0e8d1e8f7"
+            ]
+        ]
+    },
+    {
+        "id": "90850e4306b94c68",
+        "type": "link call",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "links": [
+            "03385520953758c9"
+        ],
+        "timeout": "30",
+        "x": 550,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44dd387f0863baf6",
+        "type": "rbe",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "05fdab0d3035ea98"
+            ]
+        ]
+    },
+    {
+        "id": "05fdab0d3035ea98",
+        "type": "switch",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "property": "enableAutomation",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 120,
+        "wires": [
+            [
+                "90850e4306b94c68"
+            ],
+            [
+                "b898ebadb9806a53"
+            ]
+        ]
+    },
+    {
+        "id": "b898ebadb9806a53",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'Automation disabled for ' & payload",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "034e06f49fb571c4"
+            ]
+        ]
+    },
+    {
+        "id": "034e06f49fb571c4",
+        "type": "debug",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "shade automation",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "msg",
+        "x": 710,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8a18f3726a987816",
+        "type": "link in",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "window shade automation",
+        "links": [
+            "e8131653ac25be3d"
+        ],
+        "x": 145,
+        "y": 120,
+        "wires": [
+            [
+                "44dd387f0863baf6"
             ]
         ]
     },
