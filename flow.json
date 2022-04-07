@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "7689d3d4b864d0dd",
+        "type": "tab",
+        "label": "Bedtime",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "63d8cb10398da04b",
         "type": "tab",
         "label": "Lighting",
@@ -827,135 +835,6 @@
         }
     },
     {
-        "id": "cec0ef6d268245de",
-        "type": "subflow",
-        "name": "Shades Scene",
-        "info": "",
-        "category": "powerview",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "02c942beee6c909e"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 820,
-                "y": 120,
-                "wires": [
-                    {
-                        "id": "c0cafedc668548ec",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99",
-        "status": {
-            "x": 880,
-            "y": 200,
-            "wires": [
-                {
-                    "id": "88c60b9a7f100404",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
-        "id": "3e477cfb1fa6cf29",
-        "type": "subflow",
-        "name": "Theme",
-        "info": "",
-        "category": "waubesa",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "8701f391cfeeb29b"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 800,
-                "y": 160,
-                "wires": [
-                    {
-                        "id": "b73aa40b3a7f3d9d",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99",
-        "status": {
-            "x": 800,
-            "y": 240,
-            "wires": [
-                {
-                    "id": "b73aa40b3a7f3d9d",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
-        "id": "90e44ab908c17813",
-        "type": "subflow",
-        "name": "Time of Day",
-        "info": "",
-        "category": "waubesa",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "e08b37895f8d08c0"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 840,
-                "y": 260,
-                "wires": [
-                    {
-                        "id": "e45bc95c378f3968",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99",
-        "status": {
-            "x": 840,
-            "y": 340,
-            "wires": [
-                {
-                    "id": "e45bc95c378f3968",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
         "id": "1ccf0bc875015428",
         "type": "group",
         "z": "a00ccef1301f21e3",
@@ -973,7 +852,9 @@
             "a9378d8ba74f3f4f"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 388,
+        "h": 82
     },
     {
         "id": "cf878f58f6360a07",
@@ -1246,7 +1127,9 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1271,7 +1154,9 @@
             "bad6370b3539d5ca"
         ],
         "x": 104,
-        "y": 19
+        "y": 19,
+        "w": 722,
+        "h": 182
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1296,7 +1181,9 @@
             "7b10a17dd5bc4c0f"
         ],
         "x": 104,
-        "y": 419
+        "y": 419,
+        "w": 762,
+        "h": 182
     },
     {
         "id": "37f9190eb1a5f555",
@@ -1419,7 +1306,9 @@
             "cca53c3a44867817"
         ],
         "x": 104,
-        "y": 619
+        "y": 619,
+        "w": 822,
+        "h": 182
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1442,7 +1331,9 @@
             "8e1a1e8c143be16d"
         ],
         "x": 104,
-        "y": 219
+        "y": 219,
+        "w": 722,
+        "h": 182
     },
     {
         "id": "27ea51b68dd32fdf",
@@ -1550,15 +1441,14 @@
             "color": "#000000"
         },
         "nodes": [
-            "93398f788c096cb3",
             "061d8c40c8ed16ab",
             "f25967eedb1cc95e",
             "1993fd8165053adf"
         ],
-        "x": 144,
-        "y": 119,
+        "x": 124,
+        "y": 251.5,
         "w": 362,
-        "h": 122
+        "h": 97
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1570,7 +1460,8 @@
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "color": "#000000"
+            "color": "#000000",
+            "label-position": "sw"
         },
         "nodes": [
             "549a2335fb839c37",
@@ -1578,10 +1469,10 @@
             "8e8390b13cc5c45b",
             "c897f7f0ee8680dc"
         ],
-        "x": 564,
-        "y": 459,
+        "x": 554,
+        "y": 499,
         "w": 232,
-        "h": 162
+        "h": 170
     },
     {
         "id": "73991d26373b19c7",
@@ -1602,12 +1493,18 @@
             "b0ee0f2f8155fe9b",
             "e270017761dfd27d",
             "490cc0ba5f699f8a",
-            "76224ffd6895171f"
+            "76224ffd6895171f",
+            "9bcc61425fa0f7a0",
+            "2cdfb3f10ab73e60",
+            "1584448d523e5745",
+            "b2358d47303c40c3",
+            "2e4a539865cff7ae",
+            "3937f7adb3efe771"
         ],
-        "x": 564,
+        "x": 554,
         "y": 199,
-        "w": 272,
-        "h": 242
+        "w": 612,
+        "h": 282
     },
     {
         "id": "b940bf3a0df755de",
@@ -1627,7 +1524,7 @@
             "6c3e6b4543f8c9ac",
             "f12fbd86617caaf9"
         ],
-        "x": 564,
+        "x": 544,
         "y": 19,
         "w": 232,
         "h": 162
@@ -1649,8 +1546,10 @@
             "116d9356df3ac0f2",
             "9402de8cb82a7cb9"
         ],
-        "x": 14,
-        "y": 219
+        "x": 434,
+        "y": 119,
+        "w": 502,
+        "h": 82
     },
     {
         "id": "feea332415047613",
@@ -1676,7 +1575,9 @@
             "c6e09ee6553c5587"
         ],
         "x": 14,
-        "y": 479
+        "y": 439,
+        "w": 912,
+        "h": 190
     },
     {
         "id": "5d64c1685d1dabb4",
@@ -1866,7 +1767,9 @@
             "b25fbb4b048baf86"
         ],
         "x": 114,
-        "y": 819
+        "y": 819,
+        "w": 672,
+        "h": 142
     },
     {
         "id": "3495f05f0f012ee3",
@@ -1886,7 +1789,9 @@
             "423c0c20c13b7954"
         ],
         "x": 114,
-        "y": 979
+        "y": 979,
+        "w": 652,
+        "h": 82
     },
     {
         "id": "4b1336ccf13ceeca",
@@ -2209,7 +2114,9 @@
             "1cee4f351bd59563"
         ],
         "x": 34,
-        "y": 219
+        "y": 219,
+        "w": 802,
+        "h": 202
     },
     {
         "id": "c49a717c63369963",
@@ -2229,7 +2136,9 @@
             "db81cf75a2ca1776"
         ],
         "x": 24,
-        "y": 19
+        "y": 19,
+        "w": 417,
+        "h": 82
     },
     {
         "id": "c2ab0e65f8616042",
@@ -2250,7 +2159,9 @@
             "baea50703f48a556"
         ],
         "x": 234,
-        "y": 459
+        "y": 459,
+        "w": 672,
+        "h": 90
     },
     {
         "id": "f406f446ee780306",
@@ -2311,7 +2222,9 @@
             "cae953f2c04362ad"
         ],
         "x": 24,
-        "y": 119
+        "y": 119,
+        "w": 692,
+        "h": 82
     },
     {
         "id": "41cef0af2772c23a",
@@ -2332,10 +2245,17 @@
             "e8a1834b6c4c6f7f",
             "34fd5c344701e839",
             "69a8648256e320f4",
-            "c0d1759df573b02a"
+            "c0d1759df573b02a",
+            "b5a523ae43b827e6",
+            "79fd8c5a2b73610f",
+            "1981aeb845d23287",
+            "6cfb92cf5e96d922",
+            "828da76144fd62ba"
         ],
         "x": 14,
-        "y": 319
+        "y": 219,
+        "w": 952,
+        "h": 202
     },
     {
         "id": "5a2c18585609cfae",
@@ -2363,77 +2283,6 @@
         "y": 219
     },
     {
-        "id": "7dc3d45ec3c52923",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "User interface for specifying the time at which to activate \"night\" mode",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "e9ef01d0b72aa777",
-            "032d109269866a80",
-            "28f8e98bd16896fc",
-            "7f6fffd58f53076d",
-            "7847d3480d43a1b1",
-            "5d3a1288aafe978e",
-            "4613314c7905f00a",
-            "1161e16094f79cde",
-            "3e65a29844e613b6",
-            "6ec10d453e8fa14d",
-            "822651c0eb7ef302"
-        ],
-        "x": 14,
-        "y": 199
-    },
-    {
-        "id": "632ab06eab6fb5c3",
-        "type": "group",
-        "z": "63d8cb10398da04b",
-        "name": "Log skipped automation events",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "c13866305ccb00f7",
-            "cdc14bf0e8d1e8f7"
-        ],
-        "x": 74,
-        "y": 19,
-        "w": 432,
-        "h": 82
-    },
-    {
-        "id": "314e4dfd78dc7665",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "name": "Enable automation using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "0bcb3912383f1895",
-            "bf9a782f01f65460",
-            "f8beb71270b6b08a",
-            "adb282b55e225a14",
-            "48112bfc329a4440"
-        ],
-        "x": 124,
-        "y": 1079
-    },
-    {
         "id": "3ebfc22e4e8e324c",
         "type": "group",
         "z": "45323c0c4bbc21f0",
@@ -2447,15 +2296,20 @@
         },
         "nodes": [
             "90850e4306b94c68",
-            "44dd387f0863baf6",
-            "05fdab0d3035ea98",
-            "b898ebadb9806a53",
-            "034e06f49fb571c4",
-            "f5576d705dff99cf",
-            "facb9598623e3675"
+            "facb9598623e3675",
+            "11553e4ec9852570",
+            "b80a2dc6e407165e",
+            "4e80abd85eb512dd",
+            "a9a485a922317f4f",
+            "da16872befb00aef",
+            "522607b8f78ba7dc",
+            "cc19d072be54d22e",
+            "bf054524a274cc6c"
         ],
-        "x": 124,
-        "y": 19
+        "x": 104,
+        "y": 19,
+        "w": 882,
+        "h": 242
     },
     {
         "id": "bcab4afbe87a89f5",
@@ -2475,10 +2329,25 @@
             "1149f01bfef43bc7",
             "4fad32ede021852a",
             "bc9643fcb15a2542",
-            "1f7aefd9b0586064"
+            "1f7aefd9b0586064",
+            "4d0e88a63b7175a8",
+            "65338ef15d9ca237",
+            "4ce2836aefb78546",
+            "bcacc67a0668b8ad",
+            "eaf6d39ea4e3cda7",
+            "0a23b15cdf887cf7",
+            "cbd94eae9cfa1a41",
+            "340641fa7968c480",
+            "36f8030284c5e1b9",
+            "f6563455545ac004",
+            "87b7507791a11b39",
+            "050929b715428b82",
+            "98d4a9e0f7cf8be0"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 962,
+        "h": 362
     },
     {
         "id": "ea36a248ea2408d1",
@@ -2498,10 +2367,19 @@
             "f02f287f0abb2520",
             "b5c6f6381e98b274",
             "2821bc00dfc14d21",
-            "104ef2308cbe2b19"
+            "6d9dca91178583b3",
+            "7247ff3a8c972179",
+            "6354f65f885ca2f2",
+            "36121e5334d84885",
+            "1da1a70448c14970",
+            "c47076e174e45bd8",
+            "4e74785dae7116a4",
+            "f1c514e146df391b"
         ],
         "x": 14,
-        "y": 459
+        "y": 399,
+        "w": 1222,
+        "h": 182
     },
     {
         "id": "4b0e89ddb66673e4",
@@ -2522,13 +2400,15 @@
             "18038cbbe3f73104"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 462,
+        "h": 90
     },
     {
         "id": "b4ef3182e14fb20f",
         "type": "group",
         "z": "a767582f3959afc9",
-        "name": "Send messages based on time of day",
+        "name": "Send time-of-day event",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -2537,17 +2417,120 @@
             "color": "#000000"
         },
         "nodes": [
-            "0e03f7b1c487930f",
-            "2525ac11bc64c851",
-            "63921c3c22ebdeb1",
-            "9b331d4ef7fbdd2c",
-            "7e1ffba423e7b150",
-            "b5e17ee59022180d",
-            "87da7de02c5c2580",
-            "e06bd7871e4b38d6"
+            "0e03f7b1c487930f"
         ],
         "x": 14,
-        "y": 19
+        "y": 139,
+        "w": 192,
+        "h": 82
+    },
+    {
+        "id": "81de4bef539332d8",
+        "type": "group",
+        "z": "a767582f3959afc9",
+        "name": "Send nodered/theme message to MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8f558b513187e180",
+            "df7c986edbdc25f9",
+            "572433092e427d92",
+            "b55f029a1a37cb57",
+            "505d716a59c0b8d2",
+            "fe5ea81e599054e8",
+            "70719fd47b7d8309",
+            "ffa002c8041b26c0",
+            "7c2338efb1da51bb",
+            "a58e4240490b6708",
+            "574b361c81d6154c"
+        ],
+        "x": 254,
+        "y": 19,
+        "w": 872,
+        "h": 222
+    },
+    {
+        "id": "6c3a90b013aa69c2",
+        "type": "group",
+        "z": "a767582f3959afc9",
+        "name": "Send nodered/time message to MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "label-position": "sw"
+        },
+        "nodes": [
+            "a1d1e45137e94cbc",
+            "e4a210c169af8454",
+            "6f43cabea1d8122f",
+            "1feb74f9604ff761",
+            "5c8927246e2f5894",
+            "3fbeb013d4883c13",
+            "ca53406bbd12573d",
+            "dbfd15bc7651777c",
+            "c2b01cf48e122156",
+            "a452f89148e0ce93",
+            "c3f326fb39a2914f",
+            "775af628329ee46c",
+            "af7e30f7cdeee1d9",
+            "334c712c4536ed30",
+            "5cd93cf4487a1623",
+            "17854c7df7aab4bf",
+            "9ce07408cf64a96c",
+            "51549b36f6839c28",
+            "2d2ba9af968fc7b4",
+            "825f2ffa1e2be0dc"
+        ],
+        "x": 14,
+        "y": 259,
+        "w": 972,
+        "h": 370
+    },
+    {
+        "id": "4eb0d887b195eec5",
+        "type": "group",
+        "z": "7689d3d4b864d0dd",
+        "name": "User interface for specifying the time at which to activate \"night\" mode",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "d31eac19e524875d",
+            "c67cce4d72b508f2",
+            "79709f226d61bff5",
+            "7f53ee2f29d4da93",
+            "bc385f9e10d6a793",
+            "477668ef1f02bcfd",
+            "1de7044c47282d94",
+            "2111a7129946fc0e",
+            "53b63e2bae9ee295",
+            "801bc206cfa0803d",
+            "1d1964b970dc0ba3",
+            "327b8c6e03e4763f",
+            "015a293c96d16612",
+            "a749f9b6f359ce8d",
+            "a8c51410dbe81c02",
+            "698fa0b79a195fd1",
+            "489473811921e26b",
+            "637aacd3ef3f2054",
+            "a58b94f7d37ad9dc"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 882,
+        "h": 482
     },
     {
         "id": "e79e0110c2317edb",
@@ -3526,6 +3509,30 @@
         "mdnsLoopback": true,
         "mdnsReuseAddr": true,
         "allowMessagePassthrough": false
+    },
+    {
+        "id": "2e4541b20001f580",
+        "type": "semaphore-config",
+        "name": "enable",
+        "capacity": "1"
+    },
+    {
+        "id": "42cf9f6ae4b51f49",
+        "type": "semaphore-config",
+        "name": "theme",
+        "capacity": "1"
+    },
+    {
+        "id": "8adeed565b07fe45",
+        "type": "semaphore-config",
+        "name": "bedtime",
+        "capacity": "1"
+    },
+    {
+        "id": "535a2813bb8f3319",
+        "type": "semaphore-config",
+        "name": "hue",
+        "capacity": "1"
     },
     {
         "id": "3111257f22032077",
@@ -5397,985 +5404,6 @@
         ]
     },
     {
-        "id": "7af79fc85daf2271",
-        "type": "switch",
-        "z": "cec0ef6d268245de",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "morning",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "midday",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "afternoon",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "evening",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "night",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 5,
-        "x": 210,
-        "y": 160,
-        "wires": [
-            [
-                "44fbbfcdb5731a5a"
-            ],
-            [
-                "62727dd1f5580920"
-            ],
-            [
-                "9e1a1b0bcc796db4"
-            ],
-            [
-                "c67c5ef0cfbee02c"
-            ],
-            [
-                "46f3694b124bb57b"
-            ]
-        ],
-        "inputLabels": [
-            "suncalc"
-        ],
-        "outputLabels": [
-            "morning",
-            "midday",
-            "afternoon",
-            "evening",
-            "night"
-        ]
-    },
-    {
-        "id": "44fbbfcdb5731a5a",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "morning",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "3405",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 80,
-        "wires": [
-            [
-                "537049a2cefbb244"
-            ]
-        ]
-    },
-    {
-        "id": "62727dd1f5580920",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "midday",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "47566",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 120,
-        "wires": [
-            [
-                "537049a2cefbb244"
-            ]
-        ]
-    },
-    {
-        "id": "9e1a1b0bcc796db4",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "afternoon",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "44035",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 160,
-        "wires": [
-            [
-                "537049a2cefbb244"
-            ]
-        ]
-    },
-    {
-        "id": "c67c5ef0cfbee02c",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "evening",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "32086",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 200,
-        "wires": [
-            [
-                "537049a2cefbb244"
-            ]
-        ]
-    },
-    {
-        "id": "46f3694b124bb57b",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "night",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "31086",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 370,
-        "y": 240,
-        "wires": [
-            [
-                "537049a2cefbb244"
-            ]
-        ]
-    },
-    {
-        "id": "c0cafedc668548ec",
-        "type": "rbe",
-        "z": "cec0ef6d268245de",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 730,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "88c60b9a7f100404",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"text\": topic,\t   \"fill\": \"green\",\t   \"shape\": \"dot\"\t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "537049a2cefbb244",
-        "type": "fan",
-        "z": "cec0ef6d268245de",
-        "name": "",
-        "x": 590,
-        "y": 160,
-        "wires": [
-            [
-                "88c60b9a7f100404",
-                "c0cafedc668548ec"
-            ]
-        ]
-    },
-    {
-        "id": "02c942beee6c909e",
-        "type": "change",
-        "z": "cec0ef6d268245de",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 160,
-        "y": 40,
-        "wires": [
-            [
-                "7af79fc85daf2271"
-            ]
-        ]
-    },
-    {
-        "id": "1be35d6da73b7305",
-        "type": "switch",
-        "z": "3e477cfb1fa6cf29",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "jsonata_exp",
-                "v": "payload[0] = 7 and payload[1] <= 4",
-                "vt": "jsonata"
-            },
-            {
-                "t": "jsonata_exp",
-                "v": "payload[0] = 10",
-                "vt": "jsonata"
-            },
-            {
-                "t": "jsonata_exp",
-                "v": "payload[0] = 12",
-                "vt": "jsonata"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 290,
-        "y": 120,
-        "wires": [
-            [
-                "f6a76580c0ca7b46"
-            ],
-            [
-                "2929d24bc217415d"
-            ],
-            [
-                "ba2b54a562619584"
-            ],
-            [
-                "5e5e030e15ce1339"
-            ]
-        ],
-        "inputLabels": [
-            "month day"
-        ],
-        "outputLabels": [
-            "tribal",
-            "spooky",
-            "jolly",
-            "standard"
-        ]
-    },
-    {
-        "id": "f6a76580c0ca7b46",
-        "type": "change",
-        "z": "3e477cfb1fa6cf29",
-        "name": "tribal",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "tribal",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 60,
-        "wires": [
-            [
-                "e60344fb9e42e3d0"
-            ]
-        ]
-    },
-    {
-        "id": "2929d24bc217415d",
-        "type": "change",
-        "z": "3e477cfb1fa6cf29",
-        "name": "spooky",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "spooky",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 100,
-        "wires": [
-            [
-                "e60344fb9e42e3d0"
-            ]
-        ]
-    },
-    {
-        "id": "ba2b54a562619584",
-        "type": "change",
-        "z": "3e477cfb1fa6cf29",
-        "name": "jolly",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "jolly",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 140,
-        "wires": [
-            [
-                "e60344fb9e42e3d0"
-            ]
-        ]
-    },
-    {
-        "id": "5e5e030e15ce1339",
-        "type": "change",
-        "z": "3e477cfb1fa6cf29",
-        "name": "standard",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "standard",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 180,
-        "wires": [
-            [
-                "e60344fb9e42e3d0"
-            ]
-        ]
-    },
-    {
-        "id": "e60344fb9e42e3d0",
-        "type": "rbe",
-        "z": "3e477cfb1fa6cf29",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 630,
-        "y": 120,
-        "wires": [
-            [
-                "b73aa40b3a7f3d9d"
-            ]
-        ]
-    },
-    {
-        "id": "b73aa40b3a7f3d9d",
-        "type": "change",
-        "z": "3e477cfb1fa6cf29",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "nodered/theme",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 660,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8701f391cfeeb29b",
-        "type": "moment",
-        "z": "3e477cfb1fa6cf29",
-        "name": "",
-        "topic": "date",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "M D",
-        "locale": "en-US",
-        "output": "payload",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 130,
-        "y": 40,
-        "wires": [
-            [
-                "36f602bced785027"
-            ]
-        ]
-    },
-    {
-        "id": "36f602bced785027",
-        "type": "change",
-        "z": "3e477cfb1fa6cf29",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map($split($trim(payload), ' '), $number)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 120,
-        "wires": [
-            [
-                "1be35d6da73b7305"
-            ]
-        ]
-    },
-    {
-        "id": "e08b37895f8d08c0",
-        "type": "moment",
-        "z": "90e44ab908c17813",
-        "name": "minutes",
-        "topic": "",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "minutes",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 140,
-        "y": 40,
-        "wires": [
-            [
-                "b50902f853ec9c5c"
-            ]
-        ]
-    },
-    {
-        "id": "b50902f853ec9c5c",
-        "type": "moment",
-        "z": "90e44ab908c17813",
-        "name": "sunrise",
-        "topic": "",
-        "input": "start",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunrise",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 280,
-        "y": 40,
-        "wires": [
-            [
-                "083ab11955bc7cd9"
-            ]
-        ]
-    },
-    {
-        "id": "083ab11955bc7cd9",
-        "type": "moment",
-        "z": "90e44ab908c17813",
-        "name": "sunset",
-        "topic": "",
-        "input": "end",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunset",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 410,
-        "y": 40,
-        "wires": [
-            [
-                "c0c567a38bfc563f"
-            ]
-        ]
-    },
-    {
-        "id": "c0c567a38bfc563f",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "minutes",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(minutes, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunrise",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(sunrise, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunset",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 140,
-        "y": 200,
-        "wires": [
-            [
-                "5dd957629879d734"
-            ]
-        ]
-    },
-    {
-        "id": "e45bc95c378f3968",
-        "type": "rbe",
-        "z": "90e44ab908c17813",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 730,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a2c192e8d8cc7a1e",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "$formatInteger($floor(next / 60), '00') & ':' & $formatInteger(next % 60, '00')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "nodered/time",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 200,
-        "wires": [
-            [
-                "e45bc95c378f3968"
-            ]
-        ]
-    },
-    {
-        "id": "034efbfc553cb941",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "night",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "night",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunrise",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 280,
-        "wires": [
-            [
-                "a2c192e8d8cc7a1e"
-            ]
-        ]
-    },
-    {
-        "id": "0d8eaeeddeb75f11",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "evening",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "evening",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "bedtime.value",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 240,
-        "wires": [
-            [
-                "a2c192e8d8cc7a1e"
-            ]
-        ]
-    },
-    {
-        "id": "cec1ae1ad86ecb3d",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "afternoon",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "afternoon",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunset",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 200,
-        "wires": [
-            [
-                "a2c192e8d8cc7a1e"
-            ]
-        ]
-    },
-    {
-        "id": "847a1f8d86ea4d22",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "midday",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "midday",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunset - 300",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 160,
-        "wires": [
-            [
-                "a2c192e8d8cc7a1e"
-            ]
-        ]
-    },
-    {
-        "id": "c6fe7001c90e4e93",
-        "type": "change",
-        "z": "90e44ab908c17813",
-        "name": "morning",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "morning",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunrise + 300",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 120,
-        "wires": [
-            [
-                "a2c192e8d8cc7a1e"
-            ]
-        ]
-    },
-    {
-        "id": "5dd957629879d734",
-        "type": "switch",
-        "z": "90e44ab908c17813",
-        "name": "",
-        "property": "minutes",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "btwn",
-                "v": "sunrise",
-                "vt": "msg",
-                "v2": "sunrise + 300",
-                "v2t": "jsonata"
-            },
-            {
-                "t": "btwn",
-                "v": "sunrise + 300",
-                "vt": "jsonata",
-                "v2": "sunset - 300",
-                "v2t": "jsonata"
-            },
-            {
-                "t": "btwn",
-                "v": "sunset - 300",
-                "vt": "jsonata",
-                "v2": "sunset",
-                "v2t": "msg"
-            },
-            {
-                "t": "btwn",
-                "v": "sunset",
-                "vt": "msg",
-                "v2": "bedtime.value",
-                "v2t": "global"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 5,
-        "x": 290,
-        "y": 200,
-        "wires": [
-            [
-                "c6fe7001c90e4e93"
-            ],
-            [
-                "847a1f8d86ea4d22"
-            ],
-            [
-                "cec1ae1ad86ecb3d"
-            ],
-            [
-                "0d8eaeeddeb75f11"
-            ],
-            [
-                "034efbfc553cb941"
-            ]
-        ],
-        "inputLabels": [
-            "suncalc"
-        ]
-    },
-    {
         "id": "30286901101a6095",
         "type": "link in",
         "z": "98d51762f6f2dad5",
@@ -6396,9 +5424,11 @@
             "bc371e391d7584a9",
             "48112bfc329a4440",
             "abf2dde9b0fd41f7",
-            "2525ac11bc64c851",
-            "63921c3c22ebdeb1",
-            "b5c6f6381e98b274"
+            "b5c6f6381e98b274",
+            "041309e5ee07af3e",
+            "ffa002c8041b26c0",
+            "af7e30f7cdeee1d9",
+            "477668ef1f02bcfd"
         ],
         "x": 175,
         "y": 80,
@@ -6466,36 +5496,307 @@
         "soff": "0",
         "eoff": "0",
         "x": 110,
-        "y": 140,
+        "y": 180,
         "wires": [
             [
-                "87da7de02c5c2580",
-                "e06bd7871e4b38d6"
+                "574b361c81d6154c",
+                "a1d1e45137e94cbc"
             ],
             []
         ]
     },
     {
-        "id": "2525ac11bc64c851",
-        "type": "link out",
+        "id": "8f558b513187e180",
+        "type": "switch",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "81de4bef539332d8",
         "name": "",
-        "mode": "link",
-        "links": [
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "jsonata_exp",
+                "v": "payload[0] = 7 and payload[1] <= 4",
+                "vt": "jsonata"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "payload[0] = 10",
+                "vt": "jsonata"
+            },
+            {
+                "t": "jsonata_exp",
+                "v": "payload[0] = 12",
+                "vt": "jsonata"
+            },
+            {
+                "t": "else"
+            }
         ],
-        "x": 385,
-        "y": 60,
-        "wires": []
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 530,
+        "y": 120,
+        "wires": [
+            [
+                "df7c986edbdc25f9"
+            ],
+            [
+                "572433092e427d92"
+            ],
+            [
+                "b55f029a1a37cb57"
+            ],
+            [
+                "505d716a59c0b8d2"
+            ]
+        ],
+        "inputLabels": [
+            "month day"
+        ],
+        "outputLabels": [
+            "tribal",
+            "spooky",
+            "jolly",
+            "standard"
+        ]
     },
     {
-        "id": "63921c3c22ebdeb1",
+        "id": "df7c986edbdc25f9",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "tribal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tribal",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 60,
+        "wires": [
+            [
+                "fe5ea81e599054e8"
+            ]
+        ]
+    },
+    {
+        "id": "572433092e427d92",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "spooky",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "spooky",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 100,
+        "wires": [
+            [
+                "fe5ea81e599054e8"
+            ]
+        ]
+    },
+    {
+        "id": "b55f029a1a37cb57",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "jolly",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "jolly",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 140,
+        "wires": [
+            [
+                "fe5ea81e599054e8"
+            ]
+        ]
+    },
+    {
+        "id": "505d716a59c0b8d2",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "standard",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "standard",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 180,
+        "wires": [
+            [
+                "fe5ea81e599054e8"
+            ]
+        ]
+    },
+    {
+        "id": "fe5ea81e599054e8",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 870,
+        "y": 120,
+        "wires": [
+            [
+                "70719fd47b7d8309"
+            ]
+        ]
+    },
+    {
+        "id": "70719fd47b7d8309",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/theme",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 180,
+        "wires": [
+            [
+                "ffa002c8041b26c0",
+                "7c2338efb1da51bb"
+            ]
+        ]
+    },
+    {
+        "id": "574b361c81d6154c",
+        "type": "moment",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "",
+        "topic": "date",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "M D",
+        "locale": "en-US",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "a58e4240490b6708"
+            ]
+        ]
+    },
+    {
+        "id": "a58e4240490b6708",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "81de4bef539332d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map($split($trim(payload), ' '), $number)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "8f558b513187e180"
+            ]
+        ]
+    },
+    {
+        "id": "ffa002c8041b26c0",
         "type": "link out",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "81de4bef539332d8",
         "name": "",
         "mode": "link",
         "links": [
@@ -6503,51 +5804,15 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 445,
+        "x": 1015,
         "y": 160,
         "wires": []
     },
     {
-        "id": "9b331d4ef7fbdd2c",
+        "id": "7c2338efb1da51bb",
         "type": "ui_text",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "group": "25c7f0078ed443dd",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Next",
-        "format": "{{msg.next}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 480,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "7e1ffba423e7b150",
-        "type": "ui_text",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "group": "25c7f0078ed443dd",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Time",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 480,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "b5e17ee59022180d",
-        "type": "ui_text",
-        "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
+        "g": "81de4bef539332d8",
         "group": "25c7f0078ed443dd",
         "order": 2,
         "width": 0,
@@ -6557,74 +5822,177 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 420,
-        "y": 100,
+        "x": 1050,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "87da7de02c5c2580",
-        "type": "subflow:3e477cfb1fa6cf29",
+        "id": "a1d1e45137e94cbc",
+        "type": "moment",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "x": 300,
-        "y": 80,
+        "g": "6c3a90b013aa69c2",
+        "name": "minutes",
+        "topic": "",
+        "input": "now",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "minutes",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 340,
+        "y": 300,
         "wires": [
             [
-                "2525ac11bc64c851",
-                "b5e17ee59022180d"
+                "e4a210c169af8454"
             ]
         ]
     },
     {
-        "id": "e06bd7871e4b38d6",
-        "type": "subflow:90e44ab908c17813",
+        "id": "e4a210c169af8454",
+        "type": "moment",
         "z": "a767582f3959afc9",
-        "g": "b4ef3182e14fb20f",
-        "x": 320,
-        "y": 200,
+        "g": "6c3a90b013aa69c2",
+        "name": "sunrise",
+        "topic": "",
+        "input": "start",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunrise",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 480,
+        "y": 300,
         "wires": [
             [
-                "63921c3c22ebdeb1",
-                "7e1ffba423e7b150",
-                "9b331d4ef7fbdd2c"
+                "6f43cabea1d8122f"
             ]
         ]
     },
     {
-        "id": "e9ef01d0b72aa777",
-        "type": "mqtt in",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "",
-        "topic": "nodered/bedtime",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 120,
-        "y": 280,
+        "id": "6f43cabea1d8122f",
+        "type": "moment",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "sunset",
+        "topic": "",
+        "input": "end",
+        "inputType": "msg",
+        "inTz": "ETC/utc",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "H:mm",
+        "locale": "en-US",
+        "output": "sunset",
+        "outputType": "msg",
+        "outTz": "America/Chicago",
+        "x": 610,
+        "y": 300,
         "wires": [
             [
-                "032d109269866a80",
-                "3e65a29844e613b6"
+                "17854c7df7aab4bf"
             ]
         ]
     },
     {
-        "id": "032d109269866a80",
+        "id": "1feb74f9604ff761",
         "type": "change",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
         "name": "",
         "rules": [
             {
                 "t": "set",
+                "p": "minutes",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(minutes, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sunrise",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(sunrise, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "sunset",
+                "pt": "msg",
+                "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
                 "p": "bedtime",
-                "pt": "global",
-                "to": "payload",
+                "pt": "msg",
+                "to": "bedtime.value",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "9ce07408cf64a96c"
+            ]
+        ]
+    },
+    {
+        "id": "5c8927246e2f5894",
+        "type": "rbe",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "775af628329ee46c"
+            ]
+        ]
+    },
+    {
+        "id": "3fbeb013d4883c13",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "night",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "night",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunrise",
                 "tot": "msg"
             }
         ],
@@ -6633,112 +6001,103 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 240,
+        "x": 490,
+        "y": 520,
         "wires": [
             [
-                "4613314c7905f00a"
+                "5c8927246e2f5894"
             ]
         ]
     },
     {
-        "id": "28f8e98bd16896fc",
-        "type": "function",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "bedtimeOptions",
-        "func": "return",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "setTimeout(() => {\n\n    let pad = (n) => {\n\n        return ('00' + n).slice(-2)\n\n    }\n\n    let options = []\n\n    for (let minutes = 1260; minutes <= 1380; minutes += 30) {\n\n        let label = pad(Math.floor(minutes / 60)) + ':' + pad(minutes % 60)\n        let option = {}\n\n        option[label] = minutes\n        options.push(option)\n\n    }\n\n    node.send({\n        options: options\n    })\n\n}, 500)",
-        "finalize": "",
-        "libs": [],
-        "x": 180,
-        "y": 400,
-        "wires": [
-            [
-                "6ec10d453e8fa14d"
-            ]
-        ]
-    },
-    {
-        "id": "7f6fffd58f53076d",
-        "type": "ui_dropdown",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "",
-        "label": "Bedtime",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "ad4d885f83f029a5",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "nodered/bedtime",
-        "topicType": "str",
-        "className": "",
-        "x": 500,
-        "y": 360,
-        "wires": [
-            [
-                "7847d3480d43a1b1"
-            ]
-        ]
-    },
-    {
-        "id": "7847d3480d43a1b1",
-        "type": "function",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "randomBedtime",
-        "func": "let offset = 30 - Math.floor(Math.random() * 60)\nlet value = (msg.payload + offset) % 1440\n\nmsg.topic = 'nodered/bedtime'\nmsg.qos = 2\nmsg.retain = true\n\nmsg.payload = {\n    minutes: msg.payload,\n    value: value\n}\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 700,
-        "y": 360,
-        "wires": [
-            [
-                "5d3a1288aafe978e"
-            ]
-        ]
-    },
-    {
-        "id": "5d3a1288aafe978e",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "49a3148e23e3ff94",
-            "1dfaa2404fcc8cbc",
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
-        ],
-        "x": 815,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "4613314c7905f00a",
+        "id": "ca53406bbd12573d",
         "type": "change",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "evening",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "(\t$hour := $floor(payload.value / 60);\t$minute := payload.value % 60;\t$formatInteger($hour, '00') & ':' & $formatInteger($minute, '00')\t)",
+                "to": "evening",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "bedtime.value",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "5c8927246e2f5894"
+            ]
+        ]
+    },
+    {
+        "id": "dbfd15bc7651777c",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "afternoon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "afternoon",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunset",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "5c8927246e2f5894"
+            ]
+        ]
+    },
+    {
+        "id": "c2b01cf48e122156",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "midday",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "midday",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunset - 300",
                 "tot": "jsonata"
             }
         ],
@@ -6747,45 +6106,34 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 520,
-        "y": 240,
+        "x": 500,
+        "y": 400,
         "wires": [
             [
-                "1161e16094f79cde"
+                "5c8927246e2f5894"
             ]
         ]
     },
     {
-        "id": "1161e16094f79cde",
-        "type": "ui_text",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "group": "ad4d885f83f029a5",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Randomized",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 690,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "3e65a29844e613b6",
+        "id": "a452f89148e0ce93",
         "type": "change",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "morning",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.minutes",
-                "tot": "msg"
+                "to": "morning",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "sunrise + 300",
+                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -6793,39 +6141,264 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 320,
+        "x": 500,
+        "y": 360,
         "wires": [
             [
-                "7f6fffd58f53076d"
+                "5c8927246e2f5894"
             ]
         ]
     },
     {
-        "id": "6ec10d453e8fa14d",
-        "type": "trigger",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
+        "id": "c3f326fb39a2914f",
+        "type": "switch",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
         "name": "",
-        "op1": "",
-        "op2": "bedtime.minutes",
-        "op1type": "pay",
-        "op2type": "global",
-        "duration": "5",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 340,
-        "y": 400,
+        "property": "minutes",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "sunrise",
+                "vt": "msg",
+                "v2": "sunrise + 300",
+                "v2t": "jsonata"
+            },
+            {
+                "t": "btwn",
+                "v": "sunrise + 300",
+                "vt": "jsonata",
+                "v2": "sunset - 300",
+                "v2t": "jsonata"
+            },
+            {
+                "t": "btwn",
+                "v": "sunset - 300",
+                "vt": "jsonata",
+                "v2": "sunset",
+                "v2t": "msg"
+            },
+            {
+                "t": "btwn",
+                "v": "sunset",
+                "vt": "msg",
+                "v2": "bedtime",
+                "v2t": "msg"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 310,
+        "y": 440,
         "wires": [
             [
-                "7f6fffd58f53076d"
+                "a452f89148e0ce93"
+            ],
+            [
+                "c2b01cf48e122156"
+            ],
+            [
+                "dbfd15bc7651777c"
+            ],
+            [
+                "ca53406bbd12573d"
+            ],
+            [
+                "3fbeb013d4883c13"
+            ]
+        ],
+        "inputLabels": [
+            "suncalc"
+        ]
+    },
+    {
+        "id": "775af628329ee46c",
+        "type": "change",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "$formatInteger($floor(next / 60), '00') & ':' & $formatInteger(next % 60, '00')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/time",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 500,
+        "wires": [
+            [
+                "af7e30f7cdeee1d9",
+                "334c712c4536ed30",
+                "5cd93cf4487a1623"
             ]
         ]
+    },
+    {
+        "id": "af7e30f7cdeee1d9",
+        "type": "link out",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "8510638dbc5dd48c",
+            "f495f33164cc7b42",
+            "30286901101a6095"
+        ],
+        "x": 875,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "334c712c4536ed30",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "group": "25c7f0078ed443dd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "5cd93cf4487a1623",
+        "type": "ui_text",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "group": "25c7f0078ed443dd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Next",
+        "format": "{{msg.next}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "17854c7df7aab4bf",
+        "type": "semaphore-take",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "config": "8adeed565b07fe45",
+        "name": "take bedtime",
+        "x": 750,
+        "y": 300,
+        "wires": [
+            [
+                "1feb74f9604ff761"
+            ]
+        ]
+    },
+    {
+        "id": "9ce07408cf64a96c",
+        "type": "semaphore-leave",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "config": "8adeed565b07fe45",
+        "name": "leave bedtime",
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "c3f326fb39a2914f"
+            ]
+        ]
+    },
+    {
+        "id": "51549b36f6839c28",
+        "type": "catch",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "",
+        "scope": [
+            "1feb74f9604ff761"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "2d2ba9af968fc7b4"
+            ]
+        ]
+    },
+    {
+        "id": "2d2ba9af968fc7b4",
+        "type": "semaphore-leave",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "config": "8adeed565b07fe45",
+        "name": "leave bedtime",
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [
+                "825f2ffa1e2be0dc"
+            ]
+        ]
+    },
+    {
+        "id": "825f2ffa1e2be0dc",
+        "type": "debug",
+        "z": "a767582f3959afc9",
+        "g": "6c3a90b013aa69c2",
+        "name": "get global.bedtime",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 430,
+        "y": 580,
+        "wires": []
     },
     {
         "id": "532b9b7b5f117137",
@@ -6842,7 +6415,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 330,
-        "y": 60,
+        "y": 180,
         "wires": [
             [
                 "4fad32ede021852a"
@@ -6864,10 +6437,10 @@
         "rh": 0,
         "inputs": 0,
         "x": 120,
-        "y": 140,
+        "y": 340,
         "wires": [
             [
-                "1149f01bfef43bc7"
+                "65338ef15d9ca237"
             ]
         ]
     },
@@ -6891,11 +6464,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 310,
-        "y": 140,
+        "x": 150,
+        "y": 260,
         "wires": [
             [
-                "4fad32ede021852a"
+                "4ce2836aefb78546"
             ]
         ]
     },
@@ -6921,7 +6494,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 490,
-        "y": 100,
+        "y": 220,
         "wires": [
             [
                 "bc9643fcb15a2542"
@@ -6949,10 +6522,10 @@
         "to": "",
         "reg": false,
         "x": 640,
-        "y": 100,
+        "y": 220,
         "wires": [
             [
-                "1f7aefd9b0586064"
+                "eaf6d39ea4e3cda7"
             ]
         ]
     },
@@ -6965,10 +6538,12 @@
         "mode": "link",
         "links": [
             "1993fd8165053adf",
-            "facb9598623e3675"
+            "facb9598623e3675",
+            "380c05275eae4338",
+            "1f8dccfd42af4188"
         ],
-        "x": 755,
-        "y": 100,
+        "x": 935,
+        "y": 340,
         "wires": []
     },
     {
@@ -6985,8 +6560,8 @@
         "height": 0,
         "passthru": false,
         "decouple": "true",
-        "topic": "nodered/automation/enable",
-        "topicType": "str",
+        "topic": "topic",
+        "topicType": "msg",
         "style": "",
         "onvalue": "true",
         "onvalueType": "bool",
@@ -6998,7 +6573,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 610,
+        "x": 930,
         "y": 540,
         "wires": [
             [
@@ -7024,8 +6599,8 @@
         "y": 520,
         "wires": [
             [
-                "2821bc00dfc14d21",
-                "104ef2308cbe2b19"
+                "6d9dca91178583b3",
+                "c47076e174e45bd8"
             ]
         ]
     },
@@ -7036,6 +6611,13 @@
         "g": "ea36a248ea2408d1",
         "name": "",
         "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/automation/enable",
+                "tot": "str"
+            },
             {
                 "t": "set",
                 "p": "qos",
@@ -7056,8 +6638,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 540,
+        "x": 1080,
+        "y": 520,
         "wires": [
             [
                 "b5c6f6381e98b274"
@@ -7078,8 +6660,8 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 875,
-        "y": 540,
+        "x": 1195,
+        "y": 520,
         "wires": []
     },
     {
@@ -7102,7 +6684,61 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
+        "x": 580,
+        "y": 540,
+        "wires": [
+            [
+                "7247ff3a8c972179"
+            ]
+        ]
+    },
+    {
+        "id": "4d0e88a63b7175a8",
+        "type": "switch",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "name": "",
+        "property": "enable",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 340,
+        "wires": [
+            [
+                "1f7aefd9b0586064"
+            ]
+        ]
+    },
+    {
+        "id": "6d9dca91178583b3",
+        "type": "semaphore-take",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "config": "2e4541b20001f580",
+        "name": "take enable",
+        "x": 370,
+        "y": 540,
+        "wires": [
+            [
+                "2821bc00dfc14d21"
+            ]
+        ]
+    },
+    {
+        "id": "7247ff3a8c972179",
+        "type": "semaphore-leave",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "config": "2e4541b20001f580",
+        "name": "leave enable",
+        "x": 790,
         "y": 540,
         "wires": [
             [
@@ -7111,50 +6747,251 @@
         ]
     },
     {
-        "id": "104ef2308cbe2b19",
-        "type": "link out",
+        "id": "6354f65f885ca2f2",
+        "type": "catch",
         "z": "c7141ffb22d64190",
         "g": "ea36a248ea2408d1",
         "name": "",
-        "mode": "link",
-        "links": [
-            "adb282b55e225a14"
+        "scope": [
+            "2821bc00dfc14d21"
         ],
-        "x": 315,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "822651c0eb7ef302",
-        "type": "inject",
-        "z": "c7141ffb22d64190",
-        "g": "7dc3d45ec3c52923",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 05 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "bedtime.minutes",
-        "payloadType": "global",
-        "x": 570,
-        "y": 300,
+        "uncaught": false,
+        "x": 90,
+        "y": 440,
         "wires": [
             [
-                "7847d3480d43a1b1"
+                "36121e5334d84885"
             ]
         ]
     },
     {
-        "id": "93398f788c096cb3",
+        "id": "65338ef15d9ca237",
+        "type": "semaphore-take",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "config": "42cf9f6ae4b51f49",
+        "name": "take theme",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "1149f01bfef43bc7"
+            ]
+        ]
+    },
+    {
+        "id": "4ce2836aefb78546",
+        "type": "semaphore-leave",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "config": "42cf9f6ae4b51f49",
+        "name": "leave theme",
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "4fad32ede021852a"
+            ]
+        ]
+    },
+    {
+        "id": "87b7507791a11b39",
+        "type": "catch",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "name": "",
+        "scope": [
+            "1149f01bfef43bc7"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "050929b715428b82"
+            ]
+        ]
+    },
+    {
+        "id": "050929b715428b82",
+        "type": "semaphore-leave",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "config": "42cf9f6ae4b51f49",
+        "name": "leave theme",
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "98d4a9e0f7cf8be0"
+            ]
+        ]
+    },
+    {
+        "id": "98d4a9e0f7cf8be0",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "name": "set global.theme",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 150,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "36121e5334d84885",
+        "type": "semaphore-leave",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "config": "2e4541b20001f580",
+        "name": "leave enable",
+        "x": 230,
+        "y": 440,
+        "wires": [
+            [
+                "1da1a70448c14970"
+            ]
+        ]
+    },
+    {
+        "id": "1da1a70448c14970",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "name": "set global.enable",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 410,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c47076e174e45bd8",
+        "type": "change",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"On\":payload}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "4e74785dae7116a4"
+            ]
+        ]
+    },
+    {
+        "id": "4e74785dae7116a4",
+        "type": "homekit-service",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "isParent": true,
+        "hostType": "1",
+        "bridge": "",
+        "accessoryId": "e2a028ce9128c08c",
+        "parentService": "",
+        "name": "Enable Automation",
+        "serviceName": "Switch",
+        "topic": "",
+        "filter": false,
+        "manufacturer": "NRCHKB",
+        "model": "1.4.3",
+        "serialNo": "Default Serial Number",
+        "firmwareRev": "1.4.3",
+        "hardwareRev": "1.4.3",
+        "softwareRev": "1.4.3",
+        "cameraConfigVideoProcessor": "ffmpeg",
+        "cameraConfigSource": "",
+        "cameraConfigStillImageSource": "",
+        "cameraConfigMaxStreams": 2,
+        "cameraConfigMaxWidth": 1280,
+        "cameraConfigMaxHeight": 720,
+        "cameraConfigMaxFPS": 10,
+        "cameraConfigMaxBitrate": 300,
+        "cameraConfigVideoCodec": "libx264",
+        "cameraConfigAudioCodec": "libfdk_aac",
+        "cameraConfigAudio": false,
+        "cameraConfigPacketSize": 1316,
+        "cameraConfigVerticalFlip": false,
+        "cameraConfigHorizontalFlip": false,
+        "cameraConfigMapVideo": "0:0",
+        "cameraConfigMapAudio": "0:1",
+        "cameraConfigVideoFilter": "scale=1280:720",
+        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
+        "cameraConfigDebug": false,
+        "cameraConfigSnapshotOutput": "disabled",
+        "cameraConfigInterfaceName": "",
+        "characteristicProperties": "{}",
+        "waitForSetupMsg": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "f1c514e146df391b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f1c514e146df391b",
+        "type": "change",
+        "z": "c7141ffb22d64190",
+        "g": "ea36a248ea2408d1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.On",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 500,
+        "wires": [
+            [
+                "f02f287f0abb2520"
+            ]
+        ]
+    },
+    {
+        "id": "bcacc67a0668b8ad",
         "type": "inject",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
         "name": "",
         "props": [
             {
@@ -7173,11 +7010,523 @@
         "topic": "",
         "payload": "night",
         "payloadType": "str",
-        "x": 270,
-        "y": 200,
+        "x": 670,
+        "y": 260,
         "wires": [
             [
-                "061d8c40c8ed16ab"
+                "eaf6d39ea4e3cda7"
+            ]
+        ]
+    },
+    {
+        "id": "eaf6d39ea4e3cda7",
+        "type": "semaphore-take",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "config": "2e4541b20001f580",
+        "name": "take enable",
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "0a23b15cdf887cf7"
+            ]
+        ]
+    },
+    {
+        "id": "0a23b15cdf887cf7",
+        "type": "change",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enable",
+                "pt": "msg",
+                "to": "enableAutomation",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "cbd94eae9cfa1a41"
+            ]
+        ]
+    },
+    {
+        "id": "cbd94eae9cfa1a41",
+        "type": "semaphore-leave",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "config": "2e4541b20001f580",
+        "name": "leave enable",
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "4d0e88a63b7175a8"
+            ]
+        ]
+    },
+    {
+        "id": "340641fa7968c480",
+        "type": "catch",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "name": "",
+        "scope": [
+            "0a23b15cdf887cf7"
+        ],
+        "uncaught": false,
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "36f8030284c5e1b9"
+            ]
+        ]
+    },
+    {
+        "id": "36f8030284c5e1b9",
+        "type": "semaphore-leave",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "config": "2e4541b20001f580",
+        "name": "leave enable",
+        "x": 570,
+        "y": 60,
+        "wires": [
+            [
+                "f6563455545ac004"
+            ]
+        ]
+    },
+    {
+        "id": "f6563455545ac004",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "bcab4afbe87a89f5",
+        "name": "get global.enable",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 490,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d31eac19e524875d",
+        "type": "mqtt in",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "topic": "nodered/bedtime",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "53b63e2bae9ee295",
+                "327b8c6e03e4763f"
+            ]
+        ]
+    },
+    {
+        "id": "c67cce4d72b508f2",
+        "type": "change",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "bedtime",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 120,
+        "wires": [
+            [
+                "015a293c96d16612"
+            ]
+        ]
+    },
+    {
+        "id": "79709f226d61bff5",
+        "type": "function",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "bedtimeOptions",
+        "func": "return",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "setTimeout(() => {\n\n    let pad = (n) => {\n\n        return ('00' + n).slice(-2)\n\n    }\n\n    let options = []\n\n    for (let minutes = 1260; minutes <= 1380; minutes += 30) {\n\n        let label = pad(Math.floor(minutes / 60)) + ':' + pad(minutes % 60)\n        let option = {}\n\n        option[label] = minutes\n        options.push(option)\n\n    }\n\n    node.send({\n        options: options\n    })\n\n}, 500)",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 460,
+        "wires": [
+            [
+                "801bc206cfa0803d"
+            ]
+        ]
+    },
+    {
+        "id": "7f53ee2f29d4da93",
+        "type": "ui_dropdown",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "label": "Bedtime",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "ad4d885f83f029a5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "nodered/bedtime",
+        "topicType": "str",
+        "className": "",
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "bc385f9e10d6a793"
+            ]
+        ]
+    },
+    {
+        "id": "bc385f9e10d6a793",
+        "type": "function",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "randomBedtime",
+        "func": "let offset = 30 - Math.floor(Math.random() * 60)\nlet value = (msg.payload + offset) % 1440\n\nmsg.topic = 'nodered/bedtime'\nmsg.qos = 2\nmsg.retain = true\n\nmsg.payload = {\n    minutes: msg.payload,\n    value: value\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 400,
+        "wires": [
+            [
+                "477668ef1f02bcfd"
+            ]
+        ]
+    },
+    {
+        "id": "477668ef1f02bcfd",
+        "type": "link out",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "49a3148e23e3ff94",
+            "1dfaa2404fcc8cbc",
+            "8510638dbc5dd48c",
+            "f495f33164cc7b42",
+            "30286901101a6095"
+        ],
+        "x": 855,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1de7044c47282d94",
+        "type": "change",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(\t$hour := $floor(payload.value / 60);\t$minute := payload.value % 60;\t$formatInteger($hour, '00') & ':' & $formatInteger($minute, '00')\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "2111a7129946fc0e"
+            ]
+        ]
+    },
+    {
+        "id": "2111a7129946fc0e",
+        "type": "ui_text",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "group": "ad4d885f83f029a5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Randomized",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 790,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "53b63e2bae9ee295",
+        "type": "change",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.minutes",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 420,
+        "wires": [
+            [
+                "7f53ee2f29d4da93"
+            ]
+        ]
+    },
+    {
+        "id": "801bc206cfa0803d",
+        "type": "trigger",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "op1": "",
+        "op2": "bedtime.minutes",
+        "op1type": "pay",
+        "op2type": "global",
+        "duration": "5",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 420,
+        "y": 460,
+        "wires": [
+            [
+                "7f53ee2f29d4da93"
+            ]
+        ]
+    },
+    {
+        "id": "1d1964b970dc0ba3",
+        "type": "inject",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 05 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 430,
+        "y": 300,
+        "wires": [
+            [
+                "489473811921e26b"
+            ]
+        ]
+    },
+    {
+        "id": "327b8c6e03e4763f",
+        "type": "semaphore-take",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "config": "8adeed565b07fe45",
+        "name": "",
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "c67cce4d72b508f2"
+            ]
+        ]
+    },
+    {
+        "id": "015a293c96d16612",
+        "type": "semaphore-leave",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "config": "8adeed565b07fe45",
+        "name": "leave bedtime",
+        "x": 440,
+        "y": 180,
+        "wires": [
+            [
+                "1de7044c47282d94"
+            ]
+        ]
+    },
+    {
+        "id": "a749f9b6f359ce8d",
+        "type": "catch",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "scope": [
+            "c67cce4d72b508f2",
+            "637aacd3ef3f2054"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "a8c51410dbe81c02"
+            ]
+        ]
+    },
+    {
+        "id": "a8c51410dbe81c02",
+        "type": "semaphore-leave",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "config": "8adeed565b07fe45",
+        "name": "leave bedtime",
+        "x": 240,
+        "y": 60,
+        "wires": [
+            [
+                "698fa0b79a195fd1"
+            ]
+        ]
+    },
+    {
+        "id": "698fa0b79a195fd1",
+        "type": "debug",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "global.bedtime",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 420,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "489473811921e26b",
+        "type": "semaphore-take",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "config": "8adeed565b07fe45",
+        "name": "take bedtime",
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "637aacd3ef3f2054"
+            ]
+        ]
+    },
+    {
+        "id": "637aacd3ef3f2054",
+        "type": "change",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "bedtime.minutes",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 300,
+        "wires": [
+            [
+                "a58b94f7d37ad9dc"
+            ]
+        ]
+    },
+    {
+        "id": "a58b94f7d37ad9dc",
+        "type": "semaphore-leave",
+        "z": "7689d3d4b864d0dd",
+        "g": "4eb0d887b195eec5",
+        "config": "8adeed565b07fe45",
+        "name": "leave bedtime",
+        "x": 540,
+        "y": 360,
+        "wires": [
+            [
+                "bc385f9e10d6a793"
             ]
         ]
     },
@@ -7190,11 +7539,6 @@
         "property": "payload",
         "propertyType": "msg",
         "rules": [
-            {
-                "t": "jsonata_exp",
-                "v": "$not($globalContext('enableAutomation'))\t",
-                "vt": "jsonata"
-            },
             {
                 "t": "eq",
                 "v": "morning",
@@ -7213,13 +7557,10 @@
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 4,
-        "x": 410,
-        "y": 180,
+        "outputs": 3,
+        "x": 390,
+        "y": 300,
         "wires": [
-            [
-                "c13866305ccb00f7"
-            ],
             [
                 "f12fbd86617caaf9"
             ],
@@ -7241,11 +7582,11 @@
         "gap": "",
         "start": "",
         "inout": "out",
-        "septopics": true,
+        "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 270,
-        "y": 160,
+        "x": 250,
+        "y": 300,
         "wires": [
             [
                 "061d8c40c8ed16ab"
@@ -7263,8 +7604,8 @@
             "fbd53f7f18ca6655",
             "a96ee137b4d57a44"
         ],
-        "x": 755,
-        "y": 500,
+        "x": 745,
+        "y": 540,
         "wires": []
     },
     {
@@ -7277,8 +7618,8 @@
         "links": [
             "3ed1a4d37d1548b4"
         ],
-        "x": 755,
-        "y": 540,
+        "x": 745,
+        "y": 580,
         "wires": []
     },
     {
@@ -7291,8 +7632,8 @@
         "links": [
             "07987419335624ad"
         ],
-        "x": 755,
-        "y": 580,
+        "x": 745,
+        "y": 620,
         "wires": []
     },
     {
@@ -7301,8 +7642,8 @@
         "z": "63d8cb10398da04b",
         "g": "2af1d2a51c281b62",
         "name": "",
-        "x": 640,
-        "y": 540,
+        "x": 630,
+        "y": 580,
         "wires": [
             [
                 "ae9f9aeb54f6cfb1",
@@ -7321,8 +7662,8 @@
         "links": [
             "4b9d0f81d3a59f32"
         ],
-        "x": 795,
-        "y": 240,
+        "x": 725,
+        "y": 280,
         "wires": []
     },
     {
@@ -7335,8 +7676,8 @@
         "links": [
             "cfc9ead710a85bfc"
         ],
-        "x": 795,
-        "y": 280,
+        "x": 1125,
+        "y": 320,
         "wires": []
     },
     {
@@ -7349,8 +7690,8 @@
         "links": [
             "1c8c72b47cb25bb3"
         ],
-        "x": 795,
-        "y": 320,
+        "x": 1125,
+        "y": 360,
         "wires": []
     },
     {
@@ -7363,8 +7704,8 @@
         "links": [
             "db4bc79190f17a6f"
         ],
-        "x": 795,
-        "y": 360,
+        "x": 1125,
+        "y": 400,
         "wires": []
     },
     {
@@ -7377,8 +7718,8 @@
         "links": [
             "3022851ad2ddc6ce"
         ],
-        "x": 795,
-        "y": 400,
+        "x": 1125,
+        "y": 440,
         "wires": []
     },
     {
@@ -7386,9 +7727,9 @@
         "type": "switch",
         "z": "63d8cb10398da04b",
         "g": "73991d26373b19c7",
-        "name": "global.theme",
+        "name": "theme",
         "property": "theme",
-        "propertyType": "global",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
@@ -7412,8 +7753,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 680,
-        "y": 340,
+        "x": 990,
+        "y": 380,
         "wires": [
             [
                 "7ab1620c3349854b"
@@ -7436,11 +7777,11 @@
         "g": "73991d26373b19c7",
         "name": "",
         "x": 640,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
-                "490cc0ba5f699f8a",
-                "2837183323a61e04"
+                "2837183323a61e04",
+                "9bcc61425fa0f7a0"
             ]
         ]
     },
@@ -7455,7 +7796,7 @@
             "e74fcadba6a2b4ca",
             "53319749b2581238"
         ],
-        "x": 755,
+        "x": 735,
         "y": 60,
         "wires": []
     },
@@ -7469,7 +7810,7 @@
         "links": [
             "07ccb0b07e6fada8"
         ],
-        "x": 755,
+        "x": 735,
         "y": 100,
         "wires": []
     },
@@ -7483,7 +7824,7 @@
         "links": [
             "07987419335624ad"
         ],
-        "x": 755,
+        "x": 735,
         "y": 140,
         "wires": []
     },
@@ -7493,7 +7834,7 @@
         "z": "63d8cb10398da04b",
         "g": "b940bf3a0df755de",
         "name": "",
-        "x": 640,
+        "x": 620,
         "y": 100,
         "wires": [
             [
@@ -7512,8 +7853,8 @@
         "links": [
             "1f7aefd9b0586064"
         ],
-        "x": 185,
-        "y": 160,
+        "x": 165,
+        "y": 300,
         "wires": [
             [
                 "f25967eedb1cc95e"
@@ -7521,36 +7862,33 @@
         ]
     },
     {
-        "id": "cdc14bf0e8d1e8f7",
-        "type": "debug",
+        "id": "9bcc61425fa0f7a0",
+        "type": "semaphore-take",
         "z": "63d8cb10398da04b",
-        "g": "632ab06eab6fb5c3",
-        "name": "lighting automation",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "msg",
-        "x": 370,
-        "y": 60,
-        "wires": []
+        "g": "73991d26373b19c7",
+        "config": "42cf9f6ae4b51f49",
+        "name": "take theme",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "2cdfb3f10ab73e60"
+            ]
+        ]
     },
     {
-        "id": "c13866305ccb00f7",
+        "id": "2cdfb3f10ab73e60",
         "type": "change",
         "z": "63d8cb10398da04b",
-        "g": "632ab06eab6fb5c3",
+        "g": "73991d26373b19c7",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "theme",
                 "pt": "msg",
-                "to": "'Automation disabled for ' & payload",
-                "tot": "jsonata"
+                "to": "theme",
+                "tot": "global"
             }
         ],
         "action": "",
@@ -7558,13 +7896,79 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 180,
-        "y": 60,
+        "x": 680,
+        "y": 380,
         "wires": [
             [
-                "cdc14bf0e8d1e8f7"
+                "1584448d523e5745"
             ]
         ]
+    },
+    {
+        "id": "1584448d523e5745",
+        "type": "semaphore-leave",
+        "z": "63d8cb10398da04b",
+        "g": "73991d26373b19c7",
+        "config": "42cf9f6ae4b51f49",
+        "name": "leave theme",
+        "x": 850,
+        "y": 380,
+        "wires": [
+            [
+                "490cc0ba5f699f8a"
+            ]
+        ]
+    },
+    {
+        "id": "b2358d47303c40c3",
+        "type": "catch",
+        "z": "63d8cb10398da04b",
+        "g": "73991d26373b19c7",
+        "name": "",
+        "scope": [
+            "2cdfb3f10ab73e60"
+        ],
+        "uncaught": false,
+        "x": 630,
+        "y": 240,
+        "wires": [
+            [
+                "2e4a539865cff7ae"
+            ]
+        ]
+    },
+    {
+        "id": "2e4a539865cff7ae",
+        "type": "semaphore-leave",
+        "z": "63d8cb10398da04b",
+        "g": "73991d26373b19c7",
+        "config": "42cf9f6ae4b51f49",
+        "name": "leave theme",
+        "x": 770,
+        "y": 240,
+        "wires": [
+            [
+                "3937f7adb3efe771"
+            ]
+        ]
+    },
+    {
+        "id": "3937f7adb3efe771",
+        "type": "debug",
+        "z": "63d8cb10398da04b",
+        "g": "73991d26373b19c7",
+        "name": "get global.theme",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 950,
+        "y": 240,
+        "wires": []
     },
     {
         "id": "90850e4306b94c68",
@@ -7576,121 +7980,10 @@
             "03385520953758c9"
         ],
         "timeout": "30",
-        "x": 530,
-        "y": 60,
+        "x": 850,
+        "y": 200,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "44dd387f0863baf6",
-        "type": "rbe",
-        "z": "45323c0c4bbc21f0",
-        "g": "3ebfc22e4e8e324c",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 210,
-        "y": 100,
-        "wires": [
-            [
-                "05fdab0d3035ea98"
-            ]
-        ]
-    },
-    {
-        "id": "05fdab0d3035ea98",
-        "type": "switch",
-        "z": "45323c0c4bbc21f0",
-        "g": "3ebfc22e4e8e324c",
-        "name": "",
-        "property": "enableAutomation",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 330,
-        "y": 100,
-        "wires": [
-            [
-                "90850e4306b94c68"
-            ],
-            [
-                "b898ebadb9806a53"
-            ]
-        ]
-    },
-    {
-        "id": "b898ebadb9806a53",
-        "type": "change",
-        "z": "45323c0c4bbc21f0",
-        "g": "3ebfc22e4e8e324c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "'Automation disabled for ' & payload",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 140,
-        "wires": [
-            [
-                "034e06f49fb571c4"
-            ]
-        ]
-    },
-    {
-        "id": "034e06f49fb571c4",
-        "type": "debug",
-        "z": "45323c0c4bbc21f0",
-        "g": "3ebfc22e4e8e324c",
-        "name": "shade automation",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "msg",
-        "x": 690,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "f5576d705dff99cf",
-        "type": "subflow:cec0ef6d268245de",
-        "z": "45323c0c4bbc21f0",
-        "g": "3ebfc22e4e8e324c",
-        "name": "",
-        "x": 280,
-        "y": 160,
-        "wires": [
-            [
-                "44dd387f0863baf6"
-            ]
         ]
     },
     {
@@ -7702,11 +7995,268 @@
         "links": [
             "1f7aefd9b0586064"
         ],
-        "x": 165,
-        "y": 160,
+        "x": 145,
+        "y": 140,
         "wires": [
             [
-                "f5576d705dff99cf"
+                "11553e4ec9852570"
+            ]
+        ]
+    },
+    {
+        "id": "bf054524a274cc6c",
+        "type": "switch",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "morning",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "midday",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "afternoon",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "evening",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "night",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "4e80abd85eb512dd"
+            ],
+            [
+                "a9a485a922317f4f"
+            ],
+            [
+                "da16872befb00aef"
+            ],
+            [
+                "522607b8f78ba7dc"
+            ],
+            [
+                "cc19d072be54d22e"
+            ]
+        ],
+        "inputLabels": [
+            "suncalc"
+        ],
+        "outputLabels": [
+            "morning",
+            "midday",
+            "afternoon",
+            "evening",
+            "night"
+        ]
+    },
+    {
+        "id": "4e80abd85eb512dd",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "morning",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "3405",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 60,
+        "wires": [
+            [
+                "b80a2dc6e407165e"
+            ]
+        ]
+    },
+    {
+        "id": "a9a485a922317f4f",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "midday",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "47566",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 100,
+        "wires": [
+            [
+                "b80a2dc6e407165e"
+            ]
+        ]
+    },
+    {
+        "id": "da16872befb00aef",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "afternoon",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "44035",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "b80a2dc6e407165e"
+            ]
+        ]
+    },
+    {
+        "id": "522607b8f78ba7dc",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "evening",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "32086",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "b80a2dc6e407165e"
+            ]
+        ]
+    },
+    {
+        "id": "cc19d072be54d22e",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "night",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "31086",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "b80a2dc6e407165e"
+            ]
+        ]
+    },
+    {
+        "id": "b80a2dc6e407165e",
+        "type": "rbe",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 810,
+        "y": 140,
+        "wires": [
+            [
+                "90850e4306b94c68"
+            ]
+        ]
+    },
+    {
+        "id": "11553e4ec9852570",
+        "type": "change",
+        "z": "45323c0c4bbc21f0",
+        "g": "3ebfc22e4e8e324c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "bf054524a274cc6c"
             ]
         ]
     },
@@ -7859,8 +8409,8 @@
                 "type": "str"
             }
         ],
-        "x": 340,
-        "y": 260,
+        "x": 760,
+        "y": 160,
         "wires": [
             [
                 "9402de8cb82a7cb9"
@@ -7881,8 +8431,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 130,
-        "y": 260,
+        "x": 550,
+        "y": 160,
         "wires": [
             [
                 "110ffac1ab9d4035"
@@ -7903,8 +8453,8 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 795,
-        "y": 420,
+        "x": 825,
+        "y": 380,
         "wires": []
     },
     {
@@ -7921,8 +8471,8 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 475,
-        "y": 260,
+        "x": 895,
+        "y": 160,
         "wires": []
     },
     {
@@ -7940,7 +8490,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 800,
-        "y": 620,
+        "y": 580,
         "wires": []
     },
     {
@@ -7956,8 +8506,8 @@
                 "type": "str"
             }
         ],
-        "x": 610,
-        "y": 420,
+        "x": 640,
+        "y": 380,
         "wires": [
             [
                 "c0d1759df573b02a"
@@ -7985,7 +8535,7 @@
         "to": "",
         "reg": false,
         "x": 340,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "82f5745796e93e00"
@@ -8015,7 +8565,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 620,
+        "y": 580,
         "wires": [
             [
                 "832e42677dceefdd"
@@ -8044,7 +8594,7 @@
         "to": "",
         "reg": false,
         "x": 340,
-        "y": 600,
+        "y": 560,
         "wires": [
             [
                 "c0483ea0bf84b4c8"
@@ -8065,7 +8615,7 @@
             }
         ],
         "x": 550,
-        "y": 520,
+        "y": 480,
         "wires": [
             [
                 "cd0f0860d8795bcf"
@@ -8091,7 +8641,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "77e0c019bf6734a9"
@@ -8133,7 +8683,7 @@
         "to": "",
         "reg": false,
         "x": 300,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "5c11ca5b24ca72d8"
@@ -8151,7 +8701,7 @@
         ],
         "timeout": "30",
         "x": 510,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
                 "e8a1834b6c4c6f7f"
@@ -8171,10 +8721,10 @@
         "finalize": "",
         "libs": [],
         "x": 720,
-        "y": 360,
+        "y": 320,
         "wires": [
             [
-                "34fd5c344701e839"
+                "b5a523ae43b827e6"
             ]
         ]
     },
@@ -8198,12 +8748,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 280,
-        "y": 420,
+        "x": 170,
+        "y": 380,
         "wires": [
             [
-                "69a8648256e320f4",
-                "832e42677dceefdd"
+                "79fd8c5a2b73610f"
             ]
         ]
     },
@@ -8214,7 +8763,7 @@
         "g": "feea332415047613",
         "name": "",
         "x": 170,
-        "y": 560,
+        "y": 520,
         "wires": [
             [
                 "82422755412f473d",
@@ -8244,7 +8793,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 750,
-        "y": 560,
+        "y": 520,
         "wires": [
             [
                 "c6e09ee6553c5587"
@@ -8265,12 +8814,94 @@
             }
         ],
         "x": 560,
-        "y": 600,
+        "y": 560,
         "wires": [
             [
                 "cd0f0860d8795bcf"
             ]
         ]
+    },
+    {
+        "id": "b5a523ae43b827e6",
+        "type": "semaphore-take",
+        "z": "a00ccef1301f21e3",
+        "g": "41cef0af2772c23a",
+        "config": "535a2813bb8f3319",
+        "name": "take hue",
+        "x": 880,
+        "y": 320,
+        "wires": [
+            [
+                "34fd5c344701e839"
+            ]
+        ]
+    },
+    {
+        "id": "79fd8c5a2b73610f",
+        "type": "semaphore-leave",
+        "z": "a00ccef1301f21e3",
+        "g": "41cef0af2772c23a",
+        "config": "535a2813bb8f3319",
+        "name": "leave hue",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "69a8648256e320f4",
+                "832e42677dceefdd"
+            ]
+        ]
+    },
+    {
+        "id": "1981aeb845d23287",
+        "type": "catch",
+        "z": "a00ccef1301f21e3",
+        "g": "41cef0af2772c23a",
+        "name": "",
+        "scope": [
+            "34fd5c344701e839"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "6cfb92cf5e96d922"
+            ]
+        ]
+    },
+    {
+        "id": "6cfb92cf5e96d922",
+        "type": "semaphore-leave",
+        "z": "a00ccef1301f21e3",
+        "g": "41cef0af2772c23a",
+        "config": "535a2813bb8f3319",
+        "name": "leave hue",
+        "x": 220,
+        "y": 260,
+        "wires": [
+            [
+                "828da76144fd62ba"
+            ]
+        ]
+    },
+    {
+        "id": "828da76144fd62ba",
+        "type": "debug",
+        "z": "a00ccef1301f21e3",
+        "g": "41cef0af2772c23a",
+        "name": "set global.chez_nous_main",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 420,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "577c54a2be0d38c9",
@@ -14199,165 +14830,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "0bcb3912383f1895",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "314e4dfd78dc7665",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":payload}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 1120,
-        "wires": [
-            [
-                "bf9a782f01f65460"
-            ]
-        ]
-    },
-    {
-        "id": "bf9a782f01f65460",
-        "type": "homekit-service",
-        "z": "e44149a93fbe9b1b",
-        "g": "314e4dfd78dc7665",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "e2a028ce9128c08c",
-        "parentService": "",
-        "name": "Enable Automation",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 470,
-        "y": 1120,
-        "wires": [
-            [
-                "f8beb71270b6b08a"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "f8beb71270b6b08a",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "314e4dfd78dc7665",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.On",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 660,
-        "y": 1120,
-        "wires": [
-            [
-                "48112bfc329a4440"
-            ]
-        ]
-    },
-    {
-        "id": "adb282b55e225a14",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "314e4dfd78dc7665",
-        "name": "enable automation",
-        "links": [
-            "25d1c2bdb2b89d7a",
-            "b30f4a32c24dc6b6",
-            "104ef2308cbe2b19"
-        ],
-        "x": 165,
-        "y": 1120,
-        "wires": [
-            [
-                "0bcb3912383f1895"
-            ]
-        ]
-    },
-    {
-        "id": "48112bfc329a4440",
-        "type": "link out",
-        "z": "e44149a93fbe9b1b",
-        "g": "314e4dfd78dc7665",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "49a3148e23e3ff94",
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
-        ],
-        "x": 775,
-        "y": 1120,
-        "wires": []
     },
     {
         "id": "f92e98d9c28e208b",
