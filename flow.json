@@ -301,7 +301,7 @@
     {
         "id": "75bc72a16c4da2c8",
         "type": "subflow",
-        "name": "Create Hue Access Token",
+        "name": "Hue Access Token",
         "info": "Use the Hue Bridge API to create a client access token.\n\n**Invoke this subflow within 30 seconds of pressing the button on top of the bridge. Watch the debug console output to see the response. If successful, you will see the generated key among the response payload's properties.**\n\nSee <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details.\n\n# Configuration\n\n`ADDRESS` environment variable is the bridge's IP address.\n\n`USERNAME` environment variable is the client \"user name\" for which a key is being requested.\n\n# Input\n\nIncoming message is ignored.\n\n# Outputs\n\nThe HTTP response will be sent as a parsed JSON object. If successful, look for the value of the `msg.payload.success.username` property in the output. That is the string you should use as the access token header in all subsequent Hue Bridge API request messages.",
         "category": "hue",
         "in": [
@@ -340,7 +340,7 @@
             }
         ],
         "meta": {
-            "module": "node-red-subflow-create-hue-access-token",
+            "module": "node-red-subflow-hue-access-token",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Invoke the Hue Bridge API for registering a client",
@@ -758,9 +758,7 @@
             "6e6586249457134b"
         ],
         "x": 14,
-        "y": 119,
-        "w": 388,
-        "h": 82
+        "y": 119
     },
     {
         "id": "cf878f58f6360a07",
@@ -783,9 +781,7 @@
             "dfb11f408f97f019"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1082,
-        "h": 122
+        "y": 19
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -946,9 +942,7 @@
             "4addd031d3d6b37a"
         ],
         "x": 24,
-        "y": 19,
-        "w": 1062,
-        "h": 122
+        "y": 19
     },
     {
         "id": "cf5ee15f74249e75",
@@ -1037,9 +1031,7 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19,
-        "w": 812,
-        "h": 82
+        "y": 19
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1114,9 +1106,7 @@
             "0eddce197d35d0c2"
         ],
         "x": 114,
-        "y": 299,
-        "w": 1202,
-        "h": 122
+        "y": 299
     },
     {
         "id": "fc8dab80af70dbe7",
@@ -1141,9 +1131,7 @@
             "386bcda361463ded"
         ],
         "x": 114,
-        "y": 439,
-        "w": 1182,
-        "h": 122
+        "y": 439
     },
     {
         "id": "54005f131191d07d",
@@ -1168,9 +1156,7 @@
             "df37b8f8d0c15d72"
         ],
         "x": 114,
-        "y": 579,
-        "w": 1202,
-        "h": 122
+        "y": 579
     },
     {
         "id": "7872f889f870b7ea",
@@ -1264,9 +1250,7 @@
             "9c0f0fa02267d0cf"
         ],
         "x": 104,
-        "y": 159,
-        "w": 922,
-        "h": 122
+        "y": 159
     },
     {
         "id": "9c99756236afe446",
@@ -1291,9 +1275,7 @@
             "7fa14903b4bc95cd"
         ],
         "x": 104,
-        "y": 19,
-        "w": 1102,
-        "h": 122
+        "y": 19
     },
     {
         "id": "4699dcb62a5f0b27",
@@ -1318,9 +1300,7 @@
             "891958a515fa0376"
         ],
         "x": 114,
-        "y": 719,
-        "w": 1162,
-        "h": 122
+        "y": 719
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1450,9 +1430,7 @@
             "9402de8cb82a7cb9"
         ],
         "x": 414,
-        "y": 119,
-        "w": 334,
-        "h": 82
+        "y": 119
     },
     {
         "id": "feea332415047613",
@@ -1478,9 +1456,7 @@
             "c6e09ee6553c5587"
         ],
         "x": 14,
-        "y": 399,
-        "w": 1152,
-        "h": 170
+        "y": 399
     },
     {
         "id": "5d64c1685d1dabb4",
@@ -1586,9 +1562,7 @@
             "87e5a8d0c7ca4831"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1092,
-        "h": 82
+        "y": 159
     },
     {
         "id": "49d1b83457681d92",
@@ -1608,9 +1582,7 @@
             "ad84a73df59a42e1"
         ],
         "x": 34,
-        "y": 259,
-        "w": 682,
-        "h": 82
+        "y": 259
     },
     {
         "id": "b0c61bb443a2c0d8",
@@ -1632,9 +1604,7 @@
             "612d7b0a08c61850"
         ],
         "x": 114,
-        "y": 859,
-        "w": 1032,
-        "h": 82
+        "y": 859
     },
     {
         "id": "073462d4fb7e6673",
@@ -1654,9 +1624,7 @@
             "64b8631fbce21bcc"
         ],
         "x": 114,
-        "y": 959,
-        "w": 632,
-        "h": 82
+        "y": 959
     },
     {
         "id": "29e213dca39ccade",
@@ -1846,9 +1814,7 @@
             "4d5f6fba29ab0381"
         ],
         "x": 34,
-        "y": 159,
-        "w": 1132,
-        "h": 82
+        "y": 159
     },
     {
         "id": "4156489ccf3d5d3b",
@@ -1868,9 +1834,7 @@
             "52c92a859584563d"
         ],
         "x": 34,
-        "y": 259,
-        "w": 682,
-        "h": 82
+        "y": 259
     },
     {
         "id": "9942c95fb8c63807",
@@ -2025,9 +1989,7 @@
             "1cee4f351bd59563"
         ],
         "x": 34,
-        "y": 119,
-        "w": 802,
-        "h": 202
+        "y": 119
     },
     {
         "id": "c49a717c63369963",
@@ -2047,9 +2009,7 @@
             "db81cf75a2ca1776"
         ],
         "x": 764,
-        "y": 19,
-        "w": 417,
-        "h": 82
+        "y": 19
     },
     {
         "id": "c2ab0e65f8616042",
@@ -2068,9 +2028,7 @@
             "0c1c885d29b4c1e8"
         ],
         "x": 854,
-        "y": 199,
-        "w": 432,
-        "h": 82
+        "y": 199
     },
     {
         "id": "f406f446ee780306",
@@ -2090,9 +2048,7 @@
             "d84b97ebd830cdb0"
         ],
         "x": 164,
-        "y": 359,
-        "w": 542,
-        "h": 82
+        "y": 359
     },
     {
         "id": "1c2fe205e5e65ebc",
@@ -2133,9 +2089,7 @@
             "cae953f2c04362ad"
         ],
         "x": 34,
-        "y": 19,
-        "w": 692,
-        "h": 82
+        "y": 19
     },
     {
         "id": "5a2c18585609cfae",
@@ -2239,7 +2193,9 @@
             "a58e4240490b6708"
         ],
         "x": 654,
-        "y": 19
+        "y": 19,
+        "w": 752,
+        "h": 262
     },
     {
         "id": "6c3a90b013aa69c2",
@@ -2267,7 +2223,9 @@
             "5cd93cf4487a1623"
         ],
         "x": 654,
-        "y": 299
+        "y": 299,
+        "w": 752,
+        "h": 262
     },
     {
         "id": "9f344af23b60f386",
@@ -2289,7 +2247,9 @@
             "0e03f7b1c487930f"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 612,
+        "h": 162
     },
     {
         "id": "cdddc2232014e00e",
@@ -2313,7 +2273,9 @@
             "825f2ffa1e2be0dc"
         ],
         "x": 54,
-        "y": 379
+        "y": 379,
+        "w": 572,
+        "h": 162
     },
     {
         "id": "c78827c27fef4494",
@@ -2518,9 +2480,7 @@
             "8d87f0a974962f5d"
         ],
         "x": 124,
-        "y": 339,
-        "w": 902,
-        "h": 242
+        "y": 339
     },
     {
         "id": "41cef0af2772c23a",
@@ -2546,9 +2506,7 @@
             "b879dc87b86093fc"
         ],
         "x": 14,
-        "y": 219,
-        "w": 1132,
-        "h": 162
+        "y": 219
     },
     {
         "id": "e79e0110c2317edb",
