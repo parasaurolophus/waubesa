@@ -47,6 +47,13 @@
         "info": "Helper subroutine flows for accessing the Hue Bridge API on Chez Nous Main."
     },
     {
+        "id": "ccf1967ecbc089aa",
+        "type": "tab",
+        "label": "Hue Basement",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "1cf0490e7de2f93d",
         "type": "tab",
         "label": "Chez Nous Shades",
@@ -439,7 +446,7 @@
         ],
         "out": [
             {
-                "x": 740,
+                "x": 600,
                 "y": 280,
                 "wires": [
                     {
@@ -760,7 +767,7 @@
         ],
         "x": 24,
         "y": 119,
-        "w": 482,
+        "w": 562,
         "h": 122
     },
     {
@@ -807,7 +814,9 @@
             "7bac63592e9b8ed2"
         ],
         "x": 24,
-        "y": 19
+        "y": 19,
+        "w": 1002,
+        "h": 122
     },
     {
         "id": "afbdc8b60c682c85",
@@ -830,7 +839,9 @@
             "fc49d70fecf99c3f"
         ],
         "x": 24,
-        "y": 159
+        "y": 159,
+        "w": 962,
+        "h": 122
     },
     {
         "id": "03822925b892df4a",
@@ -853,7 +864,9 @@
             "ed213c0451c27d57"
         ],
         "x": 24,
-        "y": 299
+        "y": 299,
+        "w": 1002,
+        "h": 122
     },
     {
         "id": "cd63dc8a5bea4a7b",
@@ -1184,7 +1197,9 @@
             "dc7a211772050136"
         ],
         "x": 24,
-        "y": 439
+        "y": 439,
+        "w": 982,
+        "h": 122
     },
     {
         "id": "a76cb5337e8a2ff0",
@@ -1344,9 +1359,7 @@
             "1993fd8165053adf"
         ],
         "x": 124,
-        "y": 251.5,
-        "w": 242,
-        "h": 97
+        "y": 251.5
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1367,9 +1380,7 @@
             "c897f7f0ee8680dc"
         ],
         "x": 424,
-        "y": 439,
-        "w": 232,
-        "h": 162
+        "y": 439
     },
     {
         "id": "73991d26373b19c7",
@@ -1399,9 +1410,7 @@
             "3937f7adb3efe771"
         ],
         "x": 414,
-        "y": 199,
-        "w": 792,
-        "h": 222
+        "y": 199
     },
     {
         "id": "b940bf3a0df755de",
@@ -1422,9 +1431,7 @@
             "f12fbd86617caaf9"
         ],
         "x": 414,
-        "y": 19,
-        "w": 232,
-        "h": 162
+        "y": 19
     },
     {
         "id": "716a5e2d5b07383b",
@@ -1442,7 +1449,7 @@
             "110ffac1ab9d4035",
             "9402de8cb82a7cb9"
         ],
-        "x": 534,
+        "x": 614,
         "y": 139,
         "w": 334,
         "h": 82
@@ -1517,7 +1524,9 @@
             "367257eca32180a1"
         ],
         "x": 34,
-        "y": 579
+        "y": 579,
+        "w": 992,
+        "h": 82
     },
     {
         "id": "cd7da4a49f7e871d",
@@ -1537,7 +1546,9 @@
             "d1dd29676e3d730d"
         ],
         "x": 34,
-        "y": 679
+        "y": 679,
+        "w": 612,
+        "h": 82
     },
     {
         "id": "4a3961a2965ec07f",
@@ -2006,9 +2017,7 @@
             "1cee4f351bd59563"
         ],
         "x": 34,
-        "y": 119,
-        "w": 802,
-        "h": 202
+        "y": 119
     },
     {
         "id": "c49a717c63369963",
@@ -2028,9 +2037,7 @@
             "db81cf75a2ca1776"
         ],
         "x": 764,
-        "y": 19,
-        "w": 417,
-        "h": 82
+        "y": 19
     },
     {
         "id": "c2ab0e65f8616042",
@@ -2049,9 +2056,7 @@
             "0c1c885d29b4c1e8"
         ],
         "x": 854,
-        "y": 199,
-        "w": 432,
-        "h": 82
+        "y": 199
     },
     {
         "id": "f406f446ee780306",
@@ -2112,9 +2117,7 @@
             "cae953f2c04362ad"
         ],
         "x": 34,
-        "y": 19,
-        "w": 692,
-        "h": 82
+        "y": 19
     },
     {
         "id": "5a2c18585609cfae",
@@ -2169,9 +2172,7 @@
             "f1c514e146df391b"
         ],
         "x": 14,
-        "y": 359,
-        "w": 1222,
-        "h": 182
+        "y": 359
     },
     {
         "id": "4b0e89ddb66673e4",
@@ -2220,9 +2221,7 @@
             "a58e4240490b6708"
         ],
         "x": 654,
-        "y": 19,
-        "w": 752,
-        "h": 262
+        "y": 19
     },
     {
         "id": "6c3a90b013aa69c2",
@@ -2250,9 +2249,7 @@
             "5cd93cf4487a1623"
         ],
         "x": 654,
-        "y": 299,
-        "w": 752,
-        "h": 262
+        "y": 299
     },
     {
         "id": "9f344af23b60f386",
@@ -2274,9 +2271,7 @@
             "0e03f7b1c487930f"
         ],
         "x": 14,
-        "y": 19,
-        "w": 612,
-        "h": 162
+        "y": 19
     },
     {
         "id": "cdddc2232014e00e",
@@ -2300,9 +2295,7 @@
             "825f2ffa1e2be0dc"
         ],
         "x": 54,
-        "y": 379,
-        "w": 572,
-        "h": 162
+        "y": 379
     },
     {
         "id": "c78827c27fef4494",
@@ -2326,9 +2319,7 @@
             "4ce2836aefb78546"
         ],
         "x": 34,
-        "y": 119,
-        "w": 532,
-        "h": 202
+        "y": 119
     },
     {
         "id": "a66f3931c4b1059e",
@@ -2346,9 +2337,7 @@
             "532b9b7b5f117137"
         ],
         "x": 374,
-        "y": 19,
-        "w": 192,
-        "h": 82
+        "y": 19
     },
     {
         "id": "7c175ce901294697",
@@ -2379,9 +2368,7 @@
             "6968faac0d436626"
         ],
         "x": 594,
-        "y": 59,
-        "w": 682,
-        "h": 282
+        "y": 59
     },
     {
         "id": "7dfdd9b817067326",
@@ -2401,9 +2388,7 @@
             "698fa0b79a195fd1"
         ],
         "x": 114,
-        "y": 19,
-        "w": 532,
-        "h": 82
+        "y": 19
     },
     {
         "id": "875ab4538bb22f15",
@@ -2425,9 +2410,7 @@
             "015a293c96d16612"
         ],
         "x": 354,
-        "y": 119,
-        "w": 912,
-        "h": 82
+        "y": 119
     },
     {
         "id": "0fe686a291277b71",
@@ -2451,9 +2434,7 @@
             "801bc206cfa0803d"
         ],
         "x": 354,
-        "y": 219,
-        "w": 742,
-        "h": 122
+        "y": 219
     },
     {
         "id": "541f223d7251abbe",
@@ -2471,9 +2452,7 @@
             "d31eac19e524875d"
         ],
         "x": 114,
-        "y": 179,
-        "w": 212,
-        "h": 82
+        "y": 179
     },
     {
         "id": "98379557a8077dc0",
@@ -2495,9 +2474,7 @@
             "b51aa02fc08c38b5"
         ],
         "x": 124,
-        "y": 359,
-        "w": 722,
-        "h": 82
+        "y": 359
     },
     {
         "id": "2afac67683a580f7",
@@ -2523,9 +2500,7 @@
             "8d87f0a974962f5d"
         ],
         "x": 124,
-        "y": 339,
-        "w": 902,
-        "h": 242
+        "y": 339
     },
     {
         "id": "41cef0af2772c23a",
@@ -2553,6 +2528,131 @@
         "x": 14,
         "y": 259,
         "w": 1132,
+        "h": 162
+    },
+    {
+        "id": "d596f90a11f948b5",
+        "type": "group",
+        "z": "ccf1967ecbc089aa",
+        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "646c1166e094edb8",
+            "dfe3c5cff4adfbe1",
+            "528ecfb852f1b92e"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 732,
+        "h": 82
+    },
+    {
+        "id": "d906806776a15be5",
+        "type": "group",
+        "z": "ccf1967ecbc089aa",
+        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "726b4d347f62a02d",
+            "befc9498e0e538c3",
+            "1c27f4a9b46c4f7d",
+            "3dd9a3ccf38d705a"
+        ],
+        "x": 24,
+        "y": 119,
+        "w": 542,
+        "h": 122
+    },
+    {
+        "id": "80d5524b4b86d1df",
+        "type": "group",
+        "z": "ccf1967ecbc089aa",
+        "name": "Handle SSE messages from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "023068eedd0bb4cc",
+            "15164c46a7616484"
+        ],
+        "x": 614,
+        "y": 139,
+        "w": 334,
+        "h": 82
+    },
+    {
+        "id": "077d31550d7c0602",
+        "type": "group",
+        "z": "ccf1967ecbc089aa",
+        "name": "Reformat and log critical Hue device metadata as an aid to development and debugging",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "label-position": "sw"
+        },
+        "nodes": [
+            "c4d50954ba60cb19",
+            "e671b8393f79b60f",
+            "310b468fb7e5bc12",
+            "65f816f66a5468d3",
+            "649eaa9b64607290",
+            "4e84729570150e7d",
+            "4828d97867b2ea95",
+            "d1626772170ca2bf",
+            "3de1d20f6b15da1a",
+            "d64e3eca437f0d84",
+            "6c64e090ed7c84da"
+        ],
+        "x": 14,
+        "y": 439,
+        "w": 1172,
+        "h": 230
+    },
+    {
+        "id": "a72897abb2ba46cf",
+        "type": "group",
+        "z": "ccf1967ecbc089aa",
+        "name": "Periodically fetch all metdata from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "83db9630b63b06ef",
+            "4a9fc38baa50aaaf",
+            "34d791c69d030139",
+            "bb63b6666fb34d48",
+            "9ad2fe3514535451",
+            "d1d040779b99fb0a",
+            "14c5c6675b345fe3",
+            "3021b1bb30da53b0",
+            "74f5393b9872d6a3"
+        ],
+        "x": 14,
+        "y": 259,
+        "w": 1072,
         "h": 162
     },
     {
@@ -3558,6 +3658,12 @@
         "capacity": "1"
     },
     {
+        "id": "739cc6382b87f23e",
+        "type": "semaphore-config",
+        "name": "hue basement",
+        "capacity": "1"
+    },
+    {
         "id": "3111257f22032077",
         "type": "switch",
         "z": "a03a3519abf4e656",
@@ -4148,38 +4254,11 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "topic",
-        "x": 110,
-        "y": 220,
-        "wires": [
-            [
-                "a45e3a5a5fe0fefd"
-            ]
-        ]
-    },
-    {
-        "id": "d1b16f1c2acfa068",
-        "type": "change",
-        "z": "e4e37acec8ce8ff8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "chez_nous_main",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
+        "x": 550,
         "y": 120,
         "wires": [
             [
-                "0ced85e29fd61f45"
+                "a45e3a5a5fe0fefd"
             ]
         ]
     },
@@ -4216,7 +4295,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
+        "x": 120,
         "y": 220,
         "wires": [
             [
@@ -4244,7 +4323,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 410,
+        "x": 270,
         "y": 220,
         "wires": [
             [
@@ -4266,7 +4345,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 530,
+        "x": 390,
         "y": 200,
         "wires": [
             [
@@ -4293,7 +4372,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 620,
+        "x": 480,
         "y": 280,
         "wires": [
             []
@@ -4341,7 +4420,7 @@
         "y": 80,
         "wires": [
             [
-                "d1b16f1c2acfa068"
+                "0ced85e29fd61f45"
             ]
         ]
     },
@@ -5087,7 +5166,11 @@
             "041309e5ee07af3e",
             "ffa002c8041b26c0",
             "af7e30f7cdeee1d9",
-            "477668ef1f02bcfd"
+            "477668ef1f02bcfd",
+            "511dc87372e29413",
+            "0bdb0a47cc4399b4",
+            "15164c46a7616484",
+            "bb63b6666fb34d48"
         ],
         "x": 175,
         "y": 80,
@@ -7807,7 +7890,7 @@
                 "type": "str"
             }
         ],
-        "x": 660,
+        "x": 740,
         "y": 180,
         "wires": [
             [
@@ -7829,7 +7912,7 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 795,
+        "x": 875,
         "y": 180,
         "wires": []
     },
@@ -8239,7 +8322,7 @@
         "type": "debug",
         "z": "a00ccef1301f21e3",
         "g": "1ccf0bc875015428",
-        "name": "hue send",
+        "name": "chez nous main send",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -8248,9 +8331,668 @@
         "targetType": "full",
         "statusVal": "error.message",
         "statusType": "msg",
-        "x": 400,
+        "x": 440,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "646c1166e094edb8",
+        "type": "inject",
+        "z": "ccf1967ecbc089aa",
+        "g": "d596f90a11f948b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "528ecfb852f1b92e"
+            ]
+        ]
+    },
+    {
+        "id": "dfe3c5cff4adfbe1",
+        "type": "debug",
+        "z": "ccf1967ecbc089aa",
+        "g": "d596f90a11f948b5",
+        "name": "hue basement access token",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload[0].success.username",
+        "statusType": "msg",
+        "x": 580,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "528ecfb852f1b92e",
+        "type": "subflow:75bc72a16c4da2c8",
+        "z": "ccf1967ecbc089aa",
+        "g": "d596f90a11f948b5",
+        "name": "Hue Basement Access Token",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.34",
+                "type": "str"
+            },
+            {
+                "name": "USERNAME",
+                "value": "nodered#cheznous",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 60,
+        "wires": [
+            [
+                "dfe3c5cff4adfbe1"
+            ]
+        ]
+    },
+    {
+        "id": "726b4d347f62a02d",
+        "type": "link out",
+        "z": "ccf1967ecbc089aa",
+        "g": "d906806776a15be5",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 355,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "befc9498e0e538c3",
+        "type": "link in",
+        "z": "ccf1967ecbc089aa",
+        "g": "d906806776a15be5",
+        "name": "send to hue basement",
+        "links": [],
+        "x": 65,
+        "y": 180,
+        "wires": [
+            [
+                "1c27f4a9b46c4f7d"
+            ]
+        ],
+        "outputLabels": [
+            "topic = uri, payload = body, method = HTTP request type"
+        ]
+    },
+    {
+        "id": "1c27f4a9b46c4f7d",
+        "type": "subflow:5785c8d9f39df67e",
+        "z": "ccf1967ecbc089aa",
+        "g": "d906806776a15be5",
+        "name": "Send to Hue Basement",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.34",
+                "type": "str"
+            },
+            {
+                "name": "KEY",
+                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
+                "type": "str"
+            }
+        ],
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "726b4d347f62a02d"
+            ],
+            [
+                "3dd9a3ccf38d705a"
+            ]
+        ]
+    },
+    {
+        "id": "3dd9a3ccf38d705a",
+        "type": "debug",
+        "z": "ccf1967ecbc089aa",
+        "g": "d906806776a15be5",
+        "name": "hue basement send",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 430,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "023068eedd0bb4cc",
+        "type": "subflow:acfe4e875b80c543",
+        "z": "ccf1967ecbc089aa",
+        "g": "80d5524b4b86d1df",
+        "name": "Hue Basement SSE",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.34",
+                "type": "str"
+            },
+            {
+                "name": "KEY",
+                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
+                "type": "str"
+            },
+            {
+                "name": "TOPIC",
+                "value": "hue/hue-basement",
+                "type": "str"
+            }
+        ],
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "15164c46a7616484"
+            ]
+        ]
+    },
+    {
+        "id": "15164c46a7616484",
+        "type": "link out",
+        "z": "ccf1967ecbc089aa",
+        "g": "80d5524b4b86d1df",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "49a3148e23e3ff94",
+            "1dfaa2404fcc8cbc",
+            "8510638dbc5dd48c",
+            "f495f33164cc7b42",
+            "30286901101a6095"
+        ],
+        "x": 855,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c4d50954ba60cb19",
+        "type": "change",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "hue_basement.room",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "310b468fb7e5bc12"
+            ]
+        ]
+    },
+    {
+        "id": "e671b8393f79b60f",
+        "type": "change",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "hue_basement.zone",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "649eaa9b64607290"
+            ]
+        ]
+    },
+    {
+        "id": "310b468fb7e5bc12",
+        "type": "subflow:d0a1d8f666dafcc0",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "Extract Room Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "hue_basement",
+                "type": "str"
+            }
+        ],
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "65f816f66a5468d3"
+            ]
+        ]
+    },
+    {
+        "id": "65f816f66a5468d3",
+        "type": "join",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 870,
+        "y": 520,
+        "wires": [
+            [
+                "4828d97867b2ea95"
+            ]
+        ]
+    },
+    {
+        "id": "649eaa9b64607290",
+        "type": "subflow:d0a1d8f666dafcc0",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "Extract Zone Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "hue_basement",
+                "type": "str"
+            }
+        ],
+        "x": 680,
+        "y": 560,
+        "wires": [
+            [
+                "65f816f66a5468d3"
+            ]
+        ]
+    },
+    {
+        "id": "4e84729570150e7d",
+        "type": "inject",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 520,
+        "wires": [
+            [
+                "d1626772170ca2bf"
+            ]
+        ]
+    },
+    {
+        "id": "4828d97867b2ea95",
+        "type": "debug",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "hue basement",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "83db9630b63b06ef",
+        "type": "inject",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "method",
+                "v": "GET",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "20",
+        "topic": "resource",
+        "payload": "",
+        "payloadType": "str",
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "4a9fc38baa50aaaf"
+            ]
+        ]
+    },
+    {
+        "id": "4a9fc38baa50aaaf",
+        "type": "link call",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "name": "",
+        "links": [
+            "befc9498e0e538c3"
+        ],
+        "timeout": "30",
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "9ad2fe3514535451"
+            ]
+        ]
+    },
+    {
+        "id": "34d791c69d030139",
+        "type": "subflow:e4e37acec8ce8ff8",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "name": "Hue Basement Metadata",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/hue-basement",
+                "type": "str"
+            },
+            {
+                "name": "GLOBAL",
+                "value": "hue_basement",
+                "type": "str"
+            }
+        ],
+        "x": 730,
+        "y": 360,
+        "wires": [
+            [
+                "bb63b6666fb34d48"
+            ],
+            [
+                "d1d040779b99fb0a"
+            ]
+        ]
+    },
+    {
+        "id": "bb63b6666fb34d48",
+        "type": "link out",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "49a3148e23e3ff94",
+            "1dfaa2404fcc8cbc",
+            "8510638dbc5dd48c",
+            "f495f33164cc7b42",
+            "30286901101a6095"
+        ],
+        "x": 875,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "9ad2fe3514535451",
+        "type": "semaphore-take",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "config": "739cc6382b87f23e",
+        "name": "take hue basement",
+        "x": 510,
+        "y": 360,
+        "wires": [
+            [
+                "34d791c69d030139"
+            ]
+        ]
+    },
+    {
+        "id": "d1d040779b99fb0a",
+        "type": "semaphore-leave",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "config": "739cc6382b87f23e",
+        "name": "leave hue basement",
+        "x": 960,
+        "y": 380,
+        "wires": [
+            [
+                "d1626772170ca2bf"
+            ]
+        ]
+    },
+    {
+        "id": "14c5c6675b345fe3",
+        "type": "catch",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "name": "",
+        "scope": [
+            "34d791c69d030139"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "3021b1bb30da53b0"
+            ]
+        ]
+    },
+    {
+        "id": "3021b1bb30da53b0",
+        "type": "semaphore-leave",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "config": "739cc6382b87f23e",
+        "name": "leave hue basement",
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "74f5393b9872d6a3"
+            ]
+        ]
+    },
+    {
+        "id": "74f5393b9872d6a3",
+        "type": "debug",
+        "z": "ccf1967ecbc089aa",
+        "g": "a72897abb2ba46cf",
+        "name": "hue basement metadata",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.message",
+        "statusType": "msg",
+        "x": 490,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d1626772170ca2bf",
+        "type": "switch",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "property": "hue_basement",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "zones",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 270,
+        "y": 500,
+        "wires": [
+            [
+                "c4d50954ba60cb19",
+                "e671b8393f79b60f"
+            ],
+            [
+                "3de1d20f6b15da1a"
+            ]
+        ]
+    },
+    {
+        "id": "3de1d20f6b15da1a",
+        "type": "change",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "hue_basement.room",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 620,
+        "wires": [
+            [
+                "d64e3eca437f0d84"
+            ]
+        ]
+    },
+    {
+        "id": "d64e3eca437f0d84",
+        "type": "subflow:d0a1d8f666dafcc0",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "Extract Room Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "hue_basement",
+                "type": "str"
+            }
+        ],
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [
+                "6c64e090ed7c84da"
+            ]
+        ]
+    },
+    {
+        "id": "6c64e090ed7c84da",
+        "type": "change",
+        "z": "ccf1967ecbc089aa",
+        "g": "077d31550d7c0602",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"room\":payload}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 620,
+        "wires": [
+            [
+                "4828d97867b2ea95"
+            ]
+        ]
     },
     {
         "id": "577c54a2be0d38c9",
