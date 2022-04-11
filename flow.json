@@ -86,14 +86,6 @@
         "env": []
     },
     {
-        "id": "bbd6e1207d3b5780",
-        "type": "tab",
-        "label": "Exterior",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "68a0c85ae721ed85",
         "type": "tab",
         "label": "Guest Bedroom",
@@ -838,7 +830,9 @@
             "7bac63592e9b8ed2"
         ],
         "x": 24,
-        "y": 19
+        "y": 19,
+        "w": 1002,
+        "h": 122
     },
     {
         "id": "afbdc8b60c682c85",
@@ -861,7 +855,9 @@
             "fc49d70fecf99c3f"
         ],
         "x": 24,
-        "y": 159
+        "y": 159,
+        "w": 962,
+        "h": 122
     },
     {
         "id": "03822925b892df4a",
@@ -884,7 +880,9 @@
             "ed213c0451c27d57"
         ],
         "x": 24,
-        "y": 299
+        "y": 299,
+        "w": 1002,
+        "h": 122
     },
     {
         "id": "cd63dc8a5bea4a7b",
@@ -976,7 +974,9 @@
             "4addd031d3d6b37a"
         ],
         "x": 24,
-        "y": 19
+        "y": 19,
+        "w": 1062,
+        "h": 122
     },
     {
         "id": "cf5ee15f74249e75",
@@ -1120,81 +1120,6 @@
         "y": 299
     },
     {
-        "id": "37f9190eb1a5f555",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "Activate exterior sunset scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3022851ad2ddc6ce",
-            "fe0c29bf9873c7fb",
-            "833c49adadf8a7de",
-            "744bdeb0874221fa",
-            "0556eb1362f54b0e",
-            "65a8e5f3e6aac863",
-            "cc37ef8f3a838181",
-            "0eddce197d35d0c2"
-        ],
-        "x": 104,
-        "y": 299
-    },
-    {
-        "id": "fc8dab80af70dbe7",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "Activate exterior tribal scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "cfc9ead710a85bfc",
-            "26924c574a68bf97",
-            "2632f1c970c5b775",
-            "4b0337b646b32207",
-            "4d0bed4baebdfc11",
-            "290b13c645ba6d83",
-            "a9b06ca98c889310",
-            "386bcda361463ded"
-        ],
-        "x": 104,
-        "y": 439
-    },
-    {
-        "id": "54005f131191d07d",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "Activate exterior spooky scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "1c8c72b47cb25bb3",
-            "5d4585f41c636812",
-            "a1aa13c83159c9fb",
-            "2f920f2d90af3a23",
-            "e8d26688fdb3dc99",
-            "9751f26fd63938dd",
-            "7a9777b958620aa0",
-            "df37b8f8d0c15d72"
-        ],
-        "x": 104,
-        "y": 579
-    },
-    {
         "id": "7872f889f870b7ea",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -1215,7 +1140,9 @@
             "dc7a211772050136"
         ],
         "x": 24,
-        "y": 439
+        "y": 439,
+        "w": 982,
+        "h": 122
     },
     {
         "id": "a76cb5337e8a2ff0",
@@ -1266,79 +1193,6 @@
         "y": 159
     },
     {
-        "id": "27ea51b68dd32fdf",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "Activate exterior bright scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "cbb65c7a562ba8df",
-            "d751ef890196434e",
-            "9744753ad712956d",
-            "e9fac1e138b905f5",
-            "9f455b49edca7924",
-            "9c0f0fa02267d0cf"
-        ],
-        "x": 104,
-        "y": 159
-    },
-    {
-        "id": "9c99756236afe446",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "Turn off exterior light group using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3ea0d053fe04c90c",
-            "65354cde7927a4f3",
-            "4e5d71543542a20d",
-            "663a44209444b705",
-            "07987419335624ad",
-            "d4ec4fdfc7cf627d",
-            "dc88f32db415a607",
-            "7fa14903b4bc95cd"
-        ],
-        "x": 104,
-        "y": 19
-    },
-    {
-        "id": "4699dcb62a5f0b27",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "Activate exterior jolly scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "db4bc79190f17a6f",
-            "64f52c205bea3f80",
-            "88a44520a6e88d1e",
-            "bcbb21561f70c39c",
-            "27a6590ea08d0cd3",
-            "cef5ed063ab91cbd",
-            "ad10b924bf13e161",
-            "891958a515fa0376"
-        ],
-        "x": 104,
-        "y": 719
-    },
-    {
         "id": "96bfb32777af9e2c",
         "type": "group",
         "z": "1344247d533f754a",
@@ -1375,7 +1229,9 @@
             "1993fd8165053adf"
         ],
         "x": 104,
-        "y": 271.5
+        "y": 271.5,
+        "w": 242,
+        "h": 97
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1396,7 +1252,9 @@
             "c897f7f0ee8680dc"
         ],
         "x": 394,
-        "y": 479
+        "y": 479,
+        "w": 232,
+        "h": 162
     },
     {
         "id": "73991d26373b19c7",
@@ -1426,7 +1284,9 @@
             "3937f7adb3efe771"
         ],
         "x": 394,
-        "y": 199
+        "y": 199,
+        "w": 912,
+        "h": 262
     },
     {
         "id": "b940bf3a0df755de",
@@ -1447,7 +1307,9 @@
             "f12fbd86617caaf9"
         ],
         "x": 394,
-        "y": 19
+        "y": 19,
+        "w": 232,
+        "h": 162
     },
     {
         "id": "716a5e2d5b07383b",
@@ -1487,16 +1349,19 @@
             "82422755412f473d",
             "03b09291b4b78bea",
             "82f5745796e93e00",
-            "832e42677dceefdd",
             "cd0f0860d8795bcf",
             "c0483ea0bf84b4c8",
             "6dce2190c3918eea",
-            "c6e09ee6553c5587"
+            "c6e09ee6553c5587",
+            "570f6d531cb787a4",
+            "d0e0c7d9c94b01a0",
+            "f3c557aff9371e21",
+            "0c67e7a22f4cd562"
         ],
         "x": 14,
         "y": 439,
         "w": 1132,
-        "h": 170
+        "h": 230
     },
     {
         "id": "5d64c1685d1dabb4",
@@ -1540,7 +1405,9 @@
             "367257eca32180a1"
         ],
         "x": 34,
-        "y": 579
+        "y": 579,
+        "w": 992,
+        "h": 82
     },
     {
         "id": "cd7da4a49f7e871d",
@@ -1560,7 +1427,9 @@
             "d1dd29676e3d730d"
         ],
         "x": 34,
-        "y": 679
+        "y": 679,
+        "w": 612,
+        "h": 82
     },
     {
         "id": "4a3961a2965ec07f",
@@ -1602,7 +1471,9 @@
             "87e5a8d0c7ca4831"
         ],
         "x": 34,
-        "y": 159
+        "y": 159,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "49d1b83457681d92",
@@ -1622,49 +1493,9 @@
             "ad84a73df59a42e1"
         ],
         "x": 34,
-        "y": 259
-    },
-    {
-        "id": "b0c61bb443a2c0d8",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "User interface for exterior lights group",
-        "style": {
-            "label": true,
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "color": "#000000"
-        },
-        "nodes": [
-            "e1ec7893edf50dc5",
-            "84629412b49d9db4",
-            "51217aca0c05e321",
-            "4313d7fb1613d46c",
-            "612d7b0a08c61850"
-        ],
-        "x": 114,
-        "y": 859
-    },
-    {
-        "id": "073462d4fb7e6673",
-        "type": "group",
-        "z": "bbd6e1207d3b5780",
-        "name": "User interface for exterior light scenes",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "b0860aa1500b0925",
-            "031f79a77a32530e",
-            "64b8631fbce21bcc"
-        ],
-        "x": 114,
-        "y": 959
+        "y": 259,
+        "w": 682,
+        "h": 82
     },
     {
         "id": "29e213dca39ccade",
@@ -2046,7 +1877,9 @@
             "d84b97ebd830cdb0"
         ],
         "x": 164,
-        "y": 359
+        "y": 359,
+        "w": 542,
+        "h": 82
     },
     {
         "id": "1c2fe205e5e65ebc",
@@ -2142,7 +1975,9 @@
             "f1c514e146df391b"
         ],
         "x": 14,
-        "y": 359
+        "y": 359,
+        "w": 1222,
+        "h": 182
     },
     {
         "id": "4b0e89ddb66673e4",
@@ -2191,7 +2026,9 @@
             "a58e4240490b6708"
         ],
         "x": 614,
-        "y": 19
+        "y": 19,
+        "w": 752,
+        "h": 262
     },
     {
         "id": "6c3a90b013aa69c2",
@@ -2219,7 +2056,9 @@
             "5cd93cf4487a1623"
         ],
         "x": 614,
-        "y": 299
+        "y": 299,
+        "w": 752,
+        "h": 262
     },
     {
         "id": "9f344af23b60f386",
@@ -2241,7 +2080,9 @@
             "0e03f7b1c487930f"
         ],
         "x": 194,
-        "y": 19
+        "y": 19,
+        "w": 392,
+        "h": 282
     },
     {
         "id": "cdddc2232014e00e",
@@ -2265,7 +2106,9 @@
             "825f2ffa1e2be0dc"
         ],
         "x": 14,
-        "y": 379
+        "y": 379,
+        "w": 572,
+        "h": 162
     },
     {
         "id": "c78827c27fef4494",
@@ -2289,7 +2132,9 @@
             "4ce2836aefb78546"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 532,
+        "h": 202
     },
     {
         "id": "a66f3931c4b1059e",
@@ -2307,7 +2152,9 @@
             "532b9b7b5f117137"
         ],
         "x": 354,
-        "y": 19
+        "y": 19,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "7c175ce901294697",
@@ -2338,7 +2185,9 @@
             "6968faac0d436626"
         ],
         "x": 574,
-        "y": 59
+        "y": 59,
+        "w": 682,
+        "h": 282
     },
     {
         "id": "7dfdd9b817067326",
@@ -2358,7 +2207,9 @@
             "698fa0b79a195fd1"
         ],
         "x": 254,
-        "y": 19
+        "y": 19,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "875ab4538bb22f15",
@@ -2380,7 +2231,9 @@
             "015a293c96d16612"
         ],
         "x": 254,
-        "y": 119
+        "y": 119,
+        "w": 912,
+        "h": 82
     },
     {
         "id": "0fe686a291277b71",
@@ -2404,7 +2257,9 @@
             "801bc206cfa0803d"
         ],
         "x": 254,
-        "y": 219
+        "y": 219,
+        "w": 742,
+        "h": 122
     },
     {
         "id": "541f223d7251abbe",
@@ -2422,7 +2277,9 @@
             "d31eac19e524875d"
         ],
         "x": 14,
-        "y": 179
+        "y": 179,
+        "w": 212,
+        "h": 82
     },
     {
         "id": "98379557a8077dc0",
@@ -2444,7 +2301,9 @@
             "b51aa02fc08c38b5"
         ],
         "x": 264,
-        "y": 359
+        "y": 359,
+        "w": 722,
+        "h": 82
     },
     {
         "id": "2afac67683a580f7",
@@ -2518,7 +2377,9 @@
             "528ecfb852f1b92e"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "d906806776a15be5",
@@ -2539,7 +2400,9 @@
             "3dd9a3ccf38d705a"
         ],
         "x": 24,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 122
     },
     {
         "id": "80d5524b4b86d1df",
@@ -2558,7 +2421,9 @@
             "15164c46a7616484"
         ],
         "x": 594,
-        "y": 139
+        "y": 139,
+        "w": 334,
+        "h": 82
     },
     {
         "id": "077d31550d7c0602",
@@ -2587,7 +2452,9 @@
             "6c64e090ed7c84da"
         ],
         "x": 14,
-        "y": 439
+        "y": 439,
+        "w": 1132,
+        "h": 230
     },
     {
         "id": "a72897abb2ba46cf",
@@ -2613,7 +2480,9 @@
             "74f5393b9872d6a3"
         ],
         "x": 14,
-        "y": 259
+        "y": 259,
+        "w": 1072,
+        "h": 162
     },
     {
         "id": "4cd0844ac67f9d08",
@@ -2636,7 +2505,9 @@
             "7342e759a8aaf831"
         ],
         "x": 24,
-        "y": 19
+        "y": 19,
+        "w": 1022,
+        "h": 122
     },
     {
         "id": "ab139c6aa2370ed0",
@@ -2658,7 +2529,9 @@
             "453d3bd5bfeb8bca"
         ],
         "x": 34,
-        "y": 299
+        "y": 159,
+        "w": 1052,
+        "h": 82
     },
     {
         "id": "2914bd75c42ad315",
@@ -2678,30 +2551,9 @@
             "b070f4a2b8979e81"
         ],
         "x": 34,
-        "y": 399
-    },
-    {
-        "id": "4fb247dcfd5a7fb5",
-        "type": "group",
-        "z": "54f25a030c2b57aa",
-        "name": "Activate dining room sunset scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "bdbd893e4ba16ada",
-            "8eaee30c894f080c",
-            "8e1efe7b2d7fa723",
-            "ba56501dcf64baae",
-            "ef55c351fa180850",
-            "20fc63dd5db84222"
-        ],
-        "x": 24,
-        "y": 159
+        "y": 259,
+        "w": 632,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -3134,162 +2986,6 @@
         "allowMessagePassthrough": true
     },
     {
-        "id": "ce3d015f32246428",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Exterior Off",
-        "hostType": 1,
-        "pinCode": "824-94-286",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1201",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "65fb37f444235369",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Exterior Bright",
-        "hostType": 1,
-        "pinCode": "135-01-737",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1202",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "053e71d1a42838ba",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Exterior Dynamic Sunset",
-        "hostType": 1,
-        "pinCode": "640-56-972",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1203",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "f4c31e844d00a3ae",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Exterior Dynamic Tribal",
-        "hostType": 1,
-        "pinCode": "474-19-752",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1204",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "ba033b45401a2c44",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Exterior Dynamic Spooky",
-        "hostType": 1,
-        "pinCode": "216-38-110",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1205",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "ea3c0b477b703ca6",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Exterior Dynamic Jolly",
-        "hostType": 1,
-        "pinCode": "669-50-740",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1206",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
         "id": "63c00f105cc3255f",
         "type": "ui_base",
         "theme": {
@@ -3453,17 +3149,6 @@
         "name": "Dining Room",
         "tab": "1ee2dc1b0cb04f90",
         "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "18f48c750af40b6f",
-        "type": "ui_group",
-        "name": "Exterior",
-        "tab": "1ee2dc1b0cb04f90",
-        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -3736,32 +3421,6 @@
         "width": "6",
         "collapse": true,
         "className": ""
-    },
-    {
-        "id": "d824965fd3af61ac",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Basement Dynamic Sundown",
-        "hostType": 1,
-        "pinCode": "088-72-359",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "1402",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
     },
     {
         "id": "3111257f22032077",
@@ -5713,7 +5372,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 480,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "6f43cabea1d8122f"
@@ -5739,7 +5398,7 @@
         "outputType": "msg",
         "outTz": "America/Chicago",
         "x": 510,
-        "y": 300,
+        "y": 260,
         "wires": [
             [
                 "17854c7df7aab4bf"
@@ -8031,7 +7690,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1020,
-        "y": 520,
+        "y": 580,
         "wires": []
     },
     {
@@ -8054,7 +7713,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 420,
         "y": 480,
         "wires": [
             [
@@ -8088,7 +7747,7 @@
         "y": 520,
         "wires": [
             [
-                "832e42677dceefdd"
+                "570f6d531cb787a4"
             ]
         ]
     },
@@ -8113,7 +7772,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 440,
         "y": 560,
         "wires": [
             [
@@ -8134,26 +7793,11 @@
                 "type": "str"
             }
         ],
-        "x": 670,
+        "x": 630,
         "y": 480,
         "wires": [
             [
                 "cd0f0860d8795bcf"
-            ]
-        ]
-    },
-    {
-        "id": "832e42677dceefdd",
-        "type": "fan",
-        "z": "a00ccef1301f21e3",
-        "g": "feea332415047613",
-        "name": "",
-        "x": 270,
-        "y": 480,
-        "wires": [
-            [
-                "82422755412f473d",
-                "03b09291b4b78bea"
             ]
         ]
     },
@@ -8178,7 +7822,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 870,
+        "x": 830,
         "y": 520,
         "wires": [
             [
@@ -8199,7 +7843,7 @@
                 "type": "str"
             }
         ],
-        "x": 680,
+        "x": 640,
         "y": 560,
         "wires": [
             [
@@ -8362,7 +8006,7 @@
         "y": 380,
         "wires": [
             [
-                "832e42677dceefdd"
+                "570f6d531cb787a4"
             ]
         ]
     },
@@ -8434,6 +8078,116 @@
         "x": 440,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "d0e0c7d9c94b01a0",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "feea332415047613",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "chez_nous_main.room",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 620,
+        "wires": [
+            [
+                "f3c557aff9371e21"
+            ]
+        ]
+    },
+    {
+        "id": "f3c557aff9371e21",
+        "type": "subflow:d0a1d8f666dafcc0",
+        "z": "a00ccef1301f21e3",
+        "g": "feea332415047613",
+        "name": "Extract Room Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "chez_nous_main",
+                "type": "str"
+            }
+        ],
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [
+                "0c67e7a22f4cd562"
+            ]
+        ]
+    },
+    {
+        "id": "0c67e7a22f4cd562",
+        "type": "change",
+        "z": "a00ccef1301f21e3",
+        "g": "feea332415047613",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"room\":payload}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 620,
+        "wires": [
+            [
+                "c6e09ee6553c5587"
+            ]
+        ]
+    },
+    {
+        "id": "570f6d531cb787a4",
+        "type": "switch",
+        "z": "a00ccef1301f21e3",
+        "g": "feea332415047613",
+        "name": "",
+        "property": "chez_nous_main",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "hask",
+                "v": "zone",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 250,
+        "y": 500,
+        "wires": [
+            [
+                "82422755412f473d",
+                "03b09291b4b78bea"
+            ],
+            [
+                "d0e0c7d9c94b01a0"
+            ]
+        ]
     },
     {
         "id": "646c1166e094edb8",
@@ -8651,7 +8405,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 420,
         "y": 480,
         "wires": [
             [
@@ -8680,7 +8434,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 440,
         "y": 560,
         "wires": [
             [
@@ -8701,7 +8455,7 @@
                 "type": "str"
             }
         ],
-        "x": 670,
+        "x": 630,
         "y": 480,
         "wires": [
             [
@@ -8730,7 +8484,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 870,
+        "x": 830,
         "y": 520,
         "wires": [
             [
@@ -8751,7 +8505,7 @@
                 "type": "str"
             }
         ],
-        "x": 680,
+        "x": 640,
         "y": 560,
         "wires": [
             [
@@ -8799,7 +8553,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
+        "x": 1020,
         "y": 580,
         "wires": []
     },
@@ -8995,7 +8749,7 @@
         "rules": [
             {
                 "t": "hask",
-                "v": "zones",
+                "v": "zone",
                 "vt": "str"
             },
             {
@@ -9005,7 +8759,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 270,
+        "x": 250,
         "y": 500,
         "wires": [
             [
@@ -10037,7 +9791,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 160,
-        "y": 340,
+        "y": 200,
         "wires": [
             [
                 "2c8e43cbd71bf005"
@@ -10065,7 +9819,7 @@
         "to": "",
         "reg": false,
         "x": 360,
-        "y": 340,
+        "y": 200,
         "wires": [
             [
                 "297d68fed7c0e821"
@@ -10100,7 +9854,7 @@
         "animate": false,
         "className": "",
         "x": 550,
-        "y": 340,
+        "y": 200,
         "wires": [
             [
                 "0c4405596c71135f"
@@ -10142,7 +9896,7 @@
         "to": "",
         "reg": false,
         "x": 760,
-        "y": 340,
+        "y": 200,
         "wires": [
             [
                 "453d3bd5bfeb8bca"
@@ -10160,7 +9914,7 @@
         ],
         "timeout": "30",
         "x": 960,
-        "y": 340,
+        "y": 200,
         "wires": [
             []
         ]
@@ -10222,7 +9976,7 @@
         "topicType": "msg",
         "className": "",
         "x": 150,
-        "y": 440,
+        "y": 300,
         "wires": [
             [
                 "241258a3a63486f9"
@@ -10264,7 +10018,7 @@
         "to": "",
         "reg": false,
         "x": 340,
-        "y": 440,
+        "y": 300,
         "wires": [
             [
                 "b070f4a2b8979e81"
@@ -10282,175 +10036,9 @@
         ],
         "timeout": "30",
         "x": 540,
-        "y": 440,
+        "y": 300,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "bdbd893e4ba16ada",
-        "type": "homekit-service",
-        "z": "54f25a030c2b57aa",
-        "g": "4fb247dcfd5a7fb5",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "d824965fd3af61ac",
-        "parentService": "",
-        "name": "Basement Dynamic Sundown",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "008",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 230,
-        "y": 220,
-        "wires": [
-            [
-                "8e1efe7b2d7fa723"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8eaee30c894f080c",
-        "type": "link call",
-        "z": "54f25a030c2b57aa",
-        "g": "4fb247dcfd5a7fb5",
-        "name": "",
-        "links": [
-            "befc9498e0e538c3"
-        ],
-        "timeout": "30",
-        "x": 940,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8e1efe7b2d7fa723",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "54f25a030c2b57aa",
-        "g": "4fb247dcfd5a7fb5",
-        "name": "",
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "value": "12cbdfa6-8f24-47ec-98dc-ddd549669f09",
-                "type": "str"
-            }
-        ],
-        "x": 490,
-        "y": 220,
-        "wires": [
-            [
-                "20fc63dd5db84222"
-            ],
-            [
-                "ba56501dcf64baae"
-            ]
-        ]
-    },
-    {
-        "id": "ba56501dcf64baae",
-        "type": "link out",
-        "z": "54f25a030c2b57aa",
-        "g": "4fb247dcfd5a7fb5",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "ef55c351fa180850"
-        ],
-        "x": 635,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "ef55c351fa180850",
-        "type": "link in",
-        "z": "54f25a030c2b57aa",
-        "g": "4fb247dcfd5a7fb5",
-        "name": "dining room dynamic sunset",
-        "links": [
-            "ba56501dcf64baae"
-        ],
-        "x": 65,
-        "y": 240,
-        "wires": [
-            [
-                "bdbd893e4ba16ada"
-            ]
-        ]
-    },
-    {
-        "id": "20fc63dd5db84222",
-        "type": "change",
-        "z": "54f25a030c2b57aa",
-        "g": "4fb247dcfd5a7fb5",
-        "name": "start dynamic sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/4f2334aa-eff9-4b73-991c-a4e9178a359a",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 200,
-        "wires": [
-            [
-                "8eaee30c894f080c"
-            ]
         ]
     },
     {
@@ -10921,1485 +10509,6 @@
         "timeout": "30",
         "x": 570,
         "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "07987419335624ad",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "exterior off",
-        "links": [
-            "6c3e6b4543f8c9ac",
-            "8e8390b13cc5c45b"
-        ],
-        "x": 145,
-        "y": 60,
-        "wires": [
-            [
-                "7fa14903b4bc95cd"
-            ]
-        ]
-    },
-    {
-        "id": "3022851ad2ddc6ce",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "exterior dynamic sunset",
-        "links": [
-            "050497e834313a83",
-            "e270017761dfd27d"
-        ],
-        "x": 145,
-        "y": 340,
-        "wires": [
-            [
-                "0eddce197d35d0c2"
-            ]
-        ]
-    },
-    {
-        "id": "cfc9ead710a85bfc",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "exterior dynamic tribal",
-        "links": [
-            "dd66897cbe03b9f7",
-            "7ab1620c3349854b"
-        ],
-        "x": 145,
-        "y": 480,
-        "wires": [
-            [
-                "386bcda361463ded"
-            ]
-        ]
-    },
-    {
-        "id": "1c8c72b47cb25bb3",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "exterior dynamic spooky",
-        "links": [
-            "02abe1abe3f82c6d",
-            "c68369c3781694e3"
-        ],
-        "x": 145,
-        "y": 620,
-        "wires": [
-            [
-                "df37b8f8d0c15d72"
-            ]
-        ]
-    },
-    {
-        "id": "3ea0d053fe04c90c",
-        "type": "homekit-service",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "ce3d015f32246428",
-        "parentService": "",
-        "name": "Exterior Off",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 410,
-        "y": 80,
-        "wires": [
-            [
-                "dc88f32db415a607"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "cbb65c7a562ba8df",
-        "type": "homekit-service",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "65fb37f444235369",
-        "parentService": "",
-        "name": "Exterior Bright",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 260,
-        "y": 220,
-        "wires": [
-            [
-                "9744753ad712956d"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "fe0c29bf9873c7fb",
-        "type": "homekit-service",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "053e71d1a42838ba",
-        "parentService": "",
-        "name": "Exterior Dynamic Sunset",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 450,
-        "y": 360,
-        "wires": [
-            [
-                "0556eb1362f54b0e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "65354cde7927a4f3",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 1050,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4e5d71543542a20d",
-        "type": "link out",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "663a44209444b705"
-        ],
-        "x": 755,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "663a44209444b705",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "exterior off auto-off",
-        "links": [
-            "4e5d71543542a20d"
-        ],
-        "x": 305,
-        "y": 100,
-        "wires": [
-            [
-                "3ea0d053fe04c90c"
-            ]
-        ]
-    },
-    {
-        "id": "d751ef890196434e",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "exterior bright auto-off",
-        "links": [
-            "9f455b49edca7924"
-        ],
-        "x": 145,
-        "y": 240,
-        "wires": [
-            [
-                "cbb65c7a562ba8df"
-            ]
-        ]
-    },
-    {
-        "id": "9744753ad712956d",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "",
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "value": "27e1e1eb-6b72-434e-a301-47fab0ec5f1b",
-                "type": "str"
-            },
-            {
-                "name": "ACTION",
-                "value": "active",
-                "type": "str"
-            }
-        ],
-        "x": 470,
-        "y": 220,
-        "wires": [
-            [
-                "9c0f0fa02267d0cf"
-            ],
-            [
-                "9f455b49edca7924"
-            ]
-        ]
-    },
-    {
-        "id": "e9fac1e138b905f5",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 890,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9f455b49edca7924",
-        "type": "link out",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "d751ef890196434e"
-        ],
-        "x": 615,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "833c49adadf8a7de",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "exterior sunset auto-off",
-        "links": [
-            "744bdeb0874221fa"
-        ],
-        "x": 305,
-        "y": 380,
-        "wires": [
-            [
-                "fe0c29bf9873c7fb"
-            ]
-        ]
-    },
-    {
-        "id": "744bdeb0874221fa",
-        "type": "link out",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "833c49adadf8a7de"
-        ],
-        "x": 835,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "0556eb1362f54b0e",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "",
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "value": "a14f4a38-9577-44d3-bcec-702b05a0a8ba",
-                "type": "str"
-            }
-        ],
-        "x": 690,
-        "y": 360,
-        "wires": [
-            [
-                "cc37ef8f3a838181"
-            ],
-            [
-                "744bdeb0874221fa"
-            ]
-        ]
-    },
-    {
-        "id": "65a8e5f3e6aac863",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 1150,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "26924c574a68bf97",
-        "type": "homekit-service",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "f4c31e844d00a3ae",
-        "parentService": "",
-        "name": "Exterior Dynamic Tribal",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 450,
-        "y": 500,
-        "wires": [
-            [
-                "2632f1c970c5b775"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "2632f1c970c5b775",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "",
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "value": "f6f78784-27c2-40e4-86f0-c83066b6f4b5",
-                "type": "str"
-            }
-        ],
-        "x": 690,
-        "y": 500,
-        "wires": [
-            [
-                "a9b06ca98c889310"
-            ],
-            [
-                "4d0bed4baebdfc11"
-            ]
-        ]
-    },
-    {
-        "id": "4b0337b646b32207",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 1130,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4d0bed4baebdfc11",
-        "type": "link out",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "290b13c645ba6d83"
-        ],
-        "x": 835,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "290b13c645ba6d83",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "exterior tribal auto-off",
-        "links": [
-            "4d0bed4baebdfc11"
-        ],
-        "x": 305,
-        "y": 520,
-        "wires": [
-            [
-                "26924c574a68bf97"
-            ]
-        ]
-    },
-    {
-        "id": "9751f26fd63938dd",
-        "type": "link out",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "5d4585f41c636812"
-        ],
-        "x": 835,
-        "y": 660,
-        "wires": []
-    },
-    {
-        "id": "e8d26688fdb3dc99",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 1150,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2f920f2d90af3a23",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "",
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "value": "a9c8048e-c050-4008-9f78-0f66fbf2f745",
-                "type": "str"
-            }
-        ],
-        "x": 690,
-        "y": 640,
-        "wires": [
-            [
-                "7a9777b958620aa0"
-            ],
-            [
-                "9751f26fd63938dd"
-            ]
-        ]
-    },
-    {
-        "id": "a1aa13c83159c9fb",
-        "type": "homekit-service",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "ba033b45401a2c44",
-        "parentService": "",
-        "name": "Exterior Dynamic Spooky",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 450,
-        "y": 640,
-        "wires": [
-            [
-                "2f920f2d90af3a23"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "5d4585f41c636812",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "exterior spooky auto-off",
-        "links": [
-            "9751f26fd63938dd"
-        ],
-        "x": 305,
-        "y": 660,
-        "wires": [
-            [
-                "a1aa13c83159c9fb"
-            ]
-        ]
-    },
-    {
-        "id": "d4ec4fdfc7cf627d",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "grouped_light off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light/2b3a58a9-593d-47d0-888c-f2dbb531c974",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":false}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 830,
-        "y": 60,
-        "wires": [
-            [
-                "65354cde7927a4f3"
-            ]
-        ]
-    },
-    {
-        "id": "dc88f32db415a607",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "",
-        "x": 610,
-        "y": 80,
-        "wires": [
-            [
-                "d4ec4fdfc7cf627d"
-            ],
-            [
-                "4e5d71543542a20d"
-            ]
-        ]
-    },
-    {
-        "id": "9c0f0fa02267d0cf",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "27ea51b68dd32fdf",
-        "name": "activate bright",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/27e1e1eb-6b72-434e-a301-47fab0ec5f1b",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"active\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 680,
-        "y": 200,
-        "wires": [
-            [
-                "e9fac1e138b905f5"
-            ]
-        ]
-    },
-    {
-        "id": "cc37ef8f3a838181",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "start dynamic sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/a14f4a38-9577-44d3-bcec-702b05a0a8ba",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 920,
-        "y": 340,
-        "wires": [
-            [
-                "65a8e5f3e6aac863"
-            ]
-        ]
-    },
-    {
-        "id": "a9b06ca98c889310",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "start dynamic tribal",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/f6f78784-27c2-40e4-86f0-c83066b6f4b5",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 910,
-        "y": 480,
-        "wires": [
-            [
-                "4b0337b646b32207"
-            ]
-        ]
-    },
-    {
-        "id": "7a9777b958620aa0",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "start dynamic spooky",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/a9c8048e-c050-4008-9f78-0f66fbf2f745",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 920,
-        "y": 620,
-        "wires": [
-            [
-                "e8d26688fdb3dc99"
-            ]
-        ]
-    },
-    {
-        "id": "7fa14903b4bc95cd",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "9c99756236afe446",
-        "name": "{\"On\":true}",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 60,
-        "wires": [
-            [
-                "3ea0d053fe04c90c"
-            ]
-        ]
-    },
-    {
-        "id": "0eddce197d35d0c2",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "37f9190eb1a5f555",
-        "name": "{\"On\":true}",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 340,
-        "wires": [
-            [
-                "fe0c29bf9873c7fb"
-            ]
-        ]
-    },
-    {
-        "id": "386bcda361463ded",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "fc8dab80af70dbe7",
-        "name": "{\"On\":true}",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 480,
-        "wires": [
-            [
-                "26924c574a68bf97"
-            ]
-        ]
-    },
-    {
-        "id": "df37b8f8d0c15d72",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "54005f131191d07d",
-        "name": "{\"On\":true}",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 620,
-        "wires": [
-            [
-                "a1aa13c83159c9fb"
-            ]
-        ]
-    },
-    {
-        "id": "db4bc79190f17a6f",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "exterior dynamic jolly",
-        "links": [
-            "c0f8dbc5f54fa68a",
-            "b0ee0f2f8155fe9b"
-        ],
-        "x": 145,
-        "y": 760,
-        "wires": [
-            [
-                "891958a515fa0376"
-            ]
-        ]
-    },
-    {
-        "id": "64f52c205bea3f80",
-        "type": "homekit-service",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "ea3c0b477b703ca6",
-        "parentService": "",
-        "name": "Exterior Dynamic Jolly",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "NRCHKB",
-        "model": "1.4.3",
-        "serialNo": "Default Serial Number",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 440,
-        "y": 780,
-        "wires": [
-            [
-                "bcbb21561f70c39c"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "88a44520a6e88d1e",
-        "type": "link in",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "exterior jolly auto-off",
-        "links": [
-            "cef5ed063ab91cbd"
-        ],
-        "x": 305,
-        "y": 800,
-        "wires": [
-            [
-                "64f52c205bea3f80"
-            ]
-        ]
-    },
-    {
-        "id": "bcbb21561f70c39c",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "",
-        "env": [
-            {
-                "name": "SCENE_ID",
-                "value": "669b5463-7a9d-4cbc-a894-155b9f45f6b8",
-                "type": "str"
-            }
-        ],
-        "x": 670,
-        "y": 780,
-        "wires": [
-            [
-                "ad10b924bf13e161"
-            ],
-            [
-                "cef5ed063ab91cbd"
-            ]
-        ]
-    },
-    {
-        "id": "27a6590ea08d0cd3",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 1110,
-        "y": 760,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cef5ed063ab91cbd",
-        "type": "link out",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "88a44520a6e88d1e"
-        ],
-        "x": 815,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "ad10b924bf13e161",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "start dynamic jolly",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/669b5463-7a9d-4cbc-a894-155b9f45f6b8",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 890,
-        "y": 760,
-        "wires": [
-            [
-                "27a6590ea08d0cd3"
-            ]
-        ]
-    },
-    {
-        "id": "891958a515fa0376",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "4699dcb62a5f0b27",
-        "name": "{\"On\":true}",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 760,
-        "wires": [
-            [
-                "64f52c205bea3f80"
-            ]
-        ]
-    },
-    {
-        "id": "e1ec7893edf50dc5",
-        "type": "mqtt in",
-        "z": "bbd6e1207d3b5780",
-        "g": "b0c61bb443a2c0d8",
-        "name": "exterior grouped light",
-        "topic": "hue/chez-nous-main/grouped_light/2b3a58a9-593d-47d0-888c-f2dbb531c974",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 240,
-        "y": 900,
-        "wires": [
-            [
-                "84629412b49d9db4"
-            ]
-        ]
-    },
-    {
-        "id": "84629412b49d9db4",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "b0c61bb443a2c0d8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.on.on",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 900,
-        "wires": [
-            [
-                "51217aca0c05e321"
-            ]
-        ]
-    },
-    {
-        "id": "51217aca0c05e321",
-        "type": "ui_switch",
-        "z": "bbd6e1207d3b5780",
-        "g": "b0c61bb443a2c0d8",
-        "name": "Exterior Switch",
-        "label": "",
-        "tooltip": "",
-        "group": "18f48c750af40b6f",
-        "order": 1,
-        "width": "1",
-        "height": "1",
-        "passthru": false,
-        "decouple": "true",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 620,
-        "y": 900,
-        "wires": [
-            [
-                "4313d7fb1613d46c"
-            ]
-        ]
-    },
-    {
-        "id": "4313d7fb1613d46c",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "b0c61bb443a2c0d8",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":payload}}",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light/2b3a58a9-593d-47d0-888c-f2dbb531c974",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 800,
-        "y": 900,
-        "wires": [
-            [
-                "612d7b0a08c61850"
-            ]
-        ]
-    },
-    {
-        "id": "612d7b0a08c61850",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "b0c61bb443a2c0d8",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 1010,
-        "y": 900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b0860aa1500b0925",
-        "type": "ui_dropdown",
-        "z": "bbd6e1207d3b5780",
-        "g": "073462d4fb7e6673",
-        "name": "Exterior Scenes",
-        "label": "",
-        "tooltip": "",
-        "place": "Scene",
-        "group": "18f48c750af40b6f",
-        "order": 2,
-        "width": "5",
-        "height": "1",
-        "passthru": true,
-        "multiple": false,
-        "options": [
-            {
-                "label": "Bright",
-                "value": "27e1e1eb-6b72-434e-a301-47fab0ec5f1b",
-                "type": "str"
-            },
-            {
-                "label": "Sunset",
-                "value": "a14f4a38-9577-44d3-bcec-702b05a0a8ba",
-                "type": "str"
-            },
-            {
-                "label": "Tribal",
-                "value": "f6f78784-27c2-40e4-86f0-c83066b6f4b5",
-                "type": "str"
-            },
-            {
-                "label": "Spooky",
-                "value": "a9c8048e-c050-4008-9f78-0f66fbf2f745",
-                "type": "str"
-            },
-            {
-                "label": "Jolly",
-                "value": "669b5463-7a9d-4cbc-a894-155b9f45f6b8",
-                "type": "str"
-            }
-        ],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 220,
-        "y": 1000,
-        "wires": [
-            [
-                "031f79a77a32530e"
-            ]
-        ]
-    },
-    {
-        "id": "031f79a77a32530e",
-        "type": "change",
-        "z": "bbd6e1207d3b5780",
-        "g": "073462d4fb7e6673",
-        "name": "activate scene",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "'resource/scene/' & msg.payload",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 1000,
-        "wires": [
-            [
-                "64b8631fbce21bcc"
-            ]
-        ]
-    },
-    {
-        "id": "64b8631fbce21bcc",
-        "type": "link call",
-        "z": "bbd6e1207d3b5780",
-        "g": "073462d4fb7e6673",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 610,
-        "y": 1000,
         "wires": [
             []
         ]
