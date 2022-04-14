@@ -185,7 +185,6 @@
         "id": "a03a3519abf4e656",
         "type": "subflow",
         "name": "HomeKit Switch Auto-Off",
-        "info": "If the incoming payload is `{\"On\":true}`, pass it through to the first output and then send `{\"On\":false}` one second later on the second output. Otherwise, ignore the incoming message.",
         "category": "waubesa",
         "in": [
             {
@@ -245,7 +244,7 @@
             "from HomeKit switch"
         ],
         "outputLabels": [
-            "original message",
+            "to Hue Bridge API",
             "to HomeKit switch"
         ],
         "icon": "node-red-dashboard/ui_switch.png",
@@ -853,7 +852,7 @@
         "category": "waubesa",
         "in": [
             {
-                "x": 40,
+                "x": 60,
                 "y": 60,
                 "wires": [
                     {
@@ -962,7 +961,6 @@
         "id": "c32d8a09391c0c3c",
         "type": "subflow",
         "name": "Timer Event",
-        "info": "Listen for `nodered/time` and `nodered/theme` events. Always pass the payload of the most recent `nodered/time` event through after at least one of each topic has been received. As a side-effect, set `global.theme` to the payload of the most recent `nodered/theme` message.",
         "category": "waubesa",
         "in": [],
         "out": [
@@ -1479,7 +1477,9 @@
             "a87a245333d87177"
         ],
         "x": 14,
-        "y": 219
+        "y": 219,
+        "w": 562,
+        "h": 122
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -1577,7 +1577,9 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1722,7 +1724,9 @@
             "1993fd8165053adf"
         ],
         "x": 104,
-        "y": 251.5
+        "y": 251.5,
+        "w": 242,
+        "h": 97
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1743,7 +1747,9 @@
             "c897f7f0ee8680dc"
         ],
         "x": 374,
-        "y": 459
+        "y": 459,
+        "w": 232,
+        "h": 162
     },
     {
         "id": "73991d26373b19c7",
@@ -1767,7 +1773,9 @@
             "b9f7a65beebcddfe"
         ],
         "x": 374,
-        "y": 199
+        "y": 219,
+        "w": 422,
+        "h": 222
     },
     {
         "id": "b940bf3a0df755de",
@@ -1788,7 +1796,9 @@
             "f12fbd86617caaf9"
         ],
         "x": 374,
-        "y": 19
+        "y": 19,
+        "w": 232,
+        "h": 162
     },
     {
         "id": "716a5e2d5b07383b",
@@ -1807,7 +1817,9 @@
             "9402de8cb82a7cb9"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 334,
+        "h": 82
     },
     {
         "id": "5d64c1685d1dabb4",
@@ -2293,7 +2305,9 @@
             "ffe7cbc7684c0890"
         ],
         "x": 34,
-        "y": 119
+        "y": 119,
+        "w": 842,
+        "h": 210
     },
     {
         "id": "c49a717c63369963",
@@ -2313,7 +2327,9 @@
             "db81cf75a2ca1776"
         ],
         "x": 284,
-        "y": 459
+        "y": 459,
+        "w": 352,
+        "h": 82
     },
     {
         "id": "f406f446ee780306",
@@ -2378,7 +2394,9 @@
             "cae953f2c04362ad"
         ],
         "x": 34,
-        "y": 19
+        "y": 19,
+        "w": 652,
+        "h": 82
     },
     {
         "id": "5a2c18585609cfae",
@@ -2424,7 +2442,9 @@
             "3e88a6d1de47705c"
         ],
         "x": 34,
-        "y": 279
+        "y": 279,
+        "w": 662,
+        "h": 202
     },
     {
         "id": "4b0e89ddb66673e4",
@@ -2464,7 +2484,9 @@
             "0e03f7b1c487930f"
         ],
         "x": 34,
-        "y": 199
+        "y": 199,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "7c175ce901294697",
@@ -2488,7 +2510,9 @@
             "611c11b1ba6aa270"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 612,
+        "h": 222
     },
     {
         "id": "875ab4538bb22f15",
@@ -2508,7 +2532,9 @@
             "e2f5213b9ccd0528"
         ],
         "x": 434,
-        "y": 39
+        "y": 39,
+        "w": 472,
+        "h": 162
     },
     {
         "id": "0fe686a291277b71",
@@ -2530,7 +2556,9 @@
             "801bc206cfa0803d"
         ],
         "x": 54,
-        "y": 219
+        "y": 219,
+        "w": 512,
+        "h": 162
     },
     {
         "id": "541f223d7251abbe",
@@ -2548,7 +2576,9 @@
             "d31eac19e524875d"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 292,
+        "h": 82
     },
     {
         "id": "98379557a8077dc0",
@@ -2570,7 +2600,9 @@
             "095af1f6e9620187"
         ],
         "x": 134,
-        "y": 459
+        "y": 459,
+        "w": 662,
+        "h": 110
     },
     {
         "id": "2afac67683a580f7",
@@ -2590,7 +2622,9 @@
             "7a1f5cbf9b84c489"
         ],
         "x": 144,
-        "y": 359
+        "y": 359,
+        "w": 502,
+        "h": 82
     },
     {
         "id": "41cef0af2772c23a",
@@ -2618,7 +2652,9 @@
             "c6e09ee6553c5587"
         ],
         "x": 14,
-        "y": 359
+        "y": 359,
+        "w": 852,
+        "h": 262
     },
     {
         "id": "d596f90a11f948b5",
@@ -2638,7 +2674,9 @@
             "528ecfb852f1b92e"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "d906806776a15be5",
@@ -2659,7 +2697,9 @@
             "3dd9a3ccf38d705a"
         ],
         "x": 14,
-        "y": 219
+        "y": 219,
+        "w": 542,
+        "h": 122
     },
     {
         "id": "80d5524b4b86d1df",
@@ -2678,7 +2718,9 @@
             "15164c46a7616484"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 334,
+        "h": 82
     },
     {
         "id": "a72897abb2ba46cf",
@@ -2706,7 +2748,9 @@
             "14c5c6675b345fe3"
         ],
         "x": 14,
-        "y": 359
+        "y": 359,
+        "w": 852,
+        "h": 262
     },
     {
         "id": "ab139c6aa2370ed0",
@@ -2796,7 +2840,9 @@
             "4cecaa56f15ef51c"
         ],
         "x": 254,
-        "y": 239
+        "y": 239,
+        "w": 472,
+        "h": 262
     },
     {
         "id": "2b6a7b4485e6a4ea",
@@ -2816,7 +2862,9 @@
             "cd8c2f0951248f55"
         ],
         "x": 254,
-        "y": 39
+        "y": 39,
+        "w": 292,
+        "h": 162
     },
     {
         "id": "afca2ae3ed3cb5fc",
@@ -2835,13 +2883,15 @@
             "477668ef1f02bcfd"
         ],
         "x": 594,
-        "y": 339
+        "y": 339,
+        "w": 325,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
         "type": "group",
         "z": "e44149a93fbe9b1b",
-        "name": "Activate main floor nightlight scene using HomeKit",
+        "name": "Activate main floor sunset scene using HomeKit",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -5314,6 +5364,13 @@
         "rules": [
             {
                 "t": "set",
+                "p": "bedtime",
+                "pt": "msg",
+                "to": "bedtime.value",
+                "tot": "global"
+            },
+            {
+                "t": "set",
                 "p": "minutes",
                 "pt": "msg",
                 "to": "(\t   $parts := $map($split(minutes, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
@@ -5332,13 +5389,6 @@
                 "pt": "msg",
                 "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
                 "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "bedtime",
-                "pt": "msg",
-                "to": "bedtime.value",
-                "tot": "global"
             }
         ],
         "action": "",
@@ -5346,7 +5396,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
+        "x": 320,
         "y": 140,
         "wires": [
             [
@@ -5366,7 +5416,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 710,
+        "x": 730,
         "y": 280,
         "wires": [
             [
@@ -5400,7 +5450,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
+        "x": 490,
         "y": 360,
         "wires": [
             [
@@ -5434,7 +5484,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 500,
         "y": 320,
         "wires": [
             [
@@ -5468,7 +5518,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 500,
         "y": 280,
         "wires": [
             [
@@ -5502,7 +5552,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 500,
         "y": 240,
         "wires": [
             [
@@ -5536,7 +5586,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 500,
         "y": 200,
         "wires": [
             [
@@ -5587,7 +5637,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 290,
+        "x": 310,
         "y": 280,
         "wires": [
             [
@@ -5616,7 +5666,7 @@
         "z": "726649588d2df715",
         "config": "8adeed565b07fe45",
         "name": "take bedtime",
-        "x": 130,
+        "x": 150,
         "y": 140,
         "wires": [
             [
@@ -5630,7 +5680,7 @@
         "z": "726649588d2df715",
         "config": "8adeed565b07fe45",
         "name": "leave bedtime",
-        "x": 140,
+        "x": 160,
         "y": 280,
         "wires": [
             [
@@ -8383,10 +8433,10 @@
         "name": "",
         "mode": "link",
         "links": [
-            "4b9d0f81d3a59f32"
+            "6cae9b1ccc68cb9e"
         ],
-        "x": 785,
-        "y": 240,
+        "x": 555,
+        "y": 260,
         "wires": []
     },
     {
@@ -8399,7 +8449,7 @@
         "links": [
             "04ad8639f667bd76"
         ],
-        "x": 785,
+        "x": 755,
         "y": 280,
         "wires": []
     },
@@ -8413,7 +8463,7 @@
         "links": [
             "cc9a7b174ce21d63"
         ],
-        "x": 785,
+        "x": 755,
         "y": 320,
         "wires": []
     },
@@ -8427,7 +8477,7 @@
         "links": [
             "60976d31a8dafe99"
         ],
-        "x": 785,
+        "x": 755,
         "y": 360,
         "wires": []
     },
@@ -8441,7 +8491,7 @@
         "links": [
             "18f53b7627e645e4"
         ],
-        "x": 785,
+        "x": 755,
         "y": 400,
         "wires": []
     },
@@ -8526,7 +8576,7 @@
         "z": "63d8cb10398da04b",
         "g": "73991d26373b19c7",
         "name": "",
-        "x": 640,
+        "x": 610,
         "y": 340,
         "wires": [
             [
@@ -11923,7 +11973,7 @@
             },
             {
                 "name": "PAYLOAD",
-                "value": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "value": "{\"recall\":{\"action\":\"active\"}}",
                 "type": "json"
             },
             {
@@ -12121,7 +12171,7 @@
             },
             {
                 "name": "PAYLOAD",
-                "value": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "value": "{\"recall\":{\"action\":\"active\"}}",
                 "type": "json"
             },
             {
@@ -12579,10 +12629,10 @@
         "type": "link in",
         "z": "e44149a93fbe9b1b",
         "g": "e1fa765ec5a5ebd7",
-        "name": "upstairs nightlight",
+        "name": "upstairs sunset",
         "links": [
-            "f455df4aef69f558",
-            "ae9f9aeb54f6cfb1"
+            "ae9f9aeb54f6cfb1",
+            "2837183323a61e04"
         ],
         "x": 145,
         "y": 760,
