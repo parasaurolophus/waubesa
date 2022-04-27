@@ -2600,7 +2600,7 @@
             "0e03f7b1c487930f"
         ],
         "x": 34,
-        "y": 179,
+        "y": 139,
         "w": 192,
         "h": 82
     },
@@ -2777,7 +2777,7 @@
         "id": "d596f90a11f948b5",
         "type": "group",
         "z": "ccf1967ecbc089aa",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
         "style": {
             "fill-opacity": "0.1",
             "label": true,
@@ -2822,7 +2822,7 @@
         "id": "80d5524b4b86d1df",
         "type": "group",
         "z": "ccf1967ecbc089aa",
-        "name": "Handle SSE messages from Chez Nous Main bridge",
+        "name": "Handle SSE messages fromBasement Hue bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -2836,14 +2836,14 @@
         ],
         "x": 14,
         "y": 119,
-        "w": 334,
+        "w": 319,
         "h": 82
     },
     {
         "id": "a72897abb2ba46cf",
         "type": "group",
         "z": "ccf1967ecbc089aa",
-        "name": "Periodically fetch all metdata from Chez Nous Main bridge",
+        "name": "Periodically fetch all metdata from Basement Hue bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -2957,8 +2957,8 @@
             "825f2ffa1e2be0dc",
             "4cecaa56f15ef51c"
         ],
-        "x": 254,
-        "y": 219,
+        "x": 244,
+        "y": 179,
         "w": 472,
         "h": 202
     },
@@ -2980,7 +2980,7 @@
             "cd8c2f0951248f55"
         ],
         "x": 244,
-        "y": 59,
+        "y": 39,
         "w": 322,
         "h": 122
     },
@@ -7970,7 +7970,7 @@
         "soff": "0",
         "eoff": "0",
         "x": 130,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "4cecaa56f15ef51c",
@@ -7992,7 +7992,7 @@
             "30286901101a6095"
         ],
         "x": 435,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -8010,7 +8010,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 480,
-        "y": 140,
+        "y": 120,
         "wires": []
     },
     {
@@ -8025,8 +8025,8 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 525,
-        "y": 260,
+        "x": 515,
+        "y": 220,
         "wires": []
     },
     {
@@ -8043,8 +8043,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 550,
-        "y": 300,
+        "x": 540,
+        "y": 260,
         "wires": []
     },
     {
@@ -8061,8 +8061,8 @@
         "format": "{{msg.next}}",
         "layout": "row-spread",
         "className": "",
-        "x": 550,
-        "y": 340,
+        "x": 540,
+        "y": 300,
         "wires": []
     },
     {
@@ -8079,8 +8079,8 @@
         "targetType": "full",
         "statusVal": "error.message",
         "statusType": "msg",
-        "x": 590,
-        "y": 380,
+        "x": 580,
+        "y": 340,
         "wires": []
     },
     {
@@ -8089,8 +8089,8 @@
         "z": "a767582f3959afc9",
         "g": "3eef89f5b02c9489",
         "name": "",
-        "x": 350,
-        "y": 320,
+        "x": 340,
+        "y": 280,
         "wires": [
             [
                 "af7e30f7cdeee1d9",
@@ -8109,7 +8109,7 @@
         "g": "2b6a7b4485e6a4ea",
         "name": "",
         "x": 330,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "ffa002c8041b26c0",
