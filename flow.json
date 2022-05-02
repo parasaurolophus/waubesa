@@ -298,66 +298,6 @@
         }
     },
     {
-        "id": "acfe4e875b80c543",
-        "type": "subflow",
-        "name": "Hue SSE",
-        "info": "**Depends on [node-red-contrib-sse-client](https://flows.nodered.org/node/node-red-contrib-sse-client) (see <https://flows.nodered.org/node/node-red-contrib-sse-client>) which must be installed before this subflow.**\n\nSubscribe to the SSE message stream from a given Hue Bridge. Forward received events as retained MQTT messages. Along the way, persist in node context a cumulative representation of the values of all the attributes of each message as it passes through. Pass along the updated, cumulative payload. This is a work around for a number of crippling defects in the design of the Hue Bridge API V2.\n\nThis subflow is intended to be used in concert with complementary logic when `GET` and `PUT` API entry points are invoked. The net effect is that over time a comprehensive representation of the instantaneous state of all the Hue devices and other resources for a given bridge is built up as the values of a collection of retained MQTT messages, kept in sync with an in-memory snapshot of that representation in this subflow's context storage (really, the node context storage of a particular `function` node within this subflow).\n\nSee <https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events> for details.\n\n# Configuration\n\n`ADDRESS` environment variable is the bridge's IP address.\n\n`KEY` environment variable is the client access token for the message.\n\n`TOPIC` environment variable is the base MQTT topic to prepend to each output message as events are received. Each output message will have a complete topic string of the form `${TOPIC}/<uri>`, where `<uri>` is based on the type of event. Such topic strings are designed to align with the URI's for corresponding `GET` and `PUT` API messages. This allows the use of retained MQTT in a \"closed loop\" for persistence, synchronizing the displayed state of dashboard controls and so on.\n\n# Input\n\n`msg.topic` is passed through from the input message, for maintaining a \"closed loop\" of Hue device or other resource state that will be persisted using flow context in sync with retained MQTT messages.\n\n`msg.payload` is the updated state of some device or other resource received through retained MQTT messages.\n\n# Output\n\nA stream of messages with MQTT topics and payloads that correspond to events received from the Hue Bridge. The output messages have `msg.retain` set to `true` so that the state of each device or other resource will be persisted by the MQTT broker.\n\n# Side Effects\n\nA cumulative snapshot of the complete state of each Hue device or other resource is maintained in flow context as this subflow processes individual SSE messages. That internal snapshot is also updated on receipt of corresponding retained MQTT messages. Thus, this subflow acts as an in-memory representation of the external state of Hue hardware and keeps that in-memory in sync across reboots, using the MQTT broker as a persistence mechanism as well as a communication medium. All of this is designed as a work around for crippling defects in the overall design of the Hue Bridge API that make it challenging to use for its intended purpose without a great deal of pre- and post-processing of SSE messages and other API calls.",
-        "category": "hue",
-        "in": [],
-        "out": [
-            {
-                "x": 840,
-                "y": 240,
-                "wires": [
-                    {
-                        "id": "f0f2ac4aab7a4c46",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "ADDRESS",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "KEY",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "TOPIC",
-                "type": "str",
-                "value": "hue"
-            }
-        ],
-        "meta": {
-            "module": "node-red-subflow-hue-sse",
-            "version": "1.0.0",
-            "author": "parasaurolophus <apps@rader.us>",
-            "desc": "Forward Philips Hue Bridge SSE messages to MQTT",
-            "keywords": "sse, philips, hue",
-            "license": "Apache-2.0"
-        },
-        "color": "#3FADB5",
-        "outputLabels": [
-            "event message"
-        ],
-        "icon": "font-awesome/fa-lightbulb-o",
-        "status": {
-            "x": 180,
-            "y": 200,
-            "wires": [
-                {
-                    "id": "3138d66f2debfe3f",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
         "id": "e4e37acec8ce8ff8",
         "type": "subflow",
         "name": "Hue Metadata",
@@ -381,16 +321,6 @@
                 "wires": [
                     {
                         "id": "0db5fb5377e50287",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 620,
-                "y": 320,
-                "wires": [
-                    {
-                        "id": "2b2d52288fccad35",
                         "port": 0
                     }
                 ]
@@ -419,8 +349,8 @@
         "color": "#3FADB5",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 800,
-            "y": 240,
+            "x": 1360,
+            "y": 180,
             "wires": [
                 {
                     "id": "7e8a765a307e5767",
@@ -487,73 +417,6 @@
         }
     },
     {
-        "id": "c930ca19d66e430d",
-        "type": "subflow",
-        "name": "PowerView Rooms",
-        "info": "Use the _Hunter Douglas PowerView_&reg; hub API to get metadata for rooms.\n\n\nSee <https://motorisation.hde.nl/hd/powerview/general-guides/API/> for details.\n\n# Configuration\n\nThe `ADDRESS` environment variable must be configured with the IP address of the hub.\n\n# Input\n\nAll input message properties are ignored but care should be taken not to pass any through that could affect the behavior of a `http request` node in unintended ways.\n\n# Output\n\nHTTP response from the hub.\n",
-        "category": "powerview",
-        "in": [
-            {
-                "x": 40,
-                "y": 40,
-                "wires": [
-                    {
-                        "id": "f6dd79192e142da8"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 480,
-                "y": 120,
-                "wires": [
-                    {
-                        "id": "b716edcd37c1e93b",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 480,
-                "y": 200,
-                "wires": [
-                    {
-                        "id": "a1e93b0a11ef71a5",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "ADDRESS",
-                "type": "str",
-                "value": ""
-            }
-        ],
-        "meta": {
-            "module": "node-red-subflow-powerview-rooms",
-            "version": "1.0.0",
-            "author": "parasaurolophus <apps@rader.us>",
-            "desc": "Get the room configuration from a PowerView hub",
-            "keywords": "http, powerview, hunter douglas",
-            "license": "Apache-2.0"
-        },
-        "color": "#C0DEED",
-        "icon": "font-awesome/fa-align-justify",
-        "status": {
-            "x": 480,
-            "y": 280,
-            "wires": [
-                {
-                    "id": "68115d50b5cdb27d",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
         "id": "1a6413355bbb49cc",
         "type": "subflow",
         "name": "PowerView Scenes",
@@ -572,8 +435,8 @@
         ],
         "out": [
             {
-                "x": 500,
-                "y": 120,
+                "x": 1040,
+                "y": 40,
                 "wires": [
                     {
                         "id": "233e95db4a2e39b3",
@@ -582,8 +445,8 @@
                 ]
             },
             {
-                "x": 500,
-                "y": 180,
+                "x": 1040,
+                "y": 100,
                 "wires": [
                     {
                         "id": "1ea0cbef01c0daaa",
@@ -610,8 +473,8 @@
         "color": "#C0DEED",
         "icon": "font-awesome/fa-align-justify",
         "status": {
-            "x": 500,
-            "y": 240,
+            "x": 1040,
+            "y": 160,
             "wires": [
                 {
                     "id": "013c4b7388921d23",
@@ -1337,7 +1200,9 @@
             "a87a245333d87177"
         ],
         "x": 14,
-        "y": 219
+        "y": 99,
+        "w": 562,
+        "h": 122
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -1415,7 +1280,9 @@
             "dde4b6e7207eaaa2"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1523,7 +1390,9 @@
             "744875d6afbd2253"
         ],
         "x": 44,
-        "y": 179
+        "y": 179,
+        "w": 542,
+        "h": 122
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1542,7 +1411,9 @@
             "1993fd8165053adf"
         ],
         "x": 124,
-        "y": 271.5
+        "y": 271.5,
+        "w": 242,
+        "h": 97
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1563,7 +1434,9 @@
             "c897f7f0ee8680dc"
         ],
         "x": 394,
-        "y": 519
+        "y": 519,
+        "w": 232,
+        "h": 162
     },
     {
         "id": "73991d26373b19c7",
@@ -1588,7 +1461,9 @@
             "76d1cf6057f1e9bf"
         ],
         "x": 394,
-        "y": 219
+        "y": 219,
+        "w": 572,
+        "h": 282
     },
     {
         "id": "b940bf3a0df755de",
@@ -1609,26 +1484,9 @@
             "f12fbd86617caaf9"
         ],
         "x": 394,
-        "y": 39
-    },
-    {
-        "id": "716a5e2d5b07383b",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "Handle SSE messages from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "110ffac1ab9d4035",
-            "9402de8cb82a7cb9"
-        ],
-        "x": 14,
-        "y": 119
+        "y": 39,
+        "w": 232,
+        "h": 162
     },
     {
         "id": "c49a717c63369963",
@@ -1665,9 +1523,6 @@
             "color": "#000000"
         },
         "nodes": [
-            "577c54a2be0d38c9",
-            "67d809df8ea595ac",
-            "fac99573a09374b0",
             "cae953f2c04362ad",
             "536874de79956f84",
             "986a93941fd0726d",
@@ -1675,7 +1530,7 @@
         ],
         "x": 34,
         "y": 19,
-        "w": 1192,
+        "w": 752,
         "h": 82
     },
     {
@@ -1697,7 +1552,9 @@
             "6d42b6ceb063165f"
         ],
         "x": 44,
-        "y": 39
+        "y": 39,
+        "w": 552,
+        "h": 122
     },
     {
         "id": "4b0e89ddb66673e4",
@@ -1737,7 +1594,9 @@
             "0e03f7b1c487930f"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "7c175ce901294697",
@@ -1896,7 +1755,6 @@
             "06fb360d1605eee4",
             "5c11ca5b24ca72d8",
             "69a8648256e320f4",
-            "c0d1759df573b02a",
             "b5ef755eebfb11fb",
             "358804a740fed977",
             "9a4ad6cbad7170d7",
@@ -1906,7 +1764,9 @@
             "c6e09ee6553c5587"
         ],
         "x": 14,
-        "y": 359
+        "y": 239,
+        "w": 1492,
+        "h": 162
     },
     {
         "id": "d596f90a11f948b5",
@@ -1926,7 +1786,9 @@
             "528ecfb852f1b92e"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "d906806776a15be5",
@@ -1947,26 +1809,9 @@
             "3dd9a3ccf38d705a"
         ],
         "x": 14,
-        "y": 219
-    },
-    {
-        "id": "80d5524b4b86d1df",
-        "type": "group",
-        "z": "ccf1967ecbc089aa",
-        "name": "Handle SSE messages fromBasement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "023068eedd0bb4cc",
-            "15164c46a7616484"
-        ],
-        "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 542,
+        "h": 122
     },
     {
         "id": "a72897abb2ba46cf",
@@ -1984,7 +1829,6 @@
             "83db9630b63b06ef",
             "4a9fc38baa50aaaf",
             "34d791c69d030139",
-            "bb63b6666fb34d48",
             "9ad2fe3514535451",
             "d1d040779b99fb0a",
             "74f5393b9872d6a3",
@@ -1994,7 +1838,9 @@
             "14c5c6675b345fe3"
         ],
         "x": 14,
-        "y": 359
+        "y": 259,
+        "w": 1452,
+        "h": 162
     },
     {
         "id": "2238e89a8f0c976d",
@@ -2039,7 +1885,9 @@
             "4cecaa56f15ef51c"
         ],
         "x": 244,
-        "y": 179
+        "y": 179,
+        "w": 472,
+        "h": 202
     },
     {
         "id": "2b6a7b4485e6a4ea",
@@ -2059,7 +1907,9 @@
             "cd8c2f0951248f55"
         ],
         "x": 244,
-        "y": 39
+        "y": 39,
+        "w": 322,
+        "h": 122
     },
     {
         "id": "afca2ae3ed3cb5fc",
@@ -2166,7 +2016,7 @@
         "id": "dd577488786042ba",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard jolly scene on Chez Nous Main bridge using HomeKit",
+        "name": "Activate yard spooky scene on Chez Nous Main bridge using HomeKit",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -2195,7 +2045,7 @@
         "id": "0117b53379eade19",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard jolly scene on Chez Nous Main bridge using HomeKit",
+        "name": "Activate yard tribal scene on Chez Nous Main bridge using HomeKit",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -2700,349 +2550,6 @@
         ]
     },
     {
-        "id": "206d7b60d1ef33b4",
-        "type": "sse-client",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "url": "",
-        "events": [],
-        "headers": {},
-        "proxy": "",
-        "restart": true,
-        "rejectUnauthorized": false,
-        "withCredentials": true,
-        "timeout": "60",
-        "x": 550,
-        "y": 80,
-        "wires": [
-            [
-                "cfd7e92440c5d24a"
-            ]
-        ]
-    },
-    {
-        "id": "cfd7e92440c5d24a",
-        "type": "json",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 690,
-        "y": 80,
-        "wires": [
-            [
-                "37c6783cf4d6a4a7"
-            ]
-        ]
-    },
-    {
-        "id": "400f654f1ed89c9b",
-        "type": "change",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "headers",
-                "pt": "msg",
-                "to": "{\"hue-application-key\": $env('KEY')}",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "'https://' & $env('ADDRESS') & '/eventstream/clip/v2'",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 80,
-        "wires": [
-            [
-                "206d7b60d1ef33b4"
-            ]
-        ]
-    },
-    {
-        "id": "9d515bab91d941ea",
-        "type": "catch",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "scope": [
-            "206d7b60d1ef33b4"
-        ],
-        "uncaught": false,
-        "x": 70,
-        "y": 40,
-        "wires": [
-            [
-                "96a5e8522f64a1b0"
-            ]
-        ]
-    },
-    {
-        "id": "96a5e8522f64a1b0",
-        "type": "delay",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "30",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 200,
-        "y": 40,
-        "wires": [
-            [
-                "400f654f1ed89c9b"
-            ]
-        ]
-    },
-    {
-        "id": "37c6783cf4d6a4a7",
-        "type": "split",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 390,
-        "y": 160,
-        "wires": [
-            [
-                "049a9d86a4cc9f76"
-            ]
-        ]
-    },
-    {
-        "id": "3138d66f2debfe3f",
-        "type": "status",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "scope": [
-            "206d7b60d1ef33b4",
-            "74bcc1fbdf609991"
-        ],
-        "x": 80,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "049a9d86a4cc9f76",
-        "type": "change",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.data",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 160,
-        "wires": [
-            [
-                "0edfd51d5e69df8d"
-            ]
-        ]
-    },
-    {
-        "id": "0edfd51d5e69df8d",
-        "type": "split",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 690,
-        "y": 160,
-        "wires": [
-            [
-                "cd4f06fa4e36b8c6"
-            ]
-        ]
-    },
-    {
-        "id": "a7d422f5b4f60196",
-        "type": "change",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "$env('TOPIC') & '/' & payload.type & '/' & payload.id",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 540,
-        "y": 240,
-        "wires": [
-            [
-                "f0f2ac4aab7a4c46"
-            ]
-        ]
-    },
-    {
-        "id": "cd4f06fa4e36b8c6",
-        "type": "function",
-        "z": "acfe4e875b80c543",
-        "name": "updateState",
-        "func": "let key = msg.payload.type + '/' + msg.payload.id\nlet state = context.get(key) || {}\n\nfor (let attribute in msg.payload) {\n    state[attribute] = msg.payload[attribute]\n}\n\ncontext.set(key, state)\nmsg.payload = state\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 240,
-        "wires": [
-            [
-                "a7d422f5b4f60196"
-            ]
-        ],
-        "info": "Persist in node context a cumulative representation of the values of all the attributes of each message as it passes through. Pass along the updated, cumulative payload. This is a work around for a number of crippling defects in the Hue Bridge API V2."
-    },
-    {
-        "id": "f0f2ac4aab7a4c46",
-        "type": "rbe",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 690,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "577e400ca2ea74ae",
-        "type": "switch",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "property": "retain",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 210,
-        "y": 280,
-        "wires": [
-            [
-                "cd4f06fa4e36b8c6"
-            ]
-        ]
-    },
-    {
-        "id": "6bafa753de19cd40",
-        "type": "function",
-        "z": "acfe4e875b80c543",
-        "name": "atStart",
-        "func": "let now = Date.now()\n\nnode.status({text: now, fill: 'yellow', shape: 'dot'})\nmsg.payload = now\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "setTimeout(() => {\n\n        let now = Date.now()\n        \n        node.status({text: now, fill: 'green', shape: 'dot'})\n        node.send({payload: now})\n\n    },\n\n    1000)\n",
-        "finalize": "",
-        "libs": [],
-        "x": 210,
-        "y": 120,
-        "wires": [
-            [
-                "400f654f1ed89c9b"
-            ]
-        ],
-        "info": "Send a message when the flow starts and, optionally, at a fixed interval thereafter.\n\nSubsequent messages can also be generated on demand by sending anything to this function node's input. In the latter case, the input message is ignored and the triggered message will have the same content as those generated by timers.\n\nUse in subflows where `trigger` nodes are not allowed.\n\n| Environment Variable | Default   | Description                                                                       |\n|----------------------|-----------|-----------------------------------------------------------------------------------|\n| `DELAY`              | `1000`    | Milliseconds to wait at start before sending a message                            |\n| `INTERVAL`           | `0`       | If greater than 0, milliseconds to wait between subsequent messages               |\n| `TOPIC`              | `\"timer\"` | Value for `msg.topic`                                                             |\n| `PAYLOAD`            | `null`    | Value for `msg.topic`; if `null`, then payload will contain the current timestamp |"
-    },
-    {
-        "id": "74bcc1fbdf609991",
-        "type": "mqtt in",
-        "z": "acfe4e875b80c543",
-        "name": "",
-        "topic": "${TOPIC}",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 80,
-        "y": 280,
-        "wires": [
-            [
-                "577e400ca2ea74ae"
-            ]
-        ]
-    },
-    {
         "id": "0ced85e29fd61f45",
         "type": "split",
         "z": "e4e37acec8ce8ff8",
@@ -3094,8 +2601,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 120,
-        "y": 220,
+        "x": 700,
+        "y": 120,
         "wires": [
             [
                 "4a8994fb6eac6d69"
@@ -3122,8 +2629,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 270,
-        "y": 220,
+        "x": 850,
+        "y": 120,
         "wires": [
             [
                 "b8db07d6160e53c2"
@@ -3144,8 +2651,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 390,
-        "y": 200,
+        "x": 970,
+        "y": 100,
         "wires": [
             [
                 "2b2d52288fccad35"
@@ -3171,8 +2678,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
-        "y": 280,
+        "x": 1060,
+        "y": 180,
         "wires": [
             [
                 "7e8a765a307e5767"
@@ -3245,8 +2752,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 240,
+        "x": 1240,
+        "y": 180,
         "wires": [
             []
         ]
@@ -3554,160 +3061,6 @@
         ]
     },
     {
-        "id": "f6dd79192e142da8",
-        "type": "change",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "'http://' & $env('ADDRESS') & '/api/rooms/'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 150,
-        "y": 40,
-        "wires": [
-            [
-                "c5daa27f12b90801"
-            ]
-        ]
-    },
-    {
-        "id": "c5daa27f12b90801",
-        "type": "http request",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 310,
-        "y": 40,
-        "wires": [
-            [
-                "75a9ea27882a0d6d"
-            ]
-        ]
-    },
-    {
-        "id": "75a9ea27882a0d6d",
-        "type": "change",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.roomData",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 40,
-        "wires": [
-            [
-                "c32ed953ad953c08"
-            ]
-        ]
-    },
-    {
-        "id": "c32ed953ad953c08",
-        "type": "split",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 110,
-        "y": 120,
-        "wires": [
-            [
-                "5a4fa813fbb18022"
-            ]
-        ]
-    },
-    {
-        "id": "5a4fa813fbb18022",
-        "type": "base64",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "action": "b64",
-        "property": "payload.name",
-        "x": 240,
-        "y": 120,
-        "wires": [
-            [
-                "b716edcd37c1e93b"
-            ]
-        ]
-    },
-    {
-        "id": "b716edcd37c1e93b",
-        "type": "template",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{\"id\":{{payload.id}},\"name\":\"{{payload.name}}\"}",
-        "output": "json",
-        "x": 380,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "68115d50b5cdb27d",
-        "type": "status",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "scope": [
-            "c5daa27f12b90801"
-        ],
-        "x": 380,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a1e93b0a11ef71a5",
-        "type": "catch",
-        "z": "c930ca19d66e430d",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 380,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "643e95dd6df2d982",
         "type": "change",
         "z": "1a6413355bbb49cc",
@@ -3802,8 +3155,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 110,
-        "y": 120,
+        "x": 650,
+        "y": 40,
         "wires": [
             [
                 "18956352f21a6233"
@@ -3817,8 +3170,8 @@
         "name": "",
         "action": "b64",
         "property": "payload.name",
-        "x": 240,
-        "y": 120,
+        "x": 780,
+        "y": 40,
         "wires": [
             [
                 "233e95db4a2e39b3"
@@ -3833,8 +3186,8 @@
         "scope": [
             "f9e32f55c8917d91"
         ],
-        "x": 400,
-        "y": 240,
+        "x": 940,
+        "y": 160,
         "wires": [
             []
         ]
@@ -3845,9 +3198,9 @@
         "z": "1a6413355bbb49cc",
         "name": "",
         "scope": null,
-        "uncaught": false,
-        "x": 400,
-        "y": 180,
+        "uncaught": true,
+        "x": 920,
+        "y": 100,
         "wires": [
             []
         ]
@@ -3863,8 +3216,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 120,
+        "x": 930,
+        "y": 40,
         "wires": [
             []
         ]
@@ -7225,7 +6578,7 @@
         "name": "",
         "mode": "link",
         "links": [
-            "04ad8639f667bd76"
+            "a6475288998b4e07"
         ],
         "x": 795,
         "y": 300,
@@ -7239,7 +6592,7 @@
         "name": "",
         "mode": "link",
         "links": [
-            "cc9a7b174ce21d63"
+            "a225232dc86a3b6f"
         ],
         "x": 795,
         "y": 340,
@@ -7418,7 +6771,7 @@
         "mode": "return",
         "links": [],
         "x": 345,
-        "y": 260,
+        "y": 140,
         "wires": []
     },
     {
@@ -7499,7 +6852,7 @@
         "name": "send to chez nous main",
         "links": [],
         "x": 55,
-        "y": 280,
+        "y": 160,
         "wires": [
             [
                 "6e6586249457134b"
@@ -7508,55 +6861,6 @@
         "outputLabels": [
             "topic = uri, payload = body, method = HTTP request type"
         ]
-    },
-    {
-        "id": "110ffac1ab9d4035",
-        "type": "subflow:acfe4e875b80c543",
-        "z": "a00ccef1301f21e3",
-        "g": "716a5e2d5b07383b",
-        "name": "Chez Nous Main SSE",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.12",
-                "type": "str"
-            },
-            {
-                "name": "KEY",
-                "value": "EhKZJjy5vLvz-3bz06K9a8MLfCaSSzR5WxSK8a-y",
-                "type": "str"
-            },
-            {
-                "name": "TOPIC",
-                "value": "hue/chez-nous-main",
-                "type": "str"
-            }
-        ],
-        "x": 140,
-        "y": 160,
-        "wires": [
-            [
-                "9402de8cb82a7cb9"
-            ]
-        ]
-    },
-    {
-        "id": "9402de8cb82a7cb9",
-        "type": "link out",
-        "z": "a00ccef1301f21e3",
-        "g": "716a5e2d5b07383b",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "49a3148e23e3ff94",
-            "1dfaa2404fcc8cbc",
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
-        ],
-        "x": 275,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "c6e09ee6553c5587",
@@ -7572,8 +6876,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1370,
-        "y": 400,
+        "x": 1380,
+        "y": 280,
         "wires": []
     },
     {
@@ -7595,7 +6899,7 @@
             }
         ],
         "x": 200,
-        "y": 280,
+        "y": 160,
         "wires": [
             [
                 "cd3d6cfea67f490b"
@@ -7633,7 +6937,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 130,
-        "y": 420,
+        "y": 280,
         "wires": [
             [
                 "5c11ca5b24ca72d8"
@@ -7651,7 +6955,7 @@
         ],
         "timeout": "30",
         "x": 340,
-        "y": 420,
+        "y": 280,
         "wires": [
             [
                 "b5ef755eebfb11fb"
@@ -7677,33 +6981,12 @@
             }
         ],
         "x": 770,
-        "y": 420,
+        "y": 280,
         "wires": [
             [
                 "358804a740fed977"
-            ],
-            [
-                "c0d1759df573b02a"
             ]
         ]
-    },
-    {
-        "id": "c0d1759df573b02a",
-        "type": "link out",
-        "z": "a00ccef1301f21e3",
-        "g": "41cef0af2772c23a",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "49a3148e23e3ff94",
-            "1dfaa2404fcc8cbc",
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
-        ],
-        "x": 885,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "b5ef755eebfb11fb",
@@ -7713,7 +6996,7 @@
         "config": "535a2813bb8f3319",
         "name": "take chez nous main",
         "x": 570,
-        "y": 420,
+        "y": 280,
         "wires": [
             [
                 "69a8648256e320f4"
@@ -7727,8 +7010,8 @@
         "g": "41cef0af2772c23a",
         "config": "535a2813bb8f3319",
         "name": "leave chez nous main",
-        "x": 970,
-        "y": 400,
+        "x": 980,
+        "y": 280,
         "wires": [
             [
                 "bb32f45d1a4e196d"
@@ -7746,7 +7029,7 @@
         ],
         "uncaught": false,
         "x": 90,
-        "y": 500,
+        "y": 360,
         "wires": [
             [
                 "0a7975b261bc92b0"
@@ -7761,7 +7044,7 @@
         "config": "535a2813bb8f3319",
         "name": "leave chez nous main",
         "x": 260,
-        "y": 500,
+        "y": 360,
         "wires": [
             [
                 "b879dc87b86093fc"
@@ -7783,7 +7066,7 @@
         "statusVal": "error.message",
         "statusType": "msg",
         "x": 490,
-        "y": 500,
+        "y": 360,
         "wires": []
     },
     {
@@ -7801,7 +7084,7 @@
         "statusVal": "error.message",
         "statusType": "msg",
         "x": 430,
-        "y": 300,
+        "y": 180,
         "wires": []
     },
     {
@@ -7817,8 +7100,8 @@
                 "type": "str"
             }
         ],
-        "x": 1180,
-        "y": 400,
+        "x": 1190,
+        "y": 280,
         "wires": [
             [
                 "c6e09ee6553c5587"
@@ -7904,7 +7187,7 @@
         "mode": "return",
         "links": [],
         "x": 345,
-        "y": 260,
+        "y": 160,
         "wires": []
     },
     {
@@ -7915,7 +7198,7 @@
         "name": "send to basement hue",
         "links": [],
         "x": 55,
-        "y": 280,
+        "y": 180,
         "wires": [
             [
                 "1c27f4a9b46c4f7d"
@@ -7944,7 +7227,7 @@
             }
         ],
         "x": 200,
-        "y": 280,
+        "y": 180,
         "wires": [
             [
                 "726b4d347f62a02d"
@@ -7969,56 +7252,7 @@
         "statusVal": "error.message",
         "statusType": "msg",
         "x": 420,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "023068eedd0bb4cc",
-        "type": "subflow:acfe4e875b80c543",
-        "z": "ccf1967ecbc089aa",
-        "g": "80d5524b4b86d1df",
-        "name": "Basement Hue SSE",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.34",
-                "type": "str"
-            },
-            {
-                "name": "KEY",
-                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
-                "type": "str"
-            },
-            {
-                "name": "TOPIC",
-                "value": "hue/basement-hue",
-                "type": "str"
-            }
-        ],
-        "x": 130,
-        "y": 160,
-        "wires": [
-            [
-                "15164c46a7616484"
-            ]
-        ]
-    },
-    {
-        "id": "15164c46a7616484",
-        "type": "link out",
-        "z": "ccf1967ecbc089aa",
-        "g": "80d5524b4b86d1df",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "49a3148e23e3ff94",
-            "1dfaa2404fcc8cbc",
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
-        ],
-        "x": 255,
-        "y": 160,
+        "y": 200,
         "wires": []
     },
     {
@@ -8036,7 +7270,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1340,
-        "y": 400,
+        "y": 300,
         "wires": []
     },
     {
@@ -8067,7 +7301,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 130,
-        "y": 420,
+        "y": 300,
         "wires": [
             [
                 "4a9fc38baa50aaaf"
@@ -8085,7 +7319,7 @@
         ],
         "timeout": "30",
         "x": 330,
-        "y": 420,
+        "y": 300,
         "wires": [
             [
                 "9ad2fe3514535451"
@@ -8111,33 +7345,12 @@
             }
         ],
         "x": 740,
-        "y": 420,
+        "y": 300,
         "wires": [
             [
                 "d1d040779b99fb0a"
-            ],
-            [
-                "bb63b6666fb34d48"
             ]
         ]
-    },
-    {
-        "id": "bb63b6666fb34d48",
-        "type": "link out",
-        "z": "ccf1967ecbc089aa",
-        "g": "a72897abb2ba46cf",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "49a3148e23e3ff94",
-            "1dfaa2404fcc8cbc",
-            "8510638dbc5dd48c",
-            "f495f33164cc7b42",
-            "30286901101a6095"
-        ],
-        "x": 855,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "9ad2fe3514535451",
@@ -8147,7 +7360,7 @@
         "config": "739cc6382b87f23e",
         "name": "take basement hue",
         "x": 540,
-        "y": 420,
+        "y": 300,
         "wires": [
             [
                 "34d791c69d030139"
@@ -8162,7 +7375,7 @@
         "config": "739cc6382b87f23e",
         "name": "leave basement hue",
         "x": 940,
-        "y": 400,
+        "y": 300,
         "wires": [
             [
                 "ef6a6e44d928aace"
@@ -8184,7 +7397,7 @@
         "statusVal": "error.message",
         "statusType": "msg",
         "x": 490,
-        "y": 500,
+        "y": 380,
         "wires": []
     },
     {
@@ -8201,7 +7414,7 @@
             }
         ],
         "x": 1150,
-        "y": 400,
+        "y": 300,
         "wires": [
             [
                 "4828d97867b2ea95"
@@ -8216,7 +7429,7 @@
         "config": "739cc6382b87f23e",
         "name": "leave basement hue",
         "x": 260,
-        "y": 500,
+        "y": 380,
         "wires": [
             [
                 "74f5393b9872d6a3"
@@ -8234,61 +7447,10 @@
         ],
         "uncaught": false,
         "x": 90,
-        "y": 500,
+        "y": 380,
         "wires": [
             [
                 "3021b1bb30da53b0"
-            ]
-        ]
-    },
-    {
-        "id": "577c54a2be0d38c9",
-        "type": "subflow:c930ca19d66e430d",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.30",
-                "type": "str"
-            }
-        ],
-        "x": 330,
-        "y": 60,
-        "wires": [
-            [
-                "fac99573a09374b0"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "67d809df8ea595ac",
-        "type": "join",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 610,
-        "y": 60,
-        "wires": [
-            [
-                "536874de79956f84"
             ]
         ]
     },
@@ -8305,39 +7467,13 @@
                 "type": "str"
             }
         ],
-        "x": 770,
+        "x": 330,
         "y": 60,
         "wires": [
             [
                 "986a93941fd0726d"
             ],
             []
-        ]
-    },
-    {
-        "id": "fac99573a09374b0",
-        "type": "switch",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "jsonata_exp",
-                "v": "payload.name = 'Living Room' or payload.name = 'Dining Room' or payload.name = 'Default Room'",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 490,
-        "y": 60,
-        "wires": [
-            [
-                "67d809df8ea595ac"
-            ]
         ]
     },
     {
@@ -8406,7 +7542,7 @@
         "timeout": "",
         "count": "",
         "reduceRight": false,
-        "x": 930,
+        "x": 490,
         "y": 60,
         "wires": [
             [
@@ -8428,7 +7564,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1090,
+        "x": 650,
         "y": 60,
         "wires": []
     },
@@ -8454,7 +7590,7 @@
         "y": 60,
         "wires": [
             [
-                "577c54a2be0d38c9"
+                "536874de79956f84"
             ]
         ]
     },
@@ -10347,9 +9483,10 @@
         "type": "link in",
         "z": "adfd8ae4a2eaf844",
         "g": "dd577488786042ba",
-        "name": "yard jolly",
+        "name": "yard spooky",
         "links": [
-            "b0ee0f2f8155fe9b"
+            "b0ee0f2f8155fe9b",
+            "c68369c3781694e3"
         ],
         "x": 185,
         "y": 640,
@@ -10588,9 +9725,10 @@
         "type": "link in",
         "z": "adfd8ae4a2eaf844",
         "g": "0117b53379eade19",
-        "name": "yard jolly",
+        "name": "yard tribal",
         "links": [
-            "b0ee0f2f8155fe9b"
+            "b0ee0f2f8155fe9b",
+            "7ab1620c3349854b"
         ],
         "x": 185,
         "y": 820,
