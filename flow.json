@@ -1242,49 +1242,6 @@
         }
     },
     {
-        "id": "e467d9c73202b5bf",
-        "type": "subflow",
-        "name": "Filter Shade Automation",
-        "info": "",
-        "category": "waubesa",
-        "in": [
-            {
-                "x": 60,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "bd9e10e67860b954"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 1000,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "74140919f0bc2a8a",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {},
-        "color": "#DDAA99",
-        "status": {
-            "x": 880,
-            "y": 140,
-            "wires": [
-                {
-                    "id": "444501da35d4a5b2",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
         "id": "be3fb84e6a4c7720",
         "type": "subflow",
         "name": "Homebridge Switch",
@@ -1395,16 +1352,21 @@
             "color": "#000000"
         },
         "nodes": [
-            "e2139e7bb021147f",
             "af712bf4ec4004b4",
-            "0bdc1e921a0eafd6",
-            "b33691546f7f459a",
-            "fb7fed76720fc92b",
             "18f53b7627e645e4",
-            "b22f3931c3a7aaa9"
+            "b22f3931c3a7aaa9",
+            "8aafed6602093ea8",
+            "34a695c0d0260e5a",
+            "d07f9471a4a06ae8",
+            "81306b71041535e7",
+            "891ef40649e94de7",
+            "738f87bcb49da3f9",
+            "50126b0005836a4a"
         ],
-        "x": 104,
-        "y": 179
+        "x": 34,
+        "y": 179,
+        "w": 1232,
+        "h": 162
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1419,40 +1381,21 @@
             "color": "#000000"
         },
         "nodes": [
-            "ca1e17d731e4816a",
             "074874e0ff13a7b1",
-            "af85ec2f67fb223d",
-            "edbb89b1218fdd21",
-            "a5ed6c2a7a6ecc4b",
             "a5ea4f7eb61a9136",
-            "60976d31a8dafe99"
+            "60976d31a8dafe99",
+            "8485ba331bc01994",
+            "256ba437f41dfbcf",
+            "6cf088c77229de1d",
+            "73f7af4dcc04afe7",
+            "4168c5b783261a2f",
+            "10e6526c82554f52",
+            "c77ccdc1b5b4d2ef"
         ],
-        "x": 104,
-        "y": 319
-    },
-    {
-        "id": "03822925b892df4a",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard spooky scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "61d42601aace19ae",
-            "3dc20d8212996ca2",
-            "241098d9131aaff5",
-            "58da5eea28596fe8",
-            "44286bc52974ad2c",
-            "54e2411e6d2fa497",
-            "cc9a7b174ce21d63"
-        ],
-        "x": 104,
-        "y": 459
+        "x": 34,
+        "y": 359,
+        "w": 1212,
+        "h": 162
     },
     {
         "id": "ce88172c5dbc9f67",
@@ -1498,9 +1441,9 @@
             "955cc461db6d2ee1",
             "cdfe4f6ec3551a19"
         ],
-        "x": 54,
+        "x": 34,
         "y": 39,
-        "w": 1242,
+        "w": 1222,
         "h": 162
     },
     {
@@ -1527,34 +1470,10 @@
             "81b0e480955e02c8",
             "59700d692d2c3561"
         ],
-        "x": 54,
+        "x": 34,
         "y": 399,
-        "w": 1292,
+        "w": 1272,
         "h": 162
-    },
-    {
-        "id": "7872f889f870b7ea",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard tribal scene on Chez Nous Main bridge using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "5fed7c286b1b64b0",
-            "f52db1057ce1acdf",
-            "e3399cac6bef15a2",
-            "1b86868f195f85f4",
-            "1e9eea60806a6dc1",
-            "3a372efc2402f538",
-            "04ad8639f667bd76"
-        ],
-        "x": 104,
-        "y": 599
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1580,9 +1499,9 @@
             "673aef6e72d03b7b",
             "280e11df2383a1be"
         ],
-        "x": 54,
+        "x": 34,
         "y": 219,
-        "w": 1272,
+        "w": 1252,
         "h": 162
     },
     {
@@ -1729,7 +1648,9 @@
             "db81cf75a2ca1776"
         ],
         "x": 44,
-        "y": 339
+        "y": 299,
+        "w": 352,
+        "h": 82
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1753,7 +1674,9 @@
             "1cee4f351bd59563"
         ],
         "x": 34,
-        "y": 19
+        "y": 19,
+        "w": 1192,
+        "h": 82
     },
     {
         "id": "5a2c18585609cfae",
@@ -1794,7 +1717,9 @@
             "18038cbbe3f73104"
         ],
         "x": 134,
-        "y": 59
+        "y": 59,
+        "w": 369,
+        "h": 82
     },
     {
         "id": "9f344af23b60f386",
@@ -1858,7 +1783,9 @@
             "e2f5213b9ccd0528"
         ],
         "x": 354,
-        "y": 39
+        "y": 39,
+        "w": 472,
+        "h": 162
     },
     {
         "id": "0fe686a291277b71",
@@ -1880,8 +1807,10 @@
             "801bc206cfa0803d",
             "4a8fa45a5356afb7"
         ],
-        "x": 54,
-        "y": 319
+        "x": 114,
+        "y": 219,
+        "w": 732,
+        "h": 182
     },
     {
         "id": "541f223d7251abbe",
@@ -1899,7 +1828,9 @@
             "d31eac19e524875d"
         ],
         "x": 34,
-        "y": 119
+        "y": 119,
+        "w": 292,
+        "h": 82
     },
     {
         "id": "98379557a8077dc0",
@@ -1920,8 +1851,10 @@
             "02a7ad03458a135e",
             "095af1f6e9620187"
         ],
-        "x": 344,
-        "y": 519
+        "x": 404,
+        "y": 419,
+        "w": 662,
+        "h": 110
     },
     {
         "id": "2afac67683a580f7",
@@ -1939,14 +1872,13 @@
             "3c70a7443900cb3f",
             "0514602b711a8136",
             "7a1f5cbf9b84c489",
-            "6a01fdc18127e8e9",
-            "48bae5dfd9e5eceb",
-            "2ab3e93641907bc5",
             "eece269a0f652f42",
             "8c4fab16172ba280"
         ],
         "x": 34,
-        "y": 119
+        "y": 119,
+        "w": 632,
+        "h": 162
     },
     {
         "id": "41cef0af2772c23a",
@@ -2082,8 +2014,10 @@
             "dc1d9849661717f1",
             "1c30eff0cb020362"
         ],
-        "x": 104,
-        "y": 39
+        "x": 34,
+        "y": 39,
+        "w": 532,
+        "h": 122
     },
     {
         "id": "3eef89f5b02c9489",
@@ -2143,8 +2077,10 @@
             "bc385f9e10d6a793",
             "477668ef1f02bcfd"
         ],
-        "x": 804,
-        "y": 419
+        "x": 864,
+        "y": 319,
+        "w": 262,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -2170,29 +2106,10 @@
             "75b7b97213341620",
             "943ad59722b07bd3"
         ],
-        "x": 54,
+        "x": 34,
         "y": 579,
-        "w": 1292,
+        "w": 1272,
         "h": 162
-    },
-    {
-        "id": "af92fe447a5b5c32",
-        "type": "group",
-        "z": "7689d3d4b864d0dd",
-        "name": "Filter shade automation events according to bedtime",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "cf7f0464e17fe251",
-            "3169b6e6e492bf2d"
-        ],
-        "x": 354,
-        "y": 219
     },
     {
         "id": "9568bdc73703ef81",
@@ -2213,7 +2130,9 @@
             "615814ef789eb7fc"
         ],
         "x": 134,
-        "y": 159
+        "y": 159,
+        "w": 492,
+        "h": 122
     },
     {
         "id": "d20094d180b611cb",
@@ -2235,12 +2154,71 @@
             "d782e2dc7ed5876c",
             "82f5435131125669",
             "e2c95a57106e0678",
-            "ed9e0aa24066f024"
+            "ed9e0aa24066f024",
+            "9f64f8af66161048"
         ],
         "x": 34,
         "y": 279,
-        "w": 1032,
-        "h": 202
+        "w": 1152,
+        "h": 162
+    },
+    {
+        "id": "dd577488786042ba",
+        "type": "group",
+        "z": "adfd8ae4a2eaf844",
+        "name": "Activate yard jolly scene on Chez Nous Main bridge using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "29a6f065ab64d562",
+            "53afc06e5cea0b0d",
+            "a225232dc86a3b6f",
+            "af18884d0654cad4",
+            "ce692ff752c427a6",
+            "9fd4f397e5d23392",
+            "b53c4df909073382",
+            "535a03ac7543189f",
+            "a38379b6ac71a65b",
+            "c3f764cbe42d8a1a"
+        ],
+        "x": 34,
+        "y": 539,
+        "w": 1232,
+        "h": 162
+    },
+    {
+        "id": "0117b53379eade19",
+        "type": "group",
+        "z": "adfd8ae4a2eaf844",
+        "name": "Activate yard jolly scene on Chez Nous Main bridge using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "816be5cd3b82bf0b",
+            "ed68842beab6579e",
+            "a6475288998b4e07",
+            "bd955f00594a8f9c",
+            "35ec7b633401cd2e",
+            "c5dfb48af9335c64",
+            "dae1044a876b5a7f",
+            "c69fa7fd9f959785",
+            "49b54cbd4a9fb605",
+            "56d256f33262e091"
+        ],
+        "x": 34,
+        "y": 719,
+        "w": 1232,
+        "h": 162
     },
     {
         "id": "e79e0110c2317edb",
@@ -2442,110 +2420,6 @@
         "type": "semaphore-config",
         "name": "basement hue",
         "capacity": "1"
-    },
-    {
-        "id": "9baaf509ad48bed9",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Yard Dynamic Sunset",
-        "hostType": 1,
-        "pinCode": "855-88-078",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "0101",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "3530c15956a26d05",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Yard Dynamic Jolly",
-        "hostType": 1,
-        "pinCode": "063-84-163",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "0102",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "b1e430888ffe3cb4",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Yard Dynamic Spooky",
-        "hostType": 1,
-        "pinCode": "968-27-870",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "0103",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
-    },
-    {
-        "id": "90af3b55ec091c59",
-        "type": "homekit-standalone",
-        "accessoryCategory": "8",
-        "bridgeName": "Yard Dynamic Tribal",
-        "hostType": 1,
-        "pinCode": "706-42-885",
-        "port": "",
-        "advertiser": "bonjour-hap",
-        "allowInsecureRequest": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "0104",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "customMdnsConfig": false,
-        "mdnsMulticast": true,
-        "mdnsInterface": "",
-        "mdnsPort": "",
-        "mdnsIp": "",
-        "mdnsTtl": "",
-        "mdnsLoopback": true,
-        "mdnsReuseAddr": true,
-        "allowMessagePassthrough": true
     },
     {
         "id": "3111257f22032077",
@@ -6162,189 +6036,6 @@
         ]
     },
     {
-        "id": "c144399d0f7b43c7",
-        "type": "change",
-        "z": "e467d9c73202b5bf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "now",
-                "pt": "msg",
-                "to": "",
-                "tot": "date"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
-        "y": 100,
-        "wires": [
-            [
-                "584435dc9a838f9d"
-            ]
-        ]
-    },
-    {
-        "id": "584435dc9a838f9d",
-        "type": "moment",
-        "z": "e467d9c73202b5bf",
-        "name": "H:mm",
-        "topic": "",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "now",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 430,
-        "y": 100,
-        "wires": [
-            [
-                "07be31b13645f4d3"
-            ]
-        ]
-    },
-    {
-        "id": "07be31b13645f4d3",
-        "type": "change",
-        "z": "e467d9c73202b5bf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "now",
-                "pt": "msg",
-                "to": "(\t$now := $map($split(now,':'), $number);\t$now[0] * 60 + $now[1]\t)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 570,
-        "y": 100,
-        "wires": [
-            [
-                "efa9b74bc824457f",
-                "444501da35d4a5b2"
-            ]
-        ]
-    },
-    {
-        "id": "efa9b74bc824457f",
-        "type": "switch",
-        "z": "e467d9c73202b5bf",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "jsonata_exp",
-                "v": "payload.bedtime - now > 60",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 730,
-        "y": 60,
-        "wires": [
-            [
-                "74140919f0bc2a8a"
-            ]
-        ]
-    },
-    {
-        "id": "74140919f0bc2a8a",
-        "type": "change",
-        "z": "e467d9c73202b5bf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.trigger",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 880,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "444501da35d4a5b2",
-        "type": "change",
-        "z": "e467d9c73202b5bf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.bedtime - now & ' | ' & payload.trigger",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bd9e10e67860b954",
-        "type": "join",
-        "z": "e467d9c73202b5bf",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 150,
-        "y": 100,
-        "wires": [
-            [
-                "c144399d0f7b43c7"
-            ]
-        ]
-    },
-    {
         "id": "ee2c58a644a8f266",
         "type": "change",
         "z": "be3fb84e6a4c7720",
@@ -6472,7 +6163,11 @@
             "6e689aadd1f722a9",
             "673aef6e72d03b7b",
             "81b0e480955e02c8",
-            "75b7b97213341620"
+            "75b7b97213341620",
+            "891ef40649e94de7",
+            "4168c5b783261a2f",
+            "535a03ac7543189f",
+            "c69fa7fd9f959785"
         ],
         "x": 175,
         "y": 100,
@@ -6913,8 +6608,8 @@
         "targetType": "full",
         "statusVal": "error.messsage",
         "statusType": "msg",
-        "x": 530,
-        "y": 440,
+        "x": 510,
+        "y": 400,
         "wires": []
     },
     {
@@ -6936,7 +6631,7 @@
         "payload": "true",
         "payloadType": "bool",
         "x": 130,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "d9ccacf1c1072873"
@@ -6962,7 +6657,7 @@
         "payload": "false",
         "payloadType": "bool",
         "x": 130,
-        "y": 400,
+        "y": 380,
         "wires": [
             [
                 "d9ccacf1c1072873"
@@ -6993,7 +6688,7 @@
             }
         ],
         "x": 310,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "d782e2dc7ed5876c"
@@ -7016,7 +6711,7 @@
         "links": [
             "30286901101a6095"
         ],
-        "x": 495,
+        "x": 475,
         "y": 320,
         "wires": []
     },
@@ -7027,8 +6722,8 @@
         "g": "d20094d180b611cb",
         "config": "2e4541b20001f580",
         "name": "take enable",
-        "x": 550,
-        "y": 380,
+        "x": 530,
+        "y": 360,
         "wires": [
             [
                 "e2c95a57106e0678"
@@ -7055,8 +6750,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 380,
+        "x": 740,
+        "y": 360,
         "wires": [
             [
                 "ed9e0aa24066f024"
@@ -7070,11 +6765,31 @@
         "g": "d20094d180b611cb",
         "config": "2e4541b20001f580",
         "name": "leave enable",
-        "x": 970,
-        "y": 380,
+        "x": 950,
+        "y": 360,
         "wires": [
-            []
+            [
+                "9f64f8af66161048"
+            ]
         ]
+    },
+    {
+        "id": "9f64f8af66161048",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "d20094d180b611cb",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 1090,
+        "y": 360,
+        "wires": []
     },
     {
         "id": "d31eac19e524875d",
@@ -7095,8 +6810,7 @@
         "wires": [
             [
                 "53b63e2bae9ee295",
-                "0d2076033917b70d",
-                "3169b6e6e492bf2d"
+                "0d2076033917b70d"
             ]
         ]
     },
@@ -7112,8 +6826,8 @@
         "initialize": "setTimeout(() => {\n\n    let pad = (n) => {\n\n        return ('00' + n).slice(-2)\n\n    }\n\n    let options = []\n\n    for (let minutes = 1260; minutes <= 1380; minutes += 30) {\n\n        let label = pad(Math.floor(minutes / 60)) + ':' + pad(minutes % 60)\n        let option = {}\n\n        option[label] = minutes\n        options.push(option)\n\n    }\n\n    node.send({\n        options: options\n    })\n\n}, 500)",
         "finalize": "",
         "libs": [],
-        "x": 160,
-        "y": 420,
+        "x": 220,
+        "y": 320,
         "wires": [
             [
                 "801bc206cfa0803d"
@@ -7140,8 +6854,8 @@
         "topic": "nodered/bedtime",
         "topicType": "str",
         "className": "",
-        "x": 700,
-        "y": 420,
+        "x": 760,
+        "y": 320,
         "wires": [
             [
                 "bc385f9e10d6a793"
@@ -7160,8 +6874,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 460,
+        "x": 970,
+        "y": 360,
         "wires": [
             [
                 "477668ef1f02bcfd"
@@ -7182,8 +6896,8 @@
             "f495f33164cc7b42",
             "30286901101a6095"
         ],
-        "x": 1025,
-        "y": 460,
+        "x": 1085,
+        "y": 360,
         "wires": []
     },
     {
@@ -7224,8 +6938,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
-        "y": 360,
+        "x": 380,
+        "y": 260,
         "wires": [
             [
                 "7f53ee2f29d4da93"
@@ -7250,8 +6964,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 2,
-        "x": 320,
-        "y": 420,
+        "x": 380,
+        "y": 320,
         "wires": [
             [
                 "7f53ee2f29d4da93"
@@ -7270,8 +6984,8 @@
         "links": [
             "1980b7a63222124d"
         ],
-        "x": 385,
-        "y": 560,
+        "x": 445,
+        "y": 460,
         "wires": [
             [
                 "095af1f6e9620187"
@@ -7319,8 +7033,8 @@
         "z": "7689d3d4b864d0dd",
         "g": "98379557a8077dc0",
         "name": "",
-        "x": 660,
-        "y": 560,
+        "x": 720,
+        "y": 460,
         "wires": [
             [
                 "bc385f9e10d6a793"
@@ -7344,8 +7058,8 @@
         "targetType": "full",
         "statusVal": "error.message",
         "statusType": "msg",
-        "x": 870,
-        "y": 580,
+        "x": 930,
+        "y": 480,
         "wires": []
     },
     {
@@ -7366,8 +7080,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 560,
+        "x": 540,
+        "y": 460,
         "wires": [
             [
                 "6c2fdbf2b5ebd351"
@@ -7380,62 +7094,13 @@
         "z": "7689d3d4b864d0dd",
         "g": "0fe686a291277b71",
         "name": "",
-        "x": 510,
-        "y": 460,
+        "x": 570,
+        "y": 360,
         "wires": [
             [
                 "7f53ee2f29d4da93"
             ],
             []
-        ]
-    },
-    {
-        "id": "cf7f0464e17fe251",
-        "type": "link out",
-        "z": "7689d3d4b864d0dd",
-        "g": "af92fe447a5b5c32",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "6a01fdc18127e8e9"
-        ],
-        "x": 575,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "3169b6e6e492bf2d",
-        "type": "change",
-        "z": "7689d3d4b864d0dd",
-        "g": "af92fe447a5b5c32",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.value",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "bedtime",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 460,
-        "y": 260,
-        "wires": [
-            [
-                "cf7f0464e17fe251"
-            ]
         ]
     },
     {
@@ -7588,7 +7253,9 @@
         "name": "",
         "mode": "link",
         "links": [
-            "60976d31a8dafe99"
+            "60976d31a8dafe99",
+            "a225232dc86a3b6f",
+            "a6475288998b4e07"
         ],
         "x": 795,
         "y": 380,
@@ -8687,7 +8354,7 @@
             }
         ],
         "x": 220,
-        "y": 380,
+        "y": 340,
         "wires": [
             [
                 "db81cf75a2ca1776"
@@ -8703,7 +8370,7 @@
         "name": "activate powerview scene",
         "links": [],
         "x": 85,
-        "y": 380,
+        "y": 340,
         "wires": [
             [
                 "ff97f036e34831b8"
@@ -8719,7 +8386,7 @@
         "mode": "return",
         "links": [],
         "x": 355,
-        "y": 380,
+        "y": 340,
         "wires": []
     },
     {
@@ -8801,8 +8468,8 @@
             "03385520953758c9"
         ],
         "timeout": "30",
-        "x": 910,
-        "y": 240,
+        "x": 530,
+        "y": 200,
         "wires": [
             []
         ]
@@ -8820,7 +8487,7 @@
         "y": 240,
         "wires": [
             [
-                "48bae5dfd9e5eceb"
+                "7a1f5cbf9b84c489"
             ]
         ]
     },
@@ -8830,56 +8497,11 @@
         "z": "1cf0490e7de2f93d",
         "g": "2afac67683a580f7",
         "name": "",
-        "x": 700,
-        "y": 240,
-        "wires": [
-            [
-                "3c70a7443900cb3f"
-            ]
-        ]
-    },
-    {
-        "id": "6a01fdc18127e8e9",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "2afac67683a580f7",
-        "name": "window shade bedtime",
-        "links": [
-            "cf7f0464e17fe251"
-        ],
-        "x": 325,
-        "y": 280,
-        "wires": [
-            [
-                "2ab3e93641907bc5"
-            ]
-        ]
-    },
-    {
-        "id": "48bae5dfd9e5eceb",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "2afac67683a580f7",
-        "name": "trigger",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "trigger",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 290,
+        "x": 320,
         "y": 200,
         "wires": [
             [
-                "2ab3e93641907bc5"
+                "3c70a7443900cb3f"
             ]
         ]
     },
@@ -8903,20 +8525,6 @@
         "payloadType": "str",
         "x": 140,
         "y": 160,
-        "wires": [
-            [
-                "48bae5dfd9e5eceb"
-            ]
-        ]
-    },
-    {
-        "id": "2ab3e93641907bc5",
-        "type": "subflow:e467d9c73202b5bf",
-        "z": "1cf0490e7de2f93d",
-        "g": "2afac67683a580f7",
-        "name": "",
-        "x": 490,
-        "y": 240,
         "wires": [
             [
                 "7a1f5cbf9b84c489"
@@ -8945,7 +8553,7 @@
         "y": 200,
         "wires": [
             [
-                "48bae5dfd9e5eceb"
+                "7a1f5cbf9b84c489"
             ]
         ]
     },
@@ -9166,8 +8774,8 @@
             "88398e263f6df2d0",
             "7d12aa9a36e86798"
         ],
-        "x": 205,
-        "y": 160,
+        "x": 185,
+        "y": 140,
         "wires": [
             [
                 "4baea86ab327a4b9"
@@ -9184,8 +8792,8 @@
             "f455df4aef69f558",
             "ae9f9aeb54f6cfb1"
         ],
-        "x": 205,
-        "y": 520,
+        "x": 185,
+        "y": 500,
         "wires": [
             [
                 "7b10a17dd5bc4c0f"
@@ -9202,7 +8810,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1030,
         "y": 480,
         "wires": [
             [
@@ -9220,7 +8828,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 1050,
+        "x": 1010,
         "y": 300,
         "wires": [
             [
@@ -9248,7 +8856,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 300,
         "y": 480,
         "wires": [
             [
@@ -9276,7 +8884,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 300,
         "y": 300,
         "wires": [
             [
@@ -9291,8 +8899,8 @@
         "g": "83a2d6e5f2f3347b",
         "name": "upstairs bright",
         "links": [],
-        "x": 205,
-        "y": 340,
+        "x": 185,
+        "y": 320,
         "wires": [
             [
                 "7519f356aef82889"
@@ -9308,8 +8916,8 @@
         "links": [
             "2837183323a61e04"
         ],
-        "x": 205,
-        "y": 700,
+        "x": 185,
+        "y": 680,
         "wires": [
             [
                 "edc2f01358673517"
@@ -9326,7 +8934,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1030,
         "y": 660,
         "wires": [
             [
@@ -9354,7 +8962,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 300,
         "y": 660,
         "wires": [
             [
@@ -9380,7 +8988,7 @@
                 "type": "str"
             }
         ],
-        "x": 510,
+        "x": 470,
         "y": 120,
         "wires": [
             [
@@ -9428,7 +9036,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 810,
+        "x": 770,
         "y": 120,
         "wires": [
             [
@@ -9446,7 +9054,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 1020,
+        "x": 980,
         "y": 120,
         "wires": [
             [
@@ -9464,7 +9072,7 @@
         "links": [
             "30286901101a6095"
         ],
-        "x": 625,
+        "x": 585,
         "y": 80,
         "wires": []
     },
@@ -9482,7 +9090,7 @@
         "targetType": "full",
         "statusVal": "error.messsage",
         "statusType": "msg",
-        "x": 660,
+        "x": 620,
         "y": 160,
         "wires": []
     },
@@ -9506,7 +9114,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 300,
         "y": 120,
         "wires": [
             [
@@ -9530,7 +9138,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 660,
+        "x": 620,
         "y": 120,
         "wires": [
             [
@@ -9552,7 +9160,7 @@
         "targetType": "full",
         "statusVal": "statusCode",
         "statusType": "msg",
-        "x": 1200,
+        "x": 1160,
         "y": 120,
         "wires": []
     },
@@ -9574,8 +9182,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 80,
+        "x": 140,
+        "y": 100,
         "wires": [
             [
                 "4baea86ab327a4b9"
@@ -9616,7 +9224,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 800,
         "y": 300,
         "wires": [
             [
@@ -9642,7 +9250,7 @@
                 "type": "str"
             }
         ],
-        "x": 520,
+        "x": 480,
         "y": 300,
         "wires": [
             [
@@ -9674,8 +9282,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 260,
+        "x": 140,
+        "y": 280,
         "wires": [
             [
                 "7519f356aef82889"
@@ -9698,7 +9306,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 690,
+        "x": 650,
         "y": 300,
         "wires": [
             [
@@ -9720,7 +9328,7 @@
         "targetType": "full",
         "statusVal": "statusCode",
         "statusType": "msg",
-        "x": 1230,
+        "x": 1190,
         "y": 300,
         "wires": []
     },
@@ -9734,7 +9342,7 @@
         "links": [
             "30286901101a6095"
         ],
-        "x": 655,
+        "x": 615,
         "y": 260,
         "wires": []
     },
@@ -9752,7 +9360,7 @@
         "targetType": "full",
         "statusVal": "error.messsage",
         "statusType": "msg",
-        "x": 690,
+        "x": 650,
         "y": 340,
         "wires": []
     },
@@ -9790,7 +9398,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
+        "x": 820,
         "y": 480,
         "wires": [
             [
@@ -9814,7 +9422,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 710,
+        "x": 670,
         "y": 480,
         "wires": [
             [
@@ -9840,7 +9448,7 @@
                 "type": "str"
             }
         ],
-        "x": 530,
+        "x": 490,
         "y": 480,
         "wires": [
             [
@@ -9872,8 +9480,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 440,
+        "x": 140,
+        "y": 460,
         "wires": [
             [
                 "7b10a17dd5bc4c0f"
@@ -9894,7 +9502,7 @@
         "targetType": "full",
         "statusVal": "statusCode",
         "statusType": "msg",
-        "x": 1250,
+        "x": 1210,
         "y": 480,
         "wires": []
     },
@@ -9908,7 +9516,7 @@
         "links": [
             "30286901101a6095"
         ],
-        "x": 675,
+        "x": 635,
         "y": 440,
         "wires": []
     },
@@ -9926,7 +9534,7 @@
         "targetType": "full",
         "statusVal": "error.messsage",
         "statusType": "msg",
-        "x": 710,
+        "x": 670,
         "y": 520,
         "wires": []
     },
@@ -9964,7 +9572,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 860,
+        "x": 820,
         "y": 660,
         "wires": [
             [
@@ -9986,7 +9594,7 @@
         "targetType": "full",
         "statusVal": "statusCode",
         "statusType": "msg",
-        "x": 1250,
+        "x": 1210,
         "y": 660,
         "wires": []
     },
@@ -10006,7 +9614,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 710,
+        "x": 670,
         "y": 660,
         "wires": [
             [
@@ -10032,7 +9640,7 @@
                 "type": "str"
             }
         ],
-        "x": 530,
+        "x": 490,
         "y": 660,
         "wires": [
             [
@@ -10064,8 +9672,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 620,
+        "x": 140,
+        "y": 640,
         "wires": [
             [
                 "edc2f01358673517"
@@ -10082,7 +9690,7 @@
         "links": [
             "30286901101a6095"
         ],
-        "x": 675,
+        "x": 635,
         "y": 620,
         "wires": []
     },
@@ -10100,62 +9708,9 @@
         "targetType": "full",
         "statusVal": "error.messsage",
         "statusType": "msg",
-        "x": 710,
+        "x": 670,
         "y": 700,
         "wires": []
-    },
-    {
-        "id": "e2139e7bb021147f",
-        "type": "homekit-service",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "9baaf509ad48bed9",
-        "parentService": "",
-        "name": "Yard Dynamic Sunset",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "001",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 460,
-        "y": 240,
-        "wires": [
-            [
-                "0bdc1e921a0eafd6"
-            ],
-            []
-        ]
     },
     {
         "id": "af712bf4ec4004b4",
@@ -10167,63 +9722,12 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 830,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ca1e17d731e4816a",
-        "type": "homekit-service",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "3530c15956a26d05",
-        "parentService": "",
-        "name": "Yard Dynamic Jolly",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "002",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 450,
-        "y": 380,
+        "x": 990,
+        "y": 260,
         "wires": [
             [
-                "af85ec2f67fb223d"
-            ],
-            []
+                "50126b0005836a4a"
+            ]
         ]
     },
     {
@@ -10236,412 +9740,11 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 810,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "61d42601aace19ae",
-        "type": "homekit-service",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "b1e430888ffe3cb4",
-        "parentService": "",
-        "name": "Yard Dynamic Spooky",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "003",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 460,
-        "y": 520,
+        "x": 970,
+        "y": 440,
         "wires": [
             [
-                "241098d9131aaff5"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "3dc20d8212996ca2",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 830,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0bdc1e921a0eafd6",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "auto-off",
-        "env": [
-            {
-                "name": "URI",
-                "value": "resource/scene/9b6935e2-f8ed-4f91-83a2-2bff1850da99",
-                "type": "str"
-            },
-            {
-                "name": "PAYLOAD",
-                "value": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "type": "json"
-            },
-            {
-                "name": "GROUPED_LIGHT_ID",
-                "value": "9b6935e2-f8ed-4f91-83a2-2bff1850da99",
-                "type": "str"
-            },
-            {
-                "name": "SCENE_ID",
-                "value": "9b6935e2-f8ed-4f91-83a2-2bff1850da99",
-                "type": "str"
-            }
-        ],
-        "x": 640,
-        "y": 240,
-        "wires": [
-            [
-                "af712bf4ec4004b4"
-            ],
-            [
-                "fb7fed76720fc92b"
-            ]
-        ]
-    },
-    {
-        "id": "b33691546f7f459a",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "yard sunset auto-off",
-        "links": [
-            "fb7fed76720fc92b"
-        ],
-        "x": 325,
-        "y": 260,
-        "wires": [
-            [
-                "e2139e7bb021147f"
-            ]
-        ]
-    },
-    {
-        "id": "fb7fed76720fc92b",
-        "type": "link out",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "b33691546f7f459a"
-        ],
-        "x": 735,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "af85ec2f67fb223d",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "auto-off",
-        "env": [
-            {
-                "name": "URI",
-                "value": "resource/scene/12571f23-7714-4b47-8e75-a3040389b788",
-                "type": "str"
-            },
-            {
-                "name": "PAYLOAD",
-                "value": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "type": "json"
-            },
-            {
-                "name": "SCENE_ID",
-                "value": "12571f23-7714-4b47-8e75-a3040389b788",
-                "type": "str"
-            }
-        ],
-        "x": 620,
-        "y": 380,
-        "wires": [
-            [
-                "074874e0ff13a7b1"
-            ],
-            [
-                "a5ed6c2a7a6ecc4b"
-            ]
-        ]
-    },
-    {
-        "id": "edbb89b1218fdd21",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "yard jolly auto-off",
-        "links": [
-            "a5ed6c2a7a6ecc4b"
-        ],
-        "x": 325,
-        "y": 400,
-        "wires": [
-            [
-                "ca1e17d731e4816a"
-            ]
-        ]
-    },
-    {
-        "id": "a5ed6c2a7a6ecc4b",
-        "type": "link out",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "edbb89b1218fdd21"
-        ],
-        "x": 715,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "241098d9131aaff5",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "auto-off",
-        "env": [
-            {
-                "name": "URI",
-                "value": "resource/scene/70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
-                "type": "str"
-            },
-            {
-                "name": "PAYLOAD",
-                "value": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "type": "json"
-            },
-            {
-                "name": "SCENE_ID",
-                "value": "70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
-                "type": "str"
-            }
-        ],
-        "x": 640,
-        "y": 520,
-        "wires": [
-            [
-                "3dc20d8212996ca2"
-            ],
-            [
-                "58da5eea28596fe8"
-            ]
-        ]
-    },
-    {
-        "id": "58da5eea28596fe8",
-        "type": "link out",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "44286bc52974ad2c"
-        ],
-        "x": 735,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "44286bc52974ad2c",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "yard spooky auto-off",
-        "links": [
-            "58da5eea28596fe8"
-        ],
-        "x": 325,
-        "y": 540,
-        "wires": [
-            [
-                "61d42601aace19ae"
-            ]
-        ]
-    },
-    {
-        "id": "5fed7c286b1b64b0",
-        "type": "homekit-service",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "isParent": true,
-        "hostType": "1",
-        "bridge": "",
-        "accessoryId": "90af3b55ec091c59",
-        "parentService": "",
-        "name": "Yard Dynamic Tribal",
-        "serviceName": "Switch",
-        "topic": "",
-        "filter": false,
-        "manufacturer": "RADER",
-        "model": "1.4.3",
-        "serialNo": "003",
-        "firmwareRev": "1.4.3",
-        "hardwareRev": "1.4.3",
-        "softwareRev": "1.4.3",
-        "cameraConfigVideoProcessor": "ffmpeg",
-        "cameraConfigSource": "",
-        "cameraConfigStillImageSource": "",
-        "cameraConfigMaxStreams": 2,
-        "cameraConfigMaxWidth": 1280,
-        "cameraConfigMaxHeight": 720,
-        "cameraConfigMaxFPS": 10,
-        "cameraConfigMaxBitrate": 300,
-        "cameraConfigVideoCodec": "libx264",
-        "cameraConfigAudioCodec": "libfdk_aac",
-        "cameraConfigAudio": false,
-        "cameraConfigPacketSize": 1316,
-        "cameraConfigVerticalFlip": false,
-        "cameraConfigHorizontalFlip": false,
-        "cameraConfigMapVideo": "0:0",
-        "cameraConfigMapAudio": "0:1",
-        "cameraConfigVideoFilter": "scale=1280:720",
-        "cameraConfigAdditionalCommandLine": "-tune zerolatency",
-        "cameraConfigDebug": false,
-        "cameraConfigSnapshotOutput": "disabled",
-        "cameraConfigInterfaceName": "",
-        "characteristicProperties": "{}",
-        "waitForSetupMsg": false,
-        "outputs": 2,
-        "x": 460,
-        "y": 660,
-        "wires": [
-            [
-                "e3399cac6bef15a2"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "f52db1057ce1acdf",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "name": "",
-        "links": [
-            "a9378d8ba74f3f4f"
-        ],
-        "timeout": "30",
-        "x": 830,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e3399cac6bef15a2",
-        "type": "subflow:a03a3519abf4e656",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "name": "auto-off",
-        "env": [
-            {
-                "name": "URI",
-                "value": "resource/scene/c4681d32-3368-43cd-9cf1-436132521068",
-                "type": "str"
-            },
-            {
-                "name": "PAYLOAD",
-                "value": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "type": "json"
-            },
-            {
-                "name": "SCENE_ID",
-                "value": "c4681d32-3368-43cd-9cf1-436132521068",
-                "type": "str"
-            }
-        ],
-        "x": 640,
-        "y": 660,
-        "wires": [
-            [
-                "f52db1057ce1acdf"
-            ],
-            [
-                "1b86868f195f85f4"
-            ]
-        ]
-    },
-    {
-        "id": "1b86868f195f85f4",
-        "type": "link out",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "name": "",
-        "mode": "link",
-        "links": [
-            "1e9eea60806a6dc1"
-        ],
-        "x": 735,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "1e9eea60806a6dc1",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "name": "yard tribal auto-off",
-        "links": [
-            "1b86868f195f85f4"
-        ],
-        "x": 325,
-        "y": 680,
-        "wires": [
-            [
-                "5fed7c286b1b64b0"
+                "8485ba331bc01994"
             ]
         ]
     },
@@ -10654,8 +9757,8 @@
         "links": [
             "e270017761dfd27d"
         ],
-        "x": 145,
-        "y": 220,
+        "x": 185,
+        "y": 280,
         "wires": [
             [
                 "b22f3931c3a7aaa9"
@@ -10673,8 +9776,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -10682,11 +9785,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
-        "y": 220,
+        "x": 300,
+        "y": 260,
         "wires": [
             [
-                "e2139e7bb021147f"
+                "81306b71041535e7"
             ]
         ]
     },
@@ -10699,8 +9802,8 @@
         "links": [
             "b0ee0f2f8155fe9b"
         ],
-        "x": 145,
-        "y": 360,
+        "x": 185,
+        "y": 460,
         "wires": [
             [
                 "a5ea4f7eb61a9136"
@@ -10718,8 +9821,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -10727,101 +9830,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
-        "y": 360,
+        "x": 300,
+        "y": 440,
         "wires": [
             [
-                "ca1e17d731e4816a"
-            ]
-        ]
-    },
-    {
-        "id": "54e2411e6d2fa497",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 500,
-        "wires": [
-            [
-                "61d42601aace19ae"
-            ]
-        ]
-    },
-    {
-        "id": "cc9a7b174ce21d63",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "03822925b892df4a",
-        "name": "yard spooky",
-        "links": [
-            "c68369c3781694e3"
-        ],
-        "x": 145,
-        "y": 500,
-        "wires": [
-            [
-                "54e2411e6d2fa497"
-            ]
-        ]
-    },
-    {
-        "id": "3a372efc2402f538",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"On\":true}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 640,
-        "wires": [
-            [
-                "5fed7c286b1b64b0"
-            ]
-        ]
-    },
-    {
-        "id": "04ad8639f667bd76",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "7872f889f870b7ea",
-        "name": "yard tribal",
-        "links": [
-            "7ab1620c3349854b"
-        ],
-        "x": 145,
-        "y": 640,
-        "wires": [
-            [
-                "3a372efc2402f538"
+                "73f7af4dcc04afe7"
             ]
         ]
     },
@@ -10835,7 +9848,7 @@
             "6c3e6b4543f8c9ac",
             "8e8390b13cc5c45b"
         ],
-        "x": 235,
+        "x": 165,
         "y": 120,
         "wires": [
             [
@@ -10877,7 +9890,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 320,
+        "x": 250,
         "y": 100,
         "wires": [
             [
@@ -10895,7 +9908,7 @@
             "a9378d8ba74f3f4f"
         ],
         "timeout": "30",
-        "x": 500,
+        "x": 430,
         "y": 100,
         "wires": [
             []
@@ -10919,11 +9932,849 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 130,
         "y": 80,
         "wires": [
             [
                 "fb388fbfb4e38ca3"
+            ]
+        ]
+    },
+    {
+        "id": "8aafed6602093ea8",
+        "type": "inject",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "b22f3931c3a7aaa9"
+            ]
+        ]
+    },
+    {
+        "id": "34a695c0d0260e5a",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/9b6935e2-f8ed-4f91-83a2-2bff1850da99",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 260,
+        "wires": [
+            [
+                "af712bf4ec4004b4"
+            ]
+        ]
+    },
+    {
+        "id": "d07f9471a4a06ae8",
+        "type": "switch",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 260,
+        "wires": [
+            [
+                "34a695c0d0260e5a"
+            ]
+        ]
+    },
+    {
+        "id": "81306b71041535e7",
+        "type": "subflow:be3fb84e6a4c7720",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "yard-sunset",
+        "env": [
+            {
+                "name": "GET",
+                "value": "homebridge/yard-sunset/get/on",
+                "type": "str"
+            },
+            {
+                "name": "SET",
+                "value": "homebridge/yard-sunset/set/on",
+                "type": "str"
+            }
+        ],
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "891ef40649e94de7"
+            ],
+            [
+                "d07f9471a4a06ae8"
+            ],
+            [
+                "738f87bcb49da3f9"
+            ]
+        ]
+    },
+    {
+        "id": "891ef40649e94de7",
+        "type": "link out",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "30286901101a6095"
+        ],
+        "x": 595,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "738f87bcb49da3f9",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.messsage",
+        "statusType": "msg",
+        "x": 630,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "50126b0005836a4a",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "ea7b9754db9fd0cd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 1170,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8485ba331bc01994",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 1150,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "256ba437f41dfbcf",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/12571f23-7714-4b47-8e75-a3040389b788",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 440,
+        "wires": [
+            [
+                "074874e0ff13a7b1"
+            ]
+        ]
+    },
+    {
+        "id": "6cf088c77229de1d",
+        "type": "switch",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 440,
+        "wires": [
+            [
+                "256ba437f41dfbcf"
+            ]
+        ]
+    },
+    {
+        "id": "73f7af4dcc04afe7",
+        "type": "subflow:be3fb84e6a4c7720",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "yard-jolly",
+        "env": [
+            {
+                "name": "GET",
+                "value": "homebridge/yard-jolly/get/on",
+                "type": "str"
+            },
+            {
+                "name": "SET",
+                "value": "homebridge/yard-jolly/set/on",
+                "type": "str"
+            }
+        ],
+        "x": 460,
+        "y": 440,
+        "wires": [
+            [
+                "4168c5b783261a2f"
+            ],
+            [
+                "6cf088c77229de1d"
+            ],
+            [
+                "10e6526c82554f52"
+            ]
+        ]
+    },
+    {
+        "id": "4168c5b783261a2f",
+        "type": "link out",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "30286901101a6095"
+        ],
+        "x": 575,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "10e6526c82554f52",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.messsage",
+        "statusType": "msg",
+        "x": 610,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "c77ccdc1b5b4d2ef",
+        "type": "inject",
+        "z": "adfd8ae4a2eaf844",
+        "g": "afbdc8b60c682c85",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "a5ea4f7eb61a9136"
+            ]
+        ]
+    },
+    {
+        "id": "29a6f065ab64d562",
+        "type": "link call",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 990,
+        "y": 620,
+        "wires": [
+            [
+                "af18884d0654cad4"
+            ]
+        ]
+    },
+    {
+        "id": "53afc06e5cea0b0d",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 620,
+        "wires": [
+            [
+                "b53c4df909073382"
+            ]
+        ]
+    },
+    {
+        "id": "a225232dc86a3b6f",
+        "type": "link in",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "yard jolly",
+        "links": [
+            "b0ee0f2f8155fe9b"
+        ],
+        "x": 185,
+        "y": 640,
+        "wires": [
+            [
+                "53afc06e5cea0b0d"
+            ]
+        ]
+    },
+    {
+        "id": "af18884d0654cad4",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 1170,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ce692ff752c427a6",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 620,
+        "wires": [
+            [
+                "29a6f065ab64d562"
+            ]
+        ]
+    },
+    {
+        "id": "9fd4f397e5d23392",
+        "type": "switch",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 620,
+        "wires": [
+            [
+                "ce692ff752c427a6"
+            ]
+        ]
+    },
+    {
+        "id": "b53c4df909073382",
+        "type": "subflow:be3fb84e6a4c7720",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "yard-spooky",
+        "env": [
+            {
+                "name": "GET",
+                "value": "homebridge/yard-spooky/get/on",
+                "type": "str"
+            },
+            {
+                "name": "SET",
+                "value": "homebridge/yard-spooky/set/on",
+                "type": "str"
+            }
+        ],
+        "x": 470,
+        "y": 620,
+        "wires": [
+            [
+                "535a03ac7543189f"
+            ],
+            [
+                "9fd4f397e5d23392"
+            ],
+            [
+                "a38379b6ac71a65b"
+            ]
+        ]
+    },
+    {
+        "id": "535a03ac7543189f",
+        "type": "link out",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "30286901101a6095"
+        ],
+        "x": 595,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a38379b6ac71a65b",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.messsage",
+        "statusType": "msg",
+        "x": 630,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c3f764cbe42d8a1a",
+        "type": "inject",
+        "z": "adfd8ae4a2eaf844",
+        "g": "dd577488786042ba",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            [
+                "53afc06e5cea0b0d"
+            ]
+        ]
+    },
+    {
+        "id": "816be5cd3b82bf0b",
+        "type": "link call",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "links": [
+            "a9378d8ba74f3f4f"
+        ],
+        "timeout": "30",
+        "x": 990,
+        "y": 800,
+        "wires": [
+            [
+                "bd955f00594a8f9c"
+            ]
+        ]
+    },
+    {
+        "id": "ed68842beab6579e",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 800,
+        "wires": [
+            [
+                "dae1044a876b5a7f"
+            ]
+        ]
+    },
+    {
+        "id": "a6475288998b4e07",
+        "type": "link in",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "yard jolly",
+        "links": [
+            "b0ee0f2f8155fe9b"
+        ],
+        "x": 185,
+        "y": 820,
+        "wires": [
+            [
+                "ed68842beab6579e"
+            ]
+        ]
+    },
+    {
+        "id": "bd955f00594a8f9c",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 1170,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "35ec7b633401cd2e",
+        "type": "change",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/c4681d32-3368-43cd-9cf1-436132521068",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 800,
+        "wires": [
+            [
+                "816be5cd3b82bf0b"
+            ]
+        ]
+    },
+    {
+        "id": "c5dfb48af9335c64",
+        "type": "switch",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 800,
+        "wires": [
+            [
+                "35ec7b633401cd2e"
+            ]
+        ]
+    },
+    {
+        "id": "dae1044a876b5a7f",
+        "type": "subflow:be3fb84e6a4c7720",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "yard-tribal",
+        "env": [
+            {
+                "name": "GET",
+                "value": "homebridge/yard-tribal/get/on",
+                "type": "str"
+            },
+            {
+                "name": "SET",
+                "value": "homebridge/yard-tribal/set/on",
+                "type": "str"
+            }
+        ],
+        "x": 460,
+        "y": 800,
+        "wires": [
+            [
+                "c69fa7fd9f959785"
+            ],
+            [
+                "c5dfb48af9335c64"
+            ],
+            [
+                "49b54cbd4a9fb605"
+            ]
+        ]
+    },
+    {
+        "id": "c69fa7fd9f959785",
+        "type": "link out",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "30286901101a6095"
+        ],
+        "x": 595,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "49b54cbd4a9fb605",
+        "type": "debug",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "error.messsage",
+        "statusType": "msg",
+        "x": 630,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "56d256f33262e091",
+        "type": "inject",
+        "z": "adfd8ae4a2eaf844",
+        "g": "0117b53379eade19",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 780,
+        "wires": [
+            [
+                "ed68842beab6579e"
             ]
         ]
     }
