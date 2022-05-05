@@ -57,7 +57,7 @@
     {
         "id": "5785c8d9f39df67e",
         "type": "subflow",
-        "name": "Hue Send",
+        "name": "Send to Hue",
         "info": "Send a message to the API (version 2) on a given Hue Bridge.\n\nSee <https://developers.meethue.com/develop/hue-api-v2/> for details.\n\n# Configuration\n\n`ADDRESS` environment variable is the bridge's IP address.\n\n`KEY` environment variable is the client access token for the message.\n\n# Input\n\n`msg.topic` is the API URI, e.g. `/resource`, `/room/0ca8f049-7ac9-4872-8069-4770834e4f11` etc.\n\n`msg.payload` is the message body, if any.\n\n`msg.method` is the HTTP request method, e.g. `GET`, `PUT` etc.\n\n# Outputs\n\nIf successful, the HTTP response will be sent as a parsed JSON object from output 1.\n\nA standard Node-RED error message will be sent on output 2 if the `http request` node throws an exception.",
         "category": "hue",
         "in": [
@@ -181,7 +181,7 @@
     {
         "id": "e4e37acec8ce8ff8",
         "type": "subflow",
-        "name": "Hue Metadata",
+        "name": "Get Hue Metadata",
         "info": "",
         "category": "hue",
         "in": [
@@ -232,7 +232,7 @@
     {
         "id": "d0a1d8f666dafcc0",
         "type": "subflow",
-        "name": "Hue Group Metadata",
+        "name": "Get Hue Group Metadata",
         "info": "Extract and consolidate metadata for a room or a zone. Note that from an API point of view, the only difference between rooms and zones is the URI used to access them.",
         "category": "hue",
         "in": [
@@ -283,7 +283,7 @@
     {
         "id": "1a6413355bbb49cc",
         "type": "subflow",
-        "name": "PowerView Scenes",
+        "name": "Get PowerView Scenes",
         "info": "Use the _Hunter Douglas PowerView_&reg; hub API to get metadata for scenes.\n\n\nSee <https://motorisation.hde.nl/hd/powerview/general-guides/API/> for details.\n\n# Configuration\n\nThe `ADDRESS` environment variable must be configured with the IP address of the hub.\n\n# Input\n\nAll input message properties are ignored but care should be taken not to pass any through that could affect the behavior of a `http request` node in unintended ways.\n\n# Output\n\nHTTP response from the hub.\n",
         "category": "powerview",
         "in": [
@@ -397,7 +397,7 @@
     {
         "id": "764913cd47ccb672",
         "type": "subflow",
-        "name": "Hue UI Metadata",
+        "name": "Get Hue UI Metadata",
         "info": "",
         "category": "hue",
         "in": [
@@ -413,7 +413,7 @@
         ],
         "out": [
             {
-                "x": 1300,
+                "x": 1260,
                 "y": 140,
                 "wires": [
                     {
@@ -949,6 +949,56 @@
         }
     },
     {
+        "id": "4920eed654c67f8d",
+        "type": "subflow",
+        "name": "Get PowerView Rooms",
+        "info": "",
+        "category": "powerview",
+        "in": [
+            {
+                "x": 60,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "465f820637e0f695"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 620,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "1ffd2b5f79995711",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#C0DEED",
+        "icon": "font-awesome/fa-align-justify",
+        "status": {
+            "x": 620,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "014121091f945d16",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "ea7b9754db9fd0cd",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -967,12 +1017,11 @@
             "34a695c0d0260e5a",
             "d07f9471a4a06ae8",
             "81306b71041535e7",
-            "50126b0005836a4a",
             "242ececffecb297a"
         ],
         "x": 124,
         "y": 119,
-        "w": 1122,
+        "w": 982,
         "h": 162
     },
     {
@@ -991,7 +1040,6 @@
             "074874e0ff13a7b1",
             "a5ea4f7eb61a9136",
             "60976d31a8dafe99",
-            "8485ba331bc01994",
             "256ba437f41dfbcf",
             "6cf088c77229de1d",
             "73f7af4dcc04afe7",
@@ -999,7 +1047,7 @@
         ],
         "x": 124,
         "y": 659,
-        "w": 1102,
+        "w": 962,
         "h": 162
     },
     {
@@ -1043,12 +1091,11 @@
             "ec1b9da9a2a0dde0",
             "33533dc0ac4ff870",
             "2efdae9d98c90cf9",
-            "955cc461db6d2ee1",
             "528147947c85ca11"
         ],
         "x": 114,
         "y": 39,
-        "w": 1122,
+        "w": 982,
         "h": 162
     },
     {
@@ -1070,12 +1117,11 @@
             "1462dac4d5543f0a",
             "c4ad8310f9a121b0",
             "75718c47ae5aab65",
-            "cf3d3a3da0c079db",
             "582d83b50ac68d1b"
         ],
         "x": 124,
         "y": 399,
-        "w": 1162,
+        "w": 1022,
         "h": 162
     },
     {
@@ -1097,12 +1143,11 @@
             "c24b271f1c0a013a",
             "6e235cc35896e53f",
             "5b9644b03821362f",
-            "f91a88d8cf38b464",
             "15a369735e538669"
         ],
         "x": 114,
         "y": 219,
-        "w": 1142,
+        "w": 1002,
         "h": 162
     },
     {
@@ -1230,17 +1275,26 @@
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
+            "label": false
         },
         "nodes": [
             "cae953f2c04362ad",
             "536874de79956f84",
-            "1cee4f351bd59563"
+            "1cee4f351bd59563",
+            "f390ba1d460e3399",
+            "fc5defb4e76d244e",
+            "f42aab98c1153884"
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
         ],
         "x": 54,
         "y": 39,
-        "w": 632,
+        "w": 1272,
         "h": 82
     },
     {
@@ -1311,7 +1365,7 @@
         ],
         "x": 14,
         "y": 119,
-        "w": 1032,
+        "w": 1232,
         "h": 82
     },
     {
@@ -1353,14 +1407,13 @@
             "8ae7ee0c87df1191",
             "edc2f01358673517",
             "76f3eb6c53a0310c",
-            "4dfc07b3a5a352ec",
             "66b239fbae02c252",
             "460cb90e2fef9ac5",
             "a3eb5555d54ffb79"
         ],
         "x": 124,
         "y": 579,
-        "w": 1162,
+        "w": 1022,
         "h": 162
     },
     {
@@ -1379,7 +1432,6 @@
             "29a6f065ab64d562",
             "53afc06e5cea0b0d",
             "a225232dc86a3b6f",
-            "af18884d0654cad4",
             "ce692ff752c427a6",
             "9fd4f397e5d23392",
             "b53c4df909073382",
@@ -1387,7 +1439,7 @@
         ],
         "x": 124,
         "y": 479,
-        "w": 1122,
+        "w": 982,
         "h": 162
     },
     {
@@ -1406,7 +1458,6 @@
             "816be5cd3b82bf0b",
             "ed68842beab6579e",
             "a6475288998b4e07",
-            "bd955f00594a8f9c",
             "35ec7b633401cd2e",
             "c5dfb48af9335c64",
             "dae1044a876b5a7f",
@@ -1414,7 +1465,7 @@
         ],
         "x": 124,
         "y": 299,
-        "w": 1102,
+        "w": 962,
         "h": 162
     },
     {
@@ -1549,7 +1600,7 @@
         ],
         "x": 14,
         "y": 319,
-        "w": 1012,
+        "w": 1172,
         "h": 82
     },
     {
@@ -1650,8 +1701,7 @@
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
+            "label": false
         },
         "nodes": [
             "3c70a7443900cb3f",
@@ -1936,7 +1986,9 @@
         "type": "status",
         "z": "5785c8d9f39df67e",
         "name": "",
-        "scope": null,
+        "scope": [
+            "c9c806d81ab63ac4"
+        ],
         "x": 500,
         "y": 120,
         "wires": [
@@ -2513,7 +2565,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"name\": $base64decode($scene.name),\t        \"id\": $scene.id\t    }\t})",
+                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
                 "tot": "jsonata"
             }
         ],
@@ -2592,7 +2644,9 @@
         "type": "status",
         "z": "9c4e4702e4660adf",
         "name": "",
-        "scope": null,
+        "scope": [
+            "dcd553804e687131"
+        ],
         "x": 500,
         "y": 140,
         "wires": [
@@ -2671,7 +2725,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 740,
         "y": 100,
         "wires": [
             [
@@ -2683,7 +2737,7 @@
         "id": "82f5745796e93e00",
         "type": "subflow:d0a1d8f666dafcc0",
         "z": "764913cd47ccb672",
-        "name": "Extract Room Metadata",
+        "name": "Get Room Metadata",
         "env": [
             {
                 "name": "GLOBAL",
@@ -2691,7 +2745,7 @@
                 "type": "env"
             }
         ],
-        "x": 390,
+        "x": 380,
         "y": 60,
         "wires": [
             [
@@ -2720,7 +2774,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1150,
+        "x": 1110,
         "y": 60,
         "wires": [
             []
@@ -2730,7 +2784,7 @@
         "id": "c0483ea0bf84b4c8",
         "type": "subflow:d0a1d8f666dafcc0",
         "z": "764913cd47ccb672",
-        "name": "Extract Zone Metadata",
+        "name": "Get Zone Metadata",
         "env": [
             {
                 "name": "GLOBAL",
@@ -2738,7 +2792,7 @@
                 "type": "env"
             }
         ],
-        "x": 960,
+        "x": 930,
         "y": 100,
         "wires": [
             [
@@ -2766,7 +2820,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 610,
+        "x": 590,
         "y": 120,
         "wires": [
             [
@@ -2796,7 +2850,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 740,
         "y": 140,
         "wires": [
             []
@@ -4988,6 +5042,92 @@
         ]
     },
     {
+        "id": "465f820637e0f695",
+        "type": "change",
+        "z": "4920eed654c67f8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'http://' & $env('ADDRESS') & '/api/rooms/'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "e62fe5c7c72b90ee"
+            ]
+        ]
+    },
+    {
+        "id": "e62fe5c7c72b90ee",
+        "type": "http request",
+        "z": "4920eed654c67f8d",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "1ffd2b5f79995711"
+            ]
+        ]
+    },
+    {
+        "id": "1ffd2b5f79995711",
+        "type": "change",
+        "z": "4920eed654c67f8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "014121091f945d16",
+        "type": "status",
+        "z": "4920eed654c67f8d",
+        "name": "",
+        "scope": null,
+        "x": 520,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "1f7aefd9b0586064",
         "type": "link out",
         "z": "c7141ffb22d64190",
@@ -6043,7 +6183,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
+        "x": 1120,
         "y": 160,
         "wires": []
     },
@@ -6105,7 +6245,7 @@
         "type": "subflow:e4e37acec8ce8ff8",
         "z": "a00ccef1301f21e3",
         "g": "41cef0af2772c23a",
-        "name": "",
+        "name": "Get Chez Nous Main Metadata",
         "env": [
             {
                 "name": "TOPIC",
@@ -6118,7 +6258,7 @@
                 "type": "str"
             }
         ],
-        "x": 540,
+        "x": 590,
         "y": 160,
         "wires": [
             [
@@ -6131,7 +6271,7 @@
         "type": "subflow:764913cd47ccb672",
         "z": "a00ccef1301f21e3",
         "g": "41cef0af2772c23a",
-        "name": "",
+        "name": "Get Chez Nous Main UI Metadata",
         "env": [
             {
                 "name": "GLOBAL",
@@ -6139,7 +6279,7 @@
                 "type": "str"
             }
         ],
-        "x": 730,
+        "x": 880,
         "y": 160,
         "wires": [
             [
@@ -6275,7 +6415,7 @@
         "type": "subflow:e4e37acec8ce8ff8",
         "z": "a00ccef1301f21e3",
         "g": "c734fba31492ec8b",
-        "name": "",
+        "name": "Get Basement Hue Metadata",
         "env": [
             {
                 "name": "TOPIC",
@@ -6288,7 +6428,7 @@
                 "type": "str"
             }
         ],
-        "x": 520,
+        "x": 560,
         "y": 360,
         "wires": [
             [
@@ -6301,7 +6441,7 @@
         "type": "subflow:764913cd47ccb672",
         "z": "a00ccef1301f21e3",
         "g": "c734fba31492ec8b",
-        "name": "",
+        "name": "Get Basement Hue UI Metadata",
         "env": [
             {
                 "name": "GLOBAL",
@@ -6309,7 +6449,7 @@
                 "type": "str"
             }
         ],
-        "x": 710,
+        "x": 830,
         "y": 360,
         "wires": [
             [
@@ -6331,7 +6471,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
+        "x": 1060,
         "y": 360,
         "wires": []
     },
@@ -6348,11 +6488,11 @@
                 "type": "str"
             }
         ],
-        "x": 350,
+        "x": 790,
         "y": 80,
         "wires": [
             [
-                "1cee4f351bd59563"
+                "fc5defb4e76d244e"
             ]
         ]
     },
@@ -6370,7 +6510,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 550,
+        "x": 1190,
         "y": 80,
         "wires": []
     },
@@ -6396,7 +6536,7 @@
         "y": 80,
         "wires": [
             [
-                "536874de79956f84"
+                "f42aab98c1153884"
             ]
         ]
     },
@@ -6444,6 +6584,75 @@
         "wires": [
             [
                 "3c70a7443900cb3f"
+            ]
+        ]
+    },
+    {
+        "id": "f390ba1d460e3399",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "rooms",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "536874de79956f84"
+            ]
+        ]
+    },
+    {
+        "id": "fc5defb4e76d244e",
+        "type": "function",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "mergeMetadata",
+        "func": "let findRoomName = id => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map(scene => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "1cee4f351bd59563"
+            ]
+        ]
+    },
+    {
+        "id": "f42aab98c1153884",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
+        ],
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "f390ba1d460e3399"
             ]
         ]
     },
@@ -6651,9 +6860,7 @@
         "x": 1010,
         "y": 520,
         "wires": [
-            [
-                "cf3d3a3da0c079db"
-            ]
+            []
         ]
     },
     {
@@ -6669,9 +6876,7 @@
         "x": 980,
         "y": 340,
         "wires": [
-            [
-                "f91a88d8cf38b464"
-            ]
+            []
         ]
     },
     {
@@ -6775,9 +6980,7 @@
         "x": 1010,
         "y": 700,
         "wires": [
-            [
-                "4dfc07b3a5a352ec"
-            ]
+            []
         ]
     },
     {
@@ -6892,9 +7095,7 @@
         "x": 960,
         "y": 160,
         "wires": [
-            [
-                "955cc461db6d2ee1"
-            ]
+            []
         ]
     },
     {
@@ -6948,24 +7149,6 @@
                 "ec1b9da9a2a0dde0"
             ]
         ]
-    },
-    {
-        "id": "955cc461db6d2ee1",
-        "type": "debug",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1140,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "c24b271f1c0a013a",
@@ -7063,24 +7246,6 @@
         ]
     },
     {
-        "id": "f91a88d8cf38b464",
-        "type": "debug",
-        "z": "e44149a93fbe9b1b",
-        "g": "83a2d6e5f2f3347b",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1160,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "1462dac4d5543f0a",
         "type": "change",
         "z": "e44149a93fbe9b1b",
@@ -7176,24 +7341,6 @@
         ]
     },
     {
-        "id": "cf3d3a3da0c079db",
-        "type": "debug",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1190,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "76f3eb6c53a0310c",
         "type": "change",
         "z": "e44149a93fbe9b1b",
@@ -7234,24 +7381,6 @@
                 "8ae7ee0c87df1191"
             ]
         ]
-    },
-    {
-        "id": "4dfc07b3a5a352ec",
-        "type": "debug",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1190,
-        "y": 700,
-        "wires": []
     },
     {
         "id": "66b239fbae02c252",
@@ -7395,9 +7524,7 @@
         "x": 970,
         "y": 240,
         "wires": [
-            [
-                "50126b0005836a4a"
-            ]
+            []
         ]
     },
     {
@@ -7413,9 +7540,7 @@
         "x": 950,
         "y": 780,
         "wires": [
-            [
-                "8485ba331bc01994"
-            ]
+            []
         ]
     },
     {
@@ -7680,42 +7805,6 @@
         ]
     },
     {
-        "id": "50126b0005836a4a",
-        "type": "debug",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1150,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "8485ba331bc01994",
-        "type": "debug",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1130,
-        "y": 780,
-        "wires": []
-    },
-    {
         "id": "256ba437f41dfbcf",
         "type": "change",
         "z": "adfd8ae4a2eaf844",
@@ -7823,9 +7912,7 @@
         "x": 970,
         "y": 600,
         "wires": [
-            [
-                "af18884d0654cad4"
-            ]
+            []
         ]
     },
     {
@@ -7873,24 +7960,6 @@
                 "53afc06e5cea0b0d"
             ]
         ]
-    },
-    {
-        "id": "af18884d0654cad4",
-        "type": "debug",
-        "z": "adfd8ae4a2eaf844",
-        "g": "dd577488786042ba",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1150,
-        "y": 600,
-        "wires": []
     },
     {
         "id": "ce692ff752c427a6",
@@ -8000,9 +8069,7 @@
         "x": 950,
         "y": 420,
         "wires": [
-            [
-                "bd955f00594a8f9c"
-            ]
+            []
         ]
     },
     {
@@ -8050,24 +8117,6 @@
                 "ed68842beab6579e"
             ]
         ]
-    },
-    {
-        "id": "bd955f00594a8f9c",
-        "type": "debug",
-        "z": "adfd8ae4a2eaf844",
-        "g": "0117b53379eade19",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1130,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "35ec7b633401cd2e",
