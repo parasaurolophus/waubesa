@@ -2,6 +2,22 @@
     {
         "id": "c7141ffb22d64190",
         "type": "tab",
+        "label": "Hue",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1cf0490e7de2f93d",
+        "type": "tab",
+        "label": "PowerView",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f03b6ceb81ed7dac",
+        "type": "tab",
         "label": "Automation",
         "disabled": false,
         "info": "",
@@ -11,21 +27,6 @@
         "id": "63d8cb10398da04b",
         "type": "tab",
         "label": "Lighting",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "a00ccef1301f21e3",
-        "type": "tab",
-        "label": "Hue Metadata",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "1cf0490e7de2f93d",
-        "type": "tab",
-        "label": "Shades",
         "disabled": false,
         "info": "",
         "env": []
@@ -999,6 +1000,51 @@
         }
     },
     {
+        "id": "efbc3338fa01d34f",
+        "type": "subflow",
+        "name": "Hue SSE",
+        "info": "",
+        "category": "hue",
+        "in": [],
+        "out": [
+            {
+                "x": 580,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "5d5f04c37ee373d7",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "KEY",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "font-awesome/fa-lightbulb-o",
+        "status": {
+            "x": 200,
+            "y": 300,
+            "wires": [
+                {
+                    "id": "b5cf360a52f4a2ba",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "ea7b9754db9fd0cd",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -1020,9 +1066,7 @@
             "242ececffecb297a"
         ],
         "x": 124,
-        "y": 119,
-        "w": 982,
-        "h": 162
+        "y": 119
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1046,31 +1090,7 @@
             "19a03dafa4a99a77"
         ],
         "x": 124,
-        "y": 659,
-        "w": 962,
-        "h": 162
-    },
-    {
-        "id": "ce88172c5dbc9f67",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
-        "style": {
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "42d607d0bcefe3a3",
-            "fd7babc23ade7d52",
-            "dde4b6e7207eaaa2"
-        ],
-        "x": 14,
-        "y": 19,
-        "w": 812,
-        "h": 82
+        "y": 659
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1094,9 +1114,7 @@
             "528147947c85ca11"
         ],
         "x": 114,
-        "y": 39,
-        "w": 982,
-        "h": 162
+        "y": 39
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1120,9 +1138,7 @@
             "582d83b50ac68d1b"
         ],
         "x": 124,
-        "y": 399,
-        "w": 1022,
-        "h": 162
+        "y": 399
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1146,9 +1162,7 @@
             "15a369735e538669"
         ],
         "x": 114,
-        "y": 219,
-        "w": 1002,
-        "h": 162
+        "y": 219
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1168,9 +1182,7 @@
             "d79164592fe44617"
         ],
         "x": 114,
-        "y": 139,
-        "w": 452,
-        "h": 82
+        "y": 139
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1189,9 +1201,7 @@
             "1993fd8165053adf"
         ],
         "x": 124,
-        "y": 271.5,
-        "w": 242,
-        "h": 97
+        "y": 271.5
     },
     {
         "id": "2af1d2a51c281b62",
@@ -1212,9 +1222,7 @@
             "c897f7f0ee8680dc"
         ],
         "x": 394,
-        "y": 479,
-        "w": 232,
-        "h": 162
+        "y": 479
     },
     {
         "id": "73991d26373b19c7",
@@ -1239,9 +1247,7 @@
             "bc73807fd90ac77d"
         ],
         "x": 404,
-        "y": 239,
-        "w": 542,
-        "h": 222
+        "y": 239
     },
     {
         "id": "b940bf3a0df755de",
@@ -1262,9 +1268,7 @@
             "f12fbd86617caaf9"
         ],
         "x": 394,
-        "y": 59,
-        "w": 232,
-        "h": 162
+        "y": 59
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1293,9 +1297,7 @@
             }
         ],
         "x": 54,
-        "y": 39,
-        "w": 1272,
-        "h": 82
+        "y": 39
     },
     {
         "id": "5a2c18585609cfae",
@@ -1315,58 +1317,7 @@
             "26ad3b6fd956be59"
         ],
         "x": 114,
-        "y": 39,
-        "w": 462,
-        "h": 82
-    },
-    {
-        "id": "7c175ce901294697",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Trigger automation from MQTT",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "label-position": "sw"
-        },
-        "nodes": [
-            "a7314db1b53877f1",
-            "cd4c1ad10bc73c1b",
-            "bcacc67a0668b8ad",
-            "1f7aefd9b0586064",
-            "05281cc557107b69"
-        ],
-        "x": 774,
-        "y": 399,
-        "w": 462,
-        "h": 210
-    },
-    {
-        "id": "41cef0af2772c23a",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "Periodically fetch all metdata from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "06fb360d1605eee4",
-            "5c11ca5b24ca72d8",
-            "69a8648256e320f4",
-            "bb32f45d1a4e196d",
-            "c6e09ee6553c5587"
-        ],
-        "x": 14,
-        "y": 119,
-        "w": 1232,
-        "h": 82
+        "y": 39
     },
     {
         "id": "2238e89a8f0c976d",
@@ -1386,9 +1337,7 @@
             "dc1d9849661717f1"
         ],
         "x": 124,
-        "y": 19,
-        "w": 442,
-        "h": 82
+        "y": 19
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1412,9 +1361,7 @@
             "a3eb5555d54ffb79"
         ],
         "x": 124,
-        "y": 579,
-        "w": 1022,
-        "h": 162
+        "y": 579
     },
     {
         "id": "dd577488786042ba",
@@ -1438,9 +1385,7 @@
             "9dc79428e37ca261"
         ],
         "x": 124,
-        "y": 479,
-        "w": 982,
-        "h": 162
+        "y": 479
     },
     {
         "id": "0117b53379eade19",
@@ -1464,170 +1409,7 @@
             "a717678152b3ca53"
         ],
         "x": 124,
-        "y": 299,
-        "w": 962,
-        "h": 162
-    },
-    {
-        "id": "58ef567373a43587",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "UI for enabling automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "99b9b0860f4b3d32",
-            "7d1c95fd099793a7",
-            "92b278eed7676fce",
-            "02fcf49e9fef3f0b"
-        ],
-        "x": 34,
-        "y": 39,
-        "w": 932,
-        "h": 82
-    },
-    {
-        "id": "96ae967f6fb1ee22",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Current time each minute",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "e2eaf3341ee307c4"
-        ],
-        "x": 34,
-        "y": 359,
-        "w": 192,
-        "h": 82
-    },
-    {
-        "id": "d50602db214395ed",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Send time of day to MQTT broker",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "62e02506f9772891",
-            "7a6a9edf4fea8ae7",
-            "585f362a2764fc58",
-            "cca14878836d14f0",
-            "33e9b80815c64806"
-        ],
-        "x": 254,
-        "y": 399,
-        "w": 492,
-        "h": 202
-    },
-    {
-        "id": "215623a01d92fcf6",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Send theme to MQTT broker",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "7cf667fb726a13c0",
-            "b6f260388034ca36",
-            "e23977832e48d9c7"
-        ],
-        "x": 254,
-        "y": 219,
-        "w": 332,
-        "h": 162
-    },
-    {
-        "id": "a1484ffd83f80827",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
-        "style": {
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "b8d8c4247f9d89d8",
-            "d208e4938951586c",
-            "9fde9ecce8444ca2"
-        ],
-        "x": 14,
-        "y": 219,
-        "w": 732,
-        "h": 82
-    },
-    {
-        "id": "c734fba31492ec8b",
-        "type": "group",
-        "z": "a00ccef1301f21e3",
-        "name": "Periodically fetch all metdata from Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "72009f40c58910ae",
-            "4e533e8b0892cbb2",
-            "94ccca5cecf90b8b",
-            "4e2ea1775adfcdba",
-            "5388e30f0e6159b0"
-        ],
-        "x": 14,
-        "y": 319,
-        "w": 1172,
-        "h": 82
-    },
-    {
-        "id": "edf74687de57b0d8",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "UI for Bedtime",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8ad64c1a60039a32",
-            "973d2866c4b96b6a",
-            "1759eaf32d2ac9c9",
-            "6a211d9fd39d5775",
-            "c643f266bac4f7fc",
-            "2a29e3a519f24a94",
-            "6111fbe599be6eb0"
-        ],
-        "x": 614,
-        "y": 139,
-        "w": 692,
-        "h": 242
+        "y": 299
     },
     {
         "id": "70e9b8db12799d18",
@@ -1646,7 +1428,7 @@
             "3b5ab296575b53d4"
         ],
         "x": 34,
-        "y": 619,
+        "y": 239,
         "w": 372,
         "h": 82
     },
@@ -1666,30 +1448,9 @@
             "3a4eb79d1be1560a",
             "4e36662275710bb1"
         ],
-        "x": 434,
-        "y": 619,
+        "x": 34,
+        "y": 579,
         "w": 372,
-        "h": 82
-    },
-    {
-        "id": "a439702523fe51fd",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Activate PowerView scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": false
-        },
-        "nodes": [
-            "1645ecbe3771d71d",
-            "a400b22f32b8519b",
-            "46d60582b3ea62e0"
-        ],
-        "x": 834,
-        "y": 619,
-        "w": 362,
         "h": 82
     },
     {
@@ -1709,8 +1470,285 @@
             "a0985c083540376f"
         ],
         "x": 154,
+        "y": 139
+    },
+    {
+        "id": "9b9a844a8df2769d",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "Trigger automation from MQTT",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "label-position": "sw"
+        },
+        "nodes": [
+            "6f7db4dc310c6c2f",
+            "18c9ac4127308f24",
+            "c09a00ecb1c547ec",
+            "21690efdfa2776cf",
+            "58abeb0fb7d59222"
+        ],
+        "x": 774,
+        "y": 399
+    },
+    {
+        "id": "daced5cc49fcef0a",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "UI for enabling automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "f086604c46663235",
+            "9810ca9f681aaebf",
+            "8221b9e4e7b1d425",
+            "f2e04cae9bfd57e6"
+        ],
+        "x": 34,
+        "y": 39
+    },
+    {
+        "id": "1723570f3a1a07a2",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "Current time each minute",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "802ec81ddfb59441"
+        ],
+        "x": 34,
+        "y": 359
+    },
+    {
+        "id": "6d13af3b8a66acb9",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "Send time of day to MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6bdf715d945fbc10",
+            "3460ef4d47e9a47b",
+            "26c0274d3d6b7697",
+            "5085c8772606b854",
+            "305c62d581d22adf"
+        ],
+        "x": 254,
+        "y": 399
+    },
+    {
+        "id": "31ed5707953578b9",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "Send theme to MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "c168b5c3119db1de",
+            "ee8e24d1cd81c931",
+            "a3dd9bfc89e0e94a"
+        ],
+        "x": 254,
+        "y": 219
+    },
+    {
+        "id": "64b945726db0f60a",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "UI for Bedtime",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "bbcb2a37e7e328bb",
+            "cf6562b252b0fea0",
+            "abe65b742c235eaf",
+            "dfcc0d83078d3036",
+            "4aa998790c81c0de",
+            "d7fe731e9b583602",
+            "114b9703250b5ff7"
+        ],
+        "x": 614,
+        "y": 139
+    },
+    {
+        "id": "3797523125cd91eb",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "be9b05e35436b685",
+            "b6e949344f7491aa",
+            "314b7ecbf3c9be3e"
+        ],
+        "x": 34,
+        "y": 379,
+        "w": 732,
+        "h": 82
+    },
+    {
+        "id": "2b48c44859895594",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Periodically fetch all metdata from Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "221535a76db32dec",
+            "dc55941c1abe7533",
+            "d69d9a7d182aefe3",
+            "7667a993cb097109",
+            "6d112919d030c53c"
+        ],
+        "x": 34,
+        "y": 479,
+        "w": 1172,
+        "h": 82
+    },
+    {
+        "id": "290b83ef8e01ae0f",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "51bce99c75aa12c6",
+            "f3ab10cd192709b0",
+            "73a1ec5ed8ebc167"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 812,
+        "h": 82
+    },
+    {
+        "id": "11ad281459e35854",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Periodically fetch all metdata from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "2d0604f94ef7bff4",
+            "8c9d79d2791e9b02",
+            "303e0cda741131c4",
+            "79befa4d74086653",
+            "14a354d21e8857db"
+        ],
+        "x": 34,
         "y": 139,
-        "w": 532,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "87285e6bf01cff03",
+        "type": "group",
+        "z": "1cf0490e7de2f93d",
+        "name": "Activate PowerView scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "2f6cc09457939ce2",
+            "7173aa38c9fa93dc",
+            "618e79a58ab8143a"
+        ],
+        "x": 154,
+        "y": 239
+    },
+    {
+        "id": "a7d0f8a2225f6ea8",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "d037cf6840797c18",
+            "55aec8038b85e54b"
+        ],
+        "x": 434,
+        "y": 239,
+        "w": 492,
+        "h": 82
+    },
+    {
+        "id": "605254399eb9985d",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "ce5d060aebb023e4",
+            "09371468762cd509"
+        ],
+        "x": 434,
+        "y": 579,
+        "w": 452,
         "h": 82
     },
     {
@@ -2679,33 +2717,6 @@
         ]
     },
     {
-        "id": "82422755412f473d",
-        "type": "change",
-        "z": "764913cd47ccb672",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$globalContext($env('GLOBAL')).room",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 180,
-        "y": 60,
-        "wires": [
-            [
-                "82f5745796e93e00"
-            ]
-        ]
-    },
-    {
         "id": "03b09291b4b78bea",
         "type": "change",
         "z": "764913cd47ccb672",
@@ -2715,8 +2726,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$globalContext($env('GLOBAL')).zone",
-                "tot": "jsonata",
+                "to": "metadata.zone",
+                "tot": "msg",
                 "dc": true
             }
         ],
@@ -2805,8 +2816,8 @@
         "type": "switch",
         "z": "764913cd47ccb672",
         "name": "",
-        "property": "${GLOBAL}",
-        "propertyType": "global",
+        "property": "metadata",
+        "propertyType": "msg",
         "rules": [
             {
                 "t": "hask",
@@ -2869,6 +2880,34 @@
         "y": 220,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "82422755412f473d",
+        "type": "change",
+        "z": "764913cd47ccb672",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "metadata.room",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "82f5745796e93e00"
+            ]
         ]
     },
     {
@@ -5128,490 +5167,211 @@
         ]
     },
     {
-        "id": "1f7aefd9b0586064",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "7c175ce901294697",
+        "id": "f13d464834dfe360",
+        "type": "sse-client",
+        "z": "efbc3338fa01d34f",
         "name": "",
-        "mode": "link",
-        "links": [
-            "1993fd8165053adf",
-            "facb9598623e3675",
-            "380c05275eae4338",
-            "1f8dccfd42af4188",
-            "23b7995dafc3f002",
-            "0514602b711a8136"
+        "url": "",
+        "events": [],
+        "headers": {},
+        "proxy": "",
+        "restart": false,
+        "rejectUnauthorized": false,
+        "withCredentials": false,
+        "timeout": 1,
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "21ccf665fb8d3960"
+            ]
+        ]
+    },
+    {
+        "id": "b5cf360a52f4a2ba",
+        "type": "status",
+        "z": "efbc3338fa01d34f",
+        "name": "",
+        "scope": [
+            "f13d464834dfe360"
         ],
-        "x": 1195,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "bcacc67a0668b8ad",
-        "type": "inject",
-        "z": "c7141ffb22d64190",
-        "g": "7c175ce901294697",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "retain",
-                "v": "false",
-                "vt": "bool"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 02 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "night",
-        "payloadType": "str",
-        "x": 890,
-        "y": 560,
+        "x": 100,
+        "y": 300,
         "wires": [
-            [
-                "cd4c1ad10bc73c1b"
-            ]
-        ]
-    },
-    {
-        "id": "99b9b0860f4b3d32",
-        "type": "ui_switch",
-        "z": "c7141ffb22d64190",
-        "g": "58ef567373a43587",
-        "name": "Enable Automation",
-        "label": "Enable",
-        "tooltip": "",
-        "group": "25c7f0078ed443dd",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "decouple": "true",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 590,
-        "y": 80,
-        "wires": [
-            [
-                "92b278eed7676fce"
-            ]
-        ]
-    },
-    {
-        "id": "7d1c95fd099793a7",
-        "type": "mqtt in",
-        "z": "c7141ffb22d64190",
-        "g": "58ef567373a43587",
-        "name": "",
-        "topic": "nodered/automation/enable",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 170,
-        "y": 80,
-        "wires": [
-            [
-                "02fcf49e9fef3f0b"
-            ]
-        ]
-    },
-    {
-        "id": "92b278eed7676fce",
-        "type": "mqtt out",
-        "z": "c7141ffb22d64190",
-        "g": "58ef567373a43587",
-        "name": "",
-        "topic": "nodered/automation/enable",
-        "qos": "2",
-        "retain": "true",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "722d62f3b93039c3",
-        "x": 820,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "a7314db1b53877f1",
-        "type": "subflow:5e6607a62e250494",
-        "z": "c7141ffb22d64190",
-        "g": "7c175ce901294697",
-        "name": "",
-        "x": 870,
-        "y": 480,
-        "wires": [
-            [
-                "cd4c1ad10bc73c1b",
-                "05281cc557107b69"
-            ]
-        ]
-    },
-    {
-        "id": "cd4c1ad10bc73c1b",
-        "type": "subflow:c0cc9d812cad7bfc",
-        "z": "c7141ffb22d64190",
-        "g": "7c175ce901294697",
-        "name": "",
-        "x": 1070,
-        "y": 520,
-        "wires": [
-            [
-                "1f7aefd9b0586064"
-            ]
-        ]
-    },
-    {
-        "id": "02fcf49e9fef3f0b",
-        "type": "subflow:6fb319108eed0e2a",
-        "z": "c7141ffb22d64190",
-        "g": "58ef567373a43587",
-        "x": 390,
-        "y": 80,
-        "wires": [
-            [
-                "99b9b0860f4b3d32"
-            ]
-        ]
-    },
-    {
-        "id": "e2eaf3341ee307c4",
-        "type": "sunrise",
-        "z": "c7141ffb22d64190",
-        "g": "96ae967f6fb1ee22",
-        "name": "",
-        "lat": "43.018400",
-        "lon": "-89.289000",
-        "start": "sunrise",
-        "end": "sunsetStart",
-        "soff": "0",
-        "eoff": "0",
-        "x": 130,
-        "y": 400,
-        "wires": [
-            [
-                "cca14878836d14f0",
-                "e23977832e48d9c7"
-            ],
             []
         ]
     },
     {
-        "id": "62e02506f9772891",
-        "type": "ui_text",
-        "z": "c7141ffb22d64190",
-        "g": "d50602db214395ed",
-        "group": "25c7f0078ed443dd",
-        "order": 3,
-        "width": 0,
-        "height": 0,
+        "id": "7a750a603f0568ca",
+        "type": "change",
+        "z": "efbc3338fa01d34f",
         "name": "",
-        "label": "Time",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 670,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "7a6a9edf4fea8ae7",
-        "type": "ui_text",
-        "z": "c7141ffb22d64190",
-        "g": "d50602db214395ed",
-        "group": "25c7f0078ed443dd",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Next",
-        "format": "{{msg.next}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 670,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "585f362a2764fc58",
-        "type": "mqtt out",
-        "z": "c7141ffb22d64190",
-        "g": "d50602db214395ed",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "722d62f3b93039c3",
-        "x": 670,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "cca14878836d14f0",
-        "type": "subflow:8470ac2dde4f0946",
-        "z": "c7141ffb22d64190",
-        "g": "d50602db214395ed",
-        "name": "",
-        "x": 340,
-        "y": 500,
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "'https://' & $env('ADDRESS') & '/eventstream/clip/v2'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{\"hue-application-key\": $env('KEY')}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 140,
         "wires": [
             [
-                "33e9b80815c64806"
+                "f13d464834dfe360"
             ]
         ]
     },
     {
-        "id": "33e9b80815c64806",
-        "type": "subflow:dacb5b6825c3fbfa",
-        "z": "c7141ffb22d64190",
-        "g": "d50602db214395ed",
-        "x": 490,
-        "y": 500,
-        "wires": [
-            [
-                "585f362a2764fc58",
-                "62e02506f9772891",
-                "7a6a9edf4fea8ae7"
-            ]
-        ]
-    },
-    {
-        "id": "7cf667fb726a13c0",
-        "type": "ui_text",
-        "z": "c7141ffb22d64190",
-        "g": "215623a01d92fcf6",
-        "group": "25c7f0078ed443dd",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Theme",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 500,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "b6f260388034ca36",
-        "type": "mqtt out",
-        "z": "c7141ffb22d64190",
-        "g": "215623a01d92fcf6",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "722d62f3b93039c3",
-        "x": 490,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "e23977832e48d9c7",
-        "type": "subflow:a8c212909cbdf020",
-        "z": "c7141ffb22d64190",
-        "g": "215623a01d92fcf6",
-        "x": 340,
-        "y": 300,
-        "wires": [
-            [
-                "b6f260388034ca36",
-                "7cf667fb726a13c0"
-            ]
-        ]
-    },
-    {
-        "id": "6a211d9fd39d5775",
-        "type": "subflow:e093eb2abb67e9b8",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
-        "name": "",
-        "x": 880,
-        "y": 340,
-        "wires": [
-            [
-                "c643f266bac4f7fc"
-            ]
-        ]
-    },
-    {
-        "id": "c643f266bac4f7fc",
+        "id": "312782e6466abbfc",
         "type": "function",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
-        "name": "randomBedtime",
-        "func": "let offset = 30 - Math.floor(Math.random() * 60)\nlet value = (msg.payload + offset) % 1440\n\nmsg.topic = 'nodered/automation/bedtime'\nmsg.qos = 2\nmsg.retain = true\n\nmsg.payload = {\n    minutes: msg.payload,\n    value: value\n}\n\nnode.status(value)\n\nreturn msg",
+        "z": "efbc3338fa01d34f",
+        "name": "",
+        "func": "\nreturn msg",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "",
+        "initialize": "setTimeout(() => {\n\n    node.send({payload: true})\n\n}, 1000)",
         "finalize": "",
         "libs": [],
-        "x": 1080,
-        "y": 300,
+        "x": 140,
+        "y": 140,
         "wires": [
             [
-                "2a29e3a519f24a94"
+                "7a750a603f0568ca"
             ]
         ]
     },
     {
-        "id": "2a29e3a519f24a94",
-        "type": "mqtt out",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
+        "id": "88ce782dab5c1c11",
+        "type": "catch",
+        "z": "efbc3338fa01d34f",
         "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "722d62f3b93039c3",
-        "x": 1230,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "8ad64c1a60039a32",
-        "type": "ui_dropdown",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
-        "name": "",
-        "label": "Bedtime",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "ad4d885f83f029a5",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "nodered/bedtime",
-        "topicType": "str",
-        "className": "",
-        "x": 900,
-        "y": 260,
+        "scope": [
+            "f13d464834dfe360"
+        ],
+        "uncaught": false,
+        "x": 90,
+        "y": 60,
         "wires": [
             [
-                "c643f266bac4f7fc"
+                "7a253adad19d296b"
             ]
         ]
     },
     {
-        "id": "973d2866c4b96b6a",
-        "type": "ui_text",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
-        "group": "ad4d885f83f029a5",
-        "order": 6,
-        "width": 0,
-        "height": 0,
+        "id": "7a253adad19d296b",
+        "type": "trigger",
+        "z": "efbc3338fa01d34f",
         "name": "",
-        "label": "Randomized",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 910,
-        "y": 180,
-        "wires": []
+        "op1": "",
+        "op2": "true",
+        "op1type": "nul",
+        "op2type": "bool",
+        "duration": "30",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "312782e6466abbfc"
+            ]
+        ]
     },
     {
-        "id": "1759eaf32d2ac9c9",
-        "type": "subflow:99c62215b637bb07",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
+        "id": "21ccf665fb8d3960",
+        "type": "json",
+        "z": "efbc3338fa01d34f",
         "name": "",
-        "x": 720,
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 610,
+        "y": 140,
+        "wires": [
+            [
+                "16a4c1c41c7850b8"
+            ]
+        ]
+    },
+    {
+        "id": "16a4c1c41c7850b8",
+        "type": "split",
+        "z": "efbc3338fa01d34f",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 130,
         "y": 220,
         "wires": [
             [
-                "973d2866c4b96b6a"
-            ],
-            [
-                "8ad64c1a60039a32"
+                "4d3a8b9a3a7ab1af"
             ]
         ]
     },
     {
-        "id": "05281cc557107b69",
-        "type": "rbe",
-        "z": "c7141ffb22d64190",
-        "g": "7c175ce901294697",
+        "id": "5d5f04c37ee373d7",
+        "type": "split",
+        "z": "efbc3338fa01d34f",
         "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1030,
-        "y": 440,
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 490,
+        "y": 220,
         "wires": [
-            [
-                "6111fbe599be6eb0"
-            ]
+            []
         ]
     },
     {
-        "id": "6111fbe599be6eb0",
-        "type": "switch",
-        "z": "c7141ffb22d64190",
-        "g": "edf74687de57b0d8",
-        "name": "morning?",
-        "property": "payload",
-        "propertyType": "msg",
+        "id": "4d3a8b9a3a7ab1af",
+        "type": "change",
+        "z": "efbc3338fa01d34f",
+        "name": "",
         "rules": [
             {
-                "t": "eq",
-                "v": "morning",
-                "vt": "str"
+                "t": "move",
+                "p": "payload.data",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
             }
         ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 720,
-        "y": 340,
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 220,
         "wires": [
             [
-                "6a211d9fd39d5775"
+                "5d5f04c37ee373d7"
             ]
         ]
     },
@@ -5624,7 +5384,7 @@
         "mode": "return",
         "links": [],
         "x": 365,
-        "y": 660,
+        "y": 280,
         "wires": []
     },
     {
@@ -5635,7 +5395,7 @@
         "name": "send to chez nous main",
         "links": [],
         "x": 75,
-        "y": 660,
+        "y": 280,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -5664,7 +5424,7 @@
             }
         ],
         "x": 220,
-        "y": 660,
+        "y": 280,
         "wires": [
             [
                 "14e5342cb50f366f"
@@ -5679,8 +5439,8 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 765,
-        "y": 660,
+        "x": 365,
+        "y": 620,
         "wires": []
     },
     {
@@ -5690,8 +5450,8 @@
         "g": "bcc093f094553b4d",
         "name": "send to basement hue",
         "links": [],
-        "x": 475,
-        "y": 660,
+        "x": 75,
+        "y": 620,
         "wires": [
             [
                 "4e36662275710bb1"
@@ -5719,8 +5479,8 @@
                 "type": "str"
             }
         ],
-        "x": 620,
-        "y": 660,
+        "x": 220,
+        "y": 620,
         "wires": [
             [
                 "549ca3d525c450ff"
@@ -5728,10 +5488,474 @@
         ]
     },
     {
-        "id": "1645ecbe3771d71d",
-        "type": "subflow:9c4e4702e4660adf",
+        "id": "be9b05e35436b685",
+        "type": "inject",
         "z": "c7141ffb22d64190",
-        "g": "a439702523fe51fd",
+        "g": "3797523125cd91eb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "314b7ecbf3c9be3e"
+            ]
+        ]
+    },
+    {
+        "id": "b6e949344f7491aa",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "3797523125cd91eb",
+        "name": "basement hue access token",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload[0].success.username",
+        "statusType": "msg",
+        "x": 600,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "314b7ecbf3c9be3e",
+        "type": "subflow:75bc72a16c4da2c8",
+        "z": "c7141ffb22d64190",
+        "g": "3797523125cd91eb",
+        "name": "Basement Hue Access Token",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.34",
+                "type": "str"
+            },
+            {
+                "name": "USERNAME",
+                "value": "nodered#cheznous",
+                "type": "str"
+            }
+        ],
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "b6e949344f7491aa"
+            ]
+        ]
+    },
+    {
+        "id": "221535a76db32dec",
+        "type": "inject",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "method",
+                "v": "GET",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "20",
+        "topic": "resource",
+        "payload": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 520,
+        "wires": [
+            [
+                "dc55941c1abe7533"
+            ]
+        ]
+    },
+    {
+        "id": "dc55941c1abe7533",
+        "type": "link call",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "",
+        "links": [
+            "3a4eb79d1be1560a"
+        ],
+        "timeout": "30",
+        "x": 340,
+        "y": 520,
+        "wires": [
+            [
+                "d69d9a7d182aefe3"
+            ]
+        ]
+    },
+    {
+        "id": "d69d9a7d182aefe3",
+        "type": "subflow:e4e37acec8ce8ff8",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "Get Basement Hue Metadata",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/basement-hue",
+                "type": "str"
+            },
+            {
+                "name": "GLOBAL",
+                "value": "basement-hue",
+                "type": "str"
+            }
+        ],
+        "x": 580,
+        "y": 520,
+        "wires": [
+            [
+                "7667a993cb097109"
+            ]
+        ]
+    },
+    {
+        "id": "7667a993cb097109",
+        "type": "subflow:764913cd47ccb672",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "Get Basement Hue UI Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "basement-hue",
+                "type": "str"
+            }
+        ],
+        "x": 850,
+        "y": 520,
+        "wires": [
+            [
+                "6d112919d030c53c"
+            ]
+        ]
+    },
+    {
+        "id": "6d112919d030c53c",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "basement hue",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "51bce99c75aa12c6",
+        "type": "inject",
+        "z": "c7141ffb22d64190",
+        "g": "290b83ef8e01ae0f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "73a1ec5ed8ebc167"
+            ]
+        ]
+    },
+    {
+        "id": "f3ab10cd192709b0",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "290b83ef8e01ae0f",
+        "name": "chez nous main access token",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "msg",
+        "x": 670,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "73a1ec5ed8ebc167",
+        "type": "subflow:75bc72a16c4da2c8",
+        "z": "c7141ffb22d64190",
+        "g": "290b83ef8e01ae0f",
+        "name": "Create Chez Nous Main Access Token",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.12",
+                "type": "str"
+            },
+            {
+                "name": "USERNAME",
+                "value": "nodered#cheznous",
+                "type": "str"
+            }
+        ],
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [
+                "f3ab10cd192709b0"
+            ]
+        ]
+    },
+    {
+        "id": "2d0604f94ef7bff4",
+        "type": "inject",
+        "z": "c7141ffb22d64190",
+        "g": "11ad281459e35854",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "method",
+                "v": "GET",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "resource",
+        "payload": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "8c9d79d2791e9b02"
+            ]
+        ]
+    },
+    {
+        "id": "8c9d79d2791e9b02",
+        "type": "link call",
+        "z": "c7141ffb22d64190",
+        "g": "11ad281459e35854",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 350,
+        "y": 180,
+        "wires": [
+            [
+                "303e0cda741131c4"
+            ]
+        ]
+    },
+    {
+        "id": "303e0cda741131c4",
+        "type": "subflow:e4e37acec8ce8ff8",
+        "z": "c7141ffb22d64190",
+        "g": "11ad281459e35854",
+        "name": "Get Chez Nous Main Metadata",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/chez-nous-main",
+                "type": "str"
+            },
+            {
+                "name": "GLOBAL",
+                "value": "chez-nous-main",
+                "type": "str"
+            }
+        ],
+        "x": 610,
+        "y": 180,
+        "wires": [
+            [
+                "79befa4d74086653"
+            ]
+        ]
+    },
+    {
+        "id": "79befa4d74086653",
+        "type": "subflow:764913cd47ccb672",
+        "z": "c7141ffb22d64190",
+        "g": "11ad281459e35854",
+        "name": "Get Chez Nous Main UI Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "chez-nous-main",
+                "type": "str"
+            }
+        ],
+        "x": 900,
+        "y": 180,
+        "wires": [
+            [
+                "14a354d21e8857db"
+            ]
+        ]
+    },
+    {
+        "id": "14a354d21e8857db",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "11ad281459e35854",
+        "name": "chez nous main",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d037cf6840797c18",
+        "type": "subflow:efbc3338fa01d34f",
+        "z": "c7141ffb22d64190",
+        "g": "a7d0f8a2225f6ea8",
+        "name": "Chez Nous Main SSE",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.12",
+                "type": "str"
+            },
+            {
+                "name": "KEY",
+                "value": "EhKZJjy5vLvz-3bz06K9a8MLfCaSSzR5WxSK8a-y",
+                "type": "str"
+            }
+        ],
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "55aec8038b85e54b"
+            ]
+        ]
+    },
+    {
+        "id": "ce5d060aebb023e4",
+        "type": "subflow:efbc3338fa01d34f",
+        "z": "c7141ffb22d64190",
+        "g": "605254399eb9985d",
+        "name": "Basement Hue SSE",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.34",
+                "type": "str"
+            },
+            {
+                "name": "KEY",
+                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
+                "type": "str"
+            }
+        ],
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "09371468762cd509"
+            ]
+        ]
+    },
+    {
+        "id": "55aec8038b85e54b",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "a7d0f8a2225f6ea8",
+        "name": "chez nous main sse",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "event",
+        "statusType": "msg",
+        "x": 780,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "09371468762cd509",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "605254399eb9985d",
+        "name": "basement hue sse",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "event",
+        "statusType": "msg",
+        "x": 750,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "536874de79956f84",
+        "type": "subflow:1a6413355bbb49cc",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
         "name": "",
         "env": [
             {
@@ -5740,40 +5964,710 @@
                 "type": "str"
             }
         ],
-        "x": 1020,
-        "y": 660,
+        "x": 790,
+        "y": 80,
         "wires": [
             [
-                "46d60582b3ea62e0"
+                "fc5defb4e76d244e"
             ]
         ]
     },
     {
-        "id": "a400b22f32b8519b",
+        "id": "1cee4f351bd59563",
+        "type": "debug",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "powerview scenes",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cae953f2c04362ad",
+        "type": "inject",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "f42aab98c1153884"
+            ]
+        ]
+    },
+    {
+        "id": "3c70a7443900cb3f",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "2afac67683a580f7",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 550,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0514602b711a8136",
         "type": "link in",
-        "z": "c7141ffb22d64190",
-        "g": "a439702523fe51fd",
+        "z": "1cf0490e7de2f93d",
+        "g": "2afac67683a580f7",
+        "name": "window shade automation",
+        "links": [
+            "1f7aefd9b0586064",
+            "21690efdfa2776cf"
+        ],
+        "x": 195,
+        "y": 180,
+        "wires": [
+            [
+                "a0985c083540376f"
+            ]
+        ]
+    },
+    {
+        "id": "a0985c083540376f",
+        "type": "subflow:3faadb46568c393b",
+        "z": "1cf0490e7de2f93d",
+        "g": "2afac67683a580f7",
+        "name": "",
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "3c70a7443900cb3f"
+            ]
+        ]
+    },
+    {
+        "id": "f390ba1d460e3399",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "rooms",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "536874de79956f84"
+            ]
+        ]
+    },
+    {
+        "id": "fc5defb4e76d244e",
+        "type": "function",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "mergeMetadata",
+        "func": "let findRoomName = id => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map(scene => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "1cee4f351bd59563"
+            ]
+        ]
+    },
+    {
+        "id": "f42aab98c1153884",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
+        ],
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "f390ba1d460e3399"
+            ]
+        ]
+    },
+    {
+        "id": "2f6cc09457939ce2",
+        "type": "subflow:9c4e4702e4660adf",
+        "z": "1cf0490e7de2f93d",
+        "g": "87285e6bf01cff03",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.30",
+                "type": "str"
+            }
+        ],
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "618e79a58ab8143a"
+            ]
+        ]
+    },
+    {
+        "id": "7173aa38c9fa93dc",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "87285e6bf01cff03",
         "name": "activate powerview scene",
         "links": [],
-        "x": 875,
-        "y": 660,
+        "x": 195,
+        "y": 280,
         "wires": [
             [
-                "1645ecbe3771d71d"
+                "2f6cc09457939ce2"
             ]
         ]
     },
     {
-        "id": "46d60582b3ea62e0",
+        "id": "618e79a58ab8143a",
         "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "a439702523fe51fd",
+        "z": "1cf0490e7de2f93d",
+        "g": "87285e6bf01cff03",
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 1155,
-        "y": 660,
+        "x": 475,
+        "y": 280,
         "wires": []
+    },
+    {
+        "id": "6f7db4dc310c6c2f",
+        "type": "subflow:5e6607a62e250494",
+        "z": "f03b6ceb81ed7dac",
+        "g": "9b9a844a8df2769d",
+        "name": "",
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "18c9ac4127308f24",
+                "58abeb0fb7d59222"
+            ]
+        ]
+    },
+    {
+        "id": "18c9ac4127308f24",
+        "type": "subflow:c0cc9d812cad7bfc",
+        "z": "f03b6ceb81ed7dac",
+        "g": "9b9a844a8df2769d",
+        "name": "",
+        "x": 1070,
+        "y": 520,
+        "wires": [
+            [
+                "21690efdfa2776cf"
+            ]
+        ]
+    },
+    {
+        "id": "c09a00ecb1c547ec",
+        "type": "inject",
+        "z": "f03b6ceb81ed7dac",
+        "g": "9b9a844a8df2769d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "retain",
+                "v": "false",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 02 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "night",
+        "payloadType": "str",
+        "x": 890,
+        "y": 560,
+        "wires": [
+            [
+                "18c9ac4127308f24"
+            ]
+        ]
+    },
+    {
+        "id": "21690efdfa2776cf",
+        "type": "link out",
+        "z": "f03b6ceb81ed7dac",
+        "g": "9b9a844a8df2769d",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "1993fd8165053adf",
+            "facb9598623e3675",
+            "380c05275eae4338",
+            "1f8dccfd42af4188",
+            "23b7995dafc3f002",
+            "0514602b711a8136"
+        ],
+        "x": 1195,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "58abeb0fb7d59222",
+        "type": "rbe",
+        "z": "f03b6ceb81ed7dac",
+        "g": "9b9a844a8df2769d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 440,
+        "wires": [
+            [
+                "114b9703250b5ff7"
+            ]
+        ]
+    },
+    {
+        "id": "f086604c46663235",
+        "type": "ui_switch",
+        "z": "f03b6ceb81ed7dac",
+        "g": "daced5cc49fcef0a",
+        "name": "Enable Automation",
+        "label": "Enable",
+        "tooltip": "",
+        "group": "25c7f0078ed443dd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 590,
+        "y": 80,
+        "wires": [
+            [
+                "8221b9e4e7b1d425"
+            ]
+        ]
+    },
+    {
+        "id": "9810ca9f681aaebf",
+        "type": "mqtt in",
+        "z": "f03b6ceb81ed7dac",
+        "g": "daced5cc49fcef0a",
+        "name": "",
+        "topic": "nodered/automation/enable",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "f2e04cae9bfd57e6"
+            ]
+        ]
+    },
+    {
+        "id": "8221b9e4e7b1d425",
+        "type": "mqtt out",
+        "z": "f03b6ceb81ed7dac",
+        "g": "daced5cc49fcef0a",
+        "name": "",
+        "topic": "nodered/automation/enable",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 820,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f2e04cae9bfd57e6",
+        "type": "subflow:6fb319108eed0e2a",
+        "z": "f03b6ceb81ed7dac",
+        "g": "daced5cc49fcef0a",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "f086604c46663235"
+            ]
+        ]
+    },
+    {
+        "id": "802ec81ddfb59441",
+        "type": "sunrise",
+        "z": "f03b6ceb81ed7dac",
+        "g": "1723570f3a1a07a2",
+        "name": "",
+        "lat": "43.018400",
+        "lon": "-89.289000",
+        "start": "sunrise",
+        "end": "sunsetStart",
+        "soff": "0",
+        "eoff": "0",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "5085c8772606b854",
+                "a3dd9bfc89e0e94a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6bdf715d945fbc10",
+        "type": "ui_text",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "group": "25c7f0078ed443dd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 670,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3460ef4d47e9a47b",
+        "type": "ui_text",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "group": "25c7f0078ed443dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Next",
+        "format": "{{msg.next}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 670,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "26c0274d3d6b7697",
+        "type": "mqtt out",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 670,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5085c8772606b854",
+        "type": "subflow:8470ac2dde4f0946",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "name": "",
+        "x": 340,
+        "y": 500,
+        "wires": [
+            [
+                "305c62d581d22adf"
+            ]
+        ]
+    },
+    {
+        "id": "305c62d581d22adf",
+        "type": "subflow:dacb5b6825c3fbfa",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "26c0274d3d6b7697",
+                "6bdf715d945fbc10",
+                "3460ef4d47e9a47b"
+            ]
+        ]
+    },
+    {
+        "id": "c168b5c3119db1de",
+        "type": "ui_text",
+        "z": "f03b6ceb81ed7dac",
+        "g": "31ed5707953578b9",
+        "group": "25c7f0078ed443dd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Theme",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 500,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ee8e24d1cd81c931",
+        "type": "mqtt out",
+        "z": "f03b6ceb81ed7dac",
+        "g": "31ed5707953578b9",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 490,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a3dd9bfc89e0e94a",
+        "type": "subflow:a8c212909cbdf020",
+        "z": "f03b6ceb81ed7dac",
+        "g": "31ed5707953578b9",
+        "x": 340,
+        "y": 300,
+        "wires": [
+            [
+                "ee8e24d1cd81c931",
+                "c168b5c3119db1de"
+            ]
+        ]
+    },
+    {
+        "id": "bbcb2a37e7e328bb",
+        "type": "ui_dropdown",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "",
+        "label": "Bedtime",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "ad4d885f83f029a5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "nodered/bedtime",
+        "topicType": "str",
+        "className": "",
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "4aa998790c81c0de"
+            ]
+        ]
+    },
+    {
+        "id": "cf6562b252b0fea0",
+        "type": "ui_text",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "group": "ad4d885f83f029a5",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Randomized",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 910,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "abe65b742c235eaf",
+        "type": "subflow:99c62215b637bb07",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "",
+        "x": 720,
+        "y": 220,
+        "wires": [
+            [
+                "cf6562b252b0fea0"
+            ],
+            [
+                "bbcb2a37e7e328bb"
+            ]
+        ]
+    },
+    {
+        "id": "dfcc0d83078d3036",
+        "type": "subflow:e093eb2abb67e9b8",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "",
+        "x": 880,
+        "y": 340,
+        "wires": [
+            [
+                "4aa998790c81c0de"
+            ]
+        ]
+    },
+    {
+        "id": "4aa998790c81c0de",
+        "type": "function",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "randomBedtime",
+        "func": "let offset = 30 - Math.floor(Math.random() * 60)\nlet value = (msg.payload + offset) % 1440\n\nmsg.topic = 'nodered/automation/bedtime'\nmsg.qos = 2\nmsg.retain = true\n\nmsg.payload = {\n    minutes: msg.payload,\n    value: value\n}\n\nnode.status(value)\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 300,
+        "wires": [
+            [
+                "d7fe731e9b583602"
+            ]
+        ]
+    },
+    {
+        "id": "d7fe731e9b583602",
+        "type": "mqtt out",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 1230,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "114b9703250b5ff7",
+        "type": "switch",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "morning?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "morning",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "dfcc0d83078d3036"
+            ]
+        ]
     },
     {
         "id": "061d8c40c8ed16ab",
@@ -6012,7 +6906,8 @@
         "g": "e936dbad3fb3b587",
         "name": "lighting",
         "links": [
-            "1f7aefd9b0586064"
+            "1f7aefd9b0586064",
+            "21690efdfa2776cf"
         ],
         "x": 165,
         "y": 320,
@@ -6096,563 +6991,6 @@
         "wires": [
             [
                 "98acfbdd1bdfd0c0"
-            ]
-        ]
-    },
-    {
-        "id": "42d607d0bcefe3a3",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "ce88172c5dbc9f67",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 60,
-        "wires": [
-            [
-                "dde4b6e7207eaaa2"
-            ]
-        ]
-    },
-    {
-        "id": "fd7babc23ade7d52",
-        "type": "debug",
-        "z": "a00ccef1301f21e3",
-        "g": "ce88172c5dbc9f67",
-        "name": "chez nous main access token",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "msg",
-        "x": 650,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "dde4b6e7207eaaa2",
-        "type": "subflow:75bc72a16c4da2c8",
-        "z": "a00ccef1301f21e3",
-        "g": "ce88172c5dbc9f67",
-        "name": "Create Chez Nous Main Access Token",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.12",
-                "type": "str"
-            },
-            {
-                "name": "USERNAME",
-                "value": "nodered#cheznous",
-                "type": "str"
-            }
-        ],
-        "x": 350,
-        "y": 60,
-        "wires": [
-            [
-                "fd7babc23ade7d52"
-            ]
-        ]
-    },
-    {
-        "id": "c6e09ee6553c5587",
-        "type": "debug",
-        "z": "a00ccef1301f21e3",
-        "g": "41cef0af2772c23a",
-        "name": "chez nous main",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "06fb360d1605eee4",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "41cef0af2772c23a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "method",
-                "v": "GET",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "10",
-        "topic": "resource",
-        "payload": "",
-        "payloadType": "str",
-        "x": 130,
-        "y": 160,
-        "wires": [
-            [
-                "5c11ca5b24ca72d8"
-            ]
-        ]
-    },
-    {
-        "id": "5c11ca5b24ca72d8",
-        "type": "link call",
-        "z": "a00ccef1301f21e3",
-        "g": "41cef0af2772c23a",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 330,
-        "y": 160,
-        "wires": [
-            [
-                "69a8648256e320f4"
-            ]
-        ]
-    },
-    {
-        "id": "69a8648256e320f4",
-        "type": "subflow:e4e37acec8ce8ff8",
-        "z": "a00ccef1301f21e3",
-        "g": "41cef0af2772c23a",
-        "name": "Get Chez Nous Main Metadata",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/chez-nous-main",
-                "type": "str"
-            },
-            {
-                "name": "GLOBAL",
-                "value": "chez-nous-main",
-                "type": "str"
-            }
-        ],
-        "x": 590,
-        "y": 160,
-        "wires": [
-            [
-                "bb32f45d1a4e196d"
-            ]
-        ]
-    },
-    {
-        "id": "bb32f45d1a4e196d",
-        "type": "subflow:764913cd47ccb672",
-        "z": "a00ccef1301f21e3",
-        "g": "41cef0af2772c23a",
-        "name": "Get Chez Nous Main UI Metadata",
-        "env": [
-            {
-                "name": "GLOBAL",
-                "value": "chez-nous-main",
-                "type": "str"
-            }
-        ],
-        "x": 880,
-        "y": 160,
-        "wires": [
-            [
-                "c6e09ee6553c5587"
-            ]
-        ]
-    },
-    {
-        "id": "b8d8c4247f9d89d8",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "a1484ffd83f80827",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 260,
-        "wires": [
-            [
-                "9fde9ecce8444ca2"
-            ]
-        ]
-    },
-    {
-        "id": "d208e4938951586c",
-        "type": "debug",
-        "z": "a00ccef1301f21e3",
-        "g": "a1484ffd83f80827",
-        "name": "basement hue access token",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload[0].success.username",
-        "statusType": "msg",
-        "x": 580,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "9fde9ecce8444ca2",
-        "type": "subflow:75bc72a16c4da2c8",
-        "z": "a00ccef1301f21e3",
-        "g": "a1484ffd83f80827",
-        "name": "Basement Hue Access Token",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.34",
-                "type": "str"
-            },
-            {
-                "name": "USERNAME",
-                "value": "nodered#cheznous",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 260,
-        "wires": [
-            [
-                "d208e4938951586c"
-            ]
-        ]
-    },
-    {
-        "id": "72009f40c58910ae",
-        "type": "inject",
-        "z": "a00ccef1301f21e3",
-        "g": "c734fba31492ec8b",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "method",
-                "v": "GET",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "20",
-        "topic": "resource",
-        "payload": "",
-        "payloadType": "str",
-        "x": 130,
-        "y": 360,
-        "wires": [
-            [
-                "4e533e8b0892cbb2"
-            ]
-        ]
-    },
-    {
-        "id": "4e533e8b0892cbb2",
-        "type": "link call",
-        "z": "a00ccef1301f21e3",
-        "g": "c734fba31492ec8b",
-        "name": "",
-        "links": [
-            "3a4eb79d1be1560a"
-        ],
-        "timeout": "30",
-        "x": 320,
-        "y": 360,
-        "wires": [
-            [
-                "94ccca5cecf90b8b"
-            ]
-        ]
-    },
-    {
-        "id": "94ccca5cecf90b8b",
-        "type": "subflow:e4e37acec8ce8ff8",
-        "z": "a00ccef1301f21e3",
-        "g": "c734fba31492ec8b",
-        "name": "Get Basement Hue Metadata",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/basement-hue",
-                "type": "str"
-            },
-            {
-                "name": "GLOBAL",
-                "value": "basement-hue",
-                "type": "str"
-            }
-        ],
-        "x": 560,
-        "y": 360,
-        "wires": [
-            [
-                "4e2ea1775adfcdba"
-            ]
-        ]
-    },
-    {
-        "id": "4e2ea1775adfcdba",
-        "type": "subflow:764913cd47ccb672",
-        "z": "a00ccef1301f21e3",
-        "g": "c734fba31492ec8b",
-        "name": "Get Basement Hue UI Metadata",
-        "env": [
-            {
-                "name": "GLOBAL",
-                "value": "basement-hue",
-                "type": "str"
-            }
-        ],
-        "x": 830,
-        "y": 360,
-        "wires": [
-            [
-                "5388e30f0e6159b0"
-            ]
-        ]
-    },
-    {
-        "id": "5388e30f0e6159b0",
-        "type": "debug",
-        "z": "a00ccef1301f21e3",
-        "g": "c734fba31492ec8b",
-        "name": "basement hue",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "536874de79956f84",
-        "type": "subflow:1a6413355bbb49cc",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.30",
-                "type": "str"
-            }
-        ],
-        "x": 790,
-        "y": 80,
-        "wires": [
-            [
-                "fc5defb4e76d244e"
-            ]
-        ]
-    },
-    {
-        "id": "1cee4f351bd59563",
-        "type": "debug",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "powerview scenes",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1190,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "cae953f2c04362ad",
-        "type": "inject",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 170,
-        "y": 80,
-        "wires": [
-            [
-                "f42aab98c1153884"
-            ]
-        ]
-    },
-    {
-        "id": "3c70a7443900cb3f",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "2afac67683a580f7",
-        "name": "",
-        "links": [
-            "a400b22f32b8519b"
-        ],
-        "timeout": "30",
-        "x": 550,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0514602b711a8136",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "2afac67683a580f7",
-        "name": "window shade automation",
-        "links": [
-            "1f7aefd9b0586064"
-        ],
-        "x": 195,
-        "y": 180,
-        "wires": [
-            [
-                "a0985c083540376f"
-            ]
-        ]
-    },
-    {
-        "id": "a0985c083540376f",
-        "type": "subflow:3faadb46568c393b",
-        "z": "1cf0490e7de2f93d",
-        "g": "2afac67683a580f7",
-        "name": "",
-        "x": 330,
-        "y": 180,
-        "wires": [
-            [
-                "3c70a7443900cb3f"
-            ]
-        ]
-    },
-    {
-        "id": "f390ba1d460e3399",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "rooms",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 570,
-        "y": 80,
-        "wires": [
-            [
-                "536874de79956f84"
-            ]
-        ]
-    },
-    {
-        "id": "fc5defb4e76d244e",
-        "type": "function",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "mergeMetadata",
-        "func": "let findRoomName = id => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map(scene => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 80,
-        "wires": [
-            [
-                "1cee4f351bd59563"
-            ]
-        ]
-    },
-    {
-        "id": "f42aab98c1153884",
-        "type": "subflow:4920eed654c67f8d",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.30",
-                "type": "str"
-            }
-        ],
-        "x": 360,
-        "y": 80,
-        "wires": [
-            [
-                "f390ba1d460e3399"
             ]
         ]
     },
