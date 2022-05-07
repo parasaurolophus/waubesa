@@ -1045,6 +1045,106 @@
         }
     },
     {
+        "id": "d11bc6d84c35d70a",
+        "type": "subflow",
+        "name": "Hue Event",
+        "info": "Store the cumulative state of all devices for a given Hue Bridge in the context store of a function node in this subflow. Adjust the incoming `msg.payload`, `msg.topic`, `msg.qos` and `msg.retain` to signal the current cumulative state of the device which emitted the given SSE event using MQTT.",
+        "category": "hue",
+        "in": [
+            {
+                "x": 60,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "83573f8c9366c7cd"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 480,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "55326c4cfd5e25e3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": "hue"
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "font-awesome/fa-lightbulb-o",
+        "status": {
+            "x": 500,
+            "y": 140,
+            "wires": [
+                {
+                    "id": "ee3c281b455bf67c",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "e2cbe8e06513f144",
+        "type": "subflow",
+        "name": "Grouped Light State",
+        "info": "",
+        "category": "hue",
+        "in": [
+            {
+                "x": 60,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "2b45a9462f18d572"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 740,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "48f11d601e9b48fb",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": "hue"
+            }
+        ],
+        "meta": {},
+        "color": "#3FADB5",
+        "icon": "font-awesome/fa-lightbulb-o",
+        "status": {
+            "x": 920,
+            "y": 140,
+            "wires": [
+                {
+                    "id": "2bd82e2456749a93",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "ea7b9754db9fd0cd",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -1114,7 +1214,9 @@
             "528147947c85ca11"
         ],
         "x": 114,
-        "y": 39
+        "y": 39,
+        "w": 982,
+        "h": 162
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1138,7 +1240,9 @@
             "582d83b50ac68d1b"
         ],
         "x": 124,
-        "y": 399
+        "y": 399,
+        "w": 1022,
+        "h": 162
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1162,7 +1266,9 @@
             "15a369735e538669"
         ],
         "x": 114,
-        "y": 219
+        "y": 219,
+        "w": 1002,
+        "h": 162
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1361,7 +1467,9 @@
             "a3eb5555d54ffb79"
         ],
         "x": 124,
-        "y": 579
+        "y": 579,
+        "w": 1022,
+        "h": 162
     },
     {
         "id": "dd577488786042ba",
@@ -1420,16 +1528,17 @@
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": false
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
             "14e5342cb50f366f",
             "7df3e5fbd6e9aa8a",
             "3b5ab296575b53d4"
         ],
-        "x": 34,
-        "y": 239,
-        "w": 372,
+        "x": 914,
+        "y": 19,
+        "w": 385,
         "h": 82
     },
     {
@@ -1441,16 +1550,17 @@
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": false
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
             "549ca3d525c450ff",
             "3a4eb79d1be1560a",
             "4e36662275710bb1"
         ],
-        "x": 34,
-        "y": 579,
-        "w": 372,
+        "x": 914,
+        "y": 119,
+        "w": 375,
         "h": 82
     },
     {
@@ -1618,32 +1728,8 @@
             "314b7ecbf3c9be3e"
         ],
         "x": 34,
-        "y": 379,
+        "y": 119,
         "w": 732,
-        "h": 82
-    },
-    {
-        "id": "2b48c44859895594",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Periodically fetch all metdata from Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "221535a76db32dec",
-            "dc55941c1abe7533",
-            "d69d9a7d182aefe3",
-            "7667a993cb097109",
-            "6d112919d030c53c"
-        ],
-        "x": 34,
-        "y": 479,
-        "w": 1172,
         "h": 82
     },
     {
@@ -1664,32 +1750,8 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 34,
-        "y": 39,
+        "y": 19,
         "w": 812,
-        "h": 82
-    },
-    {
-        "id": "11ad281459e35854",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Periodically fetch all metdata from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "2d0604f94ef7bff4",
-            "8c9d79d2791e9b02",
-            "303e0cda741131c4",
-            "79befa4d74086653",
-            "14a354d21e8857db"
-        ],
-        "x": 34,
-        "y": 139,
-        "w": 1232,
         "h": 82
     },
     {
@@ -1715,41 +1777,121 @@
         "id": "a7d0f8a2225f6ea8",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "",
+        "name": "Handle SSE messages from the Chez Nous Main bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": false
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
             "d037cf6840797c18",
-            "55aec8038b85e54b"
+            "dc5f811e2a68c624",
+            "4d2dc9a6e42d0548",
+            "dbc737f63b35a12f"
         ],
-        "x": 434,
-        "y": 239,
-        "w": 492,
-        "h": 82
+        "x": 34,
+        "y": 579,
+        "w": 522,
+        "h": 122
     },
     {
         "id": "605254399eb9985d",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "",
+        "name": "Handle SSE messages from the Basement Hue bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
             "fill-opacity": "0.1",
-            "label": false
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
             "ce5d060aebb023e4",
-            "09371468762cd509"
+            "b3f1776edd16a168",
+            "2a3ace48408488ce",
+            "3e801794c796089d"
         ],
-        "x": 434,
+        "x": 574,
         "y": 579,
-        "w": 452,
+        "w": 502,
+        "h": 122
+    },
+    {
+        "id": "8545c2a1148d264a",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Send to MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "fa53d0705439be41",
+            "3b7883c8e3995294",
+            "eb7598c91a41f685"
+        ],
+        "x": 24,
+        "y": 719,
+        "w": 362,
         "h": 82
+    },
+    {
+        "id": "11ad281459e35854",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Periodically fetch all metdata from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "2d0604f94ef7bff4",
+            "8c9d79d2791e9b02",
+            "303e0cda741131c4",
+            "79befa4d74086653",
+            "6643119724269664",
+            "285ab85f3bc898ab",
+            "1d0f73c8315e923d"
+        ],
+        "x": 34,
+        "y": 219,
+        "w": 1252,
+        "h": 162
+    },
+    {
+        "id": "2b48c44859895594",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Periodically fetch all metdata from Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "221535a76db32dec",
+            "dc55941c1abe7533",
+            "d69d9a7d182aefe3",
+            "7667a993cb097109",
+            "6d112919d030c53c",
+            "04c64466c8e427bf",
+            "58a0c4519b2ad8df"
+        ],
+        "x": 34,
+        "y": 399,
+        "w": 1192,
+        "h": 162
     },
     {
         "id": "e79e0110c2317edb",
@@ -5376,6 +5518,212 @@
         ]
     },
     {
+        "id": "83573f8c9366c7cd",
+        "type": "change",
+        "z": "d11bc6d84c35d70a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$env('TOPIC') & '/' & payload.type & '/' & payload.id",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "55326c4cfd5e25e3",
+                "ee3c281b455bf67c"
+            ]
+        ]
+    },
+    {
+        "id": "55326c4cfd5e25e3",
+        "type": "function",
+        "z": "d11bc6d84c35d70a",
+        "name": "updateState",
+        "func": "let state = context.get('state') || {}\nlet path = msg.topic.split('/')\n\nlet merge = (currentValue, newValue) => {\n\n    for (let key in newValue) {\n\n        currentValue[key] = newValue[key]\n\n    }\n\n    return currentValue\n\n}\n\nlet updateValue = (path, state) => {\n\n    let key = path.shift()    \n    let current = state[key] || {}\n    let updated = null\n\n    if (path.length == 0) {\n    \n        updated = merge(current, msg.payload)\n        msg.payload = updated\n\n    } else {\n        \n        updated = updateValue(path, current)\n    }\n\n    state[key] = updated\n    return state\n\n}\n\nupdateValue(path, state)\ncontext.set('state', state)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ee3c281b455bf67c",
+        "type": "change",
+        "z": "d11bc6d84c35d70a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$reverse($split(topic, '/'))[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48f11d601e9b48fb",
+        "type": "change",
+        "z": "e2cbe8e06513f144",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$env('TOPIC') & '/' & payload.type & '/' & payload.id",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 100,
+        "wires": [
+            [
+                "2bd82e2456749a93"
+            ]
+        ]
+    },
+    {
+        "id": "2bd82e2456749a93",
+        "type": "change",
+        "z": "e2cbe8e06513f144",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$reverse($split(topic, '/'))[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b40a88001ebfcee",
+        "type": "split",
+        "z": "e2cbe8e06513f144",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "48f11d601e9b48fb"
+            ]
+        ]
+    },
+    {
+        "id": "2b45a9462f18d572",
+        "type": "change",
+        "z": "e2cbe8e06513f144",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.grouped_light",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "5b40a88001ebfcee"
+            ]
+        ]
+    },
+    {
+        "id": "6f784516cba969f2",
+        "type": "comment",
+        "z": "e2cbe8e06513f144",
+        "name": "Replace [move msg.payload.grouped_light] with a [split] node to process all device types",
+        "info": "",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    },
+    {
         "id": "14e5342cb50f366f",
         "type": "link out",
         "z": "c7141ffb22d64190",
@@ -5383,8 +5731,8 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 365,
-        "y": 280,
+        "x": 1245,
+        "y": 60,
         "wires": []
     },
     {
@@ -5394,8 +5742,8 @@
         "g": "70e9b8db12799d18",
         "name": "send to chez nous main",
         "links": [],
-        "x": 75,
-        "y": 280,
+        "x": 955,
+        "y": 60,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -5423,8 +5771,8 @@
                 "type": "str"
             }
         ],
-        "x": 220,
-        "y": 280,
+        "x": 1100,
+        "y": 60,
         "wires": [
             [
                 "14e5342cb50f366f"
@@ -5439,8 +5787,8 @@
         "name": "",
         "mode": "return",
         "links": [],
-        "x": 365,
-        "y": 620,
+        "x": 1245,
+        "y": 160,
         "wires": []
     },
     {
@@ -5450,8 +5798,8 @@
         "g": "bcc093f094553b4d",
         "name": "send to basement hue",
         "links": [],
-        "x": 75,
-        "y": 620,
+        "x": 955,
+        "y": 160,
         "wires": [
             [
                 "4e36662275710bb1"
@@ -5479,8 +5827,8 @@
                 "type": "str"
             }
         ],
-        "x": 220,
-        "y": 620,
+        "x": 1100,
+        "y": 160,
         "wires": [
             [
                 "549ca3d525c450ff"
@@ -5506,7 +5854,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 420,
+        "y": 160,
         "wires": [
             [
                 "314b7ecbf3c9be3e"
@@ -5528,7 +5876,7 @@
         "statusVal": "payload[0].success.username",
         "statusType": "msg",
         "x": 600,
-        "y": 420,
+        "y": 160,
         "wires": []
     },
     {
@@ -5550,130 +5898,12 @@
             }
         ],
         "x": 340,
-        "y": 420,
+        "y": 160,
         "wires": [
             [
                 "b6e949344f7491aa"
             ]
         ]
-    },
-    {
-        "id": "221535a76db32dec",
-        "type": "inject",
-        "z": "c7141ffb22d64190",
-        "g": "2b48c44859895594",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "method",
-                "v": "GET",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3600",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "20",
-        "topic": "resource",
-        "payload": "",
-        "payloadType": "str",
-        "x": 150,
-        "y": 520,
-        "wires": [
-            [
-                "dc55941c1abe7533"
-            ]
-        ]
-    },
-    {
-        "id": "dc55941c1abe7533",
-        "type": "link call",
-        "z": "c7141ffb22d64190",
-        "g": "2b48c44859895594",
-        "name": "",
-        "links": [
-            "3a4eb79d1be1560a"
-        ],
-        "timeout": "30",
-        "x": 340,
-        "y": 520,
-        "wires": [
-            [
-                "d69d9a7d182aefe3"
-            ]
-        ]
-    },
-    {
-        "id": "d69d9a7d182aefe3",
-        "type": "subflow:e4e37acec8ce8ff8",
-        "z": "c7141ffb22d64190",
-        "g": "2b48c44859895594",
-        "name": "Get Basement Hue Metadata",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/basement-hue",
-                "type": "str"
-            },
-            {
-                "name": "GLOBAL",
-                "value": "basement-hue",
-                "type": "str"
-            }
-        ],
-        "x": 580,
-        "y": 520,
-        "wires": [
-            [
-                "7667a993cb097109"
-            ]
-        ]
-    },
-    {
-        "id": "7667a993cb097109",
-        "type": "subflow:764913cd47ccb672",
-        "z": "c7141ffb22d64190",
-        "g": "2b48c44859895594",
-        "name": "Get Basement Hue UI Metadata",
-        "env": [
-            {
-                "name": "GLOBAL",
-                "value": "basement-hue",
-                "type": "str"
-            }
-        ],
-        "x": 850,
-        "y": 520,
-        "wires": [
-            [
-                "6d112919d030c53c"
-            ]
-        ]
-    },
-    {
-        "id": "6d112919d030c53c",
-        "type": "debug",
-        "z": "c7141ffb22d64190",
-        "g": "2b48c44859895594",
-        "name": "basement hue",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1080,
-        "y": 520,
-        "wires": []
     },
     {
         "id": "51bce99c75aa12c6",
@@ -5694,7 +5924,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "73a1ec5ed8ebc167"
@@ -5716,7 +5946,7 @@
         "statusVal": "payload",
         "statusType": "msg",
         "x": 670,
-        "y": 80,
+        "y": 60,
         "wires": []
     },
     {
@@ -5738,12 +5968,198 @@
             }
         ],
         "x": 370,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "f3ab10cd192709b0"
             ]
         ]
+    },
+    {
+        "id": "d037cf6840797c18",
+        "type": "subflow:efbc3338fa01d34f",
+        "z": "c7141ffb22d64190",
+        "g": "a7d0f8a2225f6ea8",
+        "name": "Chez Nous Main SSE",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.12",
+                "type": "str"
+            },
+            {
+                "name": "KEY",
+                "value": "EhKZJjy5vLvz-3bz06K9a8MLfCaSSzR5WxSK8a-y",
+                "type": "str"
+            }
+        ],
+        "x": 160,
+        "y": 660,
+        "wires": [
+            [
+                "dc5f811e2a68c624"
+            ]
+        ]
+    },
+    {
+        "id": "ce5d060aebb023e4",
+        "type": "subflow:efbc3338fa01d34f",
+        "z": "c7141ffb22d64190",
+        "g": "605254399eb9985d",
+        "name": "Basement Hue SSE",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "192.168.1.34",
+                "type": "str"
+            },
+            {
+                "name": "KEY",
+                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
+                "type": "str"
+            }
+        ],
+        "x": 690,
+        "y": 660,
+        "wires": [
+            [
+                "b3f1776edd16a168"
+            ]
+        ]
+    },
+    {
+        "id": "b3f1776edd16a168",
+        "type": "subflow:d11bc6d84c35d70a",
+        "z": "c7141ffb22d64190",
+        "g": "605254399eb9985d",
+        "name": "Basement Hue Event",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/hue/basement-hue",
+                "type": "str"
+            }
+        ],
+        "x": 900,
+        "y": 640,
+        "wires": [
+            [
+                "2a3ace48408488ce"
+            ]
+        ]
+    },
+    {
+        "id": "dc5f811e2a68c624",
+        "type": "subflow:d11bc6d84c35d70a",
+        "z": "c7141ffb22d64190",
+        "g": "a7d0f8a2225f6ea8",
+        "name": "Chez Nous Main Event",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/hue/chez-nous-main",
+                "type": "str"
+            }
+        ],
+        "x": 380,
+        "y": 640,
+        "wires": [
+            [
+                "4d2dc9a6e42d0548"
+            ]
+        ]
+    },
+    {
+        "id": "fa53d0705439be41",
+        "type": "delay",
+        "z": "c7141ffb22d64190",
+        "g": "8545c2a1148d264a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 170,
+        "y": 760,
+        "wires": [
+            [
+                "3b7883c8e3995294"
+            ]
+        ]
+    },
+    {
+        "id": "3b7883c8e3995294",
+        "type": "mqtt out",
+        "z": "c7141ffb22d64190",
+        "g": "8545c2a1148d264a",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 310,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "eb7598c91a41f685",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "8545c2a1148d264a",
+        "name": "send to broker",
+        "links": [
+            "4d2dc9a6e42d0548",
+            "2a3ace48408488ce",
+            "ac4ea7223e34a6f8"
+        ],
+        "x": 65,
+        "y": 760,
+        "wires": [
+            [
+                "fa53d0705439be41"
+            ]
+        ]
+    },
+    {
+        "id": "4d2dc9a6e42d0548",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "a7d0f8a2225f6ea8",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "eb7598c91a41f685"
+        ],
+        "x": 515,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "2a3ace48408488ce",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "605254399eb9985d",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "eb7598c91a41f685"
+        ],
+        "x": 1035,
+        "y": 640,
+        "wires": []
     },
     {
         "id": "2d0604f94ef7bff4",
@@ -5773,7 +6189,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 150,
-        "y": 180,
+        "y": 300,
         "wires": [
             [
                 "8c9d79d2791e9b02"
@@ -5791,7 +6207,7 @@
         ],
         "timeout": "30",
         "x": 350,
-        "y": 180,
+        "y": 300,
         "wires": [
             [
                 "303e0cda741131c4"
@@ -5817,10 +6233,11 @@
             }
         ],
         "x": 610,
-        "y": 180,
+        "y": 300,
         "wires": [
             [
-                "79befa4d74086653"
+                "79befa4d74086653",
+                "285ab85f3bc898ab"
             ]
         ]
     },
@@ -5837,16 +6254,16 @@
                 "type": "str"
             }
         ],
-        "x": 900,
-        "y": 180,
+        "x": 920,
+        "y": 260,
         "wires": [
             [
-                "14a354d21e8857db"
+                "6643119724269664"
             ]
         ]
     },
     {
-        "id": "14a354d21e8857db",
+        "id": "6643119724269664",
         "type": "debug",
         "z": "c7141ffb22d64190",
         "g": "11ad281459e35854",
@@ -5859,97 +6276,270 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1140,
-        "y": 180,
+        "x": 1160,
+        "y": 260,
         "wires": []
     },
     {
-        "id": "d037cf6840797c18",
-        "type": "subflow:efbc3338fa01d34f",
+        "id": "285ab85f3bc898ab",
+        "type": "subflow:e2cbe8e06513f144",
         "z": "c7141ffb22d64190",
-        "g": "a7d0f8a2225f6ea8",
-        "name": "Chez Nous Main SSE",
+        "g": "11ad281459e35854",
+        "name": "",
         "env": [
             {
-                "name": "ADDRESS",
-                "value": "192.168.1.12",
-                "type": "str"
-            },
-            {
-                "name": "KEY",
-                "value": "EhKZJjy5vLvz-3bz06K9a8MLfCaSSzR5WxSK8a-y",
+                "name": "TOPIC",
+                "value": "nodered/hue/chez-nous-main",
                 "type": "str"
             }
         ],
-        "x": 560,
-        "y": 280,
+        "x": 880,
+        "y": 340,
         "wires": [
             [
-                "55aec8038b85e54b"
+                "1d0f73c8315e923d"
             ]
         ]
     },
     {
-        "id": "ce5d060aebb023e4",
-        "type": "subflow:efbc3338fa01d34f",
+        "id": "1d0f73c8315e923d",
+        "type": "link out",
         "z": "c7141ffb22d64190",
-        "g": "605254399eb9985d",
-        "name": "Basement Hue SSE",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "192.168.1.34",
-                "type": "str"
-            },
-            {
-                "name": "KEY",
-                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
-                "type": "str"
-            }
+        "g": "11ad281459e35854",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "dbc737f63b35a12f"
         ],
-        "x": 550,
-        "y": 620,
+        "x": 1015,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "298d40fcdadf1001",
+        "type": "mqtt in",
+        "z": "c7141ffb22d64190",
+        "name": "",
+        "topic": "nodered/hue/+/grouped_light/+",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 640,
         "wires": [
             [
-                "09371468762cd509"
+                "8a004738b08fc4f5"
             ]
         ]
     },
     {
-        "id": "55aec8038b85e54b",
+        "id": "8a004738b08fc4f5",
         "type": "debug",
         "z": "c7141ffb22d64190",
-        "g": "a7d0f8a2225f6ea8",
-        "name": "chez nous main sse",
+        "name": "grouped_light",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
         "complete": "true",
         "targetType": "full",
-        "statusVal": "event",
-        "statusType": "msg",
-        "x": 780,
-        "y": 280,
+        "statusVal": "$reverse($split(topic, '/'))[0]",
+        "statusType": "jsonata",
+        "x": 1240,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "09371468762cd509",
+        "id": "221535a76db32dec",
+        "type": "inject",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "method",
+                "v": "GET",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "20",
+        "topic": "resource",
+        "payload": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 480,
+        "wires": [
+            [
+                "dc55941c1abe7533"
+            ]
+        ]
+    },
+    {
+        "id": "dc55941c1abe7533",
+        "type": "link call",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "",
+        "links": [
+            "3a4eb79d1be1560a"
+        ],
+        "timeout": "30",
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "d69d9a7d182aefe3"
+            ]
+        ]
+    },
+    {
+        "id": "d69d9a7d182aefe3",
+        "type": "subflow:e4e37acec8ce8ff8",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "Get Basement Hue Metadata",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/basement-hue",
+                "type": "str"
+            },
+            {
+                "name": "GLOBAL",
+                "value": "basement-hue",
+                "type": "str"
+            }
+        ],
+        "x": 580,
+        "y": 480,
+        "wires": [
+            [
+                "7667a993cb097109",
+                "04c64466c8e427bf"
+            ]
+        ]
+    },
+    {
+        "id": "7667a993cb097109",
+        "type": "subflow:764913cd47ccb672",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "Get Basement Hue UI Metadata",
+        "env": [
+            {
+                "name": "GLOBAL",
+                "value": "basement-hue",
+                "type": "str"
+            }
+        ],
+        "x": 870,
+        "y": 440,
+        "wires": [
+            [
+                "6d112919d030c53c"
+            ]
+        ]
+    },
+    {
+        "id": "6d112919d030c53c",
         "type": "debug",
         "z": "c7141ffb22d64190",
-        "g": "605254399eb9985d",
-        "name": "basement hue sse",
+        "g": "2b48c44859895594",
+        "name": "basement hue",
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "event",
-        "statusType": "msg",
-        "x": 750,
-        "y": 620,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 440,
         "wires": []
+    },
+    {
+        "id": "04c64466c8e427bf",
+        "type": "subflow:e2cbe8e06513f144",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/hue/basement-hue",
+                "type": "str"
+            }
+        ],
+        "x": 840,
+        "y": 520,
+        "wires": [
+            [
+                "58a0c4519b2ad8df"
+            ]
+        ]
+    },
+    {
+        "id": "dbc737f63b35a12f",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "a7d0f8a2225f6ea8",
+        "name": "chez nous main event",
+        "links": [
+            "1d0f73c8315e923d"
+        ],
+        "x": 245,
+        "y": 620,
+        "wires": [
+            [
+                "dc5f811e2a68c624"
+            ]
+        ]
+    },
+    {
+        "id": "58a0c4519b2ad8df",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "2b48c44859895594",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "3e801794c796089d"
+        ],
+        "x": 975,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3e801794c796089d",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "605254399eb9985d",
+        "name": "basement hue event",
+        "links": [
+            "58a0c4519b2ad8df"
+        ],
+        "x": 755,
+        "y": 620,
+        "wires": [
+            [
+                "b3f1776edd16a168"
+            ]
+        ]
     },
     {
         "id": "536874de79956f84",
