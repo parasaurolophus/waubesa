@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "3b6d32569acb507d",
+        "type": "tab",
+        "label": "Downstairs",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "1344247d533f754a",
         "type": "tab",
         "label": "Main Bathroom",
@@ -1157,7 +1165,7 @@
         "in": [],
         "out": [
             {
-                "x": 500,
+                "x": 760,
                 "y": 60,
                 "wires": [
                     {
@@ -1169,20 +1177,29 @@
         ],
         "env": [
             {
-                "name": "TOPIC",
+                "name": "BRIDGE_NAME",
                 "type": "env",
-                "value": "TOPIC"
+                "value": "BRIDGE_NAME"
+            },
+            {
+                "name": "GROUPED_LIGHT_ID",
+                "type": "env",
+                "value": "GROUPED_LIGHT_ID"
             }
         ],
         "meta": {},
         "color": "#3FADB5",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 500,
-            "y": 140,
+            "x": 420,
+            "y": 180,
             "wires": [
                 {
                     "id": "a3d9bd179323dad5",
+                    "port": 0
+                },
+                {
+                    "id": "7bce3d1a00be603b",
                     "port": 0
                 }
             ]
@@ -1262,9 +1279,7 @@
             "528147947c85ca11"
         ],
         "x": 144,
-        "y": 39,
-        "w": 982,
-        "h": 162
+        "y": 39
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1288,9 +1303,7 @@
             "582d83b50ac68d1b"
         ],
         "x": 144,
-        "y": 399,
-        "w": 1022,
-        "h": 162
+        "y": 399
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1314,9 +1327,7 @@
             "15a369735e538669"
         ],
         "x": 144,
-        "y": 219,
-        "w": 1002,
-        "h": 162
+        "y": 219
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1336,9 +1347,7 @@
             "d79164592fe44617"
         ],
         "x": 134,
-        "y": 139,
-        "w": 462,
-        "h": 82
+        "y": 139
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1473,9 +1482,7 @@
             "26ad3b6fd956be59"
         ],
         "x": 134,
-        "y": 39,
-        "w": 472,
-        "h": 82
+        "y": 39
     },
     {
         "id": "2238e89a8f0c976d",
@@ -1521,9 +1528,7 @@
             "a3eb5555d54ffb79"
         ],
         "x": 144,
-        "y": 579,
-        "w": 1022,
-        "h": 162
+        "y": 579
     },
     {
         "id": "dd577488786042ba",
@@ -1595,9 +1600,7 @@
             "3b5ab296575b53d4"
         ],
         "x": 994,
-        "y": 19,
-        "w": 385,
-        "h": 82
+        "y": 19
     },
     {
         "id": "2afac67683a580f7",
@@ -1764,9 +1767,7 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 34,
-        "y": 19,
-        "w": 812,
-        "h": 82
+        "y": 19
     },
     {
         "id": "87285e6bf01cff03",
@@ -1822,9 +1823,7 @@
             "b59ea6517c73a038"
         ],
         "x": 34,
-        "y": 119,
-        "w": 1352,
-        "h": 622
+        "y": 119
     },
     {
         "id": "71baecd2f8b62fa2",
@@ -1882,7 +1881,9 @@
             "3397976f94fcc061"
         ],
         "x": 1004,
-        "y": 39
+        "y": 39,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "cf29b66e60017a62",
@@ -1902,7 +1903,9 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "851ce0bce3af3965",
@@ -1936,7 +1939,9 @@
             "ff16255d72661bbb"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 1352,
+        "h": 522
     },
     {
         "id": "e473ec1af3fbe117",
@@ -1958,9 +1963,7 @@
             "4a8df6a851367fc5"
         ],
         "x": 134,
-        "y": 339,
-        "w": 932,
-        "h": 82
+        "y": 339
     },
     {
         "id": "9c0627f771f74ac9",
@@ -1982,20 +1985,18 @@
         ],
         "env": [
             {
-                "name": "TOPIC",
-                "value": "nodered/hue/chez-nous-main/grouped_light/aea74e74-d544-4d08-ad71-3b6665045256",
+                "name": "BRIDGE_NAME",
+                "value": "chez-nous-main",
                 "type": "str"
             },
             {
-                "name": "URI",
-                "value": "resource/grouped_light/aea74e74-d544-4d08-ad71-3b6665045256",
+                "name": "GROUPED_LIGHT_ID",
+                "value": "aea74e74-d544-4d08-ad71-3b6665045256",
                 "type": "str"
             }
         ],
         "x": 134,
-        "y": 239,
-        "w": 852,
-        "h": 82
+        "y": 239
     },
     {
         "id": "ed0ae9fed36f8120",
@@ -2017,9 +2018,7 @@
             "8465c045864905aa"
         ],
         "x": 144,
-        "y": 859,
-        "w": 902,
-        "h": 82
+        "y": 859
     },
     {
         "id": "4a52d10ef0e20b15",
@@ -2041,20 +2040,18 @@
         ],
         "env": [
             {
-                "name": "TOPIC",
-                "value": "nodered/hue/chez-nous-main/grouped_light/9c1c7975-2f47-4552-bac8-c19b643cd678",
+                "name": "BRIDGE_NAME",
+                "value": "chez-nous-main",
                 "type": "str"
             },
             {
-                "name": "URI",
-                "value": "resource/grouped_light/9c1c7975-2f47-4552-bac8-c19b643cd678",
+                "name": "GROUPED_LIGHT_ID",
+                "value": "9c1c7975-2f47-4552-bac8-c19b643cd678",
                 "type": "str"
             }
         ],
         "x": 144,
-        "y": 759,
-        "w": 802,
-        "h": 82
+        "y": 759
     },
     {
         "id": "560697371f3db13c",
@@ -2100,19 +2097,78 @@
         ],
         "env": [
             {
-                "name": "TOPIC",
-                "value": "nodered/hue/chez-nous-main/grouped_light/bad8480b-b404-42d1-a9e7-a4a69f400971",
+                "name": "BRIDGE_NAME",
+                "value": "chez-nous-main",
                 "type": "str"
             },
             {
-                "name": "URI",
-                "value": "resource/grouped_light/bad8480b-b404-42d1-a9e7-a4a69f400971",
+                "name": "GROUPED_LIGHT_ID",
+                "value": "bad8480b-b404-42d1-a9e7-a4a69f400971",
                 "type": "str"
             }
         ],
         "x": 164,
         "y": 839,
         "w": 742,
+        "h": 82
+    },
+    {
+        "id": "fbf9850f0a37aefc",
+        "type": "group",
+        "z": "3b6d32569acb507d",
+        "name": "Activate Hue scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1027648dc2bca366",
+            "7b1fbba234712d34",
+            "745d80338e7b06e2",
+            "d1be10edf99f6a93",
+            "80ea4fc24f4dc06d"
+        ],
+        "x": 134,
+        "y": 139,
+        "w": 892,
+        "h": 82
+    },
+    {
+        "id": "1a0982001bbd9e21",
+        "type": "group",
+        "z": "3b6d32569acb507d",
+        "name": "Toggle Main Bathroom lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "44e691312a3150a0",
+            "897b73888d87a462",
+            "2879e42cc1d7febc",
+            "36103b1467413ff0"
+        ],
+        "env": [
+            {
+                "name": "BRIDGE_NAME",
+                "value": "basement-hue",
+                "type": "str"
+            },
+            {
+                "name": "GROUPED_LIGHT_ID",
+                "value": "35e38421-eae8-44ca-9dac-332c7618809b",
+                "type": "str"
+            }
+        ],
+        "x": 134,
+        "y": 39,
+        "w": 772,
         "h": 82
     },
     {
@@ -2340,6 +2396,25 @@
         "name": "Yard",
         "tab": "bd2e32f5ca3a0a0b",
         "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "6b563177ff8e0aae",
+        "type": "ui_tab",
+        "name": "Basement",
+        "icon": "fa-lightbulb-o",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "05be88f22ca65685",
+        "type": "ui_group",
+        "name": "Downstairs",
+        "tab": "6b563177ff8e0aae",
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -6162,15 +6237,15 @@
         "type": "mqtt in",
         "z": "9c5370bf6c44a3a5",
         "name": "",
-        "topic": "${TOPIC}",
+        "topic": "",
         "qos": "2",
         "datatype": "json",
         "broker": "722d62f3b93039c3",
         "nl": false,
         "rap": true,
         "rh": 0,
-        "inputs": 0,
-        "x": 100,
+        "inputs": 1,
+        "x": 370,
         "y": 60,
         "wires": [
             [
@@ -6197,7 +6272,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
+        "x": 520,
         "y": 60,
         "wires": [
             [
@@ -6217,7 +6292,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 410,
+        "x": 670,
         "y": 60,
         "wires": [
             []
@@ -6231,10 +6306,87 @@
         "scope": [
             "fe35b77c2eb1c1de"
         ],
-        "x": 400,
+        "x": 300,
         "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "16165b34f8419bb2",
+        "type": "function",
+        "z": "9c5370bf6c44a3a5",
+        "name": "subscribe",
+        "func": "let topic = 'nodered/hue/' +\n    env.get('BRIDGE_NAME') +\n    '/grouped_light/' +\n    env.get('GROUPED_LIGHT_ID')\n\nif (msg.status.text == 'node-red:common.status.connected') {\n\n    node.status({\n        text: topic,\n        shape: \"dot\",\n        fill: \"green\"\n    })\n\n    return {\n        action: \"subscribe\",\n        topic: {\n            topic: topic,\n            qos: 2\n        }\n    }\n\n} else {\n\n    node.status(msg.status)\n\n    return {\n        action: \"subscribe\",\n        topic: {\n            topic: topic,\n            qos: 2\n        }\n    }\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "node.status({\n    text: \"unsubscribed\",\n    shape: \"ring\",\n    fill: \"yellow\"\n})",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 60,
+        "wires": [
+            [
+                "fe35b77c2eb1c1de"
+            ]
+        ]
+    },
+    {
+        "id": "6bfc43429d863db6",
+        "type": "catch",
+        "z": "9c5370bf6c44a3a5",
+        "name": "",
+        "scope": [
+            "fe35b77c2eb1c1de"
+        ],
+        "uncaught": false,
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "7bce3d1a00be603b"
+            ]
+        ]
+    },
+    {
+        "id": "7bce3d1a00be603b",
+        "type": "change",
+        "z": "9c5370bf6c44a3a5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":error.message,\"shape\":\"ring\",\"fill\":\"red\"}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "09946386ddd1cd0e",
+        "type": "status",
+        "z": "9c5370bf6c44a3a5",
+        "name": "",
+        "scope": [
+            "fe35b77c2eb1c1de"
+        ],
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "16165b34f8419bb2"
+            ]
         ]
     },
     {
@@ -6747,7 +6899,8 @@
         "mode": "link",
         "links": [
             "4a8df6a851367fc5",
-            "08f8c54822856971"
+            "08f8c54822856971",
+            "eccb6df6363c6a14"
         ],
         "x": 1215,
         "y": 500,
@@ -7235,7 +7388,9 @@
         "g": "851ce0bce3af3965",
         "name": "",
         "mode": "link",
-        "links": [],
+        "links": [
+            "80ea4fc24f4dc06d"
+        ],
         "x": 1195,
         "y": 420,
         "wires": []
@@ -8439,6 +8594,244 @@
         "wires": []
     },
     {
+        "id": "1027648dc2bca366",
+        "type": "change",
+        "z": "3b6d32569acb507d",
+        "g": "fbf9850f0a37aefc",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.scenes",
+                "pt": "msg",
+                "to": "options",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "7b1fbba234712d34"
+            ]
+        ]
+    },
+    {
+        "id": "7b1fbba234712d34",
+        "type": "ui_dropdown",
+        "z": "3b6d32569acb507d",
+        "g": "fbf9850f0a37aefc",
+        "name": "Downstairs Scene",
+        "label": "",
+        "tooltip": "",
+        "place": "Choose scene...",
+        "group": "05be88f22ca65685",
+        "order": 0,
+        "width": "5",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [
+                "745d80338e7b06e2"
+            ]
+        ]
+    },
+    {
+        "id": "745d80338e7b06e2",
+        "type": "change",
+        "z": "3b6d32569acb507d",
+        "g": "fbf9850f0a37aefc",
+        "name": "scene",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'resource/scene/' & payload",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 180,
+        "wires": [
+            [
+                "d1be10edf99f6a93"
+            ]
+        ]
+    },
+    {
+        "id": "d1be10edf99f6a93",
+        "type": "link call",
+        "z": "3b6d32569acb507d",
+        "g": "fbf9850f0a37aefc",
+        "name": "",
+        "links": [
+            "76de6350a9a0c4fe"
+        ],
+        "timeout": "30",
+        "x": 900,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44e691312a3150a0",
+        "type": "ui_switch",
+        "z": "3b6d32569acb507d",
+        "g": "1a0982001bbd9e21",
+        "name": "Downstairs Lights",
+        "label": "",
+        "tooltip": "",
+        "group": "05be88f22ca65685",
+        "order": 1,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "36103b1467413ff0"
+            ]
+        ]
+    },
+    {
+        "id": "897b73888d87a462",
+        "type": "link call",
+        "z": "3b6d32569acb507d",
+        "g": "1a0982001bbd9e21",
+        "name": "",
+        "links": [
+            "76de6350a9a0c4fe"
+        ],
+        "timeout": "30",
+        "x": 780,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2879e42cc1d7febc",
+        "type": "subflow:9c5370bf6c44a3a5",
+        "z": "3b6d32569acb507d",
+        "g": "1a0982001bbd9e21",
+        "name": "Downstairs",
+        "x": 220,
+        "y": 80,
+        "wires": [
+            [
+                "44e691312a3150a0"
+            ]
+        ]
+    },
+    {
+        "id": "36103b1467413ff0",
+        "type": "change",
+        "z": "3b6d32569acb507d",
+        "g": "1a0982001bbd9e21",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'resource/grouped_light/' & $env('GROUPED_LIGHT_ID')",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":payload}}",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "897b73888d87a462"
+            ]
+        ]
+    },
+    {
+        "id": "80ea4fc24f4dc06d",
+        "type": "link in",
+        "z": "3b6d32569acb507d",
+        "g": "fbf9850f0a37aefc",
+        "name": "initialize downstairs",
+        "links": [
+            "0dcaf7d987909d6e"
+        ],
+        "x": 175,
+        "y": 180,
+        "wires": [
+            [
+                "1027648dc2bca366"
+            ]
+        ]
+    },
+    {
         "id": "e74fcadba6a2b4ca",
         "type": "link in",
         "z": "1344247d533f754a",
@@ -8799,8 +9192,8 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "URI",
-                "tot": "env"
+                "to": "'resource/grouped_light/' & $env('GROUPED_LIGHT_ID')",
+                "tot": "jsonata"
             },
             {
                 "t": "set",
@@ -9735,8 +10128,8 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "URI",
-                "tot": "env"
+                "to": "'resource/grouped_light/' & $env('GROUPED_LIGHT_ID')",
+                "tot": "jsonata"
             },
             {
                 "t": "set",
@@ -10751,8 +11144,8 @@
                 "t": "set",
                 "p": "topic",
                 "pt": "msg",
-                "to": "URI",
-                "tot": "env"
+                "to": "'resource/grouped_light/' & $env('GROUPED_LIGHT_ID')",
+                "tot": "jsonata"
             },
             {
                 "t": "set",
