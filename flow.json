@@ -110,6 +110,30 @@
         "env": []
     },
     {
+        "id": "6e3ca82457d27245",
+        "type": "tab",
+        "label": "Pushover",
+        "disabled": false,
+        "info": "",
+        "env": [
+            {
+                "name": "APP_TOKEN",
+                "value": "aoh1bh18krkygp48uppks5sheo64i6",
+                "type": "str"
+            },
+            {
+                "name": "SUBSCRIBE",
+                "value": "https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj",
+                "type": "str"
+            },
+            {
+                "name": "GROUP_TOKEN",
+                "value": "gua1686beresjq8zzwdraa5a34b3js",
+                "type": "str"
+            }
+        ]
+    },
+    {
         "id": "5785c8d9f39df67e",
         "type": "subflow",
         "name": "Send to Hue",
@@ -1094,9 +1118,7 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119,
-        "w": 972,
-        "h": 82
+        "y": 119
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1119,9 +1141,7 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419,
-        "w": 952,
-        "h": 82
+        "y": 419
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1144,9 +1164,7 @@
             "76e95a00d6e3b9ad"
         ],
         "x": 144,
-        "y": 19,
-        "w": 962,
-        "h": 82
+        "y": 19
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1169,9 +1187,7 @@
             "08d74ad519cdaa27"
         ],
         "x": 144,
-        "y": 219,
-        "w": 1002,
-        "h": 82
+        "y": 219
     },
     {
         "id": "83a2d6e5f2f3347b",
@@ -1194,9 +1210,7 @@
             "77c6ae6853e648c7"
         ],
         "x": 144,
-        "y": 119,
-        "w": 982,
-        "h": 82
+        "y": 119
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1216,9 +1230,7 @@
             "d79164592fe44617"
         ],
         "x": 134,
-        "y": 139,
-        "w": 462,
-        "h": 82
+        "y": 139
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1301,9 +1313,7 @@
             "26ad3b6fd956be59"
         ],
         "x": 134,
-        "y": 39,
-        "w": 472,
-        "h": 82
+        "y": 39
     },
     {
         "id": "2238e89a8f0c976d",
@@ -1323,9 +1333,7 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19,
-        "w": 452,
-        "h": 82
+        "y": 19
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1348,9 +1356,7 @@
             "c99382ee9ae33d16"
         ],
         "x": 144,
-        "y": 319,
-        "w": 1002,
-        "h": 82
+        "y": 319
     },
     {
         "id": "dd577488786042ba",
@@ -1373,9 +1379,7 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319,
-        "w": 972,
-        "h": 82
+        "y": 319
     },
     {
         "id": "0117b53379eade19",
@@ -1398,9 +1402,7 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219,
-        "w": 952,
-        "h": 82
+        "y": 219
     },
     {
         "id": "70e9b8db12799d18",
@@ -1758,9 +1760,7 @@
             "4a8df6a851367fc5"
         ],
         "x": 134,
-        "y": 339,
-        "w": 932,
-        "h": 82
+        "y": 339
     },
     {
         "id": "9c0627f771f74ac9",
@@ -1793,9 +1793,7 @@
             }
         ],
         "x": 134,
-        "y": 239,
-        "w": 852,
-        "h": 82
+        "y": 239
     },
     {
         "id": "ed0ae9fed36f8120",
@@ -1817,9 +1815,7 @@
             "8465c045864905aa"
         ],
         "x": 144,
-        "y": 519,
-        "w": 902,
-        "h": 82
+        "y": 519
     },
     {
         "id": "4a52d10ef0e20b15",
@@ -1852,9 +1848,7 @@
             }
         ],
         "x": 144,
-        "y": 419,
-        "w": 802,
-        "h": 82
+        "y": 419
     },
     {
         "id": "560697371f3db13c",
@@ -1876,9 +1870,7 @@
             "83168e5d7847c8c6"
         ],
         "x": 134,
-        "y": 619,
-        "w": 872,
-        "h": 82
+        "y": 619
     },
     {
         "id": "65d303ac6b6c8a3a",
@@ -1911,9 +1903,7 @@
             }
         ],
         "x": 134,
-        "y": 519,
-        "w": 732,
-        "h": 82
+        "y": 519
     },
     {
         "id": "165f8dbcf95635fd",
@@ -2201,6 +2191,43 @@
         "h": 82
     },
     {
+        "id": "70c17a60ce5a4da0",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Send to Pushover API",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "99d6b95fca42e0fd",
+            "251de7d13f63bb24",
+            "fe1b8463d855bc9d",
+            "53f5dcbc2de38b22",
+            "02595fec780c5e56"
+        ],
+        "env": [
+            {
+                "name": "APP_TOKEN",
+                "value": "APP_TOKEN",
+                "type": "env"
+            },
+            {
+                "name": "GROUP_TOKEN",
+                "value": "GROUP_TOKEN",
+                "type": "env"
+            }
+        ],
+        "x": 44,
+        "y": 39,
+        "w": 472,
+        "h": 142,
+        "info": "# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net]().\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api]() for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
+    },
+    {
         "id": "e79e0110c2317edb",
         "type": "tls-config",
         "name": "",
@@ -2433,6 +2460,20 @@
         "width": "6",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "24060e8ad06fe1ed",
+        "type": "tls-config",
+        "name": "Pushover tls-config",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -10843,5 +10884,181 @@
                 "d07f9471a4a06ae8"
             ]
         ]
+    },
+    {
+        "id": "da4e51cbdbba7f57",
+        "type": "inject",
+        "z": "6e3ca82457d27245",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"title\":\"Test Message\",\"message\":\"Sent at \" & $now()}",
+        "payloadType": "jsonata",
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "a9cda8b0c28910b3"
+            ]
+        ]
+    },
+    {
+        "id": "99d6b95fca42e0fd",
+        "type": "change",
+        "z": "6e3ca82457d27245",
+        "g": "70c17a60ce5a4da0",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{\"Content-Type\":\"application/json\"}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.token",
+                "pt": "msg",
+                "to": "APP_TOKEN",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "payload.user",
+                "pt": "msg",
+                "to": "GROUP_TOKEN",
+                "tot": "env"
+            },
+            {
+                "t": "set",
+                "p": "payload.url",
+                "pt": "msg",
+                "to": "http://nodered.local:1880/ui",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.url_title",
+                "pt": "msg",
+                "to": "Dashboard",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "251de7d13f63bb24"
+            ]
+        ]
+    },
+    {
+        "id": "251de7d13f63bb24",
+        "type": "http request",
+        "z": "6e3ca82457d27245",
+        "g": "70c17a60ce5a4da0",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.pushover.net/1/messages.json",
+        "tls": "24060e8ad06fe1ed",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "fe1b8463d855bc9d"
+            ]
+        ]
+    },
+    {
+        "id": "c392ad86484bf7f9",
+        "type": "debug",
+        "z": "6e3ca82457d27245",
+        "name": "pushover",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 500,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "fe1b8463d855bc9d",
+        "type": "link out",
+        "z": "6e3ca82457d27245",
+        "g": "70c17a60ce5a4da0",
+        "name": "",
+        "mode": "return",
+        "links": [],
+        "x": 475,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "53f5dcbc2de38b22",
+        "type": "link in",
+        "z": "6e3ca82457d27245",
+        "g": "70c17a60ce5a4da0",
+        "name": "send to pushover",
+        "links": [],
+        "x": 85,
+        "y": 140,
+        "wires": [
+            [
+                "99d6b95fca42e0fd"
+            ]
+        ]
+    },
+    {
+        "id": "a9cda8b0c28910b3",
+        "type": "link call",
+        "z": "6e3ca82457d27245",
+        "name": "",
+        "links": [
+            "53f5dcbc2de38b22"
+        ],
+        "timeout": "30",
+        "x": 330,
+        "y": 380,
+        "wires": [
+            [
+                "c392ad86484bf7f9"
+            ]
+        ]
+    },
+    {
+        "id": "02595fec780c5e56",
+        "type": "comment",
+        "z": "6e3ca82457d27245",
+        "g": "70c17a60ce5a4da0",
+        "name": "see https://pushover.net/api",
+        "info": "",
+        "x": 200,
+        "y": 80,
+        "wires": []
     }
 ]
