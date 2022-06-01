@@ -1414,9 +1414,7 @@
             "114b9703250b5ff7"
         ],
         "x": 14,
-        "y": 339,
-        "w": 462,
-        "h": 202
+        "y": 339
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1438,9 +1436,7 @@
             "e3599caac9ca8f69"
         ],
         "x": 14,
-        "y": 559,
-        "w": 972,
-        "h": 82
+        "y": 559
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1458,9 +1454,7 @@
             "802ec81ddfb59441"
         ],
         "x": 14,
-        "y": 119,
-        "w": 192,
-        "h": 82
+        "y": 119
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1481,9 +1475,7 @@
             "cc0a0bdacb257089"
         ],
         "x": 234,
-        "y": 159,
-        "w": 332,
-        "h": 162
+        "y": 159
     },
     {
         "id": "31ed5707953578b9",
@@ -1503,9 +1495,7 @@
             "e309f9054b8afaa3"
         ],
         "x": 234,
-        "y": 19,
-        "w": 312,
-        "h": 122
+        "y": 19
     },
     {
         "id": "64b945726db0f60a",
@@ -1529,9 +1519,7 @@
             "c33318ea5eb9ec0a"
         ],
         "x": 574,
-        "y": 299,
-        "w": 632,
-        "h": 242
+        "y": 299
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1597,9 +1585,7 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139,
-        "w": 572,
-        "h": 202
+        "y": 139
     },
     {
         "id": "cf29b66e60017a62",
@@ -1619,9 +1605,7 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39,
-        "w": 712,
-        "h": 82
+        "y": 39
     },
     {
         "id": "851ce0bce3af3965",
@@ -1644,9 +1628,7 @@
             "51f7ad129b09a37a"
         ],
         "x": 34,
-        "y": 359,
-        "w": 932,
-        "h": 162
+        "y": 359
     },
     {
         "id": "7176639d06e51ae4",
@@ -1779,8 +1761,6 @@
         ],
         "x": 134,
         "y": 139,
-        "w": 692,
-        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -1837,9 +1817,7 @@
             }
         ],
         "x": 34,
-        "y": 539,
-        "w": 442,
-        "h": 82
+        "y": 539
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1893,9 +1871,7 @@
             }
         ],
         "x": 14,
-        "y": 659,
-        "w": 452,
-        "h": 82
+        "y": 659
     },
     {
         "id": "45c4e55e53345092",
@@ -2050,9 +2026,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39,
-        "w": 372,
-        "h": 82
+        "y": 39
     },
     {
         "id": "193264abb5beec8a",
@@ -2074,11 +2048,11 @@
             "dd312a048f2e6d95",
             "8c8507b03aafcfe4",
             "9c0ddd2164afc578",
-            "cce25370d9bed0c1"
+            "1b458bf6e640c398"
         ],
         "x": 34,
         "y": 39,
-        "w": 912,
+        "w": 892,
         "h": 162
     },
     {
@@ -7774,7 +7748,7 @@
         "name": "",
         "topic": "cpu/+/temperature",
         "qos": "2",
-        "datatype": "utf8",
+        "datatype": "json",
         "broker": "722d62f3b93039c3",
         "nl": false,
         "rap": true,
@@ -7797,13 +7771,6 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload.$substringAfter('temp=').$substringBefore(\"'C\").$number()\t",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
                 "p": "topic",
                 "pt": "msg",
                 "to": "topic.$split('/')[1]",
@@ -7815,7 +7782,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 450,
         "y": 120,
         "wires": [
             [
@@ -7842,7 +7809,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 630,
+        "x": 610,
         "y": 160,
         "wires": [
             [
@@ -7891,7 +7858,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
+        "x": 760,
         "y": 160,
         "wires": [
             [
@@ -7909,7 +7876,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 905,
+        "x": 885,
         "y": 160,
         "wires": []
     },
@@ -7918,37 +7885,42 @@
         "type": "function",
         "z": "72d0b79e8a326b2f",
         "g": "193264abb5beec8a",
-        "name": "persistState",
-        "func": "let state = context.get('state') || []\nlet found = false\n\nfor (let index = 0; index < state.length; ++index) {\n    \n    let entry = state[index]\n    \n    if (entry.host == msg.topic) {\n\n        entry.temperature = msg.payload\n        found = true\n        break\n\n    }\n}\n\nif (!found) {\n    \n    state.push({host: msg.topic, temperature: msg.payload})\n\n}\n\nstate[msg.topic] = msg.payload\ncontext.set('state', state)\nmsg.payload = state\nreturn msg",
+        "name": "formatTable",
+        "func": "let state = context.get('state') || []\nlet found = false\n\nfor (let index = 0; index < state.length; ++index) {\n    \n    let entry = state[index]\n    \n    if (entry.host == msg.topic) {\n\n        entry.temperature = msg.payload\n        found = true\n        break\n\n    }\n}\n\nif (!found) {\n    \n    state.push({host: msg.topic, temperature: msg.payload})\n\n}\n\nstate[msg.topic] = msg.payload\ncontext.set('state', state)\n\nlet table = '<table>'\n\nstate.forEach(cpu => {\n\n    table += '<tr><th>'\n    table += cpu.host\n    table += '</th style=\"text-align:right;\"><td>'\n    table += cpu.temperature\n    table += '</td></tr>'\n\n})\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 630,
         "y": 80,
         "wires": [
             [
-                "cce25370d9bed0c1"
+                "1b458bf6e640c398"
             ]
         ]
     },
     {
-        "id": "cce25370d9bed0c1",
-        "type": "ui_table",
+        "id": "1b458bf6e640c398",
+        "type": "ui_template",
         "z": "72d0b79e8a326b2f",
         "g": "193264abb5beec8a",
         "group": "dc6e107af698a0c3",
-        "name": "CPU Temperatures",
+        "name": "CPU Temperature",
         "order": 0,
         "width": "6",
         "height": "6",
-        "columns": [],
-        "outputs": 0,
-        "cts": false,
-        "x": 830,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 810,
         "y": 80,
-        "wires": []
+        "wires": [
+            []
+        ]
     },
     {
         "id": "cb289ef6a0a1e08d",
