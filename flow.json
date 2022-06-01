@@ -2051,9 +2051,7 @@
             "1b458bf6e640c398"
         ],
         "x": 34,
-        "y": 39,
-        "w": 892,
-        "h": 162
+        "y": 39
     },
     {
         "id": "e79e0110c2317edb",
@@ -2212,7 +2210,7 @@
         "tab": "ec4d94df679f3b11",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": "4",
         "collapse": true,
         "className": ""
     },
@@ -2223,7 +2221,7 @@
         "tab": "ec4d94df679f3b11",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": "4",
         "collapse": true,
         "className": ""
     },
@@ -2248,7 +2246,7 @@
         "tab": "ec4d94df679f3b11",
         "order": 3,
         "disp": true,
-        "width": "6",
+        "width": "4",
         "collapse": true,
         "className": ""
     },
@@ -7908,8 +7906,8 @@
         "group": "dc6e107af698a0c3",
         "name": "CPU Temperature",
         "order": 0,
-        "width": "6",
-        "height": "6",
+        "width": "4",
+        "height": "4",
         "format": "<div ng-bind-html=\"msg.payload\"></div>",
         "storeOutMessages": true,
         "fwdInMessages": false,
