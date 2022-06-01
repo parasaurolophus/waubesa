@@ -85,6 +85,14 @@
         "info": ""
     },
     {
+        "id": "72d0b79e8a326b2f",
+        "type": "tab",
+        "label": "Monitoring",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "15ef8f70203ad77a",
         "type": "tab",
         "label": "Laundry",
@@ -1406,7 +1414,9 @@
             "114b9703250b5ff7"
         ],
         "x": 14,
-        "y": 339
+        "y": 339,
+        "w": 462,
+        "h": 202
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1428,7 +1438,9 @@
             "e3599caac9ca8f69"
         ],
         "x": 14,
-        "y": 559
+        "y": 559,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1446,7 +1458,9 @@
             "802ec81ddfb59441"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1467,7 +1481,9 @@
             "cc0a0bdacb257089"
         ],
         "x": 234,
-        "y": 159
+        "y": 159,
+        "w": 332,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1487,7 +1503,9 @@
             "e309f9054b8afaa3"
         ],
         "x": 234,
-        "y": 19
+        "y": 19,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "64b945726db0f60a",
@@ -1511,7 +1529,9 @@
             "c33318ea5eb9ec0a"
         ],
         "x": 574,
-        "y": 299
+        "y": 299,
+        "w": 632,
+        "h": 242
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1873,7 +1893,9 @@
             }
         ],
         "x": 14,
-        "y": 659
+        "y": 659,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "45c4e55e53345092",
@@ -2033,6 +2055,33 @@
         "h": 82
     },
     {
+        "id": "193264abb5beec8a",
+        "type": "group",
+        "z": "72d0b79e8a326b2f",
+        "name": "Send Pushover notification when a Raspberry Pi overheats",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "caca94e8fd58330a",
+            "2db07ba20e053c0a",
+            "676a5e70ba119db5",
+            "b3d87ba60e2f1f9b",
+            "dd312a048f2e6d95",
+            "8c8507b03aafcfe4",
+            "9c0ddd2164afc578",
+            "cce25370d9bed0c1"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 912,
+        "h": 162
+    },
+    {
         "id": "e79e0110c2317edb",
         "type": "tls-config",
         "name": "",
@@ -2187,7 +2236,7 @@
         "type": "ui_group",
         "name": "Bedtime",
         "tab": "ec4d94df679f3b11",
-        "order": 4,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2198,7 +2247,7 @@
         "type": "ui_group",
         "name": "Automation",
         "tab": "ec4d94df679f3b11",
-        "order": 2,
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2217,6 +2266,17 @@
         "servername": "",
         "verifyservercert": true,
         "alpnprotocol": ""
+    },
+    {
+        "id": "dc6e107af698a0c3",
+        "type": "ui_group",
+        "name": "CPU Temperature",
+        "tab": "ec4d94df679f3b11",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -7531,7 +7591,9 @@
             "f51080e45a9d06c2",
             "5cf638af3fd262a3",
             "a4e48977f6abe1d3",
-            "c2d739fd85dc2d6b"
+            "c2d739fd85dc2d6b",
+            "f85d9b0bfaa1207c",
+            "8c8507b03aafcfe4"
         ],
         "x": 175,
         "y": 180,
@@ -7703,6 +7765,190 @@
                 "3728fa9152de3f67"
             ]
         ]
+    },
+    {
+        "id": "caca94e8fd58330a",
+        "type": "mqtt in",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "topic": "cpu/+/temperature",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "b3d87ba60e2f1f9b"
+            ]
+        ]
+    },
+    {
+        "id": "2db07ba20e053c0a",
+        "type": "change",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.$substringAfter('temp=').$substringBefore(\"'C\").$number()\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic.$split('/')[1]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "676a5e70ba119db5",
+                "9c0ddd2164afc578"
+            ]
+        ]
+    },
+    {
+        "id": "676a5e70ba119db5",
+        "type": "switch",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "65",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 160,
+        "wires": [
+            [
+                "dd312a048f2e6d95"
+            ]
+        ]
+    },
+    {
+        "id": "b3d87ba60e2f1f9b",
+        "type": "rbe",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "2db07ba20e053c0a"
+            ]
+        ]
+    },
+    {
+        "id": "dd312a048f2e6d95",
+        "type": "change",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"title\":$host,\"message\":topic & ' CPU too hot:' & payload & 'C'}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 160,
+        "wires": [
+            [
+                "8c8507b03aafcfe4"
+            ]
+        ]
+    },
+    {
+        "id": "8c8507b03aafcfe4",
+        "type": "link out",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "53f5dcbc2de38b22"
+        ],
+        "x": 905,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9c0ddd2164afc578",
+        "type": "function",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "persistState",
+        "func": "let state = context.get('state') || []\nlet found = false\n\nfor (let index = 0; index < state.length; ++index) {\n    \n    let entry = state[index]\n    \n    if (entry.host == msg.topic) {\n\n        entry.temperature = msg.payload\n        found = true\n        break\n\n    }\n}\n\nif (!found) {\n    \n    state.push({host: msg.topic, temperature: msg.payload})\n\n}\n\nstate[msg.topic] = msg.payload\ncontext.set('state', state)\nmsg.payload = state\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "cce25370d9bed0c1"
+            ]
+        ]
+    },
+    {
+        "id": "cce25370d9bed0c1",
+        "type": "ui_table",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "group": "dc6e107af698a0c3",
+        "name": "CPU Temperatures",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 830,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "cb289ef6a0a1e08d",
