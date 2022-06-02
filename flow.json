@@ -1414,7 +1414,9 @@
             "114b9703250b5ff7"
         ],
         "x": 14,
-        "y": 339
+        "y": 339,
+        "w": 462,
+        "h": 202
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1436,7 +1438,9 @@
             "e3599caac9ca8f69"
         ],
         "x": 14,
-        "y": 559
+        "y": 559,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1454,7 +1458,9 @@
             "802ec81ddfb59441"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1475,7 +1481,9 @@
             "cc0a0bdacb257089"
         ],
         "x": 234,
-        "y": 159
+        "y": 159,
+        "w": 332,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1495,7 +1503,9 @@
             "e309f9054b8afaa3"
         ],
         "x": 234,
-        "y": 19
+        "y": 19,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "64b945726db0f60a",
@@ -1516,10 +1526,13 @@
             "4aa998790c81c0de",
             "01bd7e5d506c131c",
             "58abeb0fb7d59222",
-            "c33318ea5eb9ec0a"
+            "c33318ea5eb9ec0a",
+            "4924b0104a97ef6d"
         ],
         "x": 574,
-        "y": 299
+        "y": 279,
+        "w": 632,
+        "h": 262
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1585,7 +1598,9 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 572,
+        "h": 202
     },
     {
         "id": "cf29b66e60017a62",
@@ -1605,7 +1620,9 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "851ce0bce3af3965",
@@ -1628,7 +1645,9 @@
             "51f7ad129b09a37a"
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 932,
+        "h": 162
     },
     {
         "id": "7176639d06e51ae4",
@@ -1761,6 +1780,8 @@
         ],
         "x": 134,
         "y": 139,
+        "w": 692,
+        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -1817,7 +1838,9 @@
             }
         ],
         "x": 34,
-        "y": 539
+        "y": 539,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1871,7 +1894,9 @@
             }
         ],
         "x": 14,
-        "y": 659
+        "y": 659,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "45c4e55e53345092",
@@ -2026,7 +2051,9 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "193264abb5beec8a",
@@ -2052,6 +2079,28 @@
         ],
         "x": 34,
         "y": 39
+    },
+    {
+        "id": "bbdcae4529a1a589",
+        "type": "group",
+        "z": "72d0b79e8a326b2f",
+        "name": "Display each Raspberry Pi's total memory on dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "fde67629d2dde667",
+            "bdf1dc410d873b2d",
+            "f427eaaa51d7813b",
+            "06a6cc383ed301c9",
+            "40424967bf4dc7a3"
+        ],
+        "x": 34,
+        "y": 219
     },
     {
         "id": "e79e0110c2317edb",
@@ -2245,6 +2294,17 @@
         "name": "CPU Temperature",
         "tab": "ec4d94df679f3b11",
         "order": 3,
+        "disp": true,
+        "width": "4",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "c96604e08e5a4a8d",
+        "type": "ui_group",
+        "name": "Megabytes",
+        "tab": "ec4d94df679f3b11",
+        "order": 4,
         "disp": true,
         "width": "4",
         "collapse": true,
@@ -6929,7 +6989,7 @@
         "topicType": "str",
         "className": "",
         "x": 860,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "4aa998790c81c0de"
@@ -6951,7 +7011,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 870,
-        "y": 340,
+        "y": 320,
         "wires": []
     },
     {
@@ -6961,7 +7021,7 @@
         "g": "64b945726db0f60a",
         "name": "",
         "x": 680,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "cf6562b252b0fea0"
@@ -6984,7 +7044,7 @@
         "finalize": "",
         "libs": [],
         "x": 1040,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "c33318ea5eb9ec0a"
@@ -7066,7 +7126,7 @@
         "to": "",
         "reg": false,
         "x": 840,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
                 "4aa998790c81c0de"
@@ -7170,7 +7230,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 1165,
-        "y": 460,
+        "y": 440,
         "wires": []
     },
     {
@@ -7228,6 +7288,36 @@
         "x": 945,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "4924b0104a97ef6d",
+        "type": "inject",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "01bd7e5d506c131c"
+            ]
+        ]
     },
     {
         "id": "061d8c40c8ed16ab",
@@ -7565,7 +7655,8 @@
             "a4e48977f6abe1d3",
             "c2d739fd85dc2d6b",
             "f85d9b0bfaa1207c",
-            "8c8507b03aafcfe4"
+            "8c8507b03aafcfe4",
+            "a2f24689333013cf"
         ],
         "x": 175,
         "y": 180,
@@ -7916,6 +8007,119 @@
         "className": "",
         "x": 810,
         "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fde67629d2dde667",
+        "type": "mqtt in",
+        "z": "72d0b79e8a326b2f",
+        "g": "bbdcae4529a1a589",
+        "name": "",
+        "topic": "cpu/+/megabytes",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "f427eaaa51d7813b"
+            ]
+        ]
+    },
+    {
+        "id": "bdf1dc410d873b2d",
+        "type": "change",
+        "z": "72d0b79e8a326b2f",
+        "g": "bbdcae4529a1a589",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "topic.$split('/')[1]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "06a6cc383ed301c9"
+            ]
+        ]
+    },
+    {
+        "id": "f427eaaa51d7813b",
+        "type": "rbe",
+        "z": "72d0b79e8a326b2f",
+        "g": "bbdcae4529a1a589",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "bdf1dc410d873b2d"
+            ]
+        ]
+    },
+    {
+        "id": "06a6cc383ed301c9",
+        "type": "function",
+        "z": "72d0b79e8a326b2f",
+        "g": "bbdcae4529a1a589",
+        "name": "formatTable",
+        "func": "let state = context.get('state') || []\nlet found = false\n\nfor (let index = 0; index < state.length; ++index) {\n    \n    let entry = state[index]\n    \n    if (entry.host == msg.topic) {\n\n        entry.megabytes = msg.payload\n        found = true\n        break\n\n    }\n}\n\nif (!found) {\n    \n    state.push({host: msg.topic, megabytes: msg.payload})\n\n}\n\nstate[msg.topic] = msg.payload\ncontext.set('state', state)\n\nlet table = '<table>'\n\nstate.forEach(cpu => {\n\n    table += '<tr><th>'\n    table += cpu.host\n    table += '</th style=\"text-align:right;\"><td>'\n    table += cpu.megabytes\n    table += '</td></tr>'\n\n})\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "40424967bf4dc7a3"
+            ]
+        ]
+    },
+    {
+        "id": "40424967bf4dc7a3",
+        "type": "ui_template",
+        "z": "72d0b79e8a326b2f",
+        "g": "bbdcae4529a1a589",
+        "group": "c96604e08e5a4a8d",
+        "name": "Megabytes",
+        "order": 0,
+        "width": "4",
+        "height": "4",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 750,
+        "y": 260,
         "wires": [
             []
         ]
