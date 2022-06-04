@@ -1090,7 +1090,9 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119
+        "y": 119,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1113,7 +1115,9 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419
+        "y": 419,
+        "w": 952,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1278,7 +1282,9 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1324,7 +1330,9 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319
+        "y": 319,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "0117b53379eade19",
@@ -1347,7 +1355,9 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219
+        "y": 219,
+        "w": 952,
+        "h": 82
     },
     {
         "id": "70e9b8db12799d18",
@@ -1598,9 +1608,7 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139,
-        "w": 572,
-        "h": 202
+        "y": 139
     },
     {
         "id": "cf29b66e60017a62",
@@ -1620,9 +1628,7 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39,
-        "w": 712,
-        "h": 82
+        "y": 39
     },
     {
         "id": "851ce0bce3af3965",
@@ -1645,9 +1651,7 @@
             "51f7ad129b09a37a"
         ],
         "x": 34,
-        "y": 359,
-        "w": 932,
-        "h": 162
+        "y": 359
     },
     {
         "id": "7176639d06e51ae4",
@@ -1838,9 +1842,7 @@
             }
         ],
         "x": 34,
-        "y": 539,
-        "w": 442,
-        "h": 82
+        "y": 539
     },
     {
         "id": "d62657d45ec04ef6",
@@ -2031,7 +2033,9 @@
             }
         ],
         "x": 134,
-        "y": 519
+        "y": 519,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e49c9571ddd5102f",
@@ -2069,22 +2073,25 @@
         },
         "nodes": [
             "caca94e8fd58330a",
-            "2db07ba20e053c0a",
             "676a5e70ba119db5",
             "b3d87ba60e2f1f9b",
             "dd312a048f2e6d95",
             "8c8507b03aafcfe4",
-            "9c0ddd2164afc578",
-            "1b458bf6e640c398"
+            "1b458bf6e640c398",
+            "9af706aff771f7bf",
+            "5ec547d4dd72e5ab",
+            "0c5c0ee025e30daa"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 852,
+        "h": 202
     },
     {
-        "id": "bbdcae4529a1a589",
+        "id": "4e41b9100f8f8543",
         "type": "group",
         "z": "72d0b79e8a326b2f",
-        "name": "Display each Raspberry Pi's total memory on dashboard",
+        "name": "Display total memory on dashboard",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -2093,14 +2100,16 @@
             "color": "#000000"
         },
         "nodes": [
-            "fde67629d2dde667",
-            "bdf1dc410d873b2d",
-            "f427eaaa51d7813b",
-            "06a6cc383ed301c9",
-            "40424967bf4dc7a3"
+            "f0b1285c19ee9cc0",
+            "3d75a5e09a0ecd62",
+            "9a98515c42b570fc",
+            "d7d7f8d9a2dca4ea",
+            "353935c3961ffaaf"
         ],
         "x": 34,
-        "y": 219
+        "y": 259,
+        "w": 792,
+        "h": 162
     },
     {
         "id": "e79e0110c2317edb",
@@ -2248,7 +2257,7 @@
         "type": "ui_tab",
         "name": "Automation",
         "icon": "fa-clock-o",
-        "order": 1,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -2257,9 +2266,9 @@
         "type": "ui_group",
         "name": "Bedtime",
         "tab": "ec4d94df679f3b11",
-        "order": 2,
+        "order": 4,
         "disp": true,
-        "width": "4",
+        "width": "6",
         "collapse": true,
         "className": ""
     },
@@ -2268,9 +2277,9 @@
         "type": "ui_group",
         "name": "Automation",
         "tab": "ec4d94df679f3b11",
-        "order": 1,
+        "order": 3,
         "disp": true,
-        "width": "4",
+        "width": "6",
         "collapse": true,
         "className": ""
     },
@@ -2293,22 +2302,32 @@
         "type": "ui_group",
         "name": "CPU Temperature",
         "tab": "ec4d94df679f3b11",
-        "order": 3,
+        "order": 1,
         "disp": true,
-        "width": "4",
+        "width": "6",
         "collapse": true,
         "className": ""
     },
     {
-        "id": "c96604e08e5a4a8d",
+        "id": "0a1d0e699afa7c7d",
         "type": "ui_group",
-        "name": "Megabytes",
+        "name": "CPU Memory",
         "tab": "ec4d94df679f3b11",
-        "order": 4,
+        "order": 2,
         "disp": true,
-        "width": "4",
+        "width": "6",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "c0e45b2d232372dc",
+        "type": "ui_spacer",
+        "z": "f03b6ceb81ed7dac",
+        "name": "spacer",
+        "group": "ad4d885f83f029a5",
+        "order": 3,
+        "width": "6",
+        "height": "2"
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -6978,7 +6997,7 @@
         "tooltip": "",
         "place": "Select option",
         "group": "ad4d885f83f029a5",
-        "order": 6,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -7002,7 +7021,7 @@
         "z": "f03b6ceb81ed7dac",
         "g": "64b945726db0f60a",
         "group": "ad4d885f83f029a5",
-        "order": 6,
+        "order": 2,
         "width": 0,
         "height": 0,
         "name": "",
@@ -7656,7 +7675,8 @@
             "c2d739fd85dc2d6b",
             "f85d9b0bfaa1207c",
             "8c8507b03aafcfe4",
-            "a2f24689333013cf"
+            "a2f24689333013cf",
+            "81400abdbf1d2d42"
         ],
         "x": 175,
         "y": 180,
@@ -7844,39 +7864,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 120,
+        "y": 160,
         "wires": [
             [
-                "b3d87ba60e2f1f9b"
-            ]
-        ]
-    },
-    {
-        "id": "2db07ba20e053c0a",
-        "type": "change",
-        "z": "72d0b79e8a326b2f",
-        "g": "193264abb5beec8a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "topic.$split('/')[1]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 120,
-        "wires": [
-            [
-                "676a5e70ba119db5",
-                "9c0ddd2164afc578"
+                "b3d87ba60e2f1f9b",
+                "0c5c0ee025e30daa"
             ]
         ]
     },
@@ -7895,11 +7887,11 @@
                 "vt": "num"
             }
         ],
-        "checkall": "true",
+        "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 610,
-        "y": 160,
+        "x": 450,
+        "y": 200,
         "wires": [
             [
                 "dd312a048f2e6d95"
@@ -7919,11 +7911,11 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 310,
-        "y": 120,
+        "x": 330,
+        "y": 200,
         "wires": [
             [
-                "2db07ba20e053c0a"
+                "676a5e70ba119db5"
             ]
         ]
     },
@@ -7947,8 +7939,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 160,
+        "x": 600,
+        "y": 200,
         "wires": [
             [
                 "8c8507b03aafcfe4"
@@ -7965,29 +7957,9 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 885,
-        "y": 160,
+        "x": 725,
+        "y": 200,
         "wires": []
-    },
-    {
-        "id": "9c0ddd2164afc578",
-        "type": "function",
-        "z": "72d0b79e8a326b2f",
-        "g": "193264abb5beec8a",
-        "name": "formatTable",
-        "func": "let state = context.get('state') || []\nlet found = false\n\nfor (let index = 0; index < state.length; ++index) {\n    \n    let entry = state[index]\n    \n    if (entry.host == msg.topic) {\n\n        entry.temperature = msg.payload\n        found = true\n        break\n\n    }\n}\n\nif (!found) {\n    \n    state.push({host: msg.topic, temperature: msg.payload})\n\n}\n\nstate[msg.topic] = msg.payload\ncontext.set('state', state)\n\nlet table = '<table>'\n\nstate.forEach(cpu => {\n\n    table += '<tr><th>'\n    table += cpu.host\n    table += '</th style=\"text-align:right;\"><td>'\n    table += cpu.temperature\n    table += '</td></tr>'\n\n})\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 80,
-        "wires": [
-            [
-                "1b458bf6e640c398"
-            ]
-        ]
     },
     {
         "id": "1b458bf6e640c398",
@@ -7997,25 +7969,63 @@
         "group": "dc6e107af698a0c3",
         "name": "CPU Temperature",
         "order": 0,
-        "width": "4",
+        "width": "6",
         "height": "4",
         "format": "<div ng-bind-html=\"msg.payload\"></div>",
         "storeOutMessages": true,
-        "fwdInMessages": false,
+        "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 810,
-        "y": 80,
+        "x": 530,
+        "y": 120,
         "wires": [
-            []
+            [
+                "9af706aff771f7bf"
+            ]
         ]
     },
     {
-        "id": "fde67629d2dde667",
+        "id": "9af706aff771f7bf",
+        "type": "debug",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "cpu temperature table",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5ec547d4dd72e5ab",
+        "type": "catch",
+        "z": "72d0b79e8a326b2f",
+        "g": "193264abb5beec8a",
+        "name": "",
+        "scope": [
+            "caca94e8fd58330a"
+        ],
+        "uncaught": false,
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "0c5c0ee025e30daa"
+            ]
+        ]
+    },
+    {
+        "id": "f0b1285c19ee9cc0",
         "type": "mqtt in",
         "z": "72d0b79e8a326b2f",
-        "g": "bbdcae4529a1a589",
+        "g": "4e41b9100f8f8543",
         "name": "",
         "topic": "cpu/+/megabytes",
         "qos": "2",
@@ -8026,102 +8036,111 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 260,
+        "y": 380,
         "wires": [
             [
-                "f427eaaa51d7813b"
+                "353935c3961ffaaf"
             ]
         ]
     },
     {
-        "id": "bdf1dc410d873b2d",
-        "type": "change",
+        "id": "3d75a5e09a0ecd62",
+        "type": "ui_template",
         "z": "72d0b79e8a326b2f",
-        "g": "bbdcae4529a1a589",
+        "g": "4e41b9100f8f8543",
+        "group": "0a1d0e699afa7c7d",
+        "name": "CPU Memory",
+        "order": 0,
+        "width": "6",
+        "height": "4",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 340,
+        "wires": [
+            [
+                "9a98515c42b570fc"
+            ]
+        ]
+    },
+    {
+        "id": "9a98515c42b570fc",
+        "type": "debug",
+        "z": "72d0b79e8a326b2f",
+        "g": "4e41b9100f8f8543",
+        "name": "cpu memory table",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d7d7f8d9a2dca4ea",
+        "type": "catch",
+        "z": "72d0b79e8a326b2f",
+        "g": "4e41b9100f8f8543",
         "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "topic.$split('/')[1]",
-                "tot": "jsonata"
-            }
+        "scope": [
+            "f0b1285c19ee9cc0"
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 260,
+        "uncaught": false,
+        "x": 170,
+        "y": 300,
         "wires": [
             [
-                "06a6cc383ed301c9"
+                "353935c3961ffaaf"
             ]
         ]
     },
     {
-        "id": "f427eaaa51d7813b",
-        "type": "rbe",
-        "z": "72d0b79e8a326b2f",
-        "g": "bbdcae4529a1a589",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 290,
-        "y": 260,
-        "wires": [
-            [
-                "bdf1dc410d873b2d"
-            ]
-        ]
-    },
-    {
-        "id": "06a6cc383ed301c9",
+        "id": "353935c3961ffaaf",
         "type": "function",
         "z": "72d0b79e8a326b2f",
-        "g": "bbdcae4529a1a589",
+        "g": "4e41b9100f8f8543",
         "name": "formatTable",
-        "func": "let state = context.get('state') || []\nlet found = false\n\nfor (let index = 0; index < state.length; ++index) {\n    \n    let entry = state[index]\n    \n    if (entry.host == msg.topic) {\n\n        entry.megabytes = msg.payload\n        found = true\n        break\n\n    }\n}\n\nif (!found) {\n    \n    state.push({host: msg.topic, megabytes: msg.payload})\n\n}\n\nstate[msg.topic] = msg.payload\ncontext.set('state', state)\n\nlet table = '<table>'\n\nstate.forEach(cpu => {\n\n    table += '<tr><th>'\n    table += cpu.host\n    table += '</th style=\"text-align:right;\"><td>'\n    table += cpu.megabytes\n    table += '</td></tr>'\n\n})\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
+        "func": "let topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet cpu = state[host] || {}\n\nif (msg.hasOwnProperty('error')) {\n    \n    if (cpu.hasOwnProperty(attribute)) {\n\n        delete cpu[attribute]\n\n    }\n    \n    if (state.hasOwnProperty(host) && Object.keys(cpu).length == 0) {\n        \n        delete state[host]\n\n    }\n\n} else {\n\n    cpu[attribute] = msg.payload\n    state[host] = cpu\n\n}\n\ncontext.set('state', state)\n\nlet table = '<table>'\nlet first = true\n\nfor (let key in state) {\n    \n    let cpu = state[key]\n    \n    if (first) {\n\n        first = false\n        table += '<tr><th>host</th>'\n\n        for (let attribute in cpu) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += key\n    table += '</td>'\n\n    for (let attribute in cpu) {\n        \n        let value = cpu[attribute]\n\n        table += '<td>'\n        table += cpu[attribute]\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 260,
+        "x": 330,
+        "y": 340,
         "wires": [
             [
-                "40424967bf4dc7a3"
+                "3d75a5e09a0ecd62"
             ]
         ]
     },
     {
-        "id": "40424967bf4dc7a3",
-        "type": "ui_template",
+        "id": "0c5c0ee025e30daa",
+        "type": "function",
         "z": "72d0b79e8a326b2f",
-        "g": "bbdcae4529a1a589",
-        "group": "c96604e08e5a4a8d",
-        "name": "Megabytes",
-        "order": 0,
-        "width": "4",
-        "height": "4",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 750,
-        "y": 260,
+        "g": "193264abb5beec8a",
+        "name": "formatTable",
+        "func": "let topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet cpu = state[host] || {}\n\nif (msg.hasOwnProperty('error')) {\n    \n    if (cpu.hasOwnProperty(attribute)) {\n\n        delete cpu[attribute]\n\n    }\n    \n    if (state.hasOwnProperty(host) && Object.keys(cpu).length == 0) {\n        \n        delete state[host]\n\n    }\n\n} else {\n\n    cpu[attribute] = msg.payload\n    state[host] = cpu\n\n}\n\ncontext.set('state', state)\n\nlet table = '<table>'\nlet first = true\n\nfor (let key in state) {\n    \n    let cpu = state[key]\n    \n    if (first) {\n\n        first = false\n        table += '<tr><th>host</th>'\n\n        for (let attribute in cpu) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += key\n    table += '</td>'\n\n    for (let attribute in cpu) {\n        \n        let value = cpu[attribute]\n\n        table += '<td>'\n        table += cpu[attribute]\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 120,
         "wires": [
-            []
+            [
+                "1b458bf6e640c398"
+            ]
         ]
     },
     {
