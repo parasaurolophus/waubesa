@@ -2128,6 +2128,27 @@
         "h": 82
     },
     {
+        "id": "e44a66a067f447ec",
+        "type": "group",
+        "z": "72d0b79e8a326b2f",
+        "name": "Display volts on dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0b532eb32d81dbd8",
+            "af81cf531f5ae030"
+        ],
+        "x": 34,
+        "y": 319,
+        "w": 332,
+        "h": 82
+    },
+    {
         "id": "e79e0110c2317edb",
         "type": "tls-config",
         "name": "",
@@ -2282,7 +2303,7 @@
         "type": "ui_group",
         "name": "Bedtime",
         "tab": "ec4d94df679f3b11",
-        "order": 4,
+        "order": 5,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2293,7 +2314,7 @@
         "type": "ui_group",
         "name": "Automation",
         "tab": "ec4d94df679f3b11",
-        "order": 3,
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2344,6 +2365,17 @@
         "order": 3,
         "width": "6",
         "height": "2"
+    },
+    {
+        "id": "cfa1a0f4a477687c",
+        "type": "ui_group",
+        "name": "CPU Volts",
+        "tab": "ec4d94df679f3b11",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -8106,6 +8138,50 @@
         "wires": [
             [
                 "3d75a5e09a0ecd62"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "0b532eb32d81dbd8",
+        "type": "ui_template",
+        "z": "72d0b79e8a326b2f",
+        "g": "e44a66a067f447ec",
+        "group": "cfa1a0f4a477687c",
+        "name": "CPU Volts",
+        "order": 0,
+        "width": "6",
+        "height": "4",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af81cf531f5ae030",
+        "type": "subflow:c4207c9fe61a900e",
+        "z": "72d0b79e8a326b2f",
+        "g": "e44a66a067f447ec",
+        "name": "cpu/+/volts",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "cpu/+/volts",
+                "type": "str"
+            }
+        ],
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "0b532eb32d81dbd8"
             ],
             []
         ]
