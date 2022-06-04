@@ -1070,6 +1070,59 @@
         }
     },
     {
+        "id": "c4207c9fe61a900e",
+        "type": "subflow",
+        "name": "Monitored Event",
+        "info": "",
+        "category": "waubesa",
+        "in": [],
+        "out": [
+            {
+                "x": 530,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "5c5acf089b206c21",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 360,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "112df8f0c03fc7e8",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "html",
+            "raw"
+        ],
+        "status": {
+            "x": 340,
+            "y": 240,
+            "wires": [
+                {
+                    "id": "f1901e3f3d155ae5",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "ea7b9754db9fd0cd",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -1090,9 +1143,7 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119,
-        "w": 972,
-        "h": 82
+        "y": 119
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1115,9 +1166,7 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419,
-        "w": 952,
-        "h": 82
+        "y": 419
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1282,9 +1331,7 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19,
-        "w": 452,
-        "h": 82
+        "y": 19
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1330,9 +1377,7 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319,
-        "w": 972,
-        "h": 82
+        "y": 319
     },
     {
         "id": "0117b53379eade19",
@@ -1355,9 +1400,7 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219,
-        "w": 952,
-        "h": 82
+        "y": 219
     },
     {
         "id": "70e9b8db12799d18",
@@ -1424,9 +1467,7 @@
             "114b9703250b5ff7"
         ],
         "x": 14,
-        "y": 339,
-        "w": 462,
-        "h": 202
+        "y": 339
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1448,9 +1489,7 @@
             "e3599caac9ca8f69"
         ],
         "x": 14,
-        "y": 559,
-        "w": 972,
-        "h": 82
+        "y": 559
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1468,9 +1507,7 @@
             "802ec81ddfb59441"
         ],
         "x": 14,
-        "y": 119,
-        "w": 192,
-        "h": 82
+        "y": 119
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1491,9 +1528,7 @@
             "cc0a0bdacb257089"
         ],
         "x": 234,
-        "y": 159,
-        "w": 332,
-        "h": 162
+        "y": 159
     },
     {
         "id": "31ed5707953578b9",
@@ -1513,9 +1548,7 @@
             "e309f9054b8afaa3"
         ],
         "x": 234,
-        "y": 19,
-        "w": 312,
-        "h": 122
+        "y": 19
     },
     {
         "id": "64b945726db0f60a",
@@ -1540,9 +1573,7 @@
             "4924b0104a97ef6d"
         ],
         "x": 574,
-        "y": 279,
-        "w": 632,
-        "h": 262
+        "y": 279
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1784,8 +1815,6 @@
         ],
         "x": 134,
         "y": 139,
-        "w": 692,
-        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -1896,9 +1925,7 @@
             }
         ],
         "x": 14,
-        "y": 659,
-        "w": 452,
-        "h": 82
+        "y": 659
     },
     {
         "id": "45c4e55e53345092",
@@ -2033,9 +2060,7 @@
             }
         ],
         "x": 134,
-        "y": 519,
-        "w": 452,
-        "h": 82
+        "y": 519
     },
     {
         "id": "e49c9571ddd5102f",
@@ -2055,9 +2080,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39,
-        "w": 372,
-        "h": 82
+        "y": 39
     },
     {
         "id": "193264abb5beec8a",
@@ -2072,20 +2095,16 @@
             "color": "#000000"
         },
         "nodes": [
-            "caca94e8fd58330a",
             "676a5e70ba119db5",
-            "b3d87ba60e2f1f9b",
             "dd312a048f2e6d95",
             "8c8507b03aafcfe4",
             "1b458bf6e640c398",
-            "9af706aff771f7bf",
-            "5ec547d4dd72e5ab",
-            "0c5c0ee025e30daa"
+            "de0bf1bd606626f9"
         ],
         "x": 34,
-        "y": 39,
-        "w": 852,
-        "h": 202
+        "y": 139,
+        "w": 612,
+        "h": 162
     },
     {
         "id": "4e41b9100f8f8543",
@@ -2100,16 +2119,13 @@
             "color": "#000000"
         },
         "nodes": [
-            "f0b1285c19ee9cc0",
             "3d75a5e09a0ecd62",
-            "9a98515c42b570fc",
-            "d7d7f8d9a2dca4ea",
-            "353935c3961ffaaf"
+            "8af8ae86062519c0"
         ],
         "x": 34,
-        "y": 259,
-        "w": 792,
-        "h": 162
+        "y": 39,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -5653,6 +5669,93 @@
         ]
     },
     {
+        "id": "112df8f0c03fc7e8",
+        "type": "rbe",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "5c5acf089b206c21"
+            ]
+        ]
+    },
+    {
+        "id": "5c5acf089b206c21",
+        "type": "function",
+        "z": "c4207c9fe61a900e",
+        "name": "formatTable",
+        "func": "node.status({\n    text: msg.topic + ':' + msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nlet topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet cpu = state[host] || {}\n\nif (msg.hasOwnProperty('error')) {\n    \n    if (cpu.hasOwnProperty(attribute)) {\n\n        delete cpu[attribute]\n\n    }\n    \n    if (state.hasOwnProperty(host) && Object.keys(cpu).length == 0) {\n        \n        delete state[host]\n\n    }\n\n} else {\n\n    cpu[attribute] = msg.payload\n    state[host] = cpu\n\n}\n\ncontext.set('state', state)\n\nlet table = '<table>'\nlet first = true\n\nfor (let key in state) {\n    \n    let cpu = state[key]\n    \n    if (first) {\n\n        first = false\n        table += '<tr><th>host</th>'\n\n        for (let attribute in cpu) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += key\n    table += '</td>'\n\n    for (let attribute in cpu) {\n        \n        let value = cpu[attribute]\n\n        table += '<td>'\n        table += cpu[attribute]\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16a603c223b63b8d",
+        "type": "catch",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "scope": [
+            "7004b9b981e156bb"
+        ],
+        "uncaught": false,
+        "x": 230,
+        "y": 40,
+        "wires": [
+            [
+                "5c5acf089b206c21"
+            ]
+        ]
+    },
+    {
+        "id": "7004b9b981e156bb",
+        "type": "mqtt in",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "topic": "${TOPIC}",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "112df8f0c03fc7e8"
+            ]
+        ]
+    },
+    {
+        "id": "f1901e3f3d155ae5",
+        "type": "status",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "scope": null,
+        "x": 240,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "14e5342cb50f366f",
         "type": "link out",
         "z": "c7141ffb22d64190",
@@ -7850,29 +7953,6 @@
         ]
     },
     {
-        "id": "caca94e8fd58330a",
-        "type": "mqtt in",
-        "z": "72d0b79e8a326b2f",
-        "g": "193264abb5beec8a",
-        "name": "",
-        "topic": "cpu/+/temperature",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 160,
-        "wires": [
-            [
-                "b3d87ba60e2f1f9b",
-                "0c5c0ee025e30daa"
-            ]
-        ]
-    },
-    {
         "id": "676a5e70ba119db5",
         "type": "switch",
         "z": "72d0b79e8a326b2f",
@@ -7890,32 +7970,11 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 450,
-        "y": 200,
+        "x": 330,
+        "y": 260,
         "wires": [
             [
                 "dd312a048f2e6d95"
-            ]
-        ]
-    },
-    {
-        "id": "b3d87ba60e2f1f9b",
-        "type": "rbe",
-        "z": "72d0b79e8a326b2f",
-        "g": "193264abb5beec8a",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 330,
-        "y": 200,
-        "wires": [
-            [
-                "676a5e70ba119db5"
             ]
         ]
     },
@@ -7939,8 +7998,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 200,
+        "x": 480,
+        "y": 260,
         "wires": [
             [
                 "8c8507b03aafcfe4"
@@ -7957,8 +8016,8 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 725,
-        "y": 200,
+        "x": 605,
+        "y": 260,
         "wires": []
     },
     {
@@ -7977,70 +8036,10 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 530,
-        "y": 120,
+        "x": 370,
+        "y": 180,
         "wires": [
-            [
-                "9af706aff771f7bf"
-            ]
-        ]
-    },
-    {
-        "id": "9af706aff771f7bf",
-        "type": "debug",
-        "z": "72d0b79e8a326b2f",
-        "g": "193264abb5beec8a",
-        "name": "cpu temperature table",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "5ec547d4dd72e5ab",
-        "type": "catch",
-        "z": "72d0b79e8a326b2f",
-        "g": "193264abb5beec8a",
-        "name": "",
-        "scope": [
-            "caca94e8fd58330a"
-        ],
-        "uncaught": false,
-        "x": 190,
-        "y": 80,
-        "wires": [
-            [
-                "0c5c0ee025e30daa"
-            ]
-        ]
-    },
-    {
-        "id": "f0b1285c19ee9cc0",
-        "type": "mqtt in",
-        "z": "72d0b79e8a326b2f",
-        "g": "4e41b9100f8f8543",
-        "name": "",
-        "topic": "cpu/+/megabytes",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 140,
-        "y": 380,
-        "wires": [
-            [
-                "353935c3961ffaaf"
-            ]
+            []
         ]
     },
     {
@@ -8059,88 +8058,56 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 500,
-        "y": 340,
+        "x": 320,
+        "y": 80,
         "wires": [
-            [
-                "9a98515c42b570fc"
-            ]
+            []
         ]
     },
     {
-        "id": "9a98515c42b570fc",
-        "type": "debug",
-        "z": "72d0b79e8a326b2f",
-        "g": "4e41b9100f8f8543",
-        "name": "cpu memory table",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 690,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "d7d7f8d9a2dca4ea",
-        "type": "catch",
-        "z": "72d0b79e8a326b2f",
-        "g": "4e41b9100f8f8543",
-        "name": "",
-        "scope": [
-            "f0b1285c19ee9cc0"
-        ],
-        "uncaught": false,
-        "x": 170,
-        "y": 300,
-        "wires": [
-            [
-                "353935c3961ffaaf"
-            ]
-        ]
-    },
-    {
-        "id": "353935c3961ffaaf",
-        "type": "function",
-        "z": "72d0b79e8a326b2f",
-        "g": "4e41b9100f8f8543",
-        "name": "formatTable",
-        "func": "let topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet cpu = state[host] || {}\n\nif (msg.hasOwnProperty('error')) {\n    \n    if (cpu.hasOwnProperty(attribute)) {\n\n        delete cpu[attribute]\n\n    }\n    \n    if (state.hasOwnProperty(host) && Object.keys(cpu).length == 0) {\n        \n        delete state[host]\n\n    }\n\n} else {\n\n    cpu[attribute] = msg.payload\n    state[host] = cpu\n\n}\n\ncontext.set('state', state)\n\nlet table = '<table>'\nlet first = true\n\nfor (let key in state) {\n    \n    let cpu = state[key]\n    \n    if (first) {\n\n        first = false\n        table += '<tr><th>host</th>'\n\n        for (let attribute in cpu) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += key\n    table += '</td>'\n\n    for (let attribute in cpu) {\n        \n        let value = cpu[attribute]\n\n        table += '<td>'\n        table += cpu[attribute]\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 330,
-        "y": 340,
-        "wires": [
-            [
-                "3d75a5e09a0ecd62"
-            ]
-        ]
-    },
-    {
-        "id": "0c5c0ee025e30daa",
-        "type": "function",
+        "id": "de0bf1bd606626f9",
+        "type": "subflow:c4207c9fe61a900e",
         "z": "72d0b79e8a326b2f",
         "g": "193264abb5beec8a",
-        "name": "formatTable",
-        "func": "let topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet cpu = state[host] || {}\n\nif (msg.hasOwnProperty('error')) {\n    \n    if (cpu.hasOwnProperty(attribute)) {\n\n        delete cpu[attribute]\n\n    }\n    \n    if (state.hasOwnProperty(host) && Object.keys(cpu).length == 0) {\n        \n        delete state[host]\n\n    }\n\n} else {\n\n    cpu[attribute] = msg.payload\n    state[host] = cpu\n\n}\n\ncontext.set('state', state)\n\nlet table = '<table>'\nlet first = true\n\nfor (let key in state) {\n    \n    let cpu = state[key]\n    \n    if (first) {\n\n        first = false\n        table += '<tr><th>host</th>'\n\n        for (let attribute in cpu) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += key\n    table += '</td>'\n\n    for (let attribute in cpu) {\n        \n        let value = cpu[attribute]\n\n        table += '<td>'\n        table += cpu[attribute]\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 120,
+        "name": "cpu/+/temperature",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "cpu/+/temperature",
+                "type": "str"
+            }
+        ],
+        "x": 150,
+        "y": 220,
         "wires": [
             [
                 "1b458bf6e640c398"
+            ],
+            [
+                "676a5e70ba119db5"
             ]
+        ]
+    },
+    {
+        "id": "8af8ae86062519c0",
+        "type": "subflow:c4207c9fe61a900e",
+        "z": "72d0b79e8a326b2f",
+        "g": "4e41b9100f8f8543",
+        "name": "cpu/+/megabytes",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "cpu/+/megabytes",
+                "type": "str"
+            }
+        ],
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "3d75a5e09a0ecd62"
+            ],
+            []
         ]
     },
     {
