@@ -398,14 +398,14 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "4bfcb6c6aa35e230"
+                        "id": "0e4b39aca784ebec"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 1160,
+                "x": 840,
                 "y": 100,
                 "wires": [
                     {
@@ -419,7 +419,7 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 1160,
+            "x": 840,
             "y": 180,
             "wires": [
                 {
@@ -441,14 +441,14 @@
                 "y": 120,
                 "wires": [
                     {
-                        "id": "60f061960d5909e5"
+                        "id": "08bccdc6f9f7801c"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 960,
+                "x": 780,
                 "y": 80,
                 "wires": [
                     {
@@ -462,7 +462,7 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 960,
+            "x": 780,
             "y": 160,
             "wires": [
                 {
@@ -1476,8 +1476,8 @@
             "21690efdfa2776cf",
             "114b9703250b5ff7"
         ],
-        "x": 14,
-        "y": 339,
+        "x": 34,
+        "y": 419,
         "w": 462,
         "h": 202
     },
@@ -1500,8 +1500,8 @@
             "657090175f7253d6",
             "e3599caac9ca8f69"
         ],
-        "x": 14,
-        "y": 559,
+        "x": 34,
+        "y": 659,
         "w": 972,
         "h": 82
     },
@@ -1518,11 +1518,12 @@
             "color": "#000000"
         },
         "nodes": [
-            "802ec81ddfb59441"
+            "d32948683f33a7d6",
+            "0971550cc66b2d3d"
         ],
-        "x": 14,
+        "x": 34,
         "y": 119,
-        "w": 192,
+        "w": 312,
         "h": 82
     },
     {
@@ -1539,14 +1540,13 @@
         },
         "nodes": [
             "6bdf715d945fbc10",
-            "3460ef4d47e9a47b",
             "305c62d581d22adf",
             "cc0a0bdacb257089"
         ],
-        "x": 294,
-        "y": 159,
-        "w": 332,
-        "h": 162
+        "x": 374,
+        "y": 179,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "31ed5707953578b9",
@@ -1565,7 +1565,7 @@
             "a3dd9bfc89e0e94a",
             "e309f9054b8afaa3"
         ],
-        "x": 314,
+        "x": 374,
         "y": 19,
         "w": 312,
         "h": 122
@@ -1592,8 +1592,8 @@
             "c33318ea5eb9ec0a",
             "4924b0104a97ef6d"
         ],
-        "x": 654,
-        "y": 279,
+        "x": 614,
+        "y": 359,
         "w": 632,
         "h": 262
     },
@@ -1946,8 +1946,8 @@
                 "type": "str"
             }
         ],
-        "x": 14,
-        "y": 659,
+        "x": 34,
+        "y": 319,
         "w": 452,
         "h": 82
     },
@@ -2382,7 +2382,7 @@
         "group": "ad4d885f83f029a5",
         "order": 3,
         "width": "6",
-        "height": "2"
+        "height": "1"
     },
     {
         "id": "cfa1a0f4a477687c",
@@ -3077,7 +3077,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
+        "x": 720,
         "y": 100,
         "wires": [
             []
@@ -3095,7 +3095,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 870,
+        "x": 550,
         "y": 140,
         "wires": [
             [
@@ -3130,7 +3130,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 630,
+        "x": 310,
         "y": 220,
         "wires": [
             [
@@ -3164,7 +3164,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
+        "x": 320,
         "y": 180,
         "wires": [
             [
@@ -3198,7 +3198,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
+        "x": 320,
         "y": 140,
         "wires": [
             [
@@ -3232,7 +3232,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
+        "x": 320,
         "y": 100,
         "wires": [
             [
@@ -3266,7 +3266,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
+        "x": 320,
         "y": 60,
         "wires": [
             [
@@ -3279,35 +3279,35 @@
         "type": "switch",
         "z": "dacb5b6825c3fbfa",
         "name": "",
-        "property": "minutes",
+        "property": "payload.now",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "btwn",
-                "v": "sunrise",
+                "v": "payload.sunrise",
                 "vt": "msg",
-                "v2": "sunrise + 300",
+                "v2": "payload.sunrise + 300",
                 "v2t": "jsonata"
             },
             {
                 "t": "btwn",
-                "v": "sunrise + 300",
+                "v": "payload.sunrise + 300",
                 "vt": "jsonata",
-                "v2": "sunset - 300",
+                "v2": "payload.sunset - 300",
                 "v2t": "jsonata"
             },
             {
                 "t": "btwn",
-                "v": "sunset - 300",
+                "v": "payload.sunset - 300",
                 "vt": "jsonata",
-                "v2": "sunset",
+                "v2": "payload.sunset",
                 "v2t": "msg"
             },
             {
                 "t": "btwn",
-                "v": "sunset",
+                "v": "payload.sunset",
                 "vt": "msg",
-                "v2": "bedtime",
+                "v2": "payload.bedtime",
                 "v2t": "msg"
             },
             {
@@ -3317,7 +3317,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 470,
+        "x": 150,
         "y": 140,
         "wires": [
             [
@@ -3350,7 +3350,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"text\":payload & ' | ' & next,\"shape\":\"dot\",\"fill\":\"blue\"}",
+                "to": "{\"text\":payload,\"shape\":\"dot\",\"fill\":\"blue\"}",
                 "tot": "jsonata"
             }
         ],
@@ -3359,61 +3359,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
+        "x": 720,
         "y": 180,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "4886a41063ef1f90",
-        "type": "change",
-        "z": "dacb5b6825c3fbfa",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "bedtime",
-                "pt": "msg",
-                "to": "bedtime.value",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 320,
-        "y": 140,
-        "wires": [
-            [
-                "0e4b39aca784ebec"
-            ]
-        ]
-    },
-    {
-        "id": "4bfcb6c6aa35e230",
-        "type": "function",
-        "z": "dacb5b6825c3fbfa",
-        "name": "toMinutes",
-        "func": "node.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: msg.now\n})\n\nlet minutes = moment(msg.now).local().format('H:m')\nlet sunrise = moment(msg.start).local().format('H:m')\nlet sunset = moment(msg.end).local().format('H:m')\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: minutes\n})\n\nlet toMinutes = ((/** @type {string} */ s) => {\n\n    let a = s.split(':')\n\n    return parseInt(a[0]) * 60 + parseInt(a[1])\n\n})\n\nmsg.minutes = toMinutes(minutes)\nmsg.sunrise = toMinutes(sunrise)\nmsg.sunset = toMinutes(sunset)\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "moment",
-                "module": "moment"
-            }
-        ],
-        "x": 160,
-        "y": 140,
-        "wires": [
-            [
-                "4886a41063ef1f90"
-            ]
         ]
     },
     {
@@ -3421,22 +3370,22 @@
         "type": "switch",
         "z": "a8c212909cbdf020",
         "name": "",
-        "property": "payload",
+        "property": "payload.date",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "jsonata_exp",
-                "v": "payload[0] = 7 and payload[1] <= 4",
+                "v": "payload.date[0] = 7 and payload.date[1] <= 4",
                 "vt": "jsonata"
             },
             {
                 "t": "jsonata_exp",
-                "v": "payload[0] = 10",
+                "v": "payload.date[0] = 10",
                 "vt": "jsonata"
             },
             {
                 "t": "jsonata_exp",
-                "v": "payload[0] = 12",
+                "v": "payload.date[0] = 12",
                 "vt": "jsonata"
             },
             {
@@ -3446,7 +3395,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 330,
+        "x": 150,
         "y": 120,
         "wires": [
             [
@@ -3491,7 +3440,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
+        "x": 310,
         "y": 60,
         "wires": [
             [
@@ -3518,7 +3467,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 300,
         "y": 100,
         "wires": [
             [
@@ -3545,7 +3494,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
+        "x": 310,
         "y": 140,
         "wires": [
             [
@@ -3565,7 +3514,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 670,
+        "x": 490,
         "y": 120,
         "wires": [
             [
@@ -3607,7 +3556,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 660,
         "y": 80,
         "wires": [
             []
@@ -3632,7 +3581,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
+        "x": 300,
         "y": 180,
         "wires": [
             [
@@ -3659,34 +3608,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 660,
         "y": 160,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "60f061960d5909e5",
-        "type": "function",
-        "z": "a8c212909cbdf020",
-        "name": "toMonthAndDay",
-        "func": "let a = moment(msg.now).local().format('M D').split(' ')\n\nmsg.payload = [\n    parseInt(a[0]),\n    parseInt(a[1])\n]\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "moment",
-                "module": "moment"
-            }
-        ],
-        "x": 180,
-        "y": 120,
-        "wires": [
-            [
-                "08bccdc6f9f7801c"
-            ]
         ]
     },
     {
@@ -6791,8 +6716,8 @@
         "z": "f03b6ceb81ed7dac",
         "g": "9b9a844a8df2769d",
         "name": "",
-        "x": 110,
-        "y": 460,
+        "x": 130,
+        "y": 540,
         "wires": [
             [
                 "18c9ac4127308f24",
@@ -6806,8 +6731,8 @@
         "z": "f03b6ceb81ed7dac",
         "g": "9b9a844a8df2769d",
         "name": "",
-        "x": 310,
-        "y": 420,
+        "x": 330,
+        "y": 500,
         "wires": [
             [
                 "21690efdfa2776cf"
@@ -6837,8 +6762,8 @@
         "topic": "",
         "payload": "night",
         "payloadType": "str",
-        "x": 350,
-        "y": 380,
+        "x": 370,
+        "y": 460,
         "wires": [
             [
                 "21690efdfa2776cf"
@@ -6860,8 +6785,8 @@
             "23b7995dafc3f002",
             "0514602b711a8136"
         ],
-        "x": 435,
-        "y": 400,
+        "x": 455,
+        "y": 480,
         "wires": []
     },
     {
@@ -6877,8 +6802,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 770,
-        "y": 500,
+        "x": 730,
+        "y": 580,
         "wires": [
             [
                 "01bd7e5d506c131c"
@@ -6912,8 +6837,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 630,
-        "y": 600,
+        "x": 650,
+        "y": 700,
         "wires": [
             [
                 "657090175f7253d6"
@@ -6934,34 +6859,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 600,
+        "x": 170,
+        "y": 700,
         "wires": [
             [
                 "6ccc90dff91a1ab2"
             ]
-        ]
-    },
-    {
-        "id": "802ec81ddfb59441",
-        "type": "sunrise",
-        "z": "f03b6ceb81ed7dac",
-        "g": "1723570f3a1a07a2",
-        "name": "",
-        "lat": "43.018400",
-        "lon": "-89.289000",
-        "start": "sunrise",
-        "end": "sunsetStart",
-        "soff": "0",
-        "eoff": "0",
-        "x": 110,
-        "y": 160,
-        "wires": [
-            [
-                "a3dd9bfc89e0e94a",
-                "305c62d581d22adf"
-            ],
-            []
         ]
     },
     {
@@ -6978,26 +6881,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 550,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "3460ef4d47e9a47b",
-        "type": "ui_text",
-        "z": "f03b6ceb81ed7dac",
-        "g": "6d13af3b8a66acb9",
-        "group": "25c7f0078ed443dd",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Next",
-        "format": "{{msg.next}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 550,
-        "y": 280,
+        "x": 610,
+        "y": 260,
         "wires": []
     },
     {
@@ -7006,12 +6891,11 @@
         "z": "f03b6ceb81ed7dac",
         "g": "6d13af3b8a66acb9",
         "name": "",
-        "x": 390,
+        "x": 470,
         "y": 240,
         "wires": [
             [
                 "6bdf715d945fbc10",
-                "3460ef4d47e9a47b",
                 "cc0a0bdacb257089"
             ]
         ]
@@ -7030,7 +6914,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 540,
+        "x": 600,
         "y": 100,
         "wires": []
     },
@@ -7040,7 +6924,7 @@
         "z": "f03b6ceb81ed7dac",
         "g": "31ed5707953578b9",
         "name": "",
-        "x": 400,
+        "x": 460,
         "y": 80,
         "wires": [
             [
@@ -7069,8 +6953,8 @@
         "topic": "nodered/bedtime",
         "topicType": "str",
         "className": "",
-        "x": 940,
-        "y": 400,
+        "x": 900,
+        "y": 480,
         "wires": [
             [
                 "4aa998790c81c0de"
@@ -7091,8 +6975,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 950,
-        "y": 320,
+        "x": 910,
+        "y": 400,
         "wires": []
     },
     {
@@ -7101,8 +6985,8 @@
         "z": "f03b6ceb81ed7dac",
         "g": "64b945726db0f60a",
         "name": "",
-        "x": 760,
-        "y": 360,
+        "x": 720,
+        "y": 440,
         "wires": [
             [
                 "cf6562b252b0fea0"
@@ -7124,8 +7008,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1120,
-        "y": 440,
+        "x": 1080,
+        "y": 520,
         "wires": [
             [
                 "c33318ea5eb9ec0a"
@@ -7150,8 +7034,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 280,
-        "y": 500,
+        "x": 300,
+        "y": 580,
         "wires": [
             [
                 "58abeb0fb7d59222"
@@ -7178,8 +7062,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 600,
+        "x": 420,
+        "y": 700,
         "wires": [
             [
                 "f086604c46663235"
@@ -7206,8 +7090,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 480,
+        "x": 880,
+        "y": 560,
         "wires": [
             [
                 "4aa998790c81c0de"
@@ -7222,8 +7106,8 @@
         "name": "",
         "scope": null,
         "uncaught": true,
-        "x": 120,
-        "y": 700,
+        "x": 140,
+        "y": 360,
         "wires": [
             [
                 "d1a29315e25ead30"
@@ -7250,8 +7134,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 700,
+        "x": 320,
+        "y": 360,
         "wires": [
             [
                 "3c1d06c6f301fdd7"
@@ -7268,8 +7152,8 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 425,
-        "y": 700,
+        "x": 445,
+        "y": 360,
         "wires": []
     },
     {
@@ -7282,7 +7166,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 495,
+        "x": 555,
         "y": 60,
         "wires": []
     },
@@ -7296,8 +7180,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 515,
-        "y": 200,
+        "x": 575,
+        "y": 220,
         "wires": []
     },
     {
@@ -7310,8 +7194,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 1245,
-        "y": 440,
+        "x": 1205,
+        "y": 520,
         "wires": []
     },
     {
@@ -7348,8 +7232,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
-        "y": 600,
+        "x": 840,
+        "y": 700,
         "wires": [
             [
                 "e3599caac9ca8f69"
@@ -7366,8 +7250,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 945,
-        "y": 600,
+        "x": 965,
+        "y": 700,
         "wires": []
     },
     {
@@ -7392,11 +7276,67 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 760,
-        "y": 460,
+        "x": 720,
+        "y": 540,
         "wires": [
             [
                 "01bd7e5d506c131c"
+            ]
+        ]
+    },
+    {
+        "id": "0971550cc66b2d3d",
+        "type": "function",
+        "z": "f03b6ceb81ed7dac",
+        "g": "1723570f3a1a07a2",
+        "name": "getTimes",
+        "func": "const now = new Date()\nconst times = suncalc.getTimes(now, msg.payload.latitude, msg.payload.longitude)\n\nconst toMinutes = ((/** @type {string} */ s) => {\n\n    const a = s.split(':')\n\n    return parseInt(a[0]) * 60 + parseInt(a[1])\n\n})\n\nconst payload = {}\npayload.now = toMinutes(moment(now).local().format('H:m'))\npayload.sunrise = toMinutes(moment(times.sunrise).local().format('H:m'))\npayload.sunset = toMinutes(moment(times.sunset).local().format('H:m'))\n\nconst date = moment(now).local().format('M D').split(' ')\n\npayload.date = [parseInt(date[0]), parseInt(date[1])]\npayload.bedtime = global.get('bedtime').value\nmsg.payload = payload\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: payload.now\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "moment",
+                "module": "moment"
+            },
+            {
+                "var": "suncalc",
+                "module": "suncalc"
+            }
+        ],
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "a3dd9bfc89e0e94a",
+                "305c62d581d22adf"
+            ]
+        ]
+    },
+    {
+        "id": "d32948683f33a7d6",
+        "type": "inject",
+        "z": "f03b6ceb81ed7dac",
+        "g": "1723570f3a1a07a2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"latitude\":43.0184,\"longitude\":-89.289}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "0971550cc66b2d3d"
             ]
         ]
     },
