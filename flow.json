@@ -395,18 +395,18 @@
         "in": [
             {
                 "x": 60,
-                "y": 60,
+                "y": 140,
                 "wires": [
                     {
-                        "id": "b4415bdfa81ffd8b"
+                        "id": "4bfcb6c6aa35e230"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 1020,
-                "y": 180,
+                "x": 1160,
+                "y": 100,
                 "wires": [
                     {
                         "id": "d751bef6d165f80a",
@@ -419,8 +419,8 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 1020,
-            "y": 260,
+            "x": 1160,
+            "y": 180,
             "wires": [
                 {
                     "id": "cac8c868a506ee47",
@@ -441,14 +441,14 @@
                 "y": 120,
                 "wires": [
                     {
-                        "id": "fd1cca0eebb58024"
+                        "id": "60f061960d5909e5"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 1080,
+                "x": 960,
                 "y": 80,
                 "wires": [
                     {
@@ -462,7 +462,7 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 1080,
+            "x": 960,
             "y": 160,
             "wires": [
                 {
@@ -1477,7 +1477,9 @@
             "114b9703250b5ff7"
         ],
         "x": 14,
-        "y": 339
+        "y": 339,
+        "w": 462,
+        "h": 202
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1499,7 +1501,9 @@
             "e3599caac9ca8f69"
         ],
         "x": 14,
-        "y": 559
+        "y": 559,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1517,7 +1521,9 @@
             "802ec81ddfb59441"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 192,
+        "h": 82
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1537,8 +1543,10 @@
             "305c62d581d22adf",
             "cc0a0bdacb257089"
         ],
-        "x": 234,
-        "y": 159
+        "x": 294,
+        "y": 159,
+        "w": 332,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1557,8 +1565,10 @@
             "a3dd9bfc89e0e94a",
             "e309f9054b8afaa3"
         ],
-        "x": 234,
-        "y": 19
+        "x": 314,
+        "y": 19,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "64b945726db0f60a",
@@ -1582,8 +1592,10 @@
             "c33318ea5eb9ec0a",
             "4924b0104a97ef6d"
         ],
-        "x": 574,
-        "y": 279
+        "x": 654,
+        "y": 279,
+        "w": 632,
+        "h": 262
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1935,7 +1947,9 @@
             }
         ],
         "x": 14,
-        "y": 659
+        "y": 659,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "45c4e55e53345092",
@@ -2112,9 +2126,7 @@
             "de0bf1bd606626f9"
         ],
         "x": 34,
-        "y": 139,
-        "w": 612,
-        "h": 162
+        "y": 139
     },
     {
         "id": "4e41b9100f8f8543",
@@ -2133,9 +2145,7 @@
             "8af8ae86062519c0"
         ],
         "x": 34,
-        "y": 39,
-        "w": 392,
-        "h": 82
+        "y": 39
     },
     {
         "id": "e44a66a067f447ec",
@@ -2154,9 +2164,7 @@
             "af81cf531f5ae030"
         ],
         "x": 34,
-        "y": 319,
-        "w": 332,
-        "h": 82
+        "y": 319
     },
     {
         "id": "e79e0110c2317edb",
@@ -3069,8 +3077,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 900,
-        "y": 180,
+        "x": 1040,
+        "y": 100,
         "wires": [
             []
         ]
@@ -3087,8 +3095,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 730,
-        "y": 220,
+        "x": 870,
+        "y": 140,
         "wires": [
             [
                 "d751bef6d165f80a",
@@ -3122,8 +3130,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
-        "y": 300,
+        "x": 630,
+        "y": 220,
         "wires": [
             [
                 "c806589e8a366a64"
@@ -3156,8 +3164,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 260,
+        "x": 640,
+        "y": 180,
         "wires": [
             [
                 "c806589e8a366a64"
@@ -3190,8 +3198,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 220,
+        "x": 640,
+        "y": 140,
         "wires": [
             [
                 "c806589e8a366a64"
@@ -3224,8 +3232,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 180,
+        "x": 640,
+        "y": 100,
         "wires": [
             [
                 "c806589e8a366a64"
@@ -3258,8 +3266,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 140,
+        "x": 640,
+        "y": 60,
         "wires": [
             [
                 "c806589e8a366a64"
@@ -3309,8 +3317,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 330,
-        "y": 220,
+        "x": 470,
+        "y": 140,
         "wires": [
             [
                 "b8d28399f3fa7b97"
@@ -3351,85 +3359,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 900,
-        "y": 260,
+        "x": 1040,
+        "y": 180,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "b4415bdfa81ffd8b",
-        "type": "moment",
-        "z": "dacb5b6825c3fbfa",
-        "name": "minutes",
-        "topic": "",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "minutes",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 160,
-        "y": 60,
-        "wires": [
-            [
-                "89a1f573680a3f1c"
-            ]
-        ]
-    },
-    {
-        "id": "89a1f573680a3f1c",
-        "type": "moment",
-        "z": "dacb5b6825c3fbfa",
-        "name": "sunrise",
-        "topic": "",
-        "input": "start",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunrise",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 300,
-        "y": 60,
-        "wires": [
-            [
-                "b3b54d035ee8e821"
-            ]
-        ]
-    },
-    {
-        "id": "b3b54d035ee8e821",
-        "type": "moment",
-        "z": "dacb5b6825c3fbfa",
-        "name": "sunset",
-        "topic": "",
-        "input": "end",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "H:mm",
-        "locale": "en-US",
-        "output": "sunset",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 430,
-        "y": 60,
-        "wires": [
-            [
-                "4886a41063ef1f90"
-            ]
         ]
     },
     {
@@ -3444,27 +3377,6 @@
                 "pt": "msg",
                 "to": "bedtime.value",
                 "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "minutes",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(minutes, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunrise",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(sunrise, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "sunset",
-                "pt": "msg",
-                "to": "(\t   $parts := $map($split(sunset, ':'), $number);\t   $parts[0] * 60 + $parts[1];\t)",
-                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -3472,11 +3384,35 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 180,
-        "y": 220,
+        "x": 320,
+        "y": 140,
         "wires": [
             [
                 "0e4b39aca784ebec"
+            ]
+        ]
+    },
+    {
+        "id": "4bfcb6c6aa35e230",
+        "type": "function",
+        "z": "dacb5b6825c3fbfa",
+        "name": "toMinutes",
+        "func": "node.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: msg.now\n})\n\nlet minutes = moment(msg.now).local().format('H:m')\nlet sunrise = moment(msg.start).local().format('H:m')\nlet sunset = moment(msg.end).local().format('H:m')\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: minutes\n})\n\nlet toMinutes = ((/** @type {string} */ s) => {\n\n    let a = s.split(':')\n\n    return parseInt(a[0]) * 60 + parseInt(a[1])\n\n})\n\nmsg.minutes = toMinutes(minutes)\nmsg.sunrise = toMinutes(sunrise)\nmsg.sunset = toMinutes(sunset)\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "moment",
+                "module": "moment"
+            }
+        ],
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "4886a41063ef1f90"
             ]
         ]
     },
@@ -3510,7 +3446,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 450,
+        "x": 330,
         "y": 120,
         "wires": [
             [
@@ -3555,7 +3491,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 610,
+        "x": 490,
         "y": 60,
         "wires": [
             [
@@ -3582,7 +3518,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
+        "x": 480,
         "y": 100,
         "wires": [
             [
@@ -3609,7 +3545,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 610,
+        "x": 490,
         "y": 140,
         "wires": [
             [
@@ -3629,7 +3565,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 790,
+        "x": 670,
         "y": 120,
         "wires": [
             [
@@ -3671,62 +3607,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
+        "x": 840,
         "y": 80,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "04fbe08f7538c4af",
-        "type": "change",
-        "z": "a8c212909cbdf020",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map($split($trim(payload), ' '), $number)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 300,
-        "y": 120,
-        "wires": [
-            [
-                "08bccdc6f9f7801c"
-            ]
-        ]
-    },
-    {
-        "id": "fd1cca0eebb58024",
-        "type": "moment",
-        "z": "a8c212909cbdf020",
-        "name": "",
-        "topic": "date",
-        "input": "now",
-        "inputType": "msg",
-        "inTz": "ETC/utc",
-        "adjAmount": 0,
-        "adjType": "days",
-        "adjDir": "add",
-        "format": "M D",
-        "locale": "en-US",
-        "output": "payload",
-        "outputType": "msg",
-        "outTz": "America/Chicago",
-        "x": 150,
-        "y": 120,
-        "wires": [
-            [
-                "04fbe08f7538c4af"
-            ]
         ]
     },
     {
@@ -3748,7 +3632,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
+        "x": 480,
         "y": 180,
         "wires": [
             [
@@ -3775,10 +3659,34 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
+        "x": 840,
         "y": 160,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "60f061960d5909e5",
+        "type": "function",
+        "z": "a8c212909cbdf020",
+        "name": "toMonthAndDay",
+        "func": "let a = moment(msg.now).local().format('M D').split(' ')\n\nmsg.payload = [\n    parseInt(a[0]),\n    parseInt(a[1])\n]\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "moment",
+                "module": "moment"
+            }
+        ],
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "08bccdc6f9f7801c"
+            ]
         ]
     },
     {
@@ -6969,7 +6877,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
+        "x": 770,
         "y": 500,
         "wires": [
             [
@@ -7070,7 +6978,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 490,
+        "x": 550,
         "y": 240,
         "wires": []
     },
@@ -7088,7 +6996,7 @@
         "format": "{{msg.next}}",
         "layout": "row-spread",
         "className": "",
-        "x": 490,
+        "x": 550,
         "y": 280,
         "wires": []
     },
@@ -7098,7 +7006,7 @@
         "z": "f03b6ceb81ed7dac",
         "g": "6d13af3b8a66acb9",
         "name": "",
-        "x": 330,
+        "x": 390,
         "y": 240,
         "wires": [
             [
@@ -7122,7 +7030,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 460,
+        "x": 540,
         "y": 100,
         "wires": []
     },
@@ -7132,7 +7040,7 @@
         "z": "f03b6ceb81ed7dac",
         "g": "31ed5707953578b9",
         "name": "",
-        "x": 320,
+        "x": 400,
         "y": 80,
         "wires": [
             [
@@ -7161,7 +7069,7 @@
         "topic": "nodered/bedtime",
         "topicType": "str",
         "className": "",
-        "x": 860,
+        "x": 940,
         "y": 400,
         "wires": [
             [
@@ -7183,7 +7091,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 870,
+        "x": 950,
         "y": 320,
         "wires": []
     },
@@ -7193,7 +7101,7 @@
         "z": "f03b6ceb81ed7dac",
         "g": "64b945726db0f60a",
         "name": "",
-        "x": 680,
+        "x": 760,
         "y": 360,
         "wires": [
             [
@@ -7216,7 +7124,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1040,
+        "x": 1120,
         "y": 440,
         "wires": [
             [
@@ -7298,7 +7206,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 920,
         "y": 480,
         "wires": [
             [
@@ -7374,7 +7282,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 415,
+        "x": 495,
         "y": 60,
         "wires": []
     },
@@ -7388,7 +7296,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 455,
+        "x": 515,
         "y": 200,
         "wires": []
     },
@@ -7402,7 +7310,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 1165,
+        "x": 1245,
         "y": 440,
         "wires": []
     },
@@ -7484,7 +7392,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 680,
+        "x": 760,
         "y": 460,
         "wires": [
             [
