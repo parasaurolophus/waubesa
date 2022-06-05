@@ -1073,7 +1073,7 @@
         "id": "c4207c9fe61a900e",
         "type": "subflow",
         "name": "Monitored Event",
-        "info": "",
+        "info": "Handle MQTT messages for topics that match the value of the `TOPIC` environment variable. Such topics are expected to be of the form `cpu/+/attribute`, for some monitored attribute such as `temperature`, `voltage` etc. The second, wildcard elemnt is expected to be the name of the host that sent the particular message being handled. Such messages are cached in the context of a function node in this subflow as an object whose keys are the host names. The value for each host is an object whose key is the name of the attribute and whose value is the value for the most recently received message for that attribute from that host.\n\nFor example, assuming that `${TOPIC}` is configured to be `cpu/+/temperature`, the following sequence of messages:\n\n    cpu/host1/temperature : 31\n    cpu/host2/temperature : 55\n    cpu/host3/temperature : 49\n\nwould result in the cached state becoming:\n\n    {\n        host1: {\n            temperature: 31\n        },\n        host2: {\n            temperature: 55\n        },\n        host5: {\n            temperature: 49\n        }\n    }\n\nIf a subsequent message were received:\n\n    cpu/host2/temperature : 56\n\nthe cached state would be updated to:\n\n    {\n        host1: {\n            temperature: 31\n        },\n        host2: {\n            temperature: 56\n        },\n        host5: {\n            temperature: 49\n        }\n    }\n\n...and so on.\n\nThe subflow has two outputs:\n\n1. A HTML `<table>` representing the cached state for all hosts after updating it upon the receipt of each message, presumably for display using a dashboard _template_ node.\n\n2. The raw event for subsequent processing, e.g. taking action if some CPU overheats.\n\nThe `<table>` emitted for the updated state descibed above would be something like (_extra whitespace and comments inserted here for readability_):\n\n    <table>\n      <!-- optional first row, included if ${HEADER} is true -->\n      <tr>\n        <th>host</th>\n        <th>temperature</th>\n      </tr>\n      <!-- assumes ${UNIT} is set to 'C' -->\n      <tr>\n        <td>host1</td>\n        <td>31C</td>\n      </tr>\n      <tr>\n        <td>host2</td>\n        <td>56C</td>\n      </tr>\n      <tr>\n        <td>host3</td>\n        <td>49C</td>\n      </tr>\n    </table>\n\nAs noted in the HTML comments, the formatting of the `<table>` can be tweaked by two additional environment variables:\n\n- The value of `UNIT`, which defaults to the empty string, will be appended to each value in the second column.\n\n- The first, `<th>`, row will only be included in the HTML output if the value of `HEADER` is `true`.",
         "category": "waubesa",
         "in": [],
         "out": [
@@ -1103,6 +1103,16 @@
                 "name": "TOPIC",
                 "type": "str",
                 "value": ""
+            },
+            {
+                "name": "UNIT",
+                "type": "str",
+                "value": ""
+            },
+            {
+                "name": "HEADER",
+                "type": "bool",
+                "value": "false"
             }
         ],
         "meta": {},
@@ -2303,7 +2313,7 @@
         "type": "ui_group",
         "name": "Bedtime",
         "tab": "ec4d94df679f3b11",
-        "order": 5,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2314,7 +2324,7 @@
         "type": "ui_group",
         "name": "Automation",
         "tab": "ec4d94df679f3b11",
-        "order": 4,
+        "order": 1,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2338,7 +2348,7 @@
         "id": "dc6e107af698a0c3",
         "type": "ui_group",
         "name": "CPU Temperature",
-        "tab": "ec4d94df679f3b11",
+        "tab": "696b8efb10ee13b7",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -2349,8 +2359,8 @@
         "id": "0a1d0e699afa7c7d",
         "type": "ui_group",
         "name": "CPU Memory",
-        "tab": "ec4d94df679f3b11",
-        "order": 2,
+        "tab": "696b8efb10ee13b7",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2370,12 +2380,21 @@
         "id": "cfa1a0f4a477687c",
         "type": "ui_group",
         "name": "CPU Volts",
-        "tab": "ec4d94df679f3b11",
-        "order": 3,
+        "tab": "696b8efb10ee13b7",
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "696b8efb10ee13b7",
+        "type": "ui_tab",
+        "name": "Monitoring",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -5725,7 +5744,7 @@
         "type": "function",
         "z": "c4207c9fe61a900e",
         "name": "formatTable",
-        "func": "node.status({\n    text: msg.topic + ':' + msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nlet topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet cpu = state[host] || {}\n\nif (msg.hasOwnProperty('error')) {\n    \n    if (cpu.hasOwnProperty(attribute)) {\n\n        delete cpu[attribute]\n\n    }\n    \n    if (state.hasOwnProperty(host) && Object.keys(cpu).length == 0) {\n        \n        delete state[host]\n\n    }\n\n} else {\n\n    cpu[attribute] = msg.payload\n    state[host] = cpu\n\n}\n\ncontext.set('state', state)\n\nlet table = '<table>'\nlet first = true\n\nfor (let key in state) {\n    \n    let cpu = state[key]\n    \n    if (first) {\n\n        first = false\n        table += '<tr><th>host</th>'\n\n        for (let attribute in cpu) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += key\n    table += '</td>'\n\n    for (let attribute in cpu) {\n        \n        let value = cpu[attribute]\n\n        table += '<td>'\n        table += cpu[attribute]\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
+        "func": "node.status({\n    text: msg.topic + ':' + msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n////////////////////////////////////////////////////////////////////////////////\n//\n// Cache the cumulative state of a monitored attribute (CPU temperature, voltage\n// etc.) for all hosts\n//\n////////////////////////////////////////////////////////////////////////////////\n\nlet topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet entry = state[host] || {}\n\nif (msg.payload === undefined || msg.payload == null || msg.payload == '' || msg.hasOwnProperty('error')) {\n\n    // handle caught errors by deleting the corresponding\n    // attribute\n    if (entry.hasOwnProperty(attribute)) {\n\n        delete entry[attribute]\n\n    }\n\n    // delete the whole entry if it has no other attributes\n    if (state.hasOwnProperty(host) && Object.keys(entry).length == 0) {\n\n        delete state[host]\n\n    }\n\n} else {\n\n    // update the attribuate corresponding\n    // to the received event\n    entry[attribute] = msg.payload\n    state[host] = entry\n\n}\n\n// persist the updated state\ncontext.set('state', state)\n\n////////////////////////////////////////////////////////////////////////////////\n//\n// Output an HTML <table> containing the values of the given attribute for all\n// hosts for which values have been received\n//\n////////////////////////////////////////////////////////////////////////////////\n\nlet unit = env.get('UNIT')\nlet header = env.get('HEADER')\nlet table = '<table>'\nlet first = true\n\nfor (let host in state) {\n\n    let entry = state[host]\n\n    if (header && first) {\n\n        table += '<tr><th>host</th>'\n\n        for (let attribute in entry) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += host\n    table += '</td>'\n\n    for (let attribute in entry) {\n\n        let value = entry[attribute]\n\n        table += '<td>'\n        table += entry[attribute] + unit\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n    first = false\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5761,7 +5780,7 @@
         "name": "",
         "topic": "${TOPIC}",
         "qos": "2",
-        "datatype": "json",
+        "datatype": "utf8",
         "broker": "722d62f3b93039c3",
         "nl": false,
         "rap": true,
@@ -8107,6 +8126,11 @@
                 "name": "TOPIC",
                 "value": "cpu/+/temperature",
                 "type": "str"
+            },
+            {
+                "name": "UNIT",
+                "value": "C",
+                "type": "str"
             }
         ],
         "x": 150,
@@ -8130,6 +8154,11 @@
             {
                 "name": "TOPIC",
                 "value": "cpu/+/megabytes",
+                "type": "str"
+            },
+            {
+                "name": "UNIT",
+                "value": "MB",
                 "type": "str"
             }
         ],
@@ -8174,6 +8203,11 @@
             {
                 "name": "TOPIC",
                 "value": "cpu/+/volts",
+                "type": "str"
+            },
+            {
+                "name": "UNIT",
+                "value": "V",
                 "type": "str"
             }
         ],
