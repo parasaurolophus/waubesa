@@ -419,7 +419,7 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 840,
+            "x": 1020,
             "y": 180,
             "wires": [
                 {
@@ -561,7 +561,7 @@
                 "y": 60,
                 "wires": [
                     {
-                        "id": "7b2f5cbded9ab0b8",
+                        "id": "ad07406cf0e6b107",
                         "port": 0
                     }
                 ]
@@ -1477,7 +1477,7 @@
             "114b9703250b5ff7"
         ],
         "x": 34,
-        "y": 419,
+        "y": 459,
         "w": 462,
         "h": 202
     },
@@ -1501,7 +1501,7 @@
             "e3599caac9ca8f69"
         ],
         "x": 34,
-        "y": 659,
+        "y": 679,
         "w": 972,
         "h": 82
     },
@@ -1522,7 +1522,7 @@
             "0971550cc66b2d3d"
         ],
         "x": 34,
-        "y": 119,
+        "y": 139,
         "w": 312,
         "h": 82
     },
@@ -1541,12 +1541,14 @@
         "nodes": [
             "6bdf715d945fbc10",
             "305c62d581d22adf",
-            "cc0a0bdacb257089"
+            "cc0a0bdacb257089",
+            "820916d6aef00517",
+            "d95bd31d04f2745f"
         ],
         "x": 374,
         "y": 179,
-        "w": 312,
-        "h": 122
+        "w": 512,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1566,7 +1568,7 @@
             "e309f9054b8afaa3"
         ],
         "x": 374,
-        "y": 19,
+        "y": 39,
         "w": 312,
         "h": 122
     },
@@ -1590,10 +1592,11 @@
             "01bd7e5d506c131c",
             "58abeb0fb7d59222",
             "c33318ea5eb9ec0a",
-            "4924b0104a97ef6d"
+            "4924b0104a97ef6d",
+            "e4573259bc244ded"
         ],
         "x": 614,
-        "y": 359,
+        "y": 399,
         "w": 632,
         "h": 262
     },
@@ -1947,7 +1950,7 @@
             }
         ],
         "x": 34,
-        "y": 319,
+        "y": 359,
         "w": 452,
         "h": 82
     },
@@ -2382,7 +2385,7 @@
         "group": "ad4d885f83f029a5",
         "order": 3,
         "width": "6",
-        "height": "1"
+        "height": "2"
     },
     {
         "id": "cfa1a0f4a477687c",
@@ -3045,13 +3048,6 @@
         "rules": [
             {
                 "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "$formatInteger($floor(next / 60), '00') & ':' & $formatInteger(next % 60, '00')",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
                 "p": "topic",
                 "pt": "msg",
                 "to": "nodered/automation/time",
@@ -3077,10 +3073,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 100,
+        "x": 700,
+        "y": 140,
         "wires": [
-            []
+            [
+                "cac8c868a506ee47"
+            ]
         ]
     },
     {
@@ -3099,8 +3097,7 @@
         "y": 140,
         "wires": [
             [
-                "d751bef6d165f80a",
-                "cac8c868a506ee47"
+                "d751bef6d165f80a"
             ]
         ]
     },
@@ -3112,17 +3109,17 @@
         "rules": [
             {
                 "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "payload.sunrise",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
                 "to": "night",
                 "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunrise",
-                "tot": "msg"
             }
         ],
         "action": "",
@@ -3146,17 +3143,17 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "evening",
-                "tot": "str"
-            },
-            {
-                "t": "set",
                 "p": "next",
                 "pt": "msg",
                 "to": "bedtime.value",
                 "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "evening",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -3180,17 +3177,17 @@
         "rules": [
             {
                 "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "payload.sunset",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
                 "to": "afternoon",
                 "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunset",
-                "tot": "msg"
             }
         ],
         "action": "",
@@ -3214,17 +3211,17 @@
         "rules": [
             {
                 "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "payload.sunset - 300",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
                 "to": "midday",
                 "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunset - 300",
-                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -3248,17 +3245,17 @@
         "rules": [
             {
                 "t": "set",
+                "p": "next",
+                "pt": "msg",
+                "to": "payload.sunrise + 300",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
                 "to": "morning",
                 "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "next",
-                "pt": "msg",
-                "to": "sunrise + 300",
-                "tot": "jsonata"
             }
         ],
         "action": "",
@@ -3350,7 +3347,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"text\":payload,\"shape\":\"dot\",\"fill\":\"blue\"}",
+                "to": "{\"text\":payload & '|' & next,\"shape\":\"dot\",\"fill\":\"blue\"}",
                 "tot": "jsonata"
             }
         ],
@@ -3359,7 +3356,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
+        "x": 900,
         "y": 180,
         "wires": [
             []
@@ -3904,34 +3901,7 @@
         "y": 100,
         "wires": [
             [
-                "7b2f5cbded9ab0b8"
-            ]
-        ]
-    },
-    {
-        "id": "7b2f5cbded9ab0b8",
-        "type": "change",
-        "z": "99c62215b637bb07",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "(\t$hour := $floor(payload.value / 60);\t$minute := payload.value % 60;\t$formatInteger($hour, '00') & ':' & $formatInteger($minute, '00')\t)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 720,
-        "y": 100,
-        "wires": [
-            [
-                "05582a4ded12b48c"
+                "ad07406cf0e6b107"
             ]
         ]
     },
@@ -4050,6 +4020,33 @@
         "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "ad07406cf0e6b107",
+        "type": "change",
+        "z": "99c62215b637bb07",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 100,
+        "wires": [
+            [
+                "05582a4ded12b48c"
+            ]
         ]
     },
     {
@@ -6717,7 +6714,7 @@
         "g": "9b9a844a8df2769d",
         "name": "",
         "x": 130,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
                 "18c9ac4127308f24",
@@ -6732,7 +6729,7 @@
         "g": "9b9a844a8df2769d",
         "name": "",
         "x": 330,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "21690efdfa2776cf"
@@ -6763,7 +6760,7 @@
         "payload": "night",
         "payloadType": "str",
         "x": 370,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "21690efdfa2776cf"
@@ -6786,7 +6783,7 @@
             "0514602b711a8136"
         ],
         "x": 455,
-        "y": 480,
+        "y": 520,
         "wires": []
     },
     {
@@ -6803,7 +6800,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 730,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "01bd7e5d506c131c"
@@ -6838,7 +6835,7 @@
         "animate": false,
         "className": "",
         "x": 650,
-        "y": 700,
+        "y": 720,
         "wires": [
             [
                 "657090175f7253d6"
@@ -6860,7 +6857,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 700,
+        "y": 720,
         "wires": [
             [
                 "6ccc90dff91a1ab2"
@@ -6873,7 +6870,7 @@
         "z": "f03b6ceb81ed7dac",
         "g": "6d13af3b8a66acb9",
         "group": "25c7f0078ed443dd",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 0,
         "name": "",
@@ -6881,7 +6878,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 610,
+        "x": 630,
         "y": 260,
         "wires": []
     },
@@ -6892,11 +6889,12 @@
         "g": "6d13af3b8a66acb9",
         "name": "",
         "x": 470,
-        "y": 240,
+        "y": 260,
         "wires": [
             [
                 "6bdf715d945fbc10",
-                "cc0a0bdacb257089"
+                "cc0a0bdacb257089",
+                "820916d6aef00517"
             ]
         ]
     },
@@ -6915,7 +6913,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 600,
-        "y": 100,
+        "y": 120,
         "wires": []
     },
     {
@@ -6925,7 +6923,7 @@
         "g": "31ed5707953578b9",
         "name": "",
         "x": 460,
-        "y": 80,
+        "y": 100,
         "wires": [
             [
                 "c168b5c3119db1de",
@@ -6954,7 +6952,7 @@
         "topicType": "str",
         "className": "",
         "x": 900,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
                 "4aa998790c81c0de"
@@ -6975,8 +6973,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 910,
-        "y": 400,
+        "x": 1090,
+        "y": 440,
         "wires": []
     },
     {
@@ -6986,10 +6984,10 @@
         "g": "64b945726db0f60a",
         "name": "",
         "x": 720,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
-                "cf6562b252b0fea0"
+                "e4573259bc244ded"
             ],
             [
                 "bbcb2a37e7e328bb"
@@ -7009,7 +7007,7 @@
         "finalize": "",
         "libs": [],
         "x": 1080,
-        "y": 520,
+        "y": 560,
         "wires": [
             [
                 "c33318ea5eb9ec0a"
@@ -7035,7 +7033,7 @@
         "repair": false,
         "outputs": 1,
         "x": 300,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "58abeb0fb7d59222"
@@ -7063,7 +7061,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 700,
+        "y": 720,
         "wires": [
             [
                 "f086604c46663235"
@@ -7091,7 +7089,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "4aa998790c81c0de"
@@ -7107,7 +7105,7 @@
         "scope": null,
         "uncaught": true,
         "x": 140,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "d1a29315e25ead30"
@@ -7135,7 +7133,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "3c1d06c6f301fdd7"
@@ -7153,7 +7151,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 445,
-        "y": 360,
+        "y": 400,
         "wires": []
     },
     {
@@ -7167,7 +7165,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 555,
-        "y": 60,
+        "y": 80,
         "wires": []
     },
     {
@@ -7180,7 +7178,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 575,
+        "x": 595,
         "y": 220,
         "wires": []
     },
@@ -7195,7 +7193,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 1205,
-        "y": 520,
+        "y": 560,
         "wires": []
     },
     {
@@ -7233,7 +7231,7 @@
         "to": "",
         "reg": false,
         "x": 840,
-        "y": 700,
+        "y": 720,
         "wires": [
             [
                 "e3599caac9ca8f69"
@@ -7251,7 +7249,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 965,
-        "y": 700,
+        "y": 720,
         "wires": []
     },
     {
@@ -7277,7 +7275,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 720,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
                 "01bd7e5d506c131c"
@@ -7290,23 +7288,19 @@
         "z": "f03b6ceb81ed7dac",
         "g": "1723570f3a1a07a2",
         "name": "getTimes",
-        "func": "const now = new Date()\nconst times = suncalc.getTimes(now, msg.payload.latitude, msg.payload.longitude)\n\nconst toMinutes = ((/** @type {string} */ s) => {\n\n    const a = s.split(':')\n\n    return parseInt(a[0]) * 60 + parseInt(a[1])\n\n})\n\nconst payload = {}\npayload.now = toMinutes(moment(now).local().format('H:m'))\npayload.sunrise = toMinutes(moment(times.sunrise).local().format('H:m'))\npayload.sunset = toMinutes(moment(times.sunset).local().format('H:m'))\n\nconst date = moment(now).local().format('M D').split(' ')\n\npayload.date = [parseInt(date[0]), parseInt(date[1])]\npayload.bedtime = global.get('bedtime').value\nmsg.payload = payload\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: payload.now\n})\n\nreturn msg",
+        "func": "const now = new Date()\nconst times = suncalc.getTimes(now, msg.payload.latitude, msg.payload.longitude)\n\nconst toMinutes = (/** @type {Date} */ date) => {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nconst maxDate = (/** @type {Date} **/ date1, /** @type {Date} **/ date2) => {\n\n    if (date1.getTime() < date2.getTime()) {\n\n        return date2\n\n    }\n\n    return date1\n}\n\nmsg.payload = {\n\n    now: toMinutes(now),\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n    date: [\n        now.getMonth() + 1,\n        now.getDate()\n    ]\n\n}\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: msg.payload.now });\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [
             {
-                "var": "moment",
-                "module": "moment"
-            },
-            {
                 "var": "suncalc",
                 "module": "suncalc"
             }
         ],
         "x": 260,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "a3dd9bfc89e0e94a",
@@ -7333,12 +7327,86 @@
         "payload": "{\"latitude\":43.0184,\"longitude\":-89.289}",
         "payloadType": "json",
         "x": 130,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "0971550cc66b2d3d"
             ]
         ]
+    },
+    {
+        "id": "e4573259bc244ded",
+        "type": "change",
+        "z": "f03b6ceb81ed7dac",
+        "g": "64b945726db0f60a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "(\t$hour := $floor(payload.value / 60);\t$minute := payload.value % 60;\t$formatInteger($hour, '00') & ':' & $formatInteger($minute, '00')\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 440,
+        "wires": [
+            [
+                "cf6562b252b0fea0"
+            ]
+        ]
+    },
+    {
+        "id": "820916d6aef00517",
+        "type": "change",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$formatInteger($floor(next / 60), '00') & ':' & $formatInteger(next % 60, '00')\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 300,
+        "wires": [
+            [
+                "d95bd31d04f2745f"
+            ]
+        ]
+    },
+    {
+        "id": "d95bd31d04f2745f",
+        "type": "ui_text",
+        "z": "f03b6ceb81ed7dac",
+        "g": "6d13af3b8a66acb9",
+        "group": "25c7f0078ed443dd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Next",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 810,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "061d8c40c8ed16ab",
