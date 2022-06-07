@@ -712,7 +712,7 @@
         "in": [],
         "out": [
             {
-                "x": 1160,
+                "x": 1140,
                 "y": 100,
                 "wires": [
                     {
@@ -746,7 +746,7 @@
         "color": "#3FADB5",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 1360,
+            "x": 1340,
             "y": 220,
             "wires": [
                 {
@@ -968,22 +968,46 @@
         "in": [
             {
                 "x": 60,
-                "y": 60,
+                "y": 180,
                 "wires": [
                     {
-                        "id": "0b93af40f62331d4"
+                        "id": "01ecafee76164b96"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 460,
-                "y": 60,
+                "x": 510,
+                "y": 100,
                 "wires": [
                     {
                         "id": "cd2e28c8dce08fd2",
                         "port": 0
+                    },
+                    {
+                        "id": "b3bb81d96c6fa50c",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 330,
+                "y": 220,
+                "wires": [
+                    {
+                        "id": "01ecafee76164b96",
+                        "port": "2"
+                    }
+                ]
+            },
+            {
+                "x": 750,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "01ecafee76164b96",
+                        "port": 1
                     }
                 ]
             }
@@ -1005,13 +1029,25 @@
             "license": "MIT"
         },
         "color": "#3FADB5",
+        "inputLabels": [
+            "from sse"
+        ],
+        "outputLabels": [
+            "to mqtt",
+            "error",
+            "debug delete"
+        ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 460,
-            "y": 140,
+            "x": 500,
+            "y": 340,
             "wires": [
                 {
                     "id": "1d3d62846ea9afe9",
+                    "port": 0
+                },
+                {
+                    "id": "4f90e79bcb2f28ab",
                     "port": 0
                 }
             ]
@@ -1301,7 +1337,9 @@
             }
         ],
         "x": 54,
-        "y": 39
+        "y": 39,
+        "w": 1292,
+        "h": 82
     },
     {
         "id": "5a2c18585609cfae",
@@ -1455,7 +1493,9 @@
             "a0985c083540376f"
         ],
         "x": 154,
-        "y": 139
+        "y": 139,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "9b9a844a8df2769d",
@@ -1477,9 +1517,7 @@
             "114b9703250b5ff7"
         ],
         "x": 34,
-        "y": 459,
-        "w": 462,
-        "h": 202
+        "y": 459
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1501,9 +1539,7 @@
             "e3599caac9ca8f69"
         ],
         "x": 34,
-        "y": 679,
-        "w": 972,
-        "h": 82
+        "y": 679
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1522,9 +1558,7 @@
             "0971550cc66b2d3d"
         ],
         "x": 34,
-        "y": 139,
-        "w": 312,
-        "h": 82
+        "y": 139
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1546,9 +1580,7 @@
             "d95bd31d04f2745f"
         ],
         "x": 374,
-        "y": 179,
-        "w": 512,
-        "h": 162
+        "y": 179
     },
     {
         "id": "31ed5707953578b9",
@@ -1568,9 +1600,7 @@
             "e309f9054b8afaa3"
         ],
         "x": 374,
-        "y": 39,
-        "w": 312,
-        "h": 122
+        "y": 39
     },
     {
         "id": "64b945726db0f60a",
@@ -1596,9 +1626,7 @@
             "e4573259bc244ded"
         ],
         "x": 614,
-        "y": 399,
-        "w": 632,
-        "h": 262
+        "y": 399
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1641,7 +1669,9 @@
             "b7ae8cdd52579f82"
         ],
         "x": 154,
-        "y": 239
+        "y": 239,
+        "w": 372,
+        "h": 162
     },
     {
         "id": "6daca851d4692833",
@@ -1664,7 +1694,9 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 572,
+        "h": 202
     },
     {
         "id": "cf29b66e60017a62",
@@ -1684,7 +1716,9 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "851ce0bce3af3965",
@@ -1704,10 +1738,15 @@
             "715136c1ddfd2fe4",
             "6dfdb240e3169ffe",
             "4ece0b890b4639b3",
-            "51f7ad129b09a37a"
+            "51f7ad129b09a37a",
+            "6d580e21cbe57c5a",
+            "85fbc8b594d1093d",
+            "388f01c5394d4c2b"
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 1172,
+        "h": 202
     },
     {
         "id": "7176639d06e51ae4",
@@ -1812,12 +1851,15 @@
             "2d0604f94ef7bff4",
             "4d2dc9a6e42d0548",
             "a57b7031dbb06152",
-            "8b10a9707241b0ad"
+            "8b10a9707241b0ad",
+            "a31f6417651da697",
+            "ba07978d1c64a83f",
+            "d74bafa077e6060e"
         ],
         "x": 34,
         "y": 359,
-        "w": 942,
-        "h": 162
+        "w": 1192,
+        "h": 202
     },
     {
         "id": "70c17a60ce5a4da0",
@@ -1840,6 +1882,8 @@
         ],
         "x": 134,
         "y": 139,
+        "w": 692,
+        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -1867,7 +1911,7 @@
             }
         ],
         "x": 34,
-        "y": 539,
+        "y": 579,
         "w": 442,
         "h": 82
     },
@@ -1896,7 +1940,9 @@
             }
         ],
         "x": 34,
-        "y": 539
+        "y": 579,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1923,7 +1969,9 @@
             }
         ],
         "x": 154,
-        "y": 419
+        "y": 419,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "3d0bb7da508e430c",
@@ -1950,9 +1998,7 @@
             }
         ],
         "x": 34,
-        "y": 359,
-        "w": 452,
-        "h": 82
+        "y": 359
     },
     {
         "id": "45c4e55e53345092",
@@ -2107,7 +2153,9 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "193264abb5beec8a",
@@ -4410,15 +4458,17 @@
         "z": "efbc3338fa01d34f",
         "name": "",
         "url": "",
-        "events": [],
+        "events": [
+            "message"
+        ],
         "headers": {},
         "proxy": "",
         "restart": false,
         "rejectUnauthorized": false,
         "withCredentials": false,
         "timeout": 1,
-        "x": 710,
-        "y": 60,
+        "x": 470,
+        "y": 140,
         "wires": [
             [
                 "21ccf665fb8d3960"
@@ -4433,7 +4483,7 @@
         "scope": [
             "f13d464834dfe360"
         ],
-        "x": 1240,
+        "x": 1220,
         "y": 260,
         "wires": [
             []
@@ -4458,6 +4508,13 @@
                 "pt": "msg",
                 "to": "{\"hue-application-key\": $env('KEY')}",
                 "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -4465,8 +4522,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 60,
+        "x": 300,
+        "y": 140,
         "wires": [
             [
                 "f13d464834dfe360"
@@ -4484,7 +4541,7 @@
         "initialize": "setTimeout(() => {\n\n    node.send({payload: true})\n\n}, 1000)",
         "finalize": "",
         "libs": [],
-        "x": 370,
+        "x": 390,
         "y": 60,
         "wires": [
             [
@@ -4501,7 +4558,7 @@
             "f13d464834dfe360"
         ],
         "uncaught": false,
-        "x": 70,
+        "x": 90,
         "y": 60,
         "wires": [
             [
@@ -4526,7 +4583,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 210,
+        "x": 230,
         "y": 60,
         "wires": [
             [
@@ -4542,8 +4599,8 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 850,
-        "y": 60,
+        "x": 610,
+        "y": 140,
         "wires": [
             [
                 "16a4c1c41c7850b8"
@@ -4561,7 +4618,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 750,
+        "x": 730,
         "y": 140,
         "wires": [
             [
@@ -4580,7 +4637,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 1050,
+        "x": 1030,
         "y": 140,
         "wires": [
             [
@@ -4614,7 +4671,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 900,
+        "x": 880,
         "y": 140,
         "wires": [
             [
@@ -4632,7 +4689,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"text\":payload.id,\"shape\":\"dot\",\"fill\":\"blue\"}",
+                "to": "{\"text\":topic & ':' & payload.id,\"shape\":\"dot\",\"fill\":\"blue\"}",
                 "tot": "jsonata"
             }
         ],
@@ -4641,7 +4698,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1220,
+        "x": 1200,
         "y": 180,
         "wires": [
             []
@@ -5344,52 +5401,11 @@
         ]
     },
     {
-        "id": "0b93af40f62331d4",
-        "type": "change",
-        "z": "312203f31ccf951e",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "$env('TOPIC') & '/' & topic & '/' & payload.type & '/' & payload.id",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 180,
-        "y": 60,
-        "wires": [
-            [
-                "cd2e28c8dce08fd2"
-            ]
-        ]
-    },
-    {
         "id": "cd2e28c8dce08fd2",
         "type": "function",
         "z": "312203f31ccf951e",
         "name": "updateState",
-        "func": "let state = context.get('state') || {}\nlet path = msg.topic.split('/')\n\nnode.status({\n    text: msg.payload.id,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nlet merge = (currentValue, newValue) => {\n\n    for (let key in newValue) {\n\n        currentValue[key] = newValue[key]\n\n    }\n\n    return currentValue\n\n}\n\nlet updateValue = (path, state) => {\n\n    let key = path.shift()    \n    let current = state[key] || {}\n    let updated = null\n\n    if (path.length == 0) {\n\n        updated = merge(current, msg.payload)\n        msg.payload = updated\n\n    } else {\n\n        updated = updateValue(path, current)\n\n    }\n\n    state[key] = updated\n    return state\n\n}\n\nupdateValue(path, state)\ncontext.set('state', state)\nreturn msg",
+        "func": "node.status({\n    text: msg.topic + ' ' + msg.payload.type + ':' + msg.payload.id,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nconst state = flow.get('state') || {}\nconst type = state[msg.payload.type] || {}\nconst resource = type[msg.payload.id] || {}\n\nfor (let attribute in msg.payload) {\n\n    resource[attribute] = msg.payload[attribute]\n\n}\n\ntype[resource.id] = resource\nstate[resource.type] = type\nflow.set('state', state)\n\nmsg.topic = env.get('TOPIC') + '/' + resource.type + '/' + resource.id\nmsg.qos = 2\nmsg.retain = true\nmsg.payload = resource\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5407,10 +5423,92 @@
         "z": "312203f31ccf951e",
         "name": "",
         "scope": [
-            "cd2e28c8dce08fd2"
+            "cd2e28c8dce08fd2",
+            "b3bb81d96c6fa50c"
         ],
-        "x": 360,
+        "x": 380,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01ecafee76164b96",
+        "type": "switch",
+        "z": "312203f31ccf951e",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "jsonata_exp",
+                "v": "topic = 'add' or topic = 'update'",
+                "vt": "jsonata"
+            },
+            {
+                "t": "eq",
+                "v": "delete",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "cd2e28c8dce08fd2"
+            ],
+            [
+                "b3bb81d96c6fa50c"
+            ],
+            [
+                "4f90e79bcb2f28ab"
+            ]
+        ]
+    },
+    {
+        "id": "b3bb81d96c6fa50c",
+        "type": "function",
+        "z": "312203f31ccf951e",
+        "name": "deleteState",
+        "func": "node.status({\n    text: msg.topic + ' ' + msg.payload.type + ':' + msg.payload.id,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nconst state = flow.get('state') || {}\n\nif (state.hasOwnProperty(msg.payload.type)) {\n\n    const type = state[msg.payload.type]\n\n    if (type.hasOwnProperty(msg.payload.id)) {\n\n        delete type[msg.payload.id]\n\n    }\n\n}\n\nflow.set('state', state)\n\nmsg.topic = env.get('TOPIC') + '/' + msg.payload.type + '/' + msg.payload.id\nmsg.qos = 2\nmsg.retain = true\nmsg.payload = ''\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
         "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f90e79bcb2f28ab",
+        "type": "change",
+        "z": "312203f31ccf951e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":topic,\"fill\":\"red\",\"shape\":\"dot\"}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 300,
         "wires": [
             []
         ]
@@ -5534,7 +5632,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"text\":payload.id,\"shape\":\"dot\",\"fill\":\"blue\"}",
+                "to": "{\"text\":topic & ' :' & payload.id,\"shape\":\"dot\",\"fill\":\"blue\"}",
                 "tot": "jsonata"
             }
         ],
@@ -5790,7 +5888,7 @@
             }
         ],
         "x": 620,
-        "y": 400,
+        "y": 480,
         "wires": [
             [
                 "a57b7031dbb06152"
@@ -5809,8 +5907,8 @@
             "7bb6a0db7deb5336",
             "dd7609e91ad64f63"
         ],
-        "x": 935,
-        "y": 440,
+        "x": 995,
+        "y": 400,
         "wires": []
     },
     {
@@ -5841,7 +5939,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 140,
-        "y": 480,
+        "y": 400,
         "wires": [
             [
                 "8c9d79d2791e9b02"
@@ -5859,7 +5957,7 @@
         ],
         "timeout": "30",
         "x": 330,
-        "y": 480,
+        "y": 400,
         "wires": [
             [
                 "8b10a9707241b0ad"
@@ -5907,7 +6005,7 @@
         "scope": null,
         "uncaught": true,
         "x": 140,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "cb8f9571f345d552"
@@ -5935,7 +6033,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "94db8418a725151c"
@@ -5953,7 +6051,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 435,
-        "y": 580,
+        "y": 620,
         "wires": []
     },
     {
@@ -6002,6 +6100,14 @@
         "wires": [
             [
                 "4d2dc9a6e42d0548"
+            ],
+            [
+                "a31f6417651da697",
+                "ba07978d1c64a83f"
+            ],
+            [
+                "ba07978d1c64a83f",
+                "a31f6417651da697"
             ]
         ]
     },
@@ -6012,12 +6118,72 @@
         "g": "665df9d682462b5e",
         "name": "",
         "x": 570,
-        "y": 480,
+        "y": 400,
         "wires": [
             [
                 "a57b7031dbb06152"
             ]
         ]
+    },
+    {
+        "id": "a31f6417651da697",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "665df9d682462b5e",
+        "name": "chez nous main error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "topic",
+        "statusType": "msg",
+        "x": 1080,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ba07978d1c64a83f",
+        "type": "change",
+        "z": "c7141ffb22d64190",
+        "g": "665df9d682462b5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"title\":\"Chez Nous Main\",\"message\":$string(msg,true)}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 520,
+        "wires": [
+            [
+                "d74bafa077e6060e"
+            ]
+        ]
+    },
+    {
+        "id": "d74bafa077e6060e",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "665df9d682462b5e",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "53f5dcbc2de38b22"
+        ],
+        "x": 1185,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "ffef2ca7a90d4b74",
@@ -6177,7 +6343,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 140,
-        "y": 480,
+        "y": 400,
         "wires": [
             [
                 "715136c1ddfd2fe4"
@@ -6195,7 +6361,7 @@
         ],
         "timeout": "30",
         "x": 320,
-        "y": 480,
+        "y": 400,
         "wires": [
             [
                 "51f7ad129b09a37a"
@@ -6226,7 +6392,7 @@
             }
         ],
         "x": 600,
-        "y": 400,
+        "y": 480,
         "wires": [
             [
                 "4ece0b890b4639b3"
@@ -6245,8 +6411,8 @@
             "7bb6a0db7deb5336",
             "dd7609e91ad64f63"
         ],
-        "x": 925,
-        "y": 440,
+        "x": 975,
+        "y": 400,
         "wires": []
     },
     {
@@ -6318,7 +6484,7 @@
         "scope": null,
         "uncaught": true,
         "x": 140,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "fe7591ba8a5abf39"
@@ -6346,7 +6512,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 580,
+        "y": 620,
         "wires": [
             [
                 "56bb6d25d62183a5"
@@ -6364,7 +6530,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 435,
-        "y": 580,
+        "y": 620,
         "wires": []
     },
     {
@@ -6385,6 +6551,14 @@
         "wires": [
             [
                 "40f1f326e5252bf8"
+            ],
+            [
+                "6d580e21cbe57c5a",
+                "85fbc8b594d1093d"
+            ],
+            [
+                "85fbc8b594d1093d",
+                "6d580e21cbe57c5a"
             ]
         ]
     },
@@ -6395,12 +6569,72 @@
         "g": "851ce0bce3af3965",
         "name": "",
         "x": 550,
-        "y": 480,
+        "y": 400,
         "wires": [
             [
                 "4ece0b890b4639b3"
             ]
         ]
+    },
+    {
+        "id": "6d580e21cbe57c5a",
+        "type": "debug",
+        "z": "c8c4090e523da434",
+        "g": "851ce0bce3af3965",
+        "name": "basement hue error",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "topic",
+        "statusType": "msg",
+        "x": 1050,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "85fbc8b594d1093d",
+        "type": "change",
+        "z": "c8c4090e523da434",
+        "g": "851ce0bce3af3965",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"title\":\"Basement Hue\",\"message\":$string(msg,true)}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 520,
+        "wires": [
+            [
+                "388f01c5394d4c2b"
+            ]
+        ]
+    },
+    {
+        "id": "388f01c5394d4c2b",
+        "type": "link out",
+        "z": "c8c4090e523da434",
+        "g": "851ce0bce3af3965",
+        "name": "",
+        "mode": "link",
+        "links": [
+            "53f5dcbc2de38b22"
+        ],
+        "x": 1165,
+        "y": 520,
+        "wires": []
     },
     {
         "id": "536874de79956f84",
@@ -7746,7 +7980,9 @@
             "f85d9b0bfaa1207c",
             "8c8507b03aafcfe4",
             "a2f24689333013cf",
-            "81400abdbf1d2d42"
+            "81400abdbf1d2d42",
+            "d74bafa077e6060e",
+            "388f01c5394d4c2b"
         ],
         "x": 175,
         "y": 180,
