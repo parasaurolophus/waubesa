@@ -261,64 +261,6 @@
         }
     },
     {
-        "id": "1a6413355bbb49cc",
-        "type": "subflow",
-        "name": "Get PowerView Scenes",
-        "info": "Use the _Hunter Douglas PowerView_&reg; hub API to get metadata for scenes.\n\n\nSee <https://motorisation.hde.nl/hd/powerview/general-guides/API/> for details.\n\n# Configuration\n\nThe `ADDRESS` environment variable must be configured with the IP address of the hub.\n\n# Input\n\nAll input message properties are ignored but care should be taken not to pass any through that could affect the behavior of a `http request` node in unintended ways.\n\n# Output\n\nHTTP response from the hub.\n",
-        "category": "powerview",
-        "in": [
-            {
-                "x": 60,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "643e95dd6df2d982"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 620,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "b47b1889ebf029bd",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "ADDRESS",
-                "type": "str",
-                "value": ""
-            }
-        ],
-        "meta": {
-            "module": "@parasaurolophus/node-red-subflow-get-powerview-scenes",
-            "type": "subflow-get-powerview-scenes",
-            "version": "1.0.0",
-            "author": "parasaurolophus <apps@rader.us>",
-            "desc": "Get the scene configuration from a PowerView hub",
-            "keywords": "powerview,hunter douglas",
-            "license": "MIT"
-        },
-        "color": "#C0DEED",
-        "icon": "font-awesome/fa-align-justify",
-        "status": {
-            "x": 620,
-            "y": 140,
-            "wires": [
-                {
-                    "id": "013c4b7388921d23",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
         "id": "9c4e4702e4660adf",
         "type": "subflow",
         "name": "Set PowerView Scene",
@@ -649,13 +591,13 @@
     {
         "id": "4920eed654c67f8d",
         "type": "subflow",
-        "name": "Get PowerView Rooms",
+        "name": "Get PowerView Metadata",
         "info": "",
         "category": "powerview",
         "in": [
             {
                 "x": 60,
-                "y": 60,
+                "y": 100,
                 "wires": [
                     {
                         "id": "465f820637e0f695"
@@ -665,11 +607,11 @@
         ],
         "out": [
             {
-                "x": 620,
+                "x": 460,
                 "y": 60,
                 "wires": [
                     {
-                        "id": "1ffd2b5f79995711",
+                        "id": "e62fe5c7c72b90ee",
                         "port": 0
                     }
                 ]
@@ -678,13 +620,13 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "type": "str",
-                "value": ""
+                "type": "env",
+                "value": "ADDRESS"
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-get-powerview-rooms",
-            "type": "subflow-get-powerview-rooms",
+            "module": "@parasaurolophus/node-red-subflow-get-powerview-metadata",
+            "type": "subflow-get-powerview-metadata",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "keywords": "powerview,hunter douglas",
@@ -693,11 +635,15 @@
         "color": "#C0DEED",
         "icon": "font-awesome/fa-align-justify",
         "status": {
-            "x": 620,
-            "y": 120,
+            "x": 660,
+            "y": 180,
             "wires": [
                 {
                     "id": "014121091f945d16",
+                    "port": 0
+                },
+                {
+                    "id": "35c708b92ea8024b",
                     "port": 0
                 }
             ]
@@ -706,7 +652,7 @@
     {
         "id": "efbc3338fa01d34f",
         "type": "subflow",
-        "name": "Hue SSE",
+        "name": "Get Hue SSE",
         "info": "Subscribe to Server Side Events (SSE) from a given Hue bridge. Parse each response into a sequence of individual messages, one per Hue resource.\n\nSee <https://developers.meethue.com/develop/hue-api-v2/> for details.",
         "category": "hue",
         "in": [],
@@ -725,18 +671,18 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "type": "str",
-                "value": ""
+                "type": "env",
+                "value": "ADDRESS"
             },
             {
                 "name": "KEY",
-                "type": "str",
-                "value": ""
+                "type": "env",
+                "value": "KEY"
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-hue-sse",
-            "type": "subflow-hue-sse",
+            "module": "@parasaurolophus/node-red-subflow-get-hue-sse",
+            "type": "subflow-get-hue-sse",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Emit a sequence of individual events arising from the Philips Hue SSE API",
@@ -1179,7 +1125,9 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119
+        "y": 119,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1202,7 +1150,9 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419
+        "y": 419,
+        "w": 952,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1225,7 +1175,9 @@
             "76e95a00d6e3b9ad"
         ],
         "x": 94,
-        "y": 39
+        "y": 39,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1248,7 +1200,9 @@
             "08d74ad519cdaa27"
         ],
         "x": 94,
-        "y": 139
+        "y": 139,
+        "w": 1012,
+        "h": 82
     },
     {
         "id": "96bfb32777af9e2c",
@@ -1268,7 +1222,9 @@
             "d79164592fe44617"
         ],
         "x": 134,
-        "y": 139
+        "y": 139,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e936dbad3fb3b587",
@@ -1315,11 +1271,12 @@
         },
         "nodes": [
             "cae953f2c04362ad",
-            "536874de79956f84",
             "1cee4f351bd59563",
-            "f390ba1d460e3399",
             "fc5defb4e76d244e",
-            "f42aab98c1153884"
+            "f42aab98c1153884",
+            "1a763947358fedcd",
+            "f6ad7045f8e2d152",
+            "27b098986f53f963"
         ],
         "env": [
             {
@@ -1328,8 +1285,10 @@
                 "type": "str"
             }
         ],
-        "x": 54,
-        "y": 39
+        "x": 34,
+        "y": 39,
+        "w": 1292,
+        "h": 142
     },
     {
         "id": "5a2c18585609cfae",
@@ -1349,7 +1308,9 @@
             "26ad3b6fd956be59"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "2238e89a8f0c976d",
@@ -1369,7 +1330,9 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1392,7 +1355,9 @@
             "c99382ee9ae33d16"
         ],
         "x": 94,
-        "y": 239
+        "y": 239,
+        "w": 1012,
+        "h": 82
     },
     {
         "id": "dd577488786042ba",
@@ -1415,7 +1380,9 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319
+        "y": 319,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "0117b53379eade19",
@@ -1438,7 +1405,9 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219
+        "y": 219,
+        "w": 952,
+        "h": 82
     },
     {
         "id": "70e9b8db12799d18",
@@ -1483,7 +1452,9 @@
             "a0985c083540376f"
         ],
         "x": 154,
-        "y": 139
+        "y": 199,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "9b9a844a8df2769d",
@@ -1505,7 +1476,9 @@
             "114b9703250b5ff7"
         ],
         "x": 34,
-        "y": 459
+        "y": 459,
+        "w": 462,
+        "h": 202
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1527,7 +1500,9 @@
             "e3599caac9ca8f69"
         ],
         "x": 34,
-        "y": 679
+        "y": 679,
+        "w": 962,
+        "h": 82
     },
     {
         "id": "1723570f3a1a07a2",
@@ -1546,7 +1521,9 @@
             "0971550cc66b2d3d"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 312,
+        "h": 82
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1568,7 +1545,9 @@
             "d95bd31d04f2745f"
         ],
         "x": 374,
-        "y": 179
+        "y": 179,
+        "w": 512,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1588,7 +1567,9 @@
             "e309f9054b8afaa3"
         ],
         "x": 374,
-        "y": 39
+        "y": 39,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "64b945726db0f60a",
@@ -1614,7 +1595,9 @@
             "e4573259bc244ded"
         ],
         "x": 614,
-        "y": 399
+        "y": 399,
+        "w": 622,
+        "h": 262
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1657,7 +1640,9 @@
             "b7ae8cdd52579f82"
         ],
         "x": 154,
-        "y": 239
+        "y": 299,
+        "w": 382,
+        "h": 162
     },
     {
         "id": "6daca851d4692833",
@@ -1680,7 +1665,9 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 562,
+        "h": 202
     },
     {
         "id": "cf29b66e60017a62",
@@ -1700,7 +1687,9 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "851ce0bce3af3965",
@@ -1726,7 +1715,9 @@
             "388f01c5394d4c2b"
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 1162,
+        "h": 202
     },
     {
         "id": "7176639d06e51ae4",
@@ -1792,7 +1783,9 @@
             "d123374401361fc9"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 522,
+        "h": 162
     },
     {
         "id": "4cd69db148fa9696",
@@ -1811,7 +1804,9 @@
             "2ad1f0946910cb48"
         ],
         "x": 34,
-        "y": 219
+        "y": 219,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1918,7 +1913,9 @@
             }
         ],
         "x": 34,
-        "y": 579
+        "y": 579,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1945,7 +1942,9 @@
             }
         ],
         "x": 154,
-        "y": 419
+        "y": 479,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "3d0bb7da508e430c",
@@ -1972,7 +1971,9 @@
             }
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "45c4e55e53345092",
@@ -2000,7 +2001,7 @@
         ],
         "x": 114,
         "y": 299,
-        "w": 452,
+        "w": 442,
         "h": 82
     },
     {
@@ -2028,7 +2029,9 @@
             }
         ],
         "x": 34,
-        "y": 319
+        "y": 319,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "ed5e8d4e70342ad3",
@@ -2055,7 +2058,9 @@
             }
         ],
         "x": 134,
-        "y": 239
+        "y": 239,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "d74abafd4c4210f0",
@@ -2082,7 +2087,9 @@
             }
         ],
         "x": 94,
-        "y": 339
+        "y": 339,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "6c1ca1a9a6f9d44b",
@@ -2109,7 +2116,9 @@
             }
         ],
         "x": 134,
-        "y": 519
+        "y": 519,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "e49c9571ddd5102f",
@@ -2151,7 +2160,9 @@
             "de0bf1bd606626f9"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 602,
+        "h": 162
     },
     {
         "id": "4e41b9100f8f8543",
@@ -2170,7 +2181,9 @@
             "8af8ae86062519c0"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "e44a66a067f447ec",
@@ -2189,7 +2202,9 @@
             "af81cf531f5ae030"
         ],
         "x": 34,
-        "y": 319
+        "y": 319,
+        "w": 332,
+        "h": 82
     },
     {
         "id": "969faaf2c50ec623",
@@ -2787,92 +2802,6 @@
         ],
         "x": 340,
         "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "643e95dd6df2d982",
-        "type": "change",
-        "z": "1a6413355bbb49cc",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "url",
-                "pt": "msg",
-                "to": "'http://' & $env('ADDRESS') & '/api/scenes/'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 170,
-        "y": 60,
-        "wires": [
-            [
-                "f9e32f55c8917d91"
-            ]
-        ]
-    },
-    {
-        "id": "f9e32f55c8917d91",
-        "type": "http request",
-        "z": "1a6413355bbb49cc",
-        "name": "",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 330,
-        "y": 60,
-        "wires": [
-            [
-                "b47b1889ebf029bd"
-            ]
-        ]
-    },
-    {
-        "id": "b47b1889ebf029bd",
-        "type": "change",
-        "z": "1a6413355bbb49cc",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "013c4b7388921d23",
-        "type": "status",
-        "z": "1a6413355bbb49cc",
-        "name": "",
-        "scope": null,
-        "x": 520,
-        "y": 140,
         "wires": [
             []
         ]
@@ -4370,7 +4299,7 @@
                 "t": "set",
                 "p": "url",
                 "pt": "msg",
-                "to": "'http://' & $env('ADDRESS') & '/api/rooms/'",
+                "to": "'http://' & $env('ADDRESS') & '/api/' & topic & '/'",
                 "tot": "jsonata"
             }
         ],
@@ -4380,7 +4309,7 @@
         "to": "",
         "reg": false,
         "x": 170,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
                 "e62fe5c7c72b90ee"
@@ -4402,36 +4331,11 @@
         "authType": "",
         "senderr": false,
         "x": 330,
-        "y": 60,
+        "y": 100,
         "wires": [
             [
-                "1ffd2b5f79995711"
+                "35c708b92ea8024b"
             ]
-        ]
-    },
-    {
-        "id": "1ffd2b5f79995711",
-        "type": "change",
-        "z": "4920eed654c67f8d",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 60,
-        "wires": [
-            []
         ]
     },
     {
@@ -4442,8 +4346,33 @@
         "scope": [
             "e62fe5c7c72b90ee"
         ],
+        "x": 540,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35c708b92ea8024b",
+        "type": "change",
+        "z": "4920eed654c67f8d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":statusCode,\"shape\":\"dot\",\"fill\":(statusCode = 200 ? \"green\" : (statusCode < 200 or statusCode > 299 ? \"red\": \"yellow\"))}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
         "x": 520,
-        "y": 120,
+        "y": 140,
         "wires": [
             []
         ]
@@ -5735,10 +5664,10 @@
         "type": "link out",
         "z": "c7141ffb22d64190",
         "g": "70e9b8db12799d18",
-        "name": "",
+        "name": "return from chez nous main api",
         "mode": "return",
         "links": [],
-        "x": 325,
+        "x": 335,
         "y": 180,
         "wires": []
     },
@@ -5883,7 +5812,7 @@
                 "type": "env"
             }
         ],
-        "x": 620,
+        "x": 610,
         "y": 480,
         "wires": [
             [
@@ -5896,11 +5825,9 @@
         "type": "link out",
         "z": "c7141ffb22d64190",
         "g": "665df9d682462b5e",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
-            "eb7598c91a41f685",
-            "7bb6a0db7deb5336",
             "dd7609e91ad64f63"
         ],
         "x": 995,
@@ -5974,7 +5901,7 @@
         "targetType": "msg",
         "statusVal": "statusCode",
         "statusType": "msg",
-        "x": 390,
+        "x": 400,
         "y": 240,
         "wires": []
     },
@@ -5983,7 +5910,7 @@
         "type": "link out",
         "z": "c7141ffb22d64190",
         "g": "70e9b8db12799d18",
-        "name": "",
+        "name": "send to pushover",
         "mode": "link",
         "links": [
             "53f5dcbc2de38b22"
@@ -6070,7 +5997,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
+        "x": 420,
         "y": 300,
         "wires": [
             [
@@ -6168,12 +6095,12 @@
         "type": "link out",
         "z": "c7141ffb22d64190",
         "g": "665df9d682462b5e",
-        "name": "",
+        "name": "send to pushover",
         "mode": "link",
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 1185,
+        "x": 1175,
         "y": 520,
         "wires": []
     },
@@ -6182,7 +6109,7 @@
         "type": "link out",
         "z": "c8c4090e523da434",
         "g": "6daca851d4692833",
-        "name": "",
+        "name": "return from basement hue api",
         "mode": "return",
         "links": [],
         "x": 335,
@@ -6383,7 +6310,7 @@
                 "type": "env"
             }
         ],
-        "x": 600,
+        "x": 590,
         "y": 480,
         "wires": [
             [
@@ -6396,11 +6323,9 @@
         "type": "link out",
         "z": "c8c4090e523da434",
         "g": "851ce0bce3af3965",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
-            "eb7598c91a41f685",
-            "7bb6a0db7deb5336",
             "dd7609e91ad64f63"
         ],
         "x": 975,
@@ -6430,12 +6355,12 @@
         "type": "link out",
         "z": "c8c4090e523da434",
         "g": "6daca851d4692833",
-        "name": "",
+        "name": "send to pushover",
         "mode": "link",
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 565,
+        "x": 555,
         "y": 300,
         "wires": []
     },
@@ -6615,35 +6540,14 @@
         "type": "link out",
         "z": "c8c4090e523da434",
         "g": "851ce0bce3af3965",
-        "name": "",
+        "name": "send to pushover",
         "mode": "link",
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 1165,
+        "x": 1155,
         "y": 520,
         "wires": []
-    },
-    {
-        "id": "536874de79956f84",
-        "type": "subflow:1a6413355bbb49cc",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "ADDRESS",
-                "type": "env"
-            }
-        ],
-        "x": 810,
-        "y": 80,
-        "wires": [
-            [
-                "fc5defb4e76d244e"
-            ]
-        ]
     },
     {
         "id": "1cee4f351bd59563",
@@ -6659,7 +6563,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1210,
+        "x": 1190,
         "y": 80,
         "wires": []
     },
@@ -6672,17 +6576,21 @@
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
-        "topic": "",
+        "topic": "rooms",
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 80,
+        "y": 140,
         "wires": [
             [
                 "f42aab98c1153884"
@@ -6700,7 +6608,7 @@
         ],
         "timeout": "30",
         "x": 550,
-        "y": 180,
+        "y": 240,
         "wires": [
             []
         ]
@@ -6716,7 +6624,7 @@
             "21690efdfa2776cf"
         ],
         "x": 195,
-        "y": 180,
+        "y": 240,
         "wires": [
             [
                 "a0985c083540376f"
@@ -6730,38 +6638,10 @@
         "g": "2afac67683a580f7",
         "name": "",
         "x": 330,
-        "y": 180,
+        "y": 240,
         "wires": [
             [
                 "3c70a7443900cb3f"
-            ]
-        ]
-    },
-    {
-        "id": "f390ba1d460e3399",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload",
-                "pt": "msg",
-                "to": "rooms",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 590,
-        "y": 80,
-        "wires": [
-            [
-                "536874de79956f84"
             ]
         ]
     },
@@ -6771,14 +6651,14 @@
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
         "name": "mergeMetadata",
-        "func": "let findRoomName = id => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map(scene => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
+        "func": "let findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 80,
+        "x": 1200,
+        "y": 140,
         "wires": [
             [
                 "1cee4f351bd59563"
@@ -6790,19 +6670,12 @@
         "type": "subflow:4920eed654c67f8d",
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "ADDRESS",
-                "type": "env"
-            }
-        ],
-        "x": 370,
-        "y": 80,
+        "name": "Get PowerVIew Rooms",
+        "x": 390,
+        "y": 140,
         "wires": [
             [
-                "f390ba1d460e3399"
+                "1a763947358fedcd"
             ]
         ]
     },
@@ -6820,7 +6693,7 @@
             }
         ],
         "x": 340,
-        "y": 320,
+        "y": 380,
         "wires": [
             [
                 "618e79a58ab8143a"
@@ -6838,7 +6711,7 @@
         "name": "activate powerview scene",
         "links": [],
         "x": 195,
-        "y": 320,
+        "y": 380,
         "wires": [
             [
                 "2f6cc09457939ce2"
@@ -6850,11 +6723,11 @@
         "type": "link out",
         "z": "1cf0490e7de2f93d",
         "g": "87285e6bf01cff03",
-        "name": "",
+        "name": "return from set powerview scene",
         "mode": "return",
         "links": [],
-        "x": 485,
-        "y": 280,
+        "x": 495,
+        "y": 340,
         "wires": []
     },
     {
@@ -6862,13 +6735,13 @@
         "type": "link out",
         "z": "1cf0490e7de2f93d",
         "g": "87285e6bf01cff03",
-        "name": "",
+        "name": "send to pushover",
         "mode": "link",
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 485,
-        "y": 360,
+        "x": 495,
+        "y": 420,
         "wires": []
     },
     {
@@ -6880,7 +6753,7 @@
         "scope": null,
         "uncaught": true,
         "x": 260,
-        "y": 460,
+        "y": 520,
         "wires": [
             [
                 "3221f9b602f34698"
@@ -6908,7 +6781,7 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 460,
+        "y": 520,
         "wires": [
             [
                 "6520f43ac52c5b23"
@@ -6926,8 +6799,85 @@
             "53f5dcbc2de38b22"
         ],
         "x": 555,
-        "y": 460,
+        "y": 520,
         "wires": []
+    },
+    {
+        "id": "1a763947358fedcd",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rooms",
+                "pt": "msg",
+                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "scenes",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "27b098986f53f963"
+            ]
+        ]
+    },
+    {
+        "id": "f6ad7045f8e2d152",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 140,
+        "wires": [
+            [
+                "fc5defb4e76d244e"
+            ]
+        ]
+    },
+    {
+        "id": "27b098986f53f963",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "Get PowerVIew Scenes",
+        "x": 810,
+        "y": 140,
+        "wires": [
+            [
+                "f6ad7045f8e2d152"
+            ]
+        ]
     },
     {
         "id": "6f7db4dc310c6c2f",
@@ -6994,15 +6944,11 @@
         "type": "link out",
         "z": "f03b6ceb81ed7dac",
         "g": "9b9a844a8df2769d",
-        "name": "",
+        "name": "trigger automation",
         "mode": "link",
         "links": [
-            "1993fd8165053adf",
-            "facb9598623e3675",
-            "380c05275eae4338",
-            "1f8dccfd42af4188",
-            "23b7995dafc3f002",
-            "0514602b711a8136"
+            "0514602b711a8136",
+            "1993fd8165053adf"
         ],
         "x": 455,
         "y": 520,
@@ -7372,7 +7318,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 445,
+        "x": 435,
         "y": 400,
         "wires": []
     },
@@ -7381,7 +7327,7 @@
         "type": "link out",
         "z": "f03b6ceb81ed7dac",
         "g": "31ed5707953578b9",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
@@ -7395,7 +7341,7 @@
         "type": "link out",
         "z": "f03b6ceb81ed7dac",
         "g": "6d13af3b8a66acb9",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
@@ -7409,12 +7355,12 @@
         "type": "link out",
         "z": "f03b6ceb81ed7dac",
         "g": "64b945726db0f60a",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 1205,
+        "x": 1195,
         "y": 560,
         "wires": []
     },
@@ -7465,12 +7411,12 @@
         "type": "link out",
         "z": "f03b6ceb81ed7dac",
         "g": "daced5cc49fcef0a",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 965,
+        "x": 955,
         "y": 720,
         "wires": []
     },
@@ -7684,7 +7630,7 @@
             "3ed1a4d37d1548b4",
             "ec4c4a28a59d105e"
         ],
-        "x": 405,
+        "x": 415,
         "y": 200,
         "wires": []
     },
@@ -7693,7 +7639,7 @@
         "type": "link out",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "",
+        "name": "trigger main floor evening",
         "mode": "link",
         "links": [
             "6cae9b1ccc68cb9e"
@@ -7707,7 +7653,7 @@
         "type": "link out",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "",
+        "name": "trigger yard tribal",
         "mode": "link",
         "links": [
             "a6475288998b4e07"
@@ -7721,7 +7667,7 @@
         "type": "link out",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "",
+        "name": "trigger yard spooky",
         "mode": "link",
         "links": [
             "a225232dc86a3b6f"
@@ -7735,7 +7681,7 @@
         "type": "link out",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "",
+        "name": "trigger yard jolly",
         "mode": "link",
         "links": [
             "60976d31a8dafe99",
@@ -7751,7 +7697,7 @@
         "type": "link out",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "",
+        "name": "trigger yard standard",
         "mode": "link",
         "links": [
             "18f53b7627e645e4"
@@ -7772,7 +7718,7 @@
             "07ccb0b07e6fada8",
             "ec4c4a28a59d105e"
         ],
-        "x": 405,
+        "x": 415,
         "y": 80,
         "wires": []
     },
@@ -7939,7 +7885,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 525,
+        "x": 515,
         "y": 340,
         "wires": []
     },
@@ -8266,12 +8212,12 @@
         "type": "link out",
         "z": "72d0b79e8a326b2f",
         "g": "193264abb5beec8a",
-        "name": "",
+        "name": "send to pushover",
         "mode": "link",
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 605,
+        "x": 595,
         "y": 260,
         "wires": []
     },
@@ -8560,7 +8506,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 445,
+        "x": 435,
         "y": 360,
         "wires": []
     },
@@ -8611,12 +8557,12 @@
         "type": "link out",
         "z": "15ef8f70203ad77a",
         "g": "3d2eaed2a2538cfd",
-        "name": "",
+        "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 525,
+        "x": 515,
         "y": 80,
         "wires": []
     },
@@ -8692,7 +8638,7 @@
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 460,
+        "x": 450,
         "y": 180,
         "wires": [
             []
@@ -8828,7 +8774,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 545,
+        "x": 535,
         "y": 280,
         "wires": []
     },
@@ -9330,7 +9276,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 505,
+        "x": 495,
         "y": 380,
         "wires": []
     },
@@ -10058,7 +10004,7 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 545,
+        "x": 535,
         "y": 560,
         "wires": []
     }
