@@ -1297,7 +1297,9 @@
             "e270017761dfd27d"
         ],
         "x": 114,
-        "y": 39
+        "y": 39,
+        "w": 862,
+        "h": 242
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1327,9 +1329,7 @@
             }
         ],
         "x": 54,
-        "y": 39,
-        "w": 1292,
-        "h": 82
+        "y": 39
     },
     {
         "id": "5a2c18585609cfae",
@@ -1483,9 +1483,7 @@
             "a0985c083540376f"
         ],
         "x": 154,
-        "y": 139,
-        "w": 532,
-        "h": 82
+        "y": 139
     },
     {
         "id": "9b9a844a8df2769d",
@@ -1659,9 +1657,7 @@
             "b7ae8cdd52579f82"
         ],
         "x": 154,
-        "y": 239,
-        "w": 372,
-        "h": 162
+        "y": 239
     },
     {
         "id": "6daca851d4692833",
@@ -1684,9 +1680,7 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139,
-        "w": 572,
-        "h": 202
+        "y": 139
     },
     {
         "id": "cf29b66e60017a62",
@@ -1706,9 +1700,7 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39,
-        "w": 712,
-        "h": 82
+        "y": 39
     },
     {
         "id": "851ce0bce3af3965",
@@ -1734,9 +1726,7 @@
             "388f01c5394d4c2b"
         ],
         "x": 34,
-        "y": 359,
-        "w": 1172,
-        "h": 202
+        "y": 359
     },
     {
         "id": "7176639d06e51ae4",
@@ -1872,8 +1862,6 @@
         ],
         "x": 134,
         "y": 139,
-        "w": 692,
-        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -1930,9 +1918,7 @@
             }
         ],
         "x": 34,
-        "y": 579,
-        "w": 442,
-        "h": 82
+        "y": 579
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1959,9 +1945,7 @@
             }
         ],
         "x": 154,
-        "y": 419,
-        "w": 442,
-        "h": 82
+        "y": 419
     },
     {
         "id": "3d0bb7da508e430c",
@@ -2015,7 +1999,9 @@
             }
         ],
         "x": 114,
-        "y": 299
+        "y": 299,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "7dcf1dcf10e9c669",
@@ -2143,9 +2129,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39,
-        "w": 372,
-        "h": 82
+        "y": 39
     },
     {
         "id": "193264abb5beec8a",
@@ -2206,6 +2190,28 @@
         ],
         "x": 34,
         "y": 319
+    },
+    {
+        "id": "969faaf2c50ec623",
+        "type": "group",
+        "z": "63d8cb10398da04b",
+        "name": "Monitor Hue events as an aid in development and debugging",
+        "style": {
+            "stroke": "none",
+            "fill": "#ff0000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "7cdf7a5cc4f436ad",
+            "712edf6d3dd2df77",
+            "41d6e4533b1fca83"
+        ],
+        "x": 114,
+        "y": 399,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -7936,6 +7942,70 @@
         "x": 525,
         "y": 340,
         "wires": []
+    },
+    {
+        "id": "7cdf7a5cc4f436ad",
+        "type": "mqtt in",
+        "z": "63d8cb10398da04b",
+        "g": "969faaf2c50ec623",
+        "name": "",
+        "topic": "hue/+/+/+",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 440,
+        "wires": [
+            [
+                "41d6e4533b1fca83"
+            ]
+        ]
+    },
+    {
+        "id": "712edf6d3dd2df77",
+        "type": "debug",
+        "z": "63d8cb10398da04b",
+        "g": "969faaf2c50ec623",
+        "name": "hue event",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "topic",
+        "statusType": "msg",
+        "x": 460,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "41d6e4533b1fca83",
+        "type": "switch",
+        "z": "63d8cb10398da04b",
+        "g": "969faaf2c50ec623",
+        "name": "",
+        "property": "retain",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 440,
+        "wires": [
+            [
+                "712edf6d3dd2df77"
+            ]
+        ]
     },
     {
         "id": "53f5dcbc2de38b22",
