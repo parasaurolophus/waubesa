@@ -1198,7 +1198,9 @@
             }
         ],
         "x": 114,
-        "y": 59
+        "y": 39,
+        "w": 606,
+        "h": 82
     },
     {
         "id": "5a2c18585609cfae",
@@ -1330,7 +1332,9 @@
             "4d0cd6535cb6e444"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 602,
+        "h": 202
     },
     {
         "id": "2afac67683a580f7",
@@ -1350,7 +1354,9 @@
             "a0985c083540376f"
         ],
         "x": 114,
-        "y": 159
+        "y": 139,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "9b9a844a8df2769d",
@@ -1372,7 +1378,9 @@
             "114b9703250b5ff7"
         ],
         "x": 34,
-        "y": 459
+        "y": 459,
+        "w": 462,
+        "h": 202
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1394,26 +1402,9 @@
             "e3599caac9ca8f69"
         ],
         "x": 34,
-        "y": 679
-    },
-    {
-        "id": "1723570f3a1a07a2",
-        "type": "group",
-        "z": "f03b6ceb81ed7dac",
-        "name": "Current time each minute",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "d32948683f33a7d6",
-            "0971550cc66b2d3d"
-        ],
-        "x": 34,
-        "y": 139
+        "y": 679,
+        "w": 962,
+        "h": 82
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1435,7 +1426,9 @@
             "d95bd31d04f2745f"
         ],
         "x": 374,
-        "y": 179
+        "y": 179,
+        "w": 512,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1455,7 +1448,9 @@
             "e309f9054b8afaa3"
         ],
         "x": 374,
-        "y": 39
+        "y": 39,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "64b945726db0f60a",
@@ -1481,7 +1476,9 @@
             "e4573259bc244ded"
         ],
         "x": 614,
-        "y": 399
+        "y": 399,
+        "w": 622,
+        "h": 262
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1501,7 +1498,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "87285e6bf01cff03",
@@ -1529,7 +1528,9 @@
             }
         ],
         "x": 114,
-        "y": 259
+        "y": 239,
+        "w": 382,
+        "h": 162
     },
     {
         "id": "6daca851d4692833",
@@ -1705,7 +1706,9 @@
             "7d283a2fc0d30093"
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 912,
+        "h": 242
     },
     {
         "id": "70c17a60ce5a4da0",
@@ -1755,7 +1758,9 @@
             }
         ],
         "x": 34,
-        "y": 619
+        "y": 619,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "0d65e7f528cf04df",
@@ -1809,7 +1814,9 @@
             }
         ],
         "x": 114,
-        "y": 439
+        "y": 419,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "3d0bb7da508e430c",
@@ -1836,7 +1843,9 @@
             }
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "45c4e55e53345092",
@@ -2093,7 +2102,9 @@
             "2d8a3e52f4b83d16"
         ],
         "x": 94,
-        "y": 39
+        "y": 39,
+        "w": 792,
+        "h": 82
     },
     {
         "id": "7d6b643a4bae630e",
@@ -2119,7 +2130,9 @@
             "583b8a97c7c4719b"
         ],
         "x": 14,
-        "y": 179
+        "y": 179,
+        "w": 872,
+        "h": 190
     },
     {
         "id": "41106fdc19904bc2",
@@ -2139,7 +2152,30 @@
             "f3d6eb631a33249c"
         ],
         "x": 914,
-        "y": 19
+        "y": 19,
+        "w": 352,
+        "h": 169.5
+    },
+    {
+        "id": "1723570f3a1a07a2",
+        "type": "group",
+        "z": "f03b6ceb81ed7dac",
+        "name": "Current time each minute",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "d32948683f33a7d6",
+            "25b9375f737e85e2"
+        ],
+        "x": 34,
+        "y": 139,
+        "w": 312,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -3859,8 +3895,7 @@
             [
                 "801bc206cfa0803d"
             ]
-        ],
-        "info": "// nrlint function-eslint:off\n"
+        ]
     },
     {
         "id": "d14437a6d1d7550f",
@@ -5607,8 +5642,7 @@
             [
                 "ada8da1dc0032c48"
             ]
-        ],
-        "info": "// nrlint function-eslint:off\n"
+        ]
     },
     {
         "id": "14e5342cb50f366f",
@@ -5978,6 +6012,7 @@
         "type": "subflow:4e89e7c952d56c09",
         "z": "c7141ffb22d64190",
         "g": "665df9d682462b5e",
+        "name": "",
         "x": 540,
         "y": 460,
         "wires": [
@@ -6398,7 +6433,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 490,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -6412,7 +6447,7 @@
         ],
         "timeout": "30",
         "x": 510,
-        "y": 200,
+        "y": 180,
         "wires": [
             []
         ]
@@ -6428,7 +6463,7 @@
             "21690efdfa2776cf"
         ],
         "x": 155,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "a0985c083540376f"
@@ -6442,7 +6477,7 @@
         "g": "2afac67683a580f7",
         "name": "",
         "x": 290,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "3c70a7443900cb3f"
@@ -6463,7 +6498,7 @@
             }
         ],
         "x": 300,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "618e79a58ab8143a"
@@ -6481,7 +6516,7 @@
         "name": "activate powerview scene",
         "links": [],
         "x": 155,
-        "y": 340,
+        "y": 320,
         "wires": [
             [
                 "2f6cc09457939ce2"
@@ -6497,7 +6532,7 @@
         "mode": "return",
         "links": [],
         "x": 455,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
@@ -6511,7 +6546,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 455,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
@@ -6523,7 +6558,7 @@
         "scope": null,
         "uncaught": true,
         "x": 220,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
                 "3221f9b602f34698"
@@ -6551,7 +6586,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
                 "6520f43ac52c5b23"
@@ -6569,7 +6604,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 515,
-        "y": 480,
+        "y": 460,
         "wires": []
     },
     {
@@ -6579,7 +6614,7 @@
         "g": "cccd3d3ae4af3207",
         "name": "",
         "x": 260,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "1cee4f351bd59563"
@@ -7158,59 +7193,6 @@
         ]
     },
     {
-        "id": "0971550cc66b2d3d",
-        "type": "function",
-        "z": "f03b6ceb81ed7dac",
-        "g": "1723570f3a1a07a2",
-        "name": "getTimes",
-        "func": "const now = new Date()\nconst times = suncalc.getTimes(now, msg.payload.latitude, msg.payload.longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n\n    now: toMinutes(now),\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n    date: [\n        now.getMonth() + 1,\n        now.getDate()\n    ]\n\n}\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: msg.payload.now });\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "suncalc",
-                "module": "suncalc"
-            }
-        ],
-        "x": 260,
-        "y": 180,
-        "wires": [
-            [
-                "a3dd9bfc89e0e94a",
-                "305c62d581d22adf"
-            ]
-        ],
-        "info": "// nrlint function-eslint:off\n"
-    },
-    {
-        "id": "d32948683f33a7d6",
-        "type": "inject",
-        "z": "f03b6ceb81ed7dac",
-        "g": "1723570f3a1a07a2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "60",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"latitude\":43.0184,\"longitude\":-89.289}",
-        "payloadType": "json",
-        "x": 130,
-        "y": 180,
-        "wires": [
-            [
-                "0971550cc66b2d3d"
-            ]
-        ]
-    },
-    {
         "id": "e4573259bc244ded",
         "type": "change",
         "z": "f03b6ceb81ed7dac",
@@ -7283,6 +7265,59 @@
         "x": 810,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "d32948683f33a7d6",
+        "type": "inject",
+        "z": "f03b6ceb81ed7dac",
+        "g": "1723570f3a1a07a2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"latitude\":43.0184,\"longitude\":-89.289}",
+        "payloadType": "json",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "25b9375f737e85e2"
+            ]
+        ]
+    },
+    {
+        "id": "25b9375f737e85e2",
+        "type": "function",
+        "z": "f03b6ceb81ed7dac",
+        "g": "1723570f3a1a07a2",
+        "name": "getTimes",
+        "func": "/* global suncalc:readonly */\n\nconst now = new Date()\nconst times = suncalc.getTimes(now, msg.payload.latitude, msg.payload.longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n\n    now: toMinutes(now),\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n    date: [\n        now.getMonth() + 1,\n        now.getDate()\n    ]\n\n}\n\nnode.status({ fill: \"blue\", shape: \"dot\", text: msg.payload.now });\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "suncalc",
+                "module": "suncalc"
+            }
+        ],
+        "x": 260,
+        "y": 180,
+        "wires": [
+            [
+                "a3dd9bfc89e0e94a",
+                "305c62d581d22adf"
+            ]
+        ],
+        "info": "# Overview\n\nGet current, sunrise and sunset times for a given location using [suncalc](https://www.npmjs.com/package/suncalc). The returned times are represented as the number of minutes after midnight, at the specified location for ease in use in subsequent calculations and comparisons that drive home automation. See the `@parasaurolophus/node-red-subflow-time-of-day` and `@parasaurolophus/node-red-subflow-theme` subflows for examples of how these values are used.\n\n_**N.B.:** Due to deficiencies in JavaScript's `Date` class, this function assumes that the host machine on which_ Node-RED _is running is configured such that `Date.getHours()` returns the correct time for the location whose coordinates are passed as parameters. This is an appropriate assumption for this function's intended use case (home automation). If you need the ability to have this function work correctly independently of the configuration of the host machine, you will need to enhance it by use of some combination of time zone aware services and libraries, e.g. [geonames](https://www.geonames.org/export/web-services.html#timezone), [luxon](https://www.npmjs.com/package/luxon) etc._\n\n# Input\n\nUse `msg.payload.latitude` and `msg.payload.longitude` to specify the desired location.\n\n# Output\n\n`msg.payload` contains an object with the following fields:\n\n| Property              | Description                                              |\n|-----------------------|----------------------------------------------------------|\n| `msg.payload.now`     | Number of minutes after midnight at time of invocation   |\n| `msg.payload.sunrise` | Number of minutes after midnight at which sunrise occurs |\n| `msg.payload.sunset`  | Number of minutes after midnight at which sunset occurs  |\n"
     },
     {
         "id": "061d8c40c8ed16ab",
