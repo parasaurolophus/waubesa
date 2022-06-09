@@ -128,7 +128,7 @@
         "id": "5785c8d9f39df67e",
         "type": "subflow",
         "name": "Send to Hue Bridge",
-        "info": "# Overview\n\nSend a message to the API (version 2) on a given Hue Bridge.\n\nSee <https://developers.meethue.com/develop/hue-api-v2/> for details.\n\n_**Note:** the intent is for this subflow to be used for_ every _message sent to a given Hue bridge so as to enforce the rate limits described in the Hue API documentation._\n\n# Configuration\n\n`ADDRESS` environment variable is the bridge's IP address.\n\n`KEY` environment variable is the client access token for the message.\n\n# Input\n\n`msg.topic` is the API URI, e.g. `resource`, `room/0ca8f049-7ac9-4872-8069-4770834e4f11` etc.\n\n`msg.payload` is the message body, if any.\n\n`msg.method` is the HTTP request method, e.g. `GET`, `PUT` etc.\n\n# Outputs\n\nIf successful, the HTTP response will be sent as a parsed JSON object from output 1.\n\nA standard Node-RED error message will be sent on output 2 if the `http request` node throws an exception.",
+        "info": "# Overview\n\nSend a message to the API (version 2) on a given Hue Bridge.\n\nSee <https://developers.meethue.com/develop/hue-api-v2/> for details.\n\n_**Note:** the intent is for this subflow to be used for_ every _message sent to a given Hue bridge so as to enforce the rate limits described in the Hue API documentation._\n\n# Configuration\n\n| Environment Variable | Description                         |\n|----------------------|-------------------------------------|\n| `ADDRESS`            | Bridge's IP address                 |\n| `KEY`                | Client access token for the message |\n\n# Input\n\n| Message Property | Description                                                                |\n|------------------|----------------------------------------------------------------------------|\n| `msg.topic`      | API URI, e.g. `resource`, `room/0ca8f049-7ac9-4872-8069-4770834e4f11` etc. |\n| `msg.payload`    | Request body, if any                                                       |\n| `msg.method`     | HTTP request method, e.g. `GET`, `PUT` etc                                 |\n\n# Outputs\n\nIf successful, the HTTP response will be sent as a parsed JSON object in `msg.payload` from output 1.\n\nA standard Node-RED error message will be sent on output 2 if the `http request` node throws an exception.",
         "category": "hue",
         "in": [
             {
@@ -201,7 +201,7 @@
         "id": "75bc72a16c4da2c8",
         "type": "subflow",
         "name": "Create Hue Access Token",
-        "info": "Use the Hue Bridge API to create a client access token.\n\n**Invoke this subflow within 30 seconds of pressing the button on top of the bridge. Watch the debug console output to see the response. If successful, you will see the generated key among the response payload's properties.**\n\nSee <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details.\n\n# Configuration\n\n`ADDRESS` environment variable is the bridge's IP address.\n\n`USERNAME` environment variable is the client \"user name\" for which a key is being requested.\n\n# Input\n\nIncoming message is ignored.\n\n# Outputs\n\nThe HTTP response will be sent as a parsed JSON object. If successful, look for the value of the `msg.payload.success.username` property in the output. That is the string you should use as the access token header in all subsequent Hue Bridge API request messages.",
+        "info": "# Overview\n\nInvoke the Hue Bridge API to create a client access token.\n\n_**N.B.:** Invoke this subflow within 30 seconds of pressing the button on top of the bridge. Watch the debug console output to see the response. If successful, you will see the generated key among the response payload's properties._\n\nSee <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details.\n\n# Configuration\n\n| Environment Variable | Description                                    |\n|----------------------|------------------------------------------------|\n|`ADDRESS`             | Bridge's IP address                            |\n| `USERNAME`           | \"User name\" for which a key is being generated |\n\n# Input\n\nIncoming message triggers HTTP request but is otherwise ignored.\n\n# Output\n\nThe HTTP response will be sent as a parsed JSON object. If successful, look for the value of the `msg.payload.success.username` property in the output. That is the string you should use as the access token header in all subsequent Hue Bridge API request messages.",
         "category": "hue",
         "in": [
             {
@@ -229,8 +229,8 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "type": "str",
-                "value": ""
+                "type": "env",
+                "value": "ADDRESS"
             },
             {
                 "name": "USERNAME",
@@ -239,7 +239,7 @@
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/subflow-create-hue-access-token",
+            "module": "@parasaurolophus/node-red-subflow-create-hue-access-token",
             "type": "subflow-create-hue-access-token",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
@@ -264,7 +264,7 @@
         "id": "9c4e4702e4660adf",
         "type": "subflow",
         "name": "Set PowerView Scene",
-        "info": "Use the _Hunter Douglas PowerView_&reg; hub API to activate a given window shade scene.\n\n\nSee <https://motorisation.hde.nl/hd/powerview/general-guides/API/> for details.\n\n# Configuration\n\nThe `ADDRESS` environment variable must be configured with the IP address of the hub.\n\n# Input\n\n`msg.payload` containing the id of the scene to activate.\n\nAll other input message properties are ignored but care should be taken not to pass any through that could affect the behavior of a `http request` node in unintended ways.\n\n# Output\n\nHTTP response from the hub.\n\n# Side Effects\n\nIf successful, the window shades will move to the settings defined by the specified scene as configured using the _PowerView_&reg; mobile app.",
+        "info": "# Overview\n\nUse the _Hunter Douglas PowerView_&reg; hub API to activate a given window shade scene.\n\nSee <https://motorisation.hde.nl/hd/powerview/general-guides/API/> for details.\n\n# Configuration\n\nThe `ADDRESS` environment variable must be configured with the IP address of the hub.\n\n# Input\n\n`msg.payload` containing the id of the scene to activate.\n\nAll other input message properties are ignored by the subflow but care should be taken not to pass any through that could affect the behavior of a `http request` node in unintended ways.\n\n# Output\n\nHTTP response from the hub.\n\n# Side Effects\n\nIf successful, the window shades will move to the settings defined by the specified scene as configured using the _PowerView_&reg; mobile app.",
         "category": "powerview",
         "in": [
             {
@@ -302,8 +302,8 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "type": "str",
-                "value": ""
+                "type": "env",
+                "value": "ADDRESS"
             }
         ],
         "meta": {
@@ -318,8 +318,8 @@
         "color": "#C0DEED",
         "icon": "font-awesome/fa-align-justify",
         "status": {
-            "x": 600,
-            "y": 340,
+            "x": 1100,
+            "y": 260,
             "wires": [
                 {
                     "id": "728ab503eb1eb941",
@@ -915,7 +915,7 @@
         "id": "4e89e7c952d56c09",
         "type": "subflow",
         "name": "Hue to MQTT",
-        "info": "# Overview\n\nThis subflow:\n\n- Caches the state of Philips Hue devices in flow context using the response  to an invocation of the `/resource` end-point of the [Philips Hue Bridge V2 API](https://developers.meethue.com/develop/hue-api-v2/api-reference/#resource).\n\n- Outputs a stream of individual event messages as the cached devices' states change by subscribing to [SSE messages](https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events).\n\nEach event message will have appropriate MQTT topic, QoS and retain properties set in addition to the payload sent by the Hue bridge.\n\n# Dependency\n\n[node-red-contrib-sse-client](https://flows.nodered.org/node/node-red-contrib-sse-client)\n\n# Configuration\n\nA separate subflow instance can be created for each Hue bridge by using the following configuration variables:\n\n| Environment Variable | Description                                                             |\n|----------------------|-------------------------------------------------------------------------|\n| `ADDRESS`            | IP address of the Hue bridge                                            |\n| `KEY`                | \"Client key\" for the Hue bridge API<sup>*</sup>                         |\n| `TOPIC`              | String to prepend to each `msg.topic` in the output, as described below |\n\n<sup>*</sup>_See <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details. Use the_ Create Hue Access Token _subflow to obtain such a key._\n\n# Input\n\nResponse from a successful call to the `/resource` end-point of the [Philips Hue Bridge V2 API](https://developers.meethue.com/develop/hue-api-v2/api-reference/#resource) in `msg.payload`.\n\n_**Note:** the `switch` node named \"filter resources\" in this subflow is used to restrict the number of messages processed at startup to only those types of resources likely to be of interest to Node-RED based automation. This means that over time you will receive SSE messages for resources whose state did not appear in the initial output from this subflow. If you wish for 100% consistency across all resource types, remove the \"filter resources\" node from between the two `split` nodes, but be warned that will cause a much larger volume of MQTT messaging each time your flows are restarted._\n\n# Output\n\nAn ongoing sequence of message objects representing the state of each device as reported by [SSE](https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events). Each message will have the following properties set:\n\n| Property | Value |\n|-|-|\n| `msg.topic` | `${TOPIC}/<type>/<id>` where `<type>` and `<id>` are the identifiers for a given \"resource\" as reported by the Hue bridge API. |\n| `msg.qos` | 2 |\n| `msg.retain` | `true` |\n| `msg.payload` | The current state of the given \"resource\"<sup>**</sup> |\n\n<sup>**</sup>_Note that each output message will contain a combined set of properties for each \"resource\" received across multiple API responses and SSE messages. This mitigates one of the many issues with the design of the Philips Hue API. The cached state is maintained in flow context at runtime and as retained MQTT messages across reboots._",
+        "info": "# Overview\n\nThis subflow:\n\n- Caches the state of Philips Hue devices in flow context using the response  to an invocation of the `/resource` end-point of the [Philips Hue Bridge V2 API](https://developers.meethue.com/develop/hue-api-v2/api-reference/#resource).\n\n- Outputs a stream of individual event messages as the cached devices' states change by subscribing to [SSE messages](https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events).\n\nEach event message will have appropriate MQTT topic, QoS and retain properties set in addition to the payload sent by the Hue bridge.\n\n_**Note:** the `switch` node named \"filter resources\" in this subflow is used to restrict the number of messages processed at startup to only those types of resources likely to be of interest to Node-RED based automation. This means that over time you will receive SSE messages for resources whose state did not appear in the initial output from this subflow. If you wish for 100% consistency across all resource types, remove the \"filter resources\" node from between the two `split` nodes, but be warned that will cause a much larger volume of MQTT messaging each time your flows are restarted._\n\n# Dependency\n\n[node-red-contrib-sse-client](https://flows.nodered.org/node/node-red-contrib-sse-client)\n\n# Configuration\n\nA separate subflow instance can be created for each Hue bridge by using the following configuration variables:\n\n| Environment Variable | Description                                                             |\n|----------------------|-------------------------------------------------------------------------|\n| `ADDRESS`            | IP address of the Hue bridge                                            |\n| `KEY`                | \"Client key\" for the Hue bridge API<sup>*</sup>                         |\n| `TOPIC`              | String to prepend to each `msg.topic` in the output, as described below |\n\n<sup>*</sup>_See <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details. Use the_ Create Hue Access Token _subflow to obtain such a key._\n\n# Input\n\nResponse from a successful call to the `/resource` end-point of the [Philips Hue Bridge V2 API](https://developers.meethue.com/develop/hue-api-v2/api-reference/#resource) in `msg.payload`.\n\n# Output\n\nAn ongoing sequence of message objects representing the state of each device as reported by [SSE](https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events). Each message will have the following properties set:\n\n| Property | Value |\n|-|-|\n| `msg.topic` | `${TOPIC}/<type>/<id>` where `<type>` and `<id>` are the identifiers for a given \"resource\" as reported by the Hue bridge API. |\n| `msg.qos` | 2 |\n| `msg.retain` | `true` |\n| `msg.payload` | The current state of the given \"resource\"<sup>**</sup> |\n\n<sup>**</sup>_Note that each output message will contain a combined set of properties for each \"resource\" received across multiple API responses and SSE messages. This mitigates one of the many issues with the design of the Philips Hue API. The cached state is maintained in flow context at runtime and as retained MQTT messages across reboots._",
         "category": "hue",
         "in": [
             {
@@ -1005,33 +1005,92 @@
         }
     },
     {
-        "id": "c072ba08a409add2",
+        "id": "6f4c857b9bfccce6",
         "type": "subflow",
-        "name": "Get PowerView Configuration",
+        "name": "Evening",
         "info": "",
         "category": "waubesa",
-        "in": [],
-        "out": [
+        "in": [
             {
-                "x": 1200,
-                "y": 60,
+                "x": 60,
+                "y": 260,
                 "wires": [
                     {
-                        "id": "d12c05527b45e9d8",
+                        "id": "bb8c3929aaa44aac"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 540,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "98acfbdd1bdfd0c0",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 550,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "98acfbdd1bdfd0c0",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 540,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "98acfbdd1bdfd0c0",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 560,
+                "y": 340,
+                "wires": [
+                    {
+                        "id": "98acfbdd1bdfd0c0",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 540,
+                "y": 420,
+                "wires": [
+                    {
+                        "id": "6f4c857b9bfccce6",
                         "port": 0
                     }
                 ]
             }
         ],
-        "env": [
-            {
-                "name": "ADDRESS",
-                "type": "env",
-                "value": "ADDRESS"
-            }
-        ],
-        "meta": {},
-        "color": "#DDAA99"
+        "env": [],
+        "meta": {
+            "module": "@parasaurolophus/node-red-subflow-evening",
+            "type": "subflow-evening",
+            "version": "1.0.0",
+            "author": "parasaurolophus",
+            "desc": "Encapsulate evening lighting automation",
+            "keywords": "philips,hue,automation",
+            "license": "MIT"
+        },
+        "color": "#DDAA99",
+        "outputLabels": [
+            "yard tribal",
+            "yard spooky",
+            "yard jolly",
+            "yard standard",
+            "main floor"
+        ]
     },
     {
         "id": "ea7b9754db9fd0cd",
@@ -1159,20 +1218,12 @@
         },
         "nodes": [
             "061d8c40c8ed16ab",
-            "1993fd8165053adf",
-            "981dbc2364b09d66",
-            "549a2335fb839c37",
-            "b9f7a65beebcddfe",
-            "2837183323a61e04",
-            "bb8c3929aaa44aac",
-            "98acfbdd1bdfd0c0",
-            "7ab1620c3349854b",
-            "c68369c3781694e3",
-            "b0ee0f2f8155fe9b",
-            "e270017761dfd27d"
+            "1993fd8165053adf"
         ],
         "x": 114,
-        "y": 39
+        "y": 151.5,
+        "w": 212,
+        "h": 97
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1188,7 +1239,12 @@
         },
         "nodes": [
             "1cee4f351bd59563",
-            "4d430a1d06a28e31"
+            "bd4a23ce7c2889c7",
+            "e7cbb96d60e8d93a",
+            "93822d2eb8c60ace",
+            "11e5dc07e749f452",
+            "a8f812cc5d7ebea7",
+            "a30ac3d2a2ed4419"
         ],
         "env": [
             {
@@ -1199,8 +1255,8 @@
         ],
         "x": 114,
         "y": 39,
-        "w": 606,
-        "h": 82
+        "w": 632,
+        "h": 242
     },
     {
         "id": "5a2c18585609cfae",
@@ -1354,7 +1410,7 @@
             "a0985c083540376f"
         ],
         "x": 114,
-        "y": 139,
+        "y": 299,
         "w": 532,
         "h": 82
     },
@@ -1528,7 +1584,7 @@
             }
         ],
         "x": 114,
-        "y": 239,
+        "y": 399,
         "w": 382,
         "h": 162
     },
@@ -1707,8 +1763,8 @@
         ],
         "x": 34,
         "y": 359,
-        "w": 912,
-        "h": 242
+        "w": 892,
+        "h": 162
     },
     {
         "id": "70c17a60ce5a4da0",
@@ -1731,6 +1787,8 @@
         ],
         "x": 134,
         "y": 139,
+        "w": 692,
+        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -1758,7 +1816,7 @@
             }
         ],
         "x": 34,
-        "y": 619,
+        "y": 539,
         "w": 442,
         "h": 82
     },
@@ -1787,7 +1845,7 @@
             }
         ],
         "x": 34,
-        "y": 619
+        "y": 539
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1814,7 +1872,7 @@
             }
         ],
         "x": 114,
-        "y": 419,
+        "y": 579,
         "w": 442,
         "h": 82
     },
@@ -1872,7 +1930,9 @@
             }
         ],
         "x": 114,
-        "y": 299
+        "y": 339,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "7dcf1dcf10e9c669",
@@ -2000,7 +2060,9 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "193264abb5beec8a",
@@ -2080,7 +2142,9 @@
             "41d6e4533b1fca83"
         ],
         "x": 114,
-        "y": 399
+        "y": 439,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "890fbc7937f911b7",
@@ -2099,12 +2163,11 @@
             "2e7becc56a96c4dc",
             "b1dd91dbd450f89f",
             "c38043f17fec59c0",
-            "2d8a3e52f4b83d16"
+            "2d8a3e52f4b83d16",
+            "653ba78e90856b6b"
         ],
         "x": 94,
-        "y": 39,
-        "w": 792,
-        "h": 82
+        "y": 39
     },
     {
         "id": "7d6b643a4bae630e",
@@ -2130,9 +2193,7 @@
             "583b8a97c7c4719b"
         ],
         "x": 14,
-        "y": 179,
-        "w": 872,
-        "h": 190
+        "y": 179
     },
     {
         "id": "41106fdc19904bc2",
@@ -2152,9 +2213,7 @@
             "f3d6eb631a33249c"
         ],
         "x": 914,
-        "y": 19,
-        "w": 352,
-        "h": 169.5
+        "y": 19
     },
     {
         "id": "1723570f3a1a07a2",
@@ -2175,6 +2234,71 @@
         "x": 34,
         "y": 139,
         "w": 312,
+        "h": 82
+    },
+    {
+        "id": "1fc278393a2508e0",
+        "type": "group",
+        "z": "63d8cb10398da04b",
+        "name": "Evening",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "2837183323a61e04",
+            "7ab1620c3349854b",
+            "c68369c3781694e3",
+            "b0ee0f2f8155fe9b",
+            "e270017761dfd27d",
+            "b9db66903c5b20e0"
+        ],
+        "x": 594,
+        "y": 39,
+        "w": 282,
+        "h": 322
+    },
+    {
+        "id": "edbd733b188dccef",
+        "type": "group",
+        "z": "63d8cb10398da04b",
+        "name": "Morning",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "981dbc2364b09d66"
+        ],
+        "x": 374,
+        "y": 79,
+        "w": 82,
+        "h": 82
+    },
+    {
+        "id": "09742b69ee691d31",
+        "type": "group",
+        "z": "63d8cb10398da04b",
+        "name": "Night",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "549a2335fb839c37"
+        ],
+        "x": 374,
+        "y": 239,
+        "w": 82,
         "h": 82
     },
     {
@@ -2812,8 +2936,8 @@
         "scope": [
             "dcd553804e687131"
         ],
-        "x": 500,
-        "y": 340,
+        "x": 1000,
+        "y": 260,
         "wires": [
             []
         ]
@@ -5522,126 +5646,80 @@
         ]
     },
     {
-        "id": "ada8da1dc0032c48",
-        "type": "subflow:4920eed654c67f8d",
-        "z": "c072ba08a409add2",
-        "name": "Get PowerVIew Rooms",
-        "x": 270,
-        "y": 60,
-        "wires": [
-            [
-                "a6f656f612ce14a5"
-            ]
-        ]
+        "id": "653ba78e90856b6b",
+        "type": "comment",
+        "z": "4e89e7c952d56c09",
+        "g": "890fbc7937f911b7",
+        "name": "See subflow documentation regarding \"filter resources\" node",
+        "info": "",
+        "x": 640,
+        "y": 120,
+        "wires": []
     },
     {
-        "id": "a6f656f612ce14a5",
+        "id": "bb8c3929aaa44aac",
         "type": "change",
-        "z": "c072ba08a409add2",
+        "z": "6f4c857b9bfccce6",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "rooms",
+                "p": "theme",
                 "pt": "msg",
-                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
-                "tot": "jsonata"
+                "to": "theme",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 200,
+        "y": 220,
+        "wires": [
+            [
+                "98acfbdd1bdfd0c0"
+            ]
+        ]
+    },
+    {
+        "id": "98acfbdd1bdfd0c0",
+        "type": "switch",
+        "z": "6f4c857b9bfccce6",
+        "name": "theme",
+        "property": "theme",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tribal",
+                "vt": "str"
             },
             {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "scenes",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 60,
-        "wires": [
-            [
-                "2a201e7e4778d6cc"
-            ]
-        ]
-    },
-    {
-        "id": "2a201e7e4778d6cc",
-        "type": "subflow:4920eed654c67f8d",
-        "z": "c072ba08a409add2",
-        "name": "Get PowerVIew Scenes",
-        "x": 690,
-        "y": 60,
-        "wires": [
-            [
-                "de93104982bae6fc"
-            ]
-        ]
-    },
-    {
-        "id": "de93104982bae6fc",
-        "type": "change",
-        "z": "c072ba08a409add2",
-        "name": "",
-        "rules": [
+                "t": "eq",
+                "v": "spooky",
+                "vt": "str"
+            },
             {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
-                "tot": "jsonata"
+                "t": "eq",
+                "v": "jolly",
+                "vt": "str"
+            },
+            {
+                "t": "else"
             }
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 900,
-        "y": 60,
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 350,
+        "y": 220,
         "wires": [
-            [
-                "d12c05527b45e9d8"
-            ]
-        ]
-    },
-    {
-        "id": "d12c05527b45e9d8",
-        "type": "function",
-        "z": "c072ba08a409add2",
-        "name": "mergeMetadata",
-        "func": "let findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1080,
-        "y": 60,
-        "wires": [
+            [],
+            [],
+            [],
             []
-        ]
-    },
-    {
-        "id": "0e1d47dd44ab34a8",
-        "type": "function",
-        "z": "c072ba08a409add2",
-        "name": "atStart",
-        "func": "return msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "setTimeout(() => {\n    node.send({\n        topic: 'rooms',\n        payload: ''\n    })\n},\n1000)",
-        "finalize": "",
-        "libs": [],
-        "x": 90,
-        "y": 60,
-        "wires": [
-            [
-                "ada8da1dc0032c48"
-            ]
         ]
     },
     {
@@ -5772,7 +5850,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 715,
+        "x": 695,
         "y": 400,
         "wires": []
     },
@@ -5804,7 +5882,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 140,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "8c9d79d2791e9b02"
@@ -5822,7 +5900,7 @@
         ],
         "timeout": "30",
         "x": 330,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "7d283a2fc0d30093"
@@ -5870,7 +5948,7 @@
         "scope": null,
         "uncaught": true,
         "x": 140,
-        "y": 660,
+        "y": 580,
         "wires": [
             [
                 "cb8f9571f345d552"
@@ -5898,7 +5976,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 660,
+        "y": 580,
         "wires": [
             [
                 "94db8418a725151c"
@@ -5916,7 +5994,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 435,
-        "y": 660,
+        "y": 580,
         "wires": []
     },
     {
@@ -5961,8 +6039,8 @@
         "targetType": "full",
         "statusVal": "topic",
         "statusType": "msg",
-        "x": 800,
-        "y": 560,
+        "x": 780,
+        "y": 480,
         "wires": []
     },
     {
@@ -5985,8 +6063,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 520,
+        "x": 760,
+        "y": 440,
         "wires": [
             [
                 "d74bafa077e6060e"
@@ -6003,8 +6081,8 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 895,
-        "y": 520,
+        "x": 875,
+        "y": 440,
         "wires": []
     },
     {
@@ -6014,7 +6092,7 @@
         "g": "665df9d682462b5e",
         "name": "",
         "x": 540,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "4d2dc9a6e42d0548"
@@ -6183,7 +6261,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 140,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "715136c1ddfd2fe4"
@@ -6201,7 +6279,7 @@
         ],
         "timeout": "30",
         "x": 320,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "21ea110d0ab4d1b3"
@@ -6218,7 +6296,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 715,
+        "x": 675,
         "y": 400,
         "wires": []
     },
@@ -6291,7 +6369,7 @@
         "scope": null,
         "uncaught": true,
         "x": 140,
-        "y": 660,
+        "y": 580,
         "wires": [
             [
                 "fe7591ba8a5abf39"
@@ -6319,7 +6397,7 @@
         "to": "",
         "reg": false,
         "x": 320,
-        "y": 660,
+        "y": 580,
         "wires": [
             [
                 "56bb6d25d62183a5"
@@ -6337,7 +6415,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 435,
-        "y": 660,
+        "y": 580,
         "wires": []
     },
     {
@@ -6354,8 +6432,8 @@
         "targetType": "full",
         "statusVal": "topic",
         "statusType": "msg",
-        "x": 790,
-        "y": 560,
+        "x": 750,
+        "y": 480,
         "wires": []
     },
     {
@@ -6378,8 +6456,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 520,
+        "x": 740,
+        "y": 440,
         "wires": [
             [
                 "388f01c5394d4c2b"
@@ -6396,8 +6474,8 @@
         "links": [
             "53f5dcbc2de38b22"
         ],
-        "x": 895,
-        "y": 520,
+        "x": 855,
+        "y": 440,
         "wires": []
     },
     {
@@ -6407,7 +6485,7 @@
         "g": "851ce0bce3af3965",
         "name": "",
         "x": 520,
-        "y": 460,
+        "y": 420,
         "wires": [
             [
                 "40f1f326e5252bf8"
@@ -6432,8 +6510,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
-        "y": 80,
+        "x": 610,
+        "y": 240,
         "wires": []
     },
     {
@@ -6447,7 +6525,7 @@
         ],
         "timeout": "30",
         "x": 510,
-        "y": 180,
+        "y": 340,
         "wires": [
             []
         ]
@@ -6463,7 +6541,7 @@
             "21690efdfa2776cf"
         ],
         "x": 155,
-        "y": 180,
+        "y": 340,
         "wires": [
             [
                 "a0985c083540376f"
@@ -6477,7 +6555,7 @@
         "g": "2afac67683a580f7",
         "name": "",
         "x": 290,
-        "y": 180,
+        "y": 340,
         "wires": [
             [
                 "3c70a7443900cb3f"
@@ -6498,7 +6576,7 @@
             }
         ],
         "x": 300,
-        "y": 320,
+        "y": 480,
         "wires": [
             [
                 "618e79a58ab8143a"
@@ -6516,7 +6594,7 @@
         "name": "activate powerview scene",
         "links": [],
         "x": 155,
-        "y": 320,
+        "y": 480,
         "wires": [
             [
                 "2f6cc09457939ce2"
@@ -6532,7 +6610,7 @@
         "mode": "return",
         "links": [],
         "x": 455,
-        "y": 280,
+        "y": 440,
         "wires": []
     },
     {
@@ -6546,7 +6624,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 455,
-        "y": 360,
+        "y": 520,
         "wires": []
     },
     {
@@ -6558,7 +6636,7 @@
         "scope": null,
         "uncaught": true,
         "x": 220,
-        "y": 460,
+        "y": 620,
         "wires": [
             [
                 "3221f9b602f34698"
@@ -6586,7 +6664,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 460,
+        "y": 620,
         "wires": [
             [
                 "6520f43ac52c5b23"
@@ -6604,20 +6682,147 @@
             "53f5dcbc2de38b22"
         ],
         "x": 515,
-        "y": 460,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "4d430a1d06a28e31",
-        "type": "subflow:c072ba08a409add2",
+        "id": "a8f812cc5d7ebea7",
+        "type": "subflow:4920eed654c67f8d",
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
-        "name": "",
-        "x": 260,
+        "name": "Get PowerVIew Rooms",
+        "x": 410,
         "y": 80,
         "wires": [
             [
+                "11e5dc07e749f452"
+            ]
+        ]
+    },
+    {
+        "id": "11e5dc07e749f452",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rooms",
+                "pt": "msg",
+                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "scenes",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "93822d2eb8c60ace"
+            ]
+        ]
+    },
+    {
+        "id": "93822d2eb8c60ace",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "Get PowerVIew Scenes",
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "e7cbb96d60e8d93a"
+            ]
+        ]
+    },
+    {
+        "id": "e7cbb96d60e8d93a",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 240,
+        "wires": [
+            [
+                "bd4a23ce7c2889c7"
+            ]
+        ]
+    },
+    {
+        "id": "bd4a23ce7c2889c7",
+        "type": "function",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "mergeMetadata",
+        "func": "let findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
                 "1cee4f351bd59563"
+            ]
+        ]
+    },
+    {
+        "id": "a30ac3d2a2ed4419",
+        "type": "inject",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "rooms",
+        "payload": "",
+        "payloadType": "str",
+        "x": 220,
+        "y": 80,
+        "wires": [
+            [
+                "a8f812cc5d7ebea7"
             ]
         ]
     },
@@ -7324,7 +7529,7 @@
         "type": "switch",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "msg.payload",
+        "name": "",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -7347,14 +7552,14 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 270,
-        "y": 140,
+        "x": 250,
+        "y": 200,
         "wires": [
             [
                 "981dbc2364b09d66"
             ],
             [
-                "b9f7a65beebcddfe"
+                "b9db66903c5b20e0"
             ],
             [
                 "549a2335fb839c37"
@@ -7365,7 +7570,7 @@
         "id": "549a2335fb839c37",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "09742b69ee691d31",
         "name": "activate night",
         "mode": "link",
         "links": [
@@ -7374,56 +7579,56 @@
             "ec4c4a28a59d105e"
         ],
         "x": 415,
-        "y": 200,
+        "y": 280,
         "wires": []
     },
     {
         "id": "2837183323a61e04",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "1fc278393a2508e0",
         "name": "trigger main floor evening",
         "mode": "link",
         "links": [
             "6cae9b1ccc68cb9e"
         ],
-        "x": 615,
-        "y": 100,
+        "x": 835,
+        "y": 320,
         "wires": []
     },
     {
         "id": "7ab1620c3349854b",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "1fc278393a2508e0",
         "name": "trigger yard tribal",
         "mode": "link",
         "links": [
             "a6475288998b4e07"
         ],
-        "x": 935,
-        "y": 120,
+        "x": 835,
+        "y": 80,
         "wires": []
     },
     {
         "id": "c68369c3781694e3",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "1fc278393a2508e0",
         "name": "trigger yard spooky",
         "mode": "link",
         "links": [
             "a225232dc86a3b6f"
         ],
-        "x": 935,
-        "y": 160,
+        "x": 835,
+        "y": 140,
         "wires": []
     },
     {
         "id": "b0ee0f2f8155fe9b",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "1fc278393a2508e0",
         "name": "trigger yard jolly",
         "mode": "link",
         "links": [
@@ -7431,7 +7636,7 @@
             "a225232dc86a3b6f",
             "a6475288998b4e07"
         ],
-        "x": 935,
+        "x": 835,
         "y": 200,
         "wires": []
     },
@@ -7439,21 +7644,21 @@
         "id": "e270017761dfd27d",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "1fc278393a2508e0",
         "name": "trigger yard standard",
         "mode": "link",
         "links": [
             "18f53b7627e645e4"
         ],
-        "x": 935,
-        "y": 240,
+        "x": 835,
+        "y": 260,
         "wires": []
     },
     {
         "id": "981dbc2364b09d66",
         "type": "link out",
         "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "g": "edbd733b188dccef",
         "name": "activate morning",
         "mode": "link",
         "links": [
@@ -7462,7 +7667,7 @@
             "ec4c4a28a59d105e"
         ],
         "x": 415,
-        "y": 80,
+        "y": 120,
         "wires": []
     },
     {
@@ -7476,101 +7681,10 @@
             "21690efdfa2776cf"
         ],
         "x": 155,
-        "y": 140,
+        "y": 200,
         "wires": [
             [
                 "061d8c40c8ed16ab"
-            ]
-        ]
-    },
-    {
-        "id": "b9f7a65beebcddfe",
-        "type": "fan",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "",
-        "x": 510,
-        "y": 140,
-        "wires": [
-            [
-                "2837183323a61e04",
-                "bb8c3929aaa44aac"
-            ]
-        ]
-    },
-    {
-        "id": "98acfbdd1bdfd0c0",
-        "type": "switch",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "theme",
-        "property": "theme",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "tribal",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "spooky",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "jolly",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 830,
-        "y": 180,
-        "wires": [
-            [
-                "7ab1620c3349854b"
-            ],
-            [
-                "c68369c3781694e3"
-            ],
-            [
-                "b0ee0f2f8155fe9b"
-            ],
-            [
-                "e270017761dfd27d"
-            ]
-        ]
-    },
-    {
-        "id": "bb8c3929aaa44aac",
-        "type": "change",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "theme",
-                "pt": "msg",
-                "to": "theme",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 680,
-        "y": 180,
-        "wires": [
-            [
-                "98acfbdd1bdfd0c0"
             ]
         ]
     },
@@ -7583,7 +7697,7 @@
         "scope": null,
         "uncaught": true,
         "x": 220,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "e63dc045ae2cbda9"
@@ -7611,7 +7725,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "241fd1639703f965"
@@ -7629,7 +7743,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 515,
-        "y": 340,
+        "y": 380,
         "wires": []
     },
     {
@@ -7647,7 +7761,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 200,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "41d6e4533b1fca83"
@@ -7669,7 +7783,7 @@
         "statusVal": "topic",
         "statusType": "msg",
         "x": 460,
-        "y": 440,
+        "y": 480,
         "wires": []
     },
     {
@@ -7689,10 +7803,35 @@
         "repair": false,
         "outputs": 1,
         "x": 330,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "712edf6d3dd2df77"
+            ]
+        ]
+    },
+    {
+        "id": "b9db66903c5b20e0",
+        "type": "subflow:6f4c857b9bfccce6",
+        "z": "63d8cb10398da04b",
+        "g": "1fc278393a2508e0",
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "7ab1620c3349854b"
+            ],
+            [
+                "c68369c3781694e3"
+            ],
+            [
+                "b0ee0f2f8155fe9b"
+            ],
+            [
+                "e270017761dfd27d"
+            ],
+            [
+                "2837183323a61e04"
             ]
         ]
     },
