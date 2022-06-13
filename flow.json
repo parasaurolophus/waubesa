@@ -1012,8 +1012,8 @@
         "category": "hue",
         "in": [
             {
-                "x": 60,
-                "y": 60,
+                "x": 40,
+                "y": 40,
                 "wires": [
                     {
                         "id": "eef1022d50fc9776"
@@ -1023,8 +1023,8 @@
         ],
         "out": [
             {
-                "x": 1160,
-                "y": 60,
+                "x": 1320,
+                "y": 100,
                 "wires": [
                     {
                         "id": "202a258790875a85",
@@ -1049,11 +1049,11 @@
         "color": "#3FADB5",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 1160,
-            "y": 140,
+            "x": 460,
+            "y": 440,
             "wires": [
                 {
-                    "id": "d901234fd1fce55c",
+                    "id": "4195e838cf9ccb27",
                     "port": 0
                 }
             ]
@@ -1114,7 +1114,9 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119
+        "y": 119,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1137,7 +1139,9 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419
+        "y": 419,
+        "w": 952,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1293,7 +1297,9 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1339,7 +1345,9 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319
+        "y": 319,
+        "w": 972,
+        "h": 82
     },
     {
         "id": "0117b53379eade19",
@@ -1362,7 +1370,9 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219
+        "y": 219,
+        "w": 952,
+        "h": 82
     },
     {
         "id": "70e9b8db12799d18",
@@ -1776,8 +1786,6 @@
         ],
         "x": 134,
         "y": 139,
-        "w": 692,
-        "h": 122,
         "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
     },
     {
@@ -2025,7 +2033,9 @@
             }
         ],
         "x": 134,
-        "y": 519
+        "y": 519,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "e49c9571ddd5102f",
@@ -2045,9 +2055,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39,
-        "w": 372,
-        "h": 82
+        "y": 39
     },
     {
         "id": "193264abb5beec8a",
@@ -2207,6 +2215,78 @@
         ],
         "x": 374,
         "y": 239
+    },
+    {
+        "id": "d606b55cf1d68352",
+        "type": "group",
+        "z": "de620fed3bdb7aa9",
+        "name": "Subscribe to server-sent events using ${ADDRESS} and ${KEY}",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "cdd12e98966ee7c4",
+            "eef1022d50fc9776"
+        ],
+        "x": 94,
+        "y": 59,
+        "w": 407,
+        "h": 82
+    },
+    {
+        "id": "666b7004db0b97b6",
+        "type": "group",
+        "z": "de620fed3bdb7aa9",
+        "name": "Handle connection state changes",
+        "style": {
+            "stroke": "none",
+            "fill": "#ff0000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "d901234fd1fce55c",
+            "fabe0aac918a0c99",
+            "c97d943953f14d84",
+            "0ddcbeec783d7c7e",
+            "4195e838cf9ccb27",
+            "b58e585f969bca88",
+            "dceed2eddd7805eb",
+            "15bbc05f4bf586d3"
+        ],
+        "x": 94,
+        "y": 159,
+        "w": 1112,
+        "h": 242
+    },
+    {
+        "id": "c4a3767977ce2a47",
+        "type": "group",
+        "z": "de620fed3bdb7aa9",
+        "name": "Parse events sent by Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1e4382c2d863a27b",
+            "93ac4832ce5d4597",
+            "8a2a9e8959813254",
+            "583b8a97c7c4719b",
+            "202a258790875a85"
+        ],
+        "x": 514,
+        "y": 59,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -5263,9 +5343,10 @@
         "id": "cdd12e98966ee7c4",
         "type": "EventSource",
         "z": "de620fed3bdb7aa9",
+        "g": "d606b55cf1d68352",
         "name": "Hue SSE",
-        "x": 340,
-        "y": 60,
+        "x": 360,
+        "y": 100,
         "wires": [
             [
                 "1e4382c2d863a27b"
@@ -5276,6 +5357,7 @@
         "id": "eef1022d50fc9776",
         "type": "change",
         "z": "de620fed3bdb7aa9",
+        "g": "d606b55cf1d68352",
         "name": "",
         "rules": [
             {
@@ -5291,8 +5373,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 180,
-        "y": 60,
+        "x": 200,
+        "y": 100,
         "wires": [
             [
                 "cdd12e98966ee7c4"
@@ -5303,12 +5385,13 @@
         "id": "93ac4832ce5d4597",
         "type": "json",
         "z": "de620fed3bdb7aa9",
+        "g": "c4a3767977ce2a47",
         "name": "",
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 650,
-        "y": 60,
+        "x": 770,
+        "y": 100,
         "wires": [
             [
                 "8a2a9e8959813254"
@@ -5319,6 +5402,7 @@
         "id": "8a2a9e8959813254",
         "type": "split",
         "z": "de620fed3bdb7aa9",
+        "g": "c4a3767977ce2a47",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -5326,8 +5410,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 770,
-        "y": 60,
+        "x": 890,
+        "y": 100,
         "wires": [
             [
                 "583b8a97c7c4719b"
@@ -5338,6 +5422,7 @@
         "id": "202a258790875a85",
         "type": "split",
         "z": "de620fed3bdb7aa9",
+        "g": "c4a3767977ce2a47",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -5345,8 +5430,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 1070,
-        "y": 60,
+        "x": 1190,
+        "y": 100,
         "wires": [
             []
         ]
@@ -5355,6 +5440,7 @@
         "id": "583b8a97c7c4719b",
         "type": "change",
         "z": "de620fed3bdb7aa9",
+        "g": "c4a3767977ce2a47",
         "name": "",
         "rules": [
             {
@@ -5377,8 +5463,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 60,
+        "x": 1040,
+        "y": 100,
         "wires": [
             [
                 "202a258790875a85"
@@ -5389,20 +5475,24 @@
         "id": "d901234fd1fce55c",
         "type": "status",
         "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
         "name": "",
         "scope": [
             "cdd12e98966ee7c4"
         ],
-        "x": 1060,
-        "y": 140,
+        "x": 180,
+        "y": 320,
         "wires": [
-            []
+            [
+                "4195e838cf9ccb27"
+            ]
         ]
     },
     {
         "id": "1e4382c2d863a27b",
         "type": "change",
         "z": "de620fed3bdb7aa9",
+        "g": "c4a3767977ce2a47",
         "name": "",
         "rules": [
             {
@@ -5418,11 +5508,193 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 60,
+        "x": 620,
+        "y": 100,
         "wires": [
             [
                 "93ac4832ce5d4597"
+            ]
+        ]
+    },
+    {
+        "id": "fabe0aac918a0c99",
+        "type": "switch",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "c97d943953f14d84",
+                "dceed2eddd7805eb"
+            ],
+            [
+                "15bbc05f4bf586d3"
+            ]
+        ]
+    },
+    {
+        "id": "c97d943953f14d84",
+        "type": "trigger",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "date",
+        "duration": "10",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "1",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "eef1022d50fc9776"
+            ]
+        ]
+    },
+    {
+        "id": "0ddcbeec783d7c7e",
+        "type": "change",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(status.text)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "fabe0aac918a0c99"
+            ]
+        ]
+    },
+    {
+        "id": "4195e838cf9ccb27",
+        "type": "rbe",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "status.text",
+        "topi": "topic",
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "0ddcbeec783d7c7e"
+            ]
+        ]
+    },
+    {
+        "id": "b58e585f969bca88",
+        "type": "debug",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "hue eventsource state",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "dceed2eddd7805eb",
+        "type": "change",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'SSE client for Hue bridge at ' & $env('ADDRESS') & ' is disconnected (' & payload & ')'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 280,
+        "wires": [
+            [
+                "b58e585f969bca88"
+            ]
+        ]
+    },
+    {
+        "id": "15bbc05f4bf586d3",
+        "type": "change",
+        "z": "de620fed3bdb7aa9",
+        "g": "666b7004db0b97b6",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'SSE client for Hue bridge at ' & $env('ADDRESS') & ' is connected (' & payload & ')'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "b58e585f969bca88"
             ]
         ]
     },
