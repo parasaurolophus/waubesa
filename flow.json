@@ -1049,11 +1049,11 @@
         "color": "#3FADB5",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 460,
-            "y": 440,
+            "x": 360,
+            "y": 340,
             "wires": [
                 {
-                    "id": "4195e838cf9ccb27",
+                    "id": "d901234fd1fce55c",
                     "port": 0
                 }
             ]
@@ -1114,9 +1114,7 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119,
-        "w": 972,
-        "h": 82
+        "y": 119
     },
     {
         "id": "afbdc8b60c682c85",
@@ -1139,9 +1137,7 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419,
-        "w": 952,
-        "h": 82
+        "y": 419
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1297,9 +1293,7 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19,
-        "w": 452,
-        "h": 82
+        "y": 19
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1345,9 +1339,7 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319,
-        "w": 972,
-        "h": 82
+        "y": 319
     },
     {
         "id": "0117b53379eade19",
@@ -1370,9 +1362,7 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219,
-        "w": 952,
-        "h": 82
+        "y": 219
     },
     {
         "id": "70e9b8db12799d18",
@@ -2033,9 +2023,7 @@
             }
         ],
         "x": 134,
-        "y": 519,
-        "w": 442,
-        "h": 82
+        "y": 519
     },
     {
         "id": "e49c9571ddd5102f",
@@ -2253,16 +2241,12 @@
             "d901234fd1fce55c",
             "fabe0aac918a0c99",
             "c97d943953f14d84",
-            "0ddcbeec783d7c7e",
-            "4195e838cf9ccb27",
-            "b58e585f969bca88",
-            "dceed2eddd7805eb",
-            "15bbc05f4bf586d3"
+            "084266e8becbe572"
         ],
         "x": 94,
         "y": 159,
-        "w": 1112,
-        "h": 242
+        "w": 652,
+        "h": 142
     },
     {
         "id": "c4a3767977ce2a47",
@@ -5481,10 +5465,10 @@
             "cdd12e98966ee7c4"
         ],
         "x": 180,
-        "y": 320,
+        "y": 260,
         "wires": [
             [
-                "4195e838cf9ccb27"
+                "fabe0aac918a0c99"
             ]
         ]
     },
@@ -5522,13 +5506,13 @@
         "z": "de620fed3bdb7aa9",
         "g": "666b7004db0b97b6",
         "name": "",
-        "property": "payload",
+        "property": "status.text",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
                 "v": "2",
-                "vt": "num"
+                "vt": "str"
             },
             {
                 "t": "else"
@@ -5537,15 +5521,14 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 630,
-        "y": 280,
+        "x": 330,
+        "y": 220,
         "wires": [
             [
-                "c97d943953f14d84",
-                "dceed2eddd7805eb"
+                "c97d943953f14d84"
             ],
             [
-                "15bbc05f4bf586d3"
+                "084266e8becbe572"
             ]
         ]
     },
@@ -5567,7 +5550,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 830,
+        "x": 650,
         "y": 200,
         "wires": [
             [
@@ -5576,7 +5559,7 @@
         ]
     },
     {
-        "id": "0ddcbeec783d7c7e",
+        "id": "084266e8becbe572",
         "type": "change",
         "z": "de620fed3bdb7aa9",
         "g": "666b7004db0b97b6",
@@ -5584,10 +5567,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "rest",
                 "pt": "msg",
-                "to": "$number(status.text)",
-                "tot": "jsonata"
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -5595,106 +5578,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
-        "y": 280,
+        "x": 470,
+        "y": 240,
         "wires": [
             [
-                "fabe0aac918a0c99"
-            ]
-        ]
-    },
-    {
-        "id": "4195e838cf9ccb27",
-        "type": "rbe",
-        "z": "de620fed3bdb7aa9",
-        "g": "666b7004db0b97b6",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "status.text",
-        "topi": "topic",
-        "x": 310,
-        "y": 320,
-        "wires": [
-            [
-                "0ddcbeec783d7c7e"
-            ]
-        ]
-    },
-    {
-        "id": "b58e585f969bca88",
-        "type": "debug",
-        "z": "de620fed3bdb7aa9",
-        "g": "666b7004db0b97b6",
-        "name": "hue eventsource state",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "dceed2eddd7805eb",
-        "type": "change",
-        "z": "de620fed3bdb7aa9",
-        "g": "666b7004db0b97b6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "'SSE client for Hue bridge at ' & $env('ADDRESS') & ' is disconnected (' & payload & ')'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 840,
-        "y": 280,
-        "wires": [
-            [
-                "b58e585f969bca88"
-            ]
-        ]
-    },
-    {
-        "id": "15bbc05f4bf586d3",
-        "type": "change",
-        "z": "de620fed3bdb7aa9",
-        "g": "666b7004db0b97b6",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "'SSE client for Hue bridge at ' & $env('ADDRESS') & ' is connected (' & payload & ')'",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 840,
-        "y": 360,
-        "wires": [
-            [
-                "b58e585f969bca88"
+                "c97d943953f14d84"
             ]
         ]
     },
