@@ -564,11 +564,11 @@
         ],
         "out": [
             {
-                "x": 840,
+                "x": 820,
                 "y": 100,
                 "wires": [
                     {
-                        "id": "23c6837d10f1e3bc",
+                        "id": "180659bccf4fb07a",
                         "port": 0
                     }
                 ]
@@ -578,12 +578,12 @@
         "meta": {},
         "color": "#DDAA99",
         "status": {
-            "x": 1020,
+            "x": 820,
             "y": 180,
             "wires": [
                 {
-                    "id": "5e780a4d7f4b3aaa",
-                    "port": 0
+                    "id": "180659bccf4fb07a",
+                    "port": 1
                 }
             ]
         }
@@ -2338,6 +2338,8 @@
         ],
         "x": 774,
         "y": 91.5,
+        "w": 352,
+        "h": 97,
         "info": "| Env Var   | Description                            |\n|-----------|----------------------------------------|\n| `ADDRESS` | IP address of Hue Bridge               |\n| `KEY`     | Value for `hue-application-key` header |"
     },
     {
@@ -2359,7 +2361,9 @@
             "084266e8becbe572"
         ],
         "x": 54,
-        "y": 159
+        "y": 159,
+        "w": 692,
+        "h": 182
     },
     {
         "id": "e79e0110c2317edb",
@@ -4205,7 +4209,7 @@
         "y": 60,
         "wires": [
             [
-                "23c6837d10f1e3bc"
+                "180659bccf4fb07a"
             ]
         ]
     },
@@ -4232,7 +4236,7 @@
         "y": 100,
         "wires": [
             [
-                "23c6837d10f1e3bc"
+                "180659bccf4fb07a"
             ]
         ]
     },
@@ -4259,7 +4263,7 @@
         "y": 140,
         "wires": [
             [
-                "23c6837d10f1e3bc"
+                "180659bccf4fb07a"
             ]
         ]
     },
@@ -4286,7 +4290,7 @@
         "y": 180,
         "wires": [
             [
-                "23c6837d10f1e3bc"
+                "180659bccf4fb07a"
             ]
         ]
     },
@@ -4313,7 +4317,7 @@
         "y": 220,
         "wires": [
             [
-                "23c6837d10f1e3bc"
+                "180659bccf4fb07a"
             ]
         ]
     },
@@ -4385,40 +4389,20 @@
         ]
     },
     {
-        "id": "23c6837d10f1e3bc",
-        "type": "fan",
+        "id": "180659bccf4fb07a",
+        "type": "function",
         "z": "3faadb46568c393b",
-        "name": "",
-        "x": 730,
+        "name": "status",
+        "func": "\nreturn [\n    msg,\n    {\n        text: msg.payload,\n        shape: 'dot',\n        fill: 'blue'\n    }\n]",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
         "y": 140,
         "wires": [
-            [
-                "5e780a4d7f4b3aaa"
-            ]
-        ]
-    },
-    {
-        "id": "5e780a4d7f4b3aaa",
-        "type": "change",
-        "z": "3faadb46568c393b",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"text\":payload,\"shape\":\"dot\",\"fill\":\"blue\"}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 900,
-        "y": 180,
-        "wires": [
+            [],
             []
         ]
     },
@@ -5433,6 +5417,8 @@
         "z": "de620fed3bdb7aa9",
         "g": "d606b55cf1d68352",
         "name": "Hue SSE",
+        "url": "",
+        "initDict": "{}",
         "x": 1040,
         "y": 140,
         "wires": [
@@ -5974,7 +5960,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 140,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "8c9d79d2791e9b02"
@@ -5992,7 +5978,7 @@
         ],
         "timeout": "30",
         "x": 330,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "7d283a2fc0d30093"
@@ -6184,7 +6170,7 @@
         "g": "665df9d682462b5e",
         "name": "",
         "x": 540,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "4d2dc9a6e42d0548"
@@ -6353,7 +6339,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 140,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "715136c1ddfd2fe4"
@@ -6371,7 +6357,7 @@
         ],
         "timeout": "30",
         "x": 320,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "21ea110d0ab4d1b3"
@@ -6577,7 +6563,7 @@
         "g": "851ce0bce3af3965",
         "name": "",
         "x": 520,
-        "y": 420,
+        "y": 440,
         "wires": [
             [
                 "40f1f326e5252bf8"
