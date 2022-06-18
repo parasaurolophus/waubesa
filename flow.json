@@ -786,69 +786,6 @@
         }
     },
     {
-        "id": "d7ecf561efe476b7",
-        "type": "subflow",
-        "name": "Send to Pushover",
-        "info": "",
-        "category": "pushover",
-        "in": [
-            {
-                "x": 80,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "605b816b2a27c9a8"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 1180,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "251de7d13f63bb24",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "APP_TOKEN",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "USER_TOKEN",
-                "type": "str",
-                "value": ""
-            }
-        ],
-        "meta": {
-            "module": "@parasaurolophus/node-red-subflow-send-to-pushover",
-            "type": "subflow-send-to-pushover",
-            "version": "1.0.0",
-            "author": "parasaurolophus <apps@rader.us>",
-            "desc": "Send a notification using the Pushover API",
-            "keywords": "pushover",
-            "license": "MIT"
-        },
-        "color": "#D8BFD8",
-        "icon": "node-red/envelope.svg",
-        "status": {
-            "x": 1180,
-            "y": 180,
-            "wires": [
-                {
-                    "id": "ef511afd83d3313f",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
         "id": "c4207c9fe61a900e",
         "type": "subflow",
         "name": "Monitored Event",
@@ -1304,9 +1241,7 @@
             "1993fd8165053adf"
         ],
         "x": 114,
-        "y": 151.5,
-        "w": 212,
-        "h": 97
+        "y": 151.5
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1337,9 +1272,7 @@
             }
         ],
         "x": 114,
-        "y": 39,
-        "w": 632,
-        "h": 242
+        "y": 39
     },
     {
         "id": "5a2c18585609cfae",
@@ -1493,9 +1426,7 @@
             "a0985c083540376f"
         ],
         "x": 114,
-        "y": 299,
-        "w": 532,
-        "h": 82
+        "y": 299
     },
     {
         "id": "9b9a844a8df2769d",
@@ -1517,9 +1448,7 @@
             "114b9703250b5ff7"
         ],
         "x": 34,
-        "y": 439,
-        "w": 462,
-        "h": 202
+        "y": 439
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1541,9 +1470,7 @@
             "e3599caac9ca8f69"
         ],
         "x": 34,
-        "y": 659,
-        "w": 962,
-        "h": 82
+        "y": 659
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1565,9 +1492,7 @@
             "d95bd31d04f2745f"
         ],
         "x": 394,
-        "y": 159,
-        "w": 512,
-        "h": 162
+        "y": 159
     },
     {
         "id": "31ed5707953578b9",
@@ -1587,9 +1512,7 @@
             "e309f9054b8afaa3"
         ],
         "x": 394,
-        "y": 19,
-        "w": 312,
-        "h": 122
+        "y": 19
     },
     {
         "id": "64b945726db0f60a",
@@ -1615,9 +1538,7 @@
             "e4573259bc244ded"
         ],
         "x": 614,
-        "y": 379,
-        "w": 622,
-        "h": 262
+        "y": 379
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1667,9 +1588,7 @@
             }
         ],
         "x": 114,
-        "y": 399,
-        "w": 382,
-        "h": 162
+        "y": 399
     },
     {
         "id": "6daca851d4692833",
@@ -1692,9 +1611,7 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139,
-        "w": 602,
-        "h": 202
+        "y": 139
     },
     {
         "id": "cf29b66e60017a62",
@@ -1714,9 +1631,7 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39,
-        "w": 712,
-        "h": 82
+        "y": 39
     },
     {
         "id": "851ce0bce3af3965",
@@ -1740,9 +1655,7 @@
             "21ea110d0ab4d1b3"
         ],
         "x": 34,
-        "y": 359,
-        "w": 862,
-        "h": 162
+        "y": 359
     },
     {
         "id": "7176639d06e51ae4",
@@ -1856,29 +1769,6 @@
         "h": 162
     },
     {
-        "id": "70c17a60ce5a4da0",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Send to Pushover API",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "53f5dcbc2de38b22",
-            "c41cbbe061bb434a",
-            "3728fa9152de3f67",
-            "068d70a008384e98",
-            "1bdb640b36bb47a0"
-        ],
-        "x": 134,
-        "y": 139,
-        "info": "Subscribe to [https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj](https://pushover.net/subscribe/cheznous-zg757rmhyyo74rj) to receive push notifications on your device with the _Pushover_ app installed.\n\n# Configuration\n\nSet `$APP_TOKEN` and `GROUP_TOKEN` to the application and group tokens registered at [https://pushover.net](https://pushover.net).\n\n# Input\n\nJSON object with `message` set and, optionally, `title`, `priority` etc. See [https://pushover.net/api](https://pushover.net/api) for details.\n\n# Output\n\nJSON object containing the response from the Pushover API."
-    },
-    {
         "id": "67b7a3ca46620d16",
         "type": "group",
         "z": "c7141ffb22d64190",
@@ -1932,9 +1822,7 @@
             }
         ],
         "x": 34,
-        "y": 539,
-        "w": 442,
-        "h": 82
+        "y": 539
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1961,9 +1849,7 @@
             }
         ],
         "x": 114,
-        "y": 579,
-        "w": 442,
-        "h": 82
+        "y": 579
     },
     {
         "id": "3d0bb7da508e430c",
@@ -1990,9 +1876,7 @@
             }
         ],
         "x": 34,
-        "y": 339,
-        "w": 442,
-        "h": 82
+        "y": 339
     },
     {
         "id": "45c4e55e53345092",
@@ -2019,9 +1903,7 @@
             }
         ],
         "x": 114,
-        "y": 339,
-        "w": 442,
-        "h": 82
+        "y": 339
     },
     {
         "id": "7dcf1dcf10e9c669",
@@ -2229,9 +2111,7 @@
             "41d6e4533b1fca83"
         ],
         "x": 114,
-        "y": 439,
-        "w": 452,
-        "h": 82
+        "y": 439
     },
     {
         "id": "1723570f3a1a07a2",
@@ -2250,9 +2130,7 @@
             "d32948683f33a7d6"
         ],
         "x": 34,
-        "y": 119,
-        "w": 332,
-        "h": 82
+        "y": 119
     },
     {
         "id": "1fc278393a2508e0",
@@ -2276,9 +2154,7 @@
             "5ba41e8325888c23"
         ],
         "x": 594,
-        "y": 59,
-        "w": 422,
-        "h": 242
+        "y": 59
     },
     {
         "id": "edbd733b188dccef",
@@ -2296,9 +2172,7 @@
             "981dbc2364b09d66"
         ],
         "x": 374,
-        "y": 79,
-        "w": 82,
-        "h": 82
+        "y": 79
     },
     {
         "id": "09742b69ee691d31",
@@ -2316,9 +2190,7 @@
             "549a2335fb839c37"
         ],
         "x": 374,
-        "y": 239,
-        "w": 82,
-        "h": 82
+        "y": 239
     },
     {
         "id": "d606b55cf1d68352",
@@ -4967,227 +4839,6 @@
         ]
     },
     {
-        "id": "99d6b95fca42e0fd",
-        "type": "change",
-        "z": "d7ecf561efe476b7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.token",
-                "pt": "msg",
-                "to": "APP_TOKEN",
-                "tot": "env"
-            },
-            {
-                "t": "set",
-                "p": "payload.user",
-                "pt": "msg",
-                "to": "USER_TOKEN",
-                "tot": "env"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 900,
-        "y": 100,
-        "wires": [
-            [
-                "251de7d13f63bb24"
-            ]
-        ]
-    },
-    {
-        "id": "251de7d13f63bb24",
-        "type": "http request",
-        "z": "d7ecf561efe476b7",
-        "name": "",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "https://api.pushover.net/1/messages.json",
-        "tls": "24060e8ad06fe1ed",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "senderr": false,
-        "x": 1070,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "02595fec780c5e56",
-        "type": "comment",
-        "z": "d7ecf561efe476b7",
-        "name": "see https://pushover.net/api",
-        "info": "",
-        "x": 180,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "81b8b8e03bbb52ee",
-        "type": "function",
-        "z": "d7ecf561efe476b7",
-        "name": "onlyPayload",
-        "func": "return {payload: msg.payload}",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 100,
-        "wires": [
-            [
-                "99d6b95fca42e0fd"
-            ]
-        ]
-    },
-    {
-        "id": "605b816b2a27c9a8",
-        "type": "switch",
-        "z": "d7ecf561efe476b7",
-        "name": "payload type",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "istype",
-                "v": "string",
-                "vt": "string"
-            },
-            {
-                "t": "istype",
-                "v": "object",
-                "vt": "object"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 190,
-        "y": 100,
-        "wires": [
-            [
-                "9496216e9d0c20bb"
-            ],
-            [
-                "5ef3056d6a0163ac"
-            ],
-            [
-                "5fee4218c4dfef49"
-            ]
-        ]
-    },
-    {
-        "id": "5ef3056d6a0163ac",
-        "type": "switch",
-        "z": "d7ecf561efe476b7",
-        "name": "has message",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "hask",
-                "v": "message",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 490,
-        "y": 120,
-        "wires": [
-            [
-                "81b8b8e03bbb52ee"
-            ],
-            [
-                "5fee4218c4dfef49"
-            ]
-        ]
-    },
-    {
-        "id": "5fee4218c4dfef49",
-        "type": "change",
-        "z": "d7ecf561efe476b7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"message\":$string(msg, true)}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 500,
-        "y": 200,
-        "wires": [
-            [
-                "81b8b8e03bbb52ee"
-            ]
-        ]
-    },
-    {
-        "id": "ef511afd83d3313f",
-        "type": "status",
-        "z": "d7ecf561efe476b7",
-        "name": "",
-        "scope": [
-            "251de7d13f63bb24"
-        ],
-        "x": 1080,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9496216e9d0c20bb",
-        "type": "change",
-        "z": "d7ecf561efe476b7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"message\":payload}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 60,
-        "wires": [
-            [
-                "81b8b8e03bbb52ee"
-            ]
-        ]
-    },
-    {
         "id": "112df8f0c03fc7e8",
         "type": "rbe",
         "z": "c4207c9fe61a900e",
@@ -5417,8 +5068,6 @@
         "z": "de620fed3bdb7aa9",
         "g": "d606b55cf1d68352",
         "name": "Hue SSE",
-        "url": "",
-        "initDict": "{}",
         "x": 1040,
         "y": 140,
         "wires": [
@@ -7962,7 +7611,6 @@
         "id": "53f5dcbc2de38b22",
         "type": "link in",
         "z": "6e3ca82457d27245",
-        "g": "70c17a60ce5a4da0",
         "name": "send to pushover",
         "links": [
             "88c6a3f5073708e6",
@@ -7990,53 +7638,7 @@
         "x": 175,
         "y": 180,
         "wires": [
-            [
-                "3728fa9152de3f67"
-            ]
-        ]
-    },
-    {
-        "id": "c41cbbe061bb434a",
-        "type": "debug",
-        "z": "6e3ca82457d27245",
-        "g": "70c17a60ce5a4da0",
-        "name": "pushover",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 720,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "3728fa9152de3f67",
-        "type": "subflow:d7ecf561efe476b7",
-        "z": "6e3ca82457d27245",
-        "g": "70c17a60ce5a4da0",
-        "name": "",
-        "env": [
-            {
-                "name": "APP_TOKEN",
-                "value": "aoh1bh18krkygp48uppks5sheo64i6",
-                "type": "str"
-            },
-            {
-                "name": "USER_TOKEN",
-                "value": "gua1686beresjq8zzwdraa5a34b3js",
-                "type": "str"
-            }
-        ],
-        "x": 550,
-        "y": 200,
-        "wires": [
-            [
-                "c41cbbe061bb434a"
-            ]
+            []
         ]
     },
     {
@@ -8108,53 +7710,6 @@
         "wires": [
             [
                 "f5c7a7580984d067"
-            ]
-        ]
-    },
-    {
-        "id": "1bdb640b36bb47a0",
-        "type": "catch",
-        "z": "6e3ca82457d27245",
-        "g": "70c17a60ce5a4da0",
-        "name": "",
-        "scope": [
-            "f5c7a7580984d067",
-            "11b2638982da0e64"
-        ],
-        "uncaught": false,
-        "x": 210,
-        "y": 220,
-        "wires": [
-            [
-                "068d70a008384e98"
-            ]
-        ]
-    },
-    {
-        "id": "068d70a008384e98",
-        "type": "change",
-        "z": "6e3ca82457d27245",
-        "g": "70c17a60ce5a4da0",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"message\":$string(msg,true),\"title\":$env('TITLE')}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 220,
-        "wires": [
-            [
-                "3728fa9152de3f67"
             ]
         ]
     },
