@@ -8,18 +8,18 @@
         "env": [
             {
                 "name": "TOPIC",
-                "value": "hue/chez-nous-main",
-                "type": "str"
+                "value": "CHEZ_NOUS_MAIN_TOPIC",
+                "type": "env"
             },
             {
                 "name": "ADDRESS",
-                "value": "192.168.1.12",
-                "type": "str"
+                "value": "CHEZ_NOUS_MAIN_ADDRESS",
+                "type": "env"
             },
             {
                 "name": "KEY",
-                "value": "EhKZJjy5vLvz-3bz06K9a8MLfCaSSzR5WxSK8a-y",
-                "type": "str"
+                "value": "CHEZ_NOUS_MAIN_KEY",
+                "type": "env"
             }
         ]
     },
@@ -32,18 +32,18 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "192.168.1.34",
-                "type": "str"
+                "value": "BASEMENT_HUE_ADDRESS",
+                "type": "env"
             },
             {
                 "name": "KEY",
-                "value": "-6ay0JIz8Kd1PV00yBYQ75bo6hlVBN2mopvXnrNa",
-                "type": "str"
+                "value": "BASEMENT_HUE_KEY",
+                "type": "env"
             },
             {
                 "name": "TOPIC",
-                "value": "hue/basement-hue",
-                "type": "str"
+                "value": "BASEMENT_HUE_TOPIC",
+                "type": "env"
             }
         ]
     },
@@ -1448,7 +1448,9 @@
             "114b9703250b5ff7"
         ],
         "x": 34,
-        "y": 439
+        "y": 439,
+        "w": 462,
+        "h": 202
     },
     {
         "id": "daced5cc49fcef0a",
@@ -1470,7 +1472,9 @@
             "e3599caac9ca8f69"
         ],
         "x": 34,
-        "y": 659
+        "y": 659,
+        "w": 962,
+        "h": 82
     },
     {
         "id": "6d13af3b8a66acb9",
@@ -1492,7 +1496,9 @@
             "d95bd31d04f2745f"
         ],
         "x": 394,
-        "y": 159
+        "y": 159,
+        "w": 512,
+        "h": 162
     },
     {
         "id": "31ed5707953578b9",
@@ -1512,7 +1518,9 @@
             "e309f9054b8afaa3"
         ],
         "x": 394,
-        "y": 19
+        "y": 19,
+        "w": 312,
+        "h": 122
     },
     {
         "id": "64b945726db0f60a",
@@ -1538,7 +1546,9 @@
             "e4573259bc244ded"
         ],
         "x": 614,
-        "y": 379
+        "y": 379,
+        "w": 622,
+        "h": 262
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1611,7 +1621,9 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 602,
+        "h": 202
     },
     {
         "id": "cf29b66e60017a62",
@@ -1631,7 +1643,9 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "851ce0bce3af3965",
@@ -1655,7 +1669,9 @@
             "21ea110d0ab4d1b3"
         ],
         "x": 34,
-        "y": 359
+        "y": 359,
+        "w": 862,
+        "h": 162
     },
     {
         "id": "7176639d06e51ae4",
@@ -1822,7 +1838,9 @@
             }
         ],
         "x": 34,
-        "y": 539
+        "y": 539,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1876,7 +1894,9 @@
             }
         ],
         "x": 34,
-        "y": 339
+        "y": 339,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "45c4e55e53345092",
@@ -2127,10 +2147,13 @@
         },
         "nodes": [
             "25b9375f737e85e2",
-            "d32948683f33a7d6"
+            "d32948683f33a7d6",
+            "c0e8262f85a63e12"
         ],
         "x": 34,
-        "y": 119
+        "y": 119,
+        "w": 332,
+        "h": 142
     },
     {
         "id": "1fc278393a2508e0",
@@ -2210,8 +2233,6 @@
         ],
         "x": 774,
         "y": 91.5,
-        "w": 352,
-        "h": 97,
         "info": "| Env Var   | Description                            |\n|-----------|----------------------------------------|\n| `ADDRESS` | IP address of Hue Bridge               |\n| `KEY`     | Value for `hue-application-key` header |"
     },
     {
@@ -2233,9 +2254,7 @@
             "084266e8becbe572"
         ],
         "x": 54,
-        "y": 159,
-        "w": 692,
-        "h": 182
+        "y": 159
     },
     {
         "id": "e79e0110c2317edb",
@@ -2408,20 +2427,6 @@
         "width": "6",
         "collapse": true,
         "className": ""
-    },
-    {
-        "id": "24060e8ad06fe1ed",
-        "type": "tls-config",
-        "name": "Pushover tls-config",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "",
-        "verifyservercert": true,
-        "alpnprotocol": ""
     },
     {
         "id": "dc6e107af698a0c3",
@@ -7234,8 +7239,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"latitude\":43.0184,\"longitude\":-89.289}",
-        "payloadType": "json",
+        "payload": "{\"latitude\":$env('LATITUDE'),\"longitude\":$env('LONGITUDE')}",
+        "payloadType": "jsonata",
         "x": 140,
         "y": 160,
         "wires": [
@@ -7243,6 +7248,17 @@
                 "25b9375f737e85e2"
             ]
         ]
+    },
+    {
+        "id": "c0e8262f85a63e12",
+        "type": "comment",
+        "z": "f03b6ceb81ed7dac",
+        "g": "1723570f3a1a07a2",
+        "name": "depends on ~/.node-red/environment",
+        "info": "- `LATITUDE`\n- `LONGITUDE`",
+        "x": 200,
+        "y": 220,
+        "wires": []
     },
     {
         "id": "061d8c40c8ed16ab",
