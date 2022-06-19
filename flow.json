@@ -56,8 +56,8 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "192.168.1.30",
-                "type": "str"
+                "value": "POWERVIEW_ADDRESS",
+                "type": "env"
             }
         ]
     },
@@ -1113,6 +1113,55 @@
         }
     },
     {
+        "id": "c35ef1735ca5a56b",
+        "type": "subflow",
+        "name": "Get PowerView Configuration",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 40,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "b4f2cc634373bb02"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1240,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "bd4a23ce7c2889c7",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "ADDRESS",
+                "type": "env",
+                "value": "ADDRESS"
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 1240,
+            "y": 140,
+            "wires": [
+                {
+                    "id": "7aa9b3895743736e",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "ea7b9754db9fd0cd",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -1257,12 +1306,8 @@
         },
         "nodes": [
             "1cee4f351bd59563",
-            "bd4a23ce7c2889c7",
-            "e7cbb96d60e8d93a",
-            "93822d2eb8c60ace",
-            "11e5dc07e749f452",
-            "a8f812cc5d7ebea7",
-            "a30ac3d2a2ed4419"
+            "43794c1d997dcc82",
+            "69a6db45ef9f6fdf"
         ],
         "env": [
             {
@@ -1272,7 +1317,9 @@
             }
         ],
         "x": 114,
-        "y": 39
+        "y": 39,
+        "w": 652,
+        "h": 82
     },
     {
         "id": "5a2c18585609cfae",
@@ -1404,9 +1451,7 @@
             "4d0cd6535cb6e444"
         ],
         "x": 34,
-        "y": 139,
-        "w": 602,
-        "h": 202
+        "y": 139
     },
     {
         "id": "2afac67683a580f7",
@@ -1426,7 +1471,9 @@
             "a0985c083540376f"
         ],
         "x": 114,
-        "y": 299
+        "y": 139,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "9b9a844a8df2769d",
@@ -1568,9 +1615,7 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 34,
-        "y": 39,
-        "w": 732,
-        "h": 82
+        "y": 39
     },
     {
         "id": "87285e6bf01cff03",
@@ -1598,7 +1643,9 @@
             }
         ],
         "x": 114,
-        "y": 399
+        "y": 239,
+        "w": 382,
+        "h": 162
     },
     {
         "id": "6daca851d4692833",
@@ -1621,9 +1668,7 @@
             "fb43e90cb6d29a93"
         ],
         "x": 34,
-        "y": 139,
-        "w": 602,
-        "h": 202
+        "y": 139
     },
     {
         "id": "cf29b66e60017a62",
@@ -1643,9 +1688,7 @@
             "02ae8cd7fbb90513"
         ],
         "x": 34,
-        "y": 39,
-        "w": 712,
-        "h": 82
+        "y": 39
     },
     {
         "id": "851ce0bce3af3965",
@@ -1669,9 +1712,7 @@
             "21ea110d0ab4d1b3"
         ],
         "x": 34,
-        "y": 359,
-        "w": 862,
-        "h": 162
+        "y": 359
     },
     {
         "id": "7176639d06e51ae4",
@@ -1780,9 +1821,7 @@
             "7d283a2fc0d30093"
         ],
         "x": 34,
-        "y": 359,
-        "w": 892,
-        "h": 162
+        "y": 359
     },
     {
         "id": "67b7a3ca46620d16",
@@ -1809,9 +1848,7 @@
             }
         ],
         "x": 34,
-        "y": 539,
-        "w": 442,
-        "h": 82
+        "y": 539
     },
     {
         "id": "0d65e7f528cf04df",
@@ -1838,9 +1875,7 @@
             }
         ],
         "x": 34,
-        "y": 539,
-        "w": 442,
-        "h": 82
+        "y": 539
     },
     {
         "id": "d62657d45ec04ef6",
@@ -1867,7 +1902,9 @@
             }
         ],
         "x": 114,
-        "y": 579
+        "y": 419,
+        "w": 442,
+        "h": 82
     },
     {
         "id": "3d0bb7da508e430c",
@@ -2147,13 +2184,12 @@
         },
         "nodes": [
             "25b9375f737e85e2",
-            "d32948683f33a7d6",
-            "c0e8262f85a63e12"
+            "d32948683f33a7d6"
         ],
         "x": 34,
         "y": 119,
         "w": 332,
-        "h": 142
+        "h": 82
     },
     {
         "id": "1fc278393a2508e0",
@@ -5460,6 +5496,141 @@
         ]
     },
     {
+        "id": "bd4a23ce7c2889c7",
+        "type": "function",
+        "z": "c35ef1735ca5a56b",
+        "name": "mergeMetadata",
+        "func": "let findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7cbb96d60e8d93a",
+        "type": "change",
+        "z": "c35ef1735ca5a56b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 60,
+        "wires": [
+            [
+                "bd4a23ce7c2889c7"
+            ]
+        ]
+    },
+    {
+        "id": "93822d2eb8c60ace",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "c35ef1735ca5a56b",
+        "name": "Get PowerVIew Scenes",
+        "x": 730,
+        "y": 60,
+        "wires": [
+            [
+                "e7cbb96d60e8d93a"
+            ]
+        ]
+    },
+    {
+        "id": "11e5dc07e749f452",
+        "type": "change",
+        "z": "c35ef1735ca5a56b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rooms",
+                "pt": "msg",
+                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "scenes",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 60,
+        "wires": [
+            [
+                "93822d2eb8c60ace"
+            ]
+        ]
+    },
+    {
+        "id": "a8f812cc5d7ebea7",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "c35ef1735ca5a56b",
+        "name": "Get PowerVIew Rooms",
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "11e5dc07e749f452"
+            ]
+        ]
+    },
+    {
+        "id": "b4f2cc634373bb02",
+        "type": "function",
+        "z": "c35ef1735ca5a56b",
+        "name": "atStart",
+        "func": "return msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "setTimeout(() => {\n\n    node.send({\n        topic: 'rooms',\n        payload: ''\n    })\n\n}, 1000)",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "a8f812cc5d7ebea7"
+            ]
+        ]
+    },
+    {
+        "id": "7aa9b3895743736e",
+        "type": "status",
+        "z": "c35ef1735ca5a56b",
+        "name": "",
+        "scope": null,
+        "x": 1140,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "14e5342cb50f366f",
         "type": "link out",
         "z": "c7141ffb22d64190",
@@ -6242,8 +6413,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 240,
+        "x": 630,
+        "y": 80,
         "wires": []
     },
     {
@@ -6257,7 +6428,7 @@
         ],
         "timeout": "30",
         "x": 510,
-        "y": 340,
+        "y": 180,
         "wires": [
             []
         ]
@@ -6273,7 +6444,7 @@
             "21690efdfa2776cf"
         ],
         "x": 155,
-        "y": 340,
+        "y": 180,
         "wires": [
             [
                 "a0985c083540376f"
@@ -6287,7 +6458,7 @@
         "g": "2afac67683a580f7",
         "name": "",
         "x": 290,
-        "y": 340,
+        "y": 180,
         "wires": [
             [
                 "3c70a7443900cb3f"
@@ -6301,7 +6472,7 @@
         "g": "87285e6bf01cff03",
         "name": "",
         "x": 300,
-        "y": 480,
+        "y": 320,
         "wires": [
             [
                 "618e79a58ab8143a"
@@ -6319,7 +6490,7 @@
         "name": "activate powerview scene",
         "links": [],
         "x": 155,
-        "y": 480,
+        "y": 320,
         "wires": [
             [
                 "2f6cc09457939ce2"
@@ -6335,7 +6506,7 @@
         "mode": "return",
         "links": [],
         "x": 455,
-        "y": 440,
+        "y": 280,
         "wires": []
     },
     {
@@ -6349,7 +6520,7 @@
             "53f5dcbc2de38b22"
         ],
         "x": 455,
-        "y": 520,
+        "y": 360,
         "wires": []
     },
     {
@@ -6361,7 +6532,7 @@
         "scope": null,
         "uncaught": true,
         "x": 220,
-        "y": 620,
+        "y": 460,
         "wires": [
             [
                 "3221f9b602f34698"
@@ -6389,7 +6560,7 @@
         "to": "",
         "reg": false,
         "x": 400,
-        "y": 620,
+        "y": 460,
         "wires": [
             [
                 "6520f43ac52c5b23"
@@ -6407,114 +6578,17 @@
             "53f5dcbc2de38b22"
         ],
         "x": 515,
-        "y": 620,
+        "y": 460,
         "wires": []
     },
     {
-        "id": "a8f812cc5d7ebea7",
-        "type": "subflow:4920eed654c67f8d",
+        "id": "43794c1d997dcc82",
+        "type": "subflow:c35ef1735ca5a56b",
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
-        "name": "Get PowerVIew Rooms",
-        "x": 410,
+        "name": "",
+        "x": 400,
         "y": 80,
-        "wires": [
-            [
-                "11e5dc07e749f452"
-            ]
-        ]
-    },
-    {
-        "id": "11e5dc07e749f452",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "rooms",
-                "pt": "msg",
-                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "scenes",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 240,
-        "y": 160,
-        "wires": [
-            [
-                "93822d2eb8c60ace"
-            ]
-        ]
-    },
-    {
-        "id": "93822d2eb8c60ace",
-        "type": "subflow:4920eed654c67f8d",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "Get PowerVIew Scenes",
-        "x": 450,
-        "y": 160,
-        "wires": [
-            [
-                "e7cbb96d60e8d93a"
-            ]
-        ]
-    },
-    {
-        "id": "e7cbb96d60e8d93a",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 240,
-        "y": 240,
-        "wires": [
-            [
-                "bd4a23ce7c2889c7"
-            ]
-        ]
-    },
-    {
-        "id": "bd4a23ce7c2889c7",
-        "type": "function",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "mergeMetadata",
-        "func": "let findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nmsg.payload = metadata\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 240,
         "wires": [
             [
                 "1cee4f351bd59563"
@@ -6522,11 +6596,11 @@
         ]
     },
     {
-        "id": "a30ac3d2a2ed4419",
+        "id": "69a6db45ef9f6fdf",
         "type": "inject",
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
-        "name": "",
+        "name": "test",
         "props": [
             {
                 "p": "payload"
@@ -6538,16 +6612,16 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": true,
+        "once": false,
         "onceDelay": 0.1,
         "topic": "rooms",
         "payload": "",
         "payloadType": "str",
-        "x": 220,
+        "x": 210,
         "y": 80,
         "wires": [
             [
-                "a8f812cc5d7ebea7"
+                "43794c1d997dcc82"
             ]
         ]
     },
@@ -7248,17 +7322,6 @@
                 "25b9375f737e85e2"
             ]
         ]
-    },
-    {
-        "id": "c0e8262f85a63e12",
-        "type": "comment",
-        "z": "f03b6ceb81ed7dac",
-        "g": "1723570f3a1a07a2",
-        "name": "depends on ~/.node-red/environment",
-        "info": "- `LATITUDE`\n- `LONGITUDE`",
-        "x": 200,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "061d8c40c8ed16ab",
