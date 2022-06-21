@@ -769,7 +769,9 @@
             "18b035d175d78813"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 632,
+        "h": 242
     },
     {
         "id": "2238e89a8f0c976d",
@@ -855,7 +857,9 @@
             "618e79a58ab8143a"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 362,
+        "h": 82
     },
     {
         "id": "7176639d06e51ae4",
@@ -966,30 +970,6 @@
         "y": 159
     },
     {
-        "id": "6216db305fefd408",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "UI for enabling automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "691d69a66ea96aa7",
-            "081a4902f8a912f2",
-            "dcf3dd8ab9591427",
-            "e8c24318deea03a7",
-            "e132ff7fd9fda65d"
-        ],
-        "x": 14,
-        "y": 499,
-        "w": 962,
-        "h": 82
-    },
-    {
         "id": "c47c0d5a1854a8ca",
         "type": "group",
         "z": "cbd68ba9caa96a3d",
@@ -1069,7 +1049,9 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393
+        "y": 393,
+        "w": 764,
+        "h": 334
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1089,7 +1071,9 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33
+        "y": 33,
+        "w": 784,
+        "h": 334
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1303,7 +1287,9 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 159
+        "y": 159,
+        "w": 385,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1324,7 +1310,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 59
+        "y": 59,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1346,7 +1334,9 @@
             "7d283a2fc0d30093"
         ],
         "x": 54,
-        "y": 259
+        "y": 259,
+        "w": 662,
+        "h": 82
     },
     {
         "id": "9c46129d149ab201",
@@ -1367,7 +1357,9 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 519
+        "y": 519,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "648ad874a33c7973",
@@ -1388,7 +1380,9 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 419
+        "y": 419,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1410,7 +1404,9 @@
             "a5f013472e32f50c"
         ],
         "x": 54,
-        "y": 619
+        "y": 619,
+        "w": 642,
+        "h": 82
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1453,6 +1449,30 @@
         ],
         "x": 114,
         "y": 399
+    },
+    {
+        "id": "b36cfe5d709eea6c",
+        "type": "group",
+        "z": "63d8cb10398da04b",
+        "name": "UI for enabling automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "4212d7a78c81cc93",
+            "734b211ab18fcbb7",
+            "7e1e2f573775ad3f",
+            "cd16b58b722b2540",
+            "831fb3f42898b50f"
+        ],
+        "x": 114,
+        "y": 559,
+        "w": 962,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -3163,147 +3183,6 @@
         "wires": []
     },
     {
-        "id": "691d69a66ea96aa7",
-        "type": "ui_switch",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6216db305fefd408",
-        "name": "Enable Automation",
-        "label": "Enable",
-        "tooltip": "",
-        "group": "25c7f0078ed443dd",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "decouple": "true",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 630,
-        "y": 540,
-        "wires": [
-            [
-                "e8c24318deea03a7"
-            ]
-        ]
-    },
-    {
-        "id": "081a4902f8a912f2",
-        "type": "mqtt in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6216db305fefd408",
-        "name": "",
-        "topic": "nodered/automation/enable",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 540,
-        "wires": [
-            [
-                "dcf3dd8ab9591427"
-            ]
-        ]
-    },
-    {
-        "id": "dcf3dd8ab9591427",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6216db305fefd408",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "enable-automation",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 540,
-        "wires": [
-            [
-                "691d69a66ea96aa7"
-            ]
-        ]
-    },
-    {
-        "id": "e8c24318deea03a7",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6216db305fefd408",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "nodered/automation/enable",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 820,
-        "y": 540,
-        "wires": [
-            [
-                "e132ff7fd9fda65d"
-            ]
-        ]
-    },
-    {
-        "id": "e132ff7fd9fda65d",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6216db305fefd408",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 935,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "c4b3c06d611b659d",
         "type": "ui_text",
         "z": "cbd68ba9caa96a3d",
@@ -4110,6 +3989,147 @@
         ]
     },
     {
+        "id": "4212d7a78c81cc93",
+        "type": "ui_switch",
+        "z": "63d8cb10398da04b",
+        "g": "b36cfe5d709eea6c",
+        "name": "Enable Automation",
+        "label": "Enable",
+        "tooltip": "",
+        "group": "25c7f0078ed443dd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 730,
+        "y": 600,
+        "wires": [
+            [
+                "cd16b58b722b2540"
+            ]
+        ]
+    },
+    {
+        "id": "734b211ab18fcbb7",
+        "type": "mqtt in",
+        "z": "63d8cb10398da04b",
+        "g": "b36cfe5d709eea6c",
+        "name": "",
+        "topic": "nodered/automation/enable",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "7e1e2f573775ad3f"
+            ]
+        ]
+    },
+    {
+        "id": "7e1e2f573775ad3f",
+        "type": "change",
+        "z": "63d8cb10398da04b",
+        "g": "b36cfe5d709eea6c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enable-automation",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 600,
+        "wires": [
+            [
+                "4212d7a78c81cc93"
+            ]
+        ]
+    },
+    {
+        "id": "cd16b58b722b2540",
+        "type": "change",
+        "z": "63d8cb10398da04b",
+        "g": "b36cfe5d709eea6c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/automation/enable",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 600,
+        "wires": [
+            [
+                "831fb3f42898b50f"
+            ]
+        ]
+    },
+    {
+        "id": "831fb3f42898b50f",
+        "type": "link out",
+        "z": "63d8cb10398da04b",
+        "g": "b36cfe5d709eea6c",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "dd7609e91ad64f63"
+        ],
+        "x": 1035,
+        "y": 600,
+        "wires": []
+    },
+    {
         "id": "14e5342cb50f366f",
         "type": "link out",
         "z": "c7141ffb22d64190",
@@ -4571,8 +4591,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
-        "y": 240,
+        "x": 530,
+        "y": 340,
         "wires": []
     },
     {
@@ -4665,8 +4685,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
-        "y": 240,
+        "x": 340,
+        "y": 340,
         "wires": [
             [
                 "1cee4f351bd59563"
@@ -4693,8 +4713,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
-        "y": 240,
+        "x": 160,
+        "y": 340,
         "wires": [
             [
                 "18b035d175d78813"
@@ -4714,8 +4734,8 @@
                 "type": "env"
             }
         ],
-        "x": 610,
-        "y": 240,
+        "x": 370,
+        "y": 260,
         "wires": [
             [
                 "9d0fb43b1d0b583f"
@@ -4749,8 +4769,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 240,
+        "x": 160,
+        "y": 260,
         "wires": [
             [
                 "837774c682b93af9"
@@ -4770,8 +4790,8 @@
                 "type": "env"
             }
         ],
-        "x": 190,
-        "y": 240,
+        "x": 330,
+        "y": 180,
         "wires": [
             [
                 "42529821fe2b55cd"
@@ -4843,7 +4863,8 @@
             "e3599caac9ca8f69",
             "9632421ff2220cf7",
             "e132ff7fd9fda65d",
-            "1209a8480a23b591"
+            "1209a8480a23b591",
+            "831fb3f42898b50f"
         ],
         "x": 175,
         "y": 80,
