@@ -693,9 +693,7 @@
             "74a870cad9944a03"
         ],
         "x": 134,
-        "y": 119,
-        "w": 972,
-        "h": 82
+        "y": 119
     },
     {
         "id": "afbdc8b60c682c85",
@@ -718,61 +716,7 @@
             "40657a16668306c1"
         ],
         "x": 134,
-        "y": 419,
-        "w": 952,
-        "h": 82
-    },
-    {
-        "id": "1ce03cecd5db8bc6",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Turn off main floor lights group using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "07ccb0b07e6fada8",
-            "4baea86ab327a4b9",
-            "ec1b9da9a2a0dde0",
-            "33533dc0ac4ff870",
-            "2efdae9d98c90cf9",
-            "76e95a00d6e3b9ad"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 972,
-        "h": 82
-    },
-    {
-        "id": "3483ce20c1996e6c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor nightlight scene using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3ed1a4d37d1548b4",
-            "53509cbc2f897eb4",
-            "7b10a17dd5bc4c0f",
-            "1462dac4d5543f0a",
-            "c4ad8310f9a121b0",
-            "08d74ad519cdaa27"
-        ],
-        "x": 114,
-        "y": 139,
-        "w": 1012,
-        "h": 82
+        "y": 419
     },
     {
         "id": "e936dbad3fb3b587",
@@ -847,35 +791,7 @@
             "dc1d9849661717f1"
         ],
         "x": 134,
-        "y": 19,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "e1fa765ec5a5ebd7",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor sunset scene using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6cae9b1ccc68cb9e",
-            "8ae7ee0c87df1191",
-            "edc2f01358673517",
-            "76f3eb6c53a0310c",
-            "66b239fbae02c252",
-            "c99382ee9ae33d16"
-        ],
-        "x": 114,
-        "y": 239,
-        "w": 1012,
-        "h": 82
+        "y": 19
     },
     {
         "id": "dd577488786042ba",
@@ -898,9 +814,7 @@
             "ecf996995825cb3e"
         ],
         "x": 134,
-        "y": 319,
-        "w": 972,
-        "h": 82
+        "y": 319
     },
     {
         "id": "0117b53379eade19",
@@ -923,55 +837,7 @@
             "2e85bfabe8b4104b"
         ],
         "x": 134,
-        "y": 219,
-        "w": 952,
-        "h": 82
-    },
-    {
-        "id": "70e9b8db12799d18",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "14e5342cb50f366f",
-            "7df3e5fbd6e9aa8a",
-            "3b5ab296575b53d4"
-        ],
-        "x": 54,
-        "y": 159,
-        "w": 385,
-        "h": 82
-    },
-    {
-        "id": "290b83ef8e01ae0f",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
-        "style": {
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "51bce99c75aa12c6",
-            "f3ab10cd192709b0",
-            "73a1ec5ed8ebc167"
-        ],
-        "x": 54,
-        "y": 59,
-        "w": 732,
-        "h": 82
+        "y": 219
     },
     {
         "id": "87285e6bf01cff03",
@@ -1041,30 +907,6 @@
         "y": 299
     },
     {
-        "id": "665df9d682462b5e",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Listen to events from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8c9d79d2791e9b02",
-            "2d0604f94ef7bff4",
-            "4d2dc9a6e42d0548",
-            "7d283a2fc0d30093"
-        ],
-        "x": 54,
-        "y": 259,
-        "w": 662,
-        "h": 82
-    },
-    {
         "id": "e49c9571ddd5102f",
         "type": "group",
         "z": "6e3ca82457d27245",
@@ -1082,9 +924,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39,
-        "w": 372,
-        "h": 82
+        "y": 39
     },
     {
         "id": "d606b55cf1d68352",
@@ -1147,39 +987,9 @@
             "e132ff7fd9fda65d"
         ],
         "x": 34,
-        "y": 479,
+        "y": 539,
         "w": 962,
         "h": 82
-    },
-    {
-        "id": "6fcea92d03461935",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "Trigger automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "a32b155805bc67e1",
-            "6ad29522816d2642",
-            "7a392cc8b8d9d41b",
-            "1040707d38e17e92",
-            "485df563c6545698",
-            "80170ed6abe053ca",
-            "98e07825f41a09a2",
-            "42a4e6d228c3271f",
-            "f14873e6c525420f",
-            "eff58d8a9acf14dc",
-            "1b5ab2bf7ea37b3b"
-        ],
-        "x": 34,
-        "y": 239,
-        "w": 1142,
-        "h": 222
     },
     {
         "id": "c47c0d5a1854a8ca",
@@ -1206,12 +1016,13 @@
             "f8ff80972c63e5e4",
             "9632421ff2220cf7",
             "5b1c683595897616",
-            "c4b3c06d611b659d"
+            "c4b3c06d611b659d",
+            "a973b3b6450cae23"
         ],
         "x": 34,
         "y": 39,
-        "w": 1102,
-        "h": 182
+        "w": 1262,
+        "h": 242
     },
     {
         "id": "5127a90040340ac3",
@@ -1242,76 +1053,6 @@
         "h": 242
     },
     {
-        "id": "9c46129d149ab201",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Send requests to the Hue API on the Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "df7392117105107f",
-            "df79272de1bce7c1",
-            "0ceb59ac89fb79b7"
-        ],
-        "x": 54,
-        "y": 519,
-        "w": 375,
-        "h": 82
-    },
-    {
-        "id": "648ad874a33c7973",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
-        "style": {
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "497b08f40cd0b29c",
-            "9bcb520fd937694d",
-            "7639b738a201d7c6"
-        ],
-        "x": 54,
-        "y": 419,
-        "w": 712,
-        "h": 82
-    },
-    {
-        "id": "0fc22be05cfc5241",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Listen to events from Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "1209a8480a23b591",
-            "14944e047cba03fa",
-            "5e2f8ae74b053fc9",
-            "a5f013472e32f50c"
-        ],
-        "x": 54,
-        "y": 619,
-        "w": 642,
-        "h": 82
-    },
-    {
         "id": "ca14f3586a7c5f24",
         "type": "group",
         "z": "c7141ffb22d64190",
@@ -1329,9 +1070,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393,
-        "w": 764,
-        "h": 334
+        "y": 393
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1351,9 +1090,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33,
-        "w": 784,
-        "h": 334
+        "y": 33
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1371,9 +1108,7 @@
             "87fbecefe8135d77"
         ],
         "x": 134,
-        "y": 239,
-        "w": 432,
-        "h": 82
+        "y": 239
     },
     {
         "id": "7519b16f6cae8e8a",
@@ -1391,9 +1126,7 @@
             "353e1ccbabccae7f"
         ],
         "x": 134,
-        "y": 139,
-        "w": 392,
-        "h": 82
+        "y": 139
     },
     {
         "id": "1f92bd84e5fc85f2",
@@ -1411,9 +1144,7 @@
             "08c3b6627a851e95"
         ],
         "x": 134,
-        "y": 339,
-        "w": 332,
-        "h": 82
+        "y": 339
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -1449,6 +1180,212 @@
         "y": 373,
         "w": 524,
         "h": 234
+    },
+    {
+        "id": "1ce03cecd5db8bc6",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Turn off main floor lights group using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "07ccb0b07e6fada8",
+            "4baea86ab327a4b9",
+            "ec1b9da9a2a0dde0",
+            "33533dc0ac4ff870",
+            "2efdae9d98c90cf9",
+            "76e95a00d6e3b9ad"
+        ],
+        "x": 114,
+        "y": 39,
+        "w": 972,
+        "h": 82
+    },
+    {
+        "id": "3483ce20c1996e6c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor nightlight scene using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3ed1a4d37d1548b4",
+            "53509cbc2f897eb4",
+            "7b10a17dd5bc4c0f",
+            "1462dac4d5543f0a",
+            "c4ad8310f9a121b0",
+            "08d74ad519cdaa27"
+        ],
+        "x": 114,
+        "y": 139,
+        "w": 1012,
+        "h": 82
+    },
+    {
+        "id": "e1fa765ec5a5ebd7",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor sunset scene using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6cae9b1ccc68cb9e",
+            "8ae7ee0c87df1191",
+            "edc2f01358673517",
+            "76f3eb6c53a0310c",
+            "66b239fbae02c252",
+            "c99382ee9ae33d16"
+        ],
+        "x": 114,
+        "y": 239,
+        "w": 1012,
+        "h": 82
+    },
+    {
+        "id": "70e9b8db12799d18",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "14e5342cb50f366f",
+            "7df3e5fbd6e9aa8a",
+            "3b5ab296575b53d4"
+        ],
+        "x": 54,
+        "y": 159
+    },
+    {
+        "id": "290b83ef8e01ae0f",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "51bce99c75aa12c6",
+            "f3ab10cd192709b0",
+            "73a1ec5ed8ebc167"
+        ],
+        "x": 54,
+        "y": 59
+    },
+    {
+        "id": "665df9d682462b5e",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Listen to events from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8c9d79d2791e9b02",
+            "2d0604f94ef7bff4",
+            "4d2dc9a6e42d0548",
+            "7d283a2fc0d30093"
+        ],
+        "x": 54,
+        "y": 259
+    },
+    {
+        "id": "9c46129d149ab201",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Send requests to the Hue API on the Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "df7392117105107f",
+            "df79272de1bce7c1",
+            "0ceb59ac89fb79b7"
+        ],
+        "x": 54,
+        "y": 519
+    },
+    {
+        "id": "648ad874a33c7973",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "497b08f40cd0b29c",
+            "9bcb520fd937694d",
+            "7639b738a201d7c6"
+        ],
+        "x": 54,
+        "y": 419
+    },
+    {
+        "id": "0fc22be05cfc5241",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Listen to events from Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1209a8480a23b591",
+            "14944e047cba03fa",
+            "5e2f8ae74b053fc9",
+            "a5f013472e32f50c"
+        ],
+        "x": 54,
+        "y": 619
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1495,6 +1432,36 @@
         "y": 399,
         "w": 472,
         "h": 82
+    },
+    {
+        "id": "6fcea92d03461935",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Trigger automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "a32b155805bc67e1",
+            "6ad29522816d2642",
+            "7a392cc8b8d9d41b",
+            "1040707d38e17e92",
+            "485df563c6545698",
+            "80170ed6abe053ca",
+            "98e07825f41a09a2",
+            "42a4e6d228c3271f",
+            "f14873e6c525420f",
+            "eff58d8a9acf14dc",
+            "1b5ab2bf7ea37b3b"
+        ],
+        "x": 34,
+        "y": 299,
+        "w": 1142,
+        "h": 222
     },
     {
         "id": "e79e0110c2317edb",
@@ -2921,14 +2888,14 @@
         "joinerType": "str",
         "accumulate": true,
         "timeout": "",
-        "count": "2",
+        "count": "3",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 470,
-        "y": 120,
+        "x": 610,
+        "y": 160,
         "wires": [
             [
                 "988129e9c60e8818"
@@ -2941,14 +2908,14 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "time",
-        "func": "const theme = msg.payload.theme\nconst now = msg.payload.suncalc.now\nconst sunrise = msg.payload.suncalc.sunrise\nconst sunset = msg.payload.suncalc.sunset\n\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\n\nlet bedtime = 1320 + 30 - Math.floor(Math.random() * 60)\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n}\n\nlet next = 0\n\nif (now < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (now < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (now < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (now < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (now < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.theme + ' | ' + msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nmsg.qos = 2\nmsg.retain = true\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) }\n]",
+        "func": "const theme = msg.payload.theme\nconst now = msg.payload.suncalc.now\nconst sunrise = msg.payload.suncalc.sunrise\nconst sunset = msg.payload.suncalc.sunset\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet bedtime = msg.payload.bedtime\nlet next = 0\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n}\n\nif (now < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (now < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (now < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (now < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (now < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.theme + ' | ' + msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) }\n]",
         "outputs": 3,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 120,
+        "x": 730,
+        "y": 160,
         "wires": [
             [
                 "2b8c13ac83688f8f"
@@ -2973,8 +2940,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "topic",
-        "x": 730,
-        "y": 80,
+        "x": 870,
+        "y": 120,
         "wires": [
             [
                 "949418271b11ff8d"
@@ -2987,15 +2954,15 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "",
-        "func": "rbe",
+        "func": "rbei",
         "gap": "",
         "start": "",
         "inout": "out",
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 850,
-        "y": 80,
+        "x": 990,
+        "y": 120,
         "wires": [
             [
                 "f8ff80972c63e5e4"
@@ -3019,7 +2986,7 @@
                 "module": "suncalc"
             }
         ],
-        "x": 320,
+        "x": 420,
         "y": 80,
         "wires": [
             [
@@ -3039,8 +3006,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 160,
+        "x": 410,
+        "y": 240,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
@@ -3065,7 +3032,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 260,
         "y": 80,
         "wires": [
             [
@@ -3091,11 +3058,12 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 180,
+        "x": 160,
+        "y": 240,
         "wires": [
             [
-                "5ff4bae9f4359b40"
+                "5ff4bae9f4359b40",
+                "a973b3b6450cae23"
             ]
         ]
     },
@@ -3117,182 +3085,12 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
-        "y": 140,
+        "x": 180,
+        "y": 160,
         "wires": [
             [
-                "5ff4bae9f4359b40"
-            ]
-        ]
-    },
-    {
-        "id": "a32b155805bc67e1",
-        "type": "mqtt in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "",
-        "topic": "nodered/automation/time",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 350,
-        "y": 300,
-        "wires": [
-            [
-                "485df563c6545698"
-            ]
-        ]
-    },
-    {
-        "id": "6ad29522816d2642",
-        "type": "mqtt in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "",
-        "topic": "nodered/automation/theme",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 170,
-        "y": 380,
-        "wires": [
-            [
-                "7a392cc8b8d9d41b"
-            ]
-        ]
-    },
-    {
-        "id": "7a392cc8b8d9d41b",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "theme",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 380,
-        "wires": [
-            [
-                "485df563c6545698",
-                "42a4e6d228c3271f"
-            ]
-        ]
-    },
-    {
-        "id": "1040707d38e17e92",
-        "type": "debug",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "time",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "payload",
-        "statusType": "auto",
-        "x": 830,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "485df563c6545698",
-        "type": "join",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 550,
-        "y": 340,
-        "wires": [
-            [
-                "80170ed6abe053ca"
-            ]
-        ]
-    },
-    {
-        "id": "80170ed6abe053ca",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "time",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.nodered/automation/time",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 670,
-        "y": 340,
-        "wires": [
-            [
-                "98e07825f41a09a2",
-                "1040707d38e17e92",
-                "f14873e6c525420f"
-            ]
-        ]
-    },
-    {
-        "id": "98e07825f41a09a2",
-        "type": "rbe",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "",
-        "func": "rbei",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 830,
-        "y": 400,
-        "wires": [
-            [
-                "1b5ab2bf7ea37b3b"
+                "5ff4bae9f4359b40",
+                "a973b3b6450cae23"
             ]
         ]
     },
@@ -3309,6 +3107,20 @@
                 "pt": "msg",
                 "to": "'nodered/automation/' & topic",
                 "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -3316,8 +3128,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 990,
-        "y": 80,
+        "x": 1140,
+        "y": 120,
         "wires": [
             [
                 "9632421ff2220cf7"
@@ -3334,8 +3146,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 1095,
-        "y": 80,
+        "x": 1255,
+        "y": 120,
         "wires": []
     },
     {
@@ -3352,60 +3164,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 740,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "42a4e6d228c3271f",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "group": "25c7f0078ed443dd",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Theme",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 560,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "f14873e6c525420f",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "group": "25c7f0078ed443dd",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Time",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 830,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "eff58d8a9acf14dc",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "trigger timed automation",
-        "mode": "link",
-        "links": [
-            "1993fd8165053adf",
-            "0514602b711a8136",
-            "9b03415246d198b8"
-        ],
-        "x": 1135,
-        "y": 400,
+        "x": 880,
+        "y": 160,
         "wires": []
     },
     {
@@ -3436,7 +3196,7 @@
         "animate": false,
         "className": "",
         "x": 650,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "e8c24318deea03a7"
@@ -3458,7 +3218,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "dcf3dd8ab9591427"
@@ -3486,7 +3246,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "691d69a66ea96aa7"
@@ -3528,7 +3288,7 @@
         "to": "",
         "reg": false,
         "x": 840,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "e132ff7fd9fda65d"
@@ -3546,7 +3306,248 @@
             "dd7609e91ad64f63"
         ],
         "x": 955,
-        "y": 520,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c4b3c06d611b659d",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Next",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 870,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a32b155805bc67e1",
+        "type": "mqtt in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "",
+        "topic": "nodered/automation/time",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "485df563c6545698"
+            ]
+        ]
+    },
+    {
+        "id": "6ad29522816d2642",
+        "type": "mqtt in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "",
+        "topic": "nodered/automation/theme",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "7a392cc8b8d9d41b"
+            ]
+        ]
+    },
+    {
+        "id": "7a392cc8b8d9d41b",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "theme",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "485df563c6545698",
+                "42a4e6d228c3271f"
+            ]
+        ]
+    },
+    {
+        "id": "1040707d38e17e92",
+        "type": "debug",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "time",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "msg",
+        "x": 830,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "485df563c6545698",
+        "type": "join",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "80170ed6abe053ca"
+            ]
+        ]
+    },
+    {
+        "id": "80170ed6abe053ca",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "time",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.nodered/automation/time",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "1040707d38e17e92",
+                "98e07825f41a09a2",
+                "f14873e6c525420f"
+            ]
+        ]
+    },
+    {
+        "id": "98e07825f41a09a2",
+        "type": "rbe",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload",
+        "topi": "topic",
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "1b5ab2bf7ea37b3b"
+            ]
+        ]
+    },
+    {
+        "id": "42a4e6d228c3271f",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "group": "25c7f0078ed443dd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Theme",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 560,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "f14873e6c525420f",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "group": "25c7f0078ed443dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 830,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "eff58d8a9acf14dc",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "6fcea92d03461935",
+        "name": "trigger timed automation",
+        "mode": "link",
+        "links": [
+            "1993fd8165053adf",
+            "0514602b711a8136",
+            "9b03415246d198b8"
+        ],
+        "x": 1135,
+        "y": 460,
         "wires": []
     },
     {
@@ -3566,7 +3567,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1000,
-        "y": 400,
+        "y": 460,
         "wires": [
             [
                 "eff58d8a9acf14dc"
@@ -3574,22 +3575,24 @@
         ]
     },
     {
-        "id": "c4b3c06d611b659d",
-        "type": "ui_text",
+        "id": "a973b3b6450cae23",
+        "type": "function",
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
-        "group": "25c7f0078ed443dd",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Next",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 730,
+        "name": "bedtime",
+        "func": "msg.payload = 1320 + 30 - Math.floor(Math.random() * 60)\nmsg.topic = 'bedtime'\n\nnode.status({\n    text: msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
         "y": 160,
-        "wires": []
+        "wires": [
+            [
+                "ab3a2e383ee84b6a"
+            ]
+        ]
     },
     {
         "id": "061d8c40c8ed16ab",
