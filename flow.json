@@ -743,9 +743,7 @@
             "e270017761dfd27d"
         ],
         "x": 114,
-        "y": 19,
-        "w": 682,
-        "h": 262
+        "y": 19
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -769,9 +767,7 @@
             "18b035d175d78813"
         ],
         "x": 34,
-        "y": 139,
-        "w": 632,
-        "h": 242
+        "y": 139
     },
     {
         "id": "2238e89a8f0c976d",
@@ -857,9 +853,7 @@
             "618e79a58ab8143a"
         ],
         "x": 34,
-        "y": 39,
-        "w": 362,
-        "h": 82
+        "y": 39
     },
     {
         "id": "7176639d06e51ae4",
@@ -993,12 +987,14 @@
             "9632421ff2220cf7",
             "5b1c683595897616",
             "c4b3c06d611b659d",
-            "a973b3b6450cae23"
+            "a973b3b6450cae23",
+            "2b7a1ef828efef4d",
+            "14f2fab525a14e1b"
         ],
-        "x": 34,
+        "x": 14,
         "y": 39,
-        "w": 1262,
-        "h": 202
+        "w": 1282,
+        "h": 242
     },
     {
         "id": "5127a90040340ac3",
@@ -1024,9 +1020,7 @@
             "7dc69e2eedc7a34e"
         ],
         "x": 114,
-        "y": 299,
-        "w": 892,
-        "h": 242
+        "y": 299
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -1046,9 +1040,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393,
-        "w": 764,
-        "h": 334
+        "y": 393
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1068,9 +1060,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33,
-        "w": 784,
-        "h": 334
+        "y": 33
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1182,8 +1172,8 @@
             "eff58d8a9acf14dc",
             "1b5ab2bf7ea37b3b"
         ],
-        "x": 34,
-        "y": 259,
+        "x": 14,
+        "y": 299,
         "w": 1142,
         "h": 222
     },
@@ -1207,9 +1197,7 @@
             "831fb3f42898b50f"
         ],
         "x": 114,
-        "y": 559,
-        "w": 962,
-        "h": 82
+        "y": 559
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1302,9 +1290,7 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 159,
-        "w": 385,
-        "h": 82
+        "y": 159
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1325,9 +1311,7 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 59,
-        "w": 732,
-        "h": 82
+        "y": 59
     },
     {
         "id": "665df9d682462b5e",
@@ -1349,9 +1333,7 @@
             "7d283a2fc0d30093"
         ],
         "x": 54,
-        "y": 259,
-        "w": 662,
-        "h": 82
+        "y": 259
     },
     {
         "id": "9c46129d149ab201",
@@ -1372,9 +1354,7 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 519,
-        "w": 375,
-        "h": 82
+        "y": 519
     },
     {
         "id": "648ad874a33c7973",
@@ -1395,9 +1375,7 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 419,
-        "w": 712,
-        "h": 82
+        "y": 419
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1419,9 +1397,7 @@
             "a5f013472e32f50c"
         ],
         "x": 54,
-        "y": 619,
-        "w": 642,
-        "h": 82
+        "y": 619
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -2896,8 +2872,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 610,
-        "y": 140,
+        "x": 590,
+        "y": 160,
         "wires": [
             [
                 "988129e9c60e8818"
@@ -2910,14 +2886,14 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "time",
-        "func": "const theme = msg.payload.theme\nconst now = msg.payload.times.now\nconst sunrise = msg.payload.times.sunrise\nconst sunset = msg.payload.times.sunset\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet bedtime = msg.payload.bedtime\nlet next = 0\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n    bedtime: bedtime\n}\n\nif (now < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (now < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (now < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (now < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (now < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.theme + ' | ' + msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) }\n]",
-        "outputs": 3,
+        "func": "const theme = msg.payload.theme\nconst now = msg.payload.times.now\nconst sunrise = msg.payload.times.sunrise\nconst sunset = msg.payload.times.sunset\nconst altitude = msg.payload.times.altitude\nconst azimuth = msg.payload.times.azimuth\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet bedtime = msg.payload.bedtime\nlet next = 0\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n    bedtime: bedtime\n}\n\nif (now < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (now < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (now < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (now < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (now < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.theme + ' | ' + msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) },\n    { payload: altitude },\n    { payload: azimuth }\n]",
+        "outputs": 5,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
-        "y": 140,
+        "x": 710,
+        "y": 160,
         "wires": [
             [
                 "2b8c13ac83688f8f"
@@ -2927,7 +2903,20 @@
             ],
             [
                 "c4b3c06d611b659d"
+            ],
+            [
+                "2b7a1ef828efef4d"
+            ],
+            [
+                "14f2fab525a14e1b"
             ]
+        ],
+        "outputLabels": [
+            "times",
+            "bedtime",
+            "next",
+            "altitude",
+            "azimuth"
         ]
     },
     {
@@ -2943,7 +2932,7 @@
         "stream": false,
         "addname": "topic",
         "x": 870,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "949418271b11ff8d"
@@ -2964,7 +2953,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 990,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "f8ff80972c63e5e4"
@@ -2977,7 +2966,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "suncalc",
-        "func": "/*global suncalc*/\n\nconst time = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(time, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.topic = 'times'\nmsg.payload = {\n    now: toMinutes(time),\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset)\n}\n\nnode.status({\n    text: msg.payload.now,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
+        "func": "/*global suncalc*/\n\nconst time = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(time, latitude, longitude)\nconst position = suncalc.getPosition(time, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.topic = 'times'\nmsg.payload = {\n    now: toMinutes(time),\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nnode.status({\n    text: msg.payload.now,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2988,8 +2977,8 @@
                 "module": "suncalc"
             }
         ],
-        "x": 420,
-        "y": 200,
+        "x": 400,
+        "y": 220,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
@@ -3008,8 +2997,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 80,
+        "x": 390,
+        "y": 100,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
@@ -3034,8 +3023,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 260,
-        "y": 200,
+        "x": 240,
+        "y": 220,
         "wires": [
             [
                 "2d3be9b7292dd6fd"
@@ -3060,8 +3049,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 80,
+        "x": 140,
+        "y": 100,
         "wires": [
             [
                 "5ff4bae9f4359b40",
@@ -3087,8 +3076,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 140,
+        "x": 160,
+        "y": 160,
         "wires": [
             [
                 "5ff4bae9f4359b40",
@@ -3131,7 +3120,7 @@
         "to": "",
         "reg": false,
         "x": 1140,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "9632421ff2220cf7"
@@ -3149,7 +3138,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 1255,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -3167,7 +3156,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 880,
-        "y": 140,
+        "y": 120,
         "wires": []
     },
     {
@@ -3185,7 +3174,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 870,
-        "y": 180,
+        "y": 160,
         "wires": []
     },
     {
@@ -3202,8 +3191,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 350,
-        "y": 320,
+        "x": 330,
+        "y": 360,
         "wires": [
             [
                 "485df563c6545698"
@@ -3224,8 +3213,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 400,
+        "x": 150,
+        "y": 440,
         "wires": [
             [
                 "7a392cc8b8d9d41b"
@@ -3252,8 +3241,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 380,
-        "y": 400,
+        "x": 360,
+        "y": 440,
         "wires": [
             [
                 "485df563c6545698",
@@ -3275,8 +3264,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "msg",
-        "x": 830,
-        "y": 300,
+        "x": 810,
+        "y": 340,
         "wires": []
     },
     {
@@ -3300,8 +3289,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 550,
-        "y": 360,
+        "x": 530,
+        "y": 400,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3328,8 +3317,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 670,
-        "y": 360,
+        "x": 650,
+        "y": 400,
         "wires": [
             [
                 "1040707d38e17e92",
@@ -3351,8 +3340,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 830,
-        "y": 420,
+        "x": 810,
+        "y": 460,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -3373,8 +3362,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 560,
-        "y": 440,
+        "x": 540,
+        "y": 480,
         "wires": []
     },
     {
@@ -3391,8 +3380,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 830,
-        "y": 360,
+        "x": 810,
+        "y": 400,
         "wires": []
     },
     {
@@ -3407,8 +3396,8 @@
             "0514602b711a8136",
             "9b03415246d198b8"
         ],
-        "x": 1135,
-        "y": 420,
+        "x": 1115,
+        "y": 460,
         "wires": []
     },
     {
@@ -3427,8 +3416,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1000,
-        "y": 420,
+        "x": 980,
+        "y": 460,
         "wires": [
             [
                 "eff58d8a9acf14dc"
@@ -3447,13 +3436,49 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 140,
+        "x": 400,
+        "y": 160,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
             ]
         ]
+    },
+    {
+        "id": "2b7a1ef828efef4d",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Altitude",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 880,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "14f2fab525a14e1b",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Azimuth",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 880,
+        "y": 240,
+        "wires": []
     },
     {
         "id": "061d8c40c8ed16ab",
@@ -3947,7 +3972,7 @@
         "label": "Enable",
         "tooltip": "",
         "group": "25c7f0078ed443dd",
-        "order": 6,
+        "order": 7,
         "width": 0,
         "height": 0,
         "passthru": false,
