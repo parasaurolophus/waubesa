@@ -743,7 +743,9 @@
             "e270017761dfd27d"
         ],
         "x": 114,
-        "y": 19
+        "y": 19,
+        "w": 682,
+        "h": 262
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -767,7 +769,9 @@
             "18b035d175d78813"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 632,
+        "h": 242
     },
     {
         "id": "2238e89a8f0c976d",
@@ -853,7 +857,9 @@
             "618e79a58ab8143a"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 362,
+        "h": 82
     },
     {
         "id": "7176639d06e51ae4",
@@ -1021,7 +1027,9 @@
             "7dc69e2eedc7a34e"
         ],
         "x": 114,
-        "y": 299
+        "y": 299,
+        "w": 892,
+        "h": 242
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -1164,7 +1172,6 @@
             "a32b155805bc67e1",
             "6ad29522816d2642",
             "7a392cc8b8d9d41b",
-            "1040707d38e17e92",
             "485df563c6545698",
             "80170ed6abe053ca",
             "98e07825f41a09a2",
@@ -1175,8 +1182,8 @@
         ],
         "x": 14,
         "y": 319,
-        "w": 1142,
-        "h": 222
+        "w": 1122,
+        "h": 202
     },
     {
         "id": "b36cfe5d709eea6c",
@@ -1198,7 +1205,9 @@
             "831fb3f42898b50f"
         ],
         "x": 114,
-        "y": 559
+        "y": 559,
+        "w": 962,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -2887,7 +2896,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "time",
-        "func": "const theme = msg.payload.suncalc.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.suncalc.sunrise\nconst sunset = msg.payload.suncalc.sunset\nconst altitude = msg.payload.suncalc.altitude\nconst azimuth = msg.payload.suncalc.azimuth\nconst max = msg.payload.suncalc.max\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet bedtime = msg.payload.suncalc.bedtime\nlet next = 0\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n    bedtime: bedtime\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) },\n    { payload: altitude },\n    { payload: azimuth },\n    { payload: max.time.toLocaleString() }\n]",
+        "func": "const theme = msg.payload.suncalc.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.suncalc.sunrise\nconst sunset = msg.payload.suncalc.sunset\nconst bedtime = msg.payload.suncalc.bedtime\nconst altitude = msg.payload.suncalc.altitude\nconst azimuth = msg.payload.suncalc.azimuth\nconst max = msg.payload.suncalc.max\nconst offset = msg.payload.suncalc.offset\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet next = 0\n\nmsg.payload = {\n    theme: theme,\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) },\n    { payload: altitude },\n    { payload: azimuth },\n    { payload: max.time.toLocaleString() }\n]",
         "outputs": 6,
         "noerr": 0,
         "initialize": "",
@@ -3154,7 +3163,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 330,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "485df563c6545698"
@@ -3176,7 +3185,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "7a392cc8b8d9d41b"
@@ -3204,31 +3213,13 @@
         "to": "",
         "reg": false,
         "x": 360,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "485df563c6545698",
                 "42a4e6d228c3271f"
             ]
         ]
-    },
-    {
-        "id": "1040707d38e17e92",
-        "type": "debug",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "time",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload",
-        "statusType": "msg",
-        "x": 810,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "485df563c6545698",
@@ -3252,7 +3243,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 530,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3280,10 +3271,9 @@
         "to": "",
         "reg": false,
         "x": 650,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
-                "1040707d38e17e92",
                 "98e07825f41a09a2",
                 "f14873e6c525420f"
             ]
@@ -3302,8 +3292,8 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 810,
-        "y": 480,
+        "x": 790,
+        "y": 440,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -3325,7 +3315,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 540,
-        "y": 500,
+        "y": 480,
         "wires": []
     },
     {
@@ -3342,8 +3332,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 810,
-        "y": 420,
+        "x": 790,
+        "y": 360,
         "wires": []
     },
     {
@@ -3358,8 +3348,8 @@
             "0514602b711a8136",
             "9b03415246d198b8"
         ],
-        "x": 1115,
-        "y": 480,
+        "x": 1095,
+        "y": 440,
         "wires": []
     },
     {
@@ -3378,8 +3368,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 980,
-        "y": 480,
+        "x": 960,
+        "y": 440,
         "wires": [
             [
                 "eff58d8a9acf14dc"
@@ -3476,7 +3466,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "bedtime",
-        "func": "msg.payload.bedtime = 1320 + 30 - Math.floor(Math.random() * 60)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.bedtime\n})\n\nreturn msg",
+        "func": "msg.payload.offset = Math.floor((msg.payload.sunset - msg.payload.sunrise) / 3)\nmsg.payload.bedtime = 1320 + 30 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    msg.payload.bedtime = msg.payload.sunset + offset\n\n}\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.bedtime + ' | ' + msg.payload.offset\n})\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
