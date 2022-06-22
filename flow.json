@@ -978,8 +978,6 @@
             "988129e9c60e8818",
             "2b8c13ac83688f8f",
             "949418271b11ff8d",
-            "2d3be9b7292dd6fd",
-            "5ff4bae9f4359b40",
             "f5b1881692fec9a3",
             "b0a75d84b9e77154",
             "20d4be0a2f8674c6",
@@ -987,14 +985,17 @@
             "9632421ff2220cf7",
             "5b1c683595897616",
             "c4b3c06d611b659d",
-            "a973b3b6450cae23",
             "2b7a1ef828efef4d",
-            "14f2fab525a14e1b"
+            "14f2fab525a14e1b",
+            "98e7ed1f2c05288a",
+            "5fac34f9af434070",
+            "d15bbd8a68aa299e",
+            "42752c4efec0e7d9"
         ],
         "x": 14,
-        "y": 39,
-        "w": 1282,
-        "h": 242
+        "y": 19,
+        "w": 1422,
+        "h": 282
     },
     {
         "id": "5127a90040340ac3",
@@ -1173,7 +1174,7 @@
             "1b5ab2bf7ea37b3b"
         ],
         "x": 14,
-        "y": 299,
+        "y": 319,
         "w": 1142,
         "h": 222
     },
@@ -2866,13 +2867,13 @@
         "joinerType": "str",
         "accumulate": true,
         "timeout": "",
-        "count": "3",
+        "count": "2",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 590,
+        "x": 710,
         "y": 160,
         "wires": [
             [
@@ -2886,13 +2887,13 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "time",
-        "func": "const theme = msg.payload.theme\nconst now = msg.payload.times.now\nconst sunrise = msg.payload.times.sunrise\nconst sunset = msg.payload.times.sunset\nconst altitude = msg.payload.times.altitude\nconst azimuth = msg.payload.times.azimuth\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet bedtime = msg.payload.bedtime\nlet next = 0\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n    bedtime: bedtime\n}\n\nif (now < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (now < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (now < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (now < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (now < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.theme + ' | ' + msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) },\n    { payload: altitude },\n    { payload: azimuth }\n]",
-        "outputs": 5,
+        "func": "const theme = msg.payload.suncalc.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.suncalc.sunrise\nconst sunset = msg.payload.suncalc.sunset\nconst altitude = msg.payload.suncalc.altitude\nconst azimuth = msg.payload.suncalc.azimuth\nconst max = msg.payload.suncalc.max\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\nlet bedtime = msg.payload.suncalc.bedtime\nlet next = 0\n\nif (bedtime <= sunset) {\n\n    const offset = 30 + Math.floor(Math.random() * 30)\n    bedtime = sunset + offset\n\n}\n\nmsg.payload = {\n    theme: theme,\n    bedtime: bedtime\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n    next = midday\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n    next = afternoon\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n    next = sunset\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n    next = bedtime\n\n} else {\n\n    msg.payload.time = 'night'\n    next = sunrise\n\n}\n\nnode.status({\n    text: msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = String(Math.floor(minutes / 60))\n    const m = String(minutes % 60).padStart(2, '0')\n\n    return h + ':' + m\n\n}\n\nreturn [\n    msg,\n    { payload: formatMinutes(bedtime) },\n    { payload: formatMinutes(next) },\n    { payload: altitude },\n    { payload: azimuth },\n    { payload: max.time.toLocaleString() }\n]",
+        "outputs": 6,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 830,
         "y": 160,
         "wires": [
             [
@@ -2909,6 +2910,9 @@
             ],
             [
                 "14f2fab525a14e1b"
+            ],
+            [
+                "42752c4efec0e7d9"
             ]
         ],
         "outputLabels": [
@@ -2916,7 +2920,8 @@
             "bedtime",
             "next",
             "altitude",
-            "azimuth"
+            "azimuth",
+            "max"
         ]
     },
     {
@@ -2931,8 +2936,8 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "topic",
-        "x": 870,
-        "y": 80,
+        "x": 1010,
+        "y": 60,
         "wires": [
             [
                 "949418271b11ff8d"
@@ -2952,56 +2957,11 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 990,
-        "y": 80,
+        "x": 1130,
+        "y": 60,
         "wires": [
             [
                 "f8ff80972c63e5e4"
-            ]
-        ]
-    },
-    {
-        "id": "2d3be9b7292dd6fd",
-        "type": "function",
-        "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
-        "name": "suncalc",
-        "func": "/*global suncalc*/\n\nconst time = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(time, latitude, longitude)\nconst position = suncalc.getPosition(time, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.topic = 'times'\nmsg.payload = {\n    now: toMinutes(time),\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nnode.status({\n    text: msg.payload.now,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "suncalc",
-                "module": "suncalc"
-            }
-        ],
-        "x": 400,
-        "y": 220,
-        "wires": [
-            [
-                "ab3a2e383ee84b6a"
-            ]
-        ]
-    },
-    {
-        "id": "5ff4bae9f4359b40",
-        "type": "function",
-        "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
-        "name": "theme",
-        "func": "const now = new Date(msg.payload)\nconst month = now.getMonth() + 1\nconst day = now.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload = 'jolly'\n\n} else {\n\n    msg.payload = 'standard'\n\n}\n\nnode.status({\n    text: msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nmsg.topic = 'theme'\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 390,
-        "y": 100,
-        "wires": [
-            [
-                "ab3a2e383ee84b6a"
             ]
         ]
     },
@@ -3014,20 +2974,24 @@
         "props": [
             {
                 "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
             }
         ],
         "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
-        "topic": "",
+        "topic": "now",
         "payload": "",
         "payloadType": "date",
-        "x": 240,
-        "y": 220,
+        "x": 540,
+        "y": 120,
         "wires": [
             [
-                "2d3be9b7292dd6fd"
+                "ab3a2e383ee84b6a"
             ]
         ]
     },
@@ -3050,11 +3014,10 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 100,
+        "y": 220,
         "wires": [
             [
-                "5ff4bae9f4359b40",
-                "a973b3b6450cae23"
+                "98e7ed1f2c05288a"
             ]
         ]
     },
@@ -3077,11 +3040,10 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
-                "5ff4bae9f4359b40",
-                "a973b3b6450cae23"
+                "98e7ed1f2c05288a"
             ]
         ]
     },
@@ -3119,8 +3081,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1140,
-        "y": 80,
+        "x": 1280,
+        "y": 60,
         "wires": [
             [
                 "9632421ff2220cf7"
@@ -3137,8 +3099,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 1255,
-        "y": 80,
+        "x": 1395,
+        "y": 60,
         "wires": []
     },
     {
@@ -3155,8 +3117,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 880,
-        "y": 120,
+        "x": 1020,
+        "y": 100,
         "wires": []
     },
     {
@@ -3173,8 +3135,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 870,
-        "y": 160,
+        "x": 1010,
+        "y": 140,
         "wires": []
     },
     {
@@ -3192,7 +3154,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 330,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "485df563c6545698"
@@ -3214,7 +3176,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "7a392cc8b8d9d41b"
@@ -3242,7 +3204,7 @@
         "to": "",
         "reg": false,
         "x": 360,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
                 "485df563c6545698",
@@ -3265,7 +3227,7 @@
         "statusVal": "payload",
         "statusType": "msg",
         "x": 810,
-        "y": 340,
+        "y": 360,
         "wires": []
     },
     {
@@ -3290,7 +3252,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 530,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3318,7 +3280,7 @@
         "to": "",
         "reg": false,
         "x": 650,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "1040707d38e17e92",
@@ -3341,7 +3303,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 810,
-        "y": 460,
+        "y": 480,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -3363,7 +3325,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 540,
-        "y": 480,
+        "y": 500,
         "wires": []
     },
     {
@@ -3381,7 +3343,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 810,
-        "y": 400,
+        "y": 420,
         "wires": []
     },
     {
@@ -3397,7 +3359,7 @@
             "9b03415246d198b8"
         ],
         "x": 1115,
-        "y": 460,
+        "y": 480,
         "wires": []
     },
     {
@@ -3417,30 +3379,10 @@
         "repair": false,
         "outputs": 1,
         "x": 980,
-        "y": 460,
+        "y": 480,
         "wires": [
             [
                 "eff58d8a9acf14dc"
-            ]
-        ]
-    },
-    {
-        "id": "a973b3b6450cae23",
-        "type": "function",
-        "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
-        "name": "bedtime",
-        "func": "msg.payload = 1320 + 30 - Math.floor(Math.random() * 60)\nmsg.topic = 'bedtime'\n\nnode.status({\n    text: msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 160,
-        "wires": [
-            [
-                "ab3a2e383ee84b6a"
             ]
         ]
     },
@@ -3458,8 +3400,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 880,
-        "y": 200,
+        "x": 1020,
+        "y": 180,
         "wires": []
     },
     {
@@ -3476,8 +3418,94 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 880,
-        "y": 240,
+        "x": 1020,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "98e7ed1f2c05288a",
+        "type": "function",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "name": "suncalc",
+        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\nconst position = suncalc.getPosition(date, latitude, longitude)\nconst start = times.sunrise.getTime()\nconst end = times.sunset.getTime()\nconst positions = []\n\nfor (let minute = start; minute < end; minute += 60000) {\n\n    const time = new Date(minute)\n    const position = suncalc.getPosition(time, latitude, longitude)\n\n    positions.push({\n        time: time,\n        altitude: position.altitude,\n        azimuth: position.azimuth\n    })\n}\n\nlet max = positions[0]\n\nfor (let index = 0; index < positions.length; ++index) {\n\n    const current = positions[index]\n\n    if (current.altitude >= max.altitude) {\n\n        max = current\n\n    }\n}\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    date: date,\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n    altitude: position.altitude,\n    azimuth: position.azimuth,\n    max: max\n}\n\nmsg.topic = 'suncalc'\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: msg.payload.max.altitude\n});\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "suncalc",
+                "module": "suncalc"
+            }
+        ],
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "5fac34f9af434070"
+            ]
+        ],
+        "outputLabels": [
+            "minmax"
+        ]
+    },
+    {
+        "id": "5fac34f9af434070",
+        "type": "function",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "name": "theme",
+        "func": "const date = msg.payload.date\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "d15bbd8a68aa299e"
+            ]
+        ]
+    },
+    {
+        "id": "d15bbd8a68aa299e",
+        "type": "function",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "name": "bedtime",
+        "func": "msg.payload.bedtime = 1320 + 30 - Math.floor(Math.random() * 60)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.bedtime\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 200,
+        "wires": [
+            [
+                "ab3a2e383ee84b6a"
+            ]
+        ]
+    },
+    {
+        "id": "42752c4efec0e7d9",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Max",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 260,
         "wires": []
     },
     {
@@ -3972,7 +4000,7 @@
         "label": "Enable",
         "tooltip": "",
         "group": "25c7f0078ed443dd",
-        "order": 7,
+        "order": 8,
         "width": 0,
         "height": 0,
         "passthru": false,
