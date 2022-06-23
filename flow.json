@@ -1030,10 +1030,11 @@
         "name": "Basement Hue",
         "style": {
             "label": true,
-            "stroke": "#000000",
-            "fill-opacity": "0.1",
+            "stroke": "none",
+            "fill-opacity": "0.05",
             "color": "#000000",
-            "stroke-opacity": "0.4"
+            "stroke-opacity": "0.4",
+            "fill": "#000000"
         },
         "nodes": [
             "9c46129d149ab201",
@@ -1041,7 +1042,9 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393
+        "y": 393,
+        "w": 764,
+        "h": 334
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1049,11 +1052,12 @@
         "z": "c7141ffb22d64190",
         "name": "Chez Nous Main",
         "style": {
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000",
-            "stroke": "#000000",
-            "stroke-opacity": "0.4"
+            "stroke": "none",
+            "stroke-opacity": "0.4",
+            "fill": "#000000"
         },
         "nodes": [
             "70e9b8db12799d18",
@@ -1061,7 +1065,9 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33
+        "y": 33,
+        "w": 784,
+        "h": 334
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1129,7 +1135,11 @@
         "z": "e44149a93fbe9b1b",
         "name": "Main Floor",
         "style": {
-            "label": true
+            "label": true,
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "color": "#000000"
         },
         "nodes": [
             "1ce03cecd5db8bc6",
@@ -1147,7 +1157,11 @@
         "z": "e44149a93fbe9b1b",
         "name": "Main Bathroom",
         "style": {
-            "label": true
+            "label": true,
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "color": "#000000"
         },
         "nodes": [
             "00ad2b71a9c29a21",
@@ -1191,7 +1205,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1217,7 +1231,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1243,7 +1257,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1269,7 +1283,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1279,7 +1293,9 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 159
+        "y": 159,
+        "w": 385,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1288,7 +1304,7 @@
         "g": "46f2fb3ee016fe23",
         "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
         "style": {
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000",
             "stroke": "none",
@@ -1300,7 +1316,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 59
+        "y": 59,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1311,7 +1329,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1322,7 +1340,9 @@
             "7d283a2fc0d30093"
         ],
         "x": 54,
-        "y": 259
+        "y": 259,
+        "w": 662,
+        "h": 82
     },
     {
         "id": "9c46129d149ab201",
@@ -1333,7 +1353,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1343,7 +1363,9 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 519
+        "y": 519,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "648ad874a33c7973",
@@ -1352,7 +1374,7 @@
         "g": "ca14f3586a7c5f24",
         "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
         "style": {
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000",
             "stroke": "none",
@@ -1364,7 +1386,9 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 419
+        "y": 419,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1375,7 +1399,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1386,7 +1410,9 @@
             "a5f013472e32f50c"
         ],
         "x": 54,
-        "y": 619
+        "y": 619,
+        "w": 642,
+        "h": 82
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1397,7 +1423,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -1420,7 +1446,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
@@ -3439,7 +3465,7 @@
         "type": "link in",
         "z": "63d8cb10398da04b",
         "g": "e936dbad3fb3b587",
-        "name": "lighting",
+        "name": "lighting automation",
         "links": [
             "eff58d8a9acf14dc"
         ],
