@@ -743,9 +743,7 @@
             "e270017761dfd27d"
         ],
         "x": 94,
-        "y": 499,
-        "w": 682,
-        "h": 262
+        "y": 499
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -769,9 +767,7 @@
             "18b035d175d78813"
         ],
         "x": 34,
-        "y": 139,
-        "w": 632,
-        "h": 242
+        "y": 139
     },
     {
         "id": "2238e89a8f0c976d",
@@ -857,9 +853,7 @@
             "618e79a58ab8143a"
         ],
         "x": 34,
-        "y": 39,
-        "w": 362,
-        "h": 82
+        "y": 39
     },
     {
         "id": "7176639d06e51ae4",
@@ -924,9 +918,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39,
-        "w": 372,
-        "h": 82
+        "y": 39
     },
     {
         "id": "d606b55cf1d68352",
@@ -989,12 +981,15 @@
             "b0a75d84b9e77154",
             "20d4be0a2f8674c6",
             "9632421ff2220cf7",
-            "98e7ed1f2c05288a"
+            "98e7ed1f2c05288a",
+            "e5be53de3ccb63ae",
+            "8cd21d8332f6db6f",
+            "69b99c3b64060e59"
         ],
         "x": 34,
         "y": 39,
         "w": 782,
-        "h": 182
+        "h": 242
     },
     {
         "id": "5127a90040340ac3",
@@ -1019,9 +1014,7 @@
             "eae8f5a9e4a0a482"
         ],
         "x": 94,
-        "y": 779,
-        "w": 732,
-        "h": 242
+        "y": 779
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -1042,9 +1035,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393,
-        "w": 764,
-        "h": 334
+        "y": 393
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1065,9 +1056,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33,
-        "w": 784,
-        "h": 334
+        "y": 33
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1085,9 +1074,7 @@
             "87fbecefe8135d77"
         ],
         "x": 134,
-        "y": 239,
-        "w": 432,
-        "h": 82
+        "y": 239
     },
     {
         "id": "7519b16f6cae8e8a",
@@ -1105,9 +1092,7 @@
             "353e1ccbabccae7f"
         ],
         "x": 134,
-        "y": 139,
-        "w": 392,
-        "h": 82
+        "y": 139
     },
     {
         "id": "1f92bd84e5fc85f2",
@@ -1125,9 +1110,7 @@
             "08c3b6627a851e95"
         ],
         "x": 134,
-        "y": 339,
-        "w": 332,
-        "h": 82
+        "y": 339
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -1147,9 +1130,7 @@
             "e1fa765ec5a5ebd7"
         ],
         "x": 88,
-        "y": 13,
-        "w": 1064,
-        "h": 334
+        "y": 13
     },
     {
         "id": "e29b5646cac97198",
@@ -1168,9 +1149,7 @@
             "513bc529c9c10fa0"
         ],
         "x": 88,
-        "y": 373,
-        "w": 524,
-        "h": 234
+        "y": 373
     },
     {
         "id": "b36cfe5d709eea6c",
@@ -1192,273 +1171,7 @@
             "6bcbbea082cb70bd"
         ],
         "x": 94,
-        "y": 359,
-        "w": 702,
-        "h": 122
-    },
-    {
-        "id": "1ce03cecd5db8bc6",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Turn off main floor lights group using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "07ccb0b07e6fada8",
-            "4baea86ab327a4b9",
-            "ec1b9da9a2a0dde0",
-            "33533dc0ac4ff870",
-            "2efdae9d98c90cf9",
-            "76e95a00d6e3b9ad"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 972,
-        "h": 82
-    },
-    {
-        "id": "3483ce20c1996e6c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor nightlight scene using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3ed1a4d37d1548b4",
-            "53509cbc2f897eb4",
-            "7b10a17dd5bc4c0f",
-            "1462dac4d5543f0a",
-            "c4ad8310f9a121b0",
-            "08d74ad519cdaa27"
-        ],
-        "x": 114,
-        "y": 139,
-        "w": 1012,
-        "h": 82
-    },
-    {
-        "id": "e1fa765ec5a5ebd7",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor sunset scene using HomeKit",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6cae9b1ccc68cb9e",
-            "8ae7ee0c87df1191",
-            "edc2f01358673517",
-            "76f3eb6c53a0310c",
-            "66b239fbae02c252",
-            "c99382ee9ae33d16"
-        ],
-        "x": 114,
-        "y": 239,
-        "w": 1012,
-        "h": 82
-    },
-    {
-        "id": "70e9b8db12799d18",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "14e5342cb50f366f",
-            "7df3e5fbd6e9aa8a",
-            "3b5ab296575b53d4"
-        ],
-        "x": 54,
-        "y": 159,
-        "w": 385,
-        "h": 82
-    },
-    {
-        "id": "290b83ef8e01ae0f",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
-        "style": {
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "51bce99c75aa12c6",
-            "f3ab10cd192709b0",
-            "73a1ec5ed8ebc167"
-        ],
-        "x": 54,
-        "y": 59,
-        "w": 732,
-        "h": 82
-    },
-    {
-        "id": "665df9d682462b5e",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Listen to events from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8c9d79d2791e9b02",
-            "2d0604f94ef7bff4",
-            "4d2dc9a6e42d0548",
-            "7d283a2fc0d30093"
-        ],
-        "x": 54,
-        "y": 259,
-        "w": 662,
-        "h": 82
-    },
-    {
-        "id": "9c46129d149ab201",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Send requests to the Hue API on the Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "df7392117105107f",
-            "df79272de1bce7c1",
-            "0ceb59ac89fb79b7"
-        ],
-        "x": 54,
-        "y": 519,
-        "w": 375,
-        "h": 82
-    },
-    {
-        "id": "648ad874a33c7973",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
-        "style": {
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "497b08f40cd0b29c",
-            "9bcb520fd937694d",
-            "7639b738a201d7c6"
-        ],
-        "x": 54,
-        "y": 419,
-        "w": 712,
-        "h": 82
-    },
-    {
-        "id": "0fc22be05cfc5241",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Listen to events from Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "1209a8480a23b591",
-            "14944e047cba03fa",
-            "5e2f8ae74b053fc9",
-            "a5f013472e32f50c"
-        ],
-        "x": 54,
-        "y": 619,
-        "w": 642,
-        "h": 82
-    },
-    {
-        "id": "00ad2b71a9c29a21",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Turn off main bathroom lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "08ca72b8e815a992",
-            "2736157993771007",
-            "0cb4aa086519cdc3"
-        ],
-        "x": 114,
-        "y": 499,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "513bc529c9c10fa0",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Activate main bathroom nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3deabbac44606076",
-            "ec0f7c926936a835",
-            "1af873ecc08861c7"
-        ],
-        "x": 114,
-        "y": 399,
-        "w": 472,
-        "h": 82
+        "y": 359
     },
     {
         "id": "6fcea92d03461935",
@@ -1485,9 +1198,251 @@
             "5e896842ec1ef52a"
         ],
         "x": 34,
-        "y": 239,
+        "y": 299,
         "w": 1022,
         "h": 202
+    },
+    {
+        "id": "1ce03cecd5db8bc6",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Turn off main floor lights group using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "07ccb0b07e6fada8",
+            "4baea86ab327a4b9",
+            "ec1b9da9a2a0dde0",
+            "33533dc0ac4ff870",
+            "2efdae9d98c90cf9",
+            "76e95a00d6e3b9ad"
+        ],
+        "x": 114,
+        "y": 39
+    },
+    {
+        "id": "3483ce20c1996e6c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor nightlight scene using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3ed1a4d37d1548b4",
+            "53509cbc2f897eb4",
+            "7b10a17dd5bc4c0f",
+            "1462dac4d5543f0a",
+            "c4ad8310f9a121b0",
+            "08d74ad519cdaa27"
+        ],
+        "x": 114,
+        "y": 139
+    },
+    {
+        "id": "e1fa765ec5a5ebd7",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor sunset scene using HomeKit",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6cae9b1ccc68cb9e",
+            "8ae7ee0c87df1191",
+            "edc2f01358673517",
+            "76f3eb6c53a0310c",
+            "66b239fbae02c252",
+            "c99382ee9ae33d16"
+        ],
+        "x": 114,
+        "y": 239
+    },
+    {
+        "id": "70e9b8db12799d18",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "14e5342cb50f366f",
+            "7df3e5fbd6e9aa8a",
+            "3b5ab296575b53d4"
+        ],
+        "x": 54,
+        "y": 159
+    },
+    {
+        "id": "290b83ef8e01ae0f",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "style": {
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "51bce99c75aa12c6",
+            "f3ab10cd192709b0",
+            "73a1ec5ed8ebc167"
+        ],
+        "x": 54,
+        "y": 59
+    },
+    {
+        "id": "665df9d682462b5e",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Listen to events from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8c9d79d2791e9b02",
+            "2d0604f94ef7bff4",
+            "4d2dc9a6e42d0548",
+            "7d283a2fc0d30093"
+        ],
+        "x": 54,
+        "y": 259
+    },
+    {
+        "id": "9c46129d149ab201",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Send requests to the Hue API on the Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "df7392117105107f",
+            "df79272de1bce7c1",
+            "0ceb59ac89fb79b7"
+        ],
+        "x": 54,
+        "y": 519
+    },
+    {
+        "id": "648ad874a33c7973",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
+        "style": {
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "497b08f40cd0b29c",
+            "9bcb520fd937694d",
+            "7639b738a201d7c6"
+        ],
+        "x": 54,
+        "y": 419
+    },
+    {
+        "id": "0fc22be05cfc5241",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Listen to events from Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1209a8480a23b591",
+            "14944e047cba03fa",
+            "5e2f8ae74b053fc9",
+            "a5f013472e32f50c"
+        ],
+        "x": 54,
+        "y": 619
+    },
+    {
+        "id": "00ad2b71a9c29a21",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "e29b5646cac97198",
+        "name": "Turn off main bathroom lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "08ca72b8e815a992",
+            "2736157993771007",
+            "0cb4aa086519cdc3"
+        ],
+        "x": 114,
+        "y": 499
+    },
+    {
+        "id": "513bc529c9c10fa0",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "e29b5646cac97198",
+        "name": "Activate main bathroom nightlight scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3deabbac44606076",
+            "ec0f7c926936a835",
+            "1af873ecc08861c7"
+        ],
+        "x": 114,
+        "y": 399
     },
     {
         "id": "e79e0110c2317edb",
@@ -3021,7 +2976,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "98e7ed1f2c05288a"
@@ -3047,7 +3002,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 180,
-        "y": 140,
+        "y": 160,
         "wires": [
             [
                 "98e7ed1f2c05288a"
@@ -3074,8 +3029,8 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "daily",
-        "func": "/*global suncalc*/\n\n/**\n * Send a message when the flow starts, and every midnight\n * thereafter, containing:\n * \n * - `sunrise`: the number of minutes after midnight at which\n *              the sun will rise\n * \n * - `sunset`:  the number of minutes after midnight at which\n *              the sun will set\n * \n * - `bedtime`: a randomly generated number of minutes after\n *              midnight, the later of:\n * \n *              1. 10:00 PM (22:00) plus or minus 30 minutes\n * \n *              2. 30 - 60 minutes after sunset, if the preceding\n *                 would occur after the sun has set\n * \n * - `theme`:   one of `standard`, `tribal`, `spooky` or `jolly`\n *              depending on the day and date\n * \n *              | theme      | description         |\n *              |------------|---------------------|\n *              | `tribal`   | July 1 - 4          |\n *              | `spooky`   | any day in October  |\n *              | `jolly`    | any day in December |\n *              | `standard` | any other day       |\n * \n * > Note: depends on the _suncalc_ package to determine `sunrise`\n * > and `sunset`\n */\n\n//////////////////////////////////////////////////////////////////////\n// sunrise / sunset\n//////////////////////////////////////////////////////////////////////\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n}\n\n//////////////////////////////////////////////////////////////////////\n// theme\n//////////////////////////////////////////////////////////////////////\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// bedtime\n//////////////////////////////////////////////////////////////////////\n\nmsg.payload.bedtime = 1350 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    msg.payload.bedtime = msg.payload.sunset + 30 + Math.floor(Math.random() * 30)\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// status and topic\n//////////////////////////////////////////////////////////////////////\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = Math.floor(minutes / 60)\n    const m = minutes % 60\n    const a = ((h > 12) ? ' PM' : ' AM')\n\n    return String(h % 12).padStart(2, ' ') + ':' + String(m).padStart(2, '0') + a\n\n}\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme + ' | ' +\n        formatMinutes(msg.payload.sunrise) + ' | ' +\n        formatMinutes(msg.payload.sunset) + ' | ' +\n        formatMinutes(msg.payload.bedtime)\n})\n\nmsg.topic = 'daily'\nreturn msg",
-        "outputs": 1,
+        "func": "/*global suncalc*/\n\n/**\n * Send a message when the flow starts, and every midnight\n * thereafter, containing:\n * \n * - `sunrise`: the number of minutes after midnight at which\n *              the sun will rise\n * \n * - `sunset`:  the number of minutes after midnight at which\n *              the sun will set\n * \n * - `bedtime`: a randomly generated number of minutes after\n *              midnight, the later of:\n * \n *              1. 10:00 PM (22:00) plus or minus 30 minutes\n * \n *              2. 30 - 60 minutes after sunset, if the preceding\n *                 would occur after the sun has set\n * \n * - `theme`:   one of `standard`, `tribal`, `spooky` or `jolly`\n *              depending on the day and date\n * \n *              | theme      | description         |\n *              |------------|---------------------|\n *              | `tribal`   | July 1 - 4          |\n *              | `spooky`   | any day in October  |\n *              | `jolly`    | any day in December |\n *              | `standard` | any other day       |\n * \n * > Note: depends on the _suncalc_ package to determine `sunrise`\n * > and `sunset`\n */\n\n//////////////////////////////////////////////////////////////////////\n// sunrise / sunset\n//////////////////////////////////////////////////////////////////////\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n}\n\n//////////////////////////////////////////////////////////////////////\n// theme\n//////////////////////////////////////////////////////////////////////\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// bedtime\n//////////////////////////////////////////////////////////////////////\n\nmsg.payload.bedtime = 1350 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    msg.payload.bedtime = msg.payload.sunset + 30 + Math.floor(Math.random() * 30)\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// status and topic\n//////////////////////////////////////////////////////////////////////\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = Math.floor(minutes / 60)\n    const m = minutes % 60\n    const a = ((h > 12) ? ' PM' : ' AM')\n\n    return String(h % 12).padStart(2, ' ') + ':' + String(m).padStart(2, '0') + a\n\n}\n\nconst formattedSunrise = formatMinutes(msg.payload.sunrise)\nconst formattedSunset = formatMinutes(msg.payload.sunset)\nconst formattedBedtime = formatMinutes(msg.payload.bedtime)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme\n})\n\nmsg.topic = 'daily'\nreturn [\n    msg,\n    { payload: formattedSunrise },\n    { payload: formattedSunset },\n    { payload: formattedBedtime }\n]",
+        "outputs": 4,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -3086,14 +3041,26 @@
             }
         ],
         "x": 310,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
+            ],
+            [
+                "e5be53de3ccb63ae"
+            ],
+            [
+                "8cd21d8332f6db6f"
+            ],
+            [
+                "69b99c3b64060e59"
             ]
         ],
         "outputLabels": [
-            "minmax"
+            "times",
+            "sunrise",
+            "sunset",
+            "bedtime"
         ]
     },
     {
@@ -3111,7 +3078,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 360,
+        "y": 420,
         "wires": [
             [
                 "485df563c6545698"
@@ -3140,7 +3107,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 350,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3168,7 +3135,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "98e07825f41a09a2",
@@ -3192,7 +3159,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 710,
-        "y": 400,
+        "y": 460,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -3214,7 +3181,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 720,
-        "y": 320,
+        "y": 380,
         "wires": []
     },
     {
@@ -3232,7 +3199,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 710,
-        "y": 280,
+        "y": 340,
         "wires": []
     },
     {
@@ -3248,7 +3215,7 @@
             "9b03415246d198b8"
         ],
         "x": 1015,
-        "y": 400,
+        "y": 460,
         "wires": []
     },
     {
@@ -3268,7 +3235,7 @@
         "repair": false,
         "outputs": 1,
         "x": 880,
-        "y": 400,
+        "y": 460,
         "wires": [
             [
                 "eff58d8a9acf14dc"
@@ -3285,7 +3252,7 @@
             "6bcbbea082cb70bd"
         ],
         "x": 265,
-        "y": 320,
+        "y": 380,
         "wires": [
             [
                 "485df563c6545698"
@@ -3299,7 +3266,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "6fcea92d03461935",
         "group": "25c7f0078ed443dd",
-        "order": 3,
+        "order": 6,
         "width": 0,
         "height": 0,
         "name": "",
@@ -3308,7 +3275,61 @@
         "layout": "row-spread",
         "className": "",
         "x": 720,
-        "y": 360,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e5be53de3ccb63ae",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sunrise",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 460,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8cd21d8332f6db6f",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sunset",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 460,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "69b99c3b64060e59",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "c47c0d5a1854a8ca",
+        "group": "25c7f0078ed443dd",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Bedtime",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 460,
+        "y": 240,
         "wires": []
     },
     {
@@ -3775,7 +3796,7 @@
         "label": "Enable",
         "tooltip": "",
         "group": "25c7f0078ed443dd",
-        "order": 4,
+        "order": 7,
         "width": 0,
         "height": 0,
         "passthru": false,
