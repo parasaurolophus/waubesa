@@ -312,7 +312,7 @@
         "category": "homebridge",
         "in": [
             {
-                "x": 580,
+                "x": 560,
                 "y": 60,
                 "wires": [
                     {
@@ -323,7 +323,7 @@
         ],
         "out": [
             {
-                "x": 850,
+                "x": 830,
                 "y": 340,
                 "wires": [
                     {
@@ -363,7 +363,7 @@
         ],
         "icon": "node-red-dashboard/ui_switch.png",
         "status": {
-            "x": 800,
+            "x": 780,
             "y": 400,
             "wires": [
                 {
@@ -513,7 +513,7 @@
         "category": "hue",
         "in": [
             {
-                "x": 700,
+                "x": 640,
                 "y": 60,
                 "wires": [
                     {
@@ -524,7 +524,7 @@
         ],
         "out": [
             {
-                "x": 1180,
+                "x": 1140,
                 "y": 80,
                 "wires": [
                     {
@@ -534,7 +534,7 @@
                 ]
             },
             {
-                "x": 1180,
+                "x": 1160,
                 "y": 140,
                 "wires": [
                     {
@@ -544,7 +544,7 @@
                 ]
             },
             {
-                "x": 1180,
+                "x": 1160,
                 "y": 200,
                 "wires": [
                     {
@@ -568,6 +568,11 @@
         ],
         "meta": {},
         "color": "#3FADB5",
+        "outputLabels": [
+            "sse",
+            "onopen",
+            "onerror"
+        ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
             "x": 300,
@@ -742,8 +747,10 @@
             "b0ee0f2f8155fe9b",
             "e270017761dfd27d"
         ],
-        "x": 94,
-        "y": 499
+        "x": 114,
+        "y": 179,
+        "w": 502,
+        "h": 302
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -767,7 +774,9 @@
             "18b035d175d78813"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 632,
+        "h": 242
     },
     {
         "id": "2238e89a8f0c976d",
@@ -853,7 +862,9 @@
             "618e79a58ab8143a"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 362,
+        "h": 82
     },
     {
         "id": "7176639d06e51ae4",
@@ -875,7 +886,7 @@
             "9e6f207648497d21",
             "8fbc58fdceaae578"
         ],
-        "x": 54,
+        "x": 34,
         "y": 99
     },
     {
@@ -897,7 +908,7 @@
             "6e1a049e6caac0c6",
             "3607b11dc299fa3d"
         ],
-        "x": 54,
+        "x": 34,
         "y": 299
     },
     {
@@ -918,7 +929,9 @@
             "dd7609e91ad64f63"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 372,
+        "h": 82
     },
     {
         "id": "d606b55cf1d68352",
@@ -936,7 +949,7 @@
             "cdd12e98966ee7c4",
             "eef1022d50fc9776"
         ],
-        "x": 774,
+        "x": 714,
         "y": 91.5,
         "info": "| Env Var   | Description                            |\n|-----------|----------------------------------------|\n| `ADDRESS` | IP address of Hue Bridge               |\n| `KEY`     | Value for `hue-application-key` header |"
     },
@@ -987,7 +1000,7 @@
             "69b99c3b64060e59"
         ],
         "x": 34,
-        "y": 39,
+        "y": 19,
         "w": 782,
         "h": 242
     },
@@ -1013,8 +1026,10 @@
             "a6534efd57a83bd1",
             "eae8f5a9e4a0a482"
         ],
-        "x": 94,
-        "y": 779
+        "x": 114,
+        "y": 499,
+        "w": 732,
+        "h": 242
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -1035,7 +1050,9 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393
+        "y": 393,
+        "w": 764,
+        "h": 334
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1056,7 +1073,9 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33
+        "y": 33,
+        "w": 784,
+        "h": 334
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1074,7 +1093,9 @@
             "87fbecefe8135d77"
         ],
         "x": 134,
-        "y": 239
+        "y": 239,
+        "w": 432,
+        "h": 82
     },
     {
         "id": "7519b16f6cae8e8a",
@@ -1092,7 +1113,9 @@
             "353e1ccbabccae7f"
         ],
         "x": 134,
-        "y": 139
+        "y": 139,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "1f92bd84e5fc85f2",
@@ -1110,13 +1133,15 @@
             "08c3b6627a851e95"
         ],
         "x": 134,
-        "y": 339
+        "y": 339,
+        "w": 332,
+        "h": 82
     },
     {
         "id": "6c7bbad3f1eae3bb",
         "type": "group",
         "z": "e44149a93fbe9b1b",
-        "name": "Main Floor",
+        "name": "Main Floor (Hue Zone)",
         "style": {
             "label": true,
             "stroke": "none",
@@ -1136,7 +1161,7 @@
         "id": "e29b5646cac97198",
         "type": "group",
         "z": "e44149a93fbe9b1b",
-        "name": "Main Bathroom",
+        "name": "Main Bathroom (Hue Room)",
         "style": {
             "label": true,
             "stroke": "none",
@@ -1170,8 +1195,10 @@
             "831fb3f42898b50f",
             "6bcbbea082cb70bd"
         ],
-        "x": 94,
-        "y": 359
+        "x": 114,
+        "y": 39,
+        "w": 702,
+        "h": 122
     },
     {
         "id": "6fcea92d03461935",
@@ -1198,7 +1225,7 @@
             "5e896842ec1ef52a"
         ],
         "x": 34,
-        "y": 299,
+        "y": 279,
         "w": 1022,
         "h": 202
     },
@@ -1293,7 +1320,9 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 159
+        "y": 159,
+        "w": 385,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1314,7 +1343,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 59
+        "y": 59,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1336,7 +1367,9 @@
             "7d283a2fc0d30093"
         ],
         "x": 54,
-        "y": 259
+        "y": 259,
+        "w": 662,
+        "h": 82
     },
     {
         "id": "9c46129d149ab201",
@@ -1357,7 +1390,9 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 519
+        "y": 519,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "648ad874a33c7973",
@@ -1378,7 +1413,9 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 419
+        "y": 419,
+        "w": 712,
+        "h": 82
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1400,7 +1437,9 @@
             "a5f013472e32f50c"
         ],
         "x": 54,
-        "y": 619
+        "y": 619,
+        "w": 642,
+        "h": 82
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1996,7 +2035,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 550,
+        "x": 530,
         "y": 220,
         "wires": [
             [
@@ -2018,7 +2057,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 550,
+        "x": 530,
         "y": 380,
         "wires": [
             [
@@ -2035,7 +2074,7 @@
         "scope": [
             "45226efb3ae06fd5"
         ],
-        "x": 130,
+        "x": 110,
         "y": 380,
         "wires": [
             [
@@ -2052,7 +2091,7 @@
         "scope": [
             "8c1a2d6f2deaf1d4"
         ],
-        "x": 130,
+        "x": 110,
         "y": 220,
         "wires": [
             [
@@ -2078,7 +2117,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 250,
+        "x": 230,
         "y": 380,
         "wires": [
             [
@@ -2104,7 +2143,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 250,
+        "x": 230,
         "y": 220,
         "wires": [
             [
@@ -2146,7 +2185,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
+        "x": 740,
         "y": 140,
         "wires": [
             [
@@ -2181,7 +2220,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 380,
         "y": 220,
         "wires": [
             [
@@ -2216,7 +2255,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 380,
         "y": 380,
         "wires": [
             [
@@ -2237,7 +2276,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
+        "x": 670,
         "y": 340,
         "wires": [
             []
@@ -2258,7 +2297,7 @@
         "correl": "",
         "expiry": "",
         "broker": "722d62f3b93039c3",
-        "x": 910,
+        "x": 890,
         "y": 140,
         "wires": []
     },
@@ -2268,7 +2307,7 @@
         "z": "454f48125d29e6ef",
         "name": "See subflow documentation for caveats",
         "info": "",
-        "x": 210,
+        "x": 190,
         "y": 60,
         "wires": []
     },
@@ -2468,7 +2507,7 @@
         "z": "de620fed3bdb7aa9",
         "g": "d606b55cf1d68352",
         "name": "Hue SSE",
-        "x": 1040,
+        "x": 980,
         "y": 140,
         "wires": [
             [],
@@ -2496,7 +2535,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
+        "x": 820,
         "y": 140,
         "wires": [
             [
@@ -2526,7 +2565,7 @@
         "type": "switch",
         "z": "de620fed3bdb7aa9",
         "g": "666b7004db0b97b6",
-        "name": "",
+        "name": "readyState = 2?",
         "property": "status.text",
         "propertyType": "msg",
         "rules": [
@@ -2542,7 +2581,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 330,
+        "x": 360,
         "y": 220,
         "wires": [
             [
@@ -2571,7 +2610,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 650,
+        "x": 590,
         "y": 200,
         "wires": [
             [
@@ -2588,7 +2627,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "rest",
+                "p": "reset",
                 "pt": "msg",
                 "to": "true",
                 "tot": "bool"
@@ -2599,8 +2638,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 470,
-        "y": 240,
+        "x": 560,
+        "y": 260,
         "wires": [
             [
                 "c97d943953f14d84"
@@ -2876,7 +2915,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 450,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "988129e9c60e8818"
@@ -2896,7 +2935,7 @@
         "finalize": "",
         "libs": [],
         "x": 570,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "949418271b11ff8d"
@@ -2920,7 +2959,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 690,
-        "y": 120,
+        "y": 100,
         "wires": [
             [
                 "9632421ff2220cf7"
@@ -2950,7 +2989,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 280,
-        "y": 80,
+        "y": 60,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
@@ -2976,7 +3015,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "98e7ed1f2c05288a"
@@ -3002,7 +3041,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 180,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "98e7ed1f2c05288a"
@@ -3020,7 +3059,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 775,
-        "y": 120,
+        "y": 100,
         "wires": []
     },
     {
@@ -3029,7 +3068,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "daily",
-        "func": "/*global suncalc*/\n\n/**\n * Send a message when the flow starts, and every midnight\n * thereafter, containing:\n * \n * - `sunrise`: the number of minutes after midnight at which\n *              the sun will rise\n * \n * - `sunset`:  the number of minutes after midnight at which\n *              the sun will set\n * \n * - `bedtime`: a randomly generated number of minutes after\n *              midnight, the later of:\n * \n *              1. 10:00 PM (22:00) plus or minus 30 minutes\n * \n *              2. 30 - 60 minutes after sunset, if the preceding\n *                 would occur after the sun has set\n * \n * - `theme`:   one of `standard`, `tribal`, `spooky` or `jolly`\n *              depending on the day and date\n * \n *              | theme      | description         |\n *              |------------|---------------------|\n *              | `tribal`   | July 1 - 4          |\n *              | `spooky`   | any day in October  |\n *              | `jolly`    | any day in December |\n *              | `standard` | any other day       |\n * \n * > Note: depends on the _suncalc_ package to determine `sunrise`\n * > and `sunset`\n */\n\n//////////////////////////////////////////////////////////////////////\n// sunrise / sunset\n//////////////////////////////////////////////////////////////////////\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n}\n\n//////////////////////////////////////////////////////////////////////\n// theme\n//////////////////////////////////////////////////////////////////////\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// bedtime\n//////////////////////////////////////////////////////////////////////\n\nmsg.payload.bedtime = 1350 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    msg.payload.bedtime = msg.payload.sunset + 30 + Math.floor(Math.random() * 30)\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// status and topic\n//////////////////////////////////////////////////////////////////////\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = Math.floor(minutes / 60)\n    const m = minutes % 60\n    const a = ((h > 12) ? ' PM' : ' AM')\n\n    return String(h % 12).padStart(2, ' ') + ':' + String(m).padStart(2, '0') + a\n\n}\n\nconst formattedSunrise = formatMinutes(msg.payload.sunrise)\nconst formattedSunset = formatMinutes(msg.payload.sunset)\nconst formattedBedtime = formatMinutes(msg.payload.bedtime)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme\n})\n\nmsg.topic = 'daily'\nreturn [\n    msg,\n    { payload: formattedSunrise },\n    { payload: formattedSunset },\n    { payload: formattedBedtime }\n]",
+        "func": "/*global suncalc*/\n\n/**\n * Send a message when the flow starts, and every midnight\n * thereafter, containing:\n * \n * - `sunrise`: the number of minutes after midnight at which\n *              the sun will rise\n * \n * - `sunset`:  the number of minutes after midnight at which\n *              the sun will set\n * \n * - `bedtime`: a randomly generated number of minutes after\n *              midnight, the later of:\n * \n *              1. 10:00 PM (22:00) plus or minus 30 minutes\n * \n *              2. 30 - 60 minutes after sunset, if the preceding\n *                 would occur after the sun has set\n * \n * - `theme`:   one of `standard`, `tribal`, `spooky` or `jolly`\n *              depending on the day and date\n * \n *              | theme      | description         |\n *              |------------|---------------------|\n *              | `tribal`   | July 1 - 4          |\n *              | `spooky`   | any day in October  |\n *              | `jolly`    | any day in December |\n *              | `standard` | any other day       |\n * \n * > Notes:\n * >\n * > - This node depends on the _suncalc_ package to determine\n * >   `sunrise` and `sunset`.\n * >\n * > - It assumes that the geographic coordinates to use with\n * >   the _suncalc_ library are set using `LATITUDE` and\n * >   `LONGITUDE` environment variables.\n * >\n * > - It also assumes that the host OS is configured such that\n * >   functions like `Date.toHours()` will operate in the correct\n * >   time zone for the location specified by `${LATITUDE}`\n * >   and `${LONGITUDE}`\n */\n\n//////////////////////////////////////////////////////////////////////\n// sunrise / sunset\n//////////////////////////////////////////////////////////////////////\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n}\n\n//////////////////////////////////////////////////////////////////////\n// theme\n//////////////////////////////////////////////////////////////////////\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// bedtime\n//////////////////////////////////////////////////////////////////////\n\nmsg.payload.bedtime = 1350 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    msg.payload.bedtime = msg.payload.sunset + 30 + Math.floor(Math.random() * 30)\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// status and topic\n//////////////////////////////////////////////////////////////////////\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = Math.floor(minutes / 60)\n    const m = minutes % 60\n    const a = ((h > 12) ? ' PM' : ' AM')\n\n    return String(h % 12).padStart(2, ' ') + ':' + String(m).padStart(2, '0') + a\n\n}\n\nconst formattedSunrise = formatMinutes(msg.payload.sunrise)\nconst formattedSunset = formatMinutes(msg.payload.sunset)\nconst formattedBedtime = formatMinutes(msg.payload.bedtime)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme\n})\n\nmsg.topic = 'daily'\nreturn [\n    msg,\n    { payload: formattedSunrise },\n    { payload: formattedSunset },\n    { payload: formattedBedtime }\n]",
         "outputs": 4,
         "noerr": 0,
         "initialize": "",
@@ -3041,7 +3080,7 @@
             }
         ],
         "x": 310,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "ab3a2e383ee84b6a"
@@ -3078,7 +3117,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "485df563c6545698"
@@ -3107,7 +3146,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 350,
-        "y": 400,
+        "y": 380,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3135,7 +3174,7 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 400,
+        "y": 380,
         "wires": [
             [
                 "98e07825f41a09a2",
@@ -3159,7 +3198,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 710,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -3181,7 +3220,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 720,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
@@ -3199,7 +3238,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 710,
-        "y": 340,
+        "y": 320,
         "wires": []
     },
     {
@@ -3215,7 +3254,7 @@
             "9b03415246d198b8"
         ],
         "x": 1015,
-        "y": 460,
+        "y": 440,
         "wires": []
     },
     {
@@ -3235,7 +3274,7 @@
         "repair": false,
         "outputs": 1,
         "x": 880,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "eff58d8a9acf14dc"
@@ -3252,7 +3291,7 @@
             "6bcbbea082cb70bd"
         ],
         "x": 265,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "485df563c6545698"
@@ -3275,7 +3314,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 720,
-        "y": 420,
+        "y": 400,
         "wires": []
     },
     {
@@ -3293,7 +3332,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 460,
-        "y": 160,
+        "y": 140,
         "wires": []
     },
     {
@@ -3311,7 +3350,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 460,
-        "y": 200,
+        "y": 180,
         "wires": []
     },
     {
@@ -3329,7 +3368,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 460,
-        "y": 240,
+        "y": 220,
         "wires": []
     },
     {
@@ -3360,8 +3399,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 230,
-        "y": 640,
+        "x": 250,
+        "y": 340,
         "wires": [
             [
                 "981dbc2364b09d66"
@@ -3388,8 +3427,8 @@
             "ec4c4a28a59d105e",
             "ec0f7c926936a835"
         ],
-        "x": 395,
-        "y": 720,
+        "x": 415,
+        "y": 440,
         "wires": []
     },
     {
@@ -3402,8 +3441,8 @@
         "links": [
             "6cae9b1ccc68cb9e"
         ],
-        "x": 735,
-        "y": 700,
+        "x": 415,
+        "y": 380,
         "wires": []
     },
     {
@@ -3416,8 +3455,8 @@
         "links": [
             "a6475288998b4e07"
         ],
-        "x": 735,
-        "y": 540,
+        "x": 575,
+        "y": 240,
         "wires": []
     },
     {
@@ -3430,8 +3469,8 @@
         "links": [
             "a225232dc86a3b6f"
         ],
-        "x": 735,
-        "y": 580,
+        "x": 575,
+        "y": 280,
         "wires": []
     },
     {
@@ -3446,8 +3485,8 @@
             "a225232dc86a3b6f",
             "a6475288998b4e07"
         ],
-        "x": 735,
-        "y": 620,
+        "x": 575,
+        "y": 320,
         "wires": []
     },
     {
@@ -3460,8 +3499,8 @@
         "links": [
             "18f53b7627e645e4"
         ],
-        "x": 735,
-        "y": 660,
+        "x": 575,
+        "y": 360,
         "wires": []
     },
     {
@@ -3477,8 +3516,8 @@
             "ec4c4a28a59d105e",
             "08ca72b8e815a992"
         ],
-        "x": 395,
-        "y": 560,
+        "x": 415,
+        "y": 220,
         "wires": []
     },
     {
@@ -3490,8 +3529,8 @@
         "links": [
             "eff58d8a9acf14dc"
         ],
-        "x": 135,
-        "y": 640,
+        "x": 155,
+        "y": 340,
         "wires": [
             [
                 "061d8c40c8ed16ab"
@@ -3529,8 +3568,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 610,
-        "y": 600,
+        "x": 450,
+        "y": 300,
         "wires": [
             [
                 "7ab1620c3349854b"
@@ -3556,8 +3595,8 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 690,
-        "y": 900,
+        "x": 710,
+        "y": 620,
         "wires": [
             []
         ]
@@ -3571,8 +3610,8 @@
         "links": [
             "eff58d8a9acf14dc"
         ],
-        "x": 135,
-        "y": 900,
+        "x": 155,
+        "y": 620,
         "wires": [
             [
                 "eae8f5a9e4a0a482"
@@ -3599,8 +3638,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
-        "y": 820,
+        "x": 440,
+        "y": 540,
         "wires": [
             [
                 "cf938465ddea10f9"
@@ -3627,8 +3666,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
-        "y": 860,
+        "x": 440,
+        "y": 580,
         "wires": [
             [
                 "cf938465ddea10f9"
@@ -3655,8 +3694,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
-        "y": 900,
+        "x": 440,
+        "y": 620,
         "wires": [
             [
                 "cf938465ddea10f9"
@@ -3683,8 +3722,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 420,
-        "y": 940,
+        "x": 440,
+        "y": 660,
         "wires": [
             [
                 "cf938465ddea10f9"
@@ -3696,7 +3735,7 @@
         "type": "change",
         "z": "63d8cb10398da04b",
         "g": "5127a90040340ac3",
-        "name": "night",
+        "name": "night ::::",
         "rules": [
             {
                 "t": "set",
@@ -3711,8 +3750,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
-        "y": 980,
+        "x": 440,
+        "y": 700,
         "wires": [
             [
                 "cf938465ddea10f9"
@@ -3757,8 +3796,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 230,
-        "y": 900,
+        "x": 250,
+        "y": 620,
         "wires": [
             [
                 "310addfc860a77f6"
@@ -3814,8 +3853,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 450,
-        "y": 440,
+        "x": 470,
+        "y": 120,
         "wires": [
             [
                 "cd16b58b722b2540"
@@ -3836,8 +3875,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 420,
+        "x": 250,
+        "y": 100,
         "wires": [
             [
                 "4212d7a78c81cc93",
@@ -3879,8 +3918,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 440,
+        "x": 660,
+        "y": 120,
         "wires": [
             [
                 "831fb3f42898b50f"
@@ -3897,8 +3936,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 755,
-        "y": 440,
+        "x": 775,
+        "y": 120,
         "wires": []
     },
     {
@@ -3911,8 +3950,8 @@
         "links": [
             "15cb33f94fe6371a"
         ],
-        "x": 375,
-        "y": 400,
+        "x": 395,
+        "y": 80,
         "wires": []
     },
     {
