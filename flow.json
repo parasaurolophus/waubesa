@@ -101,15 +101,15 @@
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-send-to-hue-bridge",
-            "type": "subflow-send-to-hue-bridge",
+            "module": "@parasaurolophus/node-red-send-to-hue-bridge",
+            "type": "send-to-hue-bridge",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Send a command to the Hue Bridge API",
-            "keywords": "philips,hue",
+            "keywords": "philips,hue,http",
             "license": "MIT"
         },
-        "color": "#3FADB5",
+        "color": "#AA77AA",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
             "x": 620,
@@ -125,7 +125,7 @@
     {
         "id": "75bc72a16c4da2c8",
         "type": "subflow",
-        "name": "Create Hue Access Token",
+        "name": "Create Hue Application Key",
         "info": "# Overview\n\nInvoke the Hue Bridge API to create a client access token.\n\n_**N.B.:** Invoke this subflow within 30 seconds of pressing the button on top of the bridge. Watch the debug console output to see the response. If successful, you will see the generated key among the response payload's properties._\n\nSee <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details.\n\n# Configuration\n\n| Environment Variable | Description                                    |\n|----------------------|------------------------------------------------|\n|`ADDRESS`             | Bridge's IP address                            |\n| `USERNAME`           | \"User name\" for which a key is being generated |\n\n# Input\n\nIncoming message triggers HTTP request but is otherwise ignored.\n\n# Output\n\nThe HTTP response will be sent as a parsed JSON object. If successful, look for the value of the `msg.payload.success.username` property in the output. That is the string you should use as the access token header in all subsequent Hue Bridge API request messages.",
         "category": "hue",
         "in": [
@@ -159,20 +159,20 @@
             },
             {
                 "name": "USERNAME",
-                "type": "str",
-                "value": ""
+                "type": "env",
+                "value": "USERNAME"
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-create-hue-access-token",
-            "type": "subflow-create-hue-access-token",
+            "module": "@parasaurolophus/node-red-create-hue-application-key",
+            "type": "create-hue-application-key",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Invoke the Hue Bridge API for registering a client",
-            "keywords": "philips,hue",
+            "keywords": "philips,hue,http",
             "license": "MIT"
         },
-        "color": "#3FADB5",
+        "color": "#AA77AA",
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
             "x": 440,
@@ -222,8 +222,8 @@
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-set-powerview-scene",
-            "type": "subflow-set-powerview-scene",
+            "module": "@parasaurolophus/node-red-set-powerview-scene",
+            "type": "set-powerview-scene",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Activate a PowerView scene",
@@ -280,8 +280,8 @@
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-get-powerview-metadata",
-            "type": "subflow-get-powerview-metadata",
+            "module": "@parasaurolophus/node-red-get-powerview-metadata",
+            "type": "get-powerview-metadata",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "keywords": "powerview,hunter douglas",
@@ -346,8 +346,8 @@
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-homebridge-mqttthing-switch",
-            "type": "subflow-homebridge-mqttthing-switch",
+            "module": "@parasaurolophus/node-red-homebridge-mqttthing-switch",
+            "type": "homebridge-mqttthing-switch",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Implement Node-RED handling of a toggle switch implemented by the mqttthing plugin for homebridge",
@@ -410,11 +410,11 @@
             }
         ],
         "meta": {},
-        "color": "#DDAA99",
+        "color": "#E7E7AE",
         "outputLabels": [
-            "html",
-            "raw"
+            "html"
         ],
+        "icon": "node-red/status.svg",
         "status": {
             "x": 540,
             "y": 140,
@@ -435,21 +435,21 @@
         "in": [
             {
                 "x": 60,
-                "y": 100,
+                "y": 140,
                 "wires": [
                     {
-                        "id": "b3c5813303ac7896"
+                        "id": "98d7f50f7db89d4d"
                     },
                     {
-                        "id": "98d7f50f7db89d4d"
+                        "id": "42539f9217e51fbd"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 870,
-                "y": 100,
+                "x": 1170,
+                "y": 140,
                 "wires": [
                     {
                         "id": "7972bbcf134f786b",
@@ -457,6 +457,10 @@
                     },
                     {
                         "id": "f3d6eb631a33249c",
+                        "port": 0
+                    },
+                    {
+                        "id": "1bf87f4377d87af1",
                         "port": 0
                     }
                 ]
@@ -480,23 +484,22 @@
             }
         ],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-hue-to-mqtt",
-            "type": "subflow-hue-to-mqtt",
+            "module": "@parasaurolophus/node-red-hue-to-mqtt",
+            "type": "hue-to-mqtt",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
-            "desc": "Process SSE events arising from the Hue Bridge API",
+            "desc": "Forward SSE events arising from the Hue Bridge API to MQTT",
             "keywords": "philips,hue,sse",
             "license": "MIT"
         },
-        "color": "#3FADB5",
+        "color": "#AA77AA",
         "outputLabels": [
-            "mqtt",
-            "error"
+            "mqtt"
         ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 900,
-            "y": 220,
+            "x": 700,
+            "y": 340,
             "wires": [
                 {
                     "id": "35fad88b119f8f36",
@@ -508,13 +511,13 @@
     {
         "id": "de620fed3bdb7aa9",
         "type": "subflow",
-        "name": "Hue SSE",
+        "name": "Server-Side Events",
         "info": "",
-        "category": "hue",
+        "category": "waubesa",
         "in": [
             {
-                "x": 700,
-                "y": 180,
+                "x": 680,
+                "y": 140,
                 "wires": [
                     {
                         "id": "eef1022d50fc9776"
@@ -527,8 +530,8 @@
         ],
         "out": [
             {
-                "x": 1220,
-                "y": 60,
+                "x": 1240,
+                "y": 100,
                 "wires": [
                     {
                         "id": "cdd12e98966ee7c4",
@@ -537,7 +540,7 @@
                 ]
             },
             {
-                "x": 1240,
+                "x": 1260,
                 "y": 220,
                 "wires": [
                     {
@@ -547,8 +550,8 @@
                 ]
             },
             {
-                "x": 1240,
-                "y": 300,
+                "x": 1260,
+                "y": 280,
                 "wires": [
                     {
                         "id": "cdd12e98966ee7c4",
@@ -559,29 +562,27 @@
         ],
         "env": [
             {
-                "name": "ADDRESS",
-                "type": "env",
-                "value": "ADDRESS"
-            },
-            {
-                "name": "KEY",
-                "type": "env",
-                "value": "KEY"
-            },
-            {
                 "name": "TIMEOUT",
                 "type": "num",
                 "value": "60000"
             }
         ],
-        "meta": {},
-        "color": "#3FADB5",
+        "meta": {
+            "module": "@parasaurolophus/node-red-server-side-events",
+            "type": "server-side-events",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Add watchdog timer to @parasaurolophus/node-red-eventsource",
+            "keywords": "sse,eventsource",
+            "license": "MIT"
+        },
+        "color": "#E7E7AE",
         "outputLabels": [
             "sse",
             "onopen",
             "onerror"
         ],
-        "icon": "font-awesome/fa-lightbulb-o",
+        "icon": "node-red/white-globe.svg",
         "status": {
             "x": 220,
             "y": 340,
@@ -596,7 +597,7 @@
     {
         "id": "a34d4eb04cf45884",
         "type": "subflow",
-        "name": "Hue Resources",
+        "name": "Parse Hue Resources",
         "info": "",
         "category": "hue",
         "in": [
@@ -623,8 +624,16 @@
             }
         ],
         "env": [],
-        "meta": {},
-        "color": "#3FADB5",
+        "meta": {
+            "module": "@parasaurolophus/node-red-parse-hue-resources",
+            "type": "parse-hue-resources",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Parse the response to a \"/resource\" request from the Hue API V2",
+            "keywords": "philips,hue.http",
+            "license": "MIT"
+        },
+        "color": "#AA77AA",
         "icon": "font-awesome/fa-lightbulb-o"
     },
     {
@@ -658,15 +667,15 @@
         ],
         "env": [],
         "meta": {
-            "module": "@parasaurolophus/node-red-subflow-parse-hue-event",
-            "type": "subflow-parse-hue-event",
+            "module": "@parasaurolophus/node-red-parse-hue-event",
+            "type": "parse-hue-event",
             "version": "1.0.0",
             "author": "parasaurolophus <apps@rader.us>",
             "desc": "Parse a raw Philips Hue bridge server-sent event",
             "keywords": "philips,hue,sse",
             "license": "MIT"
         },
-        "color": "#3FADB5",
+        "color": "#AA77AA",
         "inputLabels": [
             "raw sse"
         ],
@@ -889,7 +898,9 @@
             "8fbc58fdceaae578"
         ],
         "x": 34,
-        "y": 99
+        "y": 99,
+        "w": 932,
+        "h": 162
     },
     {
         "id": "0bfc5998715c0bc3",
@@ -911,7 +922,9 @@
             "3607b11dc299fa3d"
         ],
         "x": 34,
-        "y": 299
+        "y": 299,
+        "w": 712,
+        "h": 122
     },
     {
         "id": "e49c9571ddd5102f",
@@ -959,9 +972,7 @@
             "69b99c3b64060e59"
         ],
         "x": 34,
-        "y": 19,
-        "w": 782,
-        "h": 242
+        "y": 19
     },
     {
         "id": "5127a90040340ac3",
@@ -1008,7 +1019,7 @@
         ],
         "x": 28,
         "y": 393,
-        "w": 764,
+        "w": 804,
         "h": 334
     },
     {
@@ -1031,7 +1042,7 @@
         ],
         "x": 28,
         "y": 33,
-        "w": 784,
+        "w": 804,
         "h": 334
     },
     {
@@ -1174,9 +1185,7 @@
             "5e896842ec1ef52a"
         ],
         "x": 34,
-        "y": 279,
-        "w": 1022,
-        "h": 202
+        "y": 279
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1293,7 +1302,7 @@
         ],
         "x": 54,
         "y": 59,
-        "w": 732,
+        "w": 752,
         "h": 82
     },
     {
@@ -1363,7 +1372,7 @@
         ],
         "x": 54,
         "y": 419,
-        "w": 712,
+        "w": 752,
         "h": 82
     },
     {
@@ -2341,7 +2350,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 970,
         "y": 60,
         "wires": [
             []
@@ -2369,7 +2378,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 550,
+        "x": 810,
         "y": 100,
         "wires": [
             [
@@ -2391,7 +2400,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
+        "x": 970,
         "y": 140,
         "wires": [
             []
@@ -2405,31 +2414,39 @@
         "scope": [
             "b3c5813303ac7896"
         ],
-        "x": 780,
-        "y": 220,
+        "x": 580,
+        "y": 300,
         "wires": [
-            []
+            [
+                "9827fd9dee4289ac"
+            ]
         ]
     },
     {
         "id": "b3c5813303ac7896",
         "type": "subflow:de620fed3bdb7aa9",
         "z": "4e89e7c952d56c09",
-        "x": 200,
-        "y": 160,
+        "name": "",
+        "x": 410,
+        "y": 200,
         "wires": [
             [
                 "c51e9f68572dcd4f"
             ],
-            [],
-            []
+            [
+                "1bf87f4377d87af1"
+            ],
+            [
+                "1bf87f4377d87af1"
+            ]
         ]
     },
     {
         "id": "98d7f50f7db89d4d",
         "type": "subflow:a34d4eb04cf45884",
         "z": "4e89e7c952d56c09",
-        "x": 380,
+        "name": "",
+        "x": 620,
         "y": 60,
         "wires": [
             [
@@ -2442,7 +2459,7 @@
         "type": "subflow:4b1f9e8c23fa098d",
         "z": "4e89e7c952d56c09",
         "name": "",
-        "x": 370,
+        "x": 630,
         "y": 140,
         "wires": [
             [
@@ -2451,11 +2468,111 @@
         ]
     },
     {
+        "id": "42539f9217e51fbd",
+        "type": "change",
+        "z": "4e89e7c952d56c09",
+        "name": "hue parameters",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"url\":\"https://\" & $env('ADDRESS') & \"/eventstream/clip/v2\",\"initDict\":{\"withCredentials\":false,\"https\":{\"rejectUnauthorized\":false},\"headers\":{\"hue-application-key\":$env('KEY')}}}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "b3c5813303ac7896"
+            ]
+        ]
+    },
+    {
+        "id": "1bf87f4377d87af1",
+        "type": "change",
+        "z": "4e89e7c952d56c09",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$env('TOPIC') & '/' & topic",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9827fd9dee4289ac",
+        "type": "change",
+        "z": "4e89e7c952d56c09",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "status",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(status.text)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 260,
+        "wires": [
+            [
+                "1bf87f4377d87af1"
+            ]
+        ]
+    },
+    {
         "id": "cdd12e98966ee7c4",
         "type": "EventSource",
         "z": "de620fed3bdb7aa9",
-        "name": "Hue SSE",
-        "x": 1000,
+        "name": "",
+        "x": 1030,
         "y": 220,
         "wires": [
             [
@@ -2477,10 +2594,11 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"url\":\"https://\" & $env('ADDRESS') & \"/eventstream/clip/v2\",\"initDict\":{\"withCredentials\":false,\"https\":{\"rejectUnauthorized\":false},\"headers\":{\"hue-application-key\":$env('KEY')}}}",
-                "tot": "jsonata"
+                "p": "parameters",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
             }
         ],
         "action": "",
@@ -2488,8 +2606,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 220,
+        "x": 830,
+        "y": 180,
         "wires": [
             [
                 "cdd12e98966ee7c4"
@@ -2556,7 +2674,7 @@
         "extend": true,
         "overrideDelay": true,
         "units": "min",
-        "reset": "1",
+        "reset": "",
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
@@ -2564,7 +2682,7 @@
         "y": 260,
         "wires": [
             [
-                "eef1022d50fc9776"
+                "ba3b9c14ec9f5691"
             ]
         ]
     },
@@ -2604,8 +2722,8 @@
         "links": [
             "1d6da76cca173646"
         ],
-        "x": 1195,
-        "y": 140,
+        "x": 1215,
+        "y": 160,
         "wires": []
     },
     {
@@ -2652,8 +2770,8 @@
         "links": [
             "3ba637cbe04def58"
         ],
-        "x": 1195,
-        "y": 380,
+        "x": 1215,
+        "y": 340,
         "wires": []
     },
     {
@@ -2665,8 +2783,8 @@
         "links": [
             "3ba637cbe04def58"
         ],
-        "x": 775,
-        "y": 140,
+        "x": 755,
+        "y": 100,
         "wires": []
     },
     {
@@ -2693,6 +2811,33 @@
         "wires": [
             [
                 "c97d943953f14d84"
+            ]
+        ]
+    },
+    {
+        "id": "ba3b9c14ec9f5691",
+        "type": "change",
+        "z": "de620fed3bdb7aa9",
+        "name": "get flow.parameters",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "parameters",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 260,
+        "wires": [
+            [
+                "cdd12e98966ee7c4"
             ]
         ]
     },
@@ -4091,7 +4236,7 @@
         "type": "debug",
         "z": "c7141ffb22d64190",
         "g": "290b83ef8e01ae0f",
-        "name": "chez nous main access token",
+        "name": "chez nous main application key",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -4100,7 +4245,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "msg",
-        "x": 610,
+        "x": 630,
         "y": 100,
         "wires": []
     },
@@ -4122,7 +4267,7 @@
                 "type": "str"
             }
         ],
-        "x": 350,
+        "x": 360,
         "y": 100,
         "wires": [
             [
@@ -4315,7 +4460,7 @@
         "type": "debug",
         "z": "c7141ffb22d64190",
         "g": "648ad874a33c7973",
-        "name": "basement hue access token",
+        "name": "basement hue application key",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -4324,7 +4469,7 @@
         "targetType": "full",
         "statusVal": "payload[0].success.username",
         "statusType": "msg",
-        "x": 600,
+        "x": 630,
         "y": 460,
         "wires": []
     },
@@ -4346,7 +4491,7 @@
                 "type": "str"
             }
         ],
-        "x": 350,
+        "x": 360,
         "y": 460,
         "wires": [
             [
