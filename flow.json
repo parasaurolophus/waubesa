@@ -695,6 +695,68 @@
         }
     },
     {
+        "id": "658f7950e449a6aa",
+        "type": "subflow",
+        "name": "Hue SSE Status",
+        "info": "",
+        "category": "hue",
+        "in": [],
+        "out": [
+            {
+                "x": 390,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "11ead2b503a6826b",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 660,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "cc11a1a5604acde3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {
+            "module": "@parasaurolophus/node-red-hue-sse-status",
+            "type": "hue-sse-status",
+            "version": "1.0.0",
+            "author": "parasuarolophus <apps@rader.us>",
+            "desc": "Emit diagnostic information about a connection to the SSE service on a Hue Bridge",
+            "keywords": "philips,hue,sse",
+            "license": "MIT"
+        },
+        "color": "#AA77AA",
+        "outputLabels": [
+            "readyState",
+            "connected count"
+        ],
+        "icon": "font-awesome/fa-lightbulb-o",
+        "status": {
+            "x": 780,
+            "y": 180,
+            "wires": [
+                {
+                    "id": "64a29e093d39ddca",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "ea7b9754db9fd0cd",
         "type": "group",
         "z": "adfd8ae4a2eaf844",
@@ -898,9 +960,7 @@
             "8fbc58fdceaae578"
         ],
         "x": 34,
-        "y": 99,
-        "w": 932,
-        "h": 162
+        "y": 99
     },
     {
         "id": "0bfc5998715c0bc3",
@@ -922,9 +982,7 @@
             "3607b11dc299fa3d"
         ],
         "x": 34,
-        "y": 299,
-        "w": 712,
-        "h": 122
+        "y": 299
     },
     {
         "id": "e49c9571ddd5102f",
@@ -941,10 +999,18 @@
         "nodes": [
             "f5c7a7580984d067",
             "11b2638982da0e64",
-            "dd7609e91ad64f63"
+            "dd7609e91ad64f63",
+            "8145a71a1f26c616",
+            "1c6a7f9ae824db96",
+            "6db5c2fcb5fd08e3",
+            "461d49b47e87e402",
+            "5ea9e057dd830d9e",
+            "5adbc418ab39d29a"
         ],
         "x": 134,
-        "y": 39
+        "y": 39,
+        "w": 572,
+        "h": 202
     },
     {
         "id": "c47c0d5a1854a8ca",
@@ -972,7 +1038,9 @@
             "69b99c3b64060e59"
         ],
         "x": 34,
-        "y": 19
+        "y": 19,
+        "w": 782,
+        "h": 242
     },
     {
         "id": "5127a90040340ac3",
@@ -1061,7 +1129,9 @@
             "87fbecefe8135d77"
         ],
         "x": 134,
-        "y": 239
+        "y": 359,
+        "w": 432,
+        "h": 82
     },
     {
         "id": "7519b16f6cae8e8a",
@@ -1079,7 +1149,9 @@
             "353e1ccbabccae7f"
         ],
         "x": 134,
-        "y": 139
+        "y": 259,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "1f92bd84e5fc85f2",
@@ -1097,7 +1169,9 @@
             "08c3b6627a851e95"
         ],
         "x": 134,
-        "y": 339
+        "y": 459,
+        "w": 332,
+        "h": 82
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -1185,7 +1259,53 @@
             "5e896842ec1ef52a"
         ],
         "x": 34,
-        "y": 279
+        "y": 279,
+        "w": 1022,
+        "h": 202
+    },
+    {
+        "id": "8dff7c51091f12ea",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Chez Nous Main readyState",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "aa83f2d2b99d012e",
+            "a48a835fb1805b22",
+            "e71557af20de9949"
+        ],
+        "x": 754,
+        "y": 39,
+        "w": 552,
+        "h": 122
+    },
+    {
+        "id": "b78fb0b9d14b12c6",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Basement Hue readyState",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "79f5591e72a3bc50",
+            "35ac17ba51fca5e1",
+            "b30654675fe6a404"
+        ],
+        "x": 754,
+        "y": 219,
+        "w": 552,
+        "h": 122
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1643,6 +1763,39 @@
         "order": 2,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "03b0e40844d33477",
+        "type": "ui_group",
+        "name": "Chez Nous Main",
+        "tab": "ec4d94df679f3b11",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "a0da6d89d75fc6ac",
+        "type": "ui_group",
+        "name": "Basement Hue",
+        "tab": "ec4d94df679f3b11",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "991046045b37e3ee",
+        "type": "ui_group",
+        "name": "MQTT Broker",
+        "tab": "ec4d94df679f3b11",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -3086,6 +3239,116 @@
         "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "a22feaa163af73a9",
+        "type": "mqtt in",
+        "z": "658f7950e449a6aa",
+        "name": "",
+        "topic": "${TOPIC}",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "11ead2b503a6826b"
+            ]
+        ]
+    },
+    {
+        "id": "11ead2b503a6826b",
+        "type": "rbe",
+        "z": "658f7950e449a6aa",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [
+                "1ce937bffb5e39c1"
+            ]
+        ]
+    },
+    {
+        "id": "cc11a1a5604acde3",
+        "type": "function",
+        "z": "658f7950e449a6aa",
+        "name": "count",
+        "func": "let count = context.get('count') || 0\n\ncount += 1\ncontext.set('count', count)\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: count\n})\n\nreturn { payload: count }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 140,
+        "wires": [
+            [
+                "64a29e093d39ddca"
+            ]
+        ]
+    },
+    {
+        "id": "64a29e093d39ddca",
+        "type": "change",
+        "z": "658f7950e449a6aa",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"text\":payload,\t   \"shape\":\"dot\",\t   \"fill\":\"blue\"\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ce937bffb5e39c1",
+        "type": "switch",
+        "z": "658f7950e449a6aa",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "cc11a1a5604acde3"
+            ]
         ]
     },
     {
@@ -4911,7 +5174,7 @@
         "templateScope": "local",
         "className": "",
         "x": 450,
-        "y": 280,
+        "y": 400,
         "wires": [
             []
         ]
@@ -4935,7 +5198,7 @@
             }
         ],
         "x": 250,
-        "y": 280,
+        "y": 400,
         "wires": [
             [
                 "21679e08b9cf2dbd"
@@ -4959,7 +5222,7 @@
         "templateScope": "local",
         "className": "",
         "x": 420,
-        "y": 180,
+        "y": 300,
         "wires": [
             []
         ]
@@ -4983,7 +5246,7 @@
             }
         ],
         "x": 240,
-        "y": 180,
+        "y": 300,
         "wires": [
             [
                 "3a45f65735fa5469"
@@ -5007,7 +5270,7 @@
         "templateScope": "local",
         "className": "",
         "x": 370,
-        "y": 380,
+        "y": 500,
         "wires": [
             []
         ]
@@ -5031,12 +5294,258 @@
             }
         ],
         "x": 220,
-        "y": 380,
+        "y": 500,
         "wires": [
             [
                 "aa93bdbb5aa7d08c"
             ]
         ]
+    },
+    {
+        "id": "8145a71a1f26c616",
+        "type": "status",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "name": "limit rate",
+        "scope": [
+            "f5c7a7580984d067"
+        ],
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "1c6a7f9ae824db96"
+            ]
+        ]
+    },
+    {
+        "id": "1c6a7f9ae824db96",
+        "type": "change",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(status.text)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 200,
+        "wires": [
+            [
+                "6db5c2fcb5fd08e3"
+            ]
+        ]
+    },
+    {
+        "id": "6db5c2fcb5fd08e3",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "group": "991046045b37e3ee",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "MQTT Broker Queue",
+        "label": "Queue",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 580,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "461d49b47e87e402",
+        "type": "status",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "name": "mqtt out",
+        "scope": [
+            "11b2638982da0e64"
+        ],
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "5ea9e057dd830d9e"
+            ]
+        ]
+    },
+    {
+        "id": "5ea9e057dd830d9e",
+        "type": "change",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$reverse($split(status.text,'.'))[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "5adbc418ab39d29a"
+            ]
+        ]
+    },
+    {
+        "id": "5adbc418ab39d29a",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "group": "991046045b37e3ee",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "MQTT Broker Status",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 580,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "aa83f2d2b99d012e",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "8dff7c51091f12ea",
+        "group": "03b0e40844d33477",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Chez Nous Main readyState",
+        "label": "readyState",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1120,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "79f5591e72a3bc50",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "b78fb0b9d14b12c6",
+        "group": "a0da6d89d75fc6ac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Basement Hue readyState",
+        "label": "readyState",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1120,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a48a835fb1805b22",
+        "type": "subflow:658f7950e449a6aa",
+        "z": "6e3ca82457d27245",
+        "g": "8dff7c51091f12ea",
+        "name": "Chez Nous Main Status",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/chez-nous-main/status",
+                "type": "str"
+            }
+        ],
+        "x": 880,
+        "y": 100,
+        "wires": [
+            [
+                "aa83f2d2b99d012e"
+            ],
+            [
+                "e71557af20de9949"
+            ]
+        ]
+    },
+    {
+        "id": "35ac17ba51fca5e1",
+        "type": "subflow:658f7950e449a6aa",
+        "z": "6e3ca82457d27245",
+        "g": "b78fb0b9d14b12c6",
+        "name": "Basement Hue Status",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/basement-hue/status",
+                "type": "str"
+            }
+        ],
+        "x": 880,
+        "y": 280,
+        "wires": [
+            [
+                "79f5591e72a3bc50"
+            ],
+            [
+                "b30654675fe6a404"
+            ]
+        ]
+    },
+    {
+        "id": "e71557af20de9949",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "8dff7c51091f12ea",
+        "group": "03b0e40844d33477",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Chez Nous Main Connected Count",
+        "label": "Connected Count",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1140,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b30654675fe6a404",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "b78fb0b9d14b12c6",
+        "group": "a0da6d89d75fc6ac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Basement Hue Connected Count",
+        "label": "Connected Count",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1140,
+        "y": 300,
+        "wires": []
     },
     {
         "id": "07ccb0b07e6fada8",
