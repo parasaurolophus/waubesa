@@ -711,16 +711,6 @@
                         "port": 0
                     }
                 ]
-            },
-            {
-                "x": 660,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "cc11a1a5604acde3",
-                        "port": 0
-                    }
-                ]
             }
         ],
         "env": [
@@ -746,11 +736,68 @@
         ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 780,
-            "y": 180,
+            "x": 520,
+            "y": 140,
             "wires": [
                 {
                     "id": "64a29e093d39ddca",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "9601cbf2386d897b",
+        "type": "subflow",
+        "name": "Count Messages",
+        "info": "",
+        "category": "waubesa",
+        "in": [],
+        "out": [
+            {
+                "x": 340,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "29db695f97cc5757",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 340,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "29db695f97cc5757",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {
+            "module": "@parasaurolophus/node-red-count-messages",
+            "type": "count-messages",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Count the number of MQTT messages received on a specfied topic",
+            "keywords": "mqtt",
+            "license": "MIT"
+        },
+        "color": "#DDAA99",
+        "status": {
+            "x": 340,
+            "y": 220,
+            "wires": [
+                {
+                    "id": "3f4427884112393c",
                     "port": 0
                 }
             ]
@@ -827,7 +874,9 @@
             "e270017761dfd27d"
         ],
         "x": 114,
-        "y": 179
+        "y": 179,
+        "w": 502,
+        "h": 302
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1065,7 +1114,9 @@
             "eae8f5a9e4a0a482"
         ],
         "x": 114,
-        "y": 499
+        "y": 499,
+        "w": 732,
+        "h": 242
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -1232,7 +1283,9 @@
             "6bcbbea082cb70bd"
         ],
         "x": 114,
-        "y": 39
+        "y": 39,
+        "w": 702,
+        "h": 122
     },
     {
         "id": "6fcea92d03461935",
@@ -1267,7 +1320,7 @@
         "id": "8dff7c51091f12ea",
         "type": "group",
         "z": "6e3ca82457d27245",
-        "name": "Chez Nous Main readyState",
+        "name": "Display Chez Nous Main readyState on dashboard",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1277,19 +1330,18 @@
         },
         "nodes": [
             "aa83f2d2b99d012e",
-            "a48a835fb1805b22",
-            "e71557af20de9949"
+            "bf73d9fb33637e10"
         ],
         "x": 754,
         "y": 39,
-        "w": 552,
-        "h": 122
+        "w": 532,
+        "h": 82
     },
     {
         "id": "b78fb0b9d14b12c6",
         "type": "group",
         "z": "6e3ca82457d27245",
-        "name": "Basement Hue readyState",
+        "name": "Display Basement Hue readyState on dashboard",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1299,13 +1351,12 @@
         },
         "nodes": [
             "79f5591e72a3bc50",
-            "35ac17ba51fca5e1",
-            "b30654675fe6a404"
+            "f4bc6cd84cd984e4"
         ],
         "x": 754,
-        "y": 219,
-        "w": 552,
-        "h": 122
+        "y": 239,
+        "w": 532,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1560,6 +1611,48 @@
         ],
         "x": 114,
         "y": 399
+    },
+    {
+        "id": "a1c9d751d12ee2c4",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Display count of onopen events on dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e71557af20de9949",
+            "3bbfe6126101e47a"
+        ],
+        "x": 754,
+        "y": 139,
+        "w": 592,
+        "h": 82
+    },
+    {
+        "id": "d0a0ed4db80319af",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Display count of onopen events on dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ff0320e7dcb99080",
+            "b30654675fe6a404"
+        ],
+        "x": 754,
+        "y": 339,
+        "w": 572,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -3278,25 +3371,6 @@
         "y": 100,
         "wires": [
             [
-                "1ce937bffb5e39c1"
-            ]
-        ]
-    },
-    {
-        "id": "cc11a1a5604acde3",
-        "type": "function",
-        "z": "658f7950e449a6aa",
-        "name": "count",
-        "func": "let count = context.get('count') || 0\n\ncount += 1\ncontext.set('count', count)\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: count\n})\n\nreturn { payload: count }",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 490,
-        "y": 140,
-        "wires": [
-            [
                 "64a29e093d39ddca"
             ]
         ]
@@ -3320,35 +3394,63 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 180,
+        "x": 400,
+        "y": 140,
         "wires": [
             []
         ]
     },
     {
-        "id": "1ce937bffb5e39c1",
-        "type": "switch",
-        "z": "658f7950e449a6aa",
+        "id": "3889cb8956554e6f",
+        "type": "mqtt in",
+        "z": "9601cbf2386d897b",
         "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 370,
-        "y": 140,
+        "topic": "${TOPIC}",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 100,
         "wires": [
             [
-                "cc11a1a5604acde3"
+                "29db695f97cc5757"
             ]
+        ]
+    },
+    {
+        "id": "29db695f97cc5757",
+        "type": "function",
+        "z": "9601cbf2386d897b",
+        "name": "count",
+        "func": "let count = context.get('count') || 0\n\ncount += 1\ncontext.set('count', count)\n\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: count\n})\n\nreturn [\n    msg,\n    { payload: count }\n]",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3f4427884112393c",
+        "type": "status",
+        "z": "9601cbf2386d897b",
+        "name": "",
+        "scope": [
+            "29db695f97cc5757"
+        ],
+        "x": 240,
+        "y": 220,
+        "wires": [
+            []
         ]
     },
     {
@@ -3386,7 +3488,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "c47c0d5a1854a8ca",
         "name": "time",
-        "func": "/**\n * Determine a `time` based on given values for `sunrise`, `sunset`, `bedtime` and `now`,\n * where `offset`, below, is ((`sunset` - `sunrise`) / 3):\n * \n * | `time`      | description                                                            |\n * |-------------|------------------------------------------------------------------------|\n * | `morning`   | `now` is between `sunrise` and (`sunrise` + `offset`)                  |\n * | `midday`    | `now` is between (`sunrise` + `offset`) and (`sunset` - `offset`)      |\n * | `afternoon` | `now` is between (`sunset` - `offset`) and `sunset`                    |\n * | `evening`   | `now` is between `sunset` and `bedtime`                                |\n * | `night`     | otherwise [i.e. `now` is between `bedtime` and `sunrise` the next day] |\n */\n\nconst theme = msg.payload.daily.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.daily.sunrise\nconst sunset = msg.payload.daily.sunset\nconst bedtime = msg.payload.daily.bedtime\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\n\nmsg.payload = {\n    theme: theme,\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n\n} else {\n\n    msg.payload.time = 'night'\n\n}\n\nnode.status({\n    text: msg.payload.theme + ' | ' + msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nmsg.topic = 'nodered/automation/time'\nmsg.qos = 2\nmsg.retain = true\nreturn msg",
+        "func": "/**\n * Determine a `time` based on given values for `sunrise`, `sunset`, `bedtime` and `now`,\n * where `offset`, below, is ((`sunset` - `sunrise`) / 3):\n * \n * | `time`      | description                                                            |\n * |-------------|------------------------------------------------------------------------|\n * | `morning`   | `now` is between `sunrise` and (`sunrise` + `offset`)                  |\n * | `midday`    | `now` is between (`sunrise` + `offset`) and (`sunset` - `offset`)      |\n * | `afternoon` | `now` is between (`sunset` - `offset`) and `sunset`                    |\n * | `evening`   | `now` is between `sunset` and `bedtime`                                |\n * | `night`     | otherwise [i.e. `now` is between `bedtime` and `sunrise` the next day] |\n */\n\nconst theme = msg.payload.daily.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.daily.sunrise\nconst sunset = msg.payload.daily.sunset\nconst bedtime = msg.payload.daily.bedtime\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\n\nmsg.payload = {\n    theme: theme,\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n\n} else {\n\n    msg.payload.time = 'night'\n\n}\n\nnode.status({\n    text: msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nmsg.topic = 'nodered/automation/time'\nmsg.qos = 2\nmsg.retain = true\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5441,7 +5543,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1120,
+        "x": 1140,
         "y": 80,
         "wires": []
     },
@@ -5459,93 +5561,133 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1120,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "a48a835fb1805b22",
-        "type": "subflow:658f7950e449a6aa",
-        "z": "6e3ca82457d27245",
-        "g": "8dff7c51091f12ea",
-        "name": "Chez Nous Main Status",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/chez-nous-main/status",
-                "type": "str"
-            }
-        ],
-        "x": 880,
-        "y": 100,
-        "wires": [
-            [
-                "aa83f2d2b99d012e"
-            ],
-            [
-                "e71557af20de9949"
-            ]
-        ]
-    },
-    {
-        "id": "35ac17ba51fca5e1",
-        "type": "subflow:658f7950e449a6aa",
-        "z": "6e3ca82457d27245",
-        "g": "b78fb0b9d14b12c6",
-        "name": "Basement Hue Status",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/basement-hue/status",
-                "type": "str"
-            }
-        ],
-        "x": 880,
+        "x": 1140,
         "y": 280,
-        "wires": [
-            [
-                "79f5591e72a3bc50"
-            ],
-            [
-                "b30654675fe6a404"
-            ]
-        ]
+        "wires": []
     },
     {
         "id": "e71557af20de9949",
         "type": "ui_text",
         "z": "6e3ca82457d27245",
-        "g": "8dff7c51091f12ea",
+        "g": "a1c9d751d12ee2c4",
         "group": "03b0e40844d33477",
         "order": 2,
         "width": 0,
         "height": 0,
-        "name": "Chez Nous Main Connected Count",
-        "label": "Connected Count",
+        "name": "Chez Nous Main onopen Count",
+        "label": "onopen",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1140,
-        "y": 120,
+        "x": 1190,
+        "y": 180,
         "wires": []
     },
     {
         "id": "b30654675fe6a404",
         "type": "ui_text",
         "z": "6e3ca82457d27245",
-        "g": "b78fb0b9d14b12c6",
+        "g": "d0a0ed4db80319af",
         "group": "a0da6d89d75fc6ac",
         "order": 2,
         "width": 0,
         "height": 0,
-        "name": "Basement Hue Connected Count",
-        "label": "Connected Count",
+        "name": "Basement Hue onopen Count",
+        "label": "onopen",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1140,
-        "y": 300,
+        "x": 1170,
+        "y": 380,
         "wires": []
+    },
+    {
+        "id": "3bbfe6126101e47a",
+        "type": "subflow:9601cbf2386d897b",
+        "z": "6e3ca82457d27245",
+        "g": "a1c9d751d12ee2c4",
+        "name": "Count Chez Nouse Main onopen",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/chez-nous-main/open",
+                "type": "str"
+            }
+        ],
+        "x": 910,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "e71557af20de9949"
+            ]
+        ]
+    },
+    {
+        "id": "ff0320e7dcb99080",
+        "type": "subflow:9601cbf2386d897b",
+        "z": "6e3ca82457d27245",
+        "g": "d0a0ed4db80319af",
+        "name": "Count Basement Hue onopen",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/basement-hue/open",
+                "type": "str"
+            }
+        ],
+        "x": 900,
+        "y": 380,
+        "wires": [
+            [],
+            [
+                "b30654675fe6a404"
+            ]
+        ]
+    },
+    {
+        "id": "bf73d9fb33637e10",
+        "type": "mqtt in",
+        "z": "6e3ca82457d27245",
+        "g": "8dff7c51091f12ea",
+        "name": "",
+        "topic": "hue/chez-nous-main/status",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 890,
+        "y": 80,
+        "wires": [
+            [
+                "aa83f2d2b99d012e"
+            ]
+        ]
+    },
+    {
+        "id": "f4bc6cd84cd984e4",
+        "type": "mqtt in",
+        "z": "6e3ca82457d27245",
+        "g": "b78fb0b9d14b12c6",
+        "name": "",
+        "topic": "hue/basement-hue/status",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 890,
+        "y": 280,
+        "wires": [
+            [
+                "79f5591e72a3bc50"
+            ]
+        ]
     },
     {
         "id": "07ccb0b07e6fada8",
