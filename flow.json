@@ -60,6 +60,14 @@
         "env": []
     },
     {
+        "id": "0b0f798f63ddff40",
+        "type": "tab",
+        "label": "WebSocket Server",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5785c8d9f39df67e",
         "type": "subflow",
         "name": "Send to Hue Bridge",
@@ -874,9 +882,7 @@
             "e270017761dfd27d"
         ],
         "x": 114,
-        "y": 179,
-        "w": 502,
-        "h": 302
+        "y": 179
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -1114,9 +1120,7 @@
             "eae8f5a9e4a0a482"
         ],
         "x": 114,
-        "y": 499,
-        "w": 732,
-        "h": 242
+        "y": 499
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -1137,9 +1141,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393,
-        "w": 804,
-        "h": 334
+        "y": 393
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1160,9 +1162,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33,
-        "w": 804,
-        "h": 334
+        "y": 33
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1283,9 +1283,7 @@
             "6bcbbea082cb70bd"
         ],
         "x": 114,
-        "y": 39,
-        "w": 702,
-        "h": 122
+        "y": 39
     },
     {
         "id": "6fcea92d03461935",
@@ -1356,6 +1354,48 @@
         "x": 754,
         "y": 239,
         "w": 532,
+        "h": 82
+    },
+    {
+        "id": "a1c9d751d12ee2c4",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Display count of onopen events on dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e71557af20de9949",
+            "3bbfe6126101e47a"
+        ],
+        "x": 754,
+        "y": 139,
+        "w": 592,
+        "h": 82
+    },
+    {
+        "id": "d0a0ed4db80319af",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Display count of onopen events on dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ff0320e7dcb99080",
+            "b30654675fe6a404"
+        ],
+        "x": 754,
+        "y": 339,
+        "w": 572,
         "h": 82
     },
     {
@@ -1449,9 +1489,7 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 159,
-        "w": 385,
-        "h": 82
+        "y": 159
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1472,9 +1510,7 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 59,
-        "w": 752,
-        "h": 82
+        "y": 59
     },
     {
         "id": "665df9d682462b5e",
@@ -1496,9 +1532,7 @@
             "7d283a2fc0d30093"
         ],
         "x": 54,
-        "y": 259,
-        "w": 662,
-        "h": 82
+        "y": 259
     },
     {
         "id": "9c46129d149ab201",
@@ -1519,9 +1553,7 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 519,
-        "w": 375,
-        "h": 82
+        "y": 519
     },
     {
         "id": "648ad874a33c7973",
@@ -1542,9 +1574,7 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 419,
-        "w": 752,
-        "h": 82
+        "y": 419
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1566,9 +1596,7 @@
             "a5f013472e32f50c"
         ],
         "x": 54,
-        "y": 619,
-        "w": 642,
-        "h": 82
+        "y": 619
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1613,45 +1641,46 @@
         "y": 399
     },
     {
-        "id": "a1c9d751d12ee2c4",
+        "id": "996a1cbef65b0a99",
         "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Display count of onopen events on dashboard",
+        "z": "0b0f798f63ddff40",
+        "name": "Listen to command messages from connected clients",
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
         "nodes": [
-            "e71557af20de9949",
-            "3bbfe6126101e47a"
+            "0961e7c856dd9008",
+            "696de9d5d1c2aa89"
         ],
-        "x": 754,
-        "y": 139,
-        "w": 592,
+        "x": 314,
+        "y": 39,
+        "w": 342,
         "h": 82
     },
     {
-        "id": "d0a0ed4db80319af",
+        "id": "3370d470a985810a",
         "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Display count of onopen events on dashboard",
+        "z": "0b0f798f63ddff40",
+        "name": "Send update messages to connected clients",
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1",
+            "fill-opacity": "0.05",
             "label": true,
             "color": "#000000"
         },
         "nodes": [
-            "ff0320e7dcb99080",
-            "b30654675fe6a404"
+            "ac4d6482ec801e55",
+            "5c57a207a4afad27",
+            "f5f5992e463c27a5"
         ],
-        "x": 754,
-        "y": 339,
-        "w": 572,
+        "x": 314,
+        "y": 139,
+        "w": 512,
         "h": 82
     },
     {
@@ -1889,6 +1918,20 @@
         "width": "6",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "adaca7b76299bde2",
+        "type": "websocket-listener",
+        "z": "0b0f798f63ddff40",
+        "path": "${COMMAND_WS_URI}",
+        "wholemsg": "true"
+    },
+    {
+        "id": "3b1276140ac669a1",
+        "type": "websocket-listener",
+        "z": "0b0f798f63ddff40",
+        "path": "${UPDATE_WS_URI}",
+        "wholemsg": "true"
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -6954,6 +6997,167 @@
         "wires": [
             [
                 "d07f9471a4a06ae8"
+            ]
+        ]
+    },
+    {
+        "id": "0961e7c856dd9008",
+        "type": "websocket in",
+        "z": "0b0f798f63ddff40",
+        "g": "996a1cbef65b0a99",
+        "name": "",
+        "server": "adaca7b76299bde2",
+        "client": "",
+        "x": 460,
+        "y": 80,
+        "wires": [
+            [
+                "696de9d5d1c2aa89"
+            ]
+        ]
+    },
+    {
+        "id": "696de9d5d1c2aa89",
+        "type": "link out",
+        "z": "0b0f798f63ddff40",
+        "g": "996a1cbef65b0a99",
+        "name": "command",
+        "mode": "link",
+        "links": [
+            "2910e46930c1bb49",
+            "71164fa9d8cda509"
+        ],
+        "x": 615,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ac4d6482ec801e55",
+        "type": "link in",
+        "z": "0b0f798f63ddff40",
+        "g": "3370d470a985810a",
+        "name": "update",
+        "links": [
+            "80f5165a7aed1856"
+        ],
+        "x": 355,
+        "y": 180,
+        "wires": [
+            [
+                "f5f5992e463c27a5"
+            ]
+        ]
+    },
+    {
+        "id": "5c57a207a4afad27",
+        "type": "websocket out",
+        "z": "0b0f798f63ddff40",
+        "g": "3370d470a985810a",
+        "name": "",
+        "server": "3b1276140ac669a1",
+        "client": "",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f5f5992e463c27a5",
+        "type": "delay",
+        "z": "0b0f798f63ddff40",
+        "g": "3370d470a985810a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "5c57a207a4afad27"
+            ]
+        ]
+    },
+    {
+        "id": "80f5165a7aed1856",
+        "type": "link out",
+        "z": "0b0f798f63ddff40",
+        "name": "update",
+        "mode": "link",
+        "links": [
+            "ac4d6482ec801e55"
+        ],
+        "x": 275,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ee3130f71a14b958",
+        "type": "inject",
+        "z": "0b0f798f63ddff40",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "nodered",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "80f5165a7aed1856"
+            ]
+        ]
+    },
+    {
+        "id": "24fab3761be3b26c",
+        "type": "debug",
+        "z": "0b0f798f63ddff40",
+        "name": "command",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "topic",
+        "statusType": "msg",
+        "x": 800,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "2910e46930c1bb49",
+        "type": "link in",
+        "z": "0b0f798f63ddff40",
+        "name": "command",
+        "links": [
+            "696de9d5d1c2aa89"
+        ],
+        "x": 695,
+        "y": 80,
+        "wires": [
+            [
+                "24fab3761be3b26c"
             ]
         ]
     }
