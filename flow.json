@@ -2,17 +2,9 @@
     {
         "id": "cbd68ba9caa96a3d",
         "type": "tab",
-        "label": "Time",
-        "disabled": false,
-        "info": "### Time Based automation\n\n#### Configuration\n\nThis flow contains a `function` node that uses the [suncalc](https://github.com/mourner/suncalc) package and relies on `LATITUDE` and `LONGITUDE` environment variables to specify the geographic coordinates used in determining sunrise and sunset.\n\n> _Geographic coordinates are an example of sensitive personal information that should generally be kept out of flows that might be shared as examples in a forum, pushed to a public source control repository etc._\n\nYou can specify environment variables for use in your flows in a number of ways, depending on your preferences and your overall Node-RED configuration. For most \"mainstream\" scenarios, the simplest way would be to add them to the _~/.node-red/environment_ file in the home directory of the user as whom the Node-RED service is running.\n\n#### Time of Day\n\nThe `link out` node named _asdf_ is where time-based automation flows should start, e.g. to adjust lighting, window coverings, HVAC settings etc. for different times of day:\n\n| `msg.payload` | Descrption                                                   |\n|---------------|--------------------------------------------------------------|\n| `morning`     | Sunrise to _offset_ hours after sunrise                      |\n| `midday`      | _Offset_ hours after sunrise to _offset_ hours before sunset |\n| `afternoon`   | _Offset_ hours before sunset to sunset                       |\n| `evening`     | Sunset to _bedtime_                                          |\n| `night`       | _Bedtime_ to sunrise                                         |\n\n_Offset_ is one third of the number of hours between sunrise and sunset.\n\n_Bedtime_ is generated each day to occur at the later of:\n\n- 10:00PM (22:00), plus or minus a randomly generated 30 minute offset\n- a randomly generated time, 30 to 60 minutes after sunset\n\n> _Five distinct times of day may seem excessive, but has proven necessary in a number of real-world scenarios. For example, the distinctions between `morning`, `midday` and `afternoon` are invaluable for homes with automated coverings over both East- and West-facing windows. In addition, randomizing `bedtime` can provide a modest degree of \"simulated presence\" to discourage potential burglars._\n\n#### Theme\n\nIn addition to the time-of-day specified by `msg.payload`, as described above, automation flows can also assume that `global.theme` will have been set to a value indicating any special occasions that might be effect:\n\n| `global.theme` | Description         |\n|----------------|---------------------|\n| `tribal`       | July 1 - 4          |\n| `spooky`       | Any day in October  |\n| `jolly`        | Any day in December |\n| `standard`     | Any other day       |",
-        "env": []
-    },
-    {
-        "id": "63d8cb10398da04b",
-        "type": "tab",
         "label": "Automation",
         "disabled": false,
-        "info": "",
+        "info": "### Time Based automation\n\n#### Configuration\n\nThis flow contains a `function` node that uses the [suncalc](https://github.com/mourner/suncalc) package and relies on `LATITUDE` and `LONGITUDE` environment variables to specify the geographic coordinates used in determining sunrise and sunset.\n\n> _Geographic coordinates are an example of sensitive personal information that should generally be kept out of flows that might be shared as examples in a forum, pushed to a public source control repository etc._\n\nYou can specify environment variables for use in your flows in a number of ways, depending on your preferences and your overall Node-RED configuration. For most \"mainstream\" scenarios, the simplest way would be to add them to the _~/.node-red/environment_ file in the home directory of the user as whom the Node-RED service is running.\n\n#### Time of Day\n\nThe `link out` node named _asdf_ is where time-based automation flows should start, e.g. to adjust lighting, window coverings, HVAC settings etc. for different times of day:\n\n| `msg.payload` | Descrption                                                   |\n|---------------|--------------------------------------------------------------|\n| `morning`     | Sunrise to _offset_ hours after sunrise                      |\n| `midday`      | _Offset_ hours after sunrise to _offset_ hours before sunset |\n| `afternoon`   | _Offset_ hours before sunset to sunset                       |\n| `evening`     | Sunset to _bedtime_                                          |\n| `night`       | _Bedtime_ to sunrise                                         |\n\n_Offset_ is one third of the number of hours between sunrise and sunset.\n\n_Bedtime_ is generated each day to occur at the later of:\n\n- 10:00PM (22:00), plus or minus a randomly generated 30 minute offset\n- a randomly generated time, 30 to 60 minutes after sunset\n\n> _Five distinct times of day may seem excessive, but has proven necessary in a number of real-world scenarios. For example, the distinctions between `morning`, `midday` and `afternoon` are invaluable for homes with automated coverings over both East- and West-facing windows. In addition, randomizing `bedtime` can provide a modest degree of \"simulated presence\" to discourage potential burglars._\n\n#### Theme\n\nIn addition to the time-of-day specified by `msg.payload`, as described above, automation flows can also assume that `global.theme` will have been set to a value indicating any special occasions that might be effect:\n\n| `global.theme` | Description         |\n|----------------|---------------------|\n| `tribal`       | July 1 - 4          |\n| `spooky`       | Any day in October  |\n| `jolly`        | Any day in December |\n| `standard`     | Any other day       |",
         "env": []
     },
     {
@@ -37,27 +29,19 @@
         ]
     },
     {
-        "id": "6e3ca82457d27245",
-        "type": "tab",
-        "label": "Messaging",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "e44149a93fbe9b1b",
         "type": "tab",
-        "label": "Main Floor",
+        "label": "Lighting",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "adfd8ae4a2eaf844",
+        "id": "6e3ca82457d27245",
         "type": "tab",
-        "label": "Yard",
+        "label": "Messaging",
         "disabled": false,
-        "info": "Front Yard home automation integration.",
-        "env": []
+        "info": ""
     },
     {
         "id": "5785c8d9f39df67e",
@@ -770,7 +754,15 @@
                 "value": ""
             }
         ],
-        "meta": {},
+        "meta": {
+            "module": "@parasaurolophus/node-red-find-shade-scene",
+            "type": "find-shade-scene",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Look up the PowerView scene id in flow context given its scene name",
+            "keywords": "hunter douglas,powerview",
+            "license": "MIT"
+        },
         "color": "#C0DEED",
         "icon": "font-awesome/fa-align-justify",
         "status": {
@@ -783,79 +775,6 @@
                 }
             ]
         }
-    },
-    {
-        "id": "ea7b9754db9fd0cd",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "af712bf4ec4004b4",
-            "18f53b7627e645e4",
-            "34a695c0d0260e5a"
-        ],
-        "x": 134,
-        "y": 119,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "afbdc8b60c682c85",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard jolly scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "074874e0ff13a7b1",
-            "60976d31a8dafe99",
-            "256ba437f41dfbcf"
-        ],
-        "x": 134,
-        "y": 419,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "e936dbad3fb3b587",
-        "type": "group",
-        "z": "63d8cb10398da04b",
-        "name": "Acitvate lighting theme",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "061d8c40c8ed16ab",
-            "1993fd8165053adf",
-            "981dbc2364b09d66",
-            "549a2335fb839c37",
-            "2837183323a61e04",
-            "5ba41e8325888c23",
-            "7ab1620c3349854b",
-            "c68369c3781694e3",
-            "b0ee0f2f8155fe9b",
-            "e270017761dfd27d"
-        ],
-        "x": 114,
-        "y": 179,
-        "w": 502,
-        "h": 302
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -878,76 +797,10 @@
             "9d0fb43b1d0b583f",
             "18b035d175d78813"
         ],
-        "x": 134,
+        "x": 114,
         "y": 519,
         "w": 632,
         "h": 242
-    },
-    {
-        "id": "2238e89a8f0c976d",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Turn off yard lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ec4c4a28a59d105e",
-            "fb388fbfb4e38ca3",
-            "dc1d9849661717f1"
-        ],
-        "x": 134,
-        "y": 19,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "dd577488786042ba",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard spooky scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "29a6f065ab64d562",
-            "a225232dc86a3b6f",
-            "ce692ff752c427a6"
-        ],
-        "x": 134,
-        "y": 319,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "0117b53379eade19",
-        "type": "group",
-        "z": "adfd8ae4a2eaf844",
-        "name": "Activate yard tribal scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "816be5cd3b82bf0b",
-            "a6475288998b4e07",
-            "35ec7b633401cd2e"
-        ],
-        "x": 134,
-        "y": 219,
-        "w": 452,
-        "h": 82
     },
     {
         "id": "87285e6bf01cff03",
@@ -966,7 +819,7 @@
             "7173aa38c9fa93dc",
             "618e79a58ab8143a"
         ],
-        "x": 134,
+        "x": 114,
         "y": 19,
         "w": 362,
         "h": 82
@@ -1000,73 +853,16 @@
         "h": 202
     },
     {
-        "id": "c47c0d5a1854a8ca",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "Fire timer events",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ab3a2e383ee84b6a",
-            "988129e9c60e8818",
-            "949418271b11ff8d",
-            "f5b1881692fec9a3",
-            "b0a75d84b9e77154",
-            "20d4be0a2f8674c6",
-            "9632421ff2220cf7",
-            "98e7ed1f2c05288a",
-            "e5be53de3ccb63ae",
-            "8cd21d8332f6db6f",
-            "69b99c3b64060e59"
-        ],
-        "x": 34,
-        "y": 19,
-        "w": 782,
-        "h": 242
-    },
-    {
-        "id": "5127a90040340ac3",
-        "type": "group",
-        "z": "63d8cb10398da04b",
-        "name": "Activate window covering scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "9b03415246d198b8",
-            "eae8f5a9e4a0a482",
-            "5938d52c5b7dff7f",
-            "852b9ed1563a9966",
-            "1cd05bf9545f7fd2",
-            "83801674771348bb",
-            "08388db8f103b3a6"
-        ],
-        "x": 114,
-        "y": 499,
-        "w": 302,
-        "h": 242
-    },
-    {
         "id": "ca14f3586a7c5f24",
         "type": "group",
         "z": "c7141ffb22d64190",
         "name": "Basement Hue",
         "style": {
             "label": true,
-            "stroke": "none",
+            "stroke": "#000000",
             "fill-opacity": "0.05",
             "color": "#000000",
-            "stroke-opacity": "0.4",
-            "fill": "#000000"
+            "stroke-opacity": "0.1"
         },
         "nodes": [
             "9c46129d149ab201",
@@ -1087,9 +883,8 @@
             "fill-opacity": "0.05",
             "label": true,
             "color": "#000000",
-            "stroke": "none",
-            "stroke-opacity": "0.4",
-            "fill": "#000000"
+            "stroke": "#000000",
+            "stroke-opacity": "0.1"
         },
         "nodes": [
             "70e9b8db12799d18",
@@ -1168,10 +963,10 @@
         "name": "Main Floor (Hue Zone)",
         "style": {
             "label": true,
-            "stroke": "none",
-            "fill": "#000000",
+            "stroke": "#000000",
             "fill-opacity": "0.05",
-            "color": "#000000"
+            "color": "#000000",
+            "stroke-opacity": "0.1"
         },
         "nodes": [
             "1ce03cecd5db8bc6",
@@ -1190,10 +985,10 @@
         "name": "Main Bathroom (Hue Room)",
         "style": {
             "label": true,
-            "stroke": "none",
-            "fill": "#000000",
+            "stroke": "#000000",
             "fill-opacity": "0.05",
-            "color": "#000000"
+            "color": "#000000",
+            "stroke-opacity": "0.1"
         },
         "nodes": [
             "00ad2b71a9c29a21",
@@ -1203,59 +998,6 @@
         "y": 373,
         "w": 524,
         "h": 234
-    },
-    {
-        "id": "b36cfe5d709eea6c",
-        "type": "group",
-        "z": "63d8cb10398da04b",
-        "name": "UI for enabling automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "4212d7a78c81cc93",
-            "734b211ab18fcbb7",
-            "cd16b58b722b2540",
-            "831fb3f42898b50f",
-            "6bcbbea082cb70bd"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 702,
-        "h": 122
-    },
-    {
-        "id": "6fcea92d03461935",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "Trigger automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "a32b155805bc67e1",
-            "485df563c6545698",
-            "80170ed6abe053ca",
-            "98e07825f41a09a2",
-            "42a4e6d228c3271f",
-            "f14873e6c525420f",
-            "eff58d8a9acf14dc",
-            "1b5ab2bf7ea37b3b",
-            "15cb33f94fe6371a",
-            "5e896842ec1ef52a"
-        ],
-        "x": 34,
-        "y": 279,
-        "w": 1022,
-        "h": 202
     },
     {
         "id": "8dff7c51091f12ea",
@@ -1350,7 +1092,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1373,7 +1115,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1396,7 +1138,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1419,7 +1161,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1440,7 +1182,7 @@
         "g": "46f2fb3ee016fe23",
         "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
         "style": {
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.11",
             "label": true,
             "color": "#000000",
             "stroke": "none",
@@ -1465,7 +1207,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1489,7 +1231,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1510,7 +1252,7 @@
         "g": "ca14f3586a7c5f24",
         "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
         "style": {
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000",
             "stroke": "none",
@@ -1535,7 +1277,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1559,7 +1301,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1582,7 +1324,7 @@
         "style": {
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.05",
+            "fill-opacity": "0.1",
             "label": true,
             "color": "#000000"
         },
@@ -1615,7 +1357,7 @@
             "5db5ebf66b1cf16b",
             "516be0577e70437c"
         ],
-        "x": 134,
+        "x": 114,
         "y": 119,
         "w": 1092,
         "h": 82
@@ -1639,7 +1381,7 @@
             "18709dea4106ee7e",
             "7bc062570484d12c"
         ],
-        "x": 134,
+        "x": 114,
         "y": 219,
         "w": 1092,
         "h": 82
@@ -1663,7 +1405,7 @@
             "3849c71599f44bc7",
             "bdce740848b412c8"
         ],
-        "x": 134,
+        "x": 114,
         "y": 319,
         "w": 1092,
         "h": 82
@@ -1687,10 +1429,265 @@
             "5cdf5a1ca6546850",
             "b56bca504084bf91"
         ],
-        "x": 134,
+        "x": 114,
         "y": 419,
         "w": 1092,
         "h": 82
+    },
+    {
+        "id": "d23ba68654f3c055",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "name": "Yard (Hue Room)",
+        "style": {
+            "stroke": "#000000",
+            "fill-opacity": "0.05",
+            "label": true,
+            "color": "#000000",
+            "stroke-opacity": "0.1"
+        },
+        "nodes": [
+            "26622bde8cf9b262",
+            "c083702f726a3c76",
+            "1f51b2e96d97963e",
+            "73df20e8ccdbf56c",
+            "f6597e2f37dd2636"
+        ],
+        "x": 708,
+        "y": 13,
+        "w": 524,
+        "h": 534
+    },
+    {
+        "id": "26622bde8cf9b262",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard sunset scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "51e789d7146d158c",
+            "bcf937398010e69d",
+            "8c8685c28661026d"
+        ],
+        "x": 734,
+        "y": 139,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "c083702f726a3c76",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard jolly scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "973da59b5e8db353",
+            "434961afc8e6268a",
+            "c639897051efe373"
+        ],
+        "x": 734,
+        "y": 439,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "1f51b2e96d97963e",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Turn off yard lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "de84c77427959f96",
+            "f224835045d99471",
+            "30ad3f93b6509f97"
+        ],
+        "x": 734,
+        "y": 39,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "73df20e8ccdbf56c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard spooky scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6bc33e9277b4e511",
+            "f92a8accf963b5bf",
+            "9f798cee87b95525"
+        ],
+        "x": 734,
+        "y": 339,
+        "w": 472,
+        "h": 82
+    },
+    {
+        "id": "f6597e2f37dd2636",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard tribal scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ccd0f26bea9262e7",
+            "7ac02c6645861b20",
+            "e444798d5fd55433"
+        ],
+        "x": 734,
+        "y": 239,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "98cf3b8910bc4f22",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Trigger automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "a32b155805bc67e1",
+            "485df563c6545698",
+            "80170ed6abe053ca",
+            "98e07825f41a09a2",
+            "42a4e6d228c3271f",
+            "f14873e6c525420f",
+            "1b5ab2bf7ea37b3b",
+            "21af7493f52944f5",
+            "1e6ace60764fec35",
+            "83d6d8f537b0c172",
+            "08157854eff23df6",
+            "60f145bb0461c216"
+        ],
+        "x": 14,
+        "y": 279,
+        "w": 1002,
+        "h": 202
+    },
+    {
+        "id": "a0289a7a0402361a",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Fire timer events",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1"
+        },
+        "nodes": [
+            "ab3a2e383ee84b6a",
+            "988129e9c60e8818",
+            "949418271b11ff8d",
+            "f5b1881692fec9a3",
+            "b0a75d84b9e77154",
+            "20d4be0a2f8674c6",
+            "9632421ff2220cf7",
+            "98e7ed1f2c05288a",
+            "e5be53de3ccb63ae",
+            "8cd21d8332f6db6f",
+            "69b99c3b64060e59"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 782,
+        "h": 242
+    },
+    {
+        "id": "1f88f9981ae4ba5f",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Lighting automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "5950aa6c0df32eb2",
+            "4ed8bcf218333395",
+            "b29a7ab55a3476e5",
+            "6a4e3c8d5c47d1b7",
+            "e0a9d45fbfcb3532",
+            "758cfea08b622975",
+            "b8723d53ddad808a",
+            "0156a364439561a8",
+            "c60a157e32809b1f",
+            "805a96f9c1561bcd"
+        ],
+        "x": 514,
+        "y": 499,
+        "w": 502,
+        "h": 242
+    },
+    {
+        "id": "fde389905b8f6545",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Window shade automation",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ba94cc02344092b6",
+            "5ec89823b4e8d3aa",
+            "cb25d319d7126480",
+            "c633c043693d29f4",
+            "fc34e1d6c55a3985",
+            "0b72197569340d63",
+            "aafc4027ba2b619f"
+        ],
+        "x": 814,
+        "y": 19,
+        "w": 322,
+        "h": 242
     },
     {
         "id": "e79e0110c2317edb",
@@ -3240,7 +3237,7 @@
         "id": "ab3a2e383ee84b6a",
         "type": "join",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "",
         "mode": "custom",
         "build": "object",
@@ -3257,7 +3254,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 450,
+        "x": 430,
         "y": 100,
         "wires": [
             [
@@ -3269,7 +3266,7 @@
         "id": "988129e9c60e8818",
         "type": "function",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "time",
         "func": "/**\n * Determine a `time` based on given values for `sunrise`, `sunset`, `bedtime` and `now`,\n * where `offset`, below, is ((`sunset` - `sunrise`) / 3):\n * \n * | `time`      | description                                                            |\n * |-------------|------------------------------------------------------------------------|\n * | `morning`   | `now` is between `sunrise` and (`sunrise` + `offset`)                  |\n * | `midday`    | `now` is between (`sunrise` + `offset`) and (`sunset` - `offset`)      |\n * | `afternoon` | `now` is between (`sunset` - `offset`) and `sunset`                    |\n * | `evening`   | `now` is between `sunset` and `bedtime`                                |\n * | `night`     | otherwise [i.e. `now` is between `bedtime` and `sunrise` the next day] |\n */\n\nconst theme = msg.payload.daily.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.daily.sunrise\nconst sunset = msg.payload.daily.sunset\nconst bedtime = msg.payload.daily.bedtime\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\n\nmsg.payload = {\n    theme: theme,\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n\n} else {\n\n    msg.payload.time = 'night'\n\n}\n\nnode.status({\n    text: msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nmsg.topic = 'nodered/automation/time'\nmsg.qos = 2\nmsg.retain = true\nreturn msg",
         "outputs": 1,
@@ -3277,7 +3274,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 570,
+        "x": 550,
         "y": 100,
         "wires": [
             [
@@ -3292,7 +3289,7 @@
         "id": "949418271b11ff8d",
         "type": "rbe",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "",
         "func": "rbe",
         "gap": "",
@@ -3301,7 +3298,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
+        "x": 670,
         "y": 100,
         "wires": [
             [
@@ -3313,7 +3310,7 @@
         "id": "f5b1881692fec9a3",
         "type": "inject",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "every minute",
         "props": [
             {
@@ -3331,7 +3328,7 @@
         "topic": "now",
         "payload": "",
         "payloadType": "date",
-        "x": 280,
+        "x": 260,
         "y": 60,
         "wires": [
             [
@@ -3343,7 +3340,7 @@
         "id": "b0a75d84b9e77154",
         "type": "inject",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "every midnight",
         "props": [
             {
@@ -3357,7 +3354,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 140,
         "y": 180,
         "wires": [
             [
@@ -3369,7 +3366,7 @@
         "id": "20d4be0a2f8674c6",
         "type": "inject",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "at start",
         "props": [
             {
@@ -3383,7 +3380,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
+        "x": 160,
         "y": 140,
         "wires": [
             [
@@ -3395,13 +3392,13 @@
         "id": "9632421ff2220cf7",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 775,
+        "x": 755,
         "y": 100,
         "wires": []
     },
@@ -3409,7 +3406,7 @@
         "id": "98e7ed1f2c05288a",
         "type": "function",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "name": "daily",
         "func": "/*global suncalc*/\n\n/**\n * Send a message when the flow starts, and every midnight\n * thereafter, containing:\n * \n * - `sunrise`: the number of minutes after midnight at which\n *              the sun will rise\n * \n * - `sunset`:  the number of minutes after midnight at which\n *              the sun will set\n * \n * - `bedtime`: a randomly generated number of minutes after\n *              midnight, the later of:\n * \n *              1. 10:00 PM (22:00) plus or minus 30 minutes\n * \n *              2. 30 - 60 minutes after sunset, if the preceding\n *                 would occur after the sun has set\n * \n * - `theme`:   one of `standard`, `tribal`, `spooky` or `jolly`\n *              depending on the day and date\n * \n *              | theme      | description         |\n *              |------------|---------------------|\n *              | `tribal`   | July 1 - 4          |\n *              | `spooky`   | any day in October  |\n *              | `jolly`    | any day in December |\n *              | `standard` | any other day       |\n * \n * > Notes:\n * >\n * > - This node depends on the _suncalc_ package to determine\n * >   `sunrise` and `sunset`.\n * >\n * > - It assumes that the geographic coordinates to use with\n * >   the _suncalc_ library are set using `LATITUDE` and\n * >   `LONGITUDE` environment variables.\n * >\n * > - It also assumes that the host OS is configured such that\n * >   functions like `Date.toHours()` will operate in the correct\n * >   time zone for the location specified by `${LATITUDE}`\n * >   and `${LONGITUDE}`\n */\n\n//////////////////////////////////////////////////////////////////////\n// sunrise / sunset\n//////////////////////////////////////////////////////////////////////\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n}\n\n//////////////////////////////////////////////////////////////////////\n// theme\n//////////////////////////////////////////////////////////////////////\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// bedtime\n//////////////////////////////////////////////////////////////////////\n\nmsg.payload.bedtime = 1350 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    msg.payload.bedtime = msg.payload.sunset + 30 + Math.floor(Math.random() * 30)\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// status and topic\n//////////////////////////////////////////////////////////////////////\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = Math.floor(minutes / 60)\n    const m = minutes % 60\n    const a = ((h > 12) ? ' PM' : ' AM')\n\n    return String(h % 12).padStart(2, ' ') + ':' + String(m).padStart(2, '0') + a\n\n}\n\nconst formattedSunrise = formatMinutes(msg.payload.sunrise)\nconst formattedSunset = formatMinutes(msg.payload.sunset)\nconst formattedBedtime = formatMinutes(msg.payload.bedtime)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme\n})\n\nmsg.topic = 'daily'\nreturn [\n    msg,\n    { payload: formattedSunrise },\n    { payload: formattedSunset },\n    { payload: formattedBedtime }\n]",
         "outputs": 4,
@@ -3422,7 +3419,7 @@
                 "module": "suncalc"
             }
         ],
-        "x": 310,
+        "x": 290,
         "y": 160,
         "wires": [
             [
@@ -3449,7 +3446,7 @@
         "id": "a32b155805bc67e1",
         "type": "mqtt in",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "name": "",
         "topic": "nodered/automation/time",
         "qos": "2",
@@ -3459,8 +3456,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 400,
+        "x": 150,
+        "y": 320,
         "wires": [
             [
                 "485df563c6545698"
@@ -3471,7 +3468,7 @@
         "id": "485df563c6545698",
         "type": "join",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "name": "",
         "mode": "custom",
         "build": "object",
@@ -3489,7 +3486,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 350,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3500,7 +3497,7 @@
         "id": "80170ed6abe053ca",
         "type": "change",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "name": "flatten payload",
         "rules": [
             {
@@ -3517,13 +3514,12 @@
         "to": "",
         "reg": false,
         "x": 500,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "98e07825f41a09a2",
                 "f14873e6c525420f",
-                "42a4e6d228c3271f",
-                "5e896842ec1ef52a"
+                "42a4e6d228c3271f"
             ]
         ]
     },
@@ -3531,7 +3527,7 @@
         "id": "98e07825f41a09a2",
         "type": "rbe",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "name": "",
         "func": "rbei",
         "gap": "",
@@ -3540,7 +3536,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 710,
+        "x": 670,
         "y": 320,
         "wires": [
             [
@@ -3552,7 +3548,7 @@
         "id": "42a4e6d228c3271f",
         "type": "ui_text",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "group": "25c7f0078ed443dd",
         "order": 1,
         "width": 0,
@@ -3562,7 +3558,7 @@
         "format": "{{msg.payload.theme}}",
         "layout": "row-spread",
         "className": "",
-        "x": 720,
+        "x": 680,
         "y": 400,
         "wires": []
     },
@@ -3570,7 +3566,7 @@
         "id": "f14873e6c525420f",
         "type": "ui_text",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "group": "25c7f0078ed443dd",
         "order": 2,
         "width": 0,
@@ -3580,31 +3576,15 @@
         "format": "{{msg.payload.time}}",
         "layout": "row-spread",
         "className": "",
-        "x": 710,
+        "x": 670,
         "y": 360,
-        "wires": []
-    },
-    {
-        "id": "eff58d8a9acf14dc",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "trigger timed automation",
-        "mode": "link",
-        "links": [
-            "1993fd8165053adf",
-            "0514602b711a8136",
-            "9b03415246d198b8"
-        ],
-        "x": 1015,
-        "y": 320,
         "wires": []
     },
     {
         "id": "1b5ab2bf7ea37b3b",
         "type": "switch",
         "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
+        "g": "98cf3b8910bc4f22",
         "name": "automation enabled?",
         "property": "payload.enable",
         "propertyType": "msg",
@@ -3616,55 +3596,19 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 880,
+        "x": 840,
         "y": 320,
         "wires": [
             [
-                "eff58d8a9acf14dc"
+                "60f145bb0461c216"
             ]
         ]
-    },
-    {
-        "id": "15cb33f94fe6371a",
-        "type": "link in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "name": "automation enable",
-        "links": [
-            "6bcbbea082cb70bd"
-        ],
-        "x": 265,
-        "y": 360,
-        "wires": [
-            [
-                "485df563c6545698"
-            ]
-        ],
-        "info": "// nrlint align-to-grid:off\n"
-    },
-    {
-        "id": "5e896842ec1ef52a",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "6fcea92d03461935",
-        "group": "25c7f0078ed443dd",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Enabled",
-        "format": "{{msg.payload.enable}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 720,
-        "y": 440,
-        "wires": []
     },
     {
         "id": "e5be53de3ccb63ae",
         "type": "ui_text",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "group": "25c7f0078ed443dd",
         "order": 3,
         "width": 0,
@@ -3674,7 +3618,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 460,
+        "x": 440,
         "y": 140,
         "wires": []
     },
@@ -3682,7 +3626,7 @@
         "id": "8cd21d8332f6db6f",
         "type": "ui_text",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "group": "25c7f0078ed443dd",
         "order": 4,
         "width": 0,
@@ -3692,7 +3636,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 460,
+        "x": 440,
         "y": 180,
         "wires": []
     },
@@ -3700,7 +3644,7 @@
         "id": "69b99c3b64060e59",
         "type": "ui_text",
         "z": "cbd68ba9caa96a3d",
-        "g": "c47c0d5a1854a8ca",
+        "g": "a0289a7a0402361a",
         "group": "25c7f0078ed443dd",
         "order": 5,
         "width": 0,
@@ -3710,15 +3654,262 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 460,
+        "x": 440,
         "y": 220,
         "wires": []
     },
     {
-        "id": "061d8c40c8ed16ab",
+        "id": "21af7493f52944f5",
+        "type": "ui_switch",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "Enable Automation",
+        "label": "Enable",
+        "tooltip": "",
+        "group": "25c7f0078ed443dd",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [
+                "83d6d8f537b0c172"
+            ]
+        ]
+    },
+    {
+        "id": "1e6ace60764fec35",
+        "type": "mqtt in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "",
+        "topic": "nodered/automation/enable",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "21af7493f52944f5",
+                "485df563c6545698"
+            ]
+        ]
+    },
+    {
+        "id": "83d6d8f537b0c172",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/automation/enable",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 440,
+        "wires": [
+            [
+                "08157854eff23df6"
+            ]
+        ]
+    },
+    {
+        "id": "08157854eff23df6",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "dd7609e91ad64f63"
+        ],
+        "x": 695,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "60f145bb0461c216",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "automation",
+        "mode": "link",
+        "links": [
+            "8a8dae1a991c5376",
+            "e8aea84566ec0214",
+            "129472d1fd39302b",
+            "7acccda8a421da34",
+            "805a96f9c1561bcd",
+            "aafc4027ba2b619f"
+        ],
+        "x": 975,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5950aa6c0df32eb2",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "activate morning",
+        "mode": "link",
+        "links": [
+            "e74fcadba6a2b4ca",
+            "07ccb0b07e6fada8",
+            "ec4c4a28a59d105e",
+            "08ca72b8e815a992",
+            "de84c77427959f96"
+        ],
+        "x": 795,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "4ed8bcf218333395",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "activate night",
+        "mode": "link",
+        "links": [
+            "fbd53f7f18ca6655",
+            "3ed1a4d37d1548b4",
+            "ec4c4a28a59d105e",
+            "ec0f7c926936a835",
+            "de84c77427959f96"
+        ],
+        "x": 795,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "b29a7ab55a3476e5",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "trigger main floor evening",
+        "mode": "link",
+        "links": [
+            "6cae9b1ccc68cb9e"
+        ],
+        "x": 795,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "6a4e3c8d5c47d1b7",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "trigger yard tribal",
+        "mode": "link",
+        "links": [
+            "a6475288998b4e07",
+            "7ac02c6645861b20"
+        ],
+        "x": 975,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e0a9d45fbfcb3532",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "trigger yard spooky",
+        "mode": "link",
+        "links": [
+            "a225232dc86a3b6f",
+            "f92a8accf963b5bf"
+        ],
+        "x": 975,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "758cfea08b622975",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "trigger yard jolly",
+        "mode": "link",
+        "links": [
+            "60976d31a8dafe99",
+            "a225232dc86a3b6f",
+            "a6475288998b4e07",
+            "434961afc8e6268a",
+            "f92a8accf963b5bf",
+            "7ac02c6645861b20"
+        ],
+        "x": 975,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "b8723d53ddad808a",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "trigger yard standard",
+        "mode": "link",
+        "links": [
+            "18f53b7627e645e4",
+            "bcf937398010e69d"
+        ],
+        "x": 975,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "0156a364439561a8",
         "type": "switch",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
         "name": "time",
         "property": "payload.time",
         "propertyType": "msg",
@@ -3742,149 +3933,26 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 250,
-        "y": 340,
+        "x": 650,
+        "y": 620,
         "wires": [
             [
-                "981dbc2364b09d66"
+                "5950aa6c0df32eb2"
             ],
             [
-                "2837183323a61e04",
-                "5ba41e8325888c23"
+                "c60a157e32809b1f",
+                "b29a7ab55a3476e5"
             ],
             [
-                "549a2335fb839c37"
+                "4ed8bcf218333395"
             ]
         ]
     },
     {
-        "id": "549a2335fb839c37",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "activate night",
-        "mode": "link",
-        "links": [
-            "fbd53f7f18ca6655",
-            "3ed1a4d37d1548b4",
-            "ec4c4a28a59d105e",
-            "ec0f7c926936a835"
-        ],
-        "x": 415,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "2837183323a61e04",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "trigger main floor evening",
-        "mode": "link",
-        "links": [
-            "6cae9b1ccc68cb9e"
-        ],
-        "x": 415,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "7ab1620c3349854b",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "trigger yard tribal",
-        "mode": "link",
-        "links": [
-            "a6475288998b4e07"
-        ],
-        "x": 575,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "c68369c3781694e3",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "trigger yard spooky",
-        "mode": "link",
-        "links": [
-            "a225232dc86a3b6f"
-        ],
-        "x": 575,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "b0ee0f2f8155fe9b",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "trigger yard jolly",
-        "mode": "link",
-        "links": [
-            "60976d31a8dafe99",
-            "a225232dc86a3b6f",
-            "a6475288998b4e07"
-        ],
-        "x": 575,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "e270017761dfd27d",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "trigger yard standard",
-        "mode": "link",
-        "links": [
-            "18f53b7627e645e4"
-        ],
-        "x": 575,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "981dbc2364b09d66",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "activate morning",
-        "mode": "link",
-        "links": [
-            "e74fcadba6a2b4ca",
-            "07ccb0b07e6fada8",
-            "ec4c4a28a59d105e",
-            "08ca72b8e815a992"
-        ],
-        "x": 415,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "1993fd8165053adf",
-        "type": "link in",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
-        "name": "lighting automation",
-        "links": [
-            "eff58d8a9acf14dc"
-        ],
-        "x": 155,
-        "y": 340,
-        "wires": [
-            [
-                "061d8c40c8ed16ab"
-            ]
-        ]
-    },
-    {
-        "id": "5ba41e8325888c23",
+        "id": "c60a157e32809b1f",
         "type": "switch",
-        "z": "63d8cb10398da04b",
-        "g": "e936dbad3fb3b587",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
         "name": "theme",
         "property": "payload.theme",
         "propertyType": "msg",
@@ -3911,45 +3979,45 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 450,
-        "y": 300,
+        "x": 830,
+        "y": 600,
         "wires": [
             [
-                "7ab1620c3349854b"
+                "6a4e3c8d5c47d1b7"
             ],
             [
-                "c68369c3781694e3"
+                "e0a9d45fbfcb3532"
             ],
             [
-                "b0ee0f2f8155fe9b"
+                "758cfea08b622975"
             ],
             [
-                "e270017761dfd27d"
+                "b8723d53ddad808a"
             ]
         ]
     },
     {
-        "id": "9b03415246d198b8",
+        "id": "805a96f9c1561bcd",
         "type": "link in",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
-        "name": "window shade automation",
+        "z": "cbd68ba9caa96a3d",
+        "g": "1f88f9981ae4ba5f",
+        "name": "lighting",
         "links": [
-            "eff58d8a9acf14dc"
+            "60f145bb0461c216"
         ],
-        "x": 155,
+        "x": 555,
         "y": 620,
         "wires": [
             [
-                "eae8f5a9e4a0a482"
+                "0156a364439561a8"
             ]
         ]
     },
     {
-        "id": "eae8f5a9e4a0a482",
+        "id": "ba94cc02344092b6",
         "type": "switch",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
         "name": "time",
         "property": "payload.time",
         "propertyType": "msg",
@@ -3983,23 +4051,23 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 250,
-        "y": 620,
+        "x": 950,
+        "y": 140,
         "wires": [
             [
-                "5938d52c5b7dff7f"
+                "5ec89823b4e8d3aa"
             ],
             [
-                "852b9ed1563a9966"
+                "cb25d319d7126480"
             ],
             [
-                "1cd05bf9545f7fd2"
+                "c633c043693d29f4"
             ],
             [
-                "83801674771348bb"
+                "fc34e1d6c55a3985"
             ],
             [
-                "08388db8f103b3a6"
+                "0b72197569340d63"
             ]
         ],
         "inputLabels": [
@@ -4014,202 +4082,91 @@
         ]
     },
     {
-        "id": "4212d7a78c81cc93",
-        "type": "ui_switch",
-        "z": "63d8cb10398da04b",
-        "g": "b36cfe5d709eea6c",
-        "name": "Enable Automation",
-        "label": "Enable",
-        "tooltip": "",
-        "group": "25c7f0078ed443dd",
-        "order": 7,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "decouple": "true",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 470,
-        "y": 120,
-        "wires": [
-            [
-                "cd16b58b722b2540"
-            ]
-        ]
-    },
-    {
-        "id": "734b211ab18fcbb7",
-        "type": "mqtt in",
-        "z": "63d8cb10398da04b",
-        "g": "b36cfe5d709eea6c",
-        "name": "",
-        "topic": "nodered/automation/enable",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 250,
-        "y": 100,
-        "wires": [
-            [
-                "4212d7a78c81cc93",
-                "6bcbbea082cb70bd"
-            ]
-        ]
-    },
-    {
-        "id": "cd16b58b722b2540",
-        "type": "change",
-        "z": "63d8cb10398da04b",
-        "g": "b36cfe5d709eea6c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "nodered/automation/enable",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 660,
-        "y": 120,
-        "wires": [
-            [
-                "831fb3f42898b50f"
-            ]
-        ]
-    },
-    {
-        "id": "831fb3f42898b50f",
+        "id": "5ec89823b4e8d3aa",
         "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "b36cfe5d709eea6c",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 775,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "6bcbbea082cb70bd",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "b36cfe5d709eea6c",
-        "name": "automation enable",
-        "mode": "link",
-        "links": [
-            "15cb33f94fe6371a"
-        ],
-        "x": 395,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "5938d52c5b7dff7f",
-        "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
         "name": "morning",
         "mode": "link",
         "links": [
             "cab89ebfeca22623"
         ],
-        "x": 375,
-        "y": 540,
+        "x": 1095,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "852b9ed1563a9966",
+        "id": "cb25d319d7126480",
         "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
         "name": "midday",
         "mode": "link",
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 375,
-        "y": 580,
+        "x": 1095,
+        "y": 100,
         "wires": []
     },
     {
-        "id": "1cd05bf9545f7fd2",
+        "id": "c633c043693d29f4",
         "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
         "name": "afternoon",
         "mode": "link",
         "links": [
             "3fa2af1c1f32f8ee"
         ],
-        "x": 375,
-        "y": 620,
+        "x": 1095,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "83801674771348bb",
+        "id": "fc34e1d6c55a3985",
         "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
         "name": "evening",
         "mode": "link",
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 375,
-        "y": 660,
+        "x": 1095,
+        "y": 180,
         "wires": []
     },
     {
-        "id": "08388db8f103b3a6",
+        "id": "0b72197569340d63",
         "type": "link out",
-        "z": "63d8cb10398da04b",
-        "g": "5127a90040340ac3",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
         "name": "night",
         "mode": "link",
         "links": [
             "71f42f61777d49d9"
         ],
-        "x": 375,
-        "y": 700,
+        "x": 1095,
+        "y": 220,
         "wires": []
+    },
+    {
+        "id": "aafc4027ba2b619f",
+        "type": "link in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "fde389905b8f6545",
+        "name": "shades",
+        "links": [
+            "60f145bb0461c216"
+        ],
+        "x": 855,
+        "y": 140,
+        "wires": [
+            [
+                "ba94cc02344092b6"
+            ]
+        ]
     },
     {
         "id": "14e5342cb50f366f",
@@ -4673,7 +4630,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 630,
+        "x": 610,
         "y": 720,
         "wires": []
     },
@@ -4690,7 +4647,7 @@
                 "type": "env"
             }
         ],
-        "x": 320,
+        "x": 300,
         "y": 60,
         "wires": [
             [
@@ -4705,7 +4662,7 @@
         "g": "87285e6bf01cff03",
         "name": "activate powerview scene",
         "links": [],
-        "x": 175,
+        "x": 155,
         "y": 60,
         "wires": [
             [
@@ -4721,7 +4678,7 @@
         "name": "return from set powerview scene",
         "mode": "return",
         "links": [],
-        "x": 455,
+        "x": 435,
         "y": 60,
         "wires": []
     },
@@ -4747,7 +4704,7 @@
         "topic": "rooms",
         "payload": "",
         "payloadType": "str",
-        "x": 240,
+        "x": 220,
         "y": 560,
         "wires": [
             [
@@ -4767,7 +4724,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
+        "x": 420,
         "y": 720,
         "wires": [
             [
@@ -4795,7 +4752,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
+        "x": 240,
         "y": 720,
         "wires": [
             [
@@ -4816,7 +4773,7 @@
                 "type": "env"
             }
         ],
-        "x": 470,
+        "x": 450,
         "y": 640,
         "wires": [
             [
@@ -4851,7 +4808,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 260,
+        "x": 240,
         "y": 640,
         "wires": [
             [
@@ -4872,7 +4829,7 @@
                 "type": "env"
             }
         ],
-        "x": 430,
+        "x": 410,
         "y": 560,
         "wires": [
             [
@@ -4887,9 +4844,12 @@
         "g": "0770b0ba393f379d",
         "name": "close all shades",
         "links": [
-            "08388db8f103b3a6"
+            "08388db8f103b3a6",
+            "fa1ec72a4270321c",
+            "4a69e032bf396637",
+            "0b72197569340d63"
         ],
-        "x": 175,
+        "x": 155,
         "y": 160,
         "wires": [
             [
@@ -4907,7 +4867,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 590,
+        "x": 570,
         "y": 160,
         "wires": [
             [
@@ -4925,7 +4885,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1090,
+        "x": 1070,
         "y": 160,
         "wires": [
             []
@@ -4939,9 +4899,15 @@
         "name": "open all shades",
         "links": [
             "852b9ed1563a9966",
-            "83801674771348bb"
+            "83801674771348bb",
+            "cbfb68d15d64faa7",
+            "7bb24887e8a01399",
+            "06d9f4b53b9bbb6e",
+            "5a5a3cf0e990c640",
+            "cb25d319d7126480",
+            "fc34e1d6c55a3985"
         ],
-        "x": 175,
+        "x": 155,
         "y": 260,
         "wires": [
             [
@@ -4959,7 +4925,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 590,
+        "x": 570,
         "y": 260,
         "wires": [
             [
@@ -4977,7 +4943,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1090,
+        "x": 1070,
         "y": 260,
         "wires": [
             []
@@ -4990,9 +4956,12 @@
         "g": "e961376bbef01556",
         "name": "open east shades",
         "links": [
-            "1cd05bf9545f7fd2"
+            "1cd05bf9545f7fd2",
+            "74ebd31c8bede749",
+            "28eacfa3cb120cc6",
+            "c633c043693d29f4"
         ],
-        "x": 175,
+        "x": 155,
         "y": 360,
         "wires": [
             [
@@ -5010,7 +4979,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 590,
+        "x": 570,
         "y": 360,
         "wires": [
             [
@@ -5028,7 +4997,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1090,
+        "x": 1070,
         "y": 360,
         "wires": [
             []
@@ -5041,9 +5010,12 @@
         "g": "56e03f40c1727182",
         "name": "open west shades",
         "links": [
-            "5938d52c5b7dff7f"
+            "5938d52c5b7dff7f",
+            "2cec2cb027e18141",
+            "f5ee7979f10b51f4",
+            "5ec89823b4e8d3aa"
         ],
-        "x": 175,
+        "x": 155,
         "y": 460,
         "wires": [
             [
@@ -5061,7 +5033,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 590,
+        "x": 570,
         "y": 460,
         "wires": [
             [
@@ -5079,7 +5051,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1090,
+        "x": 1070,
         "y": 460,
         "wires": [
             []
@@ -5098,7 +5070,7 @@
                 "type": "str"
             }
         ],
-        "x": 340,
+        "x": 320,
         "y": 160,
         "wires": [
             [
@@ -5119,7 +5091,7 @@
                 "type": "str"
             }
         ],
-        "x": 840,
+        "x": 820,
         "y": 160,
         "wires": [
             [
@@ -5140,7 +5112,7 @@
                 "type": "str"
             }
         ],
-        "x": 340,
+        "x": 320,
         "y": 260,
         "wires": [
             [
@@ -5161,7 +5133,7 @@
                 "type": "str"
             }
         ],
-        "x": 840,
+        "x": 820,
         "y": 260,
         "wires": [
             [
@@ -5182,7 +5154,7 @@
                 "type": "str"
             }
         ],
-        "x": 340,
+        "x": 320,
         "y": 360,
         "wires": [
             [
@@ -5203,7 +5175,7 @@
                 "type": "str"
             }
         ],
-        "x": 840,
+        "x": 820,
         "y": 360,
         "wires": [
             [
@@ -5224,7 +5196,7 @@
                 "type": "str"
             }
         ],
-        "x": 340,
+        "x": 320,
         "y": 460,
         "wires": [
             [
@@ -5245,11 +5217,807 @@
                 "type": "str"
             }
         ],
-        "x": 840,
+        "x": 820,
         "y": 460,
         "wires": [
             [
                 "e8a3ad681677753f"
+            ]
+        ]
+    },
+    {
+        "id": "07ccb0b07e6fada8",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "main floor off",
+        "links": [
+            "981dbc2364b09d66",
+            "e53fa5ad2c0bc25a",
+            "23eec62f6bec1030",
+            "5950aa6c0df32eb2"
+        ],
+        "x": 155,
+        "y": 80,
+        "wires": [
+            [
+                "ec1b9da9a2a0dde0"
+            ]
+        ]
+    },
+    {
+        "id": "3ed1a4d37d1548b4",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "main floor nightlight",
+        "links": [
+            "549a2335fb839c37",
+            "4c171923173c6e68",
+            "b290a3d4ebcd7653",
+            "4ed8bcf218333395"
+        ],
+        "x": 155,
+        "y": 180,
+        "wires": [
+            [
+                "1462dac4d5543f0a"
+            ]
+        ]
+    },
+    {
+        "id": "53509cbc2f897eb4",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6cae9b1ccc68cb9e",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "e1fa765ec5a5ebd7",
+        "name": "main floor sunset",
+        "links": [
+            "2837183323a61e04",
+            "b77799d3430f62c7",
+            "6f67a01c3ee8a16f",
+            "b29a7ab55a3476e5"
+        ],
+        "x": 155,
+        "y": 280,
+        "wires": [
+            [
+                "76f3eb6c53a0310c"
+            ]
+        ]
+    },
+    {
+        "id": "8ae7ee0c87df1191",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "e1fa765ec5a5ebd7",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 430,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec1b9da9a2a0dde0",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "turn off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light/9c1c7975-2f47-4552-bac8-c19b643cd678",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "33533dc0ac4ff870"
+            ]
+        ]
+    },
+    {
+        "id": "33533dc0ac4ff870",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "1ce03cecd5db8bc6",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 430,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1462dac4d5543f0a",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "3483ce20c1996e6c",
+        "name": "night light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/48c39b9f-1599-4a5c-b7f6-bad6cad4029a",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"active\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 180,
+        "wires": [
+            [
+                "53509cbc2f897eb4"
+            ]
+        ]
+    },
+    {
+        "id": "76f3eb6c53a0310c",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "e1fa765ec5a5ebd7",
+        "name": "sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/6eff0801-01e2-4803-9840-e31c06cee079",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 280,
+        "wires": [
+            [
+                "8ae7ee0c87df1191"
+            ]
+        ]
+    },
+    {
+        "id": "08ca72b8e815a992",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "00ad2b71a9c29a21",
+        "name": "main bathroom off",
+        "links": [
+            "e696e0a2acb678c2",
+            "f597e3f10639062f",
+            "ce589288779cef4a",
+            "981dbc2364b09d66",
+            "e53fa5ad2c0bc25a",
+            "23eec62f6bec1030",
+            "5950aa6c0df32eb2"
+        ],
+        "x": 155,
+        "y": 440,
+        "wires": [
+            [
+                "2736157993771007"
+            ]
+        ]
+    },
+    {
+        "id": "2736157993771007",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "00ad2b71a9c29a21",
+        "name": "turn off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light/aea74e74-d544-4d08-ad71-3b6665045256",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 250,
+        "y": 440,
+        "wires": [
+            [
+                "0cb4aa086519cdc3"
+            ]
+        ]
+    },
+    {
+        "id": "0cb4aa086519cdc3",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "00ad2b71a9c29a21",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 430,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3deabbac44606076",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "513bc529c9c10fa0",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 450,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec0f7c926936a835",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "513bc529c9c10fa0",
+        "name": "main bathroom nightlight",
+        "links": [
+            "1fa973a7d8e65e3c",
+            "549a2335fb839c37",
+            "4c171923173c6e68",
+            "b290a3d4ebcd7653",
+            "4ed8bcf218333395"
+        ],
+        "x": 155,
+        "y": 540,
+        "wires": [
+            [
+                "1af873ecc08861c7"
+            ]
+        ]
+    },
+    {
+        "id": "1af873ecc08861c7",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "513bc529c9c10fa0",
+        "name": "night light",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"active\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/5d507fb6-89f6-459a-b327-0fffd0c6dc48",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 540,
+        "wires": [
+            [
+                "3deabbac44606076"
+            ]
+        ]
+    },
+    {
+        "id": "51e789d7146d158c",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "26622bde8cf9b262",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bcf937398010e69d",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "26622bde8cf9b262",
+        "name": "yard sunset",
+        "links": [
+            "e270017761dfd27d",
+            "2272d3c9be7a6390",
+            "bbabd588c05b979f",
+            "b8723d53ddad808a"
+        ],
+        "x": 775,
+        "y": 180,
+        "wires": [
+            [
+                "8c8685c28661026d"
+            ]
+        ]
+    },
+    {
+        "id": "8c8685c28661026d",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "26622bde8cf9b262",
+        "name": "sunset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/9b6935e2-f8ed-4f91-83a2-2bff1850da99",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 180,
+        "wires": [
+            [
+                "51e789d7146d158c"
+            ]
+        ]
+    },
+    {
+        "id": "973da59b5e8db353",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "c083702f726a3c76",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 1050,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "434961afc8e6268a",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "c083702f726a3c76",
+        "name": "yard jolly",
+        "links": [
+            "b0ee0f2f8155fe9b",
+            "81221f83aad45655",
+            "83b840b1c5858876",
+            "758cfea08b622975"
+        ],
+        "x": 775,
+        "y": 480,
+        "wires": [
+            [
+                "c639897051efe373"
+            ]
+        ]
+    },
+    {
+        "id": "c639897051efe373",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "c083702f726a3c76",
+        "name": "jolly",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/12571f23-7714-4b47-8e75-a3040389b788",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "973da59b5e8db353"
+            ]
+        ]
+    },
+    {
+        "id": "de84c77427959f96",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "1f51b2e96d97963e",
+        "name": "yard off",
+        "links": [
+            "549a2335fb839c37",
+            "981dbc2364b09d66",
+            "e53fa5ad2c0bc25a",
+            "4c171923173c6e68",
+            "23eec62f6bec1030",
+            "b290a3d4ebcd7653",
+            "5950aa6c0df32eb2",
+            "4ed8bcf218333395"
+        ],
+        "x": 775,
+        "y": 80,
+        "wires": [
+            [
+                "f224835045d99471"
+            ]
+        ]
+    },
+    {
+        "id": "f224835045d99471",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "1f51b2e96d97963e",
+        "name": "turn off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"on\":{\"on\":false}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/grouped_light/bad8480b-b404-42d1-a9e7-a4a69f400971",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 80,
+        "wires": [
+            [
+                "30ad3f93b6509f97"
+            ]
+        ]
+    },
+    {
+        "id": "30ad3f93b6509f97",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "1f51b2e96d97963e",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 1050,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6bc33e9277b4e511",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "73df20e8ccdbf56c",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 1070,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f92a8accf963b5bf",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "73df20e8ccdbf56c",
+        "name": "yard spooky",
+        "links": [
+            "b0ee0f2f8155fe9b",
+            "c68369c3781694e3",
+            "d568e31cb3452775",
+            "81221f83aad45655",
+            "6c4e5524b478fb31",
+            "83b840b1c5858876",
+            "e0a9d45fbfcb3532",
+            "758cfea08b622975"
+        ],
+        "x": 775,
+        "y": 380,
+        "wires": [
+            [
+                "9f798cee87b95525"
+            ]
+        ]
+    },
+    {
+        "id": "9f798cee87b95525",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "73df20e8ccdbf56c",
+        "name": "spooky",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [
+                "6bc33e9277b4e511"
+            ]
+        ]
+    },
+    {
+        "id": "ccd0f26bea9262e7",
+        "type": "link call",
+        "z": "e44149a93fbe9b1b",
+        "g": "f6597e2f37dd2636",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 1050,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ac02c6645861b20",
+        "type": "link in",
+        "z": "e44149a93fbe9b1b",
+        "g": "f6597e2f37dd2636",
+        "name": "yard tribal",
+        "links": [
+            "b0ee0f2f8155fe9b",
+            "7ab1620c3349854b",
+            "ba11519631ca9918",
+            "81221f83aad45655",
+            "a63ed720004a623c",
+            "83b840b1c5858876",
+            "6a4e3c8d5c47d1b7",
+            "758cfea08b622975"
+        ],
+        "x": 775,
+        "y": 280,
+        "wires": [
+            [
+                "e444798d5fd55433"
+            ]
+        ]
+    },
+    {
+        "id": "e444798d5fd55433",
+        "type": "change",
+        "z": "e44149a93fbe9b1b",
+        "g": "f6597e2f37dd2636",
+        "name": "tribal",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource/scene/c4681d32-3368-43cd-9cf1-436132521068",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "PUT",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "ccd0f26bea9262e7"
             ]
         ]
     },
@@ -5319,7 +6087,8 @@
             "9632421ff2220cf7",
             "e132ff7fd9fda65d",
             "1209a8480a23b591",
-            "831fb3f42898b50f"
+            "831fb3f42898b50f",
+            "08157854eff23df6"
         ],
         "x": 175,
         "y": 80,
@@ -5756,763 +6525,6 @@
         "wires": [
             [
                 "79f5591e72a3bc50"
-            ]
-        ]
-    },
-    {
-        "id": "07ccb0b07e6fada8",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "main floor off",
-        "links": [
-            "981dbc2364b09d66"
-        ],
-        "x": 155,
-        "y": 80,
-        "wires": [
-            [
-                "ec1b9da9a2a0dde0"
-            ]
-        ]
-    },
-    {
-        "id": "3ed1a4d37d1548b4",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "main floor nightlight",
-        "links": [
-            "549a2335fb839c37"
-        ],
-        "x": 155,
-        "y": 180,
-        "wires": [
-            [
-                "1462dac4d5543f0a"
-            ]
-        ]
-    },
-    {
-        "id": "53509cbc2f897eb4",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6cae9b1ccc68cb9e",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
-        "name": "main floor sunset",
-        "links": [
-            "2837183323a61e04"
-        ],
-        "x": 155,
-        "y": 280,
-        "wires": [
-            [
-                "76f3eb6c53a0310c"
-            ]
-        ]
-    },
-    {
-        "id": "8ae7ee0c87df1191",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 430,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ec1b9da9a2a0dde0",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "turn off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light/9c1c7975-2f47-4552-bac8-c19b643cd678",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":false}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 80,
-        "wires": [
-            [
-                "33533dc0ac4ff870"
-            ]
-        ]
-    },
-    {
-        "id": "33533dc0ac4ff870",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 430,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1462dac4d5543f0a",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "night light",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/48c39b9f-1599-4a5c-b7f6-bad6cad4029a",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"active\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 180,
-        "wires": [
-            [
-                "53509cbc2f897eb4"
-            ]
-        ]
-    },
-    {
-        "id": "76f3eb6c53a0310c",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
-        "name": "sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/6eff0801-01e2-4803-9840-e31c06cee079",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 280,
-        "wires": [
-            [
-                "8ae7ee0c87df1191"
-            ]
-        ]
-    },
-    {
-        "id": "08ca72b8e815a992",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "00ad2b71a9c29a21",
-        "name": "main bathroom off",
-        "links": [
-            "e696e0a2acb678c2",
-            "f597e3f10639062f",
-            "ce589288779cef4a",
-            "981dbc2364b09d66"
-        ],
-        "x": 155,
-        "y": 440,
-        "wires": [
-            [
-                "2736157993771007"
-            ]
-        ]
-    },
-    {
-        "id": "2736157993771007",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "00ad2b71a9c29a21",
-        "name": "turn off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":false}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light/aea74e74-d544-4d08-ad71-3b6665045256",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 440,
-        "wires": [
-            [
-                "0cb4aa086519cdc3"
-            ]
-        ]
-    },
-    {
-        "id": "0cb4aa086519cdc3",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "00ad2b71a9c29a21",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 430,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3deabbac44606076",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "513bc529c9c10fa0",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ec0f7c926936a835",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "513bc529c9c10fa0",
-        "name": "main bathroom nightlight",
-        "links": [
-            "1fa973a7d8e65e3c",
-            "549a2335fb839c37"
-        ],
-        "x": 155,
-        "y": 540,
-        "wires": [
-            [
-                "1af873ecc08861c7"
-            ]
-        ]
-    },
-    {
-        "id": "1af873ecc08861c7",
-        "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "513bc529c9c10fa0",
-        "name": "night light",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"active\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/5d507fb6-89f6-459a-b327-0fffd0c6dc48",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 260,
-        "y": 540,
-        "wires": [
-            [
-                "3deabbac44606076"
-            ]
-        ]
-    },
-    {
-        "id": "af712bf4ec4004b4",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "074874e0ff13a7b1",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "18f53b7627e645e4",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "yard sunset",
-        "links": [
-            "e270017761dfd27d"
-        ],
-        "x": 175,
-        "y": 160,
-        "wires": [
-            [
-                "34a695c0d0260e5a"
-            ]
-        ]
-    },
-    {
-        "id": "60976d31a8dafe99",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "yard jolly",
-        "links": [
-            "b0ee0f2f8155fe9b"
-        ],
-        "x": 175,
-        "y": 460,
-        "wires": [
-            [
-                "256ba437f41dfbcf"
-            ]
-        ]
-    },
-    {
-        "id": "ec4c4a28a59d105e",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "2238e89a8f0c976d",
-        "name": "yard off",
-        "links": [
-            "549a2335fb839c37",
-            "981dbc2364b09d66"
-        ],
-        "x": 175,
-        "y": 60,
-        "wires": [
-            [
-                "fb388fbfb4e38ca3"
-            ]
-        ]
-    },
-    {
-        "id": "fb388fbfb4e38ca3",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "2238e89a8f0c976d",
-        "name": "turn off",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"on\":{\"on\":false}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/grouped_light/bad8480b-b404-42d1-a9e7-a4a69f400971",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 60,
-        "wires": [
-            [
-                "dc1d9849661717f1"
-            ]
-        ]
-    },
-    {
-        "id": "dc1d9849661717f1",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "2238e89a8f0c976d",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "34a695c0d0260e5a",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "ea7b9754db9fd0cd",
-        "name": "sunset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/9b6935e2-f8ed-4f91-83a2-2bff1850da99",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 160,
-        "wires": [
-            [
-                "af712bf4ec4004b4"
-            ]
-        ]
-    },
-    {
-        "id": "256ba437f41dfbcf",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "afbdc8b60c682c85",
-        "name": "jolly",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/12571f23-7714-4b47-8e75-a3040389b788",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 460,
-        "wires": [
-            [
-                "074874e0ff13a7b1"
-            ]
-        ]
-    },
-    {
-        "id": "29a6f065ab64d562",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "dd577488786042ba",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 470,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a225232dc86a3b6f",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "dd577488786042ba",
-        "name": "yard spooky",
-        "links": [
-            "b0ee0f2f8155fe9b",
-            "c68369c3781694e3"
-        ],
-        "x": 175,
-        "y": 360,
-        "wires": [
-            [
-                "ce692ff752c427a6"
-            ]
-        ]
-    },
-    {
-        "id": "ce692ff752c427a6",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "dd577488786042ba",
-        "name": "spooky",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/70a0a8a6-b4b7-4b24-a9cf-0ecea0f359cc",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 360,
-        "wires": [
-            [
-                "29a6f065ab64d562"
-            ]
-        ]
-    },
-    {
-        "id": "816be5cd3b82bf0b",
-        "type": "link call",
-        "z": "adfd8ae4a2eaf844",
-        "g": "0117b53379eade19",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a6475288998b4e07",
-        "type": "link in",
-        "z": "adfd8ae4a2eaf844",
-        "g": "0117b53379eade19",
-        "name": "yard tribal",
-        "links": [
-            "b0ee0f2f8155fe9b",
-            "7ab1620c3349854b"
-        ],
-        "x": 175,
-        "y": 260,
-        "wires": [
-            [
-                "35ec7b633401cd2e"
-            ]
-        ]
-    },
-    {
-        "id": "35ec7b633401cd2e",
-        "type": "change",
-        "z": "adfd8ae4a2eaf844",
-        "g": "0117b53379eade19",
-        "name": "tribal",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource/scene/c4681d32-3368-43cd-9cf1-436132521068",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"recall\":{\"action\":\"dynamic_palette\"}}",
-                "tot": "json"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "PUT",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 260,
-        "wires": [
-            [
-                "816be5cd3b82bf0b"
             ]
         ]
     }
