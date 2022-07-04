@@ -350,13 +350,16 @@
         "in": [
             {
                 "x": 60,
-                "y": 140,
+                "y": 220,
                 "wires": [
                     {
                         "id": "98d7f50f7db89d4d"
                     },
                     {
                         "id": "42539f9217e51fbd"
+                    },
+                    {
+                        "id": "630e5fb465ec65c9"
                     }
                 ]
             }
@@ -364,7 +367,7 @@
         "out": [
             {
                 "x": 1170,
-                "y": 140,
+                "y": 220,
                 "wires": [
                     {
                         "id": "7972bbcf134f786b",
@@ -376,6 +379,16 @@
                     },
                     {
                         "id": "1bf87f4377d87af1",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 680,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "630e5fb465ec65c9",
                         "port": 0
                     }
                 ]
@@ -414,7 +427,7 @@
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
             "x": 700,
-            "y": 340,
+            "y": 420,
             "wires": [
                 {
                     "id": "35fad88b119f8f36",
@@ -870,9 +883,9 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 393,
-        "w": 804,
-        "h": 334
+        "y": 433,
+        "w": 844,
+        "h": 374
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -893,8 +906,8 @@
         ],
         "x": 28,
         "y": 33,
-        "w": 804,
-        "h": 334
+        "w": 864,
+        "h": 374
     },
     {
         "id": "23379c9c8c3b243e",
@@ -1215,12 +1228,13 @@
             "8c9d79d2791e9b02",
             "2d0604f94ef7bff4",
             "4d2dc9a6e42d0548",
-            "7d283a2fc0d30093"
+            "7d283a2fc0d30093",
+            "6d06fc266beda8bf"
         ],
         "x": 54,
         "y": 259,
-        "w": 662,
-        "h": 82
+        "w": 812,
+        "h": 122
     },
     {
         "id": "9c46129d149ab201",
@@ -1241,7 +1255,7 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 519,
+        "y": 559,
         "w": 375,
         "h": 82
     },
@@ -1264,7 +1278,7 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 419,
+        "y": 459,
         "w": 752,
         "h": 82
     },
@@ -1285,12 +1299,13 @@
             "1209a8480a23b591",
             "14944e047cba03fa",
             "5e2f8ae74b053fc9",
-            "a5f013472e32f50c"
+            "a5f013472e32f50c",
+            "36cd3d7fbb64eda2"
         ],
         "x": 54,
-        "y": 619,
-        "w": 642,
-        "h": 82
+        "y": 659,
+        "w": 792,
+        "h": 122
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -2342,7 +2357,7 @@
         "finalize": "",
         "libs": [],
         "x": 970,
-        "y": 60,
+        "y": 140,
         "wires": [
             []
         ]
@@ -2370,7 +2385,7 @@
         "repair": false,
         "outputs": 2,
         "x": 810,
-        "y": 100,
+        "y": 180,
         "wires": [
             [
                 "7972bbcf134f786b"
@@ -2392,7 +2407,7 @@
         "finalize": "",
         "libs": [],
         "x": 970,
-        "y": 140,
+        "y": 220,
         "wires": [
             []
         ]
@@ -2406,7 +2421,7 @@
             "b3c5813303ac7896"
         ],
         "x": 580,
-        "y": 300,
+        "y": 380,
         "wires": [
             [
                 "9827fd9dee4289ac"
@@ -2419,7 +2434,7 @@
         "z": "4e89e7c952d56c09",
         "name": "",
         "x": 410,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "c51e9f68572dcd4f"
@@ -2438,7 +2453,7 @@
         "z": "4e89e7c952d56c09",
         "name": "",
         "x": 620,
-        "y": 60,
+        "y": 140,
         "wires": [
             [
                 "74ccf37d5b5cc460"
@@ -2451,7 +2466,7 @@
         "z": "4e89e7c952d56c09",
         "name": "",
         "x": 630,
-        "y": 140,
+        "y": 220,
         "wires": [
             [
                 "74ccf37d5b5cc460"
@@ -2478,7 +2493,7 @@
         "to": "",
         "reg": false,
         "x": 220,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "b3c5813303ac7896"
@@ -2519,7 +2534,7 @@
         "to": "",
         "reg": false,
         "x": 960,
-        "y": 220,
+        "y": 300,
         "wires": [
             []
         ]
@@ -2551,11 +2566,28 @@
         "to": "",
         "reg": false,
         "x": 760,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
                 "1bf87f4377d87af1"
             ]
+        ]
+    },
+    {
+        "id": "630e5fb465ec65c9",
+        "type": "function",
+        "z": "4e89e7c952d56c09",
+        "name": "metadata",
+        "func": "function findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const scenes = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n\n    groups[groupName] = {\n        id: groupId,\n        type: groupType,\n        name: groupName,\n        grouped_light: grouped_lights[0].id,\n        scene: scenes.map(scene => {\n            return {\n                id: scene.id,\n                name: scene.metadata.name\n            }\n        })\n    }\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach(resource => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach(group => {\n    getGroup(group, metadata, groups)\n})\n\nzones.forEach(group => {\n    getGroup(group, metadata, groups)\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 60,
+        "wires": [
+            []
         ]
     },
     {
@@ -4336,7 +4368,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 160,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "8c9d79d2791e9b02"
@@ -4354,7 +4386,7 @@
         ],
         "timeout": "30",
         "x": 350,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "7d283a2fc0d30093"
@@ -4385,10 +4417,13 @@
             }
         ],
         "x": 560,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "4d2dc9a6e42d0548"
+            ],
+            [
+                "6d06fc266beda8bf"
             ]
         ]
     },
@@ -4401,7 +4436,7 @@
         "mode": "return",
         "links": [],
         "x": 355,
-        "y": 560,
+        "y": 600,
         "wires": []
     },
     {
@@ -4412,7 +4447,7 @@
         "name": "send to basement hue",
         "links": [],
         "x": 95,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "0ceb59ac89fb79b7"
@@ -4441,7 +4476,7 @@
             }
         ],
         "x": 230,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "df7392117105107f"
@@ -4467,7 +4502,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "7639b738a201d7c6"
@@ -4489,7 +4524,7 @@
         "statusVal": "payload[0].success.username",
         "statusType": "msg",
         "x": 630,
-        "y": 460,
+        "y": 500,
         "wires": []
     },
     {
@@ -4511,7 +4546,7 @@
             }
         ],
         "x": 360,
-        "y": 460,
+        "y": 500,
         "wires": [
             [
                 "9bcb520fd937694d"
@@ -4529,7 +4564,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 655,
-        "y": 660,
+        "y": 700,
         "wires": []
     },
     {
@@ -4543,7 +4578,7 @@
         ],
         "timeout": "30",
         "x": 340,
-        "y": 660,
+        "y": 720,
         "wires": [
             [
                 "a5f013472e32f50c"
@@ -4578,7 +4613,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 160,
-        "y": 660,
+        "y": 720,
         "wires": [
             [
                 "14944e047cba03fa"
@@ -4609,12 +4644,51 @@
             }
         ],
         "x": 540,
-        "y": 660,
+        "y": 720,
         "wires": [
             [
                 "1209a8480a23b591"
+            ],
+            [
+                "36cd3d7fbb64eda2"
             ]
         ]
+    },
+    {
+        "id": "6d06fc266beda8bf",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "665df9d682462b5e",
+        "name": "chez nous main",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "36cd3d7fbb64eda2",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "0fc22be05cfc5241",
+        "name": "basement hue",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 740,
+        "wires": []
     },
     {
         "id": "1cee4f351bd59563",
@@ -4622,7 +4696,7 @@
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
         "name": "powerview scenes",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
