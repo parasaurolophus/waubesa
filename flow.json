@@ -790,6 +790,53 @@
         }
     },
     {
+        "id": "be201d7a24b331c5",
+        "type": "subflow",
+        "name": "As Time",
+        "info": "",
+        "category": "waubesa",
+        "in": [],
+        "out": [
+            {
+                "x": 440,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "a96e0b1ad753faa2",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {
+            "module": "@parasaurolophus/node-red-as-time",
+            "type": "as-time",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Format the payload as a local time string",
+            "keywords": "utility,automation",
+            "license": "MIT"
+        },
+        "color": "#DDAA99",
+        "status": {
+            "x": 620,
+            "y": 120,
+            "wires": [
+                {
+                    "id": "644bea96363a82cd",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "cccd3d3ae4af3207",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -811,9 +858,7 @@
             "18b035d175d78813"
         ],
         "x": 114,
-        "y": 519,
-        "w": 632,
-        "h": 242
+        "y": 519
     },
     {
         "id": "87285e6bf01cff03",
@@ -833,9 +878,7 @@
             "618e79a58ab8143a"
         ],
         "x": 114,
-        "y": 19,
-        "w": 362,
-        "h": 82
+        "y": 19
     },
     {
         "id": "e49c9571ddd5102f",
@@ -883,9 +926,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 433,
-        "w": 844,
-        "h": 374
+        "y": 433
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -905,9 +946,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33,
-        "w": 864,
-        "h": 374
+        "y": 33
     },
     {
         "id": "23379c9c8c3b243e",
@@ -924,7 +963,7 @@
             "21679e08b9cf2dbd",
             "87fbecefe8135d77"
         ],
-        "x": 134,
+        "x": 14,
         "y": 359,
         "w": 432,
         "h": 82
@@ -944,7 +983,7 @@
             "3a45f65735fa5469",
             "353e1ccbabccae7f"
         ],
-        "x": 134,
+        "x": 14,
         "y": 259,
         "w": 392,
         "h": 82
@@ -964,7 +1003,7 @@
             "aa93bdbb5aa7d08c",
             "08c3b6627a851e95"
         ],
-        "x": 134,
+        "x": 14,
         "y": 459,
         "w": 332,
         "h": 82
@@ -987,9 +1026,7 @@
             "e1fa765ec5a5ebd7"
         ],
         "x": 88,
-        "y": 13,
-        "w": 524,
-        "h": 334
+        "y": 13
     },
     {
         "id": "e29b5646cac97198",
@@ -1008,9 +1045,7 @@
             "513bc529c9c10fa0"
         ],
         "x": 88,
-        "y": 373,
-        "w": 524,
-        "h": 234
+        "y": 373
     },
     {
         "id": "8dff7c51091f12ea",
@@ -1097,263 +1132,6 @@
         "h": 82
     },
     {
-        "id": "1ce03cecd5db8bc6",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Turn off main floor lights group",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "07ccb0b07e6fada8",
-            "ec1b9da9a2a0dde0",
-            "33533dc0ac4ff870"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "3483ce20c1996e6c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3ed1a4d37d1548b4",
-            "53509cbc2f897eb4",
-            "1462dac4d5543f0a"
-        ],
-        "x": 114,
-        "y": 139,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "e1fa765ec5a5ebd7",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6cae9b1ccc68cb9e",
-            "8ae7ee0c87df1191",
-            "76f3eb6c53a0310c"
-        ],
-        "x": 114,
-        "y": 239,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "70e9b8db12799d18",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "14e5342cb50f366f",
-            "7df3e5fbd6e9aa8a",
-            "3b5ab296575b53d4"
-        ],
-        "x": 54,
-        "y": 159,
-        "w": 385,
-        "h": 82
-    },
-    {
-        "id": "290b83ef8e01ae0f",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
-        "style": {
-            "fill-opacity": "0.11",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "51bce99c75aa12c6",
-            "f3ab10cd192709b0",
-            "73a1ec5ed8ebc167"
-        ],
-        "x": 54,
-        "y": 59,
-        "w": 752,
-        "h": 82
-    },
-    {
-        "id": "665df9d682462b5e",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Listen to events from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8c9d79d2791e9b02",
-            "2d0604f94ef7bff4",
-            "4d2dc9a6e42d0548",
-            "7d283a2fc0d30093",
-            "6d06fc266beda8bf"
-        ],
-        "x": 54,
-        "y": 259,
-        "w": 812,
-        "h": 122
-    },
-    {
-        "id": "9c46129d149ab201",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Send requests to the Hue API on the Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "df7392117105107f",
-            "df79272de1bce7c1",
-            "0ceb59ac89fb79b7"
-        ],
-        "x": 54,
-        "y": 559,
-        "w": 375,
-        "h": 82
-    },
-    {
-        "id": "648ad874a33c7973",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
-        "style": {
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "497b08f40cd0b29c",
-            "9bcb520fd937694d",
-            "7639b738a201d7c6"
-        ],
-        "x": 54,
-        "y": 459,
-        "w": 752,
-        "h": 82
-    },
-    {
-        "id": "0fc22be05cfc5241",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Listen to events from Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "1209a8480a23b591",
-            "14944e047cba03fa",
-            "5e2f8ae74b053fc9",
-            "a5f013472e32f50c",
-            "36cd3d7fbb64eda2"
-        ],
-        "x": 54,
-        "y": 659,
-        "w": 792,
-        "h": 122
-    },
-    {
-        "id": "00ad2b71a9c29a21",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Turn off main bathroom lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "08ca72b8e815a992",
-            "2736157993771007",
-            "0cb4aa086519cdc3"
-        ],
-        "x": 114,
-        "y": 399,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "513bc529c9c10fa0",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Activate main bathroom nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3deabbac44606076",
-            "ec0f7c926936a835",
-            "1af873ecc08861c7"
-        ],
-        "x": 114,
-        "y": 499,
-        "w": 472,
-        "h": 82
-    },
-    {
         "id": "0770b0ba393f379d",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -1373,9 +1151,7 @@
             "516be0577e70437c"
         ],
         "x": 114,
-        "y": 119,
-        "w": 1092,
-        "h": 82
+        "y": 119
     },
     {
         "id": "746733f8c81b5ccd",
@@ -1397,9 +1173,7 @@
             "7bc062570484d12c"
         ],
         "x": 114,
-        "y": 219,
-        "w": 1092,
-        "h": 82
+        "y": 219
     },
     {
         "id": "e961376bbef01556",
@@ -1421,9 +1195,7 @@
             "bdce740848b412c8"
         ],
         "x": 114,
-        "y": 319,
-        "w": 1092,
-        "h": 82
+        "y": 319
     },
     {
         "id": "56e03f40c1727182",
@@ -1445,9 +1217,7 @@
             "b56bca504084bf91"
         ],
         "x": 114,
-        "y": 419,
-        "w": 1092,
-        "h": 82
+        "y": 419
     },
     {
         "id": "d23ba68654f3c055",
@@ -1469,124 +1239,7 @@
             "f6597e2f37dd2636"
         ],
         "x": 708,
-        "y": 13,
-        "w": 524,
-        "h": 534
-    },
-    {
-        "id": "26622bde8cf9b262",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "51e789d7146d158c",
-            "bcf937398010e69d",
-            "8c8685c28661026d"
-        ],
-        "x": 734,
-        "y": 139,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "c083702f726a3c76",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard jolly scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "973da59b5e8db353",
-            "434961afc8e6268a",
-            "c639897051efe373"
-        ],
-        "x": 734,
-        "y": 439,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "1f51b2e96d97963e",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Turn off yard lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "de84c77427959f96",
-            "f224835045d99471",
-            "30ad3f93b6509f97"
-        ],
-        "x": 734,
-        "y": 39,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "73df20e8ccdbf56c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard spooky scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6bc33e9277b4e511",
-            "f92a8accf963b5bf",
-            "9f798cee87b95525"
-        ],
-        "x": 734,
-        "y": 339,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "f6597e2f37dd2636",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard tribal scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ccd0f26bea9262e7",
-            "7ac02c6645861b20",
-            "e444798d5fd55433"
-        ],
-        "x": 734,
-        "y": 239,
-        "w": 452,
-        "h": 82
+        "y": 13
     },
     {
         "id": "98cf3b8910bc4f22",
@@ -1601,53 +1254,22 @@
             "color": "#000000"
         },
         "nodes": [
-            "a32b155805bc67e1",
             "485df563c6545698",
             "80170ed6abe053ca",
             "98e07825f41a09a2",
-            "42a4e6d228c3271f",
-            "f14873e6c525420f",
             "1b5ab2bf7ea37b3b",
             "21af7493f52944f5",
             "1e6ace60764fec35",
             "83d6d8f537b0c172",
             "08157854eff23df6",
-            "60f145bb0461c216"
+            "60f145bb0461c216",
+            "e977392948ada8ee",
+            "52233919df9a67bc"
         ],
         "x": 14,
-        "y": 279,
+        "y": 219,
         "w": 1002,
-        "h": 202
-    },
-    {
-        "id": "a0289a7a0402361a",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "Fire timer events",
-        "style": {
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1"
-        },
-        "nodes": [
-            "ab3a2e383ee84b6a",
-            "988129e9c60e8818",
-            "949418271b11ff8d",
-            "f5b1881692fec9a3",
-            "b0a75d84b9e77154",
-            "20d4be0a2f8674c6",
-            "9632421ff2220cf7",
-            "98e7ed1f2c05288a",
-            "e5be53de3ccb63ae",
-            "8cd21d8332f6db6f",
-            "69b99c3b64060e59"
-        ],
-        "x": 14,
-        "y": 19,
-        "w": 782,
-        "h": 242
+        "h": 262
     },
     {
         "id": "1f88f9981ae4ba5f",
@@ -1699,10 +1321,419 @@
             "0b72197569340d63",
             "aafc4027ba2b619f"
         ],
-        "x": 914,
-        "y": 19,
+        "x": 14,
+        "y": 499,
         "w": 322,
         "h": 242
+    },
+    {
+        "id": "8a031cfeade40a06",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Fire timer events",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "b2c19560f9da088a",
+            "a0c7d328b5287989",
+            "8c6c3c20f5958599",
+            "a0b61336a93a4089",
+            "c9d02aeed7d0407f",
+            "d534f07cf7c1eb0b",
+            "b709b48ce2961f8e",
+            "47875e1be48bbf82",
+            "ff64f46de7793f7b"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 962,
+        "h": 182
+    },
+    {
+        "id": "aed619b61cd0588d",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Monitor timer events",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1"
+        },
+        "nodes": [
+            "c7bcd60f19dc24ec",
+            "e998cff9d44e33c1",
+            "94ac06ac565be510",
+            "fd39d6bef90014dd",
+            "1709a7b2a53949a0",
+            "e7fe816f1b71ea76",
+            "231d58a67aa42c3d",
+            "e422d0fb203c0ab4",
+            "e9ce751eb9d7f57e",
+            "ba318db28757b758",
+            "d6e2c431d3e9af8a",
+            "668778ba95c0d6bf",
+            "3e9896b3de8c17d2",
+            "53895bc91a8e3ebb",
+            "101c3e736f897d59",
+            "1062c689099a1a73",
+            "8e7d0113aeecf474",
+            "a42f585066f8900c",
+            "7dce1b783a5b4c4d",
+            "01b76d59941a8852",
+            "ea035681d11621de",
+            "dce1299c653bffe0"
+        ],
+        "x": 14,
+        "y": 559,
+        "w": 1332,
+        "h": 202
+    },
+    {
+        "id": "1ce03cecd5db8bc6",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Turn off main floor lights group",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "07ccb0b07e6fada8",
+            "ec1b9da9a2a0dde0",
+            "33533dc0ac4ff870"
+        ],
+        "x": 114,
+        "y": 39
+    },
+    {
+        "id": "3483ce20c1996e6c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor nightlight scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3ed1a4d37d1548b4",
+            "53509cbc2f897eb4",
+            "1462dac4d5543f0a"
+        ],
+        "x": 114,
+        "y": 139
+    },
+    {
+        "id": "e1fa765ec5a5ebd7",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor sunset scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6cae9b1ccc68cb9e",
+            "8ae7ee0c87df1191",
+            "76f3eb6c53a0310c"
+        ],
+        "x": 114,
+        "y": 239
+    },
+    {
+        "id": "70e9b8db12799d18",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "14e5342cb50f366f",
+            "7df3e5fbd6e9aa8a",
+            "3b5ab296575b53d4"
+        ],
+        "x": 54,
+        "y": 159
+    },
+    {
+        "id": "290b83ef8e01ae0f",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "style": {
+            "fill-opacity": "0.11",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "51bce99c75aa12c6",
+            "f3ab10cd192709b0",
+            "73a1ec5ed8ebc167"
+        ],
+        "x": 54,
+        "y": 59
+    },
+    {
+        "id": "665df9d682462b5e",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Listen to events from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8c9d79d2791e9b02",
+            "2d0604f94ef7bff4",
+            "4d2dc9a6e42d0548",
+            "7d283a2fc0d30093",
+            "6d06fc266beda8bf"
+        ],
+        "x": 54,
+        "y": 259
+    },
+    {
+        "id": "9c46129d149ab201",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Send requests to the Hue API on the Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "df7392117105107f",
+            "df79272de1bce7c1",
+            "0ceb59ac89fb79b7"
+        ],
+        "x": 54,
+        "y": 559
+    },
+    {
+        "id": "648ad874a33c7973",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "497b08f40cd0b29c",
+            "9bcb520fd937694d",
+            "7639b738a201d7c6"
+        ],
+        "x": 54,
+        "y": 459
+    },
+    {
+        "id": "0fc22be05cfc5241",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Listen to events from Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1209a8480a23b591",
+            "14944e047cba03fa",
+            "5e2f8ae74b053fc9",
+            "a5f013472e32f50c",
+            "36cd3d7fbb64eda2"
+        ],
+        "x": 54,
+        "y": 659
+    },
+    {
+        "id": "00ad2b71a9c29a21",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "e29b5646cac97198",
+        "name": "Turn off main bathroom lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "08ca72b8e815a992",
+            "2736157993771007",
+            "0cb4aa086519cdc3"
+        ],
+        "x": 114,
+        "y": 399
+    },
+    {
+        "id": "513bc529c9c10fa0",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "e29b5646cac97198",
+        "name": "Activate main bathroom nightlight scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3deabbac44606076",
+            "ec0f7c926936a835",
+            "1af873ecc08861c7"
+        ],
+        "x": 114,
+        "y": 499
+    },
+    {
+        "id": "26622bde8cf9b262",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard sunset scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "51e789d7146d158c",
+            "bcf937398010e69d",
+            "8c8685c28661026d"
+        ],
+        "x": 734,
+        "y": 139
+    },
+    {
+        "id": "c083702f726a3c76",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard jolly scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "973da59b5e8db353",
+            "434961afc8e6268a",
+            "c639897051efe373"
+        ],
+        "x": 734,
+        "y": 439
+    },
+    {
+        "id": "1f51b2e96d97963e",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Turn off yard lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "de84c77427959f96",
+            "f224835045d99471",
+            "30ad3f93b6509f97"
+        ],
+        "x": 734,
+        "y": 39
+    },
+    {
+        "id": "73df20e8ccdbf56c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard spooky scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6bc33e9277b4e511",
+            "f92a8accf963b5bf",
+            "9f798cee87b95525"
+        ],
+        "x": 734,
+        "y": 339
+    },
+    {
+        "id": "f6597e2f37dd2636",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard tribal scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ccd0f26bea9262e7",
+            "7ac02c6645861b20",
+            "e444798d5fd55433"
+        ],
+        "x": 734,
+        "y": 239
     },
     {
         "id": "e79e0110c2317edb",
@@ -3266,221 +3297,11 @@
         ]
     },
     {
-        "id": "ab3a2e383ee84b6a",
-        "type": "join",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 430,
-        "y": 100,
-        "wires": [
-            [
-                "988129e9c60e8818"
-            ]
-        ]
-    },
-    {
-        "id": "988129e9c60e8818",
-        "type": "function",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "time",
-        "func": "/**\n * Determine a `time` based on given values for `sunrise`, `sunset`, `bedtime` and `now`,\n * where `offset`, below, is ((`sunset` - `sunrise`) / 3):\n * \n * | `time`      | description                                                            |\n * |-------------|------------------------------------------------------------------------|\n * | `morning`   | `now` is between `sunrise` and (`sunrise` + `offset`)                  |\n * | `midday`    | `now` is between (`sunrise` + `offset`) and (`sunset` - `offset`)      |\n * | `afternoon` | `now` is between (`sunset` - `offset`) and `sunset`                    |\n * | `evening`   | `now` is between `sunset` and `bedtime`                                |\n * | `night`     | otherwise [i.e. `now` is between `bedtime` and `sunrise` the next day] |\n */\n\nconst theme = msg.payload.daily.theme\nconst now = new Date(msg.payload.now)\nconst minutes = now.getHours() * 60 + now.getMinutes()\nconst sunrise = msg.payload.daily.sunrise\nconst sunset = msg.payload.daily.sunset\nconst bedtime = msg.payload.daily.bedtime\nconst offset = Math.floor((sunset - sunrise) / 3)\nlet midday = sunrise + offset\nlet afternoon = sunset - offset\n\nmsg.payload = {\n    theme: theme,\n}\n\nif (minutes < sunrise) {\n\n    msg.payload.time = 'night'\n\n} else if (minutes < midday) {\n\n    msg.payload.time = 'morning'\n\n} else if (minutes < afternoon) {\n\n    msg.payload.time = 'midday'\n\n} else if (minutes < sunset) {\n\n    msg.payload.time = 'afternoon'\n\n} else if (minutes < bedtime) {\n\n    msg.payload.time = 'evening'\n\n} else {\n\n    msg.payload.time = 'night'\n\n}\n\nnode.status({\n    text: msg.payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nmsg.topic = 'nodered/automation/time'\nmsg.qos = 2\nmsg.retain = true\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 550,
-        "y": 100,
-        "wires": [
-            [
-                "949418271b11ff8d"
-            ]
-        ],
-        "outputLabels": [
-            "times"
-        ]
-    },
-    {
-        "id": "949418271b11ff8d",
-        "type": "rbe",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": false,
-        "property": "payload",
-        "topi": "topic",
-        "x": 670,
-        "y": 100,
-        "wires": [
-            [
-                "9632421ff2220cf7"
-            ]
-        ]
-    },
-    {
-        "id": "f5b1881692fec9a3",
-        "type": "inject",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "every minute",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "60",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "now",
-        "payload": "",
-        "payloadType": "date",
-        "x": 260,
-        "y": 60,
-        "wires": [
-            [
-                "ab3a2e383ee84b6a"
-            ]
-        ]
-    },
-    {
-        "id": "b0a75d84b9e77154",
-        "type": "inject",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "every midnight",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 00 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 180,
-        "wires": [
-            [
-                "98e7ed1f2c05288a"
-            ]
-        ]
-    },
-    {
-        "id": "20d4be0a2f8674c6",
-        "type": "inject",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "at start",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 140,
-        "wires": [
-            [
-                "98e7ed1f2c05288a"
-            ]
-        ]
-    },
-    {
-        "id": "9632421ff2220cf7",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 755,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "98e7ed1f2c05288a",
-        "type": "function",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "name": "daily",
-        "func": "/*global suncalc*/\n\n/**\n * Send a message when the flow starts, and every midnight\n * thereafter, containing:\n * \n * - `sunrise`: the number of minutes after midnight at which\n *              the sun will rise\n * \n * - `sunset`:  the number of minutes after midnight at which\n *              the sun will set\n * \n * - `bedtime`: a randomly generated number of minutes after\n *              midnight, the later of:\n * \n *              1. 10:00 PM (22:00) plus or minus 30 minutes\n * \n *              2. 30 - 60 minutes after sunset, if the preceding\n *                 would occur after the sun has set\n * \n * - `theme`:   one of `standard`, `tribal`, `spooky` or `jolly`\n *              depending on the day and date\n * \n *              | theme      | description         |\n *              |------------|---------------------|\n *              | `tribal`   | July 1 - 4          |\n *              | `spooky`   | any day in October  |\n *              | `jolly`    | any day in December |\n *              | `standard` | any other day       |\n * \n * > Notes:\n * >\n * > - This node depends on the _suncalc_ package to determine\n * >   `sunrise` and `sunset`.\n * >\n * > - It assumes that the geographic coordinates to use with\n * >   the _suncalc_ library are set using `LATITUDE` and\n * >   `LONGITUDE` environment variables.\n * >\n * > - It also assumes that the host OS is configured such that\n * >   functions like `Date.toHours()` will operate in the correct\n * >   time zone for the location specified by `${LATITUDE}`\n * >   and `${LONGITUDE}`\n */\n\n//////////////////////////////////////////////////////////////////////\n// sunrise / sunset\n//////////////////////////////////////////////////////////////////////\n\nconst date = new Date(msg.payload)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\n\n/**\n* @param {Date} date\n*/\nfunction toMinutes(date) {\n\n    return date.getHours() * 60 + date.getMinutes()\n\n}\n\nmsg.payload = {\n    sunrise: toMinutes(times.sunrise),\n    sunset: toMinutes(times.sunset),\n}\n\n//////////////////////////////////////////////////////////////////////\n// theme\n//////////////////////////////////////////////////////////////////////\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    msg.payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    msg.payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    msg.payload.theme = 'jolly'\n\n} else {\n\n    msg.payload.theme = 'standard'\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// bedtime\n//////////////////////////////////////////////////////////////////////\n\nmsg.payload.bedtime = 1350 - Math.floor(Math.random() * 60)\n\nif (msg.payload.bedtime <= msg.payload.sunset) {\n\n    msg.payload.bedtime = msg.payload.sunset + 30 + Math.floor(Math.random() * 30)\n\n}\n\n//////////////////////////////////////////////////////////////////////\n// status and topic\n//////////////////////////////////////////////////////////////////////\n\n/**\n* @param {number} minutes\n*/\nfunction formatMinutes(minutes) {\n\n    const h = Math.floor(minutes / 60)\n    const m = minutes % 60\n    const a = ((h > 12) ? ' PM' : ' AM')\n\n    return String(h % 12).padStart(2, ' ') + ':' + String(m).padStart(2, '0') + a\n\n}\n\nconst formattedSunrise = formatMinutes(msg.payload.sunrise)\nconst formattedSunset = formatMinutes(msg.payload.sunset)\nconst formattedBedtime = formatMinutes(msg.payload.bedtime)\n\nnode.status({\n    fill: 'blue',\n    shape: 'dot',\n    text: msg.payload.theme\n})\n\nmsg.topic = 'daily'\nreturn [\n    msg,\n    { payload: formattedSunrise },\n    { payload: formattedSunset },\n    { payload: formattedBedtime }\n]",
-        "outputs": 4,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "suncalc",
-                "module": "suncalc"
-            }
-        ],
-        "x": 290,
-        "y": 160,
-        "wires": [
-            [
-                "ab3a2e383ee84b6a"
-            ],
-            [
-                "e5be53de3ccb63ae"
-            ],
-            [
-                "8cd21d8332f6db6f"
-            ],
-            [
-                "69b99c3b64060e59"
-            ]
-        ],
-        "outputLabels": [
-            "times",
-            "sunrise",
-            "sunset",
-            "bedtime"
-        ]
-    },
-    {
-        "id": "a32b155805bc67e1",
+        "id": "7f7ef86a4212cda9",
         "type": "mqtt in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
+        "z": "be201d7a24b331c5",
         "name": "",
-        "topic": "nodered/automation/time",
+        "topic": "${TOPIC}",
         "qos": "2",
         "datatype": "json",
         "broker": "722d62f3b93039c3",
@@ -3488,12 +3309,56 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 320,
+        "x": 160,
+        "y": 80,
         "wires": [
             [
-                "485df563c6545698"
+                "a96e0b1ad753faa2"
             ]
+        ]
+    },
+    {
+        "id": "a96e0b1ad753faa2",
+        "type": "function",
+        "z": "be201d7a24b331c5",
+        "name": "formatTime",
+        "func": "const date = new Date(msg.payload)\n\nmsg.payload = date.toLocaleTimeString()\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "644bea96363a82cd"
+            ]
+        ]
+    },
+    {
+        "id": "644bea96363a82cd",
+        "type": "change",
+        "z": "be201d7a24b331c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":payload,\"shape\":\"dot\",\"fill\":\"blue\"}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 120,
+        "wires": [
+            []
         ]
     },
     {
@@ -3511,14 +3376,14 @@
         "joinerType": "str",
         "accumulate": true,
         "timeout": "",
-        "count": "2",
+        "count": "3",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 350,
-        "y": 360,
+        "x": 370,
+        "y": 320,
         "wires": [
             [
                 "80170ed6abe053ca"
@@ -3536,7 +3401,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "(\t   $time := $lookup(payload, 'nodered/automation/time');\t   $enable := $lookup(payload, 'nodered/automation/enable');\t   {\t       \"time\": $time.time,\t       \"theme\": $time.theme,\t       \"enable\":$enable \t   }\t)",
+                "to": "(\t   $time := $lookup(payload, 'nodered/automation/time');\t   $theme := $lookup(payload, 'nodered/automation/theme');\t   $enable := $lookup(payload, 'nodered/automation/enable');\t   {\t       \"time\": $time,\t       \"theme\": $time,\t       \"enable\":$enable \t   }\t)",
                 "tot": "jsonata"
             }
         ],
@@ -3545,13 +3410,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 500,
-        "y": 360,
+        "x": 520,
+        "y": 320,
         "wires": [
             [
-                "98e07825f41a09a2",
-                "f14873e6c525420f",
-                "42a4e6d228c3271f"
+                "98e07825f41a09a2"
             ]
         ]
     },
@@ -3575,42 +3438,6 @@
                 "1b5ab2bf7ea37b3b"
             ]
         ]
-    },
-    {
-        "id": "42a4e6d228c3271f",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "group": "25c7f0078ed443dd",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Theme",
-        "format": "{{msg.payload.theme}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 680,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "f14873e6c525420f",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "group": "25c7f0078ed443dd",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Time",
-        "format": "{{msg.payload.time}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 670,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "1b5ab2bf7ea37b3b",
@@ -3637,60 +3464,6 @@
         ]
     },
     {
-        "id": "e5be53de3ccb63ae",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "group": "25c7f0078ed443dd",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Sunrise",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 440,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "8cd21d8332f6db6f",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "group": "25c7f0078ed443dd",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Sunset",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 440,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "69b99c3b64060e59",
-        "type": "ui_text",
-        "z": "cbd68ba9caa96a3d",
-        "g": "a0289a7a0402361a",
-        "group": "25c7f0078ed443dd",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Bedtime",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 440,
-        "y": 220,
-        "wires": []
-    },
-    {
         "id": "21af7493f52944f5",
         "type": "ui_switch",
         "z": "cbd68ba9caa96a3d",
@@ -3699,7 +3472,7 @@
         "label": "Enable",
         "tooltip": "",
         "group": "25c7f0078ed443dd",
-        "order": 7,
+        "order": 10,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -3717,7 +3490,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 390,
+        "x": 410,
         "y": 440,
         "wires": [
             [
@@ -3740,7 +3513,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 400,
+        "y": 380,
         "wires": [
             [
                 "21af7493f52944f5",
@@ -3782,7 +3555,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 600,
         "y": 440,
         "wires": [
             [
@@ -3800,7 +3573,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 695,
+        "x": 715,
         "y": 440,
         "wires": []
     },
@@ -4083,8 +3856,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 1050,
-        "y": 140,
+        "x": 150,
+        "y": 620,
         "wires": [
             [
                 "5ec89823b4e8d3aa"
@@ -4123,8 +3896,8 @@
         "links": [
             "cab89ebfeca22623"
         ],
-        "x": 1195,
-        "y": 60,
+        "x": 295,
+        "y": 540,
         "wires": []
     },
     {
@@ -4137,8 +3910,8 @@
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 1195,
-        "y": 100,
+        "x": 295,
+        "y": 580,
         "wires": []
     },
     {
@@ -4151,8 +3924,8 @@
         "links": [
             "3fa2af1c1f32f8ee"
         ],
-        "x": 1195,
-        "y": 140,
+        "x": 295,
+        "y": 620,
         "wires": []
     },
     {
@@ -4165,8 +3938,8 @@
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 1195,
-        "y": 180,
+        "x": 295,
+        "y": 660,
         "wires": []
     },
     {
@@ -4179,8 +3952,8 @@
         "links": [
             "71f42f61777d49d9"
         ],
-        "x": 1195,
-        "y": 220,
+        "x": 295,
+        "y": 700,
         "wires": []
     },
     {
@@ -4192,13 +3965,287 @@
         "links": [
             "60f145bb0461c216"
         ],
-        "x": 955,
-        "y": 140,
+        "x": 55,
+        "y": 620,
         "wires": [
             [
                 "ba94cc02344092b6"
             ]
         ]
+    },
+    {
+        "id": "b2c19560f9da088a",
+        "type": "function",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "zenith",
+        "func": "/*global suncalc*/\n\nconst date = new Date()\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\nconst start = times.sunrise.getTime()\nconst end = times.sunset.getTime()\n\nconst payload = {\n    sunrise: start,\n    sunset: end,\n    zenith: {}\n}\n\nfor (let minute = start; minute < end; minute += 60000) {\n\n    const d = new Date(minute)\n    const current = payload.zenith.altitude || -100\n    const position = suncalc.getPosition(d, latitude, longitude)\n\n    if (position.altitude > current) {\n\n        payload.zenith = {\n            altitude: position.altitude,\n            azimuth: position.azimuth,\n            time: minute\n        }\n    }\n}\n\nconst offset = 7200000\npayload.midday = payload.zenith.time - offset\npayload.afternoon = payload.zenith.time + offset\n\n////////////////////////////////////////////////////////////////\n// hack: combine generation of random bedtime with suncalc\n// just for convenience of re-using a single set of inject nodes\ndate.setHours(22, 0, 0, 0)\n\nconst bedtime = 1800000 - Math.floor(Math.random() * 3600000)\n\npayload.bedtime = bedtime + date.getTime()\nif (payload.bedtime < payload.sunset) {\n\n    payload.bedtime = payload.sunset + 1800000\n\n}\n////////////////////////////////////////////////////////////////\n\n////////////////////////////////////////////////////////////////\n// hack: combine calculation of theme with suncalc\n// just for convenience of re-using a single set of inject nodes\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    payload.theme = 'jolly'\n\n} else {\n\n    payload.theme = 'standard'\n\n}\n////////////////////////////////////////////////////////////////\n\nmsg.payload = payload\nmsg.topic = 'zenith'\n\nnode.status({\n    text: new Date(msg.payload.bedtime).toLocaleTimeString(),\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "suncalc",
+                "module": "suncalc"
+            }
+        ],
+        "x": 290,
+        "y": 80,
+        "wires": [
+            [
+                "c9d02aeed7d0407f"
+            ]
+        ]
+    },
+    {
+        "id": "a0c7d328b5287989",
+        "type": "inject",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            [
+                "b2c19560f9da088a"
+            ]
+        ]
+    },
+    {
+        "id": "8c6c3c20f5958599",
+        "type": "inject",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "every midnight",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "b2c19560f9da088a"
+            ]
+        ]
+    },
+    {
+        "id": "a0b61336a93a4089",
+        "type": "inject",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "every minute",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "now",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "c9d02aeed7d0407f"
+            ]
+        ]
+    },
+    {
+        "id": "c9d02aeed7d0407f",
+        "type": "join",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "d534f07cf7c1eb0b"
+            ]
+        ]
+    },
+    {
+        "id": "d534f07cf7c1eb0b",
+        "type": "function",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "time",
+        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload.now)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst position = suncalc.getPosition(date, latitude, longitude)\n\nconst payload = {\n    now: msg.payload.now,\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nfor (let key in msg.payload.zenith) {\n\n    payload[key] = msg.payload.zenith[key]\n\n}\n\nif (payload.now > payload.sunrise && payload.now < payload.bedtime) {\n\n    if (payload.now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (payload.now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (payload.now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (let key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "suncalc",
+                "module": "suncalc"
+            }
+        ],
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "b709b48ce2961f8e"
+            ]
+        ]
+    },
+    {
+        "id": "b709b48ce2961f8e",
+        "type": "rbe",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "47875e1be48bbf82"
+            ]
+        ]
+    },
+    {
+        "id": "47875e1be48bbf82",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "'nodered/automation/' & topic",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 120,
+        "wires": [
+            [
+                "ff64f46de7793f7b"
+            ]
+        ]
+    },
+    {
+        "id": "ff64f46de7793f7b",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "dd7609e91ad64f63"
+        ],
+        "x": 935,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e977392948ada8ee",
+        "type": "link in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "time",
+        "links": [
+            "668778ba95c0d6bf"
+        ],
+        "x": 245,
+        "y": 260,
+        "wires": [
+            [
+                "485df563c6545698"
+            ]
+        ],
+        "info": "// nrlint align-to-grid:off\n"
+    },
+    {
+        "id": "52233919df9a67bc",
+        "type": "link in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "theme",
+        "links": [
+            "3e9896b3de8c17d2"
+        ],
+        "x": 245,
+        "y": 320,
+        "wires": [
+            [
+                "485df563c6545698"
+            ]
+        ],
+        "info": "// nrlint align-to-grid:off\n"
     },
     {
         "id": "14e5342cb50f366f",
@@ -4771,7 +4818,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "60",
+        "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
@@ -6162,7 +6209,8 @@
             "e132ff7fd9fda65d",
             "1209a8480a23b591",
             "831fb3f42898b50f",
-            "08157854eff23df6"
+            "08157854eff23df6",
+            "ff64f46de7793f7b"
         ],
         "x": 175,
         "y": 80,
@@ -6188,7 +6236,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 450,
+        "x": 330,
         "y": 400,
         "wires": [
             []
@@ -6212,7 +6260,7 @@
                 "type": "str"
             }
         ],
-        "x": 250,
+        "x": 130,
         "y": 400,
         "wires": [
             [
@@ -6236,7 +6284,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 420,
+        "x": 300,
         "y": 300,
         "wires": [
             []
@@ -6260,7 +6308,7 @@
                 "type": "str"
             }
         ],
-        "x": 240,
+        "x": 120,
         "y": 300,
         "wires": [
             [
@@ -6284,7 +6332,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 370,
+        "x": 250,
         "y": 500,
         "wires": [
             []
@@ -6308,7 +6356,7 @@
                 "type": "str"
             }
         ],
-        "x": 220,
+        "x": 100,
         "y": 500,
         "wires": [
             [
@@ -6601,5 +6649,423 @@
                 "79f5591e72a3bc50"
             ]
         ]
+    },
+    {
+        "id": "c7bcd60f19dc24ec",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sunrise",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1260,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e998cff9d44e33c1",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Sunset",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1260,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "94ac06ac565be510",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Bedtime",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1260,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "fd39d6bef90014dd",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 850,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1709a7b2a53949a0",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Theme",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 860,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "e422d0fb203c0ab4",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/bedtime",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/bedtime",
+                "type": "str"
+            }
+        ],
+        "x": 1060,
+        "y": 720,
+        "wires": [
+            [
+                "94ac06ac565be510"
+            ]
+        ]
+    },
+    {
+        "id": "a42f585066f8900c",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/now",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/now",
+                "type": "str"
+            }
+        ],
+        "x": 150,
+        "y": 600,
+        "wires": [
+            [
+                "01b76d59941a8852"
+            ]
+        ]
+    },
+    {
+        "id": "e7fe816f1b71ea76",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/sunrise",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/sunrise",
+                "type": "str"
+            }
+        ],
+        "x": 1060,
+        "y": 600,
+        "wires": [
+            [
+                "c7bcd60f19dc24ec"
+            ]
+        ]
+    },
+    {
+        "id": "231d58a67aa42c3d",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/sunset",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/sunset",
+                "type": "str"
+            }
+        ],
+        "x": 1070,
+        "y": 660,
+        "wires": [
+            [
+                "e998cff9d44e33c1"
+            ]
+        ]
+    },
+    {
+        "id": "8e7d0113aeecf474",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/afternoon",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/afternoon",
+                "type": "str"
+            }
+        ],
+        "x": 560,
+        "y": 720,
+        "wires": [
+            [
+                "7dce1b783a5b4c4d"
+            ]
+        ]
+    },
+    {
+        "id": "1062c689099a1a73",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/midday",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/midday",
+                "type": "str"
+            }
+        ],
+        "x": 160,
+        "y": 720,
+        "wires": [
+            [
+                "dce1299c653bffe0"
+            ]
+        ]
+    },
+    {
+        "id": "101c3e736f897d59",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "nodered/automation/zenith/time",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/zenith/time",
+                "type": "str"
+            }
+        ],
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "ea035681d11621de"
+            ]
+        ]
+    },
+    {
+        "id": "e9ce751eb9d7f57e",
+        "type": "link in",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "time",
+        "links": [
+            "7f49bcbb775bd243",
+            "668778ba95c0d6bf"
+        ],
+        "x": 755,
+        "y": 600,
+        "wires": [
+            [
+                "fd39d6bef90014dd"
+            ]
+        ]
+    },
+    {
+        "id": "ba318db28757b758",
+        "type": "link in",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "theme",
+        "links": [
+            "3e9896b3de8c17d2"
+        ],
+        "x": 755,
+        "y": 660,
+        "wires": [
+            [
+                "1709a7b2a53949a0"
+            ]
+        ]
+    },
+    {
+        "id": "d6e2c431d3e9af8a",
+        "type": "mqtt in",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "",
+        "topic": "nodered/automation/time",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 550,
+        "y": 600,
+        "wires": [
+            [
+                "668778ba95c0d6bf"
+            ]
+        ]
+    },
+    {
+        "id": "668778ba95c0d6bf",
+        "type": "link out",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "time",
+        "mode": "link",
+        "links": [
+            "e977392948ada8ee",
+            "e9ce751eb9d7f57e"
+        ],
+        "x": 695,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "3e9896b3de8c17d2",
+        "type": "link out",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "theme",
+        "mode": "link",
+        "links": [
+            "52233919df9a67bc",
+            "ba318db28757b758"
+        ],
+        "x": 695,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "53895bc91a8e3ebb",
+        "type": "mqtt in",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "name": "",
+        "topic": "nodered/automation/theme",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 550,
+        "y": 660,
+        "wires": [
+            [
+                "3e9896b3de8c17d2"
+            ]
+        ]
+    },
+    {
+        "id": "7dce1b783a5b4c4d",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Afternoon",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 760,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "01b76d59941a8852",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Now",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 330,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "ea035681d11621de",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Zenith",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 370,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "dce1299c653bffe0",
+        "type": "ui_text",
+        "z": "6e3ca82457d27245",
+        "g": "aed619b61cd0588d",
+        "group": "25c7f0078ed443dd",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Midday",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 360,
+        "y": 720,
+        "wires": []
     }
 ]
