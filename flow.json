@@ -44,6 +44,14 @@
         "info": ""
     },
     {
+        "id": "b12fd38c090c51f2",
+        "type": "tab",
+        "label": "Monitoring",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5785c8d9f39df67e",
         "type": "subflow",
         "name": "Send to Hue Bridge",
@@ -297,11 +305,11 @@
         "in": [],
         "out": [
             {
-                "x": 510,
+                "x": 480,
                 "y": 60,
                 "wires": [
                     {
-                        "id": "5c5acf089b206c21",
+                        "id": "46fb2d69cd82b25c",
                         "port": 0
                     }
                 ]
@@ -312,34 +320,11 @@
                 "name": "TOPIC",
                 "type": "str",
                 "value": ""
-            },
-            {
-                "name": "UNIT",
-                "type": "str",
-                "value": ""
-            },
-            {
-                "name": "HEADER",
-                "type": "bool",
-                "value": "false"
             }
         ],
         "meta": {},
         "color": "#E7E7AE",
-        "outputLabels": [
-            "html"
-        ],
-        "icon": "node-red/status.svg",
-        "status": {
-            "x": 540,
-            "y": 140,
-            "wires": [
-                {
-                    "id": "f1901e3f3d155ae5",
-                    "port": 0
-                }
-            ]
-        }
+        "icon": "node-red/status.svg"
     },
     {
         "id": "4e89e7c952d56c09",
@@ -858,7 +843,9 @@
             "18b035d175d78813"
         ],
         "x": 114,
-        "y": 519
+        "y": 519,
+        "w": 632,
+        "h": 242
     },
     {
         "id": "87285e6bf01cff03",
@@ -878,7 +865,9 @@
             "618e79a58ab8143a"
         ],
         "x": 114,
-        "y": 19
+        "y": 19,
+        "w": 362,
+        "h": 82
     },
     {
         "id": "e49c9571ddd5102f",
@@ -903,8 +892,8 @@
             "5ea9e057dd830d9e",
             "5adbc418ab39d29a"
         ],
-        "x": 714,
-        "y": 19,
+        "x": 114,
+        "y": 39,
         "w": 572,
         "h": 202
     },
@@ -926,7 +915,9 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 433
+        "y": 413,
+        "w": 844,
+        "h": 374
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -946,31 +937,9 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 33
-    },
-    {
-        "id": "7519b16f6cae8e8a",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": false
-        },
-        "nodes": [
-            "3a45f65735fa5469",
-            "353e1ccbabccae7f",
-            "87fbecefe8135d77",
-            "21679e08b9cf2dbd",
-            "08c3b6627a851e95",
-            "aa93bdbb5aa7d08c"
-        ],
-        "x": 14,
-        "y": 339,
-        "w": 1092,
-        "h": 82
+        "y": 13,
+        "w": 864,
+        "h": 374
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -990,7 +959,9 @@
             "e1fa765ec5a5ebd7"
         ],
         "x": 88,
-        "y": 13
+        "y": 13,
+        "w": 524,
+        "h": 334
     },
     {
         "id": "e29b5646cac97198",
@@ -1009,53 +980,9 @@
             "513bc529c9c10fa0"
         ],
         "x": 88,
-        "y": 373
-    },
-    {
-        "id": "8dff7c51091f12ea",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Display Chez Nous Main readyState on dashboard",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "aa83f2d2b99d012e",
-            "bf73d9fb33637e10",
-            "3bbfe6126101e47a",
-            "e71557af20de9949"
-        ],
-        "x": 14,
-        "y": 19,
-        "w": 592,
-        "h": 142
-    },
-    {
-        "id": "b78fb0b9d14b12c6",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Display Basement Hue readyState on dashboard",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "79f5591e72a3bc50",
-            "f4bc6cd84cd984e4",
-            "ff0320e7dcb99080",
-            "b30654675fe6a404"
-        ],
-        "x": 14,
-        "y": 179,
-        "w": 572,
-        "h": 142
+        "y": 373,
+        "w": 524,
+        "h": 234
     },
     {
         "id": "0770b0ba393f379d",
@@ -1077,7 +1004,9 @@
             "516be0577e70437c"
         ],
         "x": 114,
-        "y": 119
+        "y": 119,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "746733f8c81b5ccd",
@@ -1099,7 +1028,9 @@
             "7bc062570484d12c"
         ],
         "x": 114,
-        "y": 219
+        "y": 219,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "e961376bbef01556",
@@ -1121,7 +1052,9 @@
             "bdce740848b412c8"
         ],
         "x": 114,
-        "y": 319
+        "y": 319,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "56e03f40c1727182",
@@ -1143,7 +1076,9 @@
             "b56bca504084bf91"
         ],
         "x": 114,
-        "y": 419
+        "y": 419,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "d23ba68654f3c055",
@@ -1165,7 +1100,9 @@
             "f6597e2f37dd2636"
         ],
         "x": 708,
-        "y": 13
+        "y": 13,
+        "w": 524,
+        "h": 534
     },
     {
         "id": "98cf3b8910bc4f22",
@@ -1181,7 +1118,6 @@
         },
         "nodes": [
             "485df563c6545698",
-            "80170ed6abe053ca",
             "98e07825f41a09a2",
             "1b5ab2bf7ea37b3b",
             "21af7493f52944f5",
@@ -1189,13 +1125,14 @@
             "83d6d8f537b0c172",
             "08157854eff23df6",
             "60f145bb0461c216",
-            "e977392948ada8ee",
-            "52233919df9a67bc"
+            "784c9929fe789981",
+            "6272a0d1ddf8807b",
+            "2a94995efda1937e"
         ],
         "x": 34,
         "y": 219,
         "w": 982,
-        "h": 202
+        "h": 262
     },
     {
         "id": "1f88f9981ae4ba5f",
@@ -1221,8 +1158,8 @@
             "c60a157e32809b1f",
             "805a96f9c1561bcd"
         ],
-        "x": 534,
-        "y": 439,
+        "x": 514,
+        "y": 499,
         "w": 482,
         "h": 242
     },
@@ -1248,7 +1185,7 @@
             "aafc4027ba2b619f"
         ],
         "x": 34,
-        "y": 439,
+        "y": 499,
         "w": 302,
         "h": 242
     },
@@ -1281,49 +1218,34 @@
         "h": 182
     },
     {
-        "id": "aed619b61cd0588d",
+        "id": "b438e0cbd64ef6ce",
         "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Monitor timer events",
+        "z": "b12fd38c090c51f2",
+        "name": "Display a chart of daytime sun positions on a given date",
         "style": {
-            "label": true,
-            "color": "#000000",
             "stroke": "none",
             "fill": "#000000",
-            "fill-opacity": "0.1"
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
         },
         "nodes": [
-            "c7bcd60f19dc24ec",
-            "e998cff9d44e33c1",
-            "94ac06ac565be510",
-            "fd39d6bef90014dd",
-            "1709a7b2a53949a0",
-            "e7fe816f1b71ea76",
-            "231d58a67aa42c3d",
-            "e422d0fb203c0ab4",
-            "e9ce751eb9d7f57e",
-            "ba318db28757b758",
-            "d6e2c431d3e9af8a",
-            "668778ba95c0d6bf",
-            "3e9896b3de8c17d2",
-            "53895bc91a8e3ebb",
-            "101c3e736f897d59",
-            "1062c689099a1a73",
-            "8e7d0113aeecf474",
-            "a42f585066f8900c",
-            "7dce1b783a5b4c4d",
-            "01b76d59941a8852",
-            "ea035681d11621de",
-            "dce1299c653bffe0",
-            "49a8141313ca0d6b",
-            "ce17384a815d013d",
-            "705c8f83deb31bfd",
-            "5e3e43e635533428"
+            "c27168b168847790",
+            "3a39c550369bac31",
+            "15ce56cf1449ce52",
+            "f33b94d2cc59c348",
+            "625b9718a13e0340",
+            "f72b11239792afcf",
+            "4dd293c16815dce3",
+            "40aa6d57e66c9314",
+            "8549e51620377f66",
+            "8fe5e01fe99f5026",
+            "e7bc056a5ca25bc5"
         ],
         "x": 14,
-        "y": 439,
-        "w": 1332,
-        "h": 262
+        "y": 19,
+        "w": 1052,
+        "h": 162
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1344,7 +1266,9 @@
             "33533dc0ac4ff870"
         ],
         "x": 114,
-        "y": 39
+        "y": 39,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1365,7 +1289,9 @@
             "1462dac4d5543f0a"
         ],
         "x": 114,
-        "y": 139
+        "y": 139,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1386,7 +1312,9 @@
             "76f3eb6c53a0310c"
         ],
         "x": 114,
-        "y": 239
+        "y": 239,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "70e9b8db12799d18",
@@ -1407,7 +1335,9 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 159
+        "y": 139,
+        "w": 385,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1428,7 +1358,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 59
+        "y": 39,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1451,7 +1383,9 @@
             "6d06fc266beda8bf"
         ],
         "x": 54,
-        "y": 259
+        "y": 239,
+        "w": 812,
+        "h": 122
     },
     {
         "id": "9c46129d149ab201",
@@ -1472,7 +1406,9 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 559
+        "y": 539,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "648ad874a33c7973",
@@ -1493,7 +1429,9 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 459
+        "y": 439,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1516,7 +1454,9 @@
             "36cd3d7fbb64eda2"
         ],
         "x": 54,
-        "y": 659
+        "y": 639,
+        "w": 792,
+        "h": 122
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1537,7 +1477,9 @@
             "0cb4aa086519cdc3"
         ],
         "x": 114,
-        "y": 399
+        "y": 399,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "513bc529c9c10fa0",
@@ -1558,7 +1500,9 @@
             "1af873ecc08861c7"
         ],
         "x": 114,
-        "y": 499
+        "y": 499,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "26622bde8cf9b262",
@@ -1579,7 +1523,9 @@
             "8c8685c28661026d"
         ],
         "x": 734,
-        "y": 139
+        "y": 139,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "c083702f726a3c76",
@@ -1600,7 +1546,9 @@
             "c639897051efe373"
         ],
         "x": 734,
-        "y": 439
+        "y": 439,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "1f51b2e96d97963e",
@@ -1621,7 +1569,9 @@
             "30ad3f93b6509f97"
         ],
         "x": 734,
-        "y": 39
+        "y": 39,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "73df20e8ccdbf56c",
@@ -1642,7 +1592,9 @@
             "9f798cee87b95525"
         ],
         "x": 734,
-        "y": 339
+        "y": 339,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "f6597e2f37dd2636",
@@ -1663,7 +1615,139 @@
             "e444798d5fd55433"
         ],
         "x": 734,
-        "y": 239
+        "y": 239,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "5cc3007bfef936f5",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "Monitur CPU status",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": false
+        },
+        "nodes": [
+            "be5ed0fec546d004",
+            "08c851f506852280",
+            "1c85c492c57041d7",
+            "55425537c5741ec5"
+        ],
+        "x": 14,
+        "y": 579,
+        "w": 732,
+        "h": 82
+    },
+    {
+        "id": "8a81267cb12384d5",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "Monitor timer events",
+        "style": {
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1"
+        },
+        "nodes": [
+            "3ffae20118b3f324",
+            "056b4e63ec2cd405",
+            "64f954fed4bbe73e",
+            "4332d4706a43e2f6",
+            "9e522923ebcadd47",
+            "cd359e0f643d8b52",
+            "6ce0fae7a630111f",
+            "6fd30861ee594f7a",
+            "7b3880a941748a69",
+            "a6c27a31c49422e4",
+            "03b32d05f0dc98c7",
+            "3a0d9afd6a91a4b8",
+            "119dc5e83c2a078f",
+            "b403745b92a95d79",
+            "c6ad3ce00565e461",
+            "fb5206dc8bb107e5",
+            "61c5be84a6996eee",
+            "a921a5a41ab154fc"
+        ],
+        "x": 14,
+        "y": 199,
+        "w": 1232,
+        "h": 202
+    },
+    {
+        "id": "0d4083787ae50482",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "Monitor Chez Nous Main readyState",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "7afdc0752b7bab93",
+            "af3bef0be06cad7d",
+            "e20fca5f4b3d37b9",
+            "dfcbba568eef0b62"
+        ],
+        "x": 14,
+        "y": 419,
+        "w": 592,
+        "h": 142
+    },
+    {
+        "id": "c28ed42a351eb1a7",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "Monitor Basement Hue readyState",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "23c5c69fbebd0a69",
+            "10298b89f745814f",
+            "82355ffb0dd175e4",
+            "e80f7721307a29b3"
+        ],
+        "x": 634,
+        "y": 419,
+        "w": 572,
+        "h": 142
+    },
+    {
+        "id": "f82a1f6e963f443a",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "sun-positions CSV service",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0888e9faa06fe4e5",
+            "48da82dc3974c2b3",
+            "a341a1a127b0fe71",
+            "68ca4947dd6cf14e",
+            "ccc46e9ff7a15f4e",
+            "98380b5a50270d78"
+        ],
+        "x": 114,
+        "y": 259,
+        "w": 492,
+        "h": 142
     },
     {
         "id": "e79e0110c2317edb",
@@ -1838,17 +1922,6 @@
         "className": ""
     },
     {
-        "id": "0a1d0e699afa7c7d",
-        "type": "ui_group",
-        "name": "CPU Memory",
-        "tab": "696b8efb10ee13b7",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
         "id": "cfa1a0f4a477687c",
         "type": "ui_group",
         "name": "CPU Volts",
@@ -1896,6 +1969,17 @@
         "name": "MQTT Broker",
         "tab": "ec4d94df679f3b11",
         "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "8055574ccb17e8ed",
+        "type": "ui_group",
+        "name": "Sun Position",
+        "tab": "ec4d94df679f3b11",
+        "order": 5,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2237,43 +2321,6 @@
         ]
     },
     {
-        "id": "112df8f0c03fc7e8",
-        "type": "rbe",
-        "z": "c4207c9fe61a900e",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 230,
-        "y": 60,
-        "wires": [
-            [
-                "5c5acf089b206c21"
-            ]
-        ]
-    },
-    {
-        "id": "5c5acf089b206c21",
-        "type": "function",
-        "z": "c4207c9fe61a900e",
-        "name": "formatTable",
-        "func": "node.status({\n    text: msg.topic + ':' + msg.payload,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n////////////////////////////////////////////////////////////////////////////////\n//\n// Cache the cumulative state of a monitored attribute (CPU temperature, voltage\n// etc.) for all hosts\n//\n////////////////////////////////////////////////////////////////////////////////\n\nlet topic = msg.topic.split('/')\nlet host = topic[1]\nlet attribute = topic[2]\nlet state = context.get('state') || {}\nlet entry = state[host] || {}\n\nif (msg.payload === undefined || msg.payload == null || msg.payload == '' || Object.prototype.hasOwnProperty.call(msg, 'error')) {\n\n    // handle caught errors by deleting the corresponding\n    // attribute\n    if (Object.prototype.hasOwnProperty.call(entry, attribute)) {\n\n        delete entry[attribute]\n\n    }\n\n    // delete the whole entry if it has no other attributes\n    if (Object.prototype.hasOwnProperty.call(state, host) && Object.keys(entry).length == 0) {\n\n        delete state[host]\n\n    }\n\n} else {\n\n    // update the attribuate corresponding\n    // to the received event\n    entry[attribute] = msg.payload\n    state[host] = entry\n\n}\n\n// persist the updated state\ncontext.set('state', state)\n\n////////////////////////////////////////////////////////////////////////////////\n//\n// Output an HTML <table> containing the values of the given attribute for all\n// hosts for which values have been received\n//\n////////////////////////////////////////////////////////////////////////////////\n\nlet unit = env.get('UNIT')\nlet header = env.get('HEADER')\nlet table = '<table>'\nlet first = true\n\nfor (let host in state) {\n\n    let entry = state[host]\n\n    if (header && first) {\n\n        table += '<tr><th>host</th>'\n\n        for (let attribute in entry) {\n\n            table += '<th>'\n            table += attribute\n            table += '</th>'\n\n        }\n\n        table += '</tr>'\n\n    }\n\n    table += '<tr><td>'\n    table += host\n    table += '</td>'\n\n    for (let attribute in entry) {\n\n        table += '<td>'\n        table += entry[attribute] + unit\n        table += '</td>'\n\n    }\n\n    table  += '</tr>'\n    first = false\n\n}\n\ntable += '</table>'\nmsg.payload = table\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "7004b9b981e156bb",
         "type": "mqtt in",
         "z": "c4207c9fe61a900e",
@@ -2290,20 +2337,56 @@
         "y": 60,
         "wires": [
             [
-                "112df8f0c03fc7e8"
+                "27992b230d72f19f"
             ]
         ]
     },
     {
-        "id": "f1901e3f3d155ae5",
-        "type": "status",
+        "id": "46fb2d69cd82b25c",
+        "type": "change",
         "z": "c4207c9fe61a900e",
         "name": "",
-        "scope": null,
-        "x": 440,
-        "y": 140,
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$split(topic,'/')[1]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 370,
+        "y": 60,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "27992b230d72f19f",
+        "type": "switch",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "property": "retain",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "false",
+        "repair": true,
+        "outputs": 1,
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "46fb2d69cd82b25c"
+            ]
         ]
     },
     {
@@ -3312,36 +3395,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 370,
-        "y": 300,
-        "wires": [
-            [
-                "80170ed6abe053ca"
-            ]
-        ]
-    },
-    {
-        "id": "80170ed6abe053ca",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "flatten payload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "(\t   $time := $lookup(payload, 'nodered/automation/time');\t   $theme := $lookup(payload, 'nodered/automation/theme');\t   $enable := $lookup(payload, 'nodered/automation/enable');\t   {\t       \"time\": $time,\t       \"theme\": $time,\t       \"enable\":$enable \t   }\t)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 520,
-        "y": 300,
+        "x": 550,
+        "y": 320,
         "wires": [
             [
                 "98e07825f41a09a2"
@@ -3362,7 +3417,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 670,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -3386,7 +3441,7 @@
         "repair": false,
         "outputs": 1,
         "x": 840,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "60f145bb0461c216"
@@ -3420,8 +3475,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 410,
-        "y": 380,
+        "x": 430,
+        "y": 440,
         "wires": [
             [
                 "83d6d8f537b0c172"
@@ -3443,11 +3498,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 340,
+        "y": 380,
         "wires": [
             [
                 "21af7493f52944f5",
-                "485df563c6545698"
+                "784c9929fe789981"
             ]
         ]
     },
@@ -3485,8 +3540,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 380,
+        "x": 620,
+        "y": 440,
         "wires": [
             [
                 "08157854eff23df6"
@@ -3503,8 +3558,8 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 715,
-        "y": 380,
+        "x": 735,
+        "y": 440,
         "wires": []
     },
     {
@@ -3523,7 +3578,7 @@
             "aafc4027ba2b619f"
         ],
         "x": 975,
-        "y": 300,
+        "y": 320,
         "wires": []
     },
     {
@@ -3540,8 +3595,8 @@
             "08ca72b8e815a992",
             "de84c77427959f96"
         ],
-        "x": 815,
-        "y": 480,
+        "x": 795,
+        "y": 540,
         "wires": []
     },
     {
@@ -3558,8 +3613,8 @@
             "ec0f7c926936a835",
             "de84c77427959f96"
         ],
-        "x": 815,
-        "y": 640,
+        "x": 795,
+        "y": 700,
         "wires": []
     },
     {
@@ -3572,8 +3627,8 @@
         "links": [
             "6cae9b1ccc68cb9e"
         ],
-        "x": 815,
-        "y": 600,
+        "x": 795,
+        "y": 660,
         "wires": []
     },
     {
@@ -3587,8 +3642,8 @@
             "a6475288998b4e07",
             "7ac02c6645861b20"
         ],
-        "x": 975,
-        "y": 480,
+        "x": 955,
+        "y": 540,
         "wires": []
     },
     {
@@ -3602,8 +3657,8 @@
             "a225232dc86a3b6f",
             "f92a8accf963b5bf"
         ],
-        "x": 975,
-        "y": 520,
+        "x": 955,
+        "y": 580,
         "wires": []
     },
     {
@@ -3621,8 +3676,8 @@
             "f92a8accf963b5bf",
             "7ac02c6645861b20"
         ],
-        "x": 975,
-        "y": 560,
+        "x": 955,
+        "y": 620,
         "wires": []
     },
     {
@@ -3636,8 +3691,8 @@
             "18f53b7627e645e4",
             "bcf937398010e69d"
         ],
-        "x": 975,
-        "y": 600,
+        "x": 955,
+        "y": 660,
         "wires": []
     },
     {
@@ -3668,8 +3723,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 670,
-        "y": 560,
+        "x": 650,
+        "y": 620,
         "wires": [
             [
                 "5950aa6c0df32eb2"
@@ -3714,8 +3769,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 850,
-        "y": 540,
+        "x": 830,
+        "y": 600,
         "wires": [
             [
                 "6a4e3c8d5c47d1b7"
@@ -3740,8 +3795,8 @@
         "links": [
             "60f145bb0461c216"
         ],
-        "x": 575,
-        "y": 560,
+        "x": 555,
+        "y": 620,
         "wires": [
             [
                 "0156a364439561a8"
@@ -3787,7 +3842,7 @@
         "repair": false,
         "outputs": 5,
         "x": 170,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "5ec89823b4e8d3aa"
@@ -3827,7 +3882,7 @@
             "cab89ebfeca22623"
         ],
         "x": 295,
-        "y": 480,
+        "y": 540,
         "wires": []
     },
     {
@@ -3841,7 +3896,7 @@
             "4d9c62d6c2145813"
         ],
         "x": 295,
-        "y": 520,
+        "y": 580,
         "wires": []
     },
     {
@@ -3855,7 +3910,7 @@
             "3fa2af1c1f32f8ee"
         ],
         "x": 295,
-        "y": 560,
+        "y": 620,
         "wires": []
     },
     {
@@ -3869,7 +3924,7 @@
             "4d9c62d6c2145813"
         ],
         "x": 295,
-        "y": 600,
+        "y": 660,
         "wires": []
     },
     {
@@ -3883,7 +3938,7 @@
             "71f42f61777d49d9"
         ],
         "x": 295,
-        "y": 640,
+        "y": 700,
         "wires": []
     },
     {
@@ -3896,7 +3951,7 @@
             "60f145bb0461c216"
         ],
         "x": 75,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "ba94cc02344092b6"
@@ -3908,8 +3963,8 @@
         "type": "function",
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
-        "name": "times",
-        "func": "/*global suncalc*/\n\nconst date = new Date()\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\nconst start = times.sunrise.getTime()\nconst end = times.sunset.getTime()\n\nconst payload = {\n    sunrise: start,\n    sunset: end,\n    zenith: {}\n}\n\nfor (let minute = start; minute < end; minute += 60000) {\n\n    const d = new Date(minute)\n    const current = payload.zenith.altitude || -100\n    const position = suncalc.getPosition(d, latitude, longitude)\n\n    if (position.altitude > current) {\n\n        payload.zenith = {\n            altitude: position.altitude,\n            azimuth: position.azimuth,\n            time: minute\n        }\n    }\n}\n\nconst offset = 7200000\npayload.midday = payload.zenith.time - offset\npayload.afternoon = payload.zenith.time + offset\n\n////////////////////////////////////////////////////////////////\n// hack: combine generation of random bedtime with suncalc\n// just for convenience of re-using a single set of inject nodes\ndate.setHours(22, 0, 0, 0)\n\nconst bedtime = 1800000 - Math.floor(Math.random() * 3600000)\n\npayload.bedtime = bedtime + date.getTime()\nif (payload.bedtime < payload.sunset) {\n\n    payload.bedtime = payload.sunset + 1800000\n\n}\n////////////////////////////////////////////////////////////////\n\n////////////////////////////////////////////////////////////////\n// hack: combine calculation of theme with suncalc\n// just for convenience of re-using a single set of inject nodes\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    payload.theme = 'jolly'\n\n} else {\n\n    payload.theme = 'standard'\n\n}\n////////////////////////////////////////////////////////////////\n\nmsg.payload = payload\nmsg.topic = 'zenith'\n\nnode.status({\n    text: new Date(msg.payload.bedtime).toLocaleTimeString(),\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
+        "name": "daily",
+        "func": "/*global suncalc*/\n\nconst date = new Date()\n\n////////////////////////////////////////////////////////////////\n// sunrise, sunset\n\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst times = suncalc.getTimes(date, latitude, longitude)\nconst start = times.sunrise.getTime()\nconst end = times.sunset.getTime()\n\nconst payload = {\n    sunrise: start,\n    sunset: end,\n    zenith: {}\n}\n\n////////////////////////////////////////////////////////////////\n// midday, afternoon\n\nfor (let minute = start; minute < end; minute += 60000) {\n\n    const d = new Date(minute)\n    const current = payload.zenith.altitude || -100\n    const position = suncalc.getPosition(d, latitude, longitude)\n\n    if (position.altitude > current) {\n\n        payload.zenith = {\n            altitude: position.altitude,\n            azimuth: position.azimuth,\n            time: minute\n        }\n    }\n}\n\nconst offset = 7200000\npayload.midday = payload.zenith.time - offset\npayload.afternoon = payload.zenith.time + offset\n\n////////////////////////////////////////////////////////////////\n// bedtime\n\ndate.setHours(22, 0, 0, 0)\n\nconst bedtime = 1800000 - Math.floor(Math.random() * 3600000)\n\npayload.bedtime = bedtime + date.getTime()\n\nif (payload.bedtime < payload.sunset) {\n\n    payload.bedtime = payload.sunset + 1800000\n\n}\n\n////////////////////////////////////////////////////////////////\n// theme\n\nconst month = date.getMonth() + 1\nconst day = date.getDate()\n\nif (month == 7 && day <= 4) {\n\n    payload.theme = 'tribal'\n\n} else if (month == 10) {\n\n    payload.theme = 'spooky'\n\n} else if (month == 12) {\n\n    payload.theme = 'jolly'\n\n} else {\n\n    payload.theme = 'standard'\n\n}\n\n////////////////////////////////////////////////////////////////\n\nmsg.payload = payload\nmsg.topic = 'daily'\n\nnode.status({\n    text: new Date(msg.payload.bedtime).toLocaleTimeString(),\n    shape: 'dot',\n    fill: 'blue'\n})\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3959,14 +4014,14 @@
         "type": "inject",
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
-        "name": "every midnight",
+        "name": "every morning",
         "props": [
             {
                 "p": "payload"
             }
         ],
         "repeat": "",
-        "crontab": "00 00 * * *",
+        "crontab": "00 04 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -4045,7 +4100,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
         "name": "now",
-        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload.now)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst position = suncalc.getPosition(date, latitude, longitude)\n\nconst payload = {\n    now: msg.payload.now,\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nfor (let key in msg.payload.zenith) {\n\n    payload[key] = msg.payload.zenith[key]\n\n}\n\nif (payload.now > payload.sunrise && payload.now < payload.bedtime) {\n\n    if (payload.now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (payload.now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (payload.now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (let key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
+        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload.now)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst position = suncalc.getPosition(date, latitude, longitude)\n\nconst payload = {\n    now: msg.payload.now,\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nfor (let key in msg.payload.daily) {\n\n    payload[key] = msg.payload.daily[key]\n\n}\n\nif (payload.now > payload.sunrise && payload.now < payload.bedtime) {\n\n    if (payload.now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (payload.now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (payload.now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (let key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4142,40 +4197,76 @@
         "wires": []
     },
     {
-        "id": "e977392948ada8ee",
-        "type": "link in",
+        "id": "784c9929fe789981",
+        "type": "change",
         "z": "cbd68ba9caa96a3d",
         "g": "98cf3b8910bc4f22",
-        "name": "time",
-        "links": [
-            "668778ba95c0d6bf"
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$substringAfter(topic, 'nodered/automation/')",
+                "tot": "jsonata"
+            }
         ],
-        "x": 265,
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "485df563c6545698"
+            ]
+        ]
+    },
+    {
+        "id": "6272a0d1ddf8807b",
+        "type": "mqtt in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "",
+        "topic": "nodered/automation/time",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
         "y": 260,
         "wires": [
             [
-                "485df563c6545698"
+                "784c9929fe789981"
             ]
-        ],
-        "info": "// nrlint align-to-grid:off\n"
+        ]
     },
     {
-        "id": "52233919df9a67bc",
-        "type": "link in",
+        "id": "2a94995efda1937e",
+        "type": "mqtt in",
         "z": "cbd68ba9caa96a3d",
         "g": "98cf3b8910bc4f22",
-        "name": "theme",
-        "links": [
-            "3e9896b3de8c17d2"
-        ],
-        "x": 265,
-        "y": 300,
+        "name": "",
+        "topic": "nodered/automation/theme",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 320,
         "wires": [
             [
-                "485df563c6545698"
+                "784c9929fe789981"
             ]
-        ],
-        "info": "// nrlint align-to-grid:off\n"
+        ]
     },
     {
         "id": "14e5342cb50f366f",
@@ -4186,7 +4277,7 @@
         "mode": "return",
         "links": [],
         "x": 355,
-        "y": 200,
+        "y": 180,
         "wires": []
     },
     {
@@ -4197,7 +4288,7 @@
         "name": "send to chez nous main",
         "links": [],
         "x": 95,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -4226,7 +4317,7 @@
             }
         ],
         "x": 230,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "14e5342cb50f366f"
@@ -4252,7 +4343,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "73a1ec5ed8ebc167"
@@ -4274,7 +4365,7 @@
         "statusVal": "payload",
         "statusType": "msg",
         "x": 630,
-        "y": 100,
+        "y": 80,
         "wires": []
     },
     {
@@ -4296,7 +4387,7 @@
             }
         ],
         "x": 360,
-        "y": 100,
+        "y": 80,
         "wires": [
             [
                 "f3ab10cd192709b0"
@@ -4314,7 +4405,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 675,
-        "y": 300,
+        "y": 280,
         "wires": []
     },
     {
@@ -4345,7 +4436,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 160,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "8c9d79d2791e9b02"
@@ -4363,7 +4454,7 @@
         ],
         "timeout": "30",
         "x": 350,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "7d283a2fc0d30093"
@@ -4394,7 +4485,7 @@
             }
         ],
         "x": 560,
-        "y": 320,
+        "y": 300,
         "wires": [
             [
                 "4d2dc9a6e42d0548"
@@ -4413,7 +4504,7 @@
         "mode": "return",
         "links": [],
         "x": 355,
-        "y": 600,
+        "y": 580,
         "wires": []
     },
     {
@@ -4424,7 +4515,7 @@
         "name": "send to basement hue",
         "links": [],
         "x": 95,
-        "y": 600,
+        "y": 580,
         "wires": [
             [
                 "0ceb59ac89fb79b7"
@@ -4453,7 +4544,7 @@
             }
         ],
         "x": 230,
-        "y": 600,
+        "y": 580,
         "wires": [
             [
                 "df7392117105107f"
@@ -4479,7 +4570,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 160,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
                 "7639b738a201d7c6"
@@ -4501,7 +4592,7 @@
         "statusVal": "payload[0].success.username",
         "statusType": "msg",
         "x": 630,
-        "y": 500,
+        "y": 480,
         "wires": []
     },
     {
@@ -4523,7 +4614,7 @@
             }
         ],
         "x": 360,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
                 "9bcb520fd937694d"
@@ -4541,7 +4632,7 @@
             "dd7609e91ad64f63"
         ],
         "x": 655,
-        "y": 700,
+        "y": 680,
         "wires": []
     },
     {
@@ -4555,7 +4646,7 @@
         ],
         "timeout": "30",
         "x": 340,
-        "y": 720,
+        "y": 700,
         "wires": [
             [
                 "a5f013472e32f50c"
@@ -4590,7 +4681,7 @@
         "payload": "",
         "payloadType": "str",
         "x": 160,
-        "y": 720,
+        "y": 700,
         "wires": [
             [
                 "14944e047cba03fa"
@@ -4621,7 +4712,7 @@
             }
         ],
         "x": 540,
-        "y": 720,
+        "y": 700,
         "wires": [
             [
                 "1209a8480a23b591"
@@ -4646,7 +4737,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 740,
-        "y": 340,
+        "y": 320,
         "wires": []
     },
     {
@@ -4664,7 +4755,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 720,
-        "y": 740,
+        "y": 720,
         "wires": []
     },
     {
@@ -6090,8 +6181,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 870,
-        "y": 60,
+        "x": 270,
+        "y": 80,
         "wires": [
             [
                 "11b2638982da0e64"
@@ -6113,8 +6204,8 @@
         "correl": "",
         "expiry": "",
         "broker": "722d62f3b93039c3",
-        "x": 1010,
-        "y": 60,
+        "x": 410,
+        "y": 80,
         "wires": []
     },
     {
@@ -6142,155 +6233,11 @@
             "08157854eff23df6",
             "ff64f46de7793f7b"
         ],
-        "x": 755,
-        "y": 60,
+        "x": 155,
+        "y": 80,
         "wires": [
             [
                 "f5c7a7580984d067"
-            ]
-        ]
-    },
-    {
-        "id": "21679e08b9cf2dbd",
-        "type": "ui_template",
-        "z": "6e3ca82457d27245",
-        "g": "7519b16f6cae8e8a",
-        "group": "dc6e107af698a0c3",
-        "name": "CPU Temperature",
-        "order": 0,
-        "width": "6",
-        "height": "4",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 690,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "87fbecefe8135d77",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "6e3ca82457d27245",
-        "g": "7519b16f6cae8e8a",
-        "name": "cpu/+/temperature",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "cpu/+/temperature",
-                "type": "str"
-            },
-            {
-                "name": "UNIT",
-                "value": "C",
-                "type": "str"
-            }
-        ],
-        "x": 490,
-        "y": 380,
-        "wires": [
-            [
-                "21679e08b9cf2dbd"
-            ]
-        ]
-    },
-    {
-        "id": "3a45f65735fa5469",
-        "type": "ui_template",
-        "z": "6e3ca82457d27245",
-        "g": "7519b16f6cae8e8a",
-        "group": "0a1d0e699afa7c7d",
-        "name": "CPU Memory",
-        "order": 0,
-        "width": "6",
-        "height": "4",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 300,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "353e1ccbabccae7f",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "6e3ca82457d27245",
-        "g": "7519b16f6cae8e8a",
-        "name": "cpu/+/megabytes",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "cpu/+/megabytes",
-                "type": "str"
-            },
-            {
-                "name": "UNIT",
-                "value": "MB",
-                "type": "str"
-            }
-        ],
-        "x": 120,
-        "y": 380,
-        "wires": [
-            [
-                "3a45f65735fa5469"
-            ]
-        ]
-    },
-    {
-        "id": "aa93bdbb5aa7d08c",
-        "type": "ui_template",
-        "z": "6e3ca82457d27245",
-        "g": "7519b16f6cae8e8a",
-        "group": "cfa1a0f4a477687c",
-        "name": "CPU Volts",
-        "order": 0,
-        "width": "6",
-        "height": "4",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 1010,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "08c3b6627a851e95",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "6e3ca82457d27245",
-        "g": "7519b16f6cae8e8a",
-        "name": "cpu/+/volts",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "cpu/+/volts",
-                "type": "str"
-            },
-            {
-                "name": "UNIT",
-                "value": "V",
-                "type": "str"
-            }
-        ],
-        "x": 860,
-        "y": 380,
-        "wires": [
-            [
-                "aa93bdbb5aa7d08c"
             ]
         ]
     },
@@ -6303,8 +6250,8 @@
         "scope": [
             "f5c7a7580984d067"
         ],
-        "x": 800,
-        "y": 180,
+        "x": 200,
+        "y": 200,
         "wires": [
             [
                 "1c6a7f9ae824db96"
@@ -6331,8 +6278,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 180,
+        "x": 360,
+        "y": 200,
         "wires": [
             [
                 "6db5c2fcb5fd08e3"
@@ -6353,8 +6300,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1160,
-        "y": 180,
+        "x": 560,
+        "y": 200,
         "wires": []
     },
     {
@@ -6366,8 +6313,8 @@
         "scope": [
             "11b2638982da0e64"
         ],
-        "x": 800,
-        "y": 120,
+        "x": 200,
+        "y": 140,
         "wires": [
             [
                 "5ea9e057dd830d9e"
@@ -6394,8 +6341,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 120,
+        "x": 360,
+        "y": 140,
         "wires": [
             [
                 "5adbc418ab39d29a"
@@ -6416,175 +6363,516 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1160,
-        "y": 120,
+        "x": 560,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "aa83f2d2b99d012e",
-        "type": "ui_text",
+        "id": "0888e9faa06fe4e5",
+        "type": "http response",
         "z": "6e3ca82457d27245",
-        "g": "8dff7c51091f12ea",
-        "group": "03b0e40844d33477",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "Chez Nous Main readyState",
-        "label": "readyState",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 440,
-        "y": 60,
+        "g": "f82a1f6e963f443a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "79f5591e72a3bc50",
-        "type": "ui_text",
+        "id": "48da82dc3974c2b3",
+        "type": "function",
         "z": "6e3ca82457d27245",
-        "g": "b78fb0b9d14b12c6",
-        "group": "a0da6d89d75fc6ac",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "Basement Hue readyState",
-        "label": "readyState",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
+        "g": "f82a1f6e963f443a",
+        "name": "response",
+        "func": "const date = new Date()\nconst timestamp = '-' +\n    date.getFullYear() +\n    '-' +\n    String(date.getMonth() + 1).padStart(2, '0') +\n    '-' +\n    String(date.getDate()).padStart(2, '0')\n\nmsg.headers = {\n    'Content-Type': 'text/plain; charset=UTF-8',\n    'Content-Disposition': 'attachment; filename=\"sun-positions' + timestamp + '.csv\"'\n}\n\nmsg.payload = global.get('sun-positions')\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 400,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "e71557af20de9949",
-        "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "8dff7c51091f12ea",
-        "group": "03b0e40844d33477",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "Chez Nous Main onopen Count",
-        "label": "onopen",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 450,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "b30654675fe6a404",
-        "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "b78fb0b9d14b12c6",
-        "group": "a0da6d89d75fc6ac",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "Basement Hue onopen Count",
-        "label": "onopen",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 430,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "3bbfe6126101e47a",
-        "type": "subflow:9601cbf2386d897b",
-        "z": "6e3ca82457d27245",
-        "g": "8dff7c51091f12ea",
-        "name": "Count Chez Nous Main onopen",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/chez-nous-main/open",
-                "type": "str"
-            }
-        ],
-        "x": 170,
-        "y": 120,
+        "y": 300,
         "wires": [
-            [],
             [
-                "e71557af20de9949"
+                "0888e9faa06fe4e5"
             ]
         ]
     },
     {
-        "id": "ff0320e7dcb99080",
-        "type": "subflow:9601cbf2386d897b",
+        "id": "a341a1a127b0fe71",
+        "type": "http in",
         "z": "6e3ca82457d27245",
-        "g": "b78fb0b9d14b12c6",
-        "name": "Count Basement Hue onopen",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "hue/basement-hue/open",
-                "type": "str"
-            }
-        ],
-        "x": 160,
-        "y": 280,
-        "wires": [
-            [],
-            [
-                "b30654675fe6a404"
-            ]
-        ]
-    },
-    {
-        "id": "bf73d9fb33637e10",
-        "type": "mqtt in",
-        "z": "6e3ca82457d27245",
-        "g": "8dff7c51091f12ea",
+        "g": "f82a1f6e963f443a",
         "name": "",
-        "topic": "hue/chez-nous-main/status",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 190,
+        "url": "/sunpositions",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 230,
+        "y": 300,
+        "wires": [
+            [
+                "48da82dc3974c2b3"
+            ]
+        ]
+    },
+    {
+        "id": "68ca4947dd6cf14e",
+        "type": "function",
+        "z": "6e3ca82457d27245",
+        "g": "f82a1f6e963f443a",
+        "name": "url",
+        "func": "/*global os*/\n\nmsg.payload = 'http://' + os.hostname + '.local:1880/sunpositions'\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "ccc46e9ff7a15f4e"
+            ]
+        ]
+    },
+    {
+        "id": "ccc46e9ff7a15f4e",
+        "type": "ui_template",
+        "z": "6e3ca82457d27245",
+        "g": "f82a1f6e963f443a",
+        "group": "8055574ccb17e8ed",
+        "name": "Download CSV",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"width:100%;text-align:center;\">\n    <a style=\"color:white;text-decoration:none;\" href=\"{{msg.payload}}\">Download</a>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98380b5a50270d78",
+        "type": "inject",
+        "z": "6e3ca82457d27245",
+        "g": "f82a1f6e963f443a",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "68ca4947dd6cf14e"
+            ]
+        ]
+    },
+    {
+        "id": "c27168b168847790",
+        "type": "ui_chart",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "Sun Position",
+        "group": "8055574ccb17e8ed",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-3.14159",
+        "ymax": "3.14159",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
         "y": 60,
         "wires": [
-            [
-                "aa83f2d2b99d012e"
-            ]
+            []
         ]
     },
     {
-        "id": "f4bc6cd84cd984e4",
-        "type": "mqtt in",
-        "z": "6e3ca82457d27245",
-        "g": "b78fb0b9d14b12c6",
-        "name": "",
-        "topic": "hue/basement-hue/status",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 220,
+        "id": "3a39c550369bac31",
+        "type": "inject",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 80,
         "wires": [
             [
-                "79f5591e72a3bc50"
+                "15ce56cf1449ce52"
             ]
         ]
     },
     {
-        "id": "c7bcd60f19dc24ec",
+        "id": "15ce56cf1449ce52",
+        "type": "ui_date_picker",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "",
+        "label": "Date",
+        "group": "8055574ccb17e8ed",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "f33b94d2cc59c348"
+            ]
+        ]
+    },
+    {
+        "id": "f33b94d2cc59c348",
+        "type": "function",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "sun positions",
+        "func": "/*global suncalc*/\n\nconst msg2 = RED.util.cloneMessage(msg)\nconst msg3 = RED.util.cloneMessage(msg)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst date = new Date(msg.payload)\nconst positions = []\nconst altitudes = []\nconst azimuths = []\nconst times = suncalc.getTimes(date, latitude, longitude)\nconst sunrise = times.sunrise.getTime()\nconst sunset = times.sunset.getTime()\nconst zenith = {\n    time: 0,\n    altitude: -(Math.PI / 2),\n    azimuth: 0\n}\n\nfor (let minute = sunrise; minute < sunset; minute += 60000) {\n\n    const position = suncalc.getPosition(new Date(minute), latitude, longitude)\n\n    position.time = minute\n    positions.push(position)\n    altitudes.push({ x: minute, y: position.altitude })\n    azimuths.push({ x: minute, y: position.azimuth })\n\n    if (position.altitude > zenith.altitude) {\n\n        zenith.time = minute\n        zenith.altitude = position.altitude\n        zenith.azimuth = position.azimuth\n\n    }\n}\n\nmsg.payload = [{\n    \"series\": [\"altitude\", \"azimuth\"],\n    \"data\": [\n        altitudes,\n        azimuths\n    ],\n    \"labels\": [\"\"]\n}]\n\nmsg2.payload = zenith\nmsg3.payload = positions\n\nreturn [\n    msg,\n    msg2,\n    msg3\n]",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "suncalc",
+                "module": "suncalc"
+            }
+        ],
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "c27168b168847790"
+            ],
+            [
+                "4dd293c16815dce3"
+            ],
+            [
+                "8549e51620377f66"
+            ]
+        ],
+        "outputLabels": [
+            "chart",
+            "zenith",
+            ""
+        ]
+    },
+    {
+        "id": "625b9718a13e0340",
+        "type": "template",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "html table",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<table width=\"100%\" cellspacing=\"5px\" cellpadding=\"5px\">\n    <caption>zenith</caption>\n    <tr>\n        <th>time</th>\n        <th>altitude</th>\n        <th>azimuth</th>\n    </tr>\n    <tr>\n        <td>{{{payload.time}}}</td>\n        <td>{{{payload.altitude}}}</td>\n        <td>{{{payload.azimuth}}}</td>\n    </tr>\n</table>\n",
+        "output": "str",
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "f72b11239792afcf"
+            ]
+        ]
+    },
+    {
+        "id": "f72b11239792afcf",
+        "type": "ui_template",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "group": "8055574ccb17e8ed",
+        "name": "Zenith",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 890,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4dd293c16815dce3",
+        "type": "function",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "format zenith",
+        "func": "/**\n* @param {number} radians\n*/\nfunction truncate(radians) {\n\n    const decimals = 10000000\n    return Math.round(radians * decimals) / decimals\n\n}\n\n// /**\n// * @param {number} radians\n// */\n// function degrees(radians) {\n\n//     return radians * 57.29578\n\n// }\n\nmsg.payload.time = new Date(msg.payload.time).toLocaleTimeString()\nmsg.payload.altitude = truncate(msg.payload.altitude)\nmsg.payload.azimuth = truncate(msg.payload.azimuth)\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 100,
+        "wires": [
+            [
+                "625b9718a13e0340"
+            ]
+        ]
+    },
+    {
+        "id": "40aa6d57e66c9314",
+        "type": "csv",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "time,altitude,azimuth",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "e7bc056a5ca25bc5"
+            ]
+        ]
+    },
+    {
+        "id": "8549e51620377f66",
+        "type": "function",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "format csv",
+        "func": "msg.payload.forEach((/** @type {{ time: string | number | Date; }} */ position) => {\n\n    position.time = new Date(position.time).toLocaleTimeString()\n\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 140,
+        "wires": [
+            [
+                "40aa6d57e66c9314"
+            ]
+        ]
+    },
+    {
+        "id": "be5ed0fec546d004",
+        "type": "ui_chart",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "CPU Temperature",
+        "group": "dc6e107af698a0c3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "No temperature reported",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 330,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08c851f506852280",
+        "type": "ui_chart",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "CPU Volts",
+        "group": "cfa1a0f4a477687c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Volts",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "No voltage reported",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c85c492c57041d7",
+        "type": "subflow:c4207c9fe61a900e",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "cpu/+/volts",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "cpu/+/volts",
+                "type": "str"
+            },
+            {
+                "name": "UNIT",
+                "value": "V",
+                "type": "str"
+            }
+        ],
+        "x": 500,
+        "y": 620,
+        "wires": [
+            [
+                "08c851f506852280"
+            ]
+        ]
+    },
+    {
+        "id": "55425537c5741ec5",
+        "type": "subflow:c4207c9fe61a900e",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "cpu/+/temperature",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "cpu/+/temperature",
+                "type": "str"
+            },
+            {
+                "name": "UNIT",
+                "value": "C",
+                "type": "str"
+            }
+        ],
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "be5ed0fec546d004"
+            ]
+        ]
+    },
+    {
+        "id": "3ffae20118b3f324",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 4,
         "width": 0,
@@ -6594,15 +6882,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1260,
-        "y": 480,
+        "x": 360,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "e998cff9d44e33c1",
+        "id": "056b4e63ec2cd405",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 8,
         "width": 0,
@@ -6612,15 +6900,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1260,
-        "y": 540,
+        "x": 740,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "94ac06ac565be510",
+        "id": "64f954fed4bbe73e",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 9,
         "width": 0,
@@ -6630,15 +6918,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1260,
-        "y": 600,
+        "x": 1160,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "fd39d6bef90014dd",
+        "id": "4332d4706a43e2f6",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 2,
         "width": 0,
@@ -6648,15 +6936,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 850,
-        "y": 480,
+        "x": 330,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "1709a7b2a53949a0",
+        "id": "9e522923ebcadd47",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 1,
         "width": 0,
@@ -6666,57 +6954,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 860,
-        "y": 540,
+        "x": 340,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "e422d0fb203c0ab4",
+        "id": "cd359e0f643d8b52",
         "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "nodered/automation/bedtime",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "nodered/automation/bedtime",
-                "type": "str"
-            }
-        ],
-        "x": 1060,
-        "y": 600,
-        "wires": [
-            [
-                "94ac06ac565be510"
-            ]
-        ]
-    },
-    {
-        "id": "a42f585066f8900c",
-        "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "nodered/automation/now",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "nodered/automation/now",
-                "type": "str"
-            }
-        ],
-        "x": 150,
-        "y": 480,
-        "wires": [
-            [
-                "01b76d59941a8852"
-            ]
-        ]
-    },
-    {
-        "id": "e7fe816f1b71ea76",
-        "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "name": "nodered/automation/sunrise",
         "env": [
             {
@@ -6725,19 +6971,19 @@
                 "type": "str"
             }
         ],
-        "x": 1060,
-        "y": 480,
+        "x": 160,
+        "y": 360,
         "wires": [
             [
-                "c7bcd60f19dc24ec"
+                "3ffae20118b3f324"
             ]
         ]
     },
     {
-        "id": "231d58a67aa42c3d",
+        "id": "6ce0fae7a630111f",
         "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "name": "nodered/automation/sunset",
         "env": [
             {
@@ -6746,117 +6992,40 @@
                 "type": "str"
             }
         ],
-        "x": 1070,
-        "y": 540,
+        "x": 550,
+        "y": 360,
         "wires": [
             [
-                "e998cff9d44e33c1"
+                "056b4e63ec2cd405"
             ]
         ]
     },
     {
-        "id": "8e7d0113aeecf474",
+        "id": "6fd30861ee594f7a",
         "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "nodered/automation/afternoon",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
+        "name": "nodered/automation/bedtime",
         "env": [
             {
                 "name": "TOPIC",
-                "value": "nodered/automation/afternoon",
+                "value": "nodered/automation/bedtime",
                 "type": "str"
             }
         ],
-        "x": 560,
-        "y": 600,
+        "x": 960,
+        "y": 240,
         "wires": [
             [
-                "7dce1b783a5b4c4d"
+                "64f954fed4bbe73e"
             ]
         ]
     },
     {
-        "id": "1062c689099a1a73",
-        "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "nodered/automation/midday",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "nodered/automation/midday",
-                "type": "str"
-            }
-        ],
-        "x": 160,
-        "y": 600,
-        "wires": [
-            [
-                "dce1299c653bffe0"
-            ]
-        ]
-    },
-    {
-        "id": "101c3e736f897d59",
-        "type": "subflow:be201d7a24b331c5",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "nodered/automation/zenith/time",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "nodered/automation/zenith/time",
-                "type": "str"
-            }
-        ],
-        "x": 170,
-        "y": 540,
-        "wires": [
-            [
-                "ea035681d11621de"
-            ]
-        ]
-    },
-    {
-        "id": "e9ce751eb9d7f57e",
-        "type": "link in",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "time",
-        "links": [
-            "7f49bcbb775bd243",
-            "668778ba95c0d6bf"
-        ],
-        "x": 755,
-        "y": 480,
-        "wires": [
-            [
-                "fd39d6bef90014dd"
-            ]
-        ]
-    },
-    {
-        "id": "ba318db28757b758",
-        "type": "link in",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "theme",
-        "links": [
-            "3e9896b3de8c17d2"
-        ],
-        "x": 755,
-        "y": 540,
-        "wires": [
-            [
-                "1709a7b2a53949a0"
-            ]
-        ]
-    },
-    {
-        "id": "d6e2c431d3e9af8a",
+        "id": "7b3880a941748a69",
         "type": "mqtt in",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "name": "",
         "topic": "nodered/automation/time",
         "qos": "2",
@@ -6866,49 +7035,19 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 550,
-        "y": 480,
+        "x": 150,
+        "y": 240,
         "wires": [
             [
-                "668778ba95c0d6bf"
+                "4332d4706a43e2f6"
             ]
         ]
     },
     {
-        "id": "668778ba95c0d6bf",
-        "type": "link out",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "time",
-        "mode": "link",
-        "links": [
-            "e977392948ada8ee",
-            "e9ce751eb9d7f57e"
-        ],
-        "x": 695,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "3e9896b3de8c17d2",
-        "type": "link out",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "name": "theme",
-        "mode": "link",
-        "links": [
-            "52233919df9a67bc",
-            "ba318db28757b758"
-        ],
-        "x": 695,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "53895bc91a8e3ebb",
+        "id": "a6c27a31c49422e4",
         "type": "mqtt in",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "name": "",
         "topic": "nodered/automation/theme",
         "qos": "2",
@@ -6918,19 +7057,61 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 550,
-        "y": 540,
+        "x": 150,
+        "y": 300,
         "wires": [
             [
-                "3e9896b3de8c17d2"
+                "9e522923ebcadd47"
             ]
         ]
     },
     {
-        "id": "7dce1b783a5b4c4d",
+        "id": "03b32d05f0dc98c7",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
+        "name": "nodered/automation/midday",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/midday",
+                "type": "str"
+            }
+        ],
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "b403745b92a95d79"
+            ]
+        ]
+    },
+    {
+        "id": "3a0d9afd6a91a4b8",
+        "type": "subflow:be201d7a24b331c5",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
+        "name": "nodered/automation/afternoon",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "nodered/automation/afternoon",
+                "type": "str"
+            }
+        ],
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [
+                "119dc5e83c2a078f"
+            ]
+        ]
+    },
+    {
+        "id": "119dc5e83c2a078f",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 7,
         "width": 0,
@@ -6941,50 +7122,14 @@
         "layout": "row-spread",
         "className": "",
         "x": 760,
-        "y": 600,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "01b76d59941a8852",
+        "id": "b403745b92a95d79",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "group": "25c7f0078ed443dd",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Now",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 330,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "ea035681d11621de",
-        "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
-        "group": "25c7f0078ed443dd",
-        "order": 6,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Zenith",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 370,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "dce1299c653bffe0",
-        "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 5,
         "width": 0,
@@ -6994,15 +7139,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 360,
-        "y": 600,
+        "x": 760,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "49a8141313ca0d6b",
+        "id": "c6ad3ce00565e461",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 10,
         "width": 0,
@@ -7012,15 +7157,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 360,
-        "y": 660,
+        "x": 1160,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "ce17384a815d013d",
+        "id": "fb5206dc8bb107e5",
         "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "group": "25c7f0078ed443dd",
         "order": 11,
         "width": 0,
@@ -7030,15 +7175,15 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 760,
-        "y": 660,
+        "x": 1160,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "705c8f83deb31bfd",
+        "id": "61c5be84a6996eee",
         "type": "mqtt in",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "name": "",
         "topic": "nodered/automation/altitude",
         "qos": "2",
@@ -7048,19 +7193,19 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 160,
-        "y": 660,
+        "x": 960,
+        "y": 300,
         "wires": [
             [
-                "49a8141313ca0d6b"
+                "c6ad3ce00565e461"
             ]
         ]
     },
     {
-        "id": "5e3e43e635533428",
+        "id": "a921a5a41ab154fc",
         "type": "mqtt in",
-        "z": "6e3ca82457d27245",
-        "g": "aed619b61cd0588d",
+        "z": "b12fd38c090c51f2",
+        "g": "8a81267cb12384d5",
         "name": "",
         "topic": "nodered/automation/azimuth",
         "qos": "2",
@@ -7070,12 +7215,224 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 560,
-        "y": 660,
+        "x": 960,
+        "y": 360,
         "wires": [
             [
-                "ce17384a815d013d"
+                "fb5206dc8bb107e5"
             ]
+        ]
+    },
+    {
+        "id": "7afdc0752b7bab93",
+        "type": "ui_text",
+        "z": "b12fd38c090c51f2",
+        "g": "0d4083787ae50482",
+        "group": "03b0e40844d33477",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Chez Nous Main readyState",
+        "label": "readyState",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 440,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "af3bef0be06cad7d",
+        "type": "mqtt in",
+        "z": "b12fd38c090c51f2",
+        "g": "0d4083787ae50482",
+        "name": "",
+        "topic": "hue/chez-nous-main/status",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 460,
+        "wires": [
+            [
+                "7afdc0752b7bab93"
+            ]
+        ]
+    },
+    {
+        "id": "e20fca5f4b3d37b9",
+        "type": "subflow:9601cbf2386d897b",
+        "z": "b12fd38c090c51f2",
+        "g": "0d4083787ae50482",
+        "name": "Count Chez Nous Main onopen",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/chez-nous-main/open",
+                "type": "str"
+            }
+        ],
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [],
+            [
+                "dfcbba568eef0b62"
+            ]
+        ]
+    },
+    {
+        "id": "dfcbba568eef0b62",
+        "type": "ui_text",
+        "z": "b12fd38c090c51f2",
+        "g": "0d4083787ae50482",
+        "group": "03b0e40844d33477",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Chez Nous Main onopen Count",
+        "label": "onopen",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 450,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "23c5c69fbebd0a69",
+        "type": "ui_text",
+        "z": "b12fd38c090c51f2",
+        "g": "c28ed42a351eb1a7",
+        "group": "a0da6d89d75fc6ac",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Basement Hue readyState",
+        "label": "readyState",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1020,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "10298b89f745814f",
+        "type": "mqtt in",
+        "z": "b12fd38c090c51f2",
+        "g": "c28ed42a351eb1a7",
+        "name": "",
+        "topic": "hue/basement-hue/status",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 770,
+        "y": 460,
+        "wires": [
+            [
+                "23c5c69fbebd0a69"
+            ]
+        ]
+    },
+    {
+        "id": "82355ffb0dd175e4",
+        "type": "subflow:9601cbf2386d897b",
+        "z": "b12fd38c090c51f2",
+        "g": "c28ed42a351eb1a7",
+        "name": "Count Basement Hue onopen",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/basement-hue/open",
+                "type": "str"
+            }
+        ],
+        "x": 780,
+        "y": 520,
+        "wires": [
+            [],
+            [
+                "e80f7721307a29b3"
+            ]
+        ]
+    },
+    {
+        "id": "e80f7721307a29b3",
+        "type": "ui_text",
+        "z": "b12fd38c090c51f2",
+        "g": "c28ed42a351eb1a7",
+        "group": "a0da6d89d75fc6ac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Basement Hue onopen Count",
+        "label": "onopen",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1050,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8fe5e01fe99f5026",
+        "type": "inject",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "every morning",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 04 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "15ce56cf1449ce52"
+            ]
+        ]
+    },
+    {
+        "id": "e7bc056a5ca25bc5",
+        "type": "change",
+        "z": "b12fd38c090c51f2",
+        "g": "b438e0cbd64ef6ce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "sun-positions",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 140,
+        "wires": [
+            []
         ]
     }
 ]
