@@ -305,8 +305,8 @@
         "in": [],
         "out": [
             {
-                "x": 480,
-                "y": 60,
+                "x": 720,
+                "y": 100,
                 "wires": [
                     {
                         "id": "46fb2d69cd82b25c",
@@ -324,7 +324,17 @@
         ],
         "meta": {},
         "color": "#E7E7AE",
-        "icon": "node-red/status.svg"
+        "icon": "node-red/status.svg",
+        "status": {
+            "x": 720,
+            "y": 200,
+            "wires": [
+                {
+                    "id": "e81b7e6a74a922a1",
+                    "port": 0
+                }
+            ]
+        }
     },
     {
         "id": "4e89e7c952d56c09",
@@ -843,9 +853,7 @@
             "18b035d175d78813"
         ],
         "x": 114,
-        "y": 519,
-        "w": 632,
-        "h": 242
+        "y": 519
     },
     {
         "id": "87285e6bf01cff03",
@@ -865,9 +873,7 @@
             "618e79a58ab8143a"
         ],
         "x": 114,
-        "y": 19,
-        "w": 362,
-        "h": 82
+        "y": 19
     },
     {
         "id": "e49c9571ddd5102f",
@@ -893,9 +899,7 @@
             "5adbc418ab39d29a"
         ],
         "x": 114,
-        "y": 39,
-        "w": 572,
-        "h": 202
+        "y": 39
     },
     {
         "id": "ca14f3586a7c5f24",
@@ -915,9 +919,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 413,
-        "w": 844,
-        "h": 374
+        "y": 413
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -937,9 +939,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 13,
-        "w": 864,
-        "h": 374
+        "y": 13
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -959,9 +959,7 @@
             "e1fa765ec5a5ebd7"
         ],
         "x": 88,
-        "y": 13,
-        "w": 524,
-        "h": 334
+        "y": 13
     },
     {
         "id": "e29b5646cac97198",
@@ -980,9 +978,7 @@
             "513bc529c9c10fa0"
         ],
         "x": 88,
-        "y": 373,
-        "w": 524,
-        "h": 234
+        "y": 373
     },
     {
         "id": "0770b0ba393f379d",
@@ -1004,9 +1000,7 @@
             "516be0577e70437c"
         ],
         "x": 114,
-        "y": 119,
-        "w": 1092,
-        "h": 82
+        "y": 119
     },
     {
         "id": "746733f8c81b5ccd",
@@ -1028,9 +1022,7 @@
             "7bc062570484d12c"
         ],
         "x": 114,
-        "y": 219,
-        "w": 1092,
-        "h": 82
+        "y": 219
     },
     {
         "id": "e961376bbef01556",
@@ -1052,9 +1044,7 @@
             "bdce740848b412c8"
         ],
         "x": 114,
-        "y": 319,
-        "w": 1092,
-        "h": 82
+        "y": 319
     },
     {
         "id": "56e03f40c1727182",
@@ -1076,9 +1066,7 @@
             "b56bca504084bf91"
         ],
         "x": 114,
-        "y": 419,
-        "w": 1092,
-        "h": 82
+        "y": 419
     },
     {
         "id": "d23ba68654f3c055",
@@ -1100,9 +1088,7 @@
             "f6597e2f37dd2636"
         ],
         "x": 708,
-        "y": 13,
-        "w": 524,
-        "h": 534
+        "y": 13
     },
     {
         "id": "98cf3b8910bc4f22",
@@ -1248,378 +1234,6 @@
         "h": 162
     },
     {
-        "id": "1ce03cecd5db8bc6",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Turn off main floor lights group",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "07ccb0b07e6fada8",
-            "ec1b9da9a2a0dde0",
-            "33533dc0ac4ff870"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "3483ce20c1996e6c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3ed1a4d37d1548b4",
-            "53509cbc2f897eb4",
-            "1462dac4d5543f0a"
-        ],
-        "x": 114,
-        "y": 139,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "e1fa765ec5a5ebd7",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6cae9b1ccc68cb9e",
-            "8ae7ee0c87df1191",
-            "76f3eb6c53a0310c"
-        ],
-        "x": 114,
-        "y": 239,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "70e9b8db12799d18",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "14e5342cb50f366f",
-            "7df3e5fbd6e9aa8a",
-            "3b5ab296575b53d4"
-        ],
-        "x": 54,
-        "y": 139,
-        "w": 385,
-        "h": 82
-    },
-    {
-        "id": "290b83ef8e01ae0f",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
-        "style": {
-            "fill-opacity": "0.11",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "51bce99c75aa12c6",
-            "f3ab10cd192709b0",
-            "73a1ec5ed8ebc167"
-        ],
-        "x": 54,
-        "y": 39,
-        "w": 752,
-        "h": 82
-    },
-    {
-        "id": "665df9d682462b5e",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Listen to events from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8c9d79d2791e9b02",
-            "2d0604f94ef7bff4",
-            "4d2dc9a6e42d0548",
-            "7d283a2fc0d30093",
-            "6d06fc266beda8bf"
-        ],
-        "x": 54,
-        "y": 239,
-        "w": 812,
-        "h": 122
-    },
-    {
-        "id": "9c46129d149ab201",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Send requests to the Hue API on the Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "df7392117105107f",
-            "df79272de1bce7c1",
-            "0ceb59ac89fb79b7"
-        ],
-        "x": 54,
-        "y": 539,
-        "w": 375,
-        "h": 82
-    },
-    {
-        "id": "648ad874a33c7973",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
-        "style": {
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000",
-            "stroke": "none",
-            "fill": "#000000"
-        },
-        "nodes": [
-            "497b08f40cd0b29c",
-            "9bcb520fd937694d",
-            "7639b738a201d7c6"
-        ],
-        "x": 54,
-        "y": 439,
-        "w": 752,
-        "h": 82
-    },
-    {
-        "id": "0fc22be05cfc5241",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Listen to events from Basement Hue bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "1209a8480a23b591",
-            "14944e047cba03fa",
-            "5e2f8ae74b053fc9",
-            "a5f013472e32f50c",
-            "36cd3d7fbb64eda2"
-        ],
-        "x": 54,
-        "y": 639,
-        "w": 792,
-        "h": 122
-    },
-    {
-        "id": "00ad2b71a9c29a21",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Turn off main bathroom lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "08ca72b8e815a992",
-            "2736157993771007",
-            "0cb4aa086519cdc3"
-        ],
-        "x": 114,
-        "y": 399,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "513bc529c9c10fa0",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Activate main bathroom nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3deabbac44606076",
-            "ec0f7c926936a835",
-            "1af873ecc08861c7"
-        ],
-        "x": 114,
-        "y": 499,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "26622bde8cf9b262",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "51e789d7146d158c",
-            "bcf937398010e69d",
-            "8c8685c28661026d"
-        ],
-        "x": 734,
-        "y": 139,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "c083702f726a3c76",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard jolly scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "973da59b5e8db353",
-            "434961afc8e6268a",
-            "c639897051efe373"
-        ],
-        "x": 734,
-        "y": 439,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "1f51b2e96d97963e",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Turn off yard lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "de84c77427959f96",
-            "f224835045d99471",
-            "30ad3f93b6509f97"
-        ],
-        "x": 734,
-        "y": 39,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "73df20e8ccdbf56c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard spooky scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6bc33e9277b4e511",
-            "f92a8accf963b5bf",
-            "9f798cee87b95525"
-        ],
-        "x": 734,
-        "y": 339,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "f6597e2f37dd2636",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard tribal scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ccd0f26bea9262e7",
-            "7ac02c6645861b20",
-            "e444798d5fd55433"
-        ],
-        "x": 734,
-        "y": 239,
-        "w": 452,
-        "h": 82
-    },
-    {
         "id": "5cc3007bfef936f5",
         "type": "group",
         "z": "b12fd38c090c51f2",
@@ -1634,12 +1248,18 @@
             "be5ed0fec546d004",
             "08c851f506852280",
             "1c85c492c57041d7",
-            "55425537c5741ec5"
+            "55425537c5741ec5",
+            "281d03f937caa527",
+            "92446033e6f8968f",
+            "6eae3f85a3c030a8",
+            "dea1d159dc5339ef",
+            "9632e610560cfce1",
+            "e08653b0e7646390"
         ],
         "x": 14,
         "y": 579,
-        "w": 732,
-        "h": 82
+        "w": 992,
+        "h": 142
     },
     {
         "id": "8a81267cb12384d5",
@@ -1745,9 +1365,367 @@
             "98380b5a50270d78"
         ],
         "x": 114,
-        "y": 259,
-        "w": 492,
-        "h": 142
+        "y": 259
+    },
+    {
+        "id": "80212e6229ce755b",
+        "type": "group",
+        "z": "6e3ca82457d27245",
+        "name": "Periodically send stats from os module",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "5f86349da8f86e61",
+            "de168bcd359b4aa8",
+            "baa82bec436a6471"
+        ],
+        "x": 114,
+        "y": 419
+    },
+    {
+        "id": "1ce03cecd5db8bc6",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Turn off main floor lights group",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "07ccb0b07e6fada8",
+            "ec1b9da9a2a0dde0",
+            "33533dc0ac4ff870"
+        ],
+        "x": 114,
+        "y": 39
+    },
+    {
+        "id": "3483ce20c1996e6c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor nightlight scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3ed1a4d37d1548b4",
+            "53509cbc2f897eb4",
+            "1462dac4d5543f0a"
+        ],
+        "x": 114,
+        "y": 139
+    },
+    {
+        "id": "e1fa765ec5a5ebd7",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "6c7bbad3f1eae3bb",
+        "name": "Activate main floor sunset scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6cae9b1ccc68cb9e",
+            "8ae7ee0c87df1191",
+            "76f3eb6c53a0310c"
+        ],
+        "x": 114,
+        "y": 239
+    },
+    {
+        "id": "70e9b8db12799d18",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "14e5342cb50f366f",
+            "7df3e5fbd6e9aa8a",
+            "3b5ab296575b53d4"
+        ],
+        "x": 54,
+        "y": 139
+    },
+    {
+        "id": "290b83ef8e01ae0f",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "style": {
+            "fill-opacity": "0.11",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "51bce99c75aa12c6",
+            "f3ab10cd192709b0",
+            "73a1ec5ed8ebc167"
+        ],
+        "x": 54,
+        "y": 39
+    },
+    {
+        "id": "665df9d682462b5e",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "46f2fb3ee016fe23",
+        "name": "Listen to events from Chez Nous Main bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8c9d79d2791e9b02",
+            "2d0604f94ef7bff4",
+            "4d2dc9a6e42d0548",
+            "7d283a2fc0d30093",
+            "6d06fc266beda8bf"
+        ],
+        "x": 54,
+        "y": 239
+    },
+    {
+        "id": "9c46129d149ab201",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Send requests to the Hue API on the Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "df7392117105107f",
+            "df79272de1bce7c1",
+            "0ceb59ac89fb79b7"
+        ],
+        "x": 54,
+        "y": 539
+    },
+    {
+        "id": "648ad874a33c7973",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
+        "style": {
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "stroke": "none",
+            "fill": "#000000"
+        },
+        "nodes": [
+            "497b08f40cd0b29c",
+            "9bcb520fd937694d",
+            "7639b738a201d7c6"
+        ],
+        "x": 54,
+        "y": 439
+    },
+    {
+        "id": "0fc22be05cfc5241",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "g": "ca14f3586a7c5f24",
+        "name": "Listen to events from Basement Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1209a8480a23b591",
+            "14944e047cba03fa",
+            "5e2f8ae74b053fc9",
+            "a5f013472e32f50c",
+            "36cd3d7fbb64eda2"
+        ],
+        "x": 54,
+        "y": 639
+    },
+    {
+        "id": "00ad2b71a9c29a21",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "e29b5646cac97198",
+        "name": "Turn off main bathroom lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "08ca72b8e815a992",
+            "2736157993771007",
+            "0cb4aa086519cdc3"
+        ],
+        "x": 114,
+        "y": 399
+    },
+    {
+        "id": "513bc529c9c10fa0",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "e29b5646cac97198",
+        "name": "Activate main bathroom nightlight scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3deabbac44606076",
+            "ec0f7c926936a835",
+            "1af873ecc08861c7"
+        ],
+        "x": 114,
+        "y": 499
+    },
+    {
+        "id": "26622bde8cf9b262",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard sunset scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "51e789d7146d158c",
+            "bcf937398010e69d",
+            "8c8685c28661026d"
+        ],
+        "x": 734,
+        "y": 139
+    },
+    {
+        "id": "c083702f726a3c76",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard jolly scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "973da59b5e8db353",
+            "434961afc8e6268a",
+            "c639897051efe373"
+        ],
+        "x": 734,
+        "y": 439
+    },
+    {
+        "id": "1f51b2e96d97963e",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Turn off yard lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "de84c77427959f96",
+            "f224835045d99471",
+            "30ad3f93b6509f97"
+        ],
+        "x": 734,
+        "y": 39
+    },
+    {
+        "id": "73df20e8ccdbf56c",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard spooky scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6bc33e9277b4e511",
+            "f92a8accf963b5bf",
+            "9f798cee87b95525"
+        ],
+        "x": 734,
+        "y": 339
+    },
+    {
+        "id": "f6597e2f37dd2636",
+        "type": "group",
+        "z": "e44149a93fbe9b1b",
+        "g": "d23ba68654f3c055",
+        "name": "Activate yard tribal scene",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ccd0f26bea9262e7",
+            "7ac02c6645861b20",
+            "e444798d5fd55433"
+        ],
+        "x": 734,
+        "y": 239
     },
     {
         "id": "e79e0110c2317edb",
@@ -1980,6 +1958,28 @@
         "name": "Sun Position",
         "tab": "ec4d94df679f3b11",
         "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "a6c038e4cae31f08",
+        "type": "ui_group",
+        "name": "loadavg",
+        "tab": "696b8efb10ee13b7",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "66adb26e37268f4a",
+        "type": "ui_group",
+        "name": "freemem",
+        "tab": "696b8efb10ee13b7",
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2345,7 +2345,7 @@
         "id": "46fb2d69cd82b25c",
         "type": "change",
         "z": "c4207c9fe61a900e",
-        "name": "",
+        "name": "set topic to host name",
         "rules": [
             {
                 "t": "set",
@@ -2360,8 +2360,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 370,
-        "y": 60,
+        "x": 580,
+        "y": 100,
         "wires": [
             []
         ]
@@ -2370,7 +2370,7 @@
         "id": "27992b230d72f19f",
         "type": "switch",
         "z": "c4207c9fe61a900e",
-        "name": "",
+        "name": "not retained?",
         "property": "retain",
         "propertyType": "msg",
         "rules": [
@@ -2381,12 +2381,57 @@
         "checkall": "false",
         "repair": true,
         "outputs": 1,
-        "x": 230,
+        "x": 250,
+        "y": 60,
+        "wires": [
+            [
+                "b22cc992e37360fc"
+            ]
+        ]
+    },
+    {
+        "id": "b22cc992e37360fc",
+        "type": "json",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 390,
         "y": 60,
         "wires": [
             [
                 "46fb2d69cd82b25c"
             ]
+        ]
+    },
+    {
+        "id": "882622dc891aeda6",
+        "type": "catch",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "scope": [
+            "b22cc992e37360fc"
+        ],
+        "uncaught": false,
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "46fb2d69cd82b25c"
+            ]
+        ]
+    },
+    {
+        "id": "e81b7e6a74a922a1",
+        "type": "status",
+        "z": "c4207c9fe61a900e",
+        "name": "",
+        "scope": null,
+        "x": 620,
+        "y": 200,
+        "wires": [
+            []
         ]
     },
     {
@@ -6231,7 +6276,8 @@
             "1209a8480a23b591",
             "831fb3f42898b50f",
             "08157854eff23df6",
-            "ff64f46de7793f7b"
+            "ff64f46de7793f7b",
+            "baa82bec436a6471"
         ],
         "x": 155,
         "y": 80,
@@ -6489,6 +6535,71 @@
                 "68ca4947dd6cf14e"
             ]
         ]
+    },
+    {
+        "id": "5f86349da8f86e61",
+        "type": "function",
+        "z": "6e3ca82457d27245",
+        "g": "80212e6229ce755b",
+        "name": "send stats",
+        "func": "/*global os*/\n\nconst hostname = os.hostname()\n\n/**\n* @param {string} name\n*/\nfunction topic(name) {\n\n    return 'os/' + hostname + '/' + name\n\n}\n\n/**\n* @param {string} name\n* @param {any} value\n*/\nfunction message(name, value) {\n\n    const newMsg = RED.util.cloneMessage(msg)\n\n    newMsg.payload = value\n    newMsg.topic = topic(name)\n    newMsg.qos = 2\n    newMsg.retain = false\n    return newMsg\n\n}\n\nconst msgs = []\n\nmsgs.push(message('loadavg', os.loadavg()[0]))\nmsgs.push(message('freemem', os.freemem()))\n\nreturn [msgs]",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 410,
+        "y": 460,
+        "wires": [
+            [
+                "baa82bec436a6471"
+            ]
+        ]
+    },
+    {
+        "id": "de168bcd359b4aa8",
+        "type": "inject",
+        "z": "6e3ca82457d27245",
+        "g": "80212e6229ce755b",
+        "name": "every minute",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 460,
+        "wires": [
+            [
+                "5f86349da8f86e61"
+            ]
+        ]
+    },
+    {
+        "id": "baa82bec436a6471",
+        "type": "link out",
+        "z": "6e3ca82457d27245",
+        "g": "80212e6229ce755b",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "dd7609e91ad64f63"
+        ],
+        "x": 515,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "c27168b168847790",
@@ -7433,6 +7544,194 @@
         "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "92446033e6f8968f",
+        "type": "ui_chart",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "loadavg",
+        "group": "a6c038e4cae31f08",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "No values reported",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 440,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9632e610560cfce1",
+        "type": "ui_chart",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "freemem",
+        "group": "66adb26e37268f4a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "No values reported",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 920,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dea1d159dc5339ef",
+        "type": "change",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload / 1073741824",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 680,
+        "wires": [
+            [
+                "9632e610560cfce1"
+            ]
+        ]
+    },
+    {
+        "id": "6eae3f85a3c030a8",
+        "type": "subflow:c4207c9fe61a900e",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "os/+/freemem",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "os/+/freemem",
+                "type": "str"
+            }
+        ],
+        "x": 590,
+        "y": 680,
+        "wires": [
+            [
+                "dea1d159dc5339ef"
+            ]
+        ]
+    },
+    {
+        "id": "281d03f937caa527",
+        "type": "subflow:c4207c9fe61a900e",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "os/+/loadavg",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "os/+/loadavg",
+                "type": "str"
+            }
+        ],
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "e08653b0e7646390"
+            ]
+        ]
+    },
+    {
+        "id": "e08653b0e7646390",
+        "type": "change",
+        "z": "b12fd38c090c51f2",
+        "g": "5cc3007bfef936f5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$round(payload * 100)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "92446033e6f8968f"
+            ]
         ]
     }
 ]
