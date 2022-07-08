@@ -52,6 +52,14 @@
         "env": []
     },
     {
+        "id": "997764cb1253a223",
+        "type": "tab",
+        "label": "WebSockets",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5785c8d9f39df67e",
         "type": "subflow",
         "name": "Send to Hue Bridge",
@@ -832,6 +840,59 @@
         }
     },
     {
+        "id": "97864671c1ced479",
+        "type": "subflow",
+        "name": "Process Hue Metadata",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 100,
+                "wires": [
+                    {
+                        "id": "2ba0e995c3cf4cd0"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 770,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "2ba0e995c3cf4cd0",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 780,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "2ba0e995c3cf4cd0",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "GLOBAL",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "groups",
+            "scenes"
+        ]
+    },
+    {
         "id": "cccd3d3ae4af3207",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -919,7 +980,9 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 413
+        "y": 413,
+        "w": 844,
+        "h": 374
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -939,7 +1002,9 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 13
+        "y": 13,
+        "w": 864,
+        "h": 374
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -1144,7 +1209,7 @@
             "c60a157e32809b1f",
             "805a96f9c1561bcd"
         ],
-        "x": 514,
+        "x": 534,
         "y": 499,
         "w": 482,
         "h": 242
@@ -1229,9 +1294,7 @@
             "e7bc056a5ca25bc5"
         ],
         "x": 14,
-        "y": 19,
-        "w": 1052,
-        "h": 162
+        "y": 19
     },
     {
         "id": "5cc3007bfef936f5",
@@ -1257,9 +1320,7 @@
             "e08653b0e7646390"
         ],
         "x": 14,
-        "y": 579,
-        "w": 992,
-        "h": 142
+        "y": 579
     },
     {
         "id": "8a81267cb12384d5",
@@ -1294,9 +1355,7 @@
             "a921a5a41ab154fc"
         ],
         "x": 14,
-        "y": 199,
-        "w": 1232,
-        "h": 202
+        "y": 199
     },
     {
         "id": "0d4083787ae50482",
@@ -1317,9 +1376,7 @@
             "dfcbba568eef0b62"
         ],
         "x": 14,
-        "y": 419,
-        "w": 592,
-        "h": 142
+        "y": 419
     },
     {
         "id": "c28ed42a351eb1a7",
@@ -1340,9 +1397,7 @@
             "e80f7721307a29b3"
         ],
         "x": 634,
-        "y": 419,
-        "w": 572,
-        "h": 142
+        "y": 419
     },
     {
         "id": "f82a1f6e963f443a",
@@ -1386,6 +1441,83 @@
         ],
         "x": 114,
         "y": 419
+    },
+    {
+        "id": "3792bffcc53d7d09",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "name": "unicast request / response over websocket",
+        "style": {
+            "stroke": "#000000",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "60c093dadbe98d8c",
+            "d26af90c07042d0b",
+            "f62fd902bca5d337",
+            "6cf254b5fbe8d9c1",
+            "b34ce1d598cf8eb8",
+            "e967994a8d994435"
+        ],
+        "x": 28,
+        "y": 353
+    },
+    {
+        "id": "4245d7c744b6be94",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "name": "",
+        "style": {
+            "stroke": "#000000",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e7f5a72a22121c8f"
+        ],
+        "x": 28,
+        "y": 513
+    },
+    {
+        "id": "43456594e4cb4e24",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "name": "",
+        "style": {
+            "stroke": "#000000",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "12eb9a8162f223d1",
+            "445d81f63806df12",
+            "8fc06747717d00eb"
+        ],
+        "x": 28,
+        "y": 193
+    },
+    {
+        "id": "cc17bdf0cffdd1a1",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "name": "",
+        "style": {
+            "stroke": "#000000",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "40f2f41eed2f5540",
+            "06533547fdbaa357",
+            "6a70472869a0916a"
+        ],
+        "x": 34,
+        "y": 33
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1469,7 +1601,9 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 139
+        "y": 139,
+        "w": 385,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1490,7 +1624,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 39
+        "y": 39,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1510,10 +1646,12 @@
             "2d0604f94ef7bff4",
             "4d2dc9a6e42d0548",
             "7d283a2fc0d30093",
-            "6d06fc266beda8bf"
+            "93d0fc5664427636"
         ],
         "x": 54,
-        "y": 239
+        "y": 239,
+        "w": 812,
+        "h": 122
     },
     {
         "id": "9c46129d149ab201",
@@ -1534,7 +1672,9 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 539
+        "y": 539,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "648ad874a33c7973",
@@ -1555,7 +1695,9 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 439
+        "y": 439,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1575,10 +1717,12 @@
             "14944e047cba03fa",
             "5e2f8ae74b053fc9",
             "a5f013472e32f50c",
-            "36cd3d7fbb64eda2"
+            "0e30f59c768cf069"
         ],
         "x": 54,
-        "y": 639
+        "y": 639,
+        "w": 792,
+        "h": 122
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1726,6 +1870,109 @@
         ],
         "x": 734,
         "y": 239
+    },
+    {
+        "id": "8fc06747717d00eb",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "g": "43456594e4cb4e24",
+        "name": "unidirectional receive from any connected sender",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "d6d20cb20e9e643b",
+            "3dd30f8784d759bb"
+        ],
+        "x": 54,
+        "y": 219
+    },
+    {
+        "id": "6a70472869a0916a",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "g": "cc17bdf0cffdd1a1",
+        "name": "unidirectional send to all connected receivers",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "9ebfab406a5ca7c4",
+            "06c6c945e8d5887f",
+            "b2ebd790a5119ac7"
+        ],
+        "x": 294,
+        "y": 59
+    },
+    {
+        "id": "e7f5a72a22121c8f",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "g": "4245d7c744b6be94",
+        "name": "bidirectional broadcast to all connected clients",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e2d9ed9e8373cc0d",
+            "65391bdd2e45d311",
+            "67ab43420a885103"
+        ],
+        "x": 54,
+        "y": 539
+    },
+    {
+        "id": "f62fd902bca5d337",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "g": "3792bffcc53d7d09",
+        "name": "unicast response to original sender",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0fa7147e765e3a0a",
+            "ca533975bad3a01a",
+            "1cb6cc25224307af"
+        ],
+        "x": 814,
+        "y": 379
+    },
+    {
+        "id": "6cf254b5fbe8d9c1",
+        "type": "group",
+        "z": "997764cb1253a223",
+        "g": "3792bffcc53d7d09",
+        "name": "unicast receive from any connected sender",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "83c531568daee540",
+            "615ec4f521b2c7bf"
+        ],
+        "x": 54,
+        "y": 379
     },
     {
         "id": "e79e0110c2317edb",
@@ -1984,6 +2231,33 @@
         "width": "6",
         "collapse": true,
         "className": ""
+    },
+    {
+        "id": "025512d801f893c2",
+        "type": "websocket-listener",
+        "z": "997764cb1253a223",
+        "path": "/ws/command",
+        "wholemsg": "true"
+    },
+    {
+        "id": "3c53975cbddbb628",
+        "type": "websocket-listener",
+        "z": "997764cb1253a223",
+        "path": "/ws/update",
+        "wholemsg": "true"
+    },
+    {
+        "id": "ecb690d3c11259df",
+        "type": "websocket-listener",
+        "z": "997764cb1253a223",
+        "path": "/ws/broadcast",
+        "wholemsg": "true"
+    },
+    {
+        "id": "83dce741285f9890",
+        "type": "websocket-listener",
+        "path": "/ws/request",
+        "wholemsg": "true"
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -2667,7 +2941,7 @@
         "type": "function",
         "z": "4e89e7c952d56c09",
         "name": "metadata",
-        "func": "function findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const scenes = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n\n    groups[groupName] = {\n        id: groupId,\n        type: groupType,\n        name: groupName,\n        grouped_light: grouped_lights[0].id,\n        scene: scenes.map(scene => {\n            return {\n                id: scene.id,\n                name: scene.metadata.name\n            }\n        })\n    }\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach(resource => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach(group => {\n    getGroup(group, metadata, groups)\n})\n\nzones.forEach(group => {\n    getGroup(group, metadata, groups)\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\n\nreturn msg",
+        "func": "function findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const s = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n    const type = groups[groupType] || {}\n    const scene = {}\n\n    s.forEach(ss => {\n\n        scene[ss.metadata.name] = ss.id\n\n    })\n\n    type[groupName] = {\n        grouped_light: grouped_lights[0].id,\n        scene: scene\n    }\n\n    groups[groupType] = type\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach((/** @type {any} */ room) => {\n\n    getGroup(room, metadata, groups)\n\n})\n\nzones.forEach((/** @type {any} */ zone) => {\n\n    getGroup(zone, metadata, groups)\n\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3420,6 +3694,28 @@
         ]
     },
     {
+        "id": "2ba0e995c3cf4cd0",
+        "type": "function",
+        "z": "97864671c1ced479",
+        "name": "process hue metadata",
+        "func": "const name = env.get('GLOBAL')\n\nglobal.set(name, msg.payload)\n\nconst groups = {}\nconst scenes = {}\n\nfor (let groupName in msg.payload) {\n\n    const g = msg.payload[groupName]\n    const groupId = g.id\n    const groupType = g.type\n    const group = {}\n    const gg = groups[groupType] || []\n\n    group[groupName] = groupId\n    gg.push(group)\n\n    g.scene.forEach(s => {\n\n        const sceneName = s.name\n        const sceneId = s.id\n        const scene = {}\n\n        scene[sceneName] = sceneId\n        scenes[groupName] = scene\n\n    })\n}\n\nreturn [\n    { payload: groups },\n    { payload: scenes }\n]",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ],
+        "outputLabels": [
+            "groups",
+            "scenes"
+        ]
+    },
+    {
         "id": "485df563c6545698",
         "type": "join",
         "z": "cbd68ba9caa96a3d",
@@ -3640,7 +3936,7 @@
             "08ca72b8e815a992",
             "de84c77427959f96"
         ],
-        "x": 795,
+        "x": 815,
         "y": 540,
         "wires": []
     },
@@ -3658,7 +3954,7 @@
             "ec0f7c926936a835",
             "de84c77427959f96"
         ],
-        "x": 795,
+        "x": 815,
         "y": 700,
         "wires": []
     },
@@ -3672,7 +3968,7 @@
         "links": [
             "6cae9b1ccc68cb9e"
         ],
-        "x": 795,
+        "x": 815,
         "y": 660,
         "wires": []
     },
@@ -3687,7 +3983,7 @@
             "a6475288998b4e07",
             "7ac02c6645861b20"
         ],
-        "x": 955,
+        "x": 975,
         "y": 540,
         "wires": []
     },
@@ -3702,7 +3998,7 @@
             "a225232dc86a3b6f",
             "f92a8accf963b5bf"
         ],
-        "x": 955,
+        "x": 975,
         "y": 580,
         "wires": []
     },
@@ -3721,7 +4017,7 @@
             "f92a8accf963b5bf",
             "7ac02c6645861b20"
         ],
-        "x": 955,
+        "x": 975,
         "y": 620,
         "wires": []
     },
@@ -3736,7 +4032,7 @@
             "18f53b7627e645e4",
             "bcf937398010e69d"
         ],
-        "x": 955,
+        "x": 975,
         "y": 660,
         "wires": []
     },
@@ -3768,7 +4064,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 650,
+        "x": 670,
         "y": 620,
         "wires": [
             [
@@ -3814,7 +4110,7 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 830,
+        "x": 850,
         "y": 600,
         "wires": [
             [
@@ -3840,7 +4136,7 @@
         "links": [
             "60f145bb0461c216"
         ],
-        "x": 555,
+        "x": 575,
         "y": 620,
         "wires": [
             [
@@ -4536,7 +4832,7 @@
                 "4d2dc9a6e42d0548"
             ],
             [
-                "6d06fc266beda8bf"
+                "93d0fc5664427636"
             ]
         ]
     },
@@ -4763,30 +5059,12 @@
                 "1209a8480a23b591"
             ],
             [
-                "36cd3d7fbb64eda2"
+                "0e30f59c768cf069"
             ]
         ]
     },
     {
-        "id": "6d06fc266beda8bf",
-        "type": "debug",
-        "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
-        "name": "chez nous main",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "36cd3d7fbb64eda2",
+        "id": "0e30f59c768cf069",
         "type": "debug",
         "z": "c7141ffb22d64190",
         "g": "0fc22be05cfc5241",
@@ -4801,6 +5079,24 @@
         "statusType": "auto",
         "x": 720,
         "y": 720,
+        "wires": []
+    },
+    {
+        "id": "93d0fc5664427636",
+        "type": "debug",
+        "z": "c7141ffb22d64190",
+        "g": "665df9d682462b5e",
+        "name": "chez nous main",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 320,
         "wires": []
     },
     {
@@ -7731,6 +8027,395 @@
         "wires": [
             [
                 "92446033e6f8968f"
+            ]
+        ]
+    },
+    {
+        "id": "d6d20cb20e9e643b",
+        "type": "websocket in",
+        "z": "997764cb1253a223",
+        "g": "8fc06747717d00eb",
+        "name": "",
+        "server": "025512d801f893c2",
+        "client": "",
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "3dd30f8784d759bb"
+            ]
+        ]
+    },
+    {
+        "id": "9ebfab406a5ca7c4",
+        "type": "websocket out",
+        "z": "997764cb1253a223",
+        "g": "6a70472869a0916a",
+        "name": "",
+        "server": "3c53975cbddbb628",
+        "client": "",
+        "x": 620,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "06c6c945e8d5887f",
+        "type": "link in",
+        "z": "997764cb1253a223",
+        "g": "6a70472869a0916a",
+        "name": "send update",
+        "links": [
+            "06533547fdbaa357"
+        ],
+        "x": 335,
+        "y": 100,
+        "wires": [
+            [
+                "b2ebd790a5119ac7"
+            ]
+        ]
+    },
+    {
+        "id": "b2ebd790a5119ac7",
+        "type": "delay",
+        "z": "997764cb1253a223",
+        "g": "6a70472869a0916a",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "9ebfab406a5ca7c4"
+            ]
+        ]
+    },
+    {
+        "id": "3dd30f8784d759bb",
+        "type": "link out",
+        "z": "997764cb1253a223",
+        "g": "8fc06747717d00eb",
+        "name": "process command",
+        "mode": "link",
+        "links": [
+            "905f3f5d5a95a0cf",
+            "12eb9a8162f223d1"
+        ],
+        "x": 295,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "40f2f41eed2f5540",
+        "type": "inject",
+        "z": "997764cb1253a223",
+        "g": "cc17bdf0cffdd1a1",
+        "name": "send update",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "timestamp",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "06533547fdbaa357"
+            ]
+        ]
+    },
+    {
+        "id": "06533547fdbaa357",
+        "type": "link out",
+        "z": "997764cb1253a223",
+        "g": "cc17bdf0cffdd1a1",
+        "name": "send update",
+        "mode": "link",
+        "links": [
+            "06c6c945e8d5887f"
+        ],
+        "x": 255,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e2d9ed9e8373cc0d",
+        "type": "websocket in",
+        "z": "997764cb1253a223",
+        "g": "e7f5a72a22121c8f",
+        "name": "",
+        "server": "ecb690d3c11259df",
+        "client": "",
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "67ab43420a885103"
+            ]
+        ]
+    },
+    {
+        "id": "65391bdd2e45d311",
+        "type": "websocket out",
+        "z": "997764cb1253a223",
+        "g": "e7f5a72a22121c8f",
+        "name": "",
+        "server": "ecb690d3c11259df",
+        "client": "",
+        "x": 590,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "67ab43420a885103",
+        "type": "change",
+        "z": "997764cb1253a223",
+        "g": "e7f5a72a22121c8f",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "_session",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 580,
+        "wires": [
+            [
+                "65391bdd2e45d311"
+            ]
+        ]
+    },
+    {
+        "id": "0fa7147e765e3a0a",
+        "type": "link in",
+        "z": "997764cb1253a223",
+        "g": "f62fd902bca5d337",
+        "name": "send response",
+        "links": [
+            "d26af90c07042d0b"
+        ],
+        "x": 855,
+        "y": 420,
+        "wires": [
+            [
+                "ca533975bad3a01a"
+            ]
+        ]
+    },
+    {
+        "id": "ca533975bad3a01a",
+        "type": "delay",
+        "z": "997764cb1253a223",
+        "g": "f62fd902bca5d337",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 970,
+        "y": 420,
+        "wires": [
+            [
+                "1cb6cc25224307af"
+            ]
+        ]
+    },
+    {
+        "id": "1cb6cc25224307af",
+        "type": "websocket out",
+        "z": "997764cb1253a223",
+        "g": "f62fd902bca5d337",
+        "name": "",
+        "server": "83dce741285f9890",
+        "client": "",
+        "x": 1140,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "60c093dadbe98d8c",
+        "type": "link in",
+        "z": "997764cb1253a223",
+        "g": "3792bffcc53d7d09",
+        "name": "process request",
+        "links": [
+            "615ec4f521b2c7bf"
+        ],
+        "x": 375,
+        "y": 420,
+        "wires": [
+            [
+                "e967994a8d994435"
+            ]
+        ]
+    },
+    {
+        "id": "d26af90c07042d0b",
+        "type": "link out",
+        "z": "997764cb1253a223",
+        "g": "3792bffcc53d7d09",
+        "name": "send response",
+        "mode": "link",
+        "links": [
+            "0fa7147e765e3a0a"
+        ],
+        "x": 775,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "83c531568daee540",
+        "type": "websocket in",
+        "z": "997764cb1253a223",
+        "g": "6cf254b5fbe8d9c1",
+        "name": "",
+        "server": "83dce741285f9890",
+        "client": "",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "615ec4f521b2c7bf"
+            ]
+        ]
+    },
+    {
+        "id": "615ec4f521b2c7bf",
+        "type": "link out",
+        "z": "997764cb1253a223",
+        "g": "6cf254b5fbe8d9c1",
+        "name": "process request",
+        "mode": "link",
+        "links": [
+            "60c093dadbe98d8c"
+        ],
+        "x": 275,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "12eb9a8162f223d1",
+        "type": "link in",
+        "z": "997764cb1253a223",
+        "g": "43456594e4cb4e24",
+        "name": "process command",
+        "links": [
+            "3dd30f8784d759bb"
+        ],
+        "x": 395,
+        "y": 260,
+        "wires": [
+            [
+                "445d81f63806df12"
+            ]
+        ]
+    },
+    {
+        "id": "445d81f63806df12",
+        "type": "debug",
+        "z": "997764cb1253a223",
+        "g": "43456594e4cb4e24",
+        "name": "command",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b34ce1d598cf8eb8",
+        "type": "change",
+        "z": "997764cb1253a223",
+        "g": "3792bffcc53d7d09",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"request\":payload,\"response\":true}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 420,
+        "wires": [
+            [
+                "d26af90c07042d0b"
+            ]
+        ]
+    },
+    {
+        "id": "e967994a8d994435",
+        "type": "delay",
+        "z": "997764cb1253a223",
+        "g": "3792bffcc53d7d09",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "b34ce1d598cf8eb8"
             ]
         ]
     }
