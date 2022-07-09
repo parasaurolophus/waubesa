@@ -52,25 +52,17 @@
         "env": []
     },
     {
+        "id": "3e4322342f4339f0",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "997764cb1253a223",
         "type": "tab",
         "label": "WebSockets",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "984bed4cccaab194",
-        "type": "tab",
-        "label": "Ground Floor Dashboard",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "1e9ddfd50242cb2a",
-        "type": "tab",
-        "label": "Basement Dashboard",
         "disabled": false,
         "info": "",
         "env": []
@@ -403,11 +395,11 @@
                 ]
             },
             {
-                "x": 720,
+                "x": 880,
                 "y": 60,
                 "wires": [
                     {
-                        "id": "630e5fb465ec65c9",
+                        "id": "f308b6088df96049",
                         "port": 0
                     }
                 ]
@@ -858,59 +850,6 @@
         }
     },
     {
-        "id": "97864671c1ced479",
-        "type": "subflow",
-        "name": "Process Hue Metadata",
-        "info": "",
-        "category": "waubesa",
-        "in": [
-            {
-                "x": 60,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "2ba0e995c3cf4cd0"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 390,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "2ba0e995c3cf4cd0",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 400,
-                "y": 140,
-                "wires": [
-                    {
-                        "id": "2ba0e995c3cf4cd0",
-                        "port": 1
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "GLOBAL",
-                "type": "str",
-                "value": ""
-            }
-        ],
-        "meta": {},
-        "color": "#DDAA99",
-        "outputLabels": [
-            "groups",
-            "scenes"
-        ]
-    },
-    {
         "id": "648d285142674988",
         "type": "subflow",
         "name": "Hue Group Options",
@@ -1035,9 +974,7 @@
             "0fc22be05cfc5241"
         ],
         "x": 28,
-        "y": 413,
-        "w": 804,
-        "h": 374
+        "y": 413
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -1057,9 +994,7 @@
             "665df9d682462b5e"
         ],
         "x": 28,
-        "y": 13,
-        "w": 804,
-        "h": 374
+        "y": 13
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -1589,6 +1524,59 @@
         "y": 33
     },
     {
+        "id": "b1d63527a43c94ce",
+        "type": "group",
+        "z": "3e4322342f4339f0",
+        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from Hue bridges",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "7884455e0c23e9dd",
+            "8c3e6121a0e81da0",
+            "a8349c3715609535",
+            "aceec81f696e226a",
+            "9239b2b42b52b1f5",
+            "b99e9ace8317285b",
+            "5e286c6530e932c2"
+        ],
+        "x": 114,
+        "y": 19,
+        "w": 952,
+        "h": 162
+    },
+    {
+        "id": "685034897f563084",
+        "type": "group",
+        "z": "3e4322342f4339f0",
+        "name": "Window shades",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "80e7883b960caffa",
+            "094c793f3a335844",
+            "4d8f011916bcd1cb",
+            "14f75f22c0a890cc",
+            "939edd2eb5234245",
+            "4e5a85bfe405e198",
+            "5d19bbee25070e5c",
+            "49039ff17e845f97"
+        ],
+        "x": 114,
+        "y": 199,
+        "w": 342,
+        "h": 262
+    },
+    {
         "id": "1ce03cecd5db8bc6",
         "type": "group",
         "z": "e44149a93fbe9b1b",
@@ -1676,9 +1664,7 @@
             "3b5ab296575b53d4"
         ],
         "x": 54,
-        "y": 139,
-        "w": 385,
-        "h": 82
+        "y": 139
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1699,9 +1685,7 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 54,
-        "y": 39,
-        "w": 752,
-        "h": 82
+        "y": 39
     },
     {
         "id": "665df9d682462b5e",
@@ -1724,9 +1708,7 @@
             "66730b89492663ed"
         ],
         "x": 54,
-        "y": 239,
-        "w": 662,
-        "h": 122
+        "y": 239
     },
     {
         "id": "9c46129d149ab201",
@@ -1747,9 +1729,7 @@
             "0ceb59ac89fb79b7"
         ],
         "x": 54,
-        "y": 539,
-        "w": 375,
-        "h": 82
+        "y": 539
     },
     {
         "id": "648ad874a33c7973",
@@ -1770,9 +1750,7 @@
             "7639b738a201d7c6"
         ],
         "x": 54,
-        "y": 439,
-        "w": 752,
-        "h": 82
+        "y": 439
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1795,9 +1773,7 @@
             "65911d8f953e99bf"
         ],
         "x": 54,
-        "y": 639,
-        "w": 642,
-        "h": 122
+        "y": 639
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -2064,88 +2040,6 @@
         "y": 379
     },
     {
-        "id": "e9efa51261f6c783",
-        "type": "group",
-        "z": "984bed4cccaab194",
-        "name": "Ground floor lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "c19f87c7eda22e58",
-            "f6f8f4d6fd5dc7d0",
-            "b5de3d2c560c6789",
-            "18f71e5b40208e53",
-            "a6a45d59c3f60b7d",
-            "d95133804941b353",
-            "92eaf49576e50a9e",
-            "49b75a6fde0b6301",
-            "683b5511f00d57d4"
-        ],
-        "x": 94,
-        "y": 19,
-        "w": 892,
-        "h": 262
-    },
-    {
-        "id": "f9e70c058a8efc82",
-        "type": "group",
-        "z": "1e9ddfd50242cb2a",
-        "name": "Basement dashboard",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "2de7d056579133dc",
-            "09ca011e26f258fb",
-            "4fa7f069cac5ac37",
-            "9b80a58f06cf0767",
-            "caafe6f46e7bfe15",
-            "c68cc429b9315c66",
-            "962396c085fff789",
-            "7ebfddb7b94e3eea"
-        ],
-        "x": 94,
-        "y": 19,
-        "w": 912,
-        "h": 262
-    },
-    {
-        "id": "1a405db7c77801ee",
-        "type": "group",
-        "z": "984bed4cccaab194",
-        "name": "Window shades",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "7ba4579b7673a491",
-            "9f3d946a03de6aa8",
-            "ad9d1d2d1597d2ba",
-            "676c095bc7abab1e",
-            "356766b9c684121f",
-            "92a8459af7433d08",
-            "d0f7e42d37e33bcb",
-            "d6caf0385ddcc934"
-        ],
-        "x": 94,
-        "y": 299,
-        "w": 342,
-        "h": 262
-    },
-    {
         "id": "e79e0110c2317edb",
         "type": "tls-config",
         "name": "",
@@ -2291,7 +2185,7 @@
         "type": "ui_tab",
         "name": "Automation",
         "icon": "fa-clock-o",
-        "order": 3,
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
@@ -2333,7 +2227,7 @@
         "type": "ui_tab",
         "name": "Monitoring",
         "icon": "dashboard",
-        "order": 4,
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
@@ -2433,22 +2327,11 @@
     {
         "id": "791bf5d34d06adaf",
         "type": "ui_tab",
-        "name": "Ground Floor",
+        "name": "Controls",
         "icon": "fa-home",
-        "order": 1,
+        "order": 2,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "b092a43dac832410",
-        "type": "ui_group",
-        "name": "Lighting",
-        "tab": "6d3a2c4307ffbdf9",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
     },
     {
         "id": "21f11f110d626f5a",
@@ -2457,7 +2340,7 @@
         "tab": "791bf5d34d06adaf",
         "order": 1,
         "disp": true,
-        "width": "6",
+        "width": "12",
         "collapse": true,
         "className": ""
     },
@@ -2468,7 +2351,7 @@
         "tab": "791bf5d34d06adaf",
         "order": 2,
         "disp": true,
-        "width": "6",
+        "width": "12",
         "collapse": true,
         "className": ""
     },
@@ -2479,18 +2362,9 @@
         "tab": "791bf5d34d06adaf",
         "order": 3,
         "disp": true,
-        "width": "6",
+        "width": "12",
         "collapse": true,
         "className": ""
-    },
-    {
-        "id": "6d3a2c4307ffbdf9",
-        "type": "ui_tab",
-        "name": "Basement",
-        "icon": "fa-home",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -3174,7 +3048,7 @@
         "type": "function",
         "z": "4e89e7c952d56c09",
         "name": "metadata",
-        "func": "function findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const s = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n    const type = groups[groupType] || {}\n    const scene = {}\n\n    s.forEach(ss => {\n\n        scene[ss.metadata.name] = ss.id\n\n    })\n\n    type[groupName] = {\n        grouped_light: grouped_lights[0].id,\n        scene: scene\n    }\n\n    groups[groupType] = type\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach((/** @type {any} */ room) => {\n\n    getGroup(room, metadata, groups)\n\n})\n\nzones.forEach((/** @type {any} */ zone) => {\n\n    getGroup(zone, metadata, groups)\n\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\n\nreturn msg",
+        "func": "const topics = env.get('TOPIC').split('/')\nconst topic = topics[topics.length - 1]\n\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const s = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n    const type = groups[groupType] || {}\n    const scene = {}\n\n    s.forEach(ss => {\n\n        scene[ss.metadata.name] = ss.id\n\n    })\n\n    type[groupName] = {\n        grouped_light: grouped_lights[0].id,\n        scene: scene\n    }\n\n    groups[groupType] = type\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach((/** @type {any} */ room) => {\n\n    getGroup(room, metadata, groups)\n\n})\n\nzones.forEach((/** @type {any} */ zone) => {\n\n    getGroup(zone, metadata, groups)\n\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\nmsg.topic = topic\n\nconst globalMetadata = global.get('hue-metadata') || {}\n\nglobalMetadata[topic] = groups\nglobal.set('hue-metadata', globalMetadata)\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3183,10 +3057,37 @@
         "x": 580,
         "y": 60,
         "wires": [
-            []
+            [
+                "f308b6088df96049"
+            ]
         ],
         "outputLabels": [
             "merged"
+        ]
+    },
+    {
+        "id": "f308b6088df96049",
+        "type": "change",
+        "z": "4e89e7c952d56c09",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$reverse($split($env('TOPIC'),'/'))[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 60,
+        "wires": [
+            []
         ]
     },
     {
@@ -3927,28 +3828,6 @@
         "y": 120,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "2ba0e995c3cf4cd0",
-        "type": "function",
-        "z": "97864671c1ced479",
-        "name": "process hue metadata",
-        "func": "const name = env.get('GLOBAL')\n\nglobal.set(name, msg.payload)\n\nconst groups = {}\nconst scenes = {}\n\nfor (let groupName in msg.payload) {\n\n    const g = msg.payload[groupName]\n    const groupId = g.id\n    const groupType = g.type\n    const group = {}\n    const gg = groups[groupType] || []\n\n    group[groupName] = groupId\n    gg.push(group)\n\n    g.scene.forEach((/** @type {{ name: any; id: any; }} */ s) => {\n\n        const sceneName = s.name\n        const sceneId = s.id\n        const scene = {}\n\n        scene[sceneName] = sceneId\n        scenes[groupName] = scene\n\n    })\n}\n\nreturn [\n    { payload: groups },\n    { payload: scenes }\n]",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 200,
-        "y": 100,
-        "wires": [
-            [],
-            []
-        ],
-        "outputLabels": [
-            "groups",
-            "scenes"
         ]
     },
     {
@@ -5325,7 +5204,10 @@
         "mode": "link",
         "links": [
             "45df49432927ee81",
-            "c19f87c7eda22e58"
+            "c19f87c7eda22e58",
+            "5d2fbcf5ba2aa9f3",
+            "a8349c3715609535",
+            "158f8d519f86243e"
         ],
         "x": 675,
         "y": 320,
@@ -5341,7 +5223,10 @@
         "links": [
             "12dd9f03494a1dc5",
             "e9f56188d7a72ce9",
-            "09ca011e26f258fb"
+            "09ca011e26f258fb",
+            "5d2fbcf5ba2aa9f3",
+            "a8349c3715609535",
+            "158f8d519f86243e"
         ],
         "x": 655,
         "y": 720,
@@ -5396,7 +5281,11 @@
             "9f3d946a03de6aa8",
             "676c095bc7abab1e",
             "92a8459af7433d08",
-            "d6caf0385ddcc934"
+            "d6caf0385ddcc934",
+            "094c793f3a335844",
+            "14f75f22c0a890cc",
+            "4e5a85bfe405e198",
+            "49039ff17e845f97"
         ],
         "x": 155,
         "y": 60,
@@ -5454,7 +5343,7 @@
         "z": "1cf0490e7de2f93d",
         "g": "cccd3d3ae4af3207",
         "name": "mergeMetadata",
-        "func": "let findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nlet metadata = msg.payload.map((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    let roomName = findRoomName(scene.roomId)\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    return {\n        sceneId: scene.sceneId,\n        sceneName: scene.sceneName,\n        roomId: scene.roomId,\n        roomName: roomName\n    }\n})\n\nflow.set('metadata', metadata)\n\nmsg.payload = metadata\nreturn msg",
+        "func": "const metadata = {}\n\nlet findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nmsg.payload.forEach((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    const roomName = findRoomName(scene.roomId)\n    const room = metadata[roomName] || {}\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    room[scene.sceneName] = scene.sceneId\n    metadata[roomName] = room\n\n})\n\nmsg.payload = metadata\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -8284,6 +8173,337 @@
         ]
     },
     {
+        "id": "7884455e0c23e9dd",
+        "type": "link call",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "name": "",
+        "links": [
+            "df79272de1bce7c1"
+        ],
+        "timeout": "30",
+        "x": 780,
+        "y": 140,
+        "wires": [
+            [
+                "8c3e6121a0e81da0"
+            ]
+        ]
+    },
+    {
+        "id": "8c3e6121a0e81da0",
+        "type": "debug",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 970,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a8349c3715609535",
+        "type": "link in",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "name": "hue metadata",
+        "links": [
+            "65911d8f953e99bf",
+            "66730b89492663ed"
+        ],
+        "x": 155,
+        "y": 100,
+        "wires": [
+            [
+                "aceec81f696e226a"
+            ]
+        ]
+    },
+    {
+        "id": "aceec81f696e226a",
+        "type": "join",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 250,
+        "y": 100,
+        "wires": [
+            [
+                "9239b2b42b52b1f5"
+            ]
+        ]
+    },
+    {
+        "id": "9239b2b42b52b1f5",
+        "type": "ui_template",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "group": "21f11f110d626f5a",
+        "name": "Lighting Controls",
+        "order": 1,
+        "width": "12",
+        "height": "12",
+        "format": "<div>\n    <div ng-repeat=\"(bridgename, bridge) in msg.payload\">\n        <div ng-repeat=\"(typename, type) in bridge\">\n            <div ng-repeat=\"(groupname, group) in type\">\n                <div ng-if=\"$index > 0\">\n                    <hr>\n                </div>\n                <p>{{groupname}}</p>\n                <div>\n                    <md-button style=\"display:inline-block;margin:1px\"\n                        ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT', bridge: bridgename})\">\n                        Off\n                    </md-button>\n                    <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                        ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT', bridge: bridgename})\">\n                        {{scenename}}\n                    </md-button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 410,
+        "y": 100,
+        "wires": [
+            [
+                "b99e9ace8317285b"
+            ]
+        ]
+    },
+    {
+        "id": "b99e9ace8317285b",
+        "type": "switch",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "name": "",
+        "property": "bridge",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "chez-nous-main",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "basement-hue",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 100,
+        "wires": [
+            [
+                "5e286c6530e932c2"
+            ],
+            [
+                "7884455e0c23e9dd"
+            ]
+        ]
+    },
+    {
+        "id": "5e286c6530e932c2",
+        "type": "link call",
+        "z": "3e4322342f4339f0",
+        "g": "b1d63527a43c94ce",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 770,
+        "y": 60,
+        "wires": [
+            [
+                "8c3e6121a0e81da0"
+            ]
+        ]
+    },
+    {
+        "id": "80e7883b960caffa",
+        "type": "ui_button",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "Open Living Room Shades",
+        "group": "d0b96e9f8503bef3",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "11037",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "094c793f3a335844"
+            ]
+        ]
+    },
+    {
+        "id": "094c793f3a335844",
+        "type": "link out",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 415,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4d8f011916bcd1cb",
+        "type": "ui_button",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "Close Living Room Shades",
+        "group": "d0b96e9f8503bef3",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Close",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "40564",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "14f75f22c0a890cc"
+            ]
+        ]
+    },
+    {
+        "id": "14f75f22c0a890cc",
+        "type": "link out",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 415,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "939edd2eb5234245",
+        "type": "ui_button",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "Open Dining Room Shades",
+        "group": "a81011918a2f3acc",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "23259",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 360,
+        "wires": [
+            [
+                "4e5a85bfe405e198"
+            ]
+        ]
+    },
+    {
+        "id": "4e5a85bfe405e198",
+        "type": "link out",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 415,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5d19bbee25070e5c",
+        "type": "ui_button",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "Close Dining Room Shades",
+        "group": "a81011918a2f3acc",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Close",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "41405",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 420,
+        "wires": [
+            [
+                "49039ff17e845f97"
+            ]
+        ]
+    },
+    {
+        "id": "49039ff17e845f97",
+        "type": "link out",
+        "z": "3e4322342f4339f0",
+        "g": "685034897f563084",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 415,
+        "y": 420,
+        "wires": []
+    },
+    {
         "id": "d6d20cb20e9e643b",
         "type": "websocket in",
         "z": "997764cb1253a223",
@@ -8670,614 +8890,6 @@
             [
                 "b34ce1d598cf8eb8"
             ]
-        ]
-    },
-    {
-        "id": "c19f87c7eda22e58",
-        "type": "link in",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "chez nous main metadata",
-        "links": [
-            "66730b89492663ed"
-        ],
-        "x": 135,
-        "y": 120,
-        "wires": [
-            [
-                "f6f8f4d6fd5dc7d0"
-            ]
-        ]
-    },
-    {
-        "id": "f6f8f4d6fd5dc7d0",
-        "type": "subflow:648d285142674988",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "Chez Nous Main Options",
-        "x": 290,
-        "y": 120,
-        "wires": [
-            [
-                "b5de3d2c560c6789"
-            ]
-        ]
-    },
-    {
-        "id": "b5de3d2c560c6789",
-        "type": "switch",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "grouped_light",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "scene",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 470,
-        "y": 120,
-        "wires": [
-            [
-                "18f71e5b40208e53"
-            ],
-            [
-                "92eaf49576e50a9e"
-            ]
-        ]
-    },
-    {
-        "id": "18f71e5b40208e53",
-        "type": "ui_dropdown",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "Chez Nous Main Group Off",
-        "label": "Off",
-        "tooltip": "",
-        "place": "Select room...",
-        "group": "21f11f110d626f5a",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 700,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a6a45d59c3f60b7d",
-        "type": "ui_dropdown",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "Main Floor Scene",
-        "label": "Main Floor",
-        "tooltip": "",
-        "place": "Select scene...",
-        "group": "21f11f110d626f5a",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 810,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d95133804941b353",
-        "type": "ui_dropdown",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "Yard Scene",
-        "label": "Yard",
-        "tooltip": "",
-        "place": "Select scene...",
-        "group": "21f11f110d626f5a",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 790,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "92eaf49576e50a9e",
-        "type": "switch",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "",
-        "property": "group",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "Yard",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "Main Floor",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "Main Bathroom",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 630,
-        "y": 180,
-        "wires": [
-            [
-                "d95133804941b353"
-            ],
-            [
-                "a6a45d59c3f60b7d"
-            ],
-            [
-                "683b5511f00d57d4"
-            ],
-            [
-                "49b75a6fde0b6301"
-            ]
-        ]
-    },
-    {
-        "id": "49b75a6fde0b6301",
-        "type": "debug",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "chez nous main metadata",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "7ba4579b7673a491",
-        "type": "ui_button",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "Open Living Room Shades",
-        "group": "d0b96e9f8503bef3",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Open",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "11037",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 240,
-        "y": 340,
-        "wires": [
-            [
-                "9f3d946a03de6aa8"
-            ]
-        ]
-    },
-    {
-        "id": "9f3d946a03de6aa8",
-        "type": "link out",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 395,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "ad9d1d2d1597d2ba",
-        "type": "ui_button",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "Close Living Room Shades",
-        "group": "d0b96e9f8503bef3",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Close",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "40564",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 240,
-        "y": 400,
-        "wires": [
-            [
-                "676c095bc7abab1e"
-            ]
-        ]
-    },
-    {
-        "id": "676c095bc7abab1e",
-        "type": "link out",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 395,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "356766b9c684121f",
-        "type": "ui_button",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "Open Dining Room Shades",
-        "group": "a81011918a2f3acc",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Open",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "23259",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 240,
-        "y": 460,
-        "wires": [
-            [
-                "92a8459af7433d08"
-            ]
-        ]
-    },
-    {
-        "id": "92a8459af7433d08",
-        "type": "link out",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 395,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "d0f7e42d37e33bcb",
-        "type": "ui_button",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "Close Dining Room Shades",
-        "group": "a81011918a2f3acc",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Close",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "41405",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 240,
-        "y": 520,
-        "wires": [
-            [
-                "d6caf0385ddcc934"
-            ]
-        ]
-    },
-    {
-        "id": "d6caf0385ddcc934",
-        "type": "link out",
-        "z": "984bed4cccaab194",
-        "g": "1a405db7c77801ee",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 395,
-        "y": 520,
-        "wires": []
-    },
-    {
-        "id": "683b5511f00d57d4",
-        "type": "ui_dropdown",
-        "z": "984bed4cccaab194",
-        "g": "e9efa51261f6c783",
-        "name": "Main Bathroom Scene",
-        "label": "Bathroom",
-        "tooltip": "",
-        "place": "Select scene...",
-        "group": "21f11f110d626f5a",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 820,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2de7d056579133dc",
-        "type": "debug",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "basement hue metadata",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 850,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "09ca011e26f258fb",
-        "type": "link in",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "basement hue metadata",
-        "links": [
-            "65911d8f953e99bf"
-        ],
-        "x": 135,
-        "y": 120,
-        "wires": [
-            [
-                "4fa7f069cac5ac37"
-            ]
-        ]
-    },
-    {
-        "id": "4fa7f069cac5ac37",
-        "type": "subflow:648d285142674988",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "Basement Hue Options",
-        "x": 290,
-        "y": 120,
-        "wires": [
-            [
-                "9b80a58f06cf0767"
-            ]
-        ]
-    },
-    {
-        "id": "9b80a58f06cf0767",
-        "type": "switch",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "grouped_light",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "scene",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 470,
-        "y": 120,
-        "wires": [
-            [
-                "caafe6f46e7bfe15"
-            ],
-            [
-                "c68cc429b9315c66"
-            ]
-        ]
-    },
-    {
-        "id": "caafe6f46e7bfe15",
-        "type": "ui_dropdown",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "Basement Hue Group Off",
-        "label": "Off",
-        "tooltip": "",
-        "place": "Select group...",
-        "group": "b092a43dac832410",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 690,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c68cc429b9315c66",
-        "type": "switch",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "",
-        "property": "group",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "Basement",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "Basement Bathroom",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 630,
-        "y": 180,
-        "wires": [
-            [
-                "962396c085fff789"
-            ],
-            [
-                "7ebfddb7b94e3eea"
-            ],
-            [
-                "2de7d056579133dc"
-            ]
-        ]
-    },
-    {
-        "id": "962396c085fff789",
-        "type": "ui_dropdown",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "Basement Scene",
-        "label": "Basement",
-        "tooltip": "",
-        "place": "Select scene...",
-        "group": "b092a43dac832410",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 830,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7ebfddb7b94e3eea",
-        "type": "ui_dropdown",
-        "z": "1e9ddfd50242cb2a",
-        "g": "f9e70c058a8efc82",
-        "name": "Basement Bathroom Scene",
-        "label": "Bathroom",
-        "tooltip": "",
-        "place": "Select scene...",
-        "group": "b092a43dac832410",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 860,
-        "y": 180,
-        "wires": [
-            []
         ]
     }
 ]
