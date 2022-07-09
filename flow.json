@@ -850,37 +850,46 @@
         }
     },
     {
-        "id": "648d285142674988",
+        "id": "bdefba026bd44159",
         "type": "subflow",
-        "name": "Hue Group Options",
+        "name": "Get PowerView Metadata",
         "info": "",
-        "category": "waubesa",
+        "category": "powerview",
         "in": [
             {
                 "x": 60,
-                "y": 80,
+                "y": 60,
                 "wires": [
                     {
-                        "id": "75b9e19e2accb4d5"
+                        "id": "e3ada32cfe945566"
                     }
                 ]
             }
         ],
         "out": [
             {
-                "x": 300,
-                "y": 80,
+                "x": 1260,
+                "y": 60,
                 "wires": [
                     {
-                        "id": "75b9e19e2accb4d5",
+                        "id": "18b035d175d78813",
                         "port": 0
                     }
                 ]
             }
         ],
         "env": [],
-        "meta": {},
-        "color": "#DDAA99"
+        "meta": {
+            "module": "@parasaurolophus/node-red-get-powerview-metadata",
+            "type": "get-powerview-metadata",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Get the metadata from a PowerView hub to drive dynamic dashboard controls",
+            "keywords": "hunter-douglas,powerview",
+            "license": "MIT"
+        },
+        "color": "#C0DEED",
+        "icon": "font-awesome/fa-align-justify"
     },
     {
         "id": "cccd3d3ae4af3207",
@@ -895,18 +904,15 @@
             "color": "#000000"
         },
         "nodes": [
-            "1cee4f351bd59563",
-            "69a6db45ef9f6fdf",
-            "4a774d5487ebaf6f",
-            "42529821fe2b55cd",
-            "837774c682b93af9",
-            "9d0fb43b1d0b583f",
-            "18b035d175d78813"
+            "d15f40c8b2218d5c",
+            "942f0a1ef3d8ade3",
+            "52607b6f55574002",
+            "8189dfca1b6265b7"
         ],
         "x": 114,
         "y": 519,
-        "w": 632,
-        "h": 242
+        "w": 762,
+        "h": 82
     },
     {
         "id": "87285e6bf01cff03",
@@ -973,8 +979,10 @@
             "648ad874a33c7973",
             "0fc22be05cfc5241"
         ],
-        "x": 28,
-        "y": 413
+        "x": 408,
+        "y": 413,
+        "w": 804,
+        "h": 374
     },
     {
         "id": "46f2fb3ee016fe23",
@@ -993,8 +1001,10 @@
             "290b83ef8e01ae0f",
             "665df9d682462b5e"
         ],
-        "x": 28,
-        "y": 13
+        "x": 408,
+        "y": 13,
+        "w": 804,
+        "h": 374
     },
     {
         "id": "6c7bbad3f1eae3bb",
@@ -1466,7 +1476,9 @@
             "e967994a8d994435"
         ],
         "x": 28,
-        "y": 353
+        "y": 353,
+        "w": 1244,
+        "h": 134
     },
     {
         "id": "4245d7c744b6be94",
@@ -1483,7 +1495,9 @@
             "e7f5a72a22121c8f"
         ],
         "x": 28,
-        "y": 513
+        "y": 513,
+        "w": 704,
+        "h": 134
     },
     {
         "id": "43456594e4cb4e24",
@@ -1502,7 +1516,9 @@
             "8fc06747717d00eb"
         ],
         "x": 28,
-        "y": 193
+        "y": 193,
+        "w": 578,
+        "h": 134
     },
     {
         "id": "cc17bdf0cffdd1a1",
@@ -1521,7 +1537,9 @@
             "6a70472869a0916a"
         ],
         "x": 34,
-        "y": 33
+        "y": 33,
+        "w": 718,
+        "h": 134
     },
     {
         "id": "b1d63527a43c94ce",
@@ -1546,14 +1564,14 @@
         ],
         "x": 114,
         "y": 19,
-        "w": 952,
+        "w": 1012,
         "h": 162
     },
     {
         "id": "685034897f563084",
         "type": "group",
         "z": "3e4322342f4339f0",
-        "name": "Window shades",
+        "name": "Dynamically create dashboard controls for window shades based on metadata obtained from PowerView hub",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1562,19 +1580,15 @@
             "color": "#000000"
         },
         "nodes": [
-            "80e7883b960caffa",
-            "094c793f3a335844",
-            "4d8f011916bcd1cb",
-            "14f75f22c0a890cc",
-            "939edd2eb5234245",
-            "4e5a85bfe405e198",
-            "5d19bbee25070e5c",
-            "49039ff17e845f97"
+            "35103a0bfa7e7587",
+            "95ca77ef914ae520",
+            "6ce200355dc3018e",
+            "03374f8daf60c594"
         ],
         "x": 114,
         "y": 199,
-        "w": 342,
-        "h": 262
+        "w": 812,
+        "h": 82
     },
     {
         "id": "1ce03cecd5db8bc6",
@@ -1663,8 +1677,10 @@
             "7df3e5fbd6e9aa8a",
             "3b5ab296575b53d4"
         ],
-        "x": 54,
-        "y": 139
+        "x": 434,
+        "y": 139,
+        "w": 385,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1684,8 +1700,10 @@
             "f3ab10cd192709b0",
             "73a1ec5ed8ebc167"
         ],
-        "x": 54,
-        "y": 39
+        "x": 434,
+        "y": 39,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "665df9d682462b5e",
@@ -1702,13 +1720,15 @@
         },
         "nodes": [
             "8c9d79d2791e9b02",
-            "2d0604f94ef7bff4",
             "4d2dc9a6e42d0548",
             "7d283a2fc0d30093",
-            "66730b89492663ed"
+            "66730b89492663ed",
+            "74aa3076d752cf02"
         ],
-        "x": 54,
-        "y": 239
+        "x": 434,
+        "y": 239,
+        "w": 562,
+        "h": 122
     },
     {
         "id": "9c46129d149ab201",
@@ -1728,8 +1748,10 @@
             "df79272de1bce7c1",
             "0ceb59ac89fb79b7"
         ],
-        "x": 54,
-        "y": 539
+        "x": 434,
+        "y": 539,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "648ad874a33c7973",
@@ -1749,8 +1771,10 @@
             "9bcb520fd937694d",
             "7639b738a201d7c6"
         ],
-        "x": 54,
-        "y": 439
+        "x": 434,
+        "y": 439,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "0fc22be05cfc5241",
@@ -1768,12 +1792,14 @@
         "nodes": [
             "1209a8480a23b591",
             "14944e047cba03fa",
-            "5e2f8ae74b053fc9",
             "a5f013472e32f50c",
-            "65911d8f953e99bf"
+            "65911d8f953e99bf",
+            "f0dd8ad761257c53"
         ],
-        "x": 54,
-        "y": 639
+        "x": 434,
+        "y": 639,
+        "w": 542,
+        "h": 122
     },
     {
         "id": "00ad2b71a9c29a21",
@@ -1954,7 +1980,9 @@
             "3dd30f8784d759bb"
         ],
         "x": 54,
-        "y": 219
+        "y": 219,
+        "w": 313,
+        "h": 82
     },
     {
         "id": "6a70472869a0916a",
@@ -1975,7 +2003,9 @@
             "b2ebd790a5119ac7"
         ],
         "x": 294,
-        "y": 59
+        "y": 59,
+        "w": 432,
+        "h": 82
     },
     {
         "id": "e7f5a72a22121c8f",
@@ -1996,7 +2026,9 @@
             "67ab43420a885103"
         ],
         "x": 54,
-        "y": 539
+        "y": 539,
+        "w": 652,
+        "h": 82
     },
     {
         "id": "f62fd902bca5d337",
@@ -2017,7 +2049,9 @@
             "1cb6cc25224307af"
         ],
         "x": 814,
-        "y": 379
+        "y": 379,
+        "w": 432,
+        "h": 82
     },
     {
         "id": "6cf254b5fbe8d9c1",
@@ -2037,7 +2071,32 @@
             "615ec4f521b2c7bf"
         ],
         "x": 54,
-        "y": 379
+        "y": 379,
+        "w": 275,
+        "h": 82
+    },
+    {
+        "id": "c1920e5e35019f3e",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "(Re-)initiate connection to Hue bridges",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "5e2f8ae74b053fc9",
+            "d0d4508d6f7f0a90",
+            "a3259e3a59b7b9b6",
+            "a86fc7d99ceeeffa"
+        ],
+        "x": 14,
+        "y": 319,
+        "w": 362,
+        "h": 202
     },
     {
         "id": "e79e0110c2317edb",
@@ -2345,22 +2404,11 @@
         "className": ""
     },
     {
-        "id": "d0b96e9f8503bef3",
+        "id": "e3fcd4654cf9f3fc",
         "type": "ui_group",
-        "name": "Living Room Shades",
+        "name": "Window Shades",
         "tab": "791bf5d34d06adaf",
         "order": 2,
-        "disp": true,
-        "width": "12",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "a81011918a2f3acc",
-        "type": "ui_group",
-        "name": "Dining Room Shades",
-        "tab": "791bf5d34d06adaf",
-        "order": 3,
         "disp": true,
         "width": "12",
         "collapse": true,
@@ -3048,7 +3096,7 @@
         "type": "function",
         "z": "4e89e7c952d56c09",
         "name": "metadata",
-        "func": "const topics = env.get('TOPIC').split('/')\nconst topic = topics[topics.length - 1]\n\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const s = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n    const type = groups[groupType] || {}\n    const scene = {}\n\n    s.forEach(ss => {\n\n        scene[ss.metadata.name] = ss.id\n\n    })\n\n    type[groupName] = {\n        grouped_light: grouped_lights[0].id,\n        scene: scene\n    }\n\n    groups[groupType] = type\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach((/** @type {any} */ room) => {\n\n    getGroup(room, metadata, groups)\n\n})\n\nzones.forEach((/** @type {any} */ zone) => {\n\n    getGroup(zone, metadata, groups)\n\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\nmsg.topic = topic\n\nconst globalMetadata = global.get('hue-metadata') || {}\n\nglobalMetadata[topic] = groups\nglobal.set('hue-metadata', globalMetadata)\n\nreturn msg",
+        "func": "const topics = env.get('TOPIC').split('/')\nconst topic = topics[topics.length - 1]\n\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const s = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n    const type = groups[groupType] || {}\n    const scene = {}\n\n    s.forEach(ss => {\n\n        scene[ss.metadata.name] = ss.id\n\n    })\n\n    type[groupName] = {\n        grouped_light: grouped_lights[0].id,\n        scene: scene\n    }\n\n    groups[groupType] = type\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach((/** @type {any} */ room) => {\n\n    getGroup(room, metadata, groups)\n\n})\n\nzones.forEach((/** @type {any} */ zone) => {\n\n    getGroup(zone, metadata, groups)\n\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\nmsg.topic = topic\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3831,20 +3879,155 @@
         ]
     },
     {
-        "id": "75b9e19e2accb4d5",
+        "id": "18b035d175d78813",
         "type": "function",
-        "z": "648d285142674988",
-        "name": "group options",
-        "func": "const msgs = []\n\nfunction sceneOptions(groupName, group) {\n\n    const options = []\n\n    for (let sceneName in group.scene) {\n\n        const sceneId = group.scene[sceneName]\n        const option = {}\n\n        option[sceneName] = sceneId\n        options.push(option)\n\n    }\n\n    msgs.push({\n        topic: 'scene',\n        group: groupName,\n        options: options\n    })\n}\n\nfunction groupedLightOptions() {\n\n    const options = []\n\n    for (let typeName in msg.payload) {\n\n        const type = msg.payload[typeName]\n\n        for (let groupName in type) {\n\n            const group = type[groupName]\n            const grouped_light = group.grouped_light\n            const option = {}\n\n            option[groupName] = grouped_light\n            options.push(option)\n            sceneOptions(groupName, group)\n\n        }\n    }\n\n    msgs.push({\n        topic: 'grouped_light',\n        options: options\n    })\n}\n\ngroupedLightOptions()\n\nreturn [msgs]",
+        "z": "bdefba026bd44159",
+        "name": "mergeMetadata",
+        "func": "const metadata = {}\n\nlet findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nmsg.payload.forEach((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    const roomName = findRoomName(scene.roomId)\n    const room = metadata[roomName] || {}\n    \n    room[scene.sceneName] = scene.sceneId\n    metadata[roomName] = room\n\n})\n\nmsg.payload = metadata\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 180,
-        "y": 80,
+        "x": 1140,
+        "y": 60,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "9d0fb43b1d0b583f",
+        "type": "change",
+        "z": "bdefba026bd44159",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 60,
+        "wires": [
+            [
+                "18b035d175d78813"
+            ]
+        ]
+    },
+    {
+        "id": "837774c682b93af9",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "bdefba026bd44159",
+        "name": "Get PowerVIew Scenes",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "POWERVIEW_ADDRESS",
+                "type": "env"
+            }
+        ],
+        "x": 750,
+        "y": 60,
+        "wires": [
+            [
+                "9d0fb43b1d0b583f"
+            ]
+        ]
+    },
+    {
+        "id": "42529821fe2b55cd",
+        "type": "change",
+        "z": "bdefba026bd44159",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "rooms",
+                "pt": "msg",
+                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "scenes",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 60,
+        "wires": [
+            [
+                "837774c682b93af9"
+            ]
+        ]
+    },
+    {
+        "id": "4a774d5487ebaf6f",
+        "type": "subflow:4920eed654c67f8d",
+        "z": "bdefba026bd44159",
+        "name": "Get PowerVIew Rooms",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "POWERVIEW_ADDRESS",
+                "type": "env"
+            }
+        ],
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "42529821fe2b55cd"
+            ]
+        ]
+    },
+    {
+        "id": "e3ada32cfe945566",
+        "type": "change",
+        "z": "bdefba026bd44159",
+        "name": "rooms:",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "rooms",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 150,
+        "y": 60,
+        "wires": [
+            [
+                "4a774d5487ebaf6f"
+            ]
         ]
     },
     {
@@ -4749,7 +4932,7 @@
         "name": "return from chez nous main api",
         "mode": "return",
         "links": [],
-        "x": 355,
+        "x": 735,
         "y": 180,
         "wires": []
     },
@@ -4760,7 +4943,7 @@
         "g": "70e9b8db12799d18",
         "name": "send to chez nous main",
         "links": [],
-        "x": 95,
+        "x": 475,
         "y": 180,
         "wires": [
             [
@@ -4789,7 +4972,7 @@
                 "type": "env"
             }
         ],
-        "x": 230,
+        "x": 610,
         "y": 180,
         "wires": [
             [
@@ -4815,7 +4998,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 540,
         "y": 80,
         "wires": [
             [
@@ -4837,7 +5020,7 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "msg",
-        "x": 630,
+        "x": 1010,
         "y": 80,
         "wires": []
     },
@@ -4859,7 +5042,7 @@
                 "type": "str"
             }
         ],
-        "x": 360,
+        "x": 740,
         "y": 80,
         "wires": [
             [
@@ -4877,44 +5060,9 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 675,
+        "x": 955,
         "y": 280,
         "wires": []
-    },
-    {
-        "id": "2d0604f94ef7bff4",
-        "type": "inject",
-        "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "method",
-                "v": "GET",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "2",
-        "topic": "resource",
-        "payload": "",
-        "payloadType": "str",
-        "x": 160,
-        "y": 300,
-        "wires": [
-            [
-                "8c9d79d2791e9b02"
-            ]
-        ]
     },
     {
         "id": "8c9d79d2791e9b02",
@@ -4926,7 +5074,7 @@
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 350,
+        "x": 630,
         "y": 300,
         "wires": [
             [
@@ -4957,7 +5105,7 @@
                 "type": "env"
             }
         ],
-        "x": 560,
+        "x": 840,
         "y": 300,
         "wires": [
             [
@@ -4976,7 +5124,7 @@
         "name": "return from basement hue api",
         "mode": "return",
         "links": [],
-        "x": 355,
+        "x": 735,
         "y": 580,
         "wires": []
     },
@@ -4987,7 +5135,7 @@
         "g": "9c46129d149ab201",
         "name": "send to basement hue",
         "links": [],
-        "x": 95,
+        "x": 475,
         "y": 580,
         "wires": [
             [
@@ -5016,7 +5164,7 @@
                 "type": "env"
             }
         ],
-        "x": 230,
+        "x": 610,
         "y": 580,
         "wires": [
             [
@@ -5042,7 +5190,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 540,
         "y": 480,
         "wires": [
             [
@@ -5064,7 +5212,7 @@
         "targetType": "full",
         "statusVal": "payload[0].success.username",
         "statusType": "msg",
-        "x": 630,
+        "x": 1010,
         "y": 480,
         "wires": []
     },
@@ -5086,7 +5234,7 @@
                 "type": "str"
             }
         ],
-        "x": 360,
+        "x": 740,
         "y": 480,
         "wires": [
             [
@@ -5104,7 +5252,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 655,
+        "x": 935,
         "y": 680,
         "wires": []
     },
@@ -5118,7 +5266,7 @@
             "df79272de1bce7c1"
         ],
         "timeout": "30",
-        "x": 340,
+        "x": 620,
         "y": 700,
         "wires": [
             [
@@ -5130,34 +5278,25 @@
         "id": "5e2f8ae74b053fc9",
         "type": "inject",
         "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "",
+        "g": "c1920e5e35019f3e",
+        "name": "at start",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "method",
-                "v": "GET",
-                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": "3",
-        "topic": "resource",
+        "topic": "",
         "payload": "",
-        "payloadType": "str",
-        "x": 160,
-        "y": 700,
+        "payloadType": "date",
+        "x": 120,
+        "y": 360,
         "wires": [
             [
-                "14944e047cba03fa"
+                "d0d4508d6f7f0a90"
             ]
         ]
     },
@@ -5184,7 +5323,7 @@
                 "type": "env"
             }
         ],
-        "x": 540,
+        "x": 820,
         "y": 700,
         "wires": [
             [
@@ -5209,7 +5348,7 @@
             "a8349c3715609535",
             "158f8d519f86243e"
         ],
-        "x": 675,
+        "x": 955,
         "y": 320,
         "wires": []
     },
@@ -5228,26 +5367,128 @@
             "a8349c3715609535",
             "158f8d519f86243e"
         ],
-        "x": 655,
+        "x": 935,
         "y": 720,
         "wires": []
     },
     {
-        "id": "1cee4f351bd59563",
-        "type": "debug",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "powerview scenes",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 610,
-        "y": 720,
+        "id": "d0d4508d6f7f0a90",
+        "type": "ui_button",
+        "z": "c7141ffb22d64190",
+        "g": "c1920e5e35019f3e",
+        "name": "Refresh Hue Dashboard Controls",
+        "group": "21f11f110d626f5a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-refresh",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "a3259e3a59b7b9b6"
+            ]
+        ]
+    },
+    {
+        "id": "a3259e3a59b7b9b6",
+        "type": "change",
+        "z": "c7141ffb22d64190",
+        "g": "c1920e5e35019f3e",
+        "name": "get resources",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 480,
+        "wires": [
+            [
+                "a86fc7d99ceeeffa"
+            ]
+        ]
+    },
+    {
+        "id": "74aa3076d752cf02",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "665df9d682462b5e",
+        "name": "chez nous main to mqtt",
+        "links": [
+            "a86fc7d99ceeeffa"
+        ],
+        "x": 475,
+        "y": 300,
+        "wires": [
+            [
+                "8c9d79d2791e9b02"
+            ]
+        ]
+    },
+    {
+        "id": "f0dd8ad761257c53",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "0fc22be05cfc5241",
+        "name": "basement hue to mqtt",
+        "links": [
+            "a86fc7d99ceeeffa"
+        ],
+        "x": 475,
+        "y": 700,
+        "wires": [
+            [
+                "14944e047cba03fa"
+            ]
+        ]
+    },
+    {
+        "id": "a86fc7d99ceeeffa",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "c1920e5e35019f3e",
+        "name": "hue to mqtt",
+        "mode": "link",
+        "links": [
+            "74aa3076d752cf02",
+            "f0dd8ad761257c53"
+        ],
+        "x": 335,
+        "y": 480,
         "wires": []
     },
     {
@@ -5306,161 +5547,6 @@
         "x": 435,
         "y": 60,
         "wires": []
-    },
-    {
-        "id": "69a6db45ef9f6fdf",
-        "type": "inject",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "rooms",
-        "payload": "",
-        "payloadType": "str",
-        "x": 220,
-        "y": 560,
-        "wires": [
-            [
-                "4a774d5487ebaf6f"
-            ]
-        ]
-    },
-    {
-        "id": "18b035d175d78813",
-        "type": "function",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "mergeMetadata",
-        "func": "const metadata = {}\n\nlet findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nmsg.payload.forEach((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    const roomName = findRoomName(scene.roomId)\n    const room = metadata[roomName] || {}\n    \n    node.status({\n        text: roomName + ' | ' + scene.sceneName,\n        shape: 'dot',\n        fill: 'blue'\n    })\n\n    room[scene.sceneName] = scene.sceneId\n    metadata[roomName] = room\n\n})\n\nmsg.payload = metadata\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 720,
-        "wires": [
-            [
-                "1cee4f351bd59563"
-            ]
-        ]
-    },
-    {
-        "id": "9d0fb43b1d0b583f",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$map(payload.sceneData, function($scene) {\t    {\t        \"sceneName\": $base64decode($scene.name),\t        \"sceneId\": $scene.id,\t        \"roomId\": $scene.roomId\t    }\t})",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 240,
-        "y": 720,
-        "wires": [
-            [
-                "18b035d175d78813"
-            ]
-        ]
-    },
-    {
-        "id": "837774c682b93af9",
-        "type": "subflow:4920eed654c67f8d",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "Get PowerVIew Scenes",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "POWERVIEW_ADDRESS",
-                "type": "env"
-            }
-        ],
-        "x": 450,
-        "y": 640,
-        "wires": [
-            [
-                "9d0fb43b1d0b583f"
-            ]
-        ]
-    },
-    {
-        "id": "42529821fe2b55cd",
-        "type": "change",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "rooms",
-                "pt": "msg",
-                "to": "$map(payload.roomData, function($room) {\t    {\t        \"name\": $base64decode($room.name),\t        \"id\": $room.id\t    }\t})",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "scenes",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 240,
-        "y": 640,
-        "wires": [
-            [
-                "837774c682b93af9"
-            ]
-        ]
-    },
-    {
-        "id": "4a774d5487ebaf6f",
-        "type": "subflow:4920eed654c67f8d",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "Get PowerVIew Rooms",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "POWERVIEW_ADDRESS",
-                "type": "env"
-            }
-        ],
-        "x": 410,
-        "y": 560,
-        "wires": [
-            [
-                "42529821fe2b55cd"
-            ]
-        ]
     },
     {
         "id": "71f42f61777d49d9",
@@ -5847,6 +5933,89 @@
         "wires": [
             [
                 "e8a3ad681677753f"
+            ]
+        ]
+    },
+    {
+        "id": "d15f40c8b2218d5c",
+        "type": "link out",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "powerview metadata",
+        "mode": "link",
+        "links": [
+            "35103a0bfa7e7587"
+        ],
+        "x": 835,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "942f0a1ef3d8ade3",
+        "type": "subflow:bdefba026bd44159",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "",
+        "x": 690,
+        "y": 560,
+        "wires": [
+            [
+                "d15f40c8b2218d5c"
+            ]
+        ]
+    },
+    {
+        "id": "52607b6f55574002",
+        "type": "inject",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "8189dfca1b6265b7"
+            ]
+        ]
+    },
+    {
+        "id": "8189dfca1b6265b7",
+        "type": "ui_button",
+        "z": "1cf0490e7de2f93d",
+        "g": "cccd3d3ae4af3207",
+        "name": "Referesh PowerView Metadata",
+        "group": "e3fcd4654cf9f3fc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-refresh",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 430,
+        "y": 560,
+        "wires": [
+            [
+                "942f0a1ef3d8ade3"
             ]
         ]
     },
@@ -8195,7 +8364,7 @@
         "type": "debug",
         "z": "3e4322342f4339f0",
         "g": "b1d63527a43c94ce",
-        "name": "",
+        "name": "hue response",
         "active": false,
         "tosidebar": true,
         "console": false,
@@ -8204,7 +8373,7 @@
         "targetType": "full",
         "statusVal": "statusCode",
         "statusType": "msg",
-        "x": 970,
+        "x": 1000,
         "y": 100,
         "wires": []
     },
@@ -8262,7 +8431,7 @@
         "g": "b1d63527a43c94ce",
         "group": "21f11f110d626f5a",
         "name": "Lighting Controls",
-        "order": 1,
+        "order": 2,
         "width": "12",
         "height": "12",
         "format": "<div>\n    <div ng-repeat=\"(bridgename, bridge) in msg.payload\">\n        <div ng-repeat=\"(typename, type) in bridge\">\n            <div ng-repeat=\"(groupname, group) in type\">\n                <div ng-if=\"$index > 0\">\n                    <hr>\n                </div>\n                <p>{{groupname}}</p>\n                <div>\n                    <md-button style=\"display:inline-block;margin:1px\"\n                        ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT', bridge: bridgename})\">\n                        Off\n                    </md-button>\n                    <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                        ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT', bridge: bridgename})\">\n                        {{scenename}}\n                    </md-button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>",
@@ -8332,175 +8501,80 @@
         ]
     },
     {
-        "id": "80e7883b960caffa",
-        "type": "ui_button",
+        "id": "35103a0bfa7e7587",
+        "type": "link in",
         "z": "3e4322342f4339f0",
         "g": "685034897f563084",
-        "name": "Open Living Room Shades",
-        "group": "d0b96e9f8503bef3",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Open",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "11037",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 260,
+        "name": "powerview metadata",
+        "links": [
+            "d15f40c8b2218d5c"
+        ],
+        "x": 155,
         "y": 240,
         "wires": [
             [
-                "094c793f3a335844"
+                "95ca77ef914ae520"
             ]
         ]
     },
     {
-        "id": "094c793f3a335844",
-        "type": "link out",
+        "id": "95ca77ef914ae520",
+        "type": "ui_template",
         "z": "3e4322342f4339f0",
         "g": "685034897f563084",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 415,
+        "group": "e3fcd4654cf9f3fc",
+        "name": "Window Shade Controls",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n    <div ng-repeat=\"(roomname, room) in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <p>{{roomname}}</p>\n        <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in room\"\n            ng-click=\"send({payload: scene})\">\n            {{scenename}}\n        </md-button>\n    </div>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 310,
         "y": 240,
-        "wires": []
-    },
-    {
-        "id": "4d8f011916bcd1cb",
-        "type": "ui_button",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "Close Living Room Shades",
-        "group": "d0b96e9f8503bef3",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Close",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "40564",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 260,
-        "y": 300,
         "wires": [
             [
-                "14f75f22c0a890cc"
+                "6ce200355dc3018e"
             ]
         ]
     },
     {
-        "id": "14f75f22c0a890cc",
-        "type": "link out",
+        "id": "6ce200355dc3018e",
+        "type": "link call",
         "z": "3e4322342f4339f0",
         "g": "685034897f563084",
-        "name": "open living room shades",
-        "mode": "link",
+        "name": "",
         "links": [
             "7173aa38c9fa93dc"
         ],
-        "x": 415,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "939edd2eb5234245",
-        "type": "ui_button",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "Open Dining Room Shades",
-        "group": "a81011918a2f3acc",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Open",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "23259",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 260,
-        "y": 360,
+        "timeout": "30",
+        "x": 550,
+        "y": 240,
         "wires": [
             [
-                "4e5a85bfe405e198"
+                "03374f8daf60c594"
             ]
         ]
     },
     {
-        "id": "4e5a85bfe405e198",
-        "type": "link out",
+        "id": "03374f8daf60c594",
+        "type": "debug",
         "z": "3e4322342f4339f0",
         "g": "685034897f563084",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 415,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "5d19bbee25070e5c",
-        "type": "ui_button",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "Close Dining Room Shades",
-        "group": "a81011918a2f3acc",
-        "order": 0,
-        "width": "3",
-        "height": "1",
-        "passthru": false,
-        "label": "Close",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "41405",
-        "payloadType": "num",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 260,
-        "y": 420,
-        "wires": [
-            [
-                "49039ff17e845f97"
-            ]
-        ]
-    },
-    {
-        "id": "49039ff17e845f97",
-        "type": "link out",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "open living room shades",
-        "mode": "link",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "x": 415,
-        "y": 420,
+        "name": "powerview response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "statusCode",
+        "statusType": "msg",
+        "x": 780,
+        "y": 240,
         "wires": []
     },
     {
