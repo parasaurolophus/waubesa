@@ -10,9 +10,17 @@
     {
         "id": "c7141ffb22d64190",
         "type": "tab",
-        "label": "Hue",
+        "label": "Chez Nous Main",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "810a8b527afd2b1b",
+        "type": "tab",
+        "label": "Basement Hue",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "1cf0490e7de2f93d",
@@ -29,14 +37,6 @@
         ]
     },
     {
-        "id": "e44149a93fbe9b1b",
-        "type": "tab",
-        "label": "Lighting",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "6e3ca82457d27245",
         "type": "tab",
         "label": "Messaging",
@@ -46,23 +46,7 @@
     {
         "id": "b12fd38c090c51f2",
         "type": "tab",
-        "label": "Monitoring",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "3e4322342f4339f0",
-        "type": "tab",
         "label": "Dashboard",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "997764cb1253a223",
-        "type": "tab",
-        "label": "WebSockets",
         "disabled": false,
         "info": "",
         "env": []
@@ -307,46 +291,6 @@
                 },
                 {
                     "id": "35c708b92ea8024b",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
-        "id": "c4207c9fe61a900e",
-        "type": "subflow",
-        "name": "Monitored Event",
-        "info": "Handle MQTT messages for topics that match the value of the `TOPIC` environment variable. Such topics are expected to be of the form `cpu/+/attribute`, for some monitored attribute such as `temperature`, `voltage` etc. The second, wildcard elemnt is expected to be the name of the host that sent the particular message being handled. Such messages are cached in the context of a function node in this subflow as an object whose keys are the host names. The value for each host is an object whose key is the name of the attribute and whose value is the value for the most recently received message for that attribute from that host.\n\nFor example, assuming that `${TOPIC}` is configured to be `cpu/+/temperature`, the following sequence of messages:\n\n    cpu/host1/temperature : 31\n    cpu/host2/temperature : 55\n    cpu/host3/temperature : 49\n\nwould result in the cached state becoming:\n\n    {\n        host1: {\n            temperature: 31\n        },\n        host2: {\n            temperature: 55\n        },\n        host5: {\n            temperature: 49\n        }\n    }\n\nIf a subsequent message were received:\n\n    cpu/host2/temperature : 56\n\nthe cached state would be updated to:\n\n    {\n        host1: {\n            temperature: 31\n        },\n        host2: {\n            temperature: 56\n        },\n        host5: {\n            temperature: 49\n        }\n    }\n\n...and so on.\n\nThe subflow has two outputs:\n\n1. A HTML `<table>` representing the cached state for all hosts after updating it upon the receipt of each message, presumably for display using a dashboard _template_ node.\n\n2. The raw event for subsequent processing, e.g. taking action if some CPU overheats.\n\nThe `<table>` emitted for the updated state descibed above would be something like (_extra whitespace and comments inserted here for readability_):\n\n    <table>\n      <!-- optional first row, included if ${HEADER} is true -->\n      <tr>\n        <th>host</th>\n        <th>temperature</th>\n      </tr>\n      <!-- assumes ${UNIT} is set to 'C' -->\n      <tr>\n        <td>host1</td>\n        <td>31C</td>\n      </tr>\n      <tr>\n        <td>host2</td>\n        <td>56C</td>\n      </tr>\n      <tr>\n        <td>host3</td>\n        <td>49C</td>\n      </tr>\n    </table>\n\nAs noted in the HTML comments, the formatting of the `<table>` can be tweaked by two additional environment variables:\n\n- The value of `UNIT`, which defaults to the empty string, will be appended to each value in the second column.\n\n- The first, `<th>`, row will only be included in the HTML output if the value of `HEADER` is `true`.",
-        "category": "waubesa",
-        "in": [],
-        "out": [
-            {
-                "x": 720,
-                "y": 100,
-                "wires": [
-                    {
-                        "id": "46fb2d69cd82b25c",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "TOPIC",
-                "type": "str",
-                "value": ""
-            }
-        ],
-        "meta": {},
-        "color": "#E7E7AE",
-        "icon": "node-red/status.svg",
-        "status": {
-            "x": 720,
-            "y": 200,
-            "wires": [
-                {
-                    "id": "e81b7e6a74a922a1",
                     "port": 0
                 }
             ]
@@ -696,7 +640,7 @@
         "in": [],
         "out": [
             {
-                "x": 340,
+                "x": 370,
                 "y": 60,
                 "wires": [
                     {
@@ -706,7 +650,7 @@
                 ]
             },
             {
-                "x": 340,
+                "x": 370,
                 "y": 140,
                 "wires": [
                     {
@@ -733,8 +677,12 @@
             "license": "MIT"
         },
         "color": "#DDAA99",
+        "outputLabels": [
+            "msg",
+            "count"
+        ],
         "status": {
-            "x": 340,
+            "x": 400,
             "y": 220,
             "wires": [
                 {
@@ -892,29 +840,6 @@
         "icon": "font-awesome/fa-align-justify"
     },
     {
-        "id": "cccd3d3ae4af3207",
-        "type": "group",
-        "z": "1cf0490e7de2f93d",
-        "name": "Fetch the PowerView window shade room and scene metadata from the Chez Nous Shades hub",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "d15f40c8b2218d5c",
-            "942f0a1ef3d8ade3",
-            "52607b6f55574002",
-            "8189dfca1b6265b7"
-        ],
-        "x": 114,
-        "y": 519,
-        "w": 762,
-        "h": 82
-    },
-    {
         "id": "87285e6bf01cff03",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -932,7 +857,7 @@
             "618e79a58ab8143a"
         ],
         "x": 114,
-        "y": 19,
+        "y": 119,
         "w": 362,
         "h": 82
     },
@@ -954,100 +879,15 @@
             "dd7609e91ad64f63",
             "8145a71a1f26c616",
             "1c6a7f9ae824db96",
-            "6db5c2fcb5fd08e3",
             "461d49b47e87e402",
             "5ea9e057dd830d9e",
-            "5adbc418ab39d29a"
+            "d59aa94341d8a721",
+            "a8211a5387f8494c"
         ],
         "x": 114,
-        "y": 39
-    },
-    {
-        "id": "ca14f3586a7c5f24",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Basement Hue",
-        "style": {
-            "label": true,
-            "stroke": "#000000",
-            "fill-opacity": "0.05",
-            "color": "#000000",
-            "stroke-opacity": "0.1"
-        },
-        "nodes": [
-            "9c46129d149ab201",
-            "648ad874a33c7973",
-            "0fc22be05cfc5241"
-        ],
-        "x": 408,
-        "y": 413,
-        "w": 804,
-        "h": 374
-    },
-    {
-        "id": "46f2fb3ee016fe23",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "Chez Nous Main",
-        "style": {
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000",
-            "stroke": "#000000",
-            "stroke-opacity": "0.1"
-        },
-        "nodes": [
-            "70e9b8db12799d18",
-            "290b83ef8e01ae0f",
-            "665df9d682462b5e"
-        ],
-        "x": 408,
-        "y": 13,
-        "w": 804,
-        "h": 374
-    },
-    {
-        "id": "6c7bbad3f1eae3bb",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "name": "Main Floor (Hue Zone)",
-        "style": {
-            "label": true,
-            "stroke": "#000000",
-            "fill-opacity": "0.05",
-            "color": "#000000",
-            "stroke-opacity": "0.1"
-        },
-        "nodes": [
-            "1ce03cecd5db8bc6",
-            "3483ce20c1996e6c",
-            "e1fa765ec5a5ebd7"
-        ],
-        "x": 88,
-        "y": 13,
-        "w": 524,
-        "h": 334
-    },
-    {
-        "id": "e29b5646cac97198",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "name": "Main Bathroom (Hue Room)",
-        "style": {
-            "label": true,
-            "stroke": "#000000",
-            "fill-opacity": "0.05",
-            "color": "#000000",
-            "stroke-opacity": "0.1"
-        },
-        "nodes": [
-            "00ad2b71a9c29a21",
-            "513bc529c9c10fa0"
-        ],
-        "x": 88,
-        "y": 373,
-        "w": 524,
-        "h": 234
+        "y": 39,
+        "w": 402,
+        "h": 202
     },
     {
         "id": "0770b0ba393f379d",
@@ -1069,7 +909,7 @@
             "516be0577e70437c"
         ],
         "x": 114,
-        "y": 119,
+        "y": 219,
         "w": 1092,
         "h": 82
     },
@@ -1093,7 +933,7 @@
             "7bc062570484d12c"
         ],
         "x": 114,
-        "y": 219,
+        "y": 319,
         "w": 1092,
         "h": 82
     },
@@ -1117,7 +957,7 @@
             "bdce740848b412c8"
         ],
         "x": 114,
-        "y": 319,
+        "y": 419,
         "w": 1092,
         "h": 82
     },
@@ -1141,39 +981,15 @@
             "b56bca504084bf91"
         ],
         "x": 114,
-        "y": 419,
+        "y": 519,
         "w": 1092,
         "h": 82
-    },
-    {
-        "id": "d23ba68654f3c055",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "name": "Yard (Hue Room)",
-        "style": {
-            "stroke": "#000000",
-            "fill-opacity": "0.05",
-            "label": true,
-            "color": "#000000",
-            "stroke-opacity": "0.1"
-        },
-        "nodes": [
-            "26622bde8cf9b262",
-            "c083702f726a3c76",
-            "1f51b2e96d97963e",
-            "73df20e8ccdbf56c",
-            "f6597e2f37dd2636"
-        ],
-        "x": 708,
-        "y": 13,
-        "w": 524,
-        "h": 534
     },
     {
         "id": "98cf3b8910bc4f22",
         "type": "group",
         "z": "cbd68ba9caa96a3d",
-        "name": "Trigger automation",
+        "name": "Trigger automation on receipt of time events",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1185,74 +1001,33 @@
             "485df563c6545698",
             "98e07825f41a09a2",
             "1b5ab2bf7ea37b3b",
-            "21af7493f52944f5",
             "1e6ace60764fec35",
-            "83d6d8f537b0c172",
-            "08157854eff23df6",
-            "60f145bb0461c216",
             "784c9929fe789981",
             "6272a0d1ddf8807b",
-            "2a94995efda1937e"
-        ],
-        "x": 34,
-        "y": 219,
-        "w": 982,
-        "h": 262
-    },
-    {
-        "id": "1f88f9981ae4ba5f",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "Lighting automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
+            "2a94995efda1937e",
+            "6b40e38fa169c721",
+            "904fc8c279229b76",
+            "b907a058300b24db",
+            "ba94cc02344092b6",
+            "0156a364439561a8",
             "5950aa6c0df32eb2",
-            "4ed8bcf218333395",
+            "c60a157e32809b1f",
             "b29a7ab55a3476e5",
+            "4ed8bcf218333395",
             "6a4e3c8d5c47d1b7",
             "e0a9d45fbfcb3532",
             "758cfea08b622975",
             "b8723d53ddad808a",
-            "0156a364439561a8",
-            "c60a157e32809b1f",
-            "805a96f9c1561bcd"
-        ],
-        "x": 534,
-        "y": 499,
-        "w": 482,
-        "h": 242
-    },
-    {
-        "id": "fde389905b8f6545",
-        "type": "group",
-        "z": "cbd68ba9caa96a3d",
-        "name": "Window shade automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ba94cc02344092b6",
-            "5ec89823b4e8d3aa",
-            "cb25d319d7126480",
-            "c633c043693d29f4",
-            "fc34e1d6c55a3985",
             "0b72197569340d63",
-            "aafc4027ba2b619f"
+            "fc34e1d6c55a3985",
+            "c633c043693d29f4",
+            "cb25d319d7126480",
+            "5ec89823b4e8d3aa"
         ],
-        "x": 34,
-        "y": 499,
-        "w": 302,
-        "h": 242
+        "x": 14,
+        "y": 219,
+        "w": 1482,
+        "h": 482
     },
     {
         "id": "8a031cfeade40a06",
@@ -1277,7 +1052,7 @@
             "47875e1be48bbf82",
             "ff64f46de7793f7b"
         ],
-        "x": 34,
+        "x": 14,
         "y": 19,
         "w": 962,
         "h": 182
@@ -1299,42 +1074,15 @@
             "3a39c550369bac31",
             "15ce56cf1449ce52",
             "f33b94d2cc59c348",
-            "625b9718a13e0340",
             "f72b11239792afcf",
             "4dd293c16815dce3",
-            "40aa6d57e66c9314",
-            "8549e51620377f66",
             "8fe5e01fe99f5026",
             "e7bc056a5ca25bc5"
         ],
         "x": 14,
-        "y": 19
-    },
-    {
-        "id": "5cc3007bfef936f5",
-        "type": "group",
-        "z": "b12fd38c090c51f2",
-        "name": "Monitur CPU status",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": false
-        },
-        "nodes": [
-            "be5ed0fec546d004",
-            "08c851f506852280",
-            "1c85c492c57041d7",
-            "55425537c5741ec5",
-            "281d03f937caa527",
-            "92446033e6f8968f",
-            "6eae3f85a3c030a8",
-            "dea1d159dc5339ef",
-            "9632e610560cfce1",
-            "e08653b0e7646390"
-        ],
-        "x": 14,
-        "y": 579
+        "y": 19,
+        "w": 812,
+        "h": 162
     },
     {
         "id": "8a81267cb12384d5",
@@ -1369,7 +1117,9 @@
             "a921a5a41ab154fc"
         ],
         "x": 14,
-        "y": 199
+        "y": 199,
+        "w": 1232,
+        "h": 202
     },
     {
         "id": "0d4083787ae50482",
@@ -1390,7 +1140,9 @@
             "dfcbba568eef0b62"
         ],
         "x": 14,
-        "y": 419
+        "y": 419,
+        "w": 592,
+        "h": 142
     },
     {
         "id": "c28ed42a351eb1a7",
@@ -1411,7 +1163,9 @@
             "e80f7721307a29b3"
         ],
         "x": 634,
-        "y": 419
+        "y": 419,
+        "w": 572,
+        "h": 142
     },
     {
         "id": "f82a1f6e963f443a",
@@ -1429,149 +1183,20 @@
             "0888e9faa06fe4e5",
             "48da82dc3974c2b3",
             "a341a1a127b0fe71",
-            "68ca4947dd6cf14e",
-            "ccc46e9ff7a15f4e",
-            "98380b5a50270d78"
+            "77b5666f31ee5b17",
+            "9c63c2cfacf4884a",
+            "ff476275160539a3"
         ],
         "x": 114,
-        "y": 259
-    },
-    {
-        "id": "80212e6229ce755b",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Periodically send stats from os module",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "5f86349da8f86e61",
-            "de168bcd359b4aa8",
-            "baa82bec436a6471"
-        ],
-        "x": 114,
-        "y": 419
-    },
-    {
-        "id": "3792bffcc53d7d09",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "name": "unicast request / response over websocket",
-        "style": {
-            "stroke": "#000000",
-            "stroke-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "60c093dadbe98d8c",
-            "d26af90c07042d0b",
-            "f62fd902bca5d337",
-            "6cf254b5fbe8d9c1",
-            "b34ce1d598cf8eb8",
-            "e967994a8d994435"
-        ],
-        "x": 28,
-        "y": 353,
-        "w": 1244,
-        "h": 134
-    },
-    {
-        "id": "4245d7c744b6be94",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "name": "",
-        "style": {
-            "stroke": "#000000",
-            "stroke-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "e7f5a72a22121c8f"
-        ],
-        "x": 28,
-        "y": 513,
-        "w": 704,
-        "h": 134
-    },
-    {
-        "id": "43456594e4cb4e24",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "name": "",
-        "style": {
-            "stroke": "#000000",
-            "stroke-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "12eb9a8162f223d1",
-            "445d81f63806df12",
-            "8fc06747717d00eb"
-        ],
-        "x": 28,
-        "y": 193,
-        "w": 578,
-        "h": 134
-    },
-    {
-        "id": "cc17bdf0cffdd1a1",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "name": "",
-        "style": {
-            "stroke": "#000000",
-            "stroke-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "40f2f41eed2f5540",
-            "06533547fdbaa357",
-            "6a70472869a0916a"
-        ],
-        "x": 34,
-        "y": 33,
-        "w": 718,
-        "h": 134
-    },
-    {
-        "id": "b1d63527a43c94ce",
-        "type": "group",
-        "z": "3e4322342f4339f0",
-        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from Hue bridges",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "7884455e0c23e9dd",
-            "8c3e6121a0e81da0",
-            "a8349c3715609535",
-            "aceec81f696e226a",
-            "9239b2b42b52b1f5",
-            "b99e9ace8317285b",
-            "5e286c6530e932c2"
-        ],
-        "x": 114,
-        "y": 19,
+        "y": 259,
         "w": 1012,
-        "h": 162
+        "h": 82
     },
     {
-        "id": "685034897f563084",
+        "id": "019e1216c1912bc2",
         "type": "group",
-        "z": "3e4322342f4339f0",
-        "name": "Dynamically create dashboard controls for window shades based on metadata obtained from PowerView hub",
+        "z": "b12fd38c090c51f2",
+        "name": "Monitor MQTT broker connection",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1580,90 +1205,20 @@
             "color": "#000000"
         },
         "nodes": [
-            "35103a0bfa7e7587",
-            "95ca77ef914ae520",
-            "6ce200355dc3018e",
-            "03374f8daf60c594"
+            "20f266f186a55d9c",
+            "05a1812a4316ce2c",
+            "9dbdef46ce2f066e",
+            "b85408b986dabda3"
         ],
-        "x": 114,
-        "y": 199,
-        "w": 812,
-        "h": 82
-    },
-    {
-        "id": "1ce03cecd5db8bc6",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Turn off main floor lights group",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "07ccb0b07e6fada8",
-            "ec1b9da9a2a0dde0",
-            "33533dc0ac4ff870"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "3483ce20c1996e6c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3ed1a4d37d1548b4",
-            "53509cbc2f897eb4",
-            "1462dac4d5543f0a"
-        ],
-        "x": 114,
-        "y": 139,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "e1fa765ec5a5ebd7",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "6c7bbad3f1eae3bb",
-        "name": "Activate main floor sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6cae9b1ccc68cb9e",
-            "8ae7ee0c87df1191",
-            "76f3eb6c53a0310c"
-        ],
-        "x": 114,
-        "y": 239,
-        "w": 452,
-        "h": 82
+        "x": 294,
+        "y": 579,
+        "w": 312,
+        "h": 142
     },
     {
         "id": "70e9b8db12799d18",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
         "name": "Send requests to the Hue API on the Chez Nous Main bridge",
         "style": {
             "stroke": "none",
@@ -1677,8 +1232,8 @@
             "7df3e5fbd6e9aa8a",
             "3b5ab296575b53d4"
         ],
-        "x": 434,
-        "y": 139,
+        "x": 794,
+        "y": 159,
         "w": 385,
         "h": 82
     },
@@ -1686,7 +1241,6 @@
         "id": "290b83ef8e01ae0f",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
         "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
         "style": {
             "fill-opacity": "0.11",
@@ -1700,41 +1254,15 @@
             "f3ab10cd192709b0",
             "73a1ec5ed8ebc167"
         ],
-        "x": 434,
-        "y": 39,
+        "x": 14,
+        "y": 159,
         "w": 752,
         "h": 82
     },
     {
-        "id": "665df9d682462b5e",
+        "id": "cde8d276df445e2f",
         "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "46f2fb3ee016fe23",
-        "name": "Listen to events from Chez Nous Main bridge",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8c9d79d2791e9b02",
-            "4d2dc9a6e42d0548",
-            "7d283a2fc0d30093",
-            "66730b89492663ed",
-            "74aa3076d752cf02"
-        ],
-        "x": 434,
-        "y": 239,
-        "w": 562,
-        "h": 122
-    },
-    {
-        "id": "9c46129d149ab201",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
+        "z": "810a8b527afd2b1b",
         "name": "Send requests to the Hue API on the Basement Hue bridge",
         "style": {
             "stroke": "none",
@@ -1744,20 +1272,19 @@
             "color": "#000000"
         },
         "nodes": [
-            "df7392117105107f",
-            "df79272de1bce7c1",
-            "0ceb59ac89fb79b7"
+            "735f828714a9c98f",
+            "64274eb0d8b9e5dd",
+            "33b523d447c86f23"
         ],
-        "x": 434,
-        "y": 539,
+        "x": 794,
+        "y": 159,
         "w": 375,
         "h": 82
     },
     {
-        "id": "648ad874a33c7973",
+        "id": "e7188f251e14aea1",
         "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
+        "z": "810a8b527afd2b1b",
         "name": "Use within 30 seconds of pressing link button on Basement Hue bridge",
         "style": {
             "fill-opacity": "0.1",
@@ -1767,21 +1294,20 @@
             "fill": "#000000"
         },
         "nodes": [
-            "497b08f40cd0b29c",
-            "9bcb520fd937694d",
-            "7639b738a201d7c6"
+            "608e6356fbb9f384",
+            "26973bac8c6a9dba",
+            "a12bdbda86868f06"
         ],
-        "x": 434,
-        "y": 439,
+        "x": 14,
+        "y": 159,
         "w": 752,
         "h": 82
     },
     {
-        "id": "0fc22be05cfc5241",
+        "id": "aac3bd0e8946965c",
         "type": "group",
-        "z": "c7141ffb22d64190",
-        "g": "ca14f3586a7c5f24",
-        "name": "Listen to events from Basement Hue bridge",
+        "z": "b12fd38c090c51f2",
+        "name": "Invoke sun-positions CSV service",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1790,23 +1316,161 @@
             "color": "#000000"
         },
         "nodes": [
-            "1209a8480a23b591",
-            "14944e047cba03fa",
-            "a5f013472e32f50c",
-            "65911d8f953e99bf",
-            "f0dd8ad761257c53"
+            "f9a4b2c24da44638",
+            "eb296b561972b772",
+            "dbf5921f850ebb39"
         ],
-        "x": 434,
-        "y": 639,
-        "w": 542,
+        "x": 854,
+        "y": 59,
+        "w": 492,
+        "h": 82
+    },
+    {
+        "id": "f8dce80b21d7f706",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Yard",
+        "style": {
+            "stroke": "none",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1"
+        },
+        "nodes": [
+            "2bb38044a932fa69",
+            "64a68d2a2d2e93cd",
+            "7f619f84fcad1d75",
+            "4b146e0f1b9bcccb",
+            "b11c745f6ce17117",
+            "7e843abc77537f92",
+            "a80f7d1788543bf0",
+            "510f4653645e17d0",
+            "67013f62ca5bcb43",
+            "d43f117e07910821",
+            "feaf54e6c16337c1",
+            "d92030613c5ce50e",
+            "52d3dd927cb7e37e",
+            "cb0bc87b9e465a2f",
+            "da79b96d161e1c28"
+        ],
+        "x": 774,
+        "y": 259,
+        "w": 472,
+        "h": 322
+    },
+    {
+        "id": "f718c99bbc8e36c9",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Main Floor",
+        "style": {
+            "stroke": "none",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1"
+        },
+        "nodes": [
+            "52f0cba3f9b87632",
+            "72acc2a8bcbc1528",
+            "a3fa25812dc1f4c0",
+            "0acba8178934baa1",
+            "37e508aaad9b809e",
+            "1c5888bd24d0a311",
+            "fe5fdd858e8b907d",
+            "dce6b6fd885e2956",
+            "64afce8ff0b75f48"
+        ],
+        "x": 114,
+        "y": 259,
+        "w": 472,
+        "h": 202
+    },
+    {
+        "id": "f848d645bd1abc5b",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Main Bathroom",
+        "style": {
+            "stroke": "none",
+            "stroke-opacity": "0.1",
+            "label": true,
+            "color": "#000000",
+            "fill": "#000000",
+            "fill-opacity": "0.1"
+        },
+        "nodes": [
+            "df41f3a116d28de2",
+            "a122f1a4fc3399e5",
+            "12b6bc8a0257750a",
+            "200e1af02e26479b",
+            "012902774c9657f1",
+            "90cec6147a7de28f"
+        ],
+        "x": 114,
+        "y": 479,
+        "w": 472,
+        "h": 142
+    },
+    {
+        "id": "b48f76e13fc77aa7",
+        "type": "group",
+        "z": "1cf0490e7de2f93d",
+        "name": "Dynamically create dashboard controls for window shades based on metadata obtained from PowerView hub",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "85c26fe91dc71759",
+            "175aa8cd2233a871",
+            "75bff418d99b8d56",
+            "7026f2de142e8ef2",
+            "942f0a1ef3d8ade3"
+        ],
+        "x": 114,
+        "y": 19,
+        "w": 1192,
+        "h": 82
+    },
+    {
+        "id": "431ae4bdb7346af5",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from Hue bridges",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "3324951b765c9f12",
+            "2736286441feda07",
+            "7def18ac26259af3",
+            "abb71db57910be2f",
+            "1ee8aff15eae874f",
+            "8c9d79d2791e9b02",
+            "7d283a2fc0d30093",
+            "4d2dc9a6e42d0548"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 1572,
         "h": 122
     },
     {
-        "id": "00ad2b71a9c29a21",
+        "id": "4e52881346c9e44b",
         "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Turn off main bathroom lights",
+        "z": "810a8b527afd2b1b",
+        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from Basement Hue bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1815,288 +1479,19 @@
             "color": "#000000"
         },
         "nodes": [
-            "08ca72b8e815a992",
-            "2736157993771007",
-            "0cb4aa086519cdc3"
-        ],
-        "x": 114,
-        "y": 399,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "513bc529c9c10fa0",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "e29b5646cac97198",
-        "name": "Activate main bathroom nightlight scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "3deabbac44606076",
-            "ec0f7c926936a835",
-            "1af873ecc08861c7"
-        ],
-        "x": 114,
-        "y": 499,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "26622bde8cf9b262",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard sunset scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "51e789d7146d158c",
-            "bcf937398010e69d",
-            "8c8685c28661026d"
-        ],
-        "x": 734,
-        "y": 139,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "c083702f726a3c76",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard jolly scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "973da59b5e8db353",
-            "434961afc8e6268a",
-            "c639897051efe373"
-        ],
-        "x": 734,
-        "y": 439,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "1f51b2e96d97963e",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Turn off yard lights",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "de84c77427959f96",
-            "f224835045d99471",
-            "30ad3f93b6509f97"
-        ],
-        "x": 734,
-        "y": 39,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "73df20e8ccdbf56c",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard spooky scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6bc33e9277b4e511",
-            "f92a8accf963b5bf",
-            "9f798cee87b95525"
-        ],
-        "x": 734,
-        "y": 339,
-        "w": 472,
-        "h": 82
-    },
-    {
-        "id": "f6597e2f37dd2636",
-        "type": "group",
-        "z": "e44149a93fbe9b1b",
-        "g": "d23ba68654f3c055",
-        "name": "Activate yard tribal scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ccd0f26bea9262e7",
-            "7ac02c6645861b20",
-            "e444798d5fd55433"
-        ],
-        "x": 734,
-        "y": 239,
-        "w": 452,
-        "h": 82
-    },
-    {
-        "id": "8fc06747717d00eb",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "g": "43456594e4cb4e24",
-        "name": "unidirectional receive from any connected sender",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "d6d20cb20e9e643b",
-            "3dd30f8784d759bb"
-        ],
-        "x": 54,
-        "y": 219,
-        "w": 313,
-        "h": 82
-    },
-    {
-        "id": "6a70472869a0916a",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "g": "cc17bdf0cffdd1a1",
-        "name": "unidirectional send to all connected receivers",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "9ebfab406a5ca7c4",
-            "06c6c945e8d5887f",
-            "b2ebd790a5119ac7"
-        ],
-        "x": 294,
-        "y": 59,
-        "w": 432,
-        "h": 82
-    },
-    {
-        "id": "e7f5a72a22121c8f",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "g": "4245d7c744b6be94",
-        "name": "bidirectional broadcast to all connected clients",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "e2d9ed9e8373cc0d",
-            "65391bdd2e45d311",
-            "67ab43420a885103"
-        ],
-        "x": 54,
-        "y": 539,
-        "w": 652,
-        "h": 82
-    },
-    {
-        "id": "f62fd902bca5d337",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "g": "3792bffcc53d7d09",
-        "name": "unicast response to original sender",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "0fa7147e765e3a0a",
-            "ca533975bad3a01a",
-            "1cb6cc25224307af"
-        ],
-        "x": 814,
-        "y": 379,
-        "w": 432,
-        "h": 82
-    },
-    {
-        "id": "6cf254b5fbe8d9c1",
-        "type": "group",
-        "z": "997764cb1253a223",
-        "g": "3792bffcc53d7d09",
-        "name": "unicast receive from any connected sender",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "83c531568daee540",
-            "615ec4f521b2c7bf"
-        ],
-        "x": 54,
-        "y": 379,
-        "w": 275,
-        "h": 82
-    },
-    {
-        "id": "c1920e5e35019f3e",
-        "type": "group",
-        "z": "c7141ffb22d64190",
-        "name": "(Re-)initiate connection to Hue bridges",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "5e2f8ae74b053fc9",
-            "d0d4508d6f7f0a90",
-            "a3259e3a59b7b9b6",
-            "a86fc7d99ceeeffa"
+            "80384d1e957ed3ca",
+            "a28b1c17c4f3e3ee",
+            "678145510dc4c76f",
+            "d638e45951bb8819",
+            "a2e5d0064800b5fb",
+            "5c8d9ca80254e11c",
+            "7dcd1d246a096330",
+            "d7f8a0d309dca688"
         ],
         "x": 14,
-        "y": 319,
-        "w": 362,
-        "h": 202
+        "y": 19,
+        "w": 1512,
+        "h": 122
     },
     {
         "id": "e79e0110c2317edb",
@@ -2260,37 +1655,6 @@
         "className": ""
     },
     {
-        "id": "dc6e107af698a0c3",
-        "type": "ui_group",
-        "name": "CPU Temperature",
-        "tab": "696b8efb10ee13b7",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "cfa1a0f4a477687c",
-        "type": "ui_group",
-        "name": "CPU Volts",
-        "tab": "696b8efb10ee13b7",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "696b8efb10ee13b7",
-        "type": "ui_tab",
-        "name": "Monitoring",
-        "icon": "dashboard",
-        "order": 5,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "03b0e40844d33477",
         "type": "ui_group",
         "name": "Chez Nous Main",
@@ -2335,55 +1699,6 @@
         "className": ""
     },
     {
-        "id": "a6c038e4cae31f08",
-        "type": "ui_group",
-        "name": "loadavg",
-        "tab": "696b8efb10ee13b7",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "66adb26e37268f4a",
-        "type": "ui_group",
-        "name": "freemem",
-        "tab": "696b8efb10ee13b7",
-        "order": 4,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "025512d801f893c2",
-        "type": "websocket-listener",
-        "z": "997764cb1253a223",
-        "path": "/ws/command",
-        "wholemsg": "true"
-    },
-    {
-        "id": "3c53975cbddbb628",
-        "type": "websocket-listener",
-        "z": "997764cb1253a223",
-        "path": "/ws/update",
-        "wholemsg": "true"
-    },
-    {
-        "id": "ecb690d3c11259df",
-        "type": "websocket-listener",
-        "z": "997764cb1253a223",
-        "path": "/ws/broadcast",
-        "wholemsg": "true"
-    },
-    {
-        "id": "83dce741285f9890",
-        "type": "websocket-listener",
-        "path": "/ws/request",
-        "wholemsg": "true"
-    },
-    {
         "id": "791bf5d34d06adaf",
         "type": "ui_tab",
         "name": "Controls",
@@ -2395,11 +1710,11 @@
     {
         "id": "21f11f110d626f5a",
         "type": "ui_group",
-        "name": "Lighting",
+        "name": "Upstairs Lighting",
         "tab": "791bf5d34d06adaf",
         "order": 1,
         "disp": true,
-        "width": "12",
+        "width": "6",
         "collapse": true,
         "className": ""
     },
@@ -2408,9 +1723,20 @@
         "type": "ui_group",
         "name": "Window Shades",
         "tab": "791bf5d34d06adaf",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "178c0c0ade9cbfc5",
+        "type": "ui_group",
+        "name": "Basement Lighting",
+        "tab": "791bf5d34d06adaf",
         "order": 2,
         "disp": true,
-        "width": "12",
+        "width": "6",
         "collapse": true,
         "className": ""
     },
@@ -2745,120 +2071,6 @@
         "reg": false,
         "x": 520,
         "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7004b9b981e156bb",
-        "type": "mqtt in",
-        "z": "c4207c9fe61a900e",
-        "name": "",
-        "topic": "${TOPIC}",
-        "qos": "2",
-        "datatype": "utf8",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 100,
-        "y": 60,
-        "wires": [
-            [
-                "27992b230d72f19f"
-            ]
-        ]
-    },
-    {
-        "id": "46fb2d69cd82b25c",
-        "type": "change",
-        "z": "c4207c9fe61a900e",
-        "name": "set topic to host name",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "$split(topic,'/')[1]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "27992b230d72f19f",
-        "type": "switch",
-        "z": "c4207c9fe61a900e",
-        "name": "not retained?",
-        "property": "retain",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": true,
-        "outputs": 1,
-        "x": 250,
-        "y": 60,
-        "wires": [
-            [
-                "b22cc992e37360fc"
-            ]
-        ]
-    },
-    {
-        "id": "b22cc992e37360fc",
-        "type": "json",
-        "z": "c4207c9fe61a900e",
-        "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 390,
-        "y": 60,
-        "wires": [
-            [
-                "46fb2d69cd82b25c"
-            ]
-        ]
-    },
-    {
-        "id": "882622dc891aeda6",
-        "type": "catch",
-        "z": "c4207c9fe61a900e",
-        "name": "",
-        "scope": [
-            "b22cc992e37360fc"
-        ],
-        "uncaught": false,
-        "x": 390,
-        "y": 140,
-        "wires": [
-            [
-                "46fb2d69cd82b25c"
-            ]
-        ]
-    },
-    {
-        "id": "e81b7e6a74a922a1",
-        "type": "status",
-        "z": "c4207c9fe61a900e",
-        "name": "",
-        "scope": null,
-        "x": 620,
-        "y": 200,
         "wires": [
             []
         ]
@@ -3776,7 +2988,7 @@
         "scope": [
             "29db695f97cc5757"
         ],
-        "x": 240,
+        "x": 300,
         "y": 220,
         "wires": [
             []
@@ -4052,7 +3264,7 @@
         "reduceInitType": "",
         "reduceFixup": "",
         "x": 550,
-        "y": 320,
+        "y": 460,
         "wires": [
             [
                 "98e07825f41a09a2"
@@ -4073,7 +3285,7 @@
         "property": "payload",
         "topi": "topic",
         "x": 670,
-        "y": 320,
+        "y": 460,
         "wires": [
             [
                 "1b5ab2bf7ea37b3b"
@@ -4097,45 +3309,11 @@
         "repair": false,
         "outputs": 1,
         "x": 840,
-        "y": 320,
+        "y": 460,
         "wires": [
             [
-                "60f145bb0461c216"
-            ]
-        ]
-    },
-    {
-        "id": "21af7493f52944f5",
-        "type": "ui_switch",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "Enable Automation",
-        "label": "Enable",
-        "tooltip": "",
-        "group": "25c7f0078ed443dd",
-        "order": 12,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "decouple": "true",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 430,
-        "y": 440,
-        "wires": [
-            [
-                "83d6d8f537b0c172"
+                "ba94cc02344092b6",
+                "0156a364439561a8"
             ]
         ]
     },
@@ -4153,95 +3331,20 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 380,
+        "x": 150,
+        "y": 520,
         "wires": [
             [
-                "21af7493f52944f5",
-                "784c9929fe789981"
+                "784c9929fe789981",
+                "6b40e38fa169c721"
             ]
         ]
-    },
-    {
-        "id": "83d6d8f537b0c172",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "nodered/automation/enable",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 620,
-        "y": 440,
-        "wires": [
-            [
-                "08157854eff23df6"
-            ]
-        ]
-    },
-    {
-        "id": "08157854eff23df6",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 735,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "60f145bb0461c216",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "automation",
-        "mode": "link",
-        "links": [
-            "8a8dae1a991c5376",
-            "e8aea84566ec0214",
-            "129472d1fd39302b",
-            "7acccda8a421da34",
-            "805a96f9c1561bcd",
-            "aafc4027ba2b619f"
-        ],
-        "x": 975,
-        "y": 320,
-        "wires": []
     },
     {
         "id": "5950aa6c0df32eb2",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "activate morning",
         "mode": "link",
         "links": [
@@ -4249,17 +3352,20 @@
             "07ccb0b07e6fada8",
             "ec4c4a28a59d105e",
             "08ca72b8e815a992",
-            "de84c77427959f96"
+            "de84c77427959f96",
+            "52f0cba3f9b87632",
+            "df41f3a116d28de2",
+            "2bb38044a932fa69"
         ],
-        "x": 815,
-        "y": 540,
+        "x": 1235,
+        "y": 500,
         "wires": []
     },
     {
         "id": "4ed8bcf218333395",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "activate night",
         "mode": "link",
         "links": [
@@ -4267,61 +3373,67 @@
             "3ed1a4d37d1548b4",
             "ec4c4a28a59d105e",
             "ec0f7c926936a835",
-            "de84c77427959f96"
+            "de84c77427959f96",
+            "0acba8178934baa1",
+            "012902774c9657f1",
+            "2bb38044a932fa69"
         ],
-        "x": 815,
-        "y": 700,
+        "x": 1235,
+        "y": 660,
         "wires": []
     },
     {
         "id": "b29a7ab55a3476e5",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "trigger main floor evening",
         "mode": "link",
         "links": [
-            "6cae9b1ccc68cb9e"
+            "6cae9b1ccc68cb9e",
+            "fe5fdd858e8b907d"
         ],
-        "x": 815,
-        "y": 660,
+        "x": 1235,
+        "y": 620,
         "wires": []
     },
     {
         "id": "6a4e3c8d5c47d1b7",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "trigger yard tribal",
         "mode": "link",
         "links": [
             "a6475288998b4e07",
-            "7ac02c6645861b20"
+            "7ac02c6645861b20",
+            "510f4653645e17d0"
         ],
-        "x": 975,
-        "y": 540,
+        "x": 1455,
+        "y": 500,
         "wires": []
     },
     {
         "id": "e0a9d45fbfcb3532",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "trigger yard spooky",
         "mode": "link",
         "links": [
             "a225232dc86a3b6f",
-            "f92a8accf963b5bf"
+            "f92a8accf963b5bf",
+            "feaf54e6c16337c1"
         ],
-        "x": 975,
-        "y": 580,
+        "x": 1455,
+        "y": 540,
         "wires": []
     },
     {
         "id": "758cfea08b622975",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "trigger yard jolly",
         "mode": "link",
         "links": [
@@ -4330,32 +3442,36 @@
             "a6475288998b4e07",
             "434961afc8e6268a",
             "f92a8accf963b5bf",
-            "7ac02c6645861b20"
+            "7ac02c6645861b20",
+            "cb0bc87b9e465a2f",
+            "feaf54e6c16337c1",
+            "510f4653645e17d0"
         ],
-        "x": 975,
-        "y": 620,
+        "x": 1455,
+        "y": 580,
         "wires": []
     },
     {
         "id": "b8723d53ddad808a",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "trigger yard standard",
         "mode": "link",
         "links": [
             "18f53b7627e645e4",
-            "bcf937398010e69d"
+            "bcf937398010e69d",
+            "b11c745f6ce17117"
         ],
-        "x": 975,
-        "y": 660,
+        "x": 1455,
+        "y": 620,
         "wires": []
     },
     {
         "id": "0156a364439561a8",
         "type": "switch",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "time",
         "property": "payload.time",
         "propertyType": "msg",
@@ -4379,8 +3495,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 3,
-        "x": 670,
-        "y": 620,
+        "x": 1070,
+        "y": 580,
         "wires": [
             [
                 "5950aa6c0df32eb2"
@@ -4398,7 +3514,7 @@
         "id": "c60a157e32809b1f",
         "type": "switch",
         "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
+        "g": "98cf3b8910bc4f22",
         "name": "theme",
         "property": "payload.theme",
         "propertyType": "msg",
@@ -4425,8 +3541,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 4,
-        "x": 850,
-        "y": 600,
+        "x": 1270,
+        "y": 560,
         "wires": [
             [
                 "6a4e3c8d5c47d1b7"
@@ -4443,27 +3559,10 @@
         ]
     },
     {
-        "id": "805a96f9c1561bcd",
-        "type": "link in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "1f88f9981ae4ba5f",
-        "name": "lighting",
-        "links": [
-            "60f145bb0461c216"
-        ],
-        "x": 575,
-        "y": 620,
-        "wires": [
-            [
-                "0156a364439561a8"
-            ]
-        ]
-    },
-    {
         "id": "ba94cc02344092b6",
         "type": "switch",
         "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
+        "g": "98cf3b8910bc4f22",
         "name": "time",
         "property": "payload.time",
         "propertyType": "msg",
@@ -4497,8 +3596,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 170,
-        "y": 620,
+        "x": 1070,
+        "y": 340,
         "wires": [
             [
                 "5ec89823b4e8d3aa"
@@ -4531,88 +3630,71 @@
         "id": "5ec89823b4e8d3aa",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
+        "g": "98cf3b8910bc4f22",
         "name": "morning",
         "mode": "link",
         "links": [
             "cab89ebfeca22623"
         ],
-        "x": 295,
-        "y": 540,
+        "x": 1235,
+        "y": 260,
         "wires": []
     },
     {
         "id": "cb25d319d7126480",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
+        "g": "98cf3b8910bc4f22",
         "name": "midday",
         "mode": "link",
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 295,
-        "y": 580,
+        "x": 1235,
+        "y": 300,
         "wires": []
     },
     {
         "id": "c633c043693d29f4",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
+        "g": "98cf3b8910bc4f22",
         "name": "afternoon",
         "mode": "link",
         "links": [
             "3fa2af1c1f32f8ee"
         ],
-        "x": 295,
-        "y": 620,
+        "x": 1235,
+        "y": 340,
         "wires": []
     },
     {
         "id": "fc34e1d6c55a3985",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
+        "g": "98cf3b8910bc4f22",
         "name": "evening",
         "mode": "link",
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 295,
-        "y": 660,
+        "x": 1235,
+        "y": 380,
         "wires": []
     },
     {
         "id": "0b72197569340d63",
         "type": "link out",
         "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
+        "g": "98cf3b8910bc4f22",
         "name": "night",
         "mode": "link",
         "links": [
             "71f42f61777d49d9"
         ],
-        "x": 295,
-        "y": 700,
+        "x": 1235,
+        "y": 420,
         "wires": []
-    },
-    {
-        "id": "aafc4027ba2b619f",
-        "type": "link in",
-        "z": "cbd68ba9caa96a3d",
-        "g": "fde389905b8f6545",
-        "name": "shades",
-        "links": [
-            "60f145bb0461c216"
-        ],
-        "x": 75,
-        "y": 620,
-        "wires": [
-            [
-                "ba94cc02344092b6"
-            ]
-        ]
     },
     {
         "id": "b2c19560f9da088a",
@@ -4631,7 +3713,7 @@
                 "module": "suncalc"
             }
         ],
-        "x": 310,
+        "x": 290,
         "y": 80,
         "wires": [
             [
@@ -4657,7 +3739,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
+        "x": 160,
         "y": 60,
         "wires": [
             [
@@ -4683,7 +3765,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
+        "x": 140,
         "y": 100,
         "wires": [
             [
@@ -4713,7 +3795,7 @@
         "topic": "now",
         "payload": "",
         "payloadType": "date",
-        "x": 280,
+        "x": 260,
         "y": 160,
         "wires": [
             [
@@ -4742,7 +3824,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 450,
+        "x": 430,
         "y": 120,
         "wires": [
             [
@@ -4767,7 +3849,7 @@
                 "module": "suncalc"
             }
         ],
-        "x": 570,
+        "x": 550,
         "y": 120,
         "wires": [
             [
@@ -4788,7 +3870,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 690,
+        "x": 670,
         "y": 120,
         "wires": [
             [
@@ -4801,7 +3883,7 @@
         "type": "change",
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
-        "name": "",
+        "name": "mqtt parameters",
         "rules": [
             {
                 "t": "set",
@@ -4830,7 +3912,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
+        "x": 820,
         "y": 120,
         "wires": [
             [
@@ -4848,7 +3930,7 @@
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 955,
+        "x": 935,
         "y": 120,
         "wires": []
     },
@@ -4857,7 +3939,7 @@
         "type": "change",
         "z": "cbd68ba9caa96a3d",
         "g": "98cf3b8910bc4f22",
-        "name": "",
+        "name": "truncate topic",
         "rules": [
             {
                 "t": "set",
@@ -4872,8 +3954,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 320,
+        "x": 400,
+        "y": 460,
         "wires": [
             [
                 "485df563c6545698"
@@ -4894,8 +3976,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 260,
+        "x": 150,
+        "y": 400,
         "wires": [
             [
                 "784c9929fe789981"
@@ -4916,13 +3998,104 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 320,
+        "x": 150,
+        "y": 460,
         "wires": [
             [
                 "784c9929fe789981"
             ]
         ]
+    },
+    {
+        "id": "6b40e38fa169c721",
+        "type": "ui_switch",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "Enable Automation",
+        "label": "Enable",
+        "tooltip": "",
+        "group": "25c7f0078ed443dd",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 410,
+        "y": 580,
+        "wires": [
+            [
+                "904fc8c279229b76"
+            ]
+        ]
+    },
+    {
+        "id": "904fc8c279229b76",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "mqtt parameters",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "nodered/automation/enable",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "2",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "retain",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 580,
+        "wires": [
+            [
+                "b907a058300b24db"
+            ]
+        ]
+    },
+    {
+        "id": "b907a058300b24db",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "dd7609e91ad64f63"
+        ],
+        "x": 715,
+        "y": 580,
+        "wires": []
     },
     {
         "id": "14e5342cb50f366f",
@@ -4932,8 +4105,8 @@
         "name": "return from chez nous main api",
         "mode": "return",
         "links": [],
-        "x": 735,
-        "y": 180,
+        "x": 1095,
+        "y": 200,
         "wires": []
     },
     {
@@ -4943,8 +4116,8 @@
         "g": "70e9b8db12799d18",
         "name": "send to chez nous main",
         "links": [],
-        "x": 475,
-        "y": 180,
+        "x": 835,
+        "y": 200,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -4972,8 +4145,8 @@
                 "type": "env"
             }
         ],
-        "x": 610,
-        "y": 180,
+        "x": 970,
+        "y": 200,
         "wires": [
             [
                 "14e5342cb50f366f"
@@ -4998,8 +4171,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 540,
-        "y": 80,
+        "x": 120,
+        "y": 200,
         "wires": [
             [
                 "73a1ec5ed8ebc167"
@@ -5020,8 +4193,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "msg",
-        "x": 1010,
-        "y": 80,
+        "x": 590,
+        "y": 200,
         "wires": []
     },
     {
@@ -5042,8 +4215,8 @@
                 "type": "str"
             }
         ],
-        "x": 740,
-        "y": 80,
+        "x": 320,
+        "y": 200,
         "wires": [
             [
                 "f3ab10cd192709b0"
@@ -5054,28 +4227,28 @@
         "id": "4d2dc9a6e42d0548",
         "type": "link out",
         "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
+        "g": "431ae4bdb7346af5",
         "name": "send to broker",
         "mode": "link",
         "links": [
             "dd7609e91ad64f63"
         ],
-        "x": 955,
-        "y": 280,
+        "x": 1115,
+        "y": 60,
         "wires": []
     },
     {
         "id": "8c9d79d2791e9b02",
         "type": "link call",
         "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
+        "g": "431ae4bdb7346af5",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 630,
-        "y": 300,
+        "x": 790,
+        "y": 80,
         "wires": [
             [
                 "7d283a2fc0d30093"
@@ -5086,7 +4259,7 @@
         "id": "7d283a2fc0d30093",
         "type": "subflow:4e89e7c952d56c09",
         "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
+        "g": "431ae4bdb7346af5",
         "name": "",
         "env": [
             {
@@ -5105,925 +4278,22 @@
                 "type": "env"
             }
         ],
-        "x": 840,
-        "y": 300,
+        "x": 1000,
+        "y": 80,
         "wires": [
             [
                 "4d2dc9a6e42d0548"
             ],
             [
-                "66730b89492663ed"
+                "3324951b765c9f12"
             ]
         ]
     },
     {
-        "id": "df7392117105107f",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "9c46129d149ab201",
-        "name": "return from basement hue api",
-        "mode": "return",
-        "links": [],
-        "x": 735,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "df79272de1bce7c1",
+        "id": "52f0cba3f9b87632",
         "type": "link in",
         "z": "c7141ffb22d64190",
-        "g": "9c46129d149ab201",
-        "name": "send to basement hue",
-        "links": [],
-        "x": 475,
-        "y": 580,
-        "wires": [
-            [
-                "0ceb59ac89fb79b7"
-            ]
-        ],
-        "outputLabels": [
-            "topic = uri, payload = body, method = HTTP request type"
-        ]
-    },
-    {
-        "id": "0ceb59ac89fb79b7",
-        "type": "subflow:5785c8d9f39df67e",
-        "z": "c7141ffb22d64190",
-        "g": "9c46129d149ab201",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "BASEMENT_HUE_ADDRESS",
-                "type": "env"
-            },
-            {
-                "name": "KEY",
-                "value": "BASEMENT_HUE_KEY",
-                "type": "env"
-            }
-        ],
-        "x": 610,
-        "y": 580,
-        "wires": [
-            [
-                "df7392117105107f"
-            ]
-        ]
-    },
-    {
-        "id": "497b08f40cd0b29c",
-        "type": "inject",
-        "z": "c7141ffb22d64190",
-        "g": "648ad874a33c7973",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 540,
-        "y": 480,
-        "wires": [
-            [
-                "7639b738a201d7c6"
-            ]
-        ]
-    },
-    {
-        "id": "9bcb520fd937694d",
-        "type": "debug",
-        "z": "c7141ffb22d64190",
-        "g": "648ad874a33c7973",
-        "name": "basement hue application key",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "payload[0].success.username",
-        "statusType": "msg",
-        "x": 1010,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "7639b738a201d7c6",
-        "type": "subflow:75bc72a16c4da2c8",
-        "z": "c7141ffb22d64190",
-        "g": "648ad874a33c7973",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "BASEMENT_HUE_ADDRESS",
-                "type": "env"
-            },
-            {
-                "name": "USERNAME",
-                "value": "nodered#cheznous",
-                "type": "str"
-            }
-        ],
-        "x": 740,
-        "y": 480,
-        "wires": [
-            [
-                "9bcb520fd937694d"
-            ]
-        ]
-    },
-    {
-        "id": "1209a8480a23b591",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 935,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "14944e047cba03fa",
-        "type": "link call",
-        "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "",
-        "links": [
-            "df79272de1bce7c1"
-        ],
-        "timeout": "30",
-        "x": 620,
-        "y": 700,
-        "wires": [
-            [
-                "a5f013472e32f50c"
-            ]
-        ]
-    },
-    {
-        "id": "5e2f8ae74b053fc9",
-        "type": "inject",
-        "z": "c7141ffb22d64190",
-        "g": "c1920e5e35019f3e",
-        "name": "at start",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "3",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 360,
-        "wires": [
-            [
-                "d0d4508d6f7f0a90"
-            ]
-        ]
-    },
-    {
-        "id": "a5f013472e32f50c",
-        "type": "subflow:4e89e7c952d56c09",
-        "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "BASEMENT_HUE_ADDRESS",
-                "type": "env"
-            },
-            {
-                "name": "KEY",
-                "value": "BASEMENT_HUE_KEY",
-                "type": "env"
-            },
-            {
-                "name": "TOPIC",
-                "value": "BASEMENT_HUE_TOPIC",
-                "type": "env"
-            }
-        ],
-        "x": 820,
-        "y": 700,
-        "wires": [
-            [
-                "1209a8480a23b591"
-            ],
-            [
-                "65911d8f953e99bf"
-            ]
-        ]
-    },
-    {
-        "id": "66730b89492663ed",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
-        "name": "chez nous main metadata",
-        "mode": "link",
-        "links": [
-            "45df49432927ee81",
-            "c19f87c7eda22e58",
-            "5d2fbcf5ba2aa9f3",
-            "a8349c3715609535",
-            "158f8d519f86243e"
-        ],
-        "x": 955,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "65911d8f953e99bf",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "basement hue metadata",
-        "mode": "link",
-        "links": [
-            "12dd9f03494a1dc5",
-            "e9f56188d7a72ce9",
-            "09ca011e26f258fb",
-            "5d2fbcf5ba2aa9f3",
-            "a8349c3715609535",
-            "158f8d519f86243e"
-        ],
-        "x": 935,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "d0d4508d6f7f0a90",
-        "type": "ui_button",
-        "z": "c7141ffb22d64190",
-        "g": "c1920e5e35019f3e",
-        "name": "Refresh Hue Dashboard Controls",
-        "group": "21f11f110d626f5a",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Refresh",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "fa-refresh",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 200,
-        "y": 420,
-        "wires": [
-            [
-                "a3259e3a59b7b9b6"
-            ]
-        ]
-    },
-    {
-        "id": "a3259e3a59b7b9b6",
-        "type": "change",
-        "z": "c7141ffb22d64190",
-        "g": "c1920e5e35019f3e",
-        "name": "get resources",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "resource",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "method",
-                "pt": "msg",
-                "to": "GET",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 220,
-        "y": 480,
-        "wires": [
-            [
-                "a86fc7d99ceeeffa"
-            ]
-        ]
-    },
-    {
-        "id": "74aa3076d752cf02",
-        "type": "link in",
-        "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
-        "name": "chez nous main to mqtt",
-        "links": [
-            "a86fc7d99ceeeffa"
-        ],
-        "x": 475,
-        "y": 300,
-        "wires": [
-            [
-                "8c9d79d2791e9b02"
-            ]
-        ]
-    },
-    {
-        "id": "f0dd8ad761257c53",
-        "type": "link in",
-        "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "basement hue to mqtt",
-        "links": [
-            "a86fc7d99ceeeffa"
-        ],
-        "x": 475,
-        "y": 700,
-        "wires": [
-            [
-                "14944e047cba03fa"
-            ]
-        ]
-    },
-    {
-        "id": "a86fc7d99ceeeffa",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "c1920e5e35019f3e",
-        "name": "hue to mqtt",
-        "mode": "link",
-        "links": [
-            "74aa3076d752cf02",
-            "f0dd8ad761257c53"
-        ],
-        "x": 335,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "2f6cc09457939ce2",
-        "type": "subflow:9c4e4702e4660adf",
-        "z": "1cf0490e7de2f93d",
-        "g": "87285e6bf01cff03",
-        "name": "",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "POWERVIEW_ADDRESS",
-                "type": "env"
-            }
-        ],
-        "x": 300,
-        "y": 60,
-        "wires": [
-            [
-                "618e79a58ab8143a"
-            ]
-        ]
-    },
-    {
-        "id": "7173aa38c9fa93dc",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "87285e6bf01cff03",
-        "name": "activate powerview scene",
-        "links": [
-            "9f3d946a03de6aa8",
-            "676c095bc7abab1e",
-            "92a8459af7433d08",
-            "d6caf0385ddcc934",
-            "094c793f3a335844",
-            "14f75f22c0a890cc",
-            "4e5a85bfe405e198",
-            "49039ff17e845f97"
-        ],
-        "x": 155,
-        "y": 60,
-        "wires": [
-            [
-                "2f6cc09457939ce2"
-            ]
-        ]
-    },
-    {
-        "id": "618e79a58ab8143a",
-        "type": "link out",
-        "z": "1cf0490e7de2f93d",
-        "g": "87285e6bf01cff03",
-        "name": "return from set powerview scene",
-        "mode": "return",
-        "links": [],
-        "x": 435,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "71f42f61777d49d9",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "close all shades",
-        "links": [
-            "08388db8f103b3a6",
-            "fa1ec72a4270321c",
-            "4a69e032bf396637",
-            "0b72197569340d63"
-        ],
-        "x": 155,
-        "y": 160,
-        "wires": [
-            [
-                "5db5ebf66b1cf16b"
-            ]
-        ]
-    },
-    {
-        "id": "af010737ecd1f8d6",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 570,
-        "y": 160,
-        "wires": [
-            [
-                "516be0577e70437c"
-            ]
-        ]
-    },
-    {
-        "id": "edec482fa879717d",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 1070,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4d9c62d6c2145813",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "open all shades",
-        "links": [
-            "852b9ed1563a9966",
-            "83801674771348bb",
-            "cbfb68d15d64faa7",
-            "7bb24887e8a01399",
-            "06d9f4b53b9bbb6e",
-            "5a5a3cf0e990c640",
-            "cb25d319d7126480",
-            "fc34e1d6c55a3985"
-        ],
-        "x": 155,
-        "y": 260,
-        "wires": [
-            [
-                "18709dea4106ee7e"
-            ]
-        ]
-    },
-    {
-        "id": "1b984be8838e6815",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 570,
-        "y": 260,
-        "wires": [
-            [
-                "7bc062570484d12c"
-            ]
-        ]
-    },
-    {
-        "id": "1b49d418ac1d553d",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 1070,
-        "y": 260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3fa2af1c1f32f8ee",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "open east shades",
-        "links": [
-            "1cd05bf9545f7fd2",
-            "74ebd31c8bede749",
-            "28eacfa3cb120cc6",
-            "c633c043693d29f4"
-        ],
-        "x": 155,
-        "y": 360,
-        "wires": [
-            [
-                "3849c71599f44bc7"
-            ]
-        ]
-    },
-    {
-        "id": "407f68edfd369a25",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 570,
-        "y": 360,
-        "wires": [
-            [
-                "bdce740848b412c8"
-            ]
-        ]
-    },
-    {
-        "id": "59f2f3b92b79087e",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 1070,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cab89ebfeca22623",
-        "type": "link in",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "open west shades",
-        "links": [
-            "5938d52c5b7dff7f",
-            "2cec2cb027e18141",
-            "f5ee7979f10b51f4",
-            "5ec89823b4e8d3aa"
-        ],
-        "x": 155,
-        "y": 460,
-        "wires": [
-            [
-                "5cdf5a1ca6546850"
-            ]
-        ]
-    },
-    {
-        "id": "c906095c1f350eda",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 570,
-        "y": 460,
-        "wires": [
-            [
-                "b56bca504084bf91"
-            ]
-        ]
-    },
-    {
-        "id": "e8a3ad681677753f",
-        "type": "link call",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 1070,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5db5ebf66b1cf16b",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "Close Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 160,
-        "wires": [
-            [
-                "af010737ecd1f8d6"
-            ]
-        ]
-    },
-    {
-        "id": "516be0577e70437c",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "Close Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 160,
-        "wires": [
-            [
-                "edec482fa879717d"
-            ]
-        ]
-    },
-    {
-        "id": "18709dea4106ee7e",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "Open Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 260,
-        "wires": [
-            [
-                "1b984be8838e6815"
-            ]
-        ]
-    },
-    {
-        "id": "7bc062570484d12c",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "Open Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 260,
-        "wires": [
-            [
-                "1b49d418ac1d553d"
-            ]
-        ]
-    },
-    {
-        "id": "3849c71599f44bc7",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "Open Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 360,
-        "wires": [
-            [
-                "407f68edfd369a25"
-            ]
-        ]
-    },
-    {
-        "id": "bdce740848b412c8",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "Close Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 360,
-        "wires": [
-            [
-                "59f2f3b92b79087e"
-            ]
-        ]
-    },
-    {
-        "id": "5cdf5a1ca6546850",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "Close Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 460,
-        "wires": [
-            [
-                "c906095c1f350eda"
-            ]
-        ]
-    },
-    {
-        "id": "b56bca504084bf91",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "Open Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 460,
-        "wires": [
-            [
-                "e8a3ad681677753f"
-            ]
-        ]
-    },
-    {
-        "id": "d15f40c8b2218d5c",
-        "type": "link out",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "powerview metadata",
-        "mode": "link",
-        "links": [
-            "35103a0bfa7e7587"
-        ],
-        "x": 835,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "942f0a1ef3d8ade3",
-        "type": "subflow:bdefba026bd44159",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "",
-        "x": 690,
-        "y": 560,
-        "wires": [
-            [
-                "d15f40c8b2218d5c"
-            ]
-        ]
-    },
-    {
-        "id": "52607b6f55574002",
-        "type": "inject",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "at start",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 560,
-        "wires": [
-            [
-                "8189dfca1b6265b7"
-            ]
-        ]
-    },
-    {
-        "id": "8189dfca1b6265b7",
-        "type": "ui_button",
-        "z": "1cf0490e7de2f93d",
-        "g": "cccd3d3ae4af3207",
-        "name": "Referesh PowerView Metadata",
-        "group": "e3fcd4654cf9f3fc",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Refresh",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "fa-refresh",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 430,
-        "y": 560,
-        "wires": [
-            [
-                "942f0a1ef3d8ade3"
-            ]
-        ]
-    },
-    {
-        "id": "07ccb0b07e6fada8",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
+        "g": "f718c99bbc8e36c9",
         "name": "main floor off",
         "links": [
             "981dbc2364b09d66",
@@ -6032,90 +4302,18 @@
             "5950aa6c0df32eb2"
         ],
         "x": 155,
-        "y": 80,
+        "y": 300,
         "wires": [
             [
-                "ec1b9da9a2a0dde0"
+                "72acc2a8bcbc1528"
             ]
         ]
     },
     {
-        "id": "3ed1a4d37d1548b4",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "main floor nightlight",
-        "links": [
-            "549a2335fb839c37",
-            "4c171923173c6e68",
-            "b290a3d4ebcd7653",
-            "4ed8bcf218333395"
-        ],
-        "x": 155,
-        "y": 180,
-        "wires": [
-            [
-                "1462dac4d5543f0a"
-            ]
-        ]
-    },
-    {
-        "id": "53509cbc2f897eb4",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 450,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6cae9b1ccc68cb9e",
-        "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
-        "name": "main floor sunset",
-        "links": [
-            "2837183323a61e04",
-            "b77799d3430f62c7",
-            "6f67a01c3ee8a16f",
-            "b29a7ab55a3476e5"
-        ],
-        "x": 155,
-        "y": 280,
-        "wires": [
-            [
-                "76f3eb6c53a0310c"
-            ]
-        ]
-    },
-    {
-        "id": "8ae7ee0c87df1191",
-        "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 430,
-        "y": 280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ec1b9da9a2a0dde0",
+        "id": "72acc2a8bcbc1528",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
         "name": "turn off",
         "rules": [
             {
@@ -6146,34 +4344,70 @@
         "to": "",
         "reg": false,
         "x": 250,
-        "y": 80,
+        "y": 300,
         "wires": [
             [
-                "33533dc0ac4ff870"
+                "a3fa25812dc1f4c0"
             ]
         ]
     },
     {
-        "id": "33533dc0ac4ff870",
+        "id": "a3fa25812dc1f4c0",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "1ce03cecd5db8bc6",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
         "x": 430,
-        "y": 80,
+        "y": 300,
         "wires": [
             []
         ]
     },
     {
-        "id": "1462dac4d5543f0a",
+        "id": "0acba8178934baa1",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
+        "name": "main floor nightlight",
+        "links": [
+            "549a2335fb839c37",
+            "4c171923173c6e68",
+            "b290a3d4ebcd7653",
+            "4ed8bcf218333395"
+        ],
+        "x": 155,
+        "y": 360,
+        "wires": [
+            [
+                "1c5888bd24d0a311"
+            ]
+        ]
+    },
+    {
+        "id": "37e508aaad9b809e",
+        "type": "link call",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 450,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c5888bd24d0a311",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "3483ce20c1996e6c",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
         "name": "night light",
         "rules": [
             {
@@ -6204,18 +4438,54 @@
         "to": "",
         "reg": false,
         "x": 260,
-        "y": 180,
+        "y": 360,
         "wires": [
             [
-                "53509cbc2f897eb4"
+                "37e508aaad9b809e"
             ]
         ]
     },
     {
-        "id": "76f3eb6c53a0310c",
+        "id": "fe5fdd858e8b907d",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
+        "name": "main floor sunset",
+        "links": [
+            "2837183323a61e04",
+            "b77799d3430f62c7",
+            "6f67a01c3ee8a16f",
+            "b29a7ab55a3476e5"
+        ],
+        "x": 155,
+        "y": 420,
+        "wires": [
+            [
+                "64afce8ff0b75f48"
+            ]
+        ]
+    },
+    {
+        "id": "dce6b6fd885e2956",
+        "type": "link call",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 430,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "64afce8ff0b75f48",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "e1fa765ec5a5ebd7",
+        "z": "c7141ffb22d64190",
+        "g": "f718c99bbc8e36c9",
         "name": "sunset",
         "rules": [
             {
@@ -6246,18 +4516,18 @@
         "to": "",
         "reg": false,
         "x": 250,
-        "y": 280,
+        "y": 420,
         "wires": [
             [
-                "8ae7ee0c87df1191"
+                "dce6b6fd885e2956"
             ]
         ]
     },
     {
-        "id": "08ca72b8e815a992",
+        "id": "df41f3a116d28de2",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "00ad2b71a9c29a21",
+        "z": "c7141ffb22d64190",
+        "g": "f848d645bd1abc5b",
         "name": "main bathroom off",
         "links": [
             "e696e0a2acb678c2",
@@ -6269,18 +4539,18 @@
             "5950aa6c0df32eb2"
         ],
         "x": 155,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
-                "2736157993771007"
+                "a122f1a4fc3399e5"
             ]
         ]
     },
     {
-        "id": "2736157993771007",
+        "id": "a122f1a4fc3399e5",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "00ad2b71a9c29a21",
+        "z": "c7141ffb22d64190",
+        "g": "f848d645bd1abc5b",
         "name": "turn off",
         "rules": [
             {
@@ -6311,50 +4581,50 @@
         "to": "",
         "reg": false,
         "x": 250,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
-                "0cb4aa086519cdc3"
+                "12b6bc8a0257750a"
             ]
         ]
     },
     {
-        "id": "0cb4aa086519cdc3",
+        "id": "12b6bc8a0257750a",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "00ad2b71a9c29a21",
+        "z": "c7141ffb22d64190",
+        "g": "f848d645bd1abc5b",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
         "x": 430,
-        "y": 440,
+        "y": 520,
         "wires": [
             []
         ]
     },
     {
-        "id": "3deabbac44606076",
+        "id": "200e1af02e26479b",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "513bc529c9c10fa0",
+        "z": "c7141ffb22d64190",
+        "g": "f848d645bd1abc5b",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
         "x": 450,
-        "y": 540,
+        "y": 580,
         "wires": [
             []
         ]
     },
     {
-        "id": "ec0f7c926936a835",
+        "id": "012902774c9657f1",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "513bc529c9c10fa0",
+        "z": "c7141ffb22d64190",
+        "g": "f848d645bd1abc5b",
         "name": "main bathroom nightlight",
         "links": [
             "1fa973a7d8e65e3c",
@@ -6364,18 +4634,18 @@
             "4ed8bcf218333395"
         ],
         "x": 155,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
-                "1af873ecc08861c7"
+                "90cec6147a7de28f"
             ]
         ]
     },
     {
-        "id": "1af873ecc08861c7",
+        "id": "90cec6147a7de28f",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "513bc529c9c10fa0",
+        "z": "c7141ffb22d64190",
+        "g": "f848d645bd1abc5b",
         "name": "night light",
         "rules": [
             {
@@ -6406,34 +4676,34 @@
         "to": "",
         "reg": false,
         "x": 260,
-        "y": 540,
+        "y": 580,
         "wires": [
             [
-                "3deabbac44606076"
+                "200e1af02e26479b"
             ]
         ]
     },
     {
-        "id": "51e789d7146d158c",
+        "id": "4b146e0f1b9bcccb",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "26622bde8cf9b262",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 1050,
-        "y": 180,
+        "x": 1090,
+        "y": 360,
         "wires": [
             []
         ]
     },
     {
-        "id": "bcf937398010e69d",
+        "id": "b11c745f6ce17117",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "26622bde8cf9b262",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "yard sunset",
         "links": [
             "e270017761dfd27d",
@@ -6441,19 +4711,19 @@
             "bbabd588c05b979f",
             "b8723d53ddad808a"
         ],
-        "x": 775,
-        "y": 180,
+        "x": 815,
+        "y": 360,
         "wires": [
             [
-                "8c8685c28661026d"
+                "7e843abc77537f92"
             ]
         ]
     },
     {
-        "id": "8c8685c28661026d",
+        "id": "7e843abc77537f92",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "26622bde8cf9b262",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "sunset",
         "rules": [
             {
@@ -6483,35 +4753,35 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 180,
+        "x": 910,
+        "y": 360,
         "wires": [
             [
-                "51e789d7146d158c"
+                "4b146e0f1b9bcccb"
             ]
         ]
     },
     {
-        "id": "973da59b5e8db353",
+        "id": "52d3dd927cb7e37e",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "c083702f726a3c76",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 1050,
-        "y": 480,
+        "x": 1090,
+        "y": 540,
         "wires": [
             []
         ]
     },
     {
-        "id": "434961afc8e6268a",
+        "id": "cb0bc87b9e465a2f",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "c083702f726a3c76",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "yard jolly",
         "links": [
             "b0ee0f2f8155fe9b",
@@ -6519,19 +4789,19 @@
             "83b840b1c5858876",
             "758cfea08b622975"
         ],
-        "x": 775,
-        "y": 480,
+        "x": 815,
+        "y": 540,
         "wires": [
             [
-                "c639897051efe373"
+                "da79b96d161e1c28"
             ]
         ]
     },
     {
-        "id": "c639897051efe373",
+        "id": "da79b96d161e1c28",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "c083702f726a3c76",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "jolly",
         "rules": [
             {
@@ -6561,19 +4831,19 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 480,
+        "x": 910,
+        "y": 540,
         "wires": [
             [
-                "973da59b5e8db353"
+                "52d3dd927cb7e37e"
             ]
         ]
     },
     {
-        "id": "de84c77427959f96",
+        "id": "2bb38044a932fa69",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "1f51b2e96d97963e",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "yard off",
         "links": [
             "549a2335fb839c37",
@@ -6585,19 +4855,19 @@
             "5950aa6c0df32eb2",
             "4ed8bcf218333395"
         ],
-        "x": 775,
-        "y": 80,
+        "x": 815,
+        "y": 300,
         "wires": [
             [
-                "f224835045d99471"
+                "64a68d2a2d2e93cd"
             ]
         ]
     },
     {
-        "id": "f224835045d99471",
+        "id": "64a68d2a2d2e93cd",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "1f51b2e96d97963e",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "turn off",
         "rules": [
             {
@@ -6627,51 +4897,51 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 80,
+        "x": 910,
+        "y": 300,
         "wires": [
             [
-                "30ad3f93b6509f97"
+                "7f619f84fcad1d75"
             ]
         ]
     },
     {
-        "id": "30ad3f93b6509f97",
+        "id": "7f619f84fcad1d75",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "1f51b2e96d97963e",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 1050,
-        "y": 80,
+        "x": 1090,
+        "y": 300,
         "wires": [
             []
         ]
     },
     {
-        "id": "6bc33e9277b4e511",
+        "id": "d43f117e07910821",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "73df20e8ccdbf56c",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 1070,
-        "y": 380,
+        "x": 1110,
+        "y": 480,
         "wires": [
             []
         ]
     },
     {
-        "id": "f92a8accf963b5bf",
+        "id": "feaf54e6c16337c1",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "73df20e8ccdbf56c",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "yard spooky",
         "links": [
             "b0ee0f2f8155fe9b",
@@ -6683,19 +4953,19 @@
             "e0a9d45fbfcb3532",
             "758cfea08b622975"
         ],
-        "x": 775,
-        "y": 380,
+        "x": 815,
+        "y": 480,
         "wires": [
             [
-                "9f798cee87b95525"
+                "d92030613c5ce50e"
             ]
         ]
     },
     {
-        "id": "9f798cee87b95525",
+        "id": "d92030613c5ce50e",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "73df20e8ccdbf56c",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "spooky",
         "rules": [
             {
@@ -6725,35 +4995,35 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
-        "y": 380,
+        "x": 920,
+        "y": 480,
         "wires": [
             [
-                "6bc33e9277b4e511"
+                "d43f117e07910821"
             ]
         ]
     },
     {
-        "id": "ccd0f26bea9262e7",
+        "id": "a80f7d1788543bf0",
         "type": "link call",
-        "z": "e44149a93fbe9b1b",
-        "g": "f6597e2f37dd2636",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "",
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 1050,
-        "y": 280,
+        "x": 1090,
+        "y": 420,
         "wires": [
             []
         ]
     },
     {
-        "id": "7ac02c6645861b20",
+        "id": "510f4653645e17d0",
         "type": "link in",
-        "z": "e44149a93fbe9b1b",
-        "g": "f6597e2f37dd2636",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "yard tribal",
         "links": [
             "b0ee0f2f8155fe9b",
@@ -6765,19 +5035,19 @@
             "6a4e3c8d5c47d1b7",
             "758cfea08b622975"
         ],
-        "x": 775,
-        "y": 280,
+        "x": 815,
+        "y": 420,
         "wires": [
             [
-                "e444798d5fd55433"
+                "67013f62ca5bcb43"
             ]
         ]
     },
     {
-        "id": "e444798d5fd55433",
+        "id": "67013f62ca5bcb43",
         "type": "change",
-        "z": "e44149a93fbe9b1b",
-        "g": "f6597e2f37dd2636",
+        "z": "c7141ffb22d64190",
+        "g": "f8dce80b21d7f706",
         "name": "tribal",
         "rules": [
             {
@@ -6807,11 +5077,1031 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
-        "y": 280,
+        "x": 910,
+        "y": 420,
         "wires": [
             [
-                "ccd0f26bea9262e7"
+                "a80f7d1788543bf0"
+            ]
+        ]
+    },
+    {
+        "id": "3324951b765c9f12",
+        "type": "ui_template",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "group": "21f11f110d626f5a",
+        "name": "Chez Nous Main Controls",
+        "order": 2,
+        "width": "6",
+        "height": "10",
+        "format": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"(groupname, group) in type\">\n            <p style=\"text-align:center\">{{groupname}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scenename}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1210,
+        "y": 100,
+        "wires": [
+            [
+                "2736286441feda07"
+            ]
+        ]
+    },
+    {
+        "id": "2736286441feda07",
+        "type": "link call",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "name": "",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "timeout": "30",
+        "x": 1450,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7def18ac26259af3",
+        "type": "inject",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "abb71db57910be2f"
+            ]
+        ]
+    },
+    {
+        "id": "abb71db57910be2f",
+        "type": "ui_button",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "name": "Refresh Chez Nous Main Controls",
+        "group": "21f11f110d626f5a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-refresh",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "1ee8aff15eae874f"
+            ]
+        ]
+    },
+    {
+        "id": "1ee8aff15eae874f",
+        "type": "change",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "name": "get resources",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "8c9d79d2791e9b02"
+            ]
+        ]
+    },
+    {
+        "id": "735f828714a9c98f",
+        "type": "link out",
+        "z": "810a8b527afd2b1b",
+        "g": "cde8d276df445e2f",
+        "name": "return from basement hue api",
+        "mode": "return",
+        "links": [],
+        "x": 1095,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "64274eb0d8b9e5dd",
+        "type": "link in",
+        "z": "810a8b527afd2b1b",
+        "g": "cde8d276df445e2f",
+        "name": "send to basement hue",
+        "links": [],
+        "x": 835,
+        "y": 200,
+        "wires": [
+            [
+                "33b523d447c86f23"
+            ]
+        ],
+        "outputLabels": [
+            "topic = uri, payload = body, method = HTTP request type"
+        ]
+    },
+    {
+        "id": "33b523d447c86f23",
+        "type": "subflow:5785c8d9f39df67e",
+        "z": "810a8b527afd2b1b",
+        "g": "cde8d276df445e2f",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "BASEMENT_HUE_ADDRESS",
+                "type": "env"
+            },
+            {
+                "name": "KEY",
+                "value": "BASEMENT_HUE_KEY",
+                "type": "env"
+            }
+        ],
+        "x": 970,
+        "y": 200,
+        "wires": [
+            [
+                "735f828714a9c98f"
+            ]
+        ]
+    },
+    {
+        "id": "608e6356fbb9f384",
+        "type": "inject",
+        "z": "810a8b527afd2b1b",
+        "g": "e7188f251e14aea1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "a12bdbda86868f06"
+            ]
+        ]
+    },
+    {
+        "id": "26973bac8c6a9dba",
+        "type": "debug",
+        "z": "810a8b527afd2b1b",
+        "g": "e7188f251e14aea1",
+        "name": "basement hue application key",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload[0].success.username",
+        "statusType": "msg",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a12bdbda86868f06",
+        "type": "subflow:75bc72a16c4da2c8",
+        "z": "810a8b527afd2b1b",
+        "g": "e7188f251e14aea1",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "BASEMENT_HUE_ADDRESS",
+                "type": "env"
+            },
+            {
+                "name": "USERNAME",
+                "value": "nodered#cheznous",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "26973bac8c6a9dba"
+            ]
+        ]
+    },
+    {
+        "id": "d7f8a0d309dca688",
+        "type": "link out",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "dd7609e91ad64f63"
+        ],
+        "x": 1075,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5c8d9ca80254e11c",
+        "type": "link call",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "",
+        "links": [
+            "64274eb0d8b9e5dd"
+        ],
+        "timeout": "30",
+        "x": 760,
+        "y": 80,
+        "wires": [
+            [
+                "7dcd1d246a096330"
+            ]
+        ]
+    },
+    {
+        "id": "7dcd1d246a096330",
+        "type": "subflow:4e89e7c952d56c09",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "BASEMENT_HUE_ADDRESS",
+                "type": "env"
+            },
+            {
+                "name": "KEY",
+                "value": "BASEMENT_HUE_KEY",
+                "type": "env"
+            },
+            {
+                "name": "TOPIC",
+                "value": "BASEMENT_HUE_TOPIC",
+                "type": "env"
+            }
+        ],
+        "x": 960,
+        "y": 80,
+        "wires": [
+            [
+                "d7f8a0d309dca688"
+            ],
+            [
+                "a28b1c17c4f3e3ee"
+            ]
+        ]
+    },
+    {
+        "id": "80384d1e957ed3ca",
+        "type": "link call",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "",
+        "links": [
+            "64274eb0d8b9e5dd"
+        ],
+        "timeout": "30",
+        "x": 1400,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a28b1c17c4f3e3ee",
+        "type": "ui_template",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "group": "178c0c0ade9cbfc5",
+        "name": "Basement Hue Controls",
+        "order": 2,
+        "width": "6",
+        "height": "10",
+        "format": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"(groupname, group) in type\">\n            <p style=\"text-align:center\">{{groupname}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scenename}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1170,
+        "y": 100,
+        "wires": [
+            [
+                "80384d1e957ed3ca"
+            ]
+        ]
+    },
+    {
+        "id": "678145510dc4c76f",
+        "type": "inject",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "3",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "d638e45951bb8819"
+            ]
+        ]
+    },
+    {
+        "id": "d638e45951bb8819",
+        "type": "ui_button",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "Refresh Basement Hue Controls",
+        "group": "178c0c0ade9cbfc5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-refresh",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 330,
+        "y": 80,
+        "wires": [
+            [
+                "a2e5d0064800b5fb"
+            ]
+        ]
+    },
+    {
+        "id": "a2e5d0064800b5fb",
+        "type": "change",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "get resources",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "resource",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "method",
+                "pt": "msg",
+                "to": "GET",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 80,
+        "wires": [
+            [
+                "5c8d9ca80254e11c"
+            ]
+        ]
+    },
+    {
+        "id": "2f6cc09457939ce2",
+        "type": "subflow:9c4e4702e4660adf",
+        "z": "1cf0490e7de2f93d",
+        "g": "87285e6bf01cff03",
+        "name": "",
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "POWERVIEW_ADDRESS",
+                "type": "env"
+            }
+        ],
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "618e79a58ab8143a"
+            ]
+        ]
+    },
+    {
+        "id": "7173aa38c9fa93dc",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "87285e6bf01cff03",
+        "name": "activate powerview scene",
+        "links": [
+            "9f3d946a03de6aa8",
+            "676c095bc7abab1e",
+            "92a8459af7433d08",
+            "d6caf0385ddcc934",
+            "094c793f3a335844",
+            "14f75f22c0a890cc",
+            "4e5a85bfe405e198",
+            "49039ff17e845f97"
+        ],
+        "x": 155,
+        "y": 160,
+        "wires": [
+            [
+                "2f6cc09457939ce2"
+            ]
+        ]
+    },
+    {
+        "id": "618e79a58ab8143a",
+        "type": "link out",
+        "z": "1cf0490e7de2f93d",
+        "g": "87285e6bf01cff03",
+        "name": "return from set powerview scene",
+        "mode": "return",
+        "links": [],
+        "x": 435,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "71f42f61777d49d9",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "close all shades",
+        "links": [
+            "08388db8f103b3a6",
+            "fa1ec72a4270321c",
+            "4a69e032bf396637",
+            "0b72197569340d63"
+        ],
+        "x": 155,
+        "y": 260,
+        "wires": [
+            [
+                "5db5ebf66b1cf16b"
+            ]
+        ]
+    },
+    {
+        "id": "af010737ecd1f8d6",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 570,
+        "y": 260,
+        "wires": [
+            [
+                "516be0577e70437c"
+            ]
+        ]
+    },
+    {
+        "id": "edec482fa879717d",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 1070,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d9c62d6c2145813",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "open all shades",
+        "links": [
+            "852b9ed1563a9966",
+            "83801674771348bb",
+            "cbfb68d15d64faa7",
+            "7bb24887e8a01399",
+            "06d9f4b53b9bbb6e",
+            "5a5a3cf0e990c640",
+            "cb25d319d7126480",
+            "fc34e1d6c55a3985"
+        ],
+        "x": 155,
+        "y": 360,
+        "wires": [
+            [
+                "18709dea4106ee7e"
+            ]
+        ]
+    },
+    {
+        "id": "1b984be8838e6815",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "7bc062570484d12c"
+            ]
+        ]
+    },
+    {
+        "id": "1b49d418ac1d553d",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 1070,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3fa2af1c1f32f8ee",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "open east shades",
+        "links": [
+            "1cd05bf9545f7fd2",
+            "74ebd31c8bede749",
+            "28eacfa3cb120cc6",
+            "c633c043693d29f4"
+        ],
+        "x": 155,
+        "y": 460,
+        "wires": [
+            [
+                "3849c71599f44bc7"
+            ]
+        ]
+    },
+    {
+        "id": "407f68edfd369a25",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 570,
+        "y": 460,
+        "wires": [
+            [
+                "bdce740848b412c8"
+            ]
+        ]
+    },
+    {
+        "id": "59f2f3b92b79087e",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 1070,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cab89ebfeca22623",
+        "type": "link in",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "open west shades",
+        "links": [
+            "5938d52c5b7dff7f",
+            "2cec2cb027e18141",
+            "f5ee7979f10b51f4",
+            "5ec89823b4e8d3aa"
+        ],
+        "x": 155,
+        "y": 560,
+        "wires": [
+            [
+                "5cdf5a1ca6546850"
+            ]
+        ]
+    },
+    {
+        "id": "c906095c1f350eda",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 570,
+        "y": 560,
+        "wires": [
+            [
+                "b56bca504084bf91"
+            ]
+        ]
+    },
+    {
+        "id": "e8a3ad681677753f",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 1070,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5db5ebf66b1cf16b",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "Close Dining Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Close Dining Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "af010737ecd1f8d6"
+            ]
+        ]
+    },
+    {
+        "id": "516be0577e70437c",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "Close Living Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Close Living Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 820,
+        "y": 260,
+        "wires": [
+            [
+                "edec482fa879717d"
+            ]
+        ]
+    },
+    {
+        "id": "18709dea4106ee7e",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "Open Dining Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Open Dining Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "1b984be8838e6815"
+            ]
+        ]
+    },
+    {
+        "id": "7bc062570484d12c",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "Open Living Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Open Living Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 820,
+        "y": 360,
+        "wires": [
+            [
+                "1b49d418ac1d553d"
+            ]
+        ]
+    },
+    {
+        "id": "3849c71599f44bc7",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "Open Dining Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Open Dining Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "407f68edfd369a25"
+            ]
+        ]
+    },
+    {
+        "id": "bdce740848b412c8",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "Close Living Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Close Living Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 820,
+        "y": 460,
+        "wires": [
+            [
+                "59f2f3b92b79087e"
+            ]
+        ]
+    },
+    {
+        "id": "5cdf5a1ca6546850",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "Close Dining Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Close Dining Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 320,
+        "y": 560,
+        "wires": [
+            [
+                "c906095c1f350eda"
+            ]
+        ]
+    },
+    {
+        "id": "b56bca504084bf91",
+        "type": "subflow:60301f96c2ad2e7c",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "Open Living Room Shades",
+        "env": [
+            {
+                "name": "NAME",
+                "value": "Open Living Room Shades",
+                "type": "str"
+            }
+        ],
+        "x": 820,
+        "y": 560,
+        "wires": [
+            [
+                "e8a3ad681677753f"
+            ]
+        ]
+    },
+    {
+        "id": "942f0a1ef3d8ade3",
+        "type": "subflow:bdefba026bd44159",
+        "z": "1cf0490e7de2f93d",
+        "g": "b48f76e13fc77aa7",
+        "name": "",
+        "x": 690,
+        "y": 60,
+        "wires": [
+            [
+                "85c26fe91dc71759"
+            ]
+        ]
+    },
+    {
+        "id": "85c26fe91dc71759",
+        "type": "ui_template",
+        "z": "1cf0490e7de2f93d",
+        "g": "b48f76e13fc77aa7",
+        "group": "e3fcd4654cf9f3fc",
+        "name": "Window Shade Controls",
+        "order": 2,
+        "width": "6",
+        "height": "10",
+        "format": "<div>\n    <div ng-repeat=\"(roomname, room) in msg.payload\" style=\"text-align:center\">\n        <p>{{roomname}}</p>\n        <md-button style=\"display:inline-block;margin:1px;text-align:center\" ng-repeat=\"(scenename, scene) in room\"\n            ng-click=\"send({payload: scene})\">\n            {{scenename}}\n        </md-button>\n    </div>\n</div>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 930,
+        "y": 60,
+        "wires": [
+            [
+                "175aa8cd2233a871"
+            ]
+        ]
+    },
+    {
+        "id": "175aa8cd2233a871",
+        "type": "link call",
+        "z": "1cf0490e7de2f93d",
+        "g": "b48f76e13fc77aa7",
+        "name": "",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "timeout": "30",
+        "x": 1170,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75bff418d99b8d56",
+        "type": "inject",
+        "z": "1cf0490e7de2f93d",
+        "g": "b48f76e13fc77aa7",
+        "name": "at start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 60,
+        "wires": [
+            [
+                "7026f2de142e8ef2"
+            ]
+        ]
+    },
+    {
+        "id": "7026f2de142e8ef2",
+        "type": "ui_button",
+        "z": "1cf0490e7de2f93d",
+        "g": "b48f76e13fc77aa7",
+        "name": "Referesh PowerView Metadata",
+        "group": "e3fcd4654cf9f3fc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Refresh",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-refresh",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 430,
+        "y": 60,
+        "wires": [
+            [
+                "942f0a1ef3d8ade3"
             ]
         ]
     },
@@ -6884,7 +6174,11 @@
             "831fb3f42898b50f",
             "08157854eff23df6",
             "ff64f46de7793f7b",
-            "baa82bec436a6471"
+            "baa82bec436a6471",
+            "1e38e8b95d3fbfe0",
+            "d7f8a0d309dca688",
+            "9ec7e31b8d604ece",
+            "b907a058300b24db"
         ],
         "x": 155,
         "y": 80,
@@ -6935,27 +6229,9 @@
         "y": 200,
         "wires": [
             [
-                "6db5c2fcb5fd08e3"
+                "a8211a5387f8494c"
             ]
         ]
-    },
-    {
-        "id": "6db5c2fcb5fd08e3",
-        "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "group": "991046045b37e3ee",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "MQTT Broker Queue",
-        "label": "Queue",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 560,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "461d49b47e87e402",
@@ -6998,27 +6274,9 @@
         "y": 140,
         "wires": [
             [
-                "5adbc418ab39d29a"
+                "d59aa94341d8a721"
             ]
         ]
-    },
-    {
-        "id": "5adbc418ab39d29a",
-        "type": "ui_text",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "group": "991046045b37e3ee",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "MQTT Broker Status",
-        "label": "Status",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 560,
-        "y": 140,
-        "wires": []
     },
     {
         "id": "0888e9faa06fe4e5",
@@ -7028,7 +6286,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 530,
+        "x": 1050,
         "y": 300,
         "wires": []
     },
@@ -7038,13 +6296,13 @@
         "z": "6e3ca82457d27245",
         "g": "f82a1f6e963f443a",
         "name": "response",
-        "func": "const date = new Date()\nconst timestamp = '-' +\n    date.getFullYear() +\n    '-' +\n    String(date.getMonth() + 1).padStart(2, '0') +\n    '-' +\n    String(date.getDate()).padStart(2, '0')\n\nmsg.headers = {\n    'Content-Type': 'text/plain; charset=UTF-8',\n    'Content-Disposition': 'attachment; filename=\"sun-positions' + timestamp + '.csv\"'\n}\n\nmsg.payload = global.get('sun-positions')\n\nreturn msg",
+        "func": "const date = new Date()\nconst timestamp = '-' +\n    date.getFullYear() +\n    '-' +\n    String(date.getMonth() + 1).padStart(2, '0') +\n    '-' +\n    String(date.getDate()).padStart(2, '0')\n\nmsg.headers = {\n    'Content-Type': 'text/plain; charset=UTF-8',\n    'Content-Disposition': 'attachment; filename=\"sun-positions' + timestamp + '.csv\"'\n}\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
+        "x": 920,
         "y": 300,
         "wires": [
             [
@@ -7066,147 +6324,111 @@
         "y": 300,
         "wires": [
             [
+                "9c63c2cfacf4884a"
+            ]
+        ]
+    },
+    {
+        "id": "d59aa94341d8a721",
+        "type": "link out",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "name": "broker connection status",
+        "mode": "link",
+        "links": [
+            "71f9700a0df07aec",
+            "20f266f186a55d9c"
+        ],
+        "x": 475,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a8211a5387f8494c",
+        "type": "link out",
+        "z": "6e3ca82457d27245",
+        "g": "e49c9571ddd5102f",
+        "name": "broker queue status",
+        "mode": "link",
+        "links": [
+            "c903e305be3f56a3",
+            "9dbdef46ce2f066e"
+        ],
+        "x": 475,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "77b5666f31ee5b17",
+        "type": "csv",
+        "z": "6e3ca82457d27245",
+        "g": "f82a1f6e963f443a",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "time,altitude,azimuth",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 790,
+        "y": 300,
+        "wires": [
+            [
                 "48da82dc3974c2b3"
             ]
         ]
     },
     {
-        "id": "68ca4947dd6cf14e",
+        "id": "9c63c2cfacf4884a",
+        "type": "change",
+        "z": "6e3ca82457d27245",
+        "g": "f82a1f6e963f443a",
+        "name": "global.sun-positions",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sun-positions",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 300,
+        "wires": [
+            [
+                "ff476275160539a3"
+            ]
+        ]
+    },
+    {
+        "id": "ff476275160539a3",
         "type": "function",
         "z": "6e3ca82457d27245",
         "g": "f82a1f6e963f443a",
-        "name": "url",
-        "func": "/*global os*/\n\nmsg.payload = 'http://' + os.hostname + '.local:1880/sunpositions'\nreturn msg",
+        "name": "format for csv",
+        "func": "msg.payload.forEach((/** @type {{ time: string | number | Date; }} */ position) => {\n\n    position.time = new Date(position.time).toLocaleTimeString()\n\n})\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [
-            {
-                "var": "os",
-                "module": "os"
-            }
-        ],
-        "x": 350,
-        "y": 360,
+        "libs": [],
+        "x": 640,
+        "y": 300,
         "wires": [
             [
-                "ccc46e9ff7a15f4e"
+                "77b5666f31ee5b17"
             ]
         ]
-    },
-    {
-        "id": "ccc46e9ff7a15f4e",
-        "type": "ui_template",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "group": "8055574ccb17e8ed",
-        "name": "Download CSV",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"width:100%;text-align:center;\">\n    <a style=\"color:white;text-decoration:none;\" href=\"{{msg.payload}}\">Download</a>\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 500,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "98380b5a50270d78",
-        "type": "inject",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "at start",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 360,
-        "wires": [
-            [
-                "68ca4947dd6cf14e"
-            ]
-        ]
-    },
-    {
-        "id": "5f86349da8f86e61",
-        "type": "function",
-        "z": "6e3ca82457d27245",
-        "g": "80212e6229ce755b",
-        "name": "send stats",
-        "func": "/*global os*/\n\nconst hostname = os.hostname()\n\n/**\n* @param {string} name\n*/\nfunction topic(name) {\n\n    return 'os/' + hostname + '/' + name\n\n}\n\n/**\n* @param {string} name\n* @param {any} value\n*/\nfunction message(name, value) {\n\n    const newMsg = RED.util.cloneMessage(msg)\n\n    newMsg.payload = value\n    newMsg.topic = topic(name)\n    newMsg.qos = 2\n    newMsg.retain = false\n    return newMsg\n\n}\n\nconst msgs = []\n\nmsgs.push(message('loadavg', os.loadavg()[0]))\nmsgs.push(message('freemem', os.freemem()))\n\nreturn [msgs]",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "os",
-                "module": "os"
-            }
-        ],
-        "x": 410,
-        "y": 460,
-        "wires": [
-            [
-                "baa82bec436a6471"
-            ]
-        ]
-    },
-    {
-        "id": "de168bcd359b4aa8",
-        "type": "inject",
-        "z": "6e3ca82457d27245",
-        "g": "80212e6229ce755b",
-        "name": "every minute",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "60",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
-        "y": 460,
-        "wires": [
-            [
-                "5f86349da8f86e61"
-            ]
-        ]
-    },
-    {
-        "id": "baa82bec436a6471",
-        "type": "link out",
-        "z": "6e3ca82457d27245",
-        "g": "80212e6229ce755b",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 515,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "c27168b168847790",
@@ -7329,33 +6551,13 @@
                 "4dd293c16815dce3"
             ],
             [
-                "8549e51620377f66"
+                "e7bc056a5ca25bc5"
             ]
         ],
         "outputLabels": [
             "chart",
             "zenith",
-            ""
-        ]
-    },
-    {
-        "id": "625b9718a13e0340",
-        "type": "template",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "html table",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "<table width=\"100%\" cellspacing=\"5px\" cellpadding=\"5px\">\n    <caption>zenith</caption>\n    <tr>\n        <th>time</th>\n        <th>altitude</th>\n        <th>azimuth</th>\n    </tr>\n    <tr>\n        <td>{{{payload.time}}}</td>\n        <td>{{{payload.altitude}}}</td>\n        <td>{{{payload.azimuth}}}</td>\n    </tr>\n</table>\n",
-        "output": "str",
-        "x": 760,
-        "y": 100,
-        "wires": [
-            [
-                "f72b11239792afcf"
-            ]
+            "positions"
         ]
     },
     {
@@ -7368,13 +6570,13 @@
         "order": 2,
         "width": "6",
         "height": "2",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "format": "<div>\n    <table width=\"100%\" cellspacing=\"5px\" cellpadding=\"5px\">\n        <caption>zenith</caption>\n        <tr>\n            <th>time</th>\n            <th>altitude</th>\n            <th>azimuth</th>\n        </tr>\n        <tr>\n            <td>{{msg.payload.time}}</td>\n            <td>{{msg.payload.altitude}}</td>\n            <td>{{msg.payload.azimuth}}</td>\n        </tr>\n    </table>\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 890,
+        "x": 750,
         "y": 100,
         "wires": [
             []
@@ -7386,7 +6588,7 @@
         "z": "b12fd38c090c51f2",
         "g": "b438e0cbd64ef6ce",
         "name": "format zenith",
-        "func": "/**\n* @param {number} radians\n*/\nfunction truncate(radians) {\n\n    const decimals = 10000000\n    return Math.round(radians * decimals) / decimals\n\n}\n\n// /**\n// * @param {number} radians\n// */\n// function degrees(radians) {\n\n//     return radians * 57.29578\n\n// }\n\nmsg.payload.time = new Date(msg.payload.time).toLocaleTimeString()\nmsg.payload.altitude = truncate(msg.payload.altitude)\nmsg.payload.azimuth = truncate(msg.payload.azimuth)\nreturn msg",
+        "func": "/**\n* @param {number} radians\n*/\nfunction truncate(radians) {\n\n    const decimals = 10000000\n    return Math.round(radians * decimals) / decimals\n\n}\n\nmsg.payload.time = new Date(msg.payload.time).toLocaleTimeString()\nmsg.payload.altitude = truncate(msg.payload.altitude)\nmsg.payload.azimuth = truncate(msg.payload.azimuth)\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -7396,193 +6598,7 @@
         "y": 100,
         "wires": [
             [
-                "625b9718a13e0340"
-            ]
-        ]
-    },
-    {
-        "id": "40aa6d57e66c9314",
-        "type": "csv",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\n",
-        "temp": "time,altitude,azimuth",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 750,
-        "y": 140,
-        "wires": [
-            [
-                "e7bc056a5ca25bc5"
-            ]
-        ]
-    },
-    {
-        "id": "8549e51620377f66",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "format csv",
-        "func": "msg.payload.forEach((/** @type {{ time: string | number | Date; }} */ position) => {\n\n    position.time = new Date(position.time).toLocaleTimeString()\n\n})\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 610,
-        "y": 140,
-        "wires": [
-            [
-                "40aa6d57e66c9314"
-            ]
-        ]
-    },
-    {
-        "id": "be5ed0fec546d004",
-        "type": "ui_chart",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "CPU Temperature",
-        "group": "dc6e107af698a0c3",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Temperature",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "bezier",
-        "nodata": "No temperature reported",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "1000",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 330,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "08c851f506852280",
-        "type": "ui_chart",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "CPU Volts",
-        "group": "cfa1a0f4a477687c",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Volts",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "bezier",
-        "nodata": "No voltage reported",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": 1,
-        "removeOlderPoints": "1000",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 650,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1c85c492c57041d7",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "cpu/+/volts",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "cpu/+/volts",
-                "type": "str"
-            },
-            {
-                "name": "UNIT",
-                "value": "V",
-                "type": "str"
-            }
-        ],
-        "x": 500,
-        "y": 620,
-        "wires": [
-            [
-                "08c851f506852280"
-            ]
-        ]
-    },
-    {
-        "id": "55425537c5741ec5",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "cpu/+/temperature",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "cpu/+/temperature",
-                "type": "str"
-            },
-            {
-                "name": "UNIT",
-                "value": "C",
-                "type": "str"
-            }
-        ],
-        "x": 130,
-        "y": 620,
-        "wires": [
-            [
-                "be5ed0fec546d004"
+                "f72b11239792afcf"
             ]
         ]
     },
@@ -8147,822 +7163,152 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 930,
+        "x": 650,
         "y": 140,
         "wires": [
             []
         ]
     },
     {
-        "id": "92446033e6f8968f",
-        "type": "ui_chart",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "loadavg",
-        "group": "a6c038e4cae31f08",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "bezier",
-        "nodata": "No values reported",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "100",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 440,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9632e610560cfce1",
-        "type": "ui_chart",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "freemem",
-        "group": "66adb26e37268f4a",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "label": "",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "bezier",
-        "nodata": "No values reported",
-        "dot": false,
-        "ymin": "0",
-        "ymax": "4",
-        "removeOlder": 1,
-        "removeOlderPoints": "",
-        "removeOlderUnit": "3600",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 920,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "dea1d159dc5339ef",
-        "type": "change",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload / 1073741824",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 680,
-        "wires": [
-            [
-                "9632e610560cfce1"
-            ]
-        ]
-    },
-    {
-        "id": "6eae3f85a3c030a8",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "os/+/freemem",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "os/+/freemem",
-                "type": "str"
-            }
-        ],
-        "x": 590,
-        "y": 680,
-        "wires": [
-            [
-                "dea1d159dc5339ef"
-            ]
-        ]
-    },
-    {
-        "id": "281d03f937caa527",
-        "type": "subflow:c4207c9fe61a900e",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "os/+/loadavg",
-        "env": [
-            {
-                "name": "TOPIC",
-                "value": "os/+/loadavg",
-                "type": "str"
-            }
-        ],
-        "x": 110,
-        "y": 680,
-        "wires": [
-            [
-                "e08653b0e7646390"
-            ]
-        ]
-    },
-    {
-        "id": "e08653b0e7646390",
-        "type": "change",
-        "z": "b12fd38c090c51f2",
-        "g": "5cc3007bfef936f5",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$round(payload * 100)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 280,
-        "y": 680,
-        "wires": [
-            [
-                "92446033e6f8968f"
-            ]
-        ]
-    },
-    {
-        "id": "7884455e0c23e9dd",
-        "type": "link call",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "name": "",
-        "links": [
-            "df79272de1bce7c1"
-        ],
-        "timeout": "30",
-        "x": 780,
-        "y": 140,
-        "wires": [
-            [
-                "8c3e6121a0e81da0"
-            ]
-        ]
-    },
-    {
-        "id": "8c3e6121a0e81da0",
-        "type": "debug",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "name": "hue response",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 1000,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "a8349c3715609535",
+        "id": "20f266f186a55d9c",
         "type": "link in",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "name": "hue metadata",
+        "z": "b12fd38c090c51f2",
+        "g": "019e1216c1912bc2",
+        "name": "broker connection status",
         "links": [
-            "65911d8f953e99bf",
-            "66730b89492663ed"
-        ],
-        "x": 155,
-        "y": 100,
-        "wires": [
-            [
-                "aceec81f696e226a"
-            ]
-        ]
-    },
-    {
-        "id": "aceec81f696e226a",
-        "type": "join",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 250,
-        "y": 100,
-        "wires": [
-            [
-                "9239b2b42b52b1f5"
-            ]
-        ]
-    },
-    {
-        "id": "9239b2b42b52b1f5",
-        "type": "ui_template",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "group": "21f11f110d626f5a",
-        "name": "Lighting Controls",
-        "order": 2,
-        "width": "12",
-        "height": "12",
-        "format": "<div>\n    <div ng-repeat=\"(bridgename, bridge) in msg.payload\">\n        <div ng-repeat=\"(typename, type) in bridge\">\n            <div ng-repeat=\"(groupname, group) in type\">\n                <div ng-if=\"$index > 0\">\n                    <hr>\n                </div>\n                <p>{{groupname}}</p>\n                <div>\n                    <md-button style=\"display:inline-block;margin:1px\"\n                        ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT', bridge: bridgename})\">\n                        Off\n                    </md-button>\n                    <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                        ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT', bridge: bridgename})\">\n                        {{scenename}}\n                    </md-button>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 410,
-        "y": 100,
-        "wires": [
-            [
-                "b99e9ace8317285b"
-            ]
-        ]
-    },
-    {
-        "id": "b99e9ace8317285b",
-        "type": "switch",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "name": "",
-        "property": "bridge",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "chez-nous-main",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "basement-hue",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 570,
-        "y": 100,
-        "wires": [
-            [
-                "5e286c6530e932c2"
-            ],
-            [
-                "7884455e0c23e9dd"
-            ]
-        ]
-    },
-    {
-        "id": "5e286c6530e932c2",
-        "type": "link call",
-        "z": "3e4322342f4339f0",
-        "g": "b1d63527a43c94ce",
-        "name": "",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "timeout": "30",
-        "x": 770,
-        "y": 60,
-        "wires": [
-            [
-                "8c3e6121a0e81da0"
-            ]
-        ]
-    },
-    {
-        "id": "35103a0bfa7e7587",
-        "type": "link in",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "powerview metadata",
-        "links": [
-            "d15f40c8b2218d5c"
-        ],
-        "x": 155,
-        "y": 240,
-        "wires": [
-            [
-                "95ca77ef914ae520"
-            ]
-        ]
-    },
-    {
-        "id": "95ca77ef914ae520",
-        "type": "ui_template",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "group": "e3fcd4654cf9f3fc",
-        "name": "Window Shade Controls",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<div>\n    <div ng-repeat=\"(roomname, room) in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <p>{{roomname}}</p>\n        <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in room\"\n            ng-click=\"send({payload: scene})\">\n            {{scenename}}\n        </md-button>\n    </div>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 310,
-        "y": 240,
-        "wires": [
-            [
-                "6ce200355dc3018e"
-            ]
-        ]
-    },
-    {
-        "id": "6ce200355dc3018e",
-        "type": "link call",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "",
-        "links": [
-            "7173aa38c9fa93dc"
-        ],
-        "timeout": "30",
-        "x": 550,
-        "y": 240,
-        "wires": [
-            [
-                "03374f8daf60c594"
-            ]
-        ]
-    },
-    {
-        "id": "03374f8daf60c594",
-        "type": "debug",
-        "z": "3e4322342f4339f0",
-        "g": "685034897f563084",
-        "name": "powerview response",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": true,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "statusCode",
-        "statusType": "msg",
-        "x": 780,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "d6d20cb20e9e643b",
-        "type": "websocket in",
-        "z": "997764cb1253a223",
-        "g": "8fc06747717d00eb",
-        "name": "",
-        "server": "025512d801f893c2",
-        "client": "",
-        "x": 170,
-        "y": 260,
-        "wires": [
-            [
-                "3dd30f8784d759bb"
-            ]
-        ]
-    },
-    {
-        "id": "9ebfab406a5ca7c4",
-        "type": "websocket out",
-        "z": "997764cb1253a223",
-        "g": "6a70472869a0916a",
-        "name": "",
-        "server": "3c53975cbddbb628",
-        "client": "",
-        "x": 620,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "06c6c945e8d5887f",
-        "type": "link in",
-        "z": "997764cb1253a223",
-        "g": "6a70472869a0916a",
-        "name": "send update",
-        "links": [
-            "06533547fdbaa357"
+            "d59aa94341d8a721"
         ],
         "x": 335,
-        "y": 100,
+        "y": 620,
         "wires": [
             [
-                "b2ebd790a5119ac7"
+                "05a1812a4316ce2c"
             ]
         ]
     },
     {
-        "id": "b2ebd790a5119ac7",
-        "type": "delay",
-        "z": "997764cb1253a223",
-        "g": "6a70472869a0916a",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "3",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 450,
-        "y": 100,
-        "wires": [
-            [
-                "9ebfab406a5ca7c4"
-            ]
-        ]
-    },
-    {
-        "id": "3dd30f8784d759bb",
-        "type": "link out",
-        "z": "997764cb1253a223",
-        "g": "8fc06747717d00eb",
-        "name": "process command",
-        "mode": "link",
-        "links": [
-            "905f3f5d5a95a0cf",
-            "12eb9a8162f223d1"
-        ],
-        "x": 295,
-        "y": 260,
+        "id": "05a1812a4316ce2c",
+        "type": "ui_text",
+        "z": "b12fd38c090c51f2",
+        "g": "019e1216c1912bc2",
+        "group": "991046045b37e3ee",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "MQTT Broker Status",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 480,
+        "y": 620,
         "wires": []
     },
     {
-        "id": "40f2f41eed2f5540",
+        "id": "9dbdef46ce2f066e",
+        "type": "link in",
+        "z": "b12fd38c090c51f2",
+        "g": "019e1216c1912bc2",
+        "name": "broker queue status",
+        "links": [
+            "a8211a5387f8494c"
+        ],
+        "x": 335,
+        "y": 680,
+        "wires": [
+            [
+                "b85408b986dabda3"
+            ]
+        ]
+    },
+    {
+        "id": "b85408b986dabda3",
+        "type": "ui_text",
+        "z": "b12fd38c090c51f2",
+        "g": "019e1216c1912bc2",
+        "group": "991046045b37e3ee",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "MQTT Broker Queue",
+        "label": "Queue",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 480,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f9a4b2c24da44638",
+        "type": "function",
+        "z": "b12fd38c090c51f2",
+        "g": "aac3bd0e8946965c",
+        "name": "url",
+        "func": "/*global os*/\n\nmsg.payload = 'http://' + os.hostname + '.local:1880/sunpositions'\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "os",
+                "module": "os"
+            }
+        ],
+        "x": 1090,
+        "y": 100,
+        "wires": [
+            [
+                "eb296b561972b772"
+            ]
+        ]
+    },
+    {
+        "id": "eb296b561972b772",
+        "type": "ui_template",
+        "z": "b12fd38c090c51f2",
+        "g": "aac3bd0e8946965c",
+        "group": "8055574ccb17e8ed",
+        "name": "Download CSV",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"width:100%;text-align:center;\">\n    <a style=\"color:white;text-decoration:none;\" href=\"{{msg.payload}}\">Download</a>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1240,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbf5921f850ebb39",
         "type": "inject",
-        "z": "997764cb1253a223",
-        "g": "cc17bdf0cffdd1a1",
-        "name": "send update",
+        "z": "b12fd38c090c51f2",
+        "g": "aac3bd0e8946965c",
+        "name": "at start",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
-        "topic": "timestamp",
+        "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 150,
+        "x": 960,
         "y": 100,
         "wires": [
             [
-                "06533547fdbaa357"
-            ]
-        ]
-    },
-    {
-        "id": "06533547fdbaa357",
-        "type": "link out",
-        "z": "997764cb1253a223",
-        "g": "cc17bdf0cffdd1a1",
-        "name": "send update",
-        "mode": "link",
-        "links": [
-            "06c6c945e8d5887f"
-        ],
-        "x": 255,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "e2d9ed9e8373cc0d",
-        "type": "websocket in",
-        "z": "997764cb1253a223",
-        "g": "e7f5a72a22121c8f",
-        "name": "",
-        "server": "ecb690d3c11259df",
-        "client": "",
-        "x": 170,
-        "y": 580,
-        "wires": [
-            [
-                "67ab43420a885103"
-            ]
-        ]
-    },
-    {
-        "id": "65391bdd2e45d311",
-        "type": "websocket out",
-        "z": "997764cb1253a223",
-        "g": "e7f5a72a22121c8f",
-        "name": "",
-        "server": "ecb690d3c11259df",
-        "client": "",
-        "x": 590,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "67ab43420a885103",
-        "type": "change",
-        "z": "997764cb1253a223",
-        "g": "e7f5a72a22121c8f",
-        "name": "",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "_session",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 580,
-        "wires": [
-            [
-                "65391bdd2e45d311"
-            ]
-        ]
-    },
-    {
-        "id": "0fa7147e765e3a0a",
-        "type": "link in",
-        "z": "997764cb1253a223",
-        "g": "f62fd902bca5d337",
-        "name": "send response",
-        "links": [
-            "d26af90c07042d0b"
-        ],
-        "x": 855,
-        "y": 420,
-        "wires": [
-            [
-                "ca533975bad3a01a"
-            ]
-        ]
-    },
-    {
-        "id": "ca533975bad3a01a",
-        "type": "delay",
-        "z": "997764cb1253a223",
-        "g": "f62fd902bca5d337",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "3",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 970,
-        "y": 420,
-        "wires": [
-            [
-                "1cb6cc25224307af"
-            ]
-        ]
-    },
-    {
-        "id": "1cb6cc25224307af",
-        "type": "websocket out",
-        "z": "997764cb1253a223",
-        "g": "f62fd902bca5d337",
-        "name": "",
-        "server": "83dce741285f9890",
-        "client": "",
-        "x": 1140,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "60c093dadbe98d8c",
-        "type": "link in",
-        "z": "997764cb1253a223",
-        "g": "3792bffcc53d7d09",
-        "name": "process request",
-        "links": [
-            "615ec4f521b2c7bf"
-        ],
-        "x": 375,
-        "y": 420,
-        "wires": [
-            [
-                "e967994a8d994435"
-            ]
-        ]
-    },
-    {
-        "id": "d26af90c07042d0b",
-        "type": "link out",
-        "z": "997764cb1253a223",
-        "g": "3792bffcc53d7d09",
-        "name": "send response",
-        "mode": "link",
-        "links": [
-            "0fa7147e765e3a0a"
-        ],
-        "x": 775,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "83c531568daee540",
-        "type": "websocket in",
-        "z": "997764cb1253a223",
-        "g": "6cf254b5fbe8d9c1",
-        "name": "",
-        "server": "83dce741285f9890",
-        "client": "",
-        "x": 160,
-        "y": 420,
-        "wires": [
-            [
-                "615ec4f521b2c7bf"
-            ]
-        ]
-    },
-    {
-        "id": "615ec4f521b2c7bf",
-        "type": "link out",
-        "z": "997764cb1253a223",
-        "g": "6cf254b5fbe8d9c1",
-        "name": "process request",
-        "mode": "link",
-        "links": [
-            "60c093dadbe98d8c"
-        ],
-        "x": 275,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "12eb9a8162f223d1",
-        "type": "link in",
-        "z": "997764cb1253a223",
-        "g": "43456594e4cb4e24",
-        "name": "process command",
-        "links": [
-            "3dd30f8784d759bb"
-        ],
-        "x": 395,
-        "y": 260,
-        "wires": [
-            [
-                "445d81f63806df12"
-            ]
-        ]
-    },
-    {
-        "id": "445d81f63806df12",
-        "type": "debug",
-        "z": "997764cb1253a223",
-        "g": "43456594e4cb4e24",
-        "name": "command",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "b34ce1d598cf8eb8",
-        "type": "change",
-        "z": "997764cb1253a223",
-        "g": "3792bffcc53d7d09",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"request\":payload,\"response\":true}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 660,
-        "y": 420,
-        "wires": [
-            [
-                "d26af90c07042d0b"
-            ]
-        ]
-    },
-    {
-        "id": "e967994a8d994435",
-        "type": "delay",
-        "z": "997764cb1253a223",
-        "g": "3792bffcc53d7d09",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "500",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 490,
-        "y": 420,
-        "wires": [
-            [
-                "b34ce1d598cf8eb8"
+                "f9a4b2c24da44638"
             ]
         ]
     }
