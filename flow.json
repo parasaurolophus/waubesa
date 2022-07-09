@@ -60,6 +60,22 @@
         "env": []
     },
     {
+        "id": "984bed4cccaab194",
+        "type": "tab",
+        "label": "Ground Floor Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1e9ddfd50242cb2a",
+        "type": "tab",
+        "label": "Basement Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5785c8d9f39df67e",
         "type": "subflow",
         "name": "Send to Hue Bridge",
@@ -387,7 +403,7 @@
                 ]
             },
             {
-                "x": 680,
+                "x": 720,
                 "y": 60,
                 "wires": [
                     {
@@ -425,7 +441,9 @@
         },
         "color": "#AA77AA",
         "outputLabels": [
-            "mqtt"
+            "mqtt",
+            "metadata",
+            "options"
         ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
@@ -844,7 +862,7 @@
         "type": "subflow",
         "name": "Process Hue Metadata",
         "info": "",
-        "category": "",
+        "category": "waubesa",
         "in": [
             {
                 "x": 60,
@@ -858,7 +876,7 @@
         ],
         "out": [
             {
-                "x": 770,
+                "x": 390,
                 "y": 60,
                 "wires": [
                     {
@@ -868,7 +886,7 @@
                 ]
             },
             {
-                "x": 780,
+                "x": 400,
                 "y": 140,
                 "wires": [
                     {
@@ -893,6 +911,39 @@
         ]
     },
     {
+        "id": "648d285142674988",
+        "type": "subflow",
+        "name": "Hue Group Options",
+        "info": "",
+        "category": "waubesa",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "75b9e19e2accb4d5"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 300,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "75b9e19e2accb4d5",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "cccd3d3ae4af3207",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -914,7 +965,9 @@
             "18b035d175d78813"
         ],
         "x": 114,
-        "y": 519
+        "y": 519,
+        "w": 632,
+        "h": 242
     },
     {
         "id": "87285e6bf01cff03",
@@ -934,7 +987,9 @@
             "618e79a58ab8143a"
         ],
         "x": 114,
-        "y": 19
+        "y": 19,
+        "w": 362,
+        "h": 82
     },
     {
         "id": "e49c9571ddd5102f",
@@ -981,7 +1036,7 @@
         ],
         "x": 28,
         "y": 413,
-        "w": 844,
+        "w": 804,
         "h": 374
     },
     {
@@ -1003,7 +1058,7 @@
         ],
         "x": 28,
         "y": 13,
-        "w": 864,
+        "w": 804,
         "h": 374
     },
     {
@@ -1024,7 +1079,9 @@
             "e1fa765ec5a5ebd7"
         ],
         "x": 88,
-        "y": 13
+        "y": 13,
+        "w": 524,
+        "h": 334
     },
     {
         "id": "e29b5646cac97198",
@@ -1043,7 +1100,9 @@
             "513bc529c9c10fa0"
         ],
         "x": 88,
-        "y": 373
+        "y": 373,
+        "w": 524,
+        "h": 234
     },
     {
         "id": "0770b0ba393f379d",
@@ -1065,7 +1124,9 @@
             "516be0577e70437c"
         ],
         "x": 114,
-        "y": 119
+        "y": 119,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "746733f8c81b5ccd",
@@ -1087,7 +1148,9 @@
             "7bc062570484d12c"
         ],
         "x": 114,
-        "y": 219
+        "y": 219,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "e961376bbef01556",
@@ -1109,7 +1172,9 @@
             "bdce740848b412c8"
         ],
         "x": 114,
-        "y": 319
+        "y": 319,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "56e03f40c1727182",
@@ -1131,7 +1196,9 @@
             "b56bca504084bf91"
         ],
         "x": 114,
-        "y": 419
+        "y": 419,
+        "w": 1092,
+        "h": 82
     },
     {
         "id": "d23ba68654f3c055",
@@ -1153,7 +1220,9 @@
             "f6597e2f37dd2636"
         ],
         "x": 708,
-        "y": 13
+        "y": 13,
+        "w": 524,
+        "h": 534
     },
     {
         "id": "98cf3b8910bc4f22",
@@ -1538,7 +1607,9 @@
             "33533dc0ac4ff870"
         ],
         "x": 114,
-        "y": 39
+        "y": 39,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "3483ce20c1996e6c",
@@ -1559,7 +1630,9 @@
             "1462dac4d5543f0a"
         ],
         "x": 114,
-        "y": 139
+        "y": 139,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "e1fa765ec5a5ebd7",
@@ -1580,7 +1653,9 @@
             "76f3eb6c53a0310c"
         ],
         "x": 114,
-        "y": 239
+        "y": 239,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "70e9b8db12799d18",
@@ -1646,11 +1721,11 @@
             "2d0604f94ef7bff4",
             "4d2dc9a6e42d0548",
             "7d283a2fc0d30093",
-            "93d0fc5664427636"
+            "66730b89492663ed"
         ],
         "x": 54,
         "y": 239,
-        "w": 812,
+        "w": 662,
         "h": 122
     },
     {
@@ -1717,11 +1792,11 @@
             "14944e047cba03fa",
             "5e2f8ae74b053fc9",
             "a5f013472e32f50c",
-            "0e30f59c768cf069"
+            "65911d8f953e99bf"
         ],
         "x": 54,
         "y": 639,
-        "w": 792,
+        "w": 642,
         "h": 122
     },
     {
@@ -1743,7 +1818,9 @@
             "0cb4aa086519cdc3"
         ],
         "x": 114,
-        "y": 399
+        "y": 399,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "513bc529c9c10fa0",
@@ -1764,7 +1841,9 @@
             "1af873ecc08861c7"
         ],
         "x": 114,
-        "y": 499
+        "y": 499,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "26622bde8cf9b262",
@@ -1785,7 +1864,9 @@
             "8c8685c28661026d"
         ],
         "x": 734,
-        "y": 139
+        "y": 139,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "c083702f726a3c76",
@@ -1806,7 +1887,9 @@
             "c639897051efe373"
         ],
         "x": 734,
-        "y": 439
+        "y": 439,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "1f51b2e96d97963e",
@@ -1827,7 +1910,9 @@
             "30ad3f93b6509f97"
         ],
         "x": 734,
-        "y": 39
+        "y": 39,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "73df20e8ccdbf56c",
@@ -1848,7 +1933,9 @@
             "9f798cee87b95525"
         ],
         "x": 734,
-        "y": 339
+        "y": 339,
+        "w": 472,
+        "h": 82
     },
     {
         "id": "f6597e2f37dd2636",
@@ -1869,7 +1956,9 @@
             "e444798d5fd55433"
         ],
         "x": 734,
-        "y": 239
+        "y": 239,
+        "w": 452,
+        "h": 82
     },
     {
         "id": "8fc06747717d00eb",
@@ -1973,6 +2062,88 @@
         ],
         "x": 54,
         "y": 379
+    },
+    {
+        "id": "e9efa51261f6c783",
+        "type": "group",
+        "z": "984bed4cccaab194",
+        "name": "Ground floor lights",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "c19f87c7eda22e58",
+            "f6f8f4d6fd5dc7d0",
+            "b5de3d2c560c6789",
+            "18f71e5b40208e53",
+            "a6a45d59c3f60b7d",
+            "d95133804941b353",
+            "92eaf49576e50a9e",
+            "49b75a6fde0b6301",
+            "683b5511f00d57d4"
+        ],
+        "x": 94,
+        "y": 19,
+        "w": 892,
+        "h": 262
+    },
+    {
+        "id": "f9e70c058a8efc82",
+        "type": "group",
+        "z": "1e9ddfd50242cb2a",
+        "name": "Basement dashboard",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "2de7d056579133dc",
+            "09ca011e26f258fb",
+            "4fa7f069cac5ac37",
+            "9b80a58f06cf0767",
+            "caafe6f46e7bfe15",
+            "c68cc429b9315c66",
+            "962396c085fff789",
+            "7ebfddb7b94e3eea"
+        ],
+        "x": 94,
+        "y": 19,
+        "w": 912,
+        "h": 262
+    },
+    {
+        "id": "1a405db7c77801ee",
+        "type": "group",
+        "z": "984bed4cccaab194",
+        "name": "Window shades",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "7ba4579b7673a491",
+            "9f3d946a03de6aa8",
+            "ad9d1d2d1597d2ba",
+            "676c095bc7abab1e",
+            "356766b9c684121f",
+            "92a8459af7433d08",
+            "d0f7e42d37e33bcb",
+            "d6caf0385ddcc934"
+        ],
+        "x": 94,
+        "y": 299,
+        "w": 342,
+        "h": 262
     },
     {
         "id": "e79e0110c2317edb",
@@ -2120,7 +2291,7 @@
         "type": "ui_tab",
         "name": "Automation",
         "icon": "fa-clock-o",
-        "order": 2,
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
@@ -2162,7 +2333,7 @@
         "type": "ui_tab",
         "name": "Monitoring",
         "icon": "dashboard",
-        "order": 3,
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
@@ -2258,6 +2429,68 @@
         "type": "websocket-listener",
         "path": "/ws/request",
         "wholemsg": "true"
+    },
+    {
+        "id": "791bf5d34d06adaf",
+        "type": "ui_tab",
+        "name": "Ground Floor",
+        "icon": "fa-home",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b092a43dac832410",
+        "type": "ui_group",
+        "name": "Lighting",
+        "tab": "6d3a2c4307ffbdf9",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "21f11f110d626f5a",
+        "type": "ui_group",
+        "name": "Lighting",
+        "tab": "791bf5d34d06adaf",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d0b96e9f8503bef3",
+        "type": "ui_group",
+        "name": "Living Room Shades",
+        "tab": "791bf5d34d06adaf",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "a81011918a2f3acc",
+        "type": "ui_group",
+        "name": "Dining Room Shades",
+        "tab": "791bf5d34d06adaf",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "6d3a2c4307ffbdf9",
+        "type": "ui_tab",
+        "name": "Basement",
+        "icon": "fa-home",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "c9c806d81ab63ac4",
@@ -2951,6 +3184,9 @@
         "y": 60,
         "wires": [
             []
+        ],
+        "outputLabels": [
+            "merged"
         ]
     },
     {
@@ -3698,7 +3934,7 @@
         "type": "function",
         "z": "97864671c1ced479",
         "name": "process hue metadata",
-        "func": "const name = env.get('GLOBAL')\n\nglobal.set(name, msg.payload)\n\nconst groups = {}\nconst scenes = {}\n\nfor (let groupName in msg.payload) {\n\n    const g = msg.payload[groupName]\n    const groupId = g.id\n    const groupType = g.type\n    const group = {}\n    const gg = groups[groupType] || []\n\n    group[groupName] = groupId\n    gg.push(group)\n\n    g.scene.forEach(s => {\n\n        const sceneName = s.name\n        const sceneId = s.id\n        const scene = {}\n\n        scene[sceneName] = sceneId\n        scenes[groupName] = scene\n\n    })\n}\n\nreturn [\n    { payload: groups },\n    { payload: scenes }\n]",
+        "func": "const name = env.get('GLOBAL')\n\nglobal.set(name, msg.payload)\n\nconst groups = {}\nconst scenes = {}\n\nfor (let groupName in msg.payload) {\n\n    const g = msg.payload[groupName]\n    const groupId = g.id\n    const groupType = g.type\n    const group = {}\n    const gg = groups[groupType] || []\n\n    group[groupName] = groupId\n    gg.push(group)\n\n    g.scene.forEach((/** @type {{ name: any; id: any; }} */ s) => {\n\n        const sceneName = s.name\n        const sceneId = s.id\n        const scene = {}\n\n        scene[sceneName] = sceneId\n        scenes[groupName] = scene\n\n    })\n}\n\nreturn [\n    { payload: groups },\n    { payload: scenes }\n]",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -3713,6 +3949,23 @@
         "outputLabels": [
             "groups",
             "scenes"
+        ]
+    },
+    {
+        "id": "75b9e19e2accb4d5",
+        "type": "function",
+        "z": "648d285142674988",
+        "name": "group options",
+        "func": "const msgs = []\n\nfunction sceneOptions(groupName, group) {\n\n    const options = []\n\n    for (let sceneName in group.scene) {\n\n        const sceneId = group.scene[sceneName]\n        const option = {}\n\n        option[sceneName] = sceneId\n        options.push(option)\n\n    }\n\n    msgs.push({\n        topic: 'scene',\n        group: groupName,\n        options: options\n    })\n}\n\nfunction groupedLightOptions() {\n\n    const options = []\n\n    for (let typeName in msg.payload) {\n\n        const type = msg.payload[typeName]\n\n        for (let groupName in type) {\n\n            const group = type[groupName]\n            const grouped_light = group.grouped_light\n            const option = {}\n\n            option[groupName] = grouped_light\n            options.push(option)\n            sceneOptions(groupName, group)\n\n        }\n    }\n\n    msgs.push({\n        topic: 'grouped_light',\n        options: options\n    })\n}\n\ngroupedLightOptions()\n\nreturn [msgs]",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 80,
+        "wires": [
+            []
         ]
     },
     {
@@ -4832,7 +5085,7 @@
                 "4d2dc9a6e42d0548"
             ],
             [
-                "93d0fc5664427636"
+                "66730b89492663ed"
             ]
         ]
     },
@@ -5059,44 +5312,39 @@
                 "1209a8480a23b591"
             ],
             [
-                "0e30f59c768cf069"
+                "65911d8f953e99bf"
             ]
         ]
     },
     {
-        "id": "0e30f59c768cf069",
-        "type": "debug",
+        "id": "66730b89492663ed",
+        "type": "link out",
         "z": "c7141ffb22d64190",
-        "g": "0fc22be05cfc5241",
-        "name": "basement hue",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 720,
+        "g": "665df9d682462b5e",
+        "name": "chez nous main metadata",
+        "mode": "link",
+        "links": [
+            "45df49432927ee81",
+            "c19f87c7eda22e58"
+        ],
+        "x": 675,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "93d0fc5664427636",
-        "type": "debug",
+        "id": "65911d8f953e99bf",
+        "type": "link out",
         "z": "c7141ffb22d64190",
-        "g": "665df9d682462b5e",
-        "name": "chez nous main",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 320,
+        "g": "0fc22be05cfc5241",
+        "name": "basement hue metadata",
+        "mode": "link",
+        "links": [
+            "12dd9f03494a1dc5",
+            "e9f56188d7a72ce9",
+            "09ca011e26f258fb"
+        ],
+        "x": 655,
+        "y": 720,
         "wires": []
     },
     {
@@ -5144,7 +5392,12 @@
         "z": "1cf0490e7de2f93d",
         "g": "87285e6bf01cff03",
         "name": "activate powerview scene",
-        "links": [],
+        "links": [
+            "9f3d946a03de6aa8",
+            "676c095bc7abab1e",
+            "92a8459af7433d08",
+            "d6caf0385ddcc934"
+        ],
         "x": 155,
         "y": 60,
         "wires": [
@@ -8417,6 +8670,614 @@
             [
                 "b34ce1d598cf8eb8"
             ]
+        ]
+    },
+    {
+        "id": "c19f87c7eda22e58",
+        "type": "link in",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "chez nous main metadata",
+        "links": [
+            "66730b89492663ed"
+        ],
+        "x": 135,
+        "y": 120,
+        "wires": [
+            [
+                "f6f8f4d6fd5dc7d0"
+            ]
+        ]
+    },
+    {
+        "id": "f6f8f4d6fd5dc7d0",
+        "type": "subflow:648d285142674988",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "Chez Nous Main Options",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "b5de3d2c560c6789"
+            ]
+        ]
+    },
+    {
+        "id": "b5de3d2c560c6789",
+        "type": "switch",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "grouped_light",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "scene",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "18f71e5b40208e53"
+            ],
+            [
+                "92eaf49576e50a9e"
+            ]
+        ]
+    },
+    {
+        "id": "18f71e5b40208e53",
+        "type": "ui_dropdown",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "Chez Nous Main Group Off",
+        "label": "Off",
+        "tooltip": "",
+        "place": "Select room...",
+        "group": "21f11f110d626f5a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 700,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a6a45d59c3f60b7d",
+        "type": "ui_dropdown",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "Main Floor Scene",
+        "label": "Main Floor",
+        "tooltip": "",
+        "place": "Select scene...",
+        "group": "21f11f110d626f5a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 810,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d95133804941b353",
+        "type": "ui_dropdown",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "Yard Scene",
+        "label": "Yard",
+        "tooltip": "",
+        "place": "Select scene...",
+        "group": "21f11f110d626f5a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 790,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "92eaf49576e50a9e",
+        "type": "switch",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "",
+        "property": "group",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Yard",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Main Floor",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Main Bathroom",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [
+                "d95133804941b353"
+            ],
+            [
+                "a6a45d59c3f60b7d"
+            ],
+            [
+                "683b5511f00d57d4"
+            ],
+            [
+                "49b75a6fde0b6301"
+            ]
+        ]
+    },
+    {
+        "id": "49b75a6fde0b6301",
+        "type": "debug",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "chez nous main metadata",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7ba4579b7673a491",
+        "type": "ui_button",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "Open Living Room Shades",
+        "group": "d0b96e9f8503bef3",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "11037",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 340,
+        "wires": [
+            [
+                "9f3d946a03de6aa8"
+            ]
+        ]
+    },
+    {
+        "id": "9f3d946a03de6aa8",
+        "type": "link out",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 395,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ad9d1d2d1597d2ba",
+        "type": "ui_button",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "Close Living Room Shades",
+        "group": "d0b96e9f8503bef3",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Close",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "40564",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 400,
+        "wires": [
+            [
+                "676c095bc7abab1e"
+            ]
+        ]
+    },
+    {
+        "id": "676c095bc7abab1e",
+        "type": "link out",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 395,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "356766b9c684121f",
+        "type": "ui_button",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "Open Dining Room Shades",
+        "group": "a81011918a2f3acc",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "23259",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 460,
+        "wires": [
+            [
+                "92a8459af7433d08"
+            ]
+        ]
+    },
+    {
+        "id": "92a8459af7433d08",
+        "type": "link out",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 395,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d0f7e42d37e33bcb",
+        "type": "ui_button",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "Close Dining Room Shades",
+        "group": "a81011918a2f3acc",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Close",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "41405",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 520,
+        "wires": [
+            [
+                "d6caf0385ddcc934"
+            ]
+        ]
+    },
+    {
+        "id": "d6caf0385ddcc934",
+        "type": "link out",
+        "z": "984bed4cccaab194",
+        "g": "1a405db7c77801ee",
+        "name": "open living room shades",
+        "mode": "link",
+        "links": [
+            "7173aa38c9fa93dc"
+        ],
+        "x": 395,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "683b5511f00d57d4",
+        "type": "ui_dropdown",
+        "z": "984bed4cccaab194",
+        "g": "e9efa51261f6c783",
+        "name": "Main Bathroom Scene",
+        "label": "Bathroom",
+        "tooltip": "",
+        "place": "Select scene...",
+        "group": "21f11f110d626f5a",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 820,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2de7d056579133dc",
+        "type": "debug",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "basement hue metadata",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "09ca011e26f258fb",
+        "type": "link in",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "basement hue metadata",
+        "links": [
+            "65911d8f953e99bf"
+        ],
+        "x": 135,
+        "y": 120,
+        "wires": [
+            [
+                "4fa7f069cac5ac37"
+            ]
+        ]
+    },
+    {
+        "id": "4fa7f069cac5ac37",
+        "type": "subflow:648d285142674988",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "Basement Hue Options",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "9b80a58f06cf0767"
+            ]
+        ]
+    },
+    {
+        "id": "9b80a58f06cf0767",
+        "type": "switch",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "grouped_light",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "scene",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "caafe6f46e7bfe15"
+            ],
+            [
+                "c68cc429b9315c66"
+            ]
+        ]
+    },
+    {
+        "id": "caafe6f46e7bfe15",
+        "type": "ui_dropdown",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "Basement Hue Group Off",
+        "label": "Off",
+        "tooltip": "",
+        "place": "Select group...",
+        "group": "b092a43dac832410",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 690,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c68cc429b9315c66",
+        "type": "switch",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "",
+        "property": "group",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Basement",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Basement Bathroom",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 630,
+        "y": 180,
+        "wires": [
+            [
+                "962396c085fff789"
+            ],
+            [
+                "7ebfddb7b94e3eea"
+            ],
+            [
+                "2de7d056579133dc"
+            ]
+        ]
+    },
+    {
+        "id": "962396c085fff789",
+        "type": "ui_dropdown",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "Basement Scene",
+        "label": "Basement",
+        "tooltip": "",
+        "place": "Select scene...",
+        "group": "b092a43dac832410",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 830,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ebfddb7b94e3eea",
+        "type": "ui_dropdown",
+        "z": "1e9ddfd50242cb2a",
+        "g": "f9e70c058a8efc82",
+        "name": "Basement Bathroom Scene",
+        "label": "Bathroom",
+        "tooltip": "",
+        "place": "Select scene...",
+        "group": "b092a43dac832410",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 860,
+        "y": 180,
+        "wires": [
+            []
         ]
     }
 ]
