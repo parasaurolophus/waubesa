@@ -1070,7 +1070,9 @@
             "3b5ab296575b53d4"
         ],
         "x": 774,
-        "y": 139
+        "y": 139,
+        "w": 386,
+        "h": 82
     },
     {
         "id": "290b83ef8e01ae0f",
@@ -1090,7 +1092,9 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 14,
-        "y": 139
+        "y": 139,
+        "w": 732,
+        "h": 82
     },
     {
         "id": "cde8d276df445e2f",
@@ -1110,7 +1114,9 @@
             "33b523d447c86f23"
         ],
         "x": 814,
-        "y": 139
+        "y": 139,
+        "w": 375,
+        "h": 82
     },
     {
         "id": "e7188f251e14aea1",
@@ -1130,7 +1136,9 @@
             "a12bdbda86868f06"
         ],
         "x": 34,
-        "y": 139
+        "y": 139,
+        "w": 752,
+        "h": 82
     },
     {
         "id": "f8dce80b21d7f706",
@@ -1163,7 +1171,9 @@
             "da79b96d161e1c28"
         ],
         "x": 774,
-        "y": 239
+        "y": 239,
+        "w": 472,
+        "h": 322
     },
     {
         "id": "f718c99bbc8e36c9",
@@ -1190,7 +1200,9 @@
             "64afce8ff0b75f48"
         ],
         "x": 114,
-        "y": 239
+        "y": 239,
+        "w": 472,
+        "h": 202
     },
     {
         "id": "f848d645bd1abc5b",
@@ -1214,7 +1226,9 @@
             "90cec6147a7de28f"
         ],
         "x": 114,
-        "y": 459
+        "y": 459,
+        "w": 472,
+        "h": 142
     },
     {
         "id": "b48f76e13fc77aa7",
@@ -1262,7 +1276,9 @@
             "988cc7effd5a036f"
         ],
         "x": 14,
-        "y": 39
+        "y": 39,
+        "w": 1572,
+        "h": 82
     },
     {
         "id": "4e52881346c9e44b",
@@ -1286,7 +1302,9 @@
             "250b8a9cbab3774e"
         ],
         "x": 34,
-        "y": 39
+        "y": 39,
+        "w": 1552,
+        "h": 82
     },
     {
         "id": "4b0f721c48fca435",
@@ -1359,7 +1377,9 @@
             "968fd6d85ac60a62"
         ],
         "x": 1214,
-        "y": 139
+        "y": 139,
+        "w": 309,
+        "h": 82
     },
     {
         "id": "b0f5ce3a323b7dd7",
@@ -1378,7 +1398,9 @@
             "54bbaac5bafb7512"
         ],
         "x": 1174,
-        "y": 139
+        "y": 139,
+        "w": 411,
+        "h": 82
     },
     {
         "id": "e79e0110c2317edb",
@@ -1967,7 +1989,7 @@
         "type": "function",
         "z": "4e89e7c952d56c09",
         "name": "updateState",
-        "func": "node.status({\n    text: msg.topic + ' ' + msg.payload.type,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nconst state = flow.get('state') || {}\nconst type = state[msg.payload.type] || {}\nconst resource = type[msg.payload.id] || {}\n\nfor (let attribute in msg.payload) {\n\n    resource[attribute] = msg.payload[attribute]\n\n}\n\ntype[resource.id] = resource\nstate[resource.type] = type\nflow.set('state', state)\n\nmsg.topic = env.get('TOPIC') + '/' + resource.type + '/' + resource.id\nmsg.qos = 2\nmsg.retain = true\nmsg.payload = resource\n\nreturn msg",
+        "func": "node.status({\n    text: msg.topic + ' ' + msg.payload.type,\n    shape: 'dot',\n    fill: 'blue'\n})\n\nconst state = flow.get('state') || {}\nconst type = state[msg.payload.type] || {}\nconst resource = type[msg.payload.id] || {}\n\nfor (const attribute in msg.payload) {\n\n    resource[attribute] = msg.payload[attribute]\n\n}\n\ntype[resource.id] = resource\nstate[resource.type] = type\nflow.set('state', state)\n\nmsg.topic = env.get('TOPIC') + '/' + resource.type + '/' + resource.id\nmsg.qos = 2\nmsg.retain = true\nmsg.payload = resource\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2774,7 +2796,7 @@
         "type": "function",
         "z": "bdefba026bd44159",
         "name": "mergeMetadata",
-        "func": "const scenes = msg.payload\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {any} roomId\n*/\nfunction findScenes(roomId) {\n\n    const selected = []\n\n    for (let index = 0; index < scenes.length; ++index) {\n\n        const scene = scenes[index]\n\n        if (scene.roomId == roomId) {\n\n            selected.push({\n                id: scene.sceneId,\n                name: scene.sceneName\n            })\n        }\n    }\n\n    return selected.sort(nameCompare)\n\n}\n\n/**\n* @param {{ scenes: any[]; }} room\n*/\nfunction hasScenes(room) {\n\n    return room.scenes.length > 0\n\n}\n\nmsg.payload = msg.rooms.map((/** @type {{ id: any; name: any; }} */ room) => {\n\n    return {\n        id: room.id,\n        name: room.name,\n        scenes: findScenes(room.id)\n    }\n\n}).filter(hasScenes).sort(nameCompare)\n\nflow.set('$parent.metadata', msg.payload)\n\nreturn msg",
+        "func": "const scenes = msg.payload\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {any} roomId\n*/\nfunction findScenes(roomId) {\n\n    const selected = []\n\n    for (const scene of scenes) {\n\n        if (scene.roomId == roomId) {\n\n            selected.push({\n                id: scene.sceneId,\n                name: scene.sceneName\n            })\n        }\n    }\n\n    return selected.sort(nameCompare)\n\n}\n\n/**\n* @param {{ scenes: any[]; }} room\n*/\nfunction hasScenes(room) {\n\n    return room.scenes.length > 0\n\n}\n\nmsg.payload = msg.rooms.map((/** @type {{ id: any; name: any; }} */ room) => {\n\n    return {\n        id: room.id,\n        name: room.name,\n        scenes: findScenes(room.id)\n    }\n\n}).filter(hasScenes).sort(nameCompare)\n\nflow.set('$parent.metadata', msg.payload)\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3537,7 +3559,7 @@
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
         "name": "now",
-        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload.now)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst position = suncalc.getPosition(date, latitude, longitude)\n\nconst payload = {\n    now: msg.payload.now,\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nfor (let key in msg.payload.daily) {\n\n    payload[key] = msg.payload.daily[key]\n\n}\n\nif (payload.now > payload.sunrise && payload.now < payload.bedtime) {\n\n    if (payload.now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (payload.now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (payload.now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (let key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
+        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload.now)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst position = suncalc.getPosition(date, latitude, longitude)\n\nconst payload = {\n    now: msg.payload.now,\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nfor (const key in msg.payload.daily) {\n\n    payload[key] = msg.payload.daily[key]\n\n}\n\nif (payload.now > payload.sunrise && payload.now < payload.bedtime) {\n\n    if (payload.now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (payload.now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (payload.now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (const key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
