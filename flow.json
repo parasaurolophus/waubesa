@@ -798,12 +798,12 @@
             "71f42f61777d49d9",
             "af010737ecd1f8d6",
             "edec482fa879717d",
-            "5db5ebf66b1cf16b",
-            "516be0577e70437c"
+            "16c6de044f949382",
+            "63e50cac1b5a1b97"
         ],
         "x": 114,
         "y": 219,
-        "w": 1092,
+        "w": 1052,
         "h": 82
     },
     {
@@ -822,12 +822,12 @@
             "4d9c62d6c2145813",
             "1b984be8838e6815",
             "1b49d418ac1d553d",
-            "18709dea4106ee7e",
-            "7bc062570484d12c"
+            "4f656e2b5766e68f",
+            "5fc5b24cd49e520e"
         ],
         "x": 114,
         "y": 319,
-        "w": 1092,
+        "w": 1052,
         "h": 82
     },
     {
@@ -846,12 +846,12 @@
             "3fa2af1c1f32f8ee",
             "407f68edfd369a25",
             "59f2f3b92b79087e",
-            "3849c71599f44bc7",
-            "bdce740848b412c8"
+            "1fcfbbdf6167f8c8",
+            "86ad8ea7914b5e27"
         ],
         "x": 114,
         "y": 419,
-        "w": 1092,
+        "w": 1052,
         "h": 82
     },
     {
@@ -870,12 +870,12 @@
             "cab89ebfeca22623",
             "c906095c1f350eda",
             "e8a3ad681677753f",
-            "5cdf5a1ca6546850",
-            "b56bca504084bf91"
+            "a0e918936b64e067",
+            "ea99355e0449d9ea"
         ],
         "x": 114,
         "y": 519,
-        "w": 1092,
+        "w": 1052,
         "h": 82
     },
     {
@@ -973,7 +973,9 @@
             "e7bc056a5ca25bc5"
         ],
         "x": 14,
-        "y": 19
+        "y": 19,
+        "w": 812,
+        "h": 162
     },
     {
         "id": "8a81267cb12384d5",
@@ -1008,7 +1010,9 @@
             "a921a5a41ab154fc"
         ],
         "x": 14,
-        "y": 199
+        "y": 199,
+        "w": 1232,
+        "h": 202
     },
     {
         "id": "0d4083787ae50482",
@@ -1029,7 +1033,9 @@
             "dfcbba568eef0b62"
         ],
         "x": 14,
-        "y": 419
+        "y": 419,
+        "w": 612,
+        "h": 142
     },
     {
         "id": "c28ed42a351eb1a7",
@@ -1050,7 +1056,9 @@
             "e80f7721307a29b3"
         ],
         "x": 634,
-        "y": 419
+        "y": 419,
+        "w": 572,
+        "h": 142
     },
     {
         "id": "70e9b8db12799d18",
@@ -1330,7 +1338,9 @@
             "eb296b561972b772"
         ],
         "x": 14,
-        "y": 579
+        "y": 579,
+        "w": 1012,
+        "h": 142
     },
     {
         "id": "a9f98dfcd4df8501",
@@ -2948,7 +2958,7 @@
         "type": "function",
         "z": "9781b266d05451d0",
         "name": "format hue metadata",
-        "func": "/**\n* @param {any} groupId\n* @param {string} key\n* @param {any[]} resources\n*/\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {{ metadata: { name: any; }; type: any; id: any; }} group\n* @param {{ scene?: any; grouped_light?: any; }} resources\n*/\nfunction getGroup(group, resources) {\n\n    const scenes = findReferences(group.id, 'group', resources.scene).map(scene => {\n\n        return {\n            name: scene.metadata.name,\n            id: scene.id\n        }\n    }).sort(nameCompare)\n\n    const grouped_light = findReferences(group.id, 'owner', resources.grouped_light)[0]\n\n    return {\n        name: group.metadata.name,\n        id: group.id,\n        type: group.type,\n        grouped_light: grouped_light.id,\n        scene: scenes\n    }\n}\n\nconst resources = {}\n\nmsg.payload.data.forEach((/** @type {{ type: string | number; }} */ resource) => {\n\n    const type = resources[resource.type] || []\n    type.push(resource)\n    resources[resource.type] = type\n\n})\n\nconst rooms = resources.room || []\nconst zones = resources.zone || []\n\nmsg.payload = {\n    room: rooms.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ room) => {\n        return getGroup(room, resources)\n    }).sort(nameCompare),\n    zone: zones.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ zone) => {\n        return getGroup(zone, resources)\n    }).sort(nameCompare)\n}\n\nreturn msg",
+        "func": "/**\n* @param {any} groupId\n* @param {string} key\n* @param {any[]} resources\n*/\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {{ metadata: { name: any; }; type: any; id: any; }} group\n* @param {{ scene?: any; grouped_light?: any; }} resources\n*/\nfunction getGroup(group, resources) {\n\n    const scenes = findReferences(group.id, 'group', resources.scene).map(scene => {\n\n        return {\n            name: scene.metadata.name,\n            id: scene.id\n        }\n    }).sort(nameCompare)\n\n    const grouped_light = findReferences(group.id, 'owner', resources.grouped_light)[0]\n\n    return {\n        name: group.metadata.name,\n        id: group.id,\n        type: group.type,\n        grouped_light: grouped_light.id,\n        scene: scenes\n    }\n}\n\nconst resources = {}\n\nmsg.payload.data.forEach((/** @type {{ type: string | number; }} */ resource) => {\n\n    const type = resources[resource.type] || []\n    type.push(resource)\n    resources[resource.type] = type\n\n})\n\nconst rooms = resources.room || []\nconst zones = resources.zone || []\n\nmsg.payload = {\n    room: rooms.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ room) => {\n        return getGroup(room, resources)\n    }).sort(nameCompare),\n    zone: zones.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ zone) => {\n        return getGroup(zone, resources)\n    }).sort(nameCompare)\n}\n\nflow.set('$parent.metadata', msg.payload)\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -5558,7 +5568,7 @@
         "y": 260,
         "wires": [
             [
-                "5db5ebf66b1cf16b"
+                "16c6de044f949382"
             ]
         ]
     },
@@ -5572,11 +5582,11 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 570,
+        "x": 550,
         "y": 260,
         "wires": [
             [
-                "516be0577e70437c"
+                "63e50cac1b5a1b97"
             ]
         ]
     },
@@ -5590,7 +5600,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1030,
         "y": 260,
         "wires": [
             []
@@ -5616,7 +5626,7 @@
         "y": 360,
         "wires": [
             [
-                "18709dea4106ee7e"
+                "4f656e2b5766e68f"
             ]
         ]
     },
@@ -5630,11 +5640,11 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 570,
+        "x": 550,
         "y": 360,
         "wires": [
             [
-                "7bc062570484d12c"
+                "5fc5b24cd49e520e"
             ]
         ]
     },
@@ -5648,7 +5658,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1030,
         "y": 360,
         "wires": [
             []
@@ -5670,7 +5680,7 @@
         "y": 460,
         "wires": [
             [
-                "3849c71599f44bc7"
+                "1fcfbbdf6167f8c8"
             ]
         ]
     },
@@ -5684,11 +5694,11 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 570,
+        "x": 550,
         "y": 460,
         "wires": [
             [
-                "bdce740848b412c8"
+                "86ad8ea7914b5e27"
             ]
         ]
     },
@@ -5702,7 +5712,7 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1030,
         "y": 460,
         "wires": [
             []
@@ -5724,7 +5734,7 @@
         "y": 560,
         "wires": [
             [
-                "5cdf5a1ca6546850"
+                "a0e918936b64e067"
             ]
         ]
     },
@@ -5738,11 +5748,11 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 570,
+        "x": 550,
         "y": 560,
         "wires": [
             [
-                "b56bca504084bf91"
+                "ea99355e0449d9ea"
             ]
         ]
     },
@@ -5756,178 +5766,10 @@
             "7173aa38c9fa93dc"
         ],
         "timeout": "30",
-        "x": 1070,
+        "x": 1030,
         "y": 560,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "5db5ebf66b1cf16b",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "Close Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 260,
-        "wires": [
-            [
-                "af010737ecd1f8d6"
-            ]
-        ]
-    },
-    {
-        "id": "516be0577e70437c",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "0770b0ba393f379d",
-        "name": "Close Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 260,
-        "wires": [
-            [
-                "edec482fa879717d"
-            ]
-        ]
-    },
-    {
-        "id": "18709dea4106ee7e",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "Open Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 360,
-        "wires": [
-            [
-                "1b984be8838e6815"
-            ]
-        ]
-    },
-    {
-        "id": "7bc062570484d12c",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "746733f8c81b5ccd",
-        "name": "Open Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 360,
-        "wires": [
-            [
-                "1b49d418ac1d553d"
-            ]
-        ]
-    },
-    {
-        "id": "3849c71599f44bc7",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "Open Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 460,
-        "wires": [
-            [
-                "407f68edfd369a25"
-            ]
-        ]
-    },
-    {
-        "id": "bdce740848b412c8",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "e961376bbef01556",
-        "name": "Close Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 460,
-        "wires": [
-            [
-                "59f2f3b92b79087e"
-            ]
-        ]
-    },
-    {
-        "id": "5cdf5a1ca6546850",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "Close Dining Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Close Dining Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 320,
-        "y": 560,
-        "wires": [
-            [
-                "c906095c1f350eda"
-            ]
-        ]
-    },
-    {
-        "id": "b56bca504084bf91",
-        "type": "subflow:60301f96c2ad2e7c",
-        "z": "1cf0490e7de2f93d",
-        "g": "56e03f40c1727182",
-        "name": "Open Living Room Shades",
-        "env": [
-            {
-                "name": "NAME",
-                "value": "Open Living Room Shades",
-                "type": "str"
-            }
-        ],
-        "x": 820,
-        "y": 560,
-        "wires": [
-            [
-                "e8a3ad681677753f"
-            ]
         ]
     },
     {
@@ -6036,6 +5878,230 @@
         "wires": [
             [
                 "942f0a1ef3d8ade3"
+            ]
+        ]
+    },
+    {
+        "id": "16c6de044f949382",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "close dining room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "41405",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 260,
+        "wires": [
+            [
+                "af010737ecd1f8d6"
+            ]
+        ]
+    },
+    {
+        "id": "63e50cac1b5a1b97",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "0770b0ba393f379d",
+        "name": "close living room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "40564",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 260,
+        "wires": [
+            [
+                "edec482fa879717d"
+            ]
+        ]
+    },
+    {
+        "id": "4f656e2b5766e68f",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "open dining room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "23259",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "1b984be8838e6815"
+            ]
+        ]
+    },
+    {
+        "id": "5fc5b24cd49e520e",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "746733f8c81b5ccd",
+        "name": "open living room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "11037",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 360,
+        "wires": [
+            [
+                "1b49d418ac1d553d"
+            ]
+        ]
+    },
+    {
+        "id": "1fcfbbdf6167f8c8",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "open dining room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "23259",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 460,
+        "wires": [
+            [
+                "407f68edfd369a25"
+            ]
+        ]
+    },
+    {
+        "id": "86ad8ea7914b5e27",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "e961376bbef01556",
+        "name": "close living room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "40564",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 460,
+        "wires": [
+            [
+                "59f2f3b92b79087e"
+            ]
+        ]
+    },
+    {
+        "id": "a0e918936b64e067",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "close dining room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "41405",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 560,
+        "wires": [
+            [
+                "c906095c1f350eda"
+            ]
+        ]
+    },
+    {
+        "id": "ea99355e0449d9ea",
+        "type": "change",
+        "z": "1cf0490e7de2f93d",
+        "g": "56e03f40c1727182",
+        "name": "open living room shades",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "11037",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 560,
+        "wires": [
+            [
+                "e8a3ad681677753f"
             ]
         ]
     },
