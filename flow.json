@@ -10,7 +10,7 @@
     {
         "id": "c7141ffb22d64190",
         "type": "tab",
-        "label": "Chez Nous Main",
+        "label": "Ground Floor Hue",
         "disabled": false,
         "info": ""
     },
@@ -35,13 +35,6 @@
                 "type": "env"
             }
         ]
-    },
-    {
-        "id": "6e3ca82457d27245",
-        "type": "tab",
-        "label": "Messaging",
-        "disabled": false,
-        "info": ""
     },
     {
         "id": "b12fd38c090c51f2",
@@ -302,27 +295,11 @@
         "name": "Hue to MQTT",
         "info": "# Overview\n\nThis subflow:\n\n- Caches the state of Philips Hue devices in flow context using the response  to an invocation of the `/resource` end-point of the [Philips Hue Bridge V2 API](https://developers.meethue.com/develop/hue-api-v2/api-reference/#resource).\n\n- Outputs a stream of individual event messages as the cached devices' states change by subscribing to [SSE messages](https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events).\n\nEach event message will have appropriate MQTT topic, QoS and retain properties set in addition to the payload sent by the Hue bridge.\n\n_**Note:** the `switch` node named \"filter resources\" in this subflow is used to restrict the number of messages processed at startup to only those types of resources likely to be of interest to Node-RED based automation. This means that over time you will receive SSE messages for resources whose state did not appear in the initial output from this subflow. If you wish for 100% consistency across all resource types, remove the \"filter resources\" node from between the two `split` nodes, but be warned that will cause a much larger volume of MQTT messaging each time your flows are restarted._\n\n# Dependency\n\n[node-red-contrib-sse-client](https://flows.nodered.org/node/node-red-contrib-sse-client)\n\n# Configuration\n\nA separate subflow instance can be created for each Hue bridge by using the following configuration variables:\n\n| Environment Variable | Description                                                             |\n|----------------------|-------------------------------------------------------------------------|\n| `ADDRESS`            | IP address of the Hue bridge                                            |\n| `KEY`                | \"Client key\" for the Hue bridge API<sup>*</sup>                         |\n| `TOPIC`              | String to prepend to each `msg.topic` in the output, as described below |\n\n<sup>*</sup>_See <https://developers.meethue.com/develop/hue-api-v2/getting-started/> for details. Use the_ Create Hue Access Token _subflow to obtain such a key._\n\n# Input\n\nResponse from a successful call to the `/resource` end-point of the [Philips Hue Bridge V2 API](https://developers.meethue.com/develop/hue-api-v2/api-reference/#resource) in `msg.payload`.\n\n# Output\n\nAn ongoing sequence of message objects representing the state of each device as reported by [SSE](https://developers.meethue.com/develop/hue-api-v2/core-concepts/#events). Each message will have the following properties set:\n\n| Property | Value |\n|-|-|\n| `msg.topic` | `${TOPIC}/<type>/<id>` where `<type>` and `<id>` are the identifiers for a given \"resource\" as reported by the Hue bridge API. |\n| `msg.qos` | 2 |\n| `msg.retain` | `true` |\n| `msg.payload` | The current state of the given \"resource\"<sup>**</sup> |\n\n<sup>**</sup>_Note that each output message will contain a combined set of properties for each \"resource\" received across multiple API responses and SSE messages. This mitigates one of the many issues with the design of the Philips Hue API. The cached state is maintained in flow context at runtime and as retained MQTT messages across reboots._",
         "category": "hue",
-        "in": [
-            {
-                "x": 60,
-                "y": 220,
-                "wires": [
-                    {
-                        "id": "98d7f50f7db89d4d"
-                    },
-                    {
-                        "id": "42539f9217e51fbd"
-                    },
-                    {
-                        "id": "630e5fb465ec65c9"
-                    }
-                ]
-            }
-        ],
+        "in": [],
         "out": [
             {
-                "x": 1170,
-                "y": 220,
+                "x": 1250,
+                "y": 140,
                 "wires": [
                     {
                         "id": "7972bbcf134f786b",
@@ -334,16 +311,6 @@
                     },
                     {
                         "id": "1bf87f4377d87af1",
-                        "port": 0
-                    }
-                ]
-            },
-            {
-                "x": 880,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "f308b6088df96049",
                         "port": 0
                     }
                 ]
@@ -383,8 +350,8 @@
         ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 700,
-            "y": 420,
+            "x": 780,
+            "y": 340,
             "wires": [
                 {
                     "id": "35fad88b119f8f36",
@@ -480,48 +447,6 @@
         }
     },
     {
-        "id": "a34d4eb04cf45884",
-        "type": "subflow",
-        "name": "Parse Hue Resources",
-        "info": "",
-        "category": "hue",
-        "in": [
-            {
-                "x": 60,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "6b8a0e371954f465"
-                    }
-                ]
-            }
-        ],
-        "out": [
-            {
-                "x": 880,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "2d8a3e52f4b83d16",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [],
-        "meta": {
-            "module": "@parasaurolophus/node-red-parse-hue-resources",
-            "type": "parse-hue-resources",
-            "version": "1.0.0",
-            "author": "parasaurolophus <apps@rader.us>",
-            "desc": "Parse the response to a \"/resource\" request from the Hue API V2",
-            "keywords": "philips,hue.http",
-            "license": "MIT"
-        },
-        "color": "#AA77AA",
-        "icon": "font-awesome/fa-lightbulb-o"
-    },
-    {
         "id": "4b1f9e8c23fa098d",
         "type": "subflow",
         "name": "Parse Hue Event",
@@ -574,58 +499,6 @@
             "wires": [
                 {
                     "id": "612b03cff3e03da9",
-                    "port": 0
-                }
-            ]
-        }
-    },
-    {
-        "id": "658f7950e449a6aa",
-        "type": "subflow",
-        "name": "Hue SSE Status",
-        "info": "",
-        "category": "hue",
-        "in": [],
-        "out": [
-            {
-                "x": 390,
-                "y": 60,
-                "wires": [
-                    {
-                        "id": "11ead2b503a6826b",
-                        "port": 0
-                    }
-                ]
-            }
-        ],
-        "env": [
-            {
-                "name": "TOPIC",
-                "type": "str",
-                "value": ""
-            }
-        ],
-        "meta": {
-            "module": "@parasaurolophus/node-red-hue-sse-status",
-            "type": "hue-sse-status",
-            "version": "1.0.0",
-            "author": "parasuarolophus <apps@rader.us>",
-            "desc": "Emit diagnostic information about a connection to the SSE service on a Hue Bridge",
-            "keywords": "philips,hue,sse",
-            "license": "MIT"
-        },
-        "color": "#AA77AA",
-        "outputLabels": [
-            "readyState",
-            "connected count"
-        ],
-        "icon": "font-awesome/fa-lightbulb-o",
-        "status": {
-            "x": 520,
-            "y": 140,
-            "wires": [
-                {
-                    "id": "64a29e093d39ddca",
                     "port": 0
                 }
             ]
@@ -840,6 +713,54 @@
         "icon": "font-awesome/fa-align-justify"
     },
     {
+        "id": "9781b266d05451d0",
+        "type": "subflow",
+        "name": "Format Hue Metadata",
+        "info": "",
+        "category": "hue",
+        "in": [
+            {
+                "x": 60,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "218dc34dad5f91fc"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 400,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "218dc34dad5f91fc",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {
+            "module": "@parasaurolophus/node-red-format-hue-metadata",
+            "type": "format-hue-metadata",
+            "version": "1.0.0",
+            "author": "parasaurolophus <apps@rader.us>",
+            "desc": "Reformat Hue metadata for use by UI template control",
+            "keywords": "philips,hue",
+            "license": "MIT"
+        },
+        "color": "#AA77AA",
+        "inputLabels": [
+            "api response"
+        ],
+        "outputLabels": [
+            "formatted for ui"
+        ],
+        "icon": "font-awesome/fa-lightbulb-o"
+    },
+    {
         "id": "87285e6bf01cff03",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -860,34 +781,6 @@
         "y": 119,
         "w": 362,
         "h": 82
-    },
-    {
-        "id": "e49c9571ddd5102f",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "Send to MQTT broker",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "f5c7a7580984d067",
-            "11b2638982da0e64",
-            "dd7609e91ad64f63",
-            "8145a71a1f26c616",
-            "1c6a7f9ae824db96",
-            "461d49b47e87e402",
-            "5ea9e057dd830d9e",
-            "d59aa94341d8a721",
-            "a8211a5387f8494c"
-        ],
-        "x": 114,
-        "y": 39,
-        "w": 402,
-        "h": 202
     },
     {
         "id": "0770b0ba393f379d",
@@ -1006,8 +899,6 @@
             "6272a0d1ddf8807b",
             "2a94995efda1937e",
             "6b40e38fa169c721",
-            "904fc8c279229b76",
-            "b907a058300b24db",
             "ba94cc02344092b6",
             "0156a364439561a8",
             "5950aa6c0df32eb2",
@@ -1022,7 +913,9 @@
             "fc34e1d6c55a3985",
             "c633c043693d29f4",
             "cb25d319d7126480",
-            "5ec89823b4e8d3aa"
+            "5ec89823b4e8d3aa",
+            "00b200c8b96373d9",
+            "56ed153e71b59e89"
         ],
         "x": 14,
         "y": 219,
@@ -1050,11 +943,11 @@
             "d534f07cf7c1eb0b",
             "b709b48ce2961f8e",
             "47875e1be48bbf82",
-            "ff64f46de7793f7b"
+            "4b2e5cdaca43a71b"
         ],
         "x": 14,
         "y": 19,
-        "w": 962,
+        "w": 1002,
         "h": 182
     },
     {
@@ -1080,9 +973,7 @@
             "e7bc056a5ca25bc5"
         ],
         "x": 14,
-        "y": 19,
-        "w": 812,
-        "h": 162
+        "y": 19
     },
     {
         "id": "8a81267cb12384d5",
@@ -1117,15 +1008,13 @@
             "a921a5a41ab154fc"
         ],
         "x": 14,
-        "y": 199,
-        "w": 1232,
-        "h": 202
+        "y": 199
     },
     {
         "id": "0d4083787ae50482",
         "type": "group",
         "z": "b12fd38c090c51f2",
-        "name": "Monitor Chez Nous Main readyState",
+        "name": "Monitor ground floor Hue readyState",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1140,9 +1029,7 @@
             "dfcbba568eef0b62"
         ],
         "x": 14,
-        "y": 419,
-        "w": 592,
-        "h": 142
+        "y": 419
     },
     {
         "id": "c28ed42a351eb1a7",
@@ -1163,63 +1050,13 @@
             "e80f7721307a29b3"
         ],
         "x": 634,
-        "y": 419,
-        "w": 572,
-        "h": 142
-    },
-    {
-        "id": "f82a1f6e963f443a",
-        "type": "group",
-        "z": "6e3ca82457d27245",
-        "name": "sun-positions CSV service",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "0888e9faa06fe4e5",
-            "48da82dc3974c2b3",
-            "a341a1a127b0fe71",
-            "77b5666f31ee5b17",
-            "9c63c2cfacf4884a",
-            "ff476275160539a3"
-        ],
-        "x": 114,
-        "y": 259,
-        "w": 1012,
-        "h": 82
-    },
-    {
-        "id": "019e1216c1912bc2",
-        "type": "group",
-        "z": "b12fd38c090c51f2",
-        "name": "Monitor MQTT broker connection",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "20f266f186a55d9c",
-            "05a1812a4316ce2c",
-            "9dbdef46ce2f066e",
-            "b85408b986dabda3"
-        ],
-        "x": 294,
-        "y": 579,
-        "w": 312,
-        "h": 142
+        "y": 419
     },
     {
         "id": "70e9b8db12799d18",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "Send requests to the Hue API on the Chez Nous Main bridge",
+        "name": "Send requests to the Hue API on the ground floor Hue bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1232,16 +1069,14 @@
             "7df3e5fbd6e9aa8a",
             "3b5ab296575b53d4"
         ],
-        "x": 794,
-        "y": 159,
-        "w": 385,
-        "h": 82
+        "x": 774,
+        "y": 139
     },
     {
         "id": "290b83ef8e01ae0f",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "Use within 30 seconds of pressing link button on Chez Nous Main bridge",
+        "name": "Use within 30 seconds of pressing link button on the ground floor Hue bridge",
         "style": {
             "fill-opacity": "0.11",
             "label": true,
@@ -1255,9 +1090,7 @@
             "73a1ec5ed8ebc167"
         ],
         "x": 14,
-        "y": 159,
-        "w": 752,
-        "h": 82
+        "y": 139
     },
     {
         "id": "cde8d276df445e2f",
@@ -1276,10 +1109,8 @@
             "64274eb0d8b9e5dd",
             "33b523d447c86f23"
         ],
-        "x": 794,
-        "y": 159,
-        "w": 375,
-        "h": 82
+        "x": 814,
+        "y": 139
     },
     {
         "id": "e7188f251e14aea1",
@@ -1298,32 +1129,8 @@
             "26973bac8c6a9dba",
             "a12bdbda86868f06"
         ],
-        "x": 14,
-        "y": 159,
-        "w": 752,
-        "h": 82
-    },
-    {
-        "id": "aac3bd0e8946965c",
-        "type": "group",
-        "z": "b12fd38c090c51f2",
-        "name": "Invoke sun-positions CSV service",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "f9a4b2c24da44638",
-            "eb296b561972b772",
-            "dbf5921f850ebb39"
-        ],
-        "x": 854,
-        "y": 59,
-        "w": 492,
-        "h": 82
+        "x": 34,
+        "y": 139
     },
     {
         "id": "f8dce80b21d7f706",
@@ -1356,9 +1163,7 @@
             "da79b96d161e1c28"
         ],
         "x": 774,
-        "y": 259,
-        "w": 472,
-        "h": 322
+        "y": 239
     },
     {
         "id": "f718c99bbc8e36c9",
@@ -1385,9 +1190,7 @@
             "64afce8ff0b75f48"
         ],
         "x": 114,
-        "y": 259,
-        "w": 472,
-        "h": 202
+        "y": 239
     },
     {
         "id": "f848d645bd1abc5b",
@@ -1411,9 +1214,7 @@
             "90cec6147a7de28f"
         ],
         "x": 114,
-        "y": 479,
-        "w": 472,
-        "h": 142
+        "y": 459
     },
     {
         "id": "b48f76e13fc77aa7",
@@ -1443,7 +1244,7 @@
         "id": "431ae4bdb7346af5",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from Hue bridges",
+        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from the ground floor Hue bridge",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1458,13 +1259,10 @@
             "abb71db57910be2f",
             "1ee8aff15eae874f",
             "8c9d79d2791e9b02",
-            "7d283a2fc0d30093",
-            "4d2dc9a6e42d0548"
+            "988cc7effd5a036f"
         ],
         "x": 14,
-        "y": 19,
-        "w": 1572,
-        "h": 122
+        "y": 39
     },
     {
         "id": "4e52881346c9e44b",
@@ -1485,13 +1283,102 @@
             "d638e45951bb8819",
             "a2e5d0064800b5fb",
             "5c8d9ca80254e11c",
-            "7dcd1d246a096330",
-            "d7f8a0d309dca688"
+            "250b8a9cbab3774e"
+        ],
+        "x": 34,
+        "y": 39
+    },
+    {
+        "id": "4b0f721c48fca435",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "sun-positions CSV service",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8b169767a6b4cbd9",
+            "dbca9a86d3bcf1ec",
+            "f33c29023f26968a",
+            "8d0db05f4d495979",
+            "ba54b4d206406127",
+            "b1ebe60c0c09e6c1",
+            "dbf5921f850ebb39",
+            "f9a4b2c24da44638",
+            "eb296b561972b772"
         ],
         "x": 14,
+        "y": 579
+    },
+    {
+        "id": "a9f98dfcd4df8501",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Limit rate at which messages are sent to the MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "803af6e0bcde5b26",
+            "ffb325d84e816200",
+            "b9100b6a29fef164",
+            "2e2c4e5f3edba2a4",
+            "e34442bf4597329d",
+            "498f5c4f1dd20f58",
+            "692dc13e2a2a3b97",
+            "c498511575f36ec6",
+            "dd69cfa5011bbf6f"
+        ],
+        "x": 1034,
         "y": 19,
-        "w": 1512,
-        "h": 122
+        "w": 652,
+        "h": 182
+    },
+    {
+        "id": "599f55425211e232",
+        "type": "group",
+        "z": "810a8b527afd2b1b",
+        "name": "Subscribe to server-sent events from Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "7dcd1d246a096330",
+            "968fd6d85ac60a62"
+        ],
+        "x": 1214,
+        "y": 139
+    },
+    {
+        "id": "b0f5ce3a323b7dd7",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Subscribe to server-sent events from the ground floor Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "7d283a2fc0d30093",
+            "54bbaac5bafb7512"
+        ],
+        "x": 1174,
+        "y": 139
     },
     {
         "id": "e79e0110c2317edb",
@@ -1657,9 +1544,9 @@
     {
         "id": "03b0e40844d33477",
         "type": "ui_group",
-        "name": "Chez Nous Main",
+        "name": "Ground Floor Hue",
         "tab": "ec4d94df679f3b11",
-        "order": 2,
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -1670,18 +1557,7 @@
         "type": "ui_group",
         "name": "Basement Hue",
         "tab": "ec4d94df679f3b11",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "991046045b37e3ee",
-        "type": "ui_group",
-        "name": "MQTT Broker",
-        "tab": "ec4d94df679f3b11",
-        "order": 4,
+        "order": 5,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -1692,7 +1568,7 @@
         "type": "ui_group",
         "name": "Sun Position",
         "tab": "ec4d94df679f3b11",
-        "order": 5,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -1710,7 +1586,7 @@
     {
         "id": "21f11f110d626f5a",
         "type": "ui_group",
-        "name": "Upstairs Lighting",
+        "name": "Ground Floor Lighting",
         "tab": "791bf5d34d06adaf",
         "order": 1,
         "disp": true,
@@ -1735,6 +1611,17 @@
         "name": "Basement Lighting",
         "tab": "791bf5d34d06adaf",
         "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d198490f207c2a62",
+        "type": "ui_group",
+        "name": "MQTT Broker",
+        "tab": "ec4d94df679f3b11",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2086,8 +1973,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 140,
+        "x": 1050,
+        "y": 60,
         "wires": [
             []
         ]
@@ -2114,8 +2001,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 810,
-        "y": 180,
+        "x": 890,
+        "y": 100,
         "wires": [
             [
                 "7972bbcf134f786b"
@@ -2136,8 +2023,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 220,
+        "x": 1050,
+        "y": 140,
         "wires": [
             []
         ]
@@ -2150,8 +2037,8 @@
         "scope": [
             "b3c5813303ac7896"
         ],
-        "x": 580,
-        "y": 380,
+        "x": 660,
+        "y": 300,
         "wires": [
             [
                 "9827fd9dee4289ac"
@@ -2163,8 +2050,8 @@
         "type": "subflow:de620fed3bdb7aa9",
         "z": "4e89e7c952d56c09",
         "name": "",
-        "x": 410,
-        "y": 280,
+        "x": 470,
+        "y": 200,
         "wires": [
             [
                 "c51e9f68572dcd4f"
@@ -2178,25 +2065,12 @@
         ]
     },
     {
-        "id": "98d7f50f7db89d4d",
-        "type": "subflow:a34d4eb04cf45884",
-        "z": "4e89e7c952d56c09",
-        "name": "",
-        "x": 620,
-        "y": 140,
-        "wires": [
-            [
-                "74ccf37d5b5cc460"
-            ]
-        ]
-    },
-    {
         "id": "c51e9f68572dcd4f",
         "type": "subflow:4b1f9e8c23fa098d",
         "z": "4e89e7c952d56c09",
         "name": "",
-        "x": 630,
-        "y": 220,
+        "x": 730,
+        "y": 100,
         "wires": [
             [
                 "74ccf37d5b5cc460"
@@ -2222,8 +2096,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 220,
-        "y": 280,
+        "x": 280,
+        "y": 200,
         "wires": [
             [
                 "b3c5813303ac7896"
@@ -2263,8 +2137,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 300,
+        "x": 1040,
+        "y": 220,
         "wires": [
             []
         ]
@@ -2295,8 +2169,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 340,
+        "x": 840,
+        "y": 260,
         "wires": [
             [
                 "1bf87f4377d87af1"
@@ -2304,50 +2178,28 @@
         ]
     },
     {
-        "id": "630e5fb465ec65c9",
-        "type": "function",
+        "id": "d993f8d356c8b076",
+        "type": "inject",
         "z": "4e89e7c952d56c09",
-        "name": "metadata",
-        "func": "const topics = env.get('TOPIC').split('/')\nconst topic = topics[topics.length - 1]\n\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\nfunction getGroup(group, metadata, groups) {\n\n    const groupName = group.metadata.name\n    const groupType = group.type\n    const groupId = group.id\n    const s = findReferences(groupId, 'group', metadata.scene)\n    const grouped_lights = findReferences(groupId, 'owner', metadata.grouped_light)\n    const type = groups[groupType] || {}\n    const scene = {}\n\n    s.forEach(ss => {\n\n        scene[ss.metadata.name] = ss.id\n\n    })\n\n    type[groupName] = {\n        grouped_light: grouped_lights[0].id,\n        scene: scene\n    }\n\n    groups[groupType] = type\n\n}\n\nconst resources = msg.payload.data\nconst metadata = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n    \n    const type = metadata[resource.type] || []\n    type.push(resource)\n    metadata[resource.type] = type\n\n})\n\nconst groups = {}\nconst rooms = metadata.room || []\nconst zones = metadata.zone || []\n\nrooms.forEach((/** @type {any} */ room) => {\n\n    getGroup(room, metadata, groups)\n\n})\n\nzones.forEach((/** @type {any} */ zone) => {\n\n    getGroup(zone, metadata, groups)\n\n})\n\nmsg.metadata = metadata\nmsg.payload = groups\nmsg.topic = topic\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 60,
-        "wires": [
-            [
-                "f308b6088df96049"
-            ]
-        ],
-        "outputLabels": [
-            "merged"
-        ]
-    },
-    {
-        "id": "f308b6088df96049",
-        "type": "change",
-        "z": "4e89e7c952d56c09",
-        "name": "",
-        "rules": [
+        "name": "at start",
+        "props": [
             {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "$reverse($split($env('TOPIC'),'/'))[0]",
-                "tot": "jsonata"
+                "p": "payload"
             }
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 730,
-        "y": 60,
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 200,
         "wires": [
-            []
+            [
+                "42539f9217e51fbd"
+            ]
         ]
     },
     {
@@ -2625,113 +2477,6 @@
         ]
     },
     {
-        "id": "6b8a0e371954f465",
-        "type": "function",
-        "z": "a34d4eb04cf45884",
-        "name": "segregateTypes",
-        "func": "if (msg.payload.errors.length > 0) {\n\n    throw msg.payload.errors\n\n}\n\nlet resources = msg.payload.data\n\nlet arrays = {}\n\nresources.forEach((/** @type {{ type: string | number; }} */ resource) => {\n\n    let array = arrays[resource.type] || []\n    \n    array.push(resource)\n    arrays[resource.type] = array\n\n})\n\nmsg.payload = arrays\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 180,
-        "y": 60,
-        "wires": [
-            [
-                "2e7becc56a96c4dc"
-            ]
-        ]
-    },
-    {
-        "id": "2e7becc56a96c4dc",
-        "type": "split",
-        "z": "a34d4eb04cf45884",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "topic",
-        "x": 330,
-        "y": 60,
-        "wires": [
-            [
-                "b1dd91dbd450f89f"
-            ]
-        ]
-    },
-    {
-        "id": "b1dd91dbd450f89f",
-        "type": "switch",
-        "z": "a34d4eb04cf45884",
-        "name": "filter resources",
-        "property": "topic",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "jsonata_exp",
-                "v": "topic = 'grouped_light' or topic = 'button' or topic = 'motion'",
-                "vt": "jsonata"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 1,
-        "x": 480,
-        "y": 60,
-        "wires": [
-            [
-                "c38043f17fec59c0"
-            ]
-        ]
-    },
-    {
-        "id": "c38043f17fec59c0",
-        "type": "split",
-        "z": "a34d4eb04cf45884",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 630,
-        "y": 60,
-        "wires": [
-            [
-                "2d8a3e52f4b83d16"
-            ]
-        ]
-    },
-    {
-        "id": "2d8a3e52f4b83d16",
-        "type": "change",
-        "z": "a34d4eb04cf45884",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "update",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 770,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "11642f950d52a63f",
         "type": "change",
         "z": "4b1f9e8c23fa098d",
@@ -2872,72 +2617,6 @@
         ]
     },
     {
-        "id": "a22feaa163af73a9",
-        "type": "mqtt in",
-        "z": "658f7950e449a6aa",
-        "name": "",
-        "topic": "${TOPIC}",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 100,
-        "y": 100,
-        "wires": [
-            [
-                "11ead2b503a6826b"
-            ]
-        ]
-    },
-    {
-        "id": "11ead2b503a6826b",
-        "type": "rbe",
-        "z": "658f7950e449a6aa",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 230,
-        "y": 100,
-        "wires": [
-            [
-                "64a29e093d39ddca"
-            ]
-        ]
-    },
-    {
-        "id": "64a29e093d39ddca",
-        "type": "change",
-        "z": "658f7950e449a6aa",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\t   \"text\":payload,\t   \"shape\":\"dot\",\t   \"fill\":\"blue\"\t}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3889cb8956554e6f",
         "type": "mqtt in",
         "z": "9601cbf2386d897b",
@@ -2999,7 +2678,7 @@
         "type": "function",
         "z": "60301f96c2ad2e7c",
         "name": "findScene",
-        "func": "const name = env.get('NAME')\nconst metadata = flow.get('$parent.metadata') || []\n\nfor (let index = 0; index < metadata.length; ++index) {\n\n    const scene = metadata[index]\n\n    if (scene.sceneName == name) {\n\n        msg.payload = scene.sceneId\n        node.status({\n            fill: \"blue\",\n            shape: \"dot\",\n            text: scene.sceneName + ' | ' + scene.sceneId\n        })\n        return msg\n\n    }\n}\n\nnode.status({\n    fill: \"red\",\n    shape: \"dot\",\n    text: 'no scene found named \"' + name + '\"'\n})\nreturn null",
+        "func": "const name = env.get('NAME')\nconst metadata = flow.get('$parent.metadata') || []\n\nfor (const room of metadata) {\n\n    for (const scene of room.scenes) {\n\n        if (scene.name == name) {\n\n            msg.payload = scene.id\n\n            node.status({\n                fill: \"blue\",\n                shape: \"dot\",\n                text: scene.name + ' | ' + scene.id\n            })\n\n            return msg\n\n        }\n    }\n}\n\nnode.status({\n    fill: \"red\",\n    shape: \"dot\",\n    text: 'no scene found named \"' + name + '\"'\n})\n\nreturn null",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3095,7 +2774,7 @@
         "type": "function",
         "z": "bdefba026bd44159",
         "name": "mergeMetadata",
-        "func": "const metadata = {}\n\nlet findRoomName = (/** @type {string} */ id) => {\n    \n    for (let index = 0; index < msg.rooms.length; ++index) {\n\n        let room = msg.rooms[index]\n        \n        if (room.id == id) {\n            \n            return room.name\n            \n        }\n    }\n    \n    node.warn('no room found with id ' + id)\n    return null\n}\n\nmsg.payload.forEach((/** @type {{ roomId: any; sceneName: string; sceneId: any; }} */ scene) => {\n    \n    const roomName = findRoomName(scene.roomId)\n    const room = metadata[roomName] || {}\n    \n    room[scene.sceneName] = scene.sceneId\n    metadata[roomName] = room\n\n})\n\nmsg.payload = metadata\nreturn msg",
+        "func": "const scenes = msg.payload\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {any} roomId\n*/\nfunction findScenes(roomId) {\n\n    const selected = []\n\n    for (let index = 0; index < scenes.length; ++index) {\n\n        const scene = scenes[index]\n\n        if (scene.roomId == roomId) {\n\n            selected.push({\n                id: scene.sceneId,\n                name: scene.sceneName\n            })\n        }\n    }\n\n    return selected.sort(nameCompare)\n\n}\n\n/**\n* @param {{ scenes: any[]; }} room\n*/\nfunction hasScenes(room) {\n\n    return room.scenes.length > 0\n\n}\n\nmsg.payload = msg.rooms.map((/** @type {{ id: any; name: any; }} */ room) => {\n\n    return {\n        id: room.id,\n        name: room.name,\n        scenes: findScenes(room.id)\n    }\n\n}).filter(hasScenes).sort(nameCompare)\n\nflow.set('$parent.metadata', msg.payload)\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3240,6 +2919,26 @@
             [
                 "4a774d5487ebaf6f"
             ]
+        ]
+    },
+    {
+        "id": "218dc34dad5f91fc",
+        "type": "function",
+        "z": "9781b266d05451d0",
+        "name": "format hue metadata",
+        "func": "/**\n* @param {any} groupId\n* @param {string} key\n* @param {any[]} resources\n*/\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {{ metadata: { name: any; }; type: any; id: any; }} group\n* @param {{ scene?: any; grouped_light?: any; }} resources\n*/\nfunction getGroup(group, resources) {\n\n    const scenes = findReferences(group.id, 'group', resources.scene).map(scene => {\n\n        return {\n            name: scene.metadata.name,\n            id: scene.id\n        }\n    }).sort(nameCompare)\n\n    const grouped_light = findReferences(group.id, 'owner', resources.grouped_light)[0]\n\n    return {\n        name: group.metadata.name,\n        id: group.id,\n        type: group.type,\n        grouped_light: grouped_light.id,\n        scene: scenes\n    }\n}\n\nconst resources = {}\n\nmsg.payload.data.forEach((/** @type {{ type: string | number; }} */ resource) => {\n\n    const type = resources[resource.type] || []\n    type.push(resource)\n    resources[resource.type] = type\n\n})\n\nconst rooms = resources.room || []\nconst zones = resources.zone || []\n\nmsg.payload = {\n    room: rooms.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ room) => {\n        return getGroup(room, resources)\n    }).sort(nameCompare),\n    zone: zones.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ zone) => {\n        return getGroup(zone, resources)\n    }).sort(nameCompare)\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "merged"
         ]
     },
     {
@@ -3883,7 +3582,7 @@
         "type": "change",
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
-        "name": "mqtt parameters",
+        "name": "set mqtt parameters",
         "rules": [
             {
                 "t": "set",
@@ -3912,27 +3611,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 820,
+        "x": 840,
         "y": 120,
         "wires": [
             [
-                "ff64f46de7793f7b"
+                "4b2e5cdaca43a71b"
             ]
         ]
-    },
-    {
-        "id": "ff64f46de7793f7b",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "8a031cfeade40a06",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 935,
-        "y": 120,
-        "wires": []
     },
     {
         "id": "784c9929fe789981",
@@ -4020,8 +3705,8 @@
         "height": 0,
         "passthru": false,
         "decouple": "true",
-        "topic": "topic",
-        "topicType": "msg",
+        "topic": "nodered/automation/enable",
+        "topicType": "str",
         "style": "",
         "onvalue": "true",
         "onvalueType": "bool",
@@ -4037,16 +3722,109 @@
         "y": 580,
         "wires": [
             [
-                "904fc8c279229b76"
+                "56ed153e71b59e89"
             ]
         ]
     },
     {
-        "id": "904fc8c279229b76",
+        "id": "803af6e0bcde5b26",
+        "type": "delay",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1190,
+        "y": 60,
+        "wires": [
+            [
+                "ffb325d84e816200"
+            ]
+        ]
+    },
+    {
+        "id": "ffb325d84e816200",
+        "type": "mqtt out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 1330,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b9100b6a29fef164",
+        "type": "link in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "name": "send to broker",
+        "links": [
+            "4b2e5cdaca43a71b",
+            "968fd6d85ac60a62",
+            "54bbaac5bafb7512",
+            "00b200c8b96373d9"
+        ],
+        "x": 1075,
+        "y": 60,
+        "wires": [
+            [
+                "803af6e0bcde5b26"
+            ]
+        ]
+    },
+    {
+        "id": "4b2e5cdaca43a71b",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "b9100b6a29fef164"
+        ],
+        "x": 975,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "00b200c8b96373d9",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "b9100b6a29fef164"
+        ],
+        "x": 755,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "56ed153e71b59e89",
         "type": "change",
         "z": "cbd68ba9caa96a3d",
         "g": "98cf3b8910bc4f22",
-        "name": "mqtt parameters",
+        "name": "set mqtt parameters",
         "rules": [
             {
                 "t": "set",
@@ -4075,38 +3853,150 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
+        "x": 620,
         "y": 580,
         "wires": [
             [
-                "b907a058300b24db"
+                "00b200c8b96373d9"
             ]
         ]
     },
     {
-        "id": "b907a058300b24db",
-        "type": "link out",
+        "id": "2e2c4e5f3edba2a4",
+        "type": "status",
         "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
+        "g": "a9f98dfcd4df8501",
+        "name": "mqtt queue status",
+        "scope": [
+            "803af6e0bcde5b26"
         ],
-        "x": 715,
-        "y": 580,
+        "x": 1170,
+        "y": 120,
+        "wires": [
+            [
+                "c498511575f36ec6"
+            ]
+        ]
+    },
+    {
+        "id": "e34442bf4597329d",
+        "type": "status",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "name": "mqtt connection status",
+        "scope": [
+            "ffb325d84e816200"
+        ],
+        "x": 1160,
+        "y": 160,
+        "wires": [
+            [
+                "dd69cfa5011bbf6f"
+            ]
+        ]
+    },
+    {
+        "id": "498f5c4f1dd20f58",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "group": "d198490f207c2a62",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "MQTT Queue Status",
+        "label": "Queue",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1540,
+        "y": 120,
         "wires": []
+    },
+    {
+        "id": "692dc13e2a2a3b97",
+        "type": "ui_text",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "group": "d198490f207c2a62",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "MQTT Connection Status",
+        "label": "Queue",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "c498511575f36ec6",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "name": "parse status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$substringAfter(status.text, 'node-red:common.status.')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1350,
+        "y": 120,
+        "wires": [
+            [
+                "498f5c4f1dd20f58"
+            ]
+        ]
+    },
+    {
+        "id": "dd69cfa5011bbf6f",
+        "type": "change",
+        "z": "cbd68ba9caa96a3d",
+        "g": "a9f98dfcd4df8501",
+        "name": "parse status",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$substringAfter(status.text, 'node-red:common.status.')",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1350,
+        "y": 160,
+        "wires": [
+            [
+                "692dc13e2a2a3b97"
+            ]
+        ]
     },
     {
         "id": "14e5342cb50f366f",
         "type": "link out",
         "z": "c7141ffb22d64190",
         "g": "70e9b8db12799d18",
-        "name": "return from chez nous main api",
+        "name": "return from ground floor hue api",
         "mode": "return",
         "links": [],
-        "x": 1095,
-        "y": 200,
+        "x": 1075,
+        "y": 180,
         "wires": []
     },
     {
@@ -4114,10 +4004,10 @@
         "type": "link in",
         "z": "c7141ffb22d64190",
         "g": "70e9b8db12799d18",
-        "name": "send to chez nous main",
+        "name": "send to ground floor hue",
         "links": [],
-        "x": 835,
-        "y": 200,
+        "x": 815,
+        "y": 180,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -4136,17 +4026,17 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "CHEZ_NOUS_MAIN_ADDRESS",
+                "value": "GROUND_FLOOR_HUE_ADDRESS",
                 "type": "env"
             },
             {
                 "name": "KEY",
-                "value": "CHEZ_NOUS_MAIN_KEY",
+                "value": "GROUND_FLOOR_HUE_KEY",
                 "type": "env"
             }
         ],
-        "x": 970,
-        "y": 200,
+        "x": 950,
+        "y": 180,
         "wires": [
             [
                 "14e5342cb50f366f"
@@ -4172,7 +4062,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "73a1ec5ed8ebc167"
@@ -4184,7 +4074,7 @@
         "type": "debug",
         "z": "c7141ffb22d64190",
         "g": "290b83ef8e01ae0f",
-        "name": "chez nous main application key",
+        "name": "ground floor application key",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -4193,8 +4083,8 @@
         "targetType": "full",
         "statusVal": "payload",
         "statusType": "msg",
-        "x": 590,
-        "y": 200,
+        "x": 580,
+        "y": 180,
         "wires": []
     },
     {
@@ -4206,36 +4096,22 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "CHEZ_NOUS_MAIN_ADDRESS",
+                "value": "GROUND_FLOOR_HUE_ADDRESS",
                 "type": "env"
             },
             {
                 "name": "USERNAME",
-                "value": "nodered#cheznous",
+                "value": "nodered#groundfloor",
                 "type": "str"
             }
         ],
         "x": 320,
-        "y": 200,
+        "y": 180,
         "wires": [
             [
                 "f3ab10cd192709b0"
             ]
         ]
-    },
-    {
-        "id": "4d2dc9a6e42d0548",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "431ae4bdb7346af5",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 1115,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "8c9d79d2791e9b02",
@@ -4247,11 +4123,11 @@
             "7df3e5fbd6e9aa8a"
         ],
         "timeout": "30",
-        "x": 790,
+        "x": 770,
         "y": 80,
         "wires": [
             [
-                "7d283a2fc0d30093"
+                "988cc7effd5a036f"
             ]
         ]
     },
@@ -4259,33 +4135,30 @@
         "id": "7d283a2fc0d30093",
         "type": "subflow:4e89e7c952d56c09",
         "z": "c7141ffb22d64190",
-        "g": "431ae4bdb7346af5",
+        "g": "b0f5ce3a323b7dd7",
         "name": "",
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "CHEZ_NOUS_MAIN_ADDRESS",
+                "value": "GROUND_FLOOR_HUE_ADDRESS",
                 "type": "env"
             },
             {
                 "name": "KEY",
-                "value": "CHEZ_NOUS_MAIN_KEY",
+                "value": "GROUND_FLOOR_HUE_KEY",
                 "type": "env"
             },
             {
                 "name": "TOPIC",
-                "value": "CHEZ_NOUS_MAIN_TOPIC",
+                "value": "GROUND_FLOOR_HUE_TOPIC",
                 "type": "env"
             }
         ],
-        "x": 1000,
-        "y": 80,
+        "x": 1270,
+        "y": 180,
         "wires": [
             [
-                "4d2dc9a6e42d0548"
-            ],
-            [
-                "3324951b765c9f12"
+                "54bbaac5bafb7512"
             ]
         ]
     },
@@ -4302,7 +4175,7 @@
             "5950aa6c0df32eb2"
         ],
         "x": 155,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "72acc2a8bcbc1528"
@@ -4344,7 +4217,7 @@
         "to": "",
         "reg": false,
         "x": 250,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "a3fa25812dc1f4c0"
@@ -4362,7 +4235,7 @@
         ],
         "timeout": "30",
         "x": 430,
-        "y": 300,
+        "y": 280,
         "wires": [
             []
         ]
@@ -4380,7 +4253,7 @@
             "4ed8bcf218333395"
         ],
         "x": 155,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "1c5888bd24d0a311"
@@ -4398,7 +4271,7 @@
         ],
         "timeout": "30",
         "x": 450,
-        "y": 360,
+        "y": 340,
         "wires": [
             []
         ]
@@ -4438,7 +4311,7 @@
         "to": "",
         "reg": false,
         "x": 260,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "37e508aaad9b809e"
@@ -4458,7 +4331,7 @@
             "b29a7ab55a3476e5"
         ],
         "x": 155,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "64afce8ff0b75f48"
@@ -4476,7 +4349,7 @@
         ],
         "timeout": "30",
         "x": 430,
-        "y": 420,
+        "y": 400,
         "wires": [
             []
         ]
@@ -4516,7 +4389,7 @@
         "to": "",
         "reg": false,
         "x": 250,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "dce6b6fd885e2956"
@@ -4539,7 +4412,7 @@
             "5950aa6c0df32eb2"
         ],
         "x": 155,
-        "y": 520,
+        "y": 500,
         "wires": [
             [
                 "a122f1a4fc3399e5"
@@ -4581,7 +4454,7 @@
         "to": "",
         "reg": false,
         "x": 250,
-        "y": 520,
+        "y": 500,
         "wires": [
             [
                 "12b6bc8a0257750a"
@@ -4599,7 +4472,7 @@
         ],
         "timeout": "30",
         "x": 430,
-        "y": 520,
+        "y": 500,
         "wires": [
             []
         ]
@@ -4615,7 +4488,7 @@
         ],
         "timeout": "30",
         "x": 450,
-        "y": 580,
+        "y": 560,
         "wires": [
             []
         ]
@@ -4634,7 +4507,7 @@
             "4ed8bcf218333395"
         ],
         "x": 155,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "90cec6147a7de28f"
@@ -4676,7 +4549,7 @@
         "to": "",
         "reg": false,
         "x": 260,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "200e1af02e26479b"
@@ -4694,7 +4567,7 @@
         ],
         "timeout": "30",
         "x": 1090,
-        "y": 360,
+        "y": 340,
         "wires": [
             []
         ]
@@ -4712,7 +4585,7 @@
             "b8723d53ddad808a"
         ],
         "x": 815,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "7e843abc77537f92"
@@ -4754,7 +4627,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 360,
+        "y": 340,
         "wires": [
             [
                 "4b146e0f1b9bcccb"
@@ -4772,7 +4645,7 @@
         ],
         "timeout": "30",
         "x": 1090,
-        "y": 540,
+        "y": 520,
         "wires": [
             []
         ]
@@ -4790,7 +4663,7 @@
             "758cfea08b622975"
         ],
         "x": 815,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "da79b96d161e1c28"
@@ -4832,7 +4705,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "52d3dd927cb7e37e"
@@ -4856,7 +4729,7 @@
             "4ed8bcf218333395"
         ],
         "x": 815,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "64a68d2a2d2e93cd"
@@ -4898,7 +4771,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "7f619f84fcad1d75"
@@ -4916,7 +4789,7 @@
         ],
         "timeout": "30",
         "x": 1090,
-        "y": 300,
+        "y": 280,
         "wires": [
             []
         ]
@@ -4932,7 +4805,7 @@
         ],
         "timeout": "30",
         "x": 1110,
-        "y": 480,
+        "y": 460,
         "wires": [
             []
         ]
@@ -4954,7 +4827,7 @@
             "758cfea08b622975"
         ],
         "x": 815,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
                 "d92030613c5ce50e"
@@ -4996,7 +4869,7 @@
         "to": "",
         "reg": false,
         "x": 920,
-        "y": 480,
+        "y": 460,
         "wires": [
             [
                 "d43f117e07910821"
@@ -5014,7 +4887,7 @@
         ],
         "timeout": "30",
         "x": 1090,
-        "y": 420,
+        "y": 400,
         "wires": [
             []
         ]
@@ -5036,7 +4909,7 @@
             "758cfea08b622975"
         ],
         "x": 815,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "67013f62ca5bcb43"
@@ -5078,7 +4951,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "a80f7d1788543bf0"
@@ -5091,18 +4964,18 @@
         "z": "c7141ffb22d64190",
         "g": "431ae4bdb7346af5",
         "group": "21f11f110d626f5a",
-        "name": "Chez Nous Main Controls",
+        "name": "Ground Floor Controls",
         "order": 2,
         "width": "6",
         "height": "10",
-        "format": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"(groupname, group) in type\">\n            <p style=\"text-align:center\">{{groupname}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scenename}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
+        "format": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"group in type\">\n            <p style=\"text-align:center\">{{group.name}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"scene in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene.id, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scene.name}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1210,
-        "y": 100,
+        "x": 1220,
+        "y": 80,
         "wires": [
             [
                 "2736286441feda07"
@@ -5120,7 +4993,7 @@
         ],
         "timeout": "30",
         "x": 1450,
-        "y": 100,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5156,7 +5029,7 @@
         "type": "ui_button",
         "z": "c7141ffb22d64190",
         "g": "431ae4bdb7346af5",
-        "name": "Refresh Chez Nous Main Controls",
+        "name": "Refresh Ground Floor Controls",
         "group": "21f11f110d626f5a",
         "order": 1,
         "width": 0,
@@ -5172,7 +5045,7 @@
         "payloadType": "date",
         "topic": "topic",
         "topicType": "msg",
-        "x": 340,
+        "x": 330,
         "y": 80,
         "wires": [
             [
@@ -5214,11 +5087,39 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 560,
         "y": 80,
         "wires": [
             [
                 "8c9d79d2791e9b02"
+            ]
+        ]
+    },
+    {
+        "id": "54bbaac5bafb7512",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "b0f5ce3a323b7dd7",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "b9100b6a29fef164"
+        ],
+        "x": 1375,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "988cc7effd5a036f",
+        "type": "subflow:9781b266d05451d0",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "name": "",
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "3324951b765c9f12"
             ]
         ]
     },
@@ -5230,8 +5131,8 @@
         "name": "return from basement hue api",
         "mode": "return",
         "links": [],
-        "x": 1095,
-        "y": 200,
+        "x": 1115,
+        "y": 180,
         "wires": []
     },
     {
@@ -5241,8 +5142,8 @@
         "g": "cde8d276df445e2f",
         "name": "send to basement hue",
         "links": [],
-        "x": 835,
-        "y": 200,
+        "x": 855,
+        "y": 180,
         "wires": [
             [
                 "33b523d447c86f23"
@@ -5270,8 +5171,8 @@
                 "type": "env"
             }
         ],
-        "x": 970,
-        "y": 200,
+        "x": 990,
+        "y": 180,
         "wires": [
             [
                 "735f828714a9c98f"
@@ -5296,8 +5197,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 200,
+        "x": 140,
+        "y": 180,
         "wires": [
             [
                 "a12bdbda86868f06"
@@ -5318,8 +5219,8 @@
         "targetType": "full",
         "statusVal": "payload[0].success.username",
         "statusType": "msg",
-        "x": 590,
-        "y": 200,
+        "x": 610,
+        "y": 180,
         "wires": []
     },
     {
@@ -5336,31 +5237,17 @@
             },
             {
                 "name": "USERNAME",
-                "value": "nodered#cheznous",
+                "value": "nodered#basementhue",
                 "type": "str"
             }
         ],
-        "x": 320,
-        "y": 200,
+        "x": 340,
+        "y": 180,
         "wires": [
             [
                 "26973bac8c6a9dba"
             ]
         ]
-    },
-    {
-        "id": "d7f8a0d309dca688",
-        "type": "link out",
-        "z": "810a8b527afd2b1b",
-        "g": "4e52881346c9e44b",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "dd7609e91ad64f63"
-        ],
-        "x": 1075,
-        "y": 60,
-        "wires": []
     },
     {
         "id": "5c8d9ca80254e11c",
@@ -5372,11 +5259,11 @@
             "64274eb0d8b9e5dd"
         ],
         "timeout": "30",
-        "x": 760,
+        "x": 780,
         "y": 80,
         "wires": [
             [
-                "7dcd1d246a096330"
+                "250b8a9cbab3774e"
             ]
         ]
     },
@@ -5384,7 +5271,7 @@
         "id": "7dcd1d246a096330",
         "type": "subflow:4e89e7c952d56c09",
         "z": "810a8b527afd2b1b",
-        "g": "4e52881346c9e44b",
+        "g": "599f55425211e232",
         "name": "",
         "env": [
             {
@@ -5403,14 +5290,11 @@
                 "type": "env"
             }
         ],
-        "x": 960,
-        "y": 80,
+        "x": 1310,
+        "y": 180,
         "wires": [
             [
-                "d7f8a0d309dca688"
-            ],
-            [
-                "a28b1c17c4f3e3ee"
+                "968fd6d85ac60a62"
             ]
         ]
     },
@@ -5424,8 +5308,8 @@
             "64274eb0d8b9e5dd"
         ],
         "timeout": "30",
-        "x": 1400,
-        "y": 100,
+        "x": 1460,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5440,14 +5324,14 @@
         "order": 2,
         "width": "6",
         "height": "10",
-        "format": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"(groupname, group) in type\">\n            <p style=\"text-align:center\">{{groupname}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"(scenename, scene) in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scenename}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
+        "format": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"group in type\">\n            <p style=\"text-align:center\">{{group.name}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"scene in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene.id, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scene.name}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1170,
-        "y": 100,
+        "x": 1230,
+        "y": 80,
         "wires": [
             [
                 "80384d1e957ed3ca"
@@ -5472,7 +5356,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
+        "x": 140,
         "y": 80,
         "wires": [
             [
@@ -5501,7 +5385,7 @@
         "payloadType": "date",
         "topic": "topic",
         "topicType": "msg",
-        "x": 330,
+        "x": 350,
         "y": 80,
         "wires": [
             [
@@ -5543,11 +5427,39 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
+        "x": 580,
         "y": 80,
         "wires": [
             [
                 "5c8d9ca80254e11c"
+            ]
+        ]
+    },
+    {
+        "id": "968fd6d85ac60a62",
+        "type": "link out",
+        "z": "810a8b527afd2b1b",
+        "g": "599f55425211e232",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "b9100b6a29fef164"
+        ],
+        "x": 1415,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "250b8a9cbab3774e",
+        "type": "subflow:9781b266d05451d0",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "",
+        "x": 1000,
+        "y": 80,
+        "wires": [
+            [
+                "a28b1c17c4f3e3ee"
             ]
         ]
     },
@@ -6020,7 +5932,7 @@
         "order": 2,
         "width": "6",
         "height": "10",
-        "format": "<div>\n    <div ng-repeat=\"(roomname, room) in msg.payload\" style=\"text-align:center\">\n        <p>{{roomname}}</p>\n        <md-button style=\"display:inline-block;margin:1px;text-align:center\" ng-repeat=\"(scenename, scene) in room\"\n            ng-click=\"send({payload: scene})\">\n            {{scenename}}\n        </md-button>\n    </div>\n</div>",
+        "format": "<div>\n    <div ng-repeat=\"room in msg.payload\" style=\"text-align:center\">\n        <p>{{room.name}}</p>\n        <md-button style=\"display:inline-block;margin:1px;text-align:center\" ng-repeat=\"scene in room.scenes\"\n            ng-click=\"send({payload: scene.id})\">\n            {{scene.name}}\n        </md-button>\n    </div>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": true,
@@ -6102,331 +6014,6 @@
         "wires": [
             [
                 "942f0a1ef3d8ade3"
-            ]
-        ]
-    },
-    {
-        "id": "f5c7a7580984d067",
-        "type": "delay",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "3",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 270,
-        "y": 80,
-        "wires": [
-            [
-                "11b2638982da0e64"
-            ]
-        ]
-    },
-    {
-        "id": "11b2638982da0e64",
-        "type": "mqtt out",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "722d62f3b93039c3",
-        "x": 410,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "dd7609e91ad64f63",
-        "type": "link in",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "send to broker",
-        "links": [
-            "4d2dc9a6e42d0548",
-            "2a3ace48408488ce",
-            "ac4ea7223e34a6f8",
-            "ae1f46d58671ef2d",
-            "3b3c70d754a8a4d5",
-            "40f1f326e5252bf8",
-            "e309f9054b8afaa3",
-            "cc0a0bdacb257089",
-            "c33318ea5eb9ec0a",
-            "d123374401361fc9",
-            "e3599caac9ca8f69",
-            "9632421ff2220cf7",
-            "e132ff7fd9fda65d",
-            "1209a8480a23b591",
-            "831fb3f42898b50f",
-            "08157854eff23df6",
-            "ff64f46de7793f7b",
-            "baa82bec436a6471",
-            "1e38e8b95d3fbfe0",
-            "d7f8a0d309dca688",
-            "9ec7e31b8d604ece",
-            "b907a058300b24db"
-        ],
-        "x": 155,
-        "y": 80,
-        "wires": [
-            [
-                "f5c7a7580984d067"
-            ]
-        ]
-    },
-    {
-        "id": "8145a71a1f26c616",
-        "type": "status",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "limit rate",
-        "scope": [
-            "f5c7a7580984d067"
-        ],
-        "x": 200,
-        "y": 200,
-        "wires": [
-            [
-                "1c6a7f9ae824db96"
-            ]
-        ]
-    },
-    {
-        "id": "1c6a7f9ae824db96",
-        "type": "change",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$number(status.text)",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 200,
-        "wires": [
-            [
-                "a8211a5387f8494c"
-            ]
-        ]
-    },
-    {
-        "id": "461d49b47e87e402",
-        "type": "status",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "mqtt out",
-        "scope": [
-            "11b2638982da0e64"
-        ],
-        "x": 200,
-        "y": 140,
-        "wires": [
-            [
-                "5ea9e057dd830d9e"
-            ]
-        ]
-    },
-    {
-        "id": "5ea9e057dd830d9e",
-        "type": "change",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$reverse($split(status.text,'.'))[0]",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 360,
-        "y": 140,
-        "wires": [
-            [
-                "d59aa94341d8a721"
-            ]
-        ]
-    },
-    {
-        "id": "0888e9faa06fe4e5",
-        "type": "http response",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 1050,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "48da82dc3974c2b3",
-        "type": "function",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "response",
-        "func": "const date = new Date()\nconst timestamp = '-' +\n    date.getFullYear() +\n    '-' +\n    String(date.getMonth() + 1).padStart(2, '0') +\n    '-' +\n    String(date.getDate()).padStart(2, '0')\n\nmsg.headers = {\n    'Content-Type': 'text/plain; charset=UTF-8',\n    'Content-Disposition': 'attachment; filename=\"sun-positions' + timestamp + '.csv\"'\n}\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 300,
-        "wires": [
-            [
-                "0888e9faa06fe4e5"
-            ]
-        ]
-    },
-    {
-        "id": "a341a1a127b0fe71",
-        "type": "http in",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "",
-        "url": "/sunpositions",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 230,
-        "y": 300,
-        "wires": [
-            [
-                "9c63c2cfacf4884a"
-            ]
-        ]
-    },
-    {
-        "id": "d59aa94341d8a721",
-        "type": "link out",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "broker connection status",
-        "mode": "link",
-        "links": [
-            "71f9700a0df07aec",
-            "20f266f186a55d9c"
-        ],
-        "x": 475,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "a8211a5387f8494c",
-        "type": "link out",
-        "z": "6e3ca82457d27245",
-        "g": "e49c9571ddd5102f",
-        "name": "broker queue status",
-        "mode": "link",
-        "links": [
-            "c903e305be3f56a3",
-            "9dbdef46ce2f066e"
-        ],
-        "x": 475,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "77b5666f31ee5b17",
-        "type": "csv",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\n",
-        "temp": "time,altitude,azimuth",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 790,
-        "y": 300,
-        "wires": [
-            [
-                "48da82dc3974c2b3"
-            ]
-        ]
-    },
-    {
-        "id": "9c63c2cfacf4884a",
-        "type": "change",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "global.sun-positions",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "sun-positions",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 440,
-        "y": 300,
-        "wires": [
-            [
-                "ff476275160539a3"
-            ]
-        ]
-    },
-    {
-        "id": "ff476275160539a3",
-        "type": "function",
-        "z": "6e3ca82457d27245",
-        "g": "f82a1f6e963f443a",
-        "name": "format for csv",
-        "func": "msg.payload.forEach((/** @type {{ time: string | number | Date; }} */ position) => {\n\n    position.time = new Date(position.time).toLocaleTimeString()\n\n})\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 300,
-        "wires": [
-            [
-                "77b5666f31ee5b17"
             ]
         ]
     },
@@ -6966,12 +6553,12 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "name": "Chez Nous Main readyState",
+        "name": "Ground Floor Hue readyState",
         "label": "readyState",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 440,
+        "x": 470,
         "y": 460,
         "wires": []
     },
@@ -6981,7 +6568,7 @@
         "z": "b12fd38c090c51f2",
         "g": "0d4083787ae50482",
         "name": "",
-        "topic": "hue/chez-nous-main/status",
+        "topic": "hue/ground-floor-hue/status",
         "qos": "2",
         "datatype": "json",
         "broker": "722d62f3b93039c3",
@@ -6989,7 +6576,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
+        "x": 200,
         "y": 460,
         "wires": [
             [
@@ -7002,11 +6589,11 @@
         "type": "subflow:9601cbf2386d897b",
         "z": "b12fd38c090c51f2",
         "g": "0d4083787ae50482",
-        "name": "Count Chez Nous Main onopen",
+        "name": "Count Ground Floor Hue onopen",
         "env": [
             {
                 "name": "TOPIC",
-                "value": "hue/chez-nous-main/open",
+                "value": "hue/ground-floor-hue/open",
                 "type": "str"
             }
         ],
@@ -7028,12 +6615,12 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "name": "Chez Nous Main onopen Count",
+        "name": "Ground Floor Hue onopen Count",
         "label": "onopen",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 450,
+        "x": 460,
         "y": 520,
         "wires": []
     },
@@ -7170,80 +6757,10 @@
         ]
     },
     {
-        "id": "20f266f186a55d9c",
-        "type": "link in",
-        "z": "b12fd38c090c51f2",
-        "g": "019e1216c1912bc2",
-        "name": "broker connection status",
-        "links": [
-            "d59aa94341d8a721"
-        ],
-        "x": 335,
-        "y": 620,
-        "wires": [
-            [
-                "05a1812a4316ce2c"
-            ]
-        ]
-    },
-    {
-        "id": "05a1812a4316ce2c",
-        "type": "ui_text",
-        "z": "b12fd38c090c51f2",
-        "g": "019e1216c1912bc2",
-        "group": "991046045b37e3ee",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "MQTT Broker Status",
-        "label": "Status",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 480,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "9dbdef46ce2f066e",
-        "type": "link in",
-        "z": "b12fd38c090c51f2",
-        "g": "019e1216c1912bc2",
-        "name": "broker queue status",
-        "links": [
-            "a8211a5387f8494c"
-        ],
-        "x": 335,
-        "y": 680,
-        "wires": [
-            [
-                "b85408b986dabda3"
-            ]
-        ]
-    },
-    {
-        "id": "b85408b986dabda3",
-        "type": "ui_text",
-        "z": "b12fd38c090c51f2",
-        "g": "019e1216c1912bc2",
-        "group": "991046045b37e3ee",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "MQTT Broker Queue",
-        "label": "Queue",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 480,
-        "y": 680,
-        "wires": []
-    },
-    {
         "id": "f9a4b2c24da44638",
         "type": "function",
         "z": "b12fd38c090c51f2",
-        "g": "aac3bd0e8946965c",
+        "g": "4b0f721c48fca435",
         "name": "url",
         "func": "/*global os*/\n\nmsg.payload = 'http://' + os.hostname + '.local:1880/sunpositions'\nreturn msg",
         "outputs": 1,
@@ -7256,8 +6773,8 @@
                 "module": "os"
             }
         ],
-        "x": 1090,
-        "y": 100,
+        "x": 250,
+        "y": 680,
         "wires": [
             [
                 "eb296b561972b772"
@@ -7268,7 +6785,7 @@
         "id": "eb296b561972b772",
         "type": "ui_template",
         "z": "b12fd38c090c51f2",
-        "g": "aac3bd0e8946965c",
+        "g": "4b0f721c48fca435",
         "group": "8055574ccb17e8ed",
         "name": "Download CSV",
         "order": 4,
@@ -7280,8 +6797,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1240,
-        "y": 100,
+        "x": 400,
+        "y": 680,
         "wires": [
             []
         ]
@@ -7290,7 +6807,7 @@
         "id": "dbf5921f850ebb39",
         "type": "inject",
         "z": "b12fd38c090c51f2",
-        "g": "aac3bd0e8946965c",
+        "g": "4b0f721c48fca435",
         "name": "at start",
         "props": [
             {
@@ -7304,11 +6821,133 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 960,
-        "y": 100,
+        "x": 120,
+        "y": 680,
         "wires": [
             [
                 "f9a4b2c24da44638"
+            ]
+        ]
+    },
+    {
+        "id": "8b169767a6b4cbd9",
+        "type": "http response",
+        "z": "b12fd38c090c51f2",
+        "g": "4b0f721c48fca435",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 950,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "dbca9a86d3bcf1ec",
+        "type": "function",
+        "z": "b12fd38c090c51f2",
+        "g": "4b0f721c48fca435",
+        "name": "response",
+        "func": "const date = new Date()\nconst timestamp = '-' +\n    date.getFullYear() +\n    '-' +\n    String(date.getMonth() + 1).padStart(2, '0') +\n    '-' +\n    String(date.getDate()).padStart(2, '0')\n\nmsg.headers = {\n    'Content-Type': 'text/plain; charset=UTF-8',\n    'Content-Disposition': 'attachment; filename=\"sun-positions' + timestamp + '.csv\"'\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 620,
+        "wires": [
+            [
+                "8b169767a6b4cbd9"
+            ]
+        ]
+    },
+    {
+        "id": "f33c29023f26968a",
+        "type": "http in",
+        "z": "b12fd38c090c51f2",
+        "g": "4b0f721c48fca435",
+        "name": "",
+        "url": "/sunpositions",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 620,
+        "wires": [
+            [
+                "ba54b4d206406127"
+            ]
+        ]
+    },
+    {
+        "id": "8d0db05f4d495979",
+        "type": "csv",
+        "z": "b12fd38c090c51f2",
+        "g": "4b0f721c48fca435",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "time,altitude,azimuth",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 690,
+        "y": 620,
+        "wires": [
+            [
+                "dbca9a86d3bcf1ec"
+            ]
+        ]
+    },
+    {
+        "id": "ba54b4d206406127",
+        "type": "change",
+        "z": "b12fd38c090c51f2",
+        "g": "4b0f721c48fca435",
+        "name": "global.sun-positions",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "sun-positions",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 620,
+        "wires": [
+            [
+                "b1ebe60c0c09e6c1"
+            ]
+        ]
+    },
+    {
+        "id": "b1ebe60c0c09e6c1",
+        "type": "function",
+        "z": "b12fd38c090c51f2",
+        "g": "4b0f721c48fca435",
+        "name": "format for csv",
+        "func": "msg.payload.forEach((/** @type {{ time: string | number | Date; }} */ position) => {\n\n    position.time = new Date(position.time).toLocaleTimeString()\n\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 620,
+        "wires": [
+            [
+                "8d0db05f4d495979"
             ]
         ]
     }
