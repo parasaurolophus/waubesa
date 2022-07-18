@@ -726,11 +726,11 @@
         ],
         "out": [
             {
-                "x": 1300,
+                "x": 1160,
                 "y": 60,
                 "wires": [
                     {
-                        "id": "1707760ccf0df14b",
+                        "id": "95d13bf160785919",
                         "port": 0
                     }
                 ]
@@ -802,6 +802,46 @@
         "color": "#3FADB5"
     },
     {
+        "id": "882c6d268bfa1aec",
+        "type": "subflow",
+        "name": "Hue Dashboard Controls",
+        "info": "",
+        "category": "hue",
+        "in": [],
+        "out": [
+            {
+                "x": 680,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "d9ae737367ebed62",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#AA77AA",
+        "icon": "font-awesome/fa-lightbulb-o",
+        "status": {
+            "x": 680,
+            "y": 240,
+            "wires": [
+                {
+                    "id": "b10710b8c58d5e66",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
         "id": "87285e6bf01cff03",
         "type": "group",
         "z": "1cf0490e7de2f93d",
@@ -819,9 +859,7 @@
             "63300052daf495e4"
         ],
         "x": 14,
-        "y": 159,
-        "w": 552,
-        "h": 82
+        "y": 159
     },
     {
         "id": "98cf3b8910bc4f22",
@@ -965,7 +1003,7 @@
             "44f0fb819452b7aa"
         ],
         "x": 14,
-        "y": 299,
+        "y": 359,
         "w": 492,
         "h": 82
     },
@@ -1013,9 +1051,7 @@
             "96e7a29d96084487"
         ],
         "x": 14,
-        "y": 19,
-        "w": 1022,
-        "h": 122
+        "y": 19
     },
     {
         "id": "431ae4bdb7346af5",
@@ -1030,17 +1066,15 @@
             "color": "#000000"
         },
         "nodes": [
-            "3324951b765c9f12",
             "7def18ac26259af3",
             "abb71db57910be2f",
             "1ed4e6f41dea92e2",
-            "e78baddb570f92fa",
-            "ad6148753504feb8"
+            "e78baddb570f92fa"
         ],
         "x": 14,
         "y": 159,
-        "w": 942,
-        "h": 122
+        "w": 872,
+        "h": 82
     },
     {
         "id": "4b0f721c48fca435",
@@ -1082,7 +1116,7 @@
             "54bbaac5bafb7512"
         ],
         "x": 14,
-        "y": 399,
+        "y": 459,
         "w": 242,
         "h": 82
     },
@@ -1109,7 +1143,9 @@
             "6d664c1fce229c1e"
         ],
         "x": 894,
-        "y": 319
+        "y": 319,
+        "w": 352,
+        "h": 282
     },
     {
         "id": "053656a9e6f3379c",
@@ -1138,7 +1174,9 @@
             "6957440564321846"
         ],
         "x": 134,
-        "y": 259
+        "y": 259,
+        "w": 522,
+        "h": 362
     },
     {
         "id": "276fb48c5a5f5cf0",
@@ -1165,7 +1203,9 @@
             "af1881c6e1166196"
         ],
         "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 652,
+        "h": 222
     },
     {
         "id": "1654aea0ccd3a289",
@@ -1227,7 +1267,7 @@
             "a2c690258588b4d5"
         ],
         "x": 14,
-        "y": 299,
+        "y": 359,
         "w": 492,
         "h": 82
     },
@@ -1258,7 +1298,7 @@
         "id": "4e52881346c9e44b",
         "type": "group",
         "z": "810a8b527afd2b1b",
-        "name": "Dynamically create dashboard controls for lighting based on metadata obtained from a Hue bridge",
+        "name": "Cache metadata for a Hue bridge at start",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1267,17 +1307,15 @@
             "color": "#000000"
         },
         "nodes": [
-            "a28b1c17c4f3e3ee",
             "678145510dc4c76f",
             "d638e45951bb8819",
             "eba8e1c8260d9915",
-            "ab63a9de566fc346",
-            "752f073c9b327f42"
+            "ab63a9de566fc346"
         ],
         "x": 14,
         "y": 159,
-        "w": 962,
-        "h": 122
+        "w": 872,
+        "h": 82
     },
     {
         "id": "599f55425211e232",
@@ -1296,7 +1334,7 @@
             "968fd6d85ac60a62"
         ],
         "x": 14,
-        "y": 399,
+        "y": 459,
         "w": 242,
         "h": 82
     },
@@ -1327,7 +1365,7 @@
             "5539f5e5fa8f4bb2"
         ],
         "x": 814,
-        "y": 399,
+        "y": 459,
         "w": 362,
         "h": 242
     },
@@ -1352,7 +1390,7 @@
             "b377dfca55193e3b"
         ],
         "x": 394,
-        "y": 579,
+        "y": 639,
         "w": 282,
         "h": 122
     },
@@ -1380,9 +1418,7 @@
             "dcd2a91c5972ccf0"
         ],
         "x": 114,
-        "y": 259,
-        "w": 382,
-        "h": 202
+        "y": 259
     },
     {
         "id": "b1ee6e019c90396d",
@@ -1406,9 +1442,53 @@
             "5453ecd10d2275d7"
         ],
         "x": 394,
-        "y": 399,
+        "y": 459,
         "w": 302,
         "h": 162
+    },
+    {
+        "id": "74df0c542b5a3bbd",
+        "type": "group",
+        "z": "810a8b527afd2b1b",
+        "name": "Dynamically create dashboard controls for a Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "40ce873d4a67d8f4",
+            "6d75fc9fc3d3a168",
+            "c31b3f586efc5c75"
+        ],
+        "x": 14,
+        "y": 259,
+        "w": 562,
+        "h": 82
+    },
+    {
+        "id": "d4fbb88ed29d4d7f",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Dynamically create dashboard controls for a Hue bridge",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "c11e7d50f626ad85",
+            "f4e7f3f6609ec608",
+            "b91aabd7ec998121"
+        ],
+        "x": 14,
+        "y": 259,
+        "w": 582,
+        "h": 82
     },
     {
         "id": "ded409ca4a47d4fa",
@@ -3569,29 +3649,10 @@
         "x": 980,
         "y": 60,
         "wires": [
-            [
-                "1707760ccf0df14b"
-            ]
+            []
         ],
         "outputLabels": [
             "merged"
-        ]
-    },
-    {
-        "id": "1707760ccf0df14b",
-        "type": "template",
-        "z": "da7c0eae8eb34f5a",
-        "name": "",
-        "field": "template",
-        "fieldType": "msg",
-        "format": "html",
-        "syntax": "plain",
-        "template": "<div>\n    <div ng-repeat=\"(typename, type) in msg.payload\">\n        <div ng-repeat=\"group in type\">\n            <p style=\"text-align:center\">{{group.name}}</p>\n            <p style=\"text-align:center\">\n                <md-button style=\"display:inline-block;margin:1px\"\n                    ng-click=\"send({topic: 'resource/grouped_light/' + group.grouped_light, payload: {on:{on:false}}, method: 'PUT'})\">\n                    Off\n                </md-button>\n                <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"scene in group.scene\"\n                    ng-click=\"send({topic: 'resource/scene/' + scene.id, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n                    {{scene.name}}\n                </md-button>\n            </p>\n        </div>\n    </div>\n</div>",
-        "output": "str",
-        "x": 1160,
-        "y": 60,
-        "wires": [
-            []
         ]
     },
     {
@@ -3668,6 +3729,110 @@
             [
                 "0985cf211a9510a2"
             ]
+        ]
+    },
+    {
+        "id": "fbd48fd0a48a3c31",
+        "type": "mqtt in",
+        "z": "882c6d268bfa1aec",
+        "name": "",
+        "topic": "${TOPIC}",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "722d62f3b93039c3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "2396390d67aa9e8d"
+            ]
+        ]
+    },
+    {
+        "id": "2396390d67aa9e8d",
+        "type": "json",
+        "z": "882c6d268bfa1aec",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 250,
+        "y": 80,
+        "wires": [
+            [
+                "3fe9b64e4c386d21"
+            ]
+        ]
+    },
+    {
+        "id": "bed67e8de684e3ce",
+        "type": "catch",
+        "z": "882c6d268bfa1aec",
+        "name": "",
+        "scope": [
+            "2396390d67aa9e8d"
+        ],
+        "uncaught": false,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "3fe9b64e4c386d21"
+            ]
+        ]
+    },
+    {
+        "id": "3fe9b64e4c386d21",
+        "type": "function",
+        "z": "882c6d268bfa1aec",
+        "name": "format metadata",
+        "func": "const state = context.get('state') || {}\n\nif (msg.payload === '') {\n\n    delete state[msg.topic]\n\n} else {\n\n    if (Object.prototype.hasOwnProperty.call(msg.payload, 'on')) {\n\n        state[msg.topic] = msg.payload\n\n    }\n}\n\ncontext.set('state', state)\n\nconst model = []\nconst metadata = flow.get('$parent.metadata')\n\n/**\n* @param {{ owner: { rid: any; }; id: string; }} grouped_light\n* @param {any} type\n*/\nfunction findGroup(grouped_light, type) {\n\n    for (const group of type) {\n\n        if (group.id == grouped_light.owner.rid) {\n\n            return group\n\n        }\n    }\n\n    throw 'no group found for grouped_light ' + grouped_light.id\n\n}\n\nfor (const topic in state) {\n\n    const grouped_light = state[topic]\n\n    if (!Object.prototype.hasOwnProperty.call(metadata, grouped_light.owner.rtype)) {\n\n        continue\n\n    }\n\n    const group = findGroup(grouped_light, metadata[grouped_light.owner.rtype])\n    const entry = {\n        id: grouped_light.id,\n        state: grouped_light.on.on,\n        label: group.name,\n        scene: group.scene\n    }\n\n    model.push(entry)\n    \n}\n\nmsg.payload = model.sort((a, b) => {\n\n    return a.label.localeCompare(b.label)\n\n})\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "d9ae737367ebed62"
+            ]
+        ]
+    },
+    {
+        "id": "b10710b8c58d5e66",
+        "type": "status",
+        "z": "882c6d268bfa1aec",
+        "name": "",
+        "scope": [
+            "fbd48fd0a48a3c31"
+        ],
+        "x": 580,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9ae737367ebed62",
+        "type": "template",
+        "z": "882c6d268bfa1aec",
+        "name": "",
+        "field": "template",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "plain",
+        "template": "<div>\n    <div ng-repeat=\"model in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <md-switch ng-value=\"model.state\" ng-model=\"model.state\"\n            ng-change=\"send({ topic: 'resource/grouped_light/' + model.id, payload: { on: { on:model.state } }, method: 'PUT' })\">\n            {{model.label}}\n        </md-switch>\n        <md-button style=\"display:inline-block;margin:1px\" ng-repeat=\"scene in model.scene\"\n            ng-click=\"send({topic: 'resource/scene/' + scene.id, payload: {recall:{action:'dynamic_palette'}}, method: 'PUT'})\">\n            {{scene.name}}\n        </md-button>\n    </div>\n</div>",
+        "output": "str",
+        "x": 580,
+        "y": 120,
+        "wires": [
+            []
         ]
     },
     {
@@ -4851,10 +5016,11 @@
             "ad6148753504feb8",
             "5453ecd10d2275d7",
             "b377dfca55193e3b",
-            "5539f5e5fa8f4bb2"
+            "5539f5e5fa8f4bb2",
+            "b91aabd7ec998121"
         ],
         "x": 55,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -4883,7 +5049,7 @@
             }
         ],
         "x": 190,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "44f0fb819452b7aa"
@@ -4984,34 +5150,10 @@
             }
         ],
         "x": 110,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "54bbaac5bafb7512"
-            ]
-        ]
-    },
-    {
-        "id": "3324951b765c9f12",
-        "type": "ui_template",
-        "z": "c7141ffb22d64190",
-        "g": "431ae4bdb7346af5",
-        "group": "21f11f110d626f5a",
-        "name": "Ground Floor Controls",
-        "order": 2,
-        "width": "6",
-        "height": "19",
-        "format": "",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 780,
-        "y": 200,
-        "wires": [
-            [
-                "ad6148753504feb8"
             ]
         ]
     },
@@ -5034,7 +5176,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "abb71db57910be2f"
@@ -5063,7 +5205,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 330,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "1ed4e6f41dea92e2"
@@ -5082,7 +5224,7 @@
             "efbd1b79e54e0bf7"
         ],
         "x": 215,
-        "y": 440,
+        "y": 500,
         "wires": []
     },
     {
@@ -5120,11 +5262,9 @@
             }
         ],
         "x": 570,
-        "y": 220,
+        "y": 200,
         "wires": [
-            [
-                "3324951b765c9f12"
-            ],
+            [],
             [
                 "e78baddb570f92fa"
             ]
@@ -5149,7 +5289,7 @@
             "52a74204d47efd1e"
         ],
         "x": 855,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "64a68d2a2d2e93cd"
@@ -5191,7 +5331,7 @@
         "to": "",
         "reg": false,
         "x": 970,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5212,7 +5352,7 @@
             "84118b9049ec3439"
         ],
         "x": 855,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "7e843abc77537f92"
@@ -5254,7 +5394,7 @@
         "to": "",
         "reg": false,
         "x": 970,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5280,7 +5420,7 @@
             "13ec2fe1e16094a1"
         ],
         "x": 855,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "67013f62ca5bcb43"
@@ -5322,7 +5462,7 @@
         "to": "",
         "reg": false,
         "x": 970,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5349,7 +5489,7 @@
             "13ec2fe1e16094a1"
         ],
         "x": 855,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "d92030613c5ce50e"
@@ -5391,7 +5531,7 @@
         "to": "",
         "reg": false,
         "x": 960,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5412,7 +5552,7 @@
             "13ec2fe1e16094a1"
         ],
         "x": 855,
-        "y": 600,
+        "y": 660,
         "wires": [
             [
                 "da79b96d161e1c28"
@@ -5454,7 +5594,7 @@
         "to": "",
         "reg": false,
         "x": 970,
-        "y": 600,
+        "y": 660,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5475,7 +5615,7 @@
             "59e320abec722230"
         ],
         "x": 435,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "72acc2a8bcbc1528"
@@ -5517,7 +5657,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "5453ecd10d2275d7"
@@ -5538,7 +5678,7 @@
             "52a74204d47efd1e"
         ],
         "x": 435,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "1c5888bd24d0a311"
@@ -5580,7 +5720,7 @@
         "to": "",
         "reg": false,
         "x": 540,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "5453ecd10d2275d7"
@@ -5602,7 +5742,7 @@
             "6957440564321846"
         ],
         "x": 435,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "64afce8ff0b75f48"
@@ -5644,7 +5784,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 520,
+        "y": 580,
         "wires": [
             [
                 "5453ecd10d2275d7"
@@ -5668,7 +5808,7 @@
             "59e320abec722230"
         ],
         "x": 435,
-        "y": 620,
+        "y": 680,
         "wires": [
             [
                 "a122f1a4fc3399e5"
@@ -5710,7 +5850,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 620,
+        "y": 680,
         "wires": [
             [
                 "b377dfca55193e3b"
@@ -5733,7 +5873,7 @@
             "52a74204d47efd1e"
         ],
         "x": 435,
-        "y": 660,
+        "y": 720,
         "wires": [
             [
                 "90cec6147a7de28f"
@@ -5775,7 +5915,7 @@
         "to": "",
         "reg": false,
         "x": 540,
-        "y": 660,
+        "y": 720,
         "wires": [
             [
                 "b377dfca55193e3b"
@@ -5790,7 +5930,7 @@
         "g": "70e9b8db12799d18",
         "name": "",
         "x": 390,
-        "y": 340,
+        "y": 400,
         "wires": []
     },
     {
@@ -5800,20 +5940,6 @@
         "g": "431ae4bdb7346af5",
         "name": "",
         "x": 770,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "ad6148753504feb8",
-        "type": "link out",
-        "z": "c7141ffb22d64190",
-        "g": "431ae4bdb7346af5",
-        "name": "send to ground floor hue",
-        "mode": "link",
-        "links": [
-            "7df3e5fbd6e9aa8a"
-        ],
-        "x": 915,
         "y": 200,
         "wires": []
     },
@@ -5828,7 +5954,7 @@
             "7df3e5fbd6e9aa8a"
         ],
         "x": 655,
-        "y": 480,
+        "y": 540,
         "wires": []
     },
     {
@@ -5842,7 +5968,7 @@
             "7df3e5fbd6e9aa8a"
         ],
         "x": 635,
-        "y": 640,
+        "y": 700,
         "wires": []
     },
     {
@@ -5856,7 +5982,66 @@
             "7df3e5fbd6e9aa8a"
         ],
         "x": 1135,
-        "y": 520,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c11e7d50f626ad85",
+        "type": "subflow:882c6d268bfa1aec",
+        "z": "c7141ffb22d64190",
+        "g": "d4fbb88ed29d4d7f",
+        "name": "",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/ground-floor-hue/grouped_light/+",
+                "type": "str"
+            }
+        ],
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "f4e7f3f6609ec608"
+            ]
+        ]
+    },
+    {
+        "id": "f4e7f3f6609ec608",
+        "type": "ui_template",
+        "z": "c7141ffb22d64190",
+        "g": "d4fbb88ed29d4d7f",
+        "group": "21f11f110d626f5a",
+        "name": "Ground Floor Hue Controls",
+        "order": 2,
+        "width": "6",
+        "height": "15",
+        "format": "",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "b91aabd7ec998121"
+            ]
+        ]
+    },
+    {
+        "id": "b91aabd7ec998121",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "d4fbb88ed29d4d7f",
+        "name": "send to ground floor hue",
+        "mode": "link",
+        "links": [
+            "7df3e5fbd6e9aa8a"
+        ],
+        "x": 555,
+        "y": 300,
         "wires": []
     },
     {
@@ -5866,10 +6051,11 @@
         "g": "cde8d276df445e2f",
         "name": "send to basement hue",
         "links": [
-            "752f073c9b327f42"
+            "752f073c9b327f42",
+            "c31b3f586efc5c75"
         ],
         "x": 55,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "33b523d447c86f23"
@@ -5898,7 +6084,7 @@
             }
         ],
         "x": 190,
-        "y": 340,
+        "y": 400,
         "wires": [
             [
                 "a2c690258588b4d5"
@@ -5987,30 +6173,6 @@
         "wires": []
     },
     {
-        "id": "a28b1c17c4f3e3ee",
-        "type": "ui_template",
-        "z": "810a8b527afd2b1b",
-        "g": "4e52881346c9e44b",
-        "group": "178c0c0ade9cbfc5",
-        "name": "Basement Hue Controls",
-        "order": 2,
-        "width": "6",
-        "height": "10",
-        "format": "",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 790,
-        "y": 200,
-        "wires": [
-            [
-                "752f073c9b327f42"
-            ]
-        ]
-    },
-    {
         "id": "678145510dc4c76f",
         "type": "inject",
         "z": "810a8b527afd2b1b",
@@ -6029,7 +6191,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "d638e45951bb8819"
@@ -6058,7 +6220,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 330,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "eba8e1c8260d9915"
@@ -6089,11 +6251,9 @@
             }
         ],
         "x": 570,
-        "y": 220,
+        "y": 200,
         "wires": [
-            [
-                "a28b1c17c4f3e3ee"
-            ],
+            [],
             [
                 "ab63a9de566fc346"
             ]
@@ -6123,7 +6283,7 @@
             }
         ],
         "x": 110,
-        "y": 440,
+        "y": 500,
         "wires": [
             [
                 "968fd6d85ac60a62"
@@ -6142,7 +6302,7 @@
             "efbd1b79e54e0bf7"
         ],
         "x": 215,
-        "y": 440,
+        "y": 500,
         "wires": []
     },
     {
@@ -6152,7 +6312,7 @@
         "g": "cde8d276df445e2f",
         "name": "",
         "x": 390,
-        "y": 340,
+        "y": 400,
         "wires": []
     },
     {
@@ -6162,21 +6322,66 @@
         "g": "4e52881346c9e44b",
         "name": "",
         "x": 770,
-        "y": 240,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "752f073c9b327f42",
+        "id": "40ce873d4a67d8f4",
+        "type": "subflow:882c6d268bfa1aec",
+        "z": "810a8b527afd2b1b",
+        "g": "74df0c542b5a3bbd",
+        "name": "",
+        "env": [
+            {
+                "name": "TOPIC",
+                "value": "hue/basement-hue/grouped_light/+",
+                "type": "str"
+            }
+        ],
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "6d75fc9fc3d3a168"
+            ]
+        ]
+    },
+    {
+        "id": "6d75fc9fc3d3a168",
+        "type": "ui_template",
+        "z": "810a8b527afd2b1b",
+        "g": "74df0c542b5a3bbd",
+        "group": "178c0c0ade9cbfc5",
+        "name": "Basement Hue Controls",
+        "order": 2,
+        "width": "6",
+        "height": "15",
+        "format": "",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 390,
+        "y": 300,
+        "wires": [
+            [
+                "c31b3f586efc5c75"
+            ]
+        ]
+    },
+    {
+        "id": "c31b3f586efc5c75",
         "type": "link out",
         "z": "810a8b527afd2b1b",
-        "g": "4e52881346c9e44b",
+        "g": "74df0c542b5a3bbd",
         "name": "send to basement hue",
         "mode": "link",
         "links": [
             "64274eb0d8b9e5dd"
         ],
-        "x": 935,
-        "y": 200,
+        "x": 535,
+        "y": 300,
         "wires": []
     },
     {
