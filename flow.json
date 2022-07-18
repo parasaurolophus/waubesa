@@ -756,6 +756,11 @@
                 "name": "KEY",
                 "type": "str",
                 "value": ""
+            },
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": ""
             }
         ],
         "meta": {},
@@ -766,7 +771,7 @@
         ],
         "icon": "font-awesome/fa-lightbulb-o",
         "status": {
-            "x": 1060,
+            "x": 900,
             "y": 240,
             "wires": [
                 {
@@ -890,9 +895,7 @@
             "8686957868613221"
         ],
         "x": 14,
-        "y": 219,
-        "w": 1262,
-        "h": 262
+        "y": 219
     },
     {
         "id": "8a031cfeade40a06",
@@ -919,9 +922,7 @@
             "dcae4a0dbbe2575e"
         ],
         "x": 14,
-        "y": 19,
-        "w": 1042,
-        "h": 182
+        "y": 19
     },
     {
         "id": "b438e0cbd64ef6ce",
@@ -1003,7 +1004,7 @@
             "44f0fb819452b7aa"
         ],
         "x": 14,
-        "y": 359,
+        "y": 399,
         "w": 492,
         "h": 82
     },
@@ -1069,12 +1070,13 @@
             "7def18ac26259af3",
             "abb71db57910be2f",
             "1ed4e6f41dea92e2",
-            "e78baddb570f92fa"
+            "e78baddb570f92fa",
+            "22a8b1377a9c1022"
         ],
         "x": 14,
         "y": 159,
         "w": 872,
-        "h": 82
+        "h": 122
     },
     {
         "id": "4b0f721c48fca435",
@@ -1116,7 +1118,7 @@
             "54bbaac5bafb7512"
         ],
         "x": 14,
-        "y": 459,
+        "y": 499,
         "w": 242,
         "h": 82
     },
@@ -1267,7 +1269,7 @@
             "a2c690258588b4d5"
         ],
         "x": 14,
-        "y": 359,
+        "y": 399,
         "w": 492,
         "h": 82
     },
@@ -1310,12 +1312,13 @@
             "678145510dc4c76f",
             "d638e45951bb8819",
             "eba8e1c8260d9915",
-            "ab63a9de566fc346"
+            "ab63a9de566fc346",
+            "01dabb1829a3e85e"
         ],
         "x": 14,
         "y": 159,
         "w": 872,
-        "h": 82
+        "h": 122
     },
     {
         "id": "599f55425211e232",
@@ -1334,7 +1337,7 @@
             "968fd6d85ac60a62"
         ],
         "x": 14,
-        "y": 459,
+        "y": 499,
         "w": 242,
         "h": 82
     },
@@ -1364,8 +1367,8 @@
             "da79b96d161e1c28",
             "5539f5e5fa8f4bb2"
         ],
-        "x": 814,
-        "y": 459,
+        "x": 934,
+        "y": 339,
         "w": 362,
         "h": 242
     },
@@ -1389,8 +1392,8 @@
             "90cec6147a7de28f",
             "b377dfca55193e3b"
         ],
-        "x": 394,
-        "y": 639,
+        "x": 1014,
+        "y": 199,
         "w": 282,
         "h": 122
     },
@@ -1441,8 +1444,8 @@
             "64afce8ff0b75f48",
             "5453ecd10d2275d7"
         ],
-        "x": 394,
-        "y": 459,
+        "x": 1014,
+        "y": 19,
         "w": 302,
         "h": 162
     },
@@ -1464,7 +1467,7 @@
             "c31b3f586efc5c75"
         ],
         "x": 14,
-        "y": 259,
+        "y": 299,
         "w": 562,
         "h": 82
     },
@@ -1486,7 +1489,7 @@
             "b91aabd7ec998121"
         ],
         "x": 14,
-        "y": 259,
+        "y": 299,
         "w": 582,
         "h": 82
     },
@@ -3629,7 +3632,7 @@
         "scope": [
             "5c2db9cd5a64030f"
         ],
-        "x": 960,
+        "x": 800,
         "y": 240,
         "wires": [
             []
@@ -3639,8 +3642,8 @@
         "id": "95d13bf160785919",
         "type": "function",
         "z": "da7c0eae8eb34f5a",
-        "name": "format hue metadata",
-        "func": "/**\n* @param {any} groupId\n* @param {string} key\n* @param {any[]} resources\n*/\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {{ metadata: { name: any; }; type: any; id: any; }} group\n* @param {{ scene?: any; grouped_light?: any; }} resources\n*/\nfunction getGroup(group, resources) {\n\n    const scenes = findReferences(group.id, 'group', resources.scene).map(scene => {\n\n        return {\n            name: scene.metadata.name,\n            id: scene.id\n        }\n    }).sort(nameCompare)\n\n    const grouped_light = findReferences(group.id, 'owner', resources.grouped_light)[0]\n\n    return {\n        name: group.metadata.name,\n        id: group.id,\n        type: group.type,\n        grouped_light: grouped_light.id,\n        scene: scenes\n    }\n}\n\nconst resources = {}\n\nmsg.payload.data.forEach((/** @type {{ type: string | number; }} */ resource) => {\n\n    const type = resources[resource.type] || []\n    type.push(resource)\n    resources[resource.type] = type\n\n})\n\nconst rooms = resources.room || []\nconst zones = resources.zone || []\n\nmsg.payload = {\n    room: rooms.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ room) => {\n        return getGroup(room, resources)\n    }).sort(nameCompare),\n    zone: zones.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ zone) => {\n        return getGroup(zone, resources)\n    }).sort(nameCompare)\n}\n\nflow.set('$parent.metadata', msg.payload)\nreturn msg",
+        "name": "parse hue metadata",
+        "func": "const topic = env.get('TOPIC')\nconst grouped_light = []\n\nmsg.payload.data.forEach((/** @type {{ type: string; id: string; on: { on: any; }; }} */ resource) => {\n\n    if (resource.type == 'grouped_light') {\n\n        if (Object.prototype.hasOwnProperty.call(resource, 'on')) {\n\n            grouped_light.push({\n                topic: topic + '/grouped_light/' + resource.id,\n                payload: resource,\n                qos: 2,\n                retain: true\n            })\n        }\n    }\n})\n\n/**\n* @param {any} groupId\n* @param {string} key\n* @param {any[]} resources\n*/\nfunction findReferences(groupId, key, resources) {\n\n    const references = []\n\n    resources.forEach(resource => {\n\n        if (resource[key].rid == groupId) {\n\n            references.push(resource)\n\n        }\n    })\n\n    return references\n\n}\n\n/**\n* @param {{ name: string; }} obj1\n* @param {{ name: any; }} obj2\n*/\nfunction nameCompare(obj1, obj2) {\n\n    return obj1.name.localeCompare(obj2.name)\n\n}\n\n/**\n* @param {{ metadata: { name: any; }; type: any; id: any; }} group\n* @param {{ scene?: any; grouped_light?: any; }} resources\n*/\nfunction getGroup(group, resources) {\n\n    const scenes = findReferences(group.id, 'group', resources.scene).map(scene => {\n\n        return {\n            name: scene.metadata.name,\n            id: scene.id\n        }\n    }).sort(nameCompare)\n\n    const grouped_light = findReferences(group.id, 'owner', resources.grouped_light)[0]\n\n    return {\n        name: group.metadata.name,\n        id: group.id,\n        type: group.type,\n        grouped_light: grouped_light.id,\n        scene: scenes\n    }\n}\n\nconst resources = {}\n\nmsg.payload.data.forEach((/** @type {{ type: string | number; }} */ resource) => {\n\n    const type = resources[resource.type] || []\n    type.push(resource)\n    resources[resource.type] = type\n\n})\n\nconst rooms = resources.room || []\nconst zones = resources.zone || []\n\nconst metadata = {\n    room: rooms.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ room) => {\n        return getGroup(room, resources)\n    }).sort(nameCompare),\n    zone: zones.map((/** @type {{ metadata: { name: any; }; type: any; id: any; }} */ zone) => {\n        return getGroup(zone, resources)\n    }).sort(nameCompare)\n}\n\nflow.set('$parent.metadata', metadata)\nreturn [grouped_light]",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3790,7 +3793,7 @@
         "type": "function",
         "z": "882c6d268bfa1aec",
         "name": "format metadata",
-        "func": "const state = context.get('state') || {}\n\nif (msg.payload === '') {\n\n    delete state[msg.topic]\n\n} else {\n\n    if (Object.prototype.hasOwnProperty.call(msg.payload, 'on')) {\n\n        state[msg.topic] = msg.payload\n\n    }\n}\n\ncontext.set('state', state)\n\nconst model = []\nconst metadata = flow.get('$parent.metadata')\n\n/**\n* @param {{ owner: { rid: any; }; id: string; }} grouped_light\n* @param {any} type\n*/\nfunction findGroup(grouped_light, type) {\n\n    for (const group of type) {\n\n        if (group.id == grouped_light.owner.rid) {\n\n            return group\n\n        }\n    }\n\n    throw 'no group found for grouped_light ' + grouped_light.id\n\n}\n\nfor (const topic in state) {\n\n    const grouped_light = state[topic]\n\n    if (!Object.prototype.hasOwnProperty.call(metadata, grouped_light.owner.rtype)) {\n\n        continue\n\n    }\n\n    const group = findGroup(grouped_light, metadata[grouped_light.owner.rtype])\n    const entry = {\n        id: grouped_light.id,\n        state: grouped_light.on.on,\n        label: group.name,\n        scene: group.scene\n    }\n\n    model.push(entry)\n    \n}\n\nmsg.payload = model.sort((a, b) => {\n\n    return a.label.localeCompare(b.label)\n\n})\n\nreturn msg",
+        "func": "const state = context.get('state') || {}\n\nif (msg.payload === '') {\n\n    delete state[msg.topic]\n\n} else {\n\n    if (Object.prototype.hasOwnProperty.call(msg.payload, 'on')) {\n\n        state[msg.topic] = msg.payload\n\n    }\n}\n\ncontext.set('state', state)\n\nconst model = []\nconst metadata = flow.get('$parent.metadata') || {}\n\n/**\n* @param {{ owner: { rid: any; }; id: string; }} grouped_light\n* @param {any} type\n*/\nfunction findGroup(grouped_light, type) {\n\n    for (const group of type) {\n\n        if (group.id == grouped_light.owner.rid) {\n\n            return group\n\n        }\n    }\n\n    throw 'no group found for grouped_light ' + grouped_light.id\n\n}\n\nfor (const topic in state) {\n\n    const grouped_light = state[topic]\n\n    if (!Object.prototype.hasOwnProperty.call(metadata, grouped_light.owner.rtype)) {\n\n        continue\n\n    }\n\n    const group = findGroup(grouped_light, metadata[grouped_light.owner.rtype])\n    const entry = {\n        id: grouped_light.id,\n        state: grouped_light.on.on,\n        label: group.name,\n        scene: group.scene\n    }\n\n    model.push(entry)\n    \n}\n\nmsg.payload = model.sort((a, b) => {\n\n    return a.label.localeCompare(b.label)\n\n})\n\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4731,7 +4734,9 @@
             "4b2e5cdaca43a71b",
             "968fd6d85ac60a62",
             "54bbaac5bafb7512",
-            "00b200c8b96373d9"
+            "00b200c8b96373d9",
+            "01dabb1829a3e85e",
+            "22a8b1377a9c1022"
         ],
         "x": 175,
         "y": 100,
@@ -5020,7 +5025,7 @@
             "b91aabd7ec998121"
         ],
         "x": 55,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "3b5ab296575b53d4"
@@ -5049,7 +5054,7 @@
             }
         ],
         "x": 190,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "44f0fb819452b7aa"
@@ -5150,7 +5155,7 @@
             }
         ],
         "x": 110,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "54bbaac5bafb7512"
@@ -5176,7 +5181,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "abb71db57910be2f"
@@ -5205,7 +5210,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 330,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "1ed4e6f41dea92e2"
@@ -5224,7 +5229,7 @@
             "efbd1b79e54e0bf7"
         ],
         "x": 215,
-        "y": 500,
+        "y": 540,
         "wires": []
     },
     {
@@ -5256,15 +5261,22 @@
                 "type": "env"
             },
             {
+                "name": "TOPIC",
+                "value": "GROUND_FLOOR_HUE_TOPIC",
+                "type": "env"
+            },
+            {
                 "name": "TARGET",
                 "value": "send to ground floor hue",
                 "type": "str"
             }
         ],
         "x": 570,
-        "y": 200,
+        "y": 220,
         "wires": [
-            [],
+            [
+                "22a8b1377a9c1022"
+            ],
             [
                 "e78baddb570f92fa"
             ]
@@ -5288,8 +5300,8 @@
             "59e320abec722230",
             "52a74204d47efd1e"
         ],
-        "x": 855,
-        "y": 500,
+        "x": 975,
+        "y": 380,
         "wires": [
             [
                 "64a68d2a2d2e93cd"
@@ -5330,8 +5342,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 500,
+        "x": 1090,
+        "y": 380,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5351,8 +5363,8 @@
             "b8723d53ddad808a",
             "84118b9049ec3439"
         ],
-        "x": 855,
-        "y": 540,
+        "x": 975,
+        "y": 420,
         "wires": [
             [
                 "7e843abc77537f92"
@@ -5393,8 +5405,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 540,
+        "x": 1090,
+        "y": 420,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5419,8 +5431,8 @@
             "9b05a84bf2e36872",
             "13ec2fe1e16094a1"
         ],
-        "x": 855,
-        "y": 580,
+        "x": 975,
+        "y": 460,
         "wires": [
             [
                 "67013f62ca5bcb43"
@@ -5461,8 +5473,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 580,
+        "x": 1090,
+        "y": 460,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5488,8 +5500,8 @@
             "6051debe54e3825e",
             "13ec2fe1e16094a1"
         ],
-        "x": 855,
-        "y": 620,
+        "x": 975,
+        "y": 500,
         "wires": [
             [
                 "d92030613c5ce50e"
@@ -5530,8 +5542,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 620,
+        "x": 1080,
+        "y": 500,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5551,8 +5563,8 @@
             "758cfea08b622975",
             "13ec2fe1e16094a1"
         ],
-        "x": 855,
-        "y": 660,
+        "x": 975,
+        "y": 540,
         "wires": [
             [
                 "da79b96d161e1c28"
@@ -5593,8 +5605,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 970,
-        "y": 660,
+        "x": 1090,
+        "y": 540,
         "wires": [
             [
                 "5539f5e5fa8f4bb2"
@@ -5614,8 +5626,8 @@
             "5950aa6c0df32eb2",
             "59e320abec722230"
         ],
-        "x": 435,
-        "y": 500,
+        "x": 1055,
+        "y": 60,
         "wires": [
             [
                 "72acc2a8bcbc1528"
@@ -5656,8 +5668,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 500,
+        "x": 1170,
+        "y": 60,
         "wires": [
             [
                 "5453ecd10d2275d7"
@@ -5677,8 +5689,8 @@
             "4ed8bcf218333395",
             "52a74204d47efd1e"
         ],
-        "x": 435,
-        "y": 540,
+        "x": 1055,
+        "y": 100,
         "wires": [
             [
                 "1c5888bd24d0a311"
@@ -5719,8 +5731,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 540,
+        "x": 1160,
+        "y": 100,
         "wires": [
             [
                 "5453ecd10d2275d7"
@@ -5741,8 +5753,8 @@
             "b29a7ab55a3476e5",
             "6957440564321846"
         ],
-        "x": 435,
-        "y": 580,
+        "x": 1055,
+        "y": 140,
         "wires": [
             [
                 "64afce8ff0b75f48"
@@ -5783,8 +5795,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 580,
+        "x": 1170,
+        "y": 140,
         "wires": [
             [
                 "5453ecd10d2275d7"
@@ -5807,8 +5819,8 @@
             "5950aa6c0df32eb2",
             "59e320abec722230"
         ],
-        "x": 435,
-        "y": 680,
+        "x": 1055,
+        "y": 240,
         "wires": [
             [
                 "a122f1a4fc3399e5"
@@ -5849,8 +5861,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 680,
+        "x": 1170,
+        "y": 240,
         "wires": [
             [
                 "b377dfca55193e3b"
@@ -5872,8 +5884,8 @@
             "4ed8bcf218333395",
             "52a74204d47efd1e"
         ],
-        "x": 435,
-        "y": 720,
+        "x": 1055,
+        "y": 280,
         "wires": [
             [
                 "90cec6147a7de28f"
@@ -5914,8 +5926,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 720,
+        "x": 1160,
+        "y": 280,
         "wires": [
             [
                 "b377dfca55193e3b"
@@ -5930,7 +5942,7 @@
         "g": "70e9b8db12799d18",
         "name": "",
         "x": 390,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -5940,7 +5952,7 @@
         "g": "431ae4bdb7346af5",
         "name": "",
         "x": 770,
-        "y": 200,
+        "y": 240,
         "wires": []
     },
     {
@@ -5953,8 +5965,8 @@
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
-        "x": 655,
-        "y": 540,
+        "x": 1275,
+        "y": 100,
         "wires": []
     },
     {
@@ -5967,8 +5979,8 @@
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
-        "x": 635,
-        "y": 700,
+        "x": 1255,
+        "y": 260,
         "wires": []
     },
     {
@@ -5981,8 +5993,8 @@
         "links": [
             "7df3e5fbd6e9aa8a"
         ],
-        "x": 1135,
-        "y": 580,
+        "x": 1255,
+        "y": 460,
         "wires": []
     },
     {
@@ -5999,7 +6011,7 @@
             }
         ],
         "x": 150,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "f4e7f3f6609ec608"
@@ -6015,7 +6027,7 @@
         "name": "Ground Floor Hue Controls",
         "order": 2,
         "width": "6",
-        "height": "15",
+        "height": "24",
         "format": "",
         "storeOutMessages": false,
         "fwdInMessages": false,
@@ -6023,7 +6035,7 @@
         "templateScope": "local",
         "className": "",
         "x": 400,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "b91aabd7ec998121"
@@ -6041,7 +6053,21 @@
             "7df3e5fbd6e9aa8a"
         ],
         "x": 555,
-        "y": 300,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "22a8b1377a9c1022",
+        "type": "link out",
+        "z": "c7141ffb22d64190",
+        "g": "431ae4bdb7346af5",
+        "name": "send to broker",
+        "mode": "link",
+        "links": [
+            "efbd1b79e54e0bf7"
+        ],
+        "x": 695,
+        "y": 200,
         "wires": []
     },
     {
@@ -6055,7 +6081,7 @@
             "c31b3f586efc5c75"
         ],
         "x": 55,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "33b523d447c86f23"
@@ -6084,7 +6110,7 @@
             }
         ],
         "x": 190,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "a2c690258588b4d5"
@@ -6191,7 +6217,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 120,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "d638e45951bb8819"
@@ -6220,7 +6246,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 330,
-        "y": 200,
+        "y": 220,
         "wires": [
             [
                 "eba8e1c8260d9915"
@@ -6245,15 +6271,22 @@
                 "type": "env"
             },
             {
+                "name": "TOPIC",
+                "value": "BASEMENT_HUE_TOPIC",
+                "type": "env"
+            },
+            {
                 "name": "TARGET",
                 "value": "send to basement hue",
                 "type": "str"
             }
         ],
         "x": 570,
-        "y": 200,
+        "y": 220,
         "wires": [
-            [],
+            [
+                "01dabb1829a3e85e"
+            ],
             [
                 "ab63a9de566fc346"
             ]
@@ -6283,7 +6316,7 @@
             }
         ],
         "x": 110,
-        "y": 500,
+        "y": 540,
         "wires": [
             [
                 "968fd6d85ac60a62"
@@ -6302,7 +6335,7 @@
             "efbd1b79e54e0bf7"
         ],
         "x": 215,
-        "y": 500,
+        "y": 540,
         "wires": []
     },
     {
@@ -6312,7 +6345,7 @@
         "g": "cde8d276df445e2f",
         "name": "",
         "x": 390,
-        "y": 400,
+        "y": 440,
         "wires": []
     },
     {
@@ -6322,7 +6355,7 @@
         "g": "4e52881346c9e44b",
         "name": "",
         "x": 770,
-        "y": 200,
+        "y": 240,
         "wires": []
     },
     {
@@ -6339,7 +6372,7 @@
             }
         ],
         "x": 150,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "6d75fc9fc3d3a168"
@@ -6363,7 +6396,7 @@
         "templateScope": "local",
         "className": "",
         "x": 390,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
                 "c31b3f586efc5c75"
@@ -6381,7 +6414,21 @@
             "64274eb0d8b9e5dd"
         ],
         "x": 535,
-        "y": 300,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "01dabb1829a3e85e",
+        "type": "link out",
+        "z": "810a8b527afd2b1b",
+        "g": "4e52881346c9e44b",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "efbd1b79e54e0bf7"
+        ],
+        "x": 695,
+        "y": 200,
         "wires": []
     },
     {
