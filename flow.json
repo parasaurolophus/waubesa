@@ -2,17 +2,9 @@
     {
         "id": "cbd68ba9caa96a3d",
         "type": "tab",
-        "label": "Timer",
-        "disabled": false,
-        "info": "Send messages through a `link out` node named _time_ to drive home automation based on the time of day. Messages will be sent five times during each 24 hour period. Each such message will have `msg.payload` set to a JavaScript object with two properties:\n\n| Property            | Description                                                             |\n|---------------------|-------------------------------------------------------------------------|\n| `msg.payload.time`  | One of five string values specifying a time of day, as described below  |\n| `msg.payload.theme` | One of four string values specifying a time of year, as described below |\n\n### Configuration\n\nThis flow contains a `function` node that uses the [suncalc](https://github.com/mourner/suncalc) package and relies on `LATITUDE` and `LONGITUDE` environment variables to specify the geographic coordinates used in determining sunrise and sunset.\n\n> Geographic coordinates are an example of sensitive personal information that should generally be kept out of flows that might be shared as examples in a forum, pushed to a public source control repository etc.\n\n> You can specify environment variables for use in your flows in a number of ways, depending on your preferences and your overall Node-RED configuration. For most \"mainstream\" scenarios, the simplest way is to add them to the _~/.node-red/environment_ file in the home directory of the user as whom the Node-RED service is running.\n\n### Time of Day\n\n| `msg.payload.time` | Descrption                                                                            |\n|--------------------|---------------------------------------------------------------------------------------|\n| `morning`          | Sunrise to two hours before the sun has reached its highest altitude                  |\n| `midday`           | The four hours surrounding the time at which the sun has reached its highest altitude |\n| `afternoon`        | Two hours after the sun has reached its highest altitude to sunset                    |\n| `evening`          | Sunset to _bedtime_                                                                   |\n| `night`            | _Bedtime_ to sunrise                                                                  |\n\n_Offset_ is one third of the number of hours between sunrise and sunset.\n\n_Bedtime_ is generated each day to occur at the later of:\n\n- 10:00PM (22:00), plus or minus a randomly generated 30 minute offset\n- a randomly generated time, 30 to 60 minutes after sunset\n\n> Five distinct times of day may seem excessive, but has proven necessary in a number of real-world scenarios. For example, the distinctions between `morning`, `midday` and `afternoon` are invaluable for homes with automated coverings over both East- and West-facing windows. In addition, randomizing `bedtime` can provide a modest degree of \"simulated presence\" to discourage potential burglars.\n\n### Theme\n\nIn addition to the time-of-day specified by `msg.payload.time`, as described above, automation flows can also assume that `msg.payload.theme` will have been set to a value indicating any special occasions that might be effect:\n\n| `msg.payload.theme` | Description                           |\n|---------------------|---------------------------------------|\n| `tribal`            | July 1 - 4 (US Independence Day)      |\n| `spooky`            | Any day in October (Halloween)        |\n| `jolly`             | Any day in December (Winter Solstice) |\n| `standard`          | Any other day                         |\n",
-        "env": []
-    },
-    {
-        "id": "ff0141ba0f0c7234",
-        "type": "tab",
         "label": "Automation",
         "disabled": false,
-        "info": "Change the flows inside the groups \"lighting automation\" and \"window shade automation\" according to your desired behavior for your hardware setup",
+        "info": "Generate and dispatch time and date based event messages that drive home automation.\n\nSee the \"info\" pane documentation for the various node groups on this tab for information on each stage in this process.",
         "env": []
     },
     {
@@ -20,36 +12,21 @@
         "type": "tab",
         "label": "Hue",
         "disabled": false,
-        "info": ""
+        "info": "Interface to two Philips Hue Bridges. See the \"info\" pane documentation for the various node groups for details.\n\n> Note that the groups on this tab use a number of subflows which, collectively, support using the same logic to interact with the API (V2) for each Hue Bridge. "
     },
     {
         "id": "1cf0490e7de2f93d",
         "type": "tab",
         "label": "PowerView",
         "disabled": false,
-        "info": "### Configuration\n\nThe subflows on this tab assume that `${ADDRESS}` is set to the IP address or host name of the PowerView hub.\n\n### Details\n\nChange the flows inside the groups labeled _close all shades_, _open all shades_, open east shades, close west shades_ and _close east shades, open west shades_ to match your desired behavior for your hardware setup.",
-        "env": [
-            {
-                "name": "ADDRESS",
-                "value": "POWERVIEW_ADDRESS",
-                "type": "env"
-            }
-        ]
+        "info": "Interface to a Hunter Douglas PowerView Hub. See the \"info\" pane documentation for the various node groups for details.\n\n> Note that the groups on this tab use a number of subflows which, collectively, support using the same logic to interact with the API for each PowerView Hub."
     },
     {
         "id": "b12fd38c090c51f2",
         "type": "tab",
         "label": "Dashboard",
         "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "0ea3334f7a8cb5be",
-        "type": "tab",
-        "label": "Monitoring",
-        "disabled": false,
-        "info": "",
+        "info": "Dashboard controls for monitoring and debugging",
         "env": []
     },
     {
@@ -418,7 +395,8 @@
             "keywords": "utility,automation",
             "license": "MIT"
         },
-        "color": "#DDAA99",
+        "color": "#3FADB5",
+        "icon": "font-awesome/fa-clock-o",
         "status": {
             "x": 620,
             "y": 120,
@@ -620,7 +598,8 @@
             "keywords": "node-red,dashboard",
             "license": "MIT"
         },
-        "color": "#3FADB5"
+        "color": "#3FADB5",
+        "icon": "node-red-dashboard/ui_toast.png"
     },
     {
         "id": "882c6d268bfa1aec",
@@ -676,26 +655,6 @@
         }
     },
     {
-        "id": "87285e6bf01cff03",
-        "type": "group",
-        "z": "1cf0490e7de2f93d",
-        "name": "Activate PowerView scene",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "2f6cc09457939ce2",
-            "7173aa38c9fa93dc",
-            "63300052daf495e4"
-        ],
-        "x": 14,
-        "y": 199
-    },
-    {
         "id": "98cf3b8910bc4f22",
         "type": "group",
         "z": "cbd68ba9caa96a3d",
@@ -715,24 +674,22 @@
             "6272a0d1ddf8807b",
             "2a94995efda1937e",
             "6b40e38fa169c721",
-            "00b200c8b96373d9",
-            "56ed153e71b59e89",
             "a9ea7694289d75de",
-            "a01e15ec8fb87e05",
-            "df682692b16a598e",
             "17fde856a49a6028",
-            "8686957868613221"
+            "86ca6ce5e6cc8b78",
+            "328cfa2f66d59d33"
         ],
         "x": 14,
         "y": 219,
-        "w": 1262,
-        "h": 262
+        "w": 1112,
+        "h": 262,
+        "info": "This part of the flow emits one message at each of five distinct times per day. Each `msg.payload` will contain:\n\n```\n{\n    \"time\": _time_,\n    \"theme\": _theme_,\n    \"enable\": _boolean_\n}\n```\n\nThe message will be sent to indicate the moments at which one value of _time_ transitions to another, as described below. The parts of the flow which receive these messages control the state of various home automation devices based on the specified time of day, day of year and whether or not automation is enabled globally.\n\n> Note that `\"enable\"` will actually always be `true` for the current implementation of these flows since time messages are not emitted at all when automation is disabled globally. It is passed for completeness and to support possible future enhancements where some automations might need to be run unconditionally even when, for example, holiday themed lighting effects are not desired.\n>\n> &nbsp;\n>\n> See the \"info\" pane documentation for the group labeled `\"Send time of day events\"` for details of the _time_ and _theme_ payloads."
     },
     {
         "id": "8a031cfeade40a06",
         "type": "group",
         "z": "cbd68ba9caa96a3d",
-        "name": "Fire timer events",
+        "name": "Send time of day events",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -749,13 +706,14 @@
             "d534f07cf7c1eb0b",
             "b709b48ce2961f8e",
             "47875e1be48bbf82",
-            "4b2e5cdaca43a71b",
-            "dcae4a0dbbe2575e"
+            "982e6f99bb54af77",
+            "09c239a9814d1f12"
         ],
         "x": 14,
         "y": 19,
-        "w": 1042,
-        "h": 182
+        "w": 1112,
+        "h": 182,
+        "info": "This part of the flow uses the [suncalc](https://www.npmjs.com/package/suncalc) package and JavaScript's built in `Date` capabilities to send various MQTT messages each time their corresponding payloads change.\n\nThere are two principal event messages that are used to drive home automation:\n\n| Topic                                | Payload                                                                                         |\n|--------------------------------------|-------------------------------------------------------------------------------------------------|\n| `nodered/automation/time`            | One of five distinct string values, described below                                             |\n| `nodered/automation/theme`           | One of four distinct string values, described below                                             |\n\nThe _time_ payload is used to turn on and off lights and to open and close window shades according to the position of the sun. The _theme_ payload is used to select holiday themed lighting schemes, where appropriate.\n\nIn addition, this flow emits a number of additional messages for monitoring and debugging purposes. These correspond to intermediate values used in calculating the _time_ and _theme_ payloads:\n\n| Topic                                | Payload                                                                                         |\n|--------------------------------------|-------------------------------------------------------------------------------------------------|\n| `nodered/automation/now`             | The timestamp of the current time when the latest values for all these messages were calculated |\n| `nodered/automation/altitude`        | The sun's current altitude, in radians                                                          |\n| `nodered/automation/azimuth`         | The sun's current azimuth, in radians                                                           |\n| `nodered/automation/sunrise`         | Timestamp at which _time_ will transition from `night` to `morning`                             |\n| `nodered/automation/midday`          | Timestamp at which _time_ will transition from `morning` to `midday`                            |\n| `nodered/automation/afternoon`       | Timestamp at which _time_ will transition from `midday` to `afternoon`                          |\n| `nodered/automation/sunset`          | Timestamp at which _time_ will transition from `afternoon` to `evening`                         |\n| `nodered/automation/bedtime`         | Timestamp at which _time_ will transition from `evening` to `night`, as described below         |\n| `nodered/automation/zenith/time`     | The time at which the sun will reach its greatest altitude during the current day               |\n| `nodered/automation/zenith/altitude` | The sun's greatest altitude during the current day                                              |\n| `nodered/automation/zenith/azimuth`  | The sun's azimuth at the time of its greatest altitude during the current day                   |\n\n> This flow makes the following assumptions:\n>\n> - The Node-RED host machine is configured to use the correct time zone\n>\n> - The `${LATITUDE}` and `${LONGITUDE}` environment variables are set to the correct geographical coordinates\n>\n> where \"correct\" means the location of the devices being controlled by the automation driven by these flows. In particular, for these flows to work sensibly, the host machine's time zone and the values for the geographical coordinates must be consistent with one another.\n>\n> &nbsp;\n>\n> It is worth emphasizing that each of the preceding MQTT messages are only sent when their individual payload values change. For example, the _now_, _altitude_ and _azimuth_ messages are each sent once every minute. The others are only sent once when the flow first starts up and then once per day while the flow is running. The corresponding calculations are also split between two `function` nodes, to avoid redundantly calculating things like the sun position times of day.\n\n### `nodered/automation/time`\n\nThe payload of _time_ events will be one of the following strings:\n\n| `msg.payload` | Description                                                                                                                 |\n|---------------|-----------------------------------------------------------------------------------------------------------------------------|\n| `morning`     | Sunrise to one hour before the sun has reach its highest point in the sky for the current day (loosely, the sun's \"zenith\") |\n| `midday`      | Two hours before the sun's zenith to two hours after                                                                        |\n| `afternoon`   | Two hours after the sun's zenith to sunset                                                                                  |\n| `evening`     | Sunset to \"bedtime,\" as described below                                                                                     |\n| `night`       | Bedtime to sunrise                                                                                                          |\n\n### `nodered/automation/theme`\n\nThe payload of _theme_ events will be one of the following strings:\n\n| `msg.payload`| Description                           |\n|--------------|---------------------------------------|\n| `tribal`     | July 1 - 4 (US Independence Day)      |\n| `spooky`     | Any day in October (Halloween)        |\n| `jolly`      | Any day in December (Winter Solstice) |\n| `standard`   | Any other day                         |\n\n### `nodered/automation/bedtime`\n\nThe _bedtime_ timestamp is calculated to be a randomized value that is the later of:\n\n- A randomly selected time between 9:30PM (21:30) and 10:30PM (22:30)\n\n- A randomly selected time between 30 and 60 minutes after sunset\n\nThe intent is tht bedtime be slightly randomized to give the illusion of the home being occupied even when no-one is present to manually turn on and off lights, open and close window coverings etc."
     },
     {
         "id": "b438e0cbd64ef6ce",
@@ -782,7 +740,9 @@
             "eb296b561972b772"
         ],
         "x": 14,
-        "y": 119
+        "y": 119,
+        "w": 1072,
+        "h": 162
     },
     {
         "id": "8a81267cb12384d5",
@@ -817,13 +777,15 @@
             "a921a5a41ab154fc"
         ],
         "x": 14,
-        "y": 299
+        "y": 299,
+        "w": 1232,
+        "h": 202
     },
     {
         "id": "b48f76e13fc77aa7",
         "type": "group",
         "z": "1cf0490e7de2f93d",
-        "name": "Dynamically create dashboard controls for window shades based on metadata obtained from PowerView hub",
+        "name": "PowerView Hub",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -837,10 +799,23 @@
             "7026f2de142e8ef2",
             "942f0a1ef3d8ade3",
             "85e6e4e1fe740e1b",
-            "96e7a29d96084487"
+            "96e7a29d96084487",
+            "63300052daf495e4",
+            "2f6cc09457939ce2",
+            "7173aa38c9fa93dc"
         ],
-        "x": 14,
-        "y": 19
+        "env": [
+            {
+                "name": "ADDRESS",
+                "value": "POWERVIEW_ADDRESS",
+                "type": "env"
+            }
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1042,
+        "h": 182,
+        "info": "The nodes in this group include a number subflows that address the API on Hunter Douglas PowerView Hub. The `${ADDRESS}` environment is set at the flow level and are inherited by the subflows. It must be set to the IP address or host name of the PowerView Hub.\n\nThe nodes in this group include a `ui_template` which is fed by a subflow that processes metadata requested from the hub at startup. This means that you don't need to create custom dashboard controls for your particular PowerView scenes."
     },
     {
         "id": "431ae4bdb7346af5",
@@ -895,7 +870,10 @@
             }
         ],
         "x": 514,
-        "y": 19
+        "y": 19,
+        "w": 772,
+        "h": 322,
+        "info": "The nodes in this group include a number of subflows that address the V2 API on a particular Philips Hue Bridge. The following environment variables are set at the group level, and inherited by the subflows:\n\n| Environment Variable | Description                                                                                       |\n|----------------------|---------------------------------------------------------------------------------------------------|\n| `BRIDGE`             | The name of the bridge to use to differentiate it from other instances in global and flow context |\n| `ADDRESS`            | The IP address or host name of the particular bridge                                              |\n| `KEY`                | The client access key to pass in request headers                                                  |\n| `TOPIC`              | The base topic prefix for MQTT messages emitted by this part of the flow                          |\n\n> Note that the subflows used in this group include one that can be used to obtain a token to use as the value for `${KEY}`.\n\nThe nodes in this group include a `ui_template` which is fed by a subflow that processes incoming messages from the Hue Bridge API V2 server-sent event stream. This means that you don't need to create custom dashboard controls for your particular Hue rooms and zones.\n\n> Currently, this approach is implemented only for `md-switch` elements that turn on or off a room or zone, and `md-button` elements that activate Hue scenes. More work will be needed to extend this approach for accessories like motion sensors.\n\nThe dynamically-generated UI relies on two subflows, both included in this group:\n\n- _Hue to MQTT_ subscribes to server-sent events and forwards them as MQTT messages\n\n- _Hue Dashboard Controls_ listens for those MQTT messages and dynamically populates the dashboard\n\n> MQTT retained messages are used as intermediaries in this flow primarily as a persistence mechanism.\n\nThe _Hue to MQTT_ subflow depends on [EventSource](https://flows.nodered.org/node/@parasaurolophus/node-red-eventsource) in order to listen for Server-Sent Events (SSE) from the Hue Bridge. See <https://flows.nodered.org/node/@parasaurolophus/node-red-eventsource> for more information."
     },
     {
         "id": "4b0f721c48fca435",
@@ -918,94 +896,15 @@
             "b1ebe60c0c09e6c1"
         ],
         "x": 14,
-        "y": 19
-    },
-    {
-        "id": "78e09083a861e13e",
-        "type": "group",
-        "z": "ff0141ba0f0c7234",
-        "name": "Window shade automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "65ab6145dd1c2e19",
-            "b13e36ae61e678c5",
-            "92c2876f08baadd9",
-            "55f89a635c93f337",
-            "5638c682e2ac2fba",
-            "5a10fc701135b50d",
-            "ea959d418216fe68",
-            "6d664c1fce229c1e"
-        ],
-        "x": 894,
-        "y": 319
-    },
-    {
-        "id": "053656a9e6f3379c",
-        "type": "group",
-        "z": "ff0141ba0f0c7234",
-        "name": "Lighting automation",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "59e320abec722230",
-            "52a74204d47efd1e",
-            "9b05a84bf2e36872",
-            "6051debe54e3825e",
-            "13ec2fe1e16094a1",
-            "84118b9049ec3439",
-            "4bb92f343cc9a859",
-            "34385092a355cd47",
-            "06e95c81925fd3c3",
-            "8a9ced356d9b863b",
-            "ded409ca4a47d4fa",
-            "6957440564321846"
-        ],
-        "x": 134,
-        "y": 259
-    },
-    {
-        "id": "276fb48c5a5f5cf0",
-        "type": "group",
-        "z": "ff0141ba0f0c7234",
-        "name": "Limit rate at which messages are sent to the MQTT broker",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "74f456c57bd0405f",
-            "3db511b8fbb93369",
-            "efbd1b79e54e0bf7",
-            "d935f691d63e1e77",
-            "ec3b19f7f91f026d",
-            "1a9f2ae66bc3b97b",
-            "c985b6125c7dee4a",
-            "3a71b6d844f7acb7",
-            "4f8791884f618315",
-            "af1881c6e1166196"
-        ],
-        "x": 134,
-        "y": 19
+        "y": 19,
+        "w": 1012,
+        "h": 82
     },
     {
         "id": "f8dce80b21d7f706",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "Yard",
+        "name": "Control lights in the \"Yard\"",
         "style": {
             "stroke": "none",
             "stroke-opacity": "0.1",
@@ -1028,13 +927,16 @@
             "5539f5e5fa8f4bb2"
         ],
         "x": 114,
-        "y": 339
+        "y": 339,
+        "w": 362,
+        "h": 242,
+        "info": "Set `msg` properties to invoke specific `grouped_light` and `scene` commands targeting the room named \"Yard\" on the ground floor Hue Bridge."
     },
     {
         "id": "f848d645bd1abc5b",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "Main Bathroom",
+        "name": "Control lights in the \"Main Bathroom\"",
         "style": {
             "stroke": "none",
             "stroke-opacity": "0.1",
@@ -1051,7 +953,10 @@
             "b377dfca55193e3b"
         ],
         "x": 114,
-        "y": 199
+        "y": 199,
+        "w": 282,
+        "h": 122,
+        "info": "Set `msg` properties to invoke specific `grouped_light` and `scene` commands targeting the room named \"Main Bathroom\" on the ground floor Hue Bridge."
     },
     {
         "id": "0770b0ba393f379d",
@@ -1076,14 +981,17 @@
             "1fcfbbdf6167f8c8",
             "dcd2a91c5972ccf0"
         ],
-        "x": 114,
-        "y": 299
+        "x": 694,
+        "y": 239,
+        "w": 382,
+        "h": 202,
+        "info": "Set `msg` properties to invoke specific `scene` commands targeting the PowerView Hub."
     },
     {
         "id": "b1ee6e019c90396d",
         "type": "group",
         "z": "c7141ffb22d64190",
-        "name": "Main Floor",
+        "name": "Control lights in the \"Main Floor\" zone",
         "style": {
             "stroke": "none",
             "fill": "#000000",
@@ -1101,48 +1009,10 @@
             "5453ecd10d2275d7"
         ],
         "x": 114,
-        "y": 19
-    },
-    {
-        "id": "5a55da7dc4d6079a",
-        "type": "group",
-        "z": "0ea3334f7a8cb5be",
-        "name": "",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "6781ffdcbd1da527",
-            "53c22067c03e3e89",
-            "deed3f975e1ed407"
-        ],
-        "x": 14,
-        "y": 19
-    },
-    {
-        "id": "66a5571991777139",
-        "type": "group",
-        "z": "0ea3334f7a8cb5be",
-        "name": "",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "ece6886e7cb007db",
-            "2d68844e4116a52b",
-            "33b4cddfbae33a1b",
-            "686c0b44b5df673f"
-        ],
-        "x": 14,
-        "y": 119
+        "y": 19,
+        "w": 302,
+        "h": 162,
+        "info": "Set `msg` properties to invoke specific `grouped_light` and `scene` commands targeting the zone named \"Main Floor\" on the ground floor Hue Bridge."
     },
     {
         "id": "4e52881346c9e44b",
@@ -1197,21 +1067,136 @@
             }
         ],
         "x": 514,
-        "y": 359
+        "y": 359,
+        "w": 772,
+        "h": 322,
+        "info": "The nodes in this group include a number of subflows that address the V2 API on a particular Philips Hue Bridge. The following environment variables are set at the group level, and inherited by the subflows:\n\n| Environment Variable | Description                                                                                       |\n|----------------------|---------------------------------------------------------------------------------------------------|\n| `BRIDGE`             | The name of the bridge to use to differentiate it from other instances in global and flow context |\n| `ADDRESS`            | The IP address or host name of the particular bridge                                              |\n| `KEY`                | The client access key to pass in request headers                                                  |\n| `TOPIC`              | The base topic prefix for MQTT messages emitted by this part of the flow                          |\n\n> Note that the subflows used in this group include one that can be used to obtain a token to use as the value for `${KEY}`.\n\nThe nodes in this group include a `ui_template` which is fed by a subflow that processes incoming messages from the Hue Bridge API V2 server-sent event stream. This means that you don't need to create custom dashboard controls for your particular Hue rooms and zones.\n\n> Currently, this approach is implemented only for `md-switch` elements that turn on or off a room or zone, and `md-button` elements that activate Hue scenes. More work will be needed to extend this approach for accessories like motion sensors.\n\nThe dynamically-generated UI relies on two subflows, both included in this group:\n\n- _Hue to MQTT_ subscribes to server-sent events and forwards them as MQTT messages\n\n- _Hue Dashboard Controls_ listens for those MQTT messages and dynamically populates the dashboard\n\n> MQTT retained messages are used as intermediaries in this flow primarily as a persistence mechanism.\n\nThe _Hue to MQTT_ subflow depends on [EventSource](https://flows.nodered.org/node/@parasaurolophus/node-red-eventsource) in order to listen for Server-Sent Events (SSE) from the Hue Bridge. See <https://flows.nodered.org/node/@parasaurolophus/node-red-eventsource> for more information."
     },
     {
-        "id": "ded409ca4a47d4fa",
-        "type": "junction",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "x": 360,
-        "y": 460,
-        "wires": [
-            [
-                "8a9ced356d9b863b",
-                "6957440564321846"
-            ]
-        ]
+        "id": "276fb48c5a5f5cf0",
+        "type": "group",
+        "z": "c7141ffb22d64190",
+        "name": "Limit rate at which messages are sent to the MQTT broker",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "74f456c57bd0405f",
+            "3db511b8fbb93369",
+            "efbd1b79e54e0bf7"
+        ],
+        "x": 914,
+        "y": 699,
+        "w": 372,
+        "h": 82,
+        "info": "Provide a single, rate-limited link through which to send MQTT messages from any node.\n\n> This is provided as mitigation for the fact that some paths through this flow can generate bursts of large numbers of outgoing MQTT messages in a very short amount of time.\n>\n> &nbsp;\n>\n> A consequence, however, is that some round-trip interactions visible through the dashboard can sometimes be slowed down."
+    },
+    {
+        "id": "5a55da7dc4d6079a",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "6781ffdcbd1da527",
+            "53c22067c03e3e89",
+            "deed3f975e1ed407"
+        ],
+        "x": 554,
+        "y": 519,
+        "w": 452,
+        "h": 82
+    },
+    {
+        "id": "66a5571991777139",
+        "type": "group",
+        "z": "b12fd38c090c51f2",
+        "name": "",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ece6886e7cb007db",
+            "2d68844e4116a52b",
+            "33b4cddfbae33a1b",
+            "686c0b44b5df673f"
+        ],
+        "x": 14,
+        "y": 519,
+        "w": 512,
+        "h": 162
+    },
+    {
+        "id": "2a7cbd30c087145e",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Dispatch lighting automation commands",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "ab665e209a4a31e1",
+            "6cca47f04425da1a",
+            "0df8d40082857308",
+            "b476c6da590fdcd1",
+            "872e6e623f129968",
+            "c801b336a9c5a749",
+            "c71595807eef68fe",
+            "c8ba2dbf1e2f3a78",
+            "915344e52620b333",
+            "68b6e0ac8e9822bf",
+            "d847113762fd444d"
+        ],
+        "x": 14,
+        "y": 499,
+        "w": 522,
+        "h": 262,
+        "info": "Forward the time and date based event message through to the particular output corresponding to a specific combination of values for _time_ and _theme_.\n\n> Note that lighting automation ignores `midday` and `afternoon` events as those are not relevant to lighting automation."
+    },
+    {
+        "id": "78e09083a861e13e",
+        "type": "group",
+        "z": "cbd68ba9caa96a3d",
+        "name": "Dispatch window shade automation commands",
+        "style": {
+            "stroke": "none",
+            "fill": "#000000",
+            "fill-opacity": "0.1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "65ab6145dd1c2e19",
+            "b13e36ae61e678c5",
+            "92c2876f08baadd9",
+            "55f89a635c93f337",
+            "5638c682e2ac2fba",
+            "5a10fc701135b50d",
+            "ea959d418216fe68"
+        ],
+        "x": 774,
+        "y": 499,
+        "w": 342,
+        "h": 242,
+        "info": "Forward time and date based event messages to the particular outputs corresponding to specific values of _time_.\n\n> Note that this part of the flow ignores _theme_, as that is not relevant to window covering automation."
     },
     {
         "id": "0e569954788e4856",
@@ -1222,6 +1207,20 @@
         "wires": [
             [
                 "1bf87f4377d87af1"
+            ]
+        ]
+    },
+    {
+        "id": "68b6e0ac8e9822bf",
+        "type": "junction",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "x": 240,
+        "y": 640,
+        "wires": [
+            [
+                "915344e52620b333",
+                "d847113762fd444d"
             ]
         ]
     },
@@ -1390,8 +1389,8 @@
         "id": "03b0e40844d33477",
         "type": "ui_group",
         "name": "Hue Connection",
-        "tab": "63174a9beeea0f41",
-        "order": 2,
+        "tab": "ec4d94df679f3b11",
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -1451,30 +1450,11 @@
         "className": ""
     },
     {
-        "id": "d198490f207c2a62",
-        "type": "ui_group",
-        "name": "MQTT Broker",
-        "tab": "63174a9beeea0f41",
-        "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "63174a9beeea0f41",
-        "type": "ui_tab",
-        "name": "Monitoring",
-        "icon": "fa-tachometer",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "ec2f34e30f977387",
         "type": "ui_group",
         "name": "CPU",
-        "tab": "63174a9beeea0f41",
-        "order": 1,
+        "tab": "ec4d94df679f3b11",
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -2170,7 +2150,8 @@
         "y": 420,
         "wires": [
             [
-                "1bf87f4377d87af1"
+                "1bf87f4377d87af1",
+                "7e8e54c38208cb05"
             ]
         ]
     },
@@ -2192,7 +2173,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 100,
-        "y": 300,
+        "y": 280,
         "wires": [
             [
                 "42539f9217e51fbd"
@@ -2352,6 +2333,148 @@
         "x": 280,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "7e8e54c38208cb05",
+        "type": "switch",
+        "z": "4e89e7c952d56c09",
+        "name": "readyState = 2",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1160,
+        "y": 460,
+        "wires": [
+            [
+                "e332aa692cb1b276"
+            ],
+            [
+                "771e1bc991179b40"
+            ]
+        ]
+    },
+    {
+        "id": "ed2633ae562df906",
+        "type": "trigger",
+        "z": "4e89e7c952d56c09",
+        "name": "reconnect",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "date",
+        "duration": "30",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "42539f9217e51fbd"
+            ]
+        ]
+    },
+    {
+        "id": "e332aa692cb1b276",
+        "type": "link out",
+        "z": "4e89e7c952d56c09",
+        "name": "reconnect",
+        "mode": "link",
+        "links": [
+            "207aab12f664403a"
+        ],
+        "x": 1295,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "771e1bc991179b40",
+        "type": "link out",
+        "z": "4e89e7c952d56c09",
+        "name": "reset",
+        "mode": "link",
+        "links": [
+            "7afc6deb57e6484d"
+        ],
+        "x": 1295,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6aa80881c13db57f",
+        "type": "change",
+        "z": "4e89e7c952d56c09",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 150,
+        "y": 500,
+        "wires": [
+            [
+                "ed2633ae562df906"
+            ]
+        ]
+    },
+    {
+        "id": "207aab12f664403a",
+        "type": "link in",
+        "z": "4e89e7c952d56c09",
+        "name": "reconnect",
+        "links": [
+            "e332aa692cb1b276"
+        ],
+        "x": 185,
+        "y": 420,
+        "wires": [
+            [
+                "ed2633ae562df906"
+            ]
+        ],
+        "info": "// nrlint align-to-grid:off\n"
+    },
+    {
+        "id": "7afc6deb57e6484d",
+        "type": "link in",
+        "z": "4e89e7c952d56c09",
+        "name": "reset",
+        "links": [
+            "771e1bc991179b40"
+        ],
+        "x": 55,
+        "y": 500,
+        "wires": [
+            [
+                "6aa80881c13db57f"
+            ]
+        ]
     },
     {
         "id": "7f7ef86a4212cda9",
@@ -3110,7 +3233,7 @@
         "y": 320,
         "wires": [
             [
-                "8686957868613221"
+                "17fde856a49a6028"
             ]
         ]
     },
@@ -3334,20 +3457,6 @@
                 "pt": "msg",
                 "to": "'nodered/automation/' & topic",
                 "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
             }
         ],
         "action": "",
@@ -3359,7 +3468,7 @@
         "y": 120,
         "wires": [
             [
-                "4b2e5cdaca43a71b"
+                "982e6f99bb54af77"
             ]
         ]
     },
@@ -3466,82 +3575,10 @@
         "y": 440,
         "wires": [
             [
-                "56ed153e71b59e89"
+                "86ca6ce5e6cc8b78"
             ]
         ],
         "info": "Dashboard switch to control whether or not the automation flows will be triggered on receipt of `nodered/automation/time` MQTT events."
-    },
-    {
-        "id": "4b2e5cdaca43a71b",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "8a031cfeade40a06",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "b9100b6a29fef164",
-            "efbd1b79e54e0bf7"
-        ],
-        "x": 1015,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "00b200c8b96373d9",
-        "type": "link out",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "send to broker",
-        "mode": "link",
-        "links": [
-            "b9100b6a29fef164",
-            "efbd1b79e54e0bf7"
-        ],
-        "x": 795,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "56ed153e71b59e89",
-        "type": "change",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "nodered/automation/enable",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "nodered/automation/enable",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "qos",
-                "pt": "msg",
-                "to": "2",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "retain",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 640,
-        "y": 440,
-        "wires": [
-            [
-                "00b200c8b96373d9"
-            ]
-        ]
     },
     {
         "id": "a9ea7694289d75de",
@@ -3554,43 +3591,11 @@
             "d83eb703d52610ad",
             "ea959d418216fe68",
             "0d2088c48deebf62",
-            "4bb92f343cc9a859"
+            "4bb92f343cc9a859",
+            "c71595807eef68fe"
         ],
-        "x": 1235,
+        "x": 1055,
         "y": 320,
-        "wires": []
-    },
-    {
-        "id": "dcae4a0dbbe2575e",
-        "type": "comment",
-        "z": "cbd68ba9caa96a3d",
-        "g": "8a031cfeade40a06",
-        "name": "send nodered/automation/+ events...",
-        "info": "",
-        "x": 880,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "a01e15ec8fb87e05",
-        "type": "comment",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "execute automation...",
-        "info": "",
-        "x": 1140,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "df682692b16a598e",
-        "type": "comment",
-        "z": "cbd68ba9caa96a3d",
-        "g": "98cf3b8910bc4f22",
-        "name": "send nodered/automation/enable events...",
-        "info": "",
-        "x": 640,
-        "y": 400,
         "wires": []
     },
     {
@@ -3598,7 +3603,7 @@
         "type": "rbe",
         "z": "cbd68ba9caa96a3d",
         "g": "98cf3b8910bc4f22",
-        "name": "",
+        "name": "ignore first event",
         "func": "rbei",
         "gap": "",
         "start": "",
@@ -3606,7 +3611,7 @@
         "septopics": false,
         "property": "payload",
         "topi": "topic",
-        "x": 1150,
+        "x": 930,
         "y": 320,
         "wires": [
             [
@@ -3615,35 +3620,260 @@
         ]
     },
     {
-        "id": "8686957868613221",
-        "type": "change",
+        "id": "982e6f99bb54af77",
+        "type": "mqtt out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "86ca6ce5e6cc8b78",
+        "type": "mqtt out",
         "z": "cbd68ba9caa96a3d",
         "g": "98cf3b8910bc4f22",
         "name": "",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "payload.enable",
-                "pt": "msg"
-            }
+        "topic": "nodered/automation/enable",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 640,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "ab665e209a4a31e1",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "morning",
+        "mode": "link",
+        "links": [
+            "2bb38044a932fa69",
+            "52f0cba3f9b87632",
+            "df41f3a116d28de2"
         ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 960,
-        "y": 320,
+        "x": 295,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6cca47f04425da1a",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "night",
+        "mode": "link",
+        "links": [
+            "012902774c9657f1",
+            "0acba8178934baa1",
+            "2bb38044a932fa69"
+        ],
+        "x": 295,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "0df8d40082857308",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "tribal",
+        "mode": "link",
+        "links": [
+            "510f4653645e17d0"
+        ],
+        "x": 495,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b476c6da590fdcd1",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "spooky",
+        "mode": "link",
+        "links": [
+            "feaf54e6c16337c1"
+        ],
+        "x": 495,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "872e6e623f129968",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "jolly",
+        "mode": "link",
+        "links": [
+            "510f4653645e17d0",
+            "cb0bc87b9e465a2f",
+            "feaf54e6c16337c1"
+        ],
+        "x": 495,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c801b336a9c5a749",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "standard",
+        "mode": "link",
+        "links": [
+            "b11c745f6ce17117"
+        ],
+        "x": 495,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c71595807eef68fe",
+        "type": "link in",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "time",
+        "links": [
+            "a9ea7694289d75de"
+        ],
+        "x": 55,
+        "y": 640,
         "wires": [
             [
-                "17fde856a49a6028"
+                "c8ba2dbf1e2f3a78"
             ]
         ]
     },
     {
+        "id": "c8ba2dbf1e2f3a78",
+        "type": "switch",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "time",
+        "property": "payload.time",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "morning",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "evening",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "night",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 150,
+        "y": 640,
+        "wires": [
+            [
+                "ab665e209a4a31e1"
+            ],
+            [
+                "68b6e0ac8e9822bf"
+            ],
+            [
+                "6cca47f04425da1a"
+            ]
+        ],
+        "info": "// nrlint no-overlapping-nodes:off\n"
+    },
+    {
+        "id": "915344e52620b333",
+        "type": "switch",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "theme",
+        "property": "payload.theme",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "tribal",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "spooky",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "jolly",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "x": 330,
+        "y": 600,
+        "wires": [
+            [
+                "0df8d40082857308"
+            ],
+            [
+                "b476c6da590fdcd1"
+            ],
+            [
+                "872e6e623f129968"
+            ],
+            [
+                "c801b336a9c5a749"
+            ]
+        ],
+        "info": "// nrlint no-overlapping-nodes:off\n"
+    },
+    {
+        "id": "d847113762fd444d",
+        "type": "link out",
+        "z": "cbd68ba9caa96a3d",
+        "g": "2a7cbd30c087145e",
+        "name": "evening",
+        "mode": "link",
+        "links": [
+            "fe5fdd858e8b907d"
+        ],
+        "x": 295,
+        "y": 680,
+        "wires": []
+    },
+    {
         "id": "65ab6145dd1c2e19",
         "type": "switch",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "time",
         "property": "payload.time",
@@ -3678,8 +3908,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 1030,
-        "y": 480,
+        "x": 910,
+        "y": 620,
         "wires": [
             [
                 "b13e36ae61e678c5"
@@ -3711,84 +3941,84 @@
     {
         "id": "b13e36ae61e678c5",
         "type": "link out",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "morning",
         "mode": "link",
         "links": [
             "cab89ebfeca22623"
         ],
-        "x": 1195,
-        "y": 400,
+        "x": 1075,
+        "y": 540,
         "wires": []
     },
     {
         "id": "92c2876f08baadd9",
         "type": "link out",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "midday",
         "mode": "link",
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 1195,
-        "y": 440,
+        "x": 1075,
+        "y": 580,
         "wires": []
     },
     {
         "id": "55f89a635c93f337",
         "type": "link out",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "afternoon",
         "mode": "link",
         "links": [
             "3fa2af1c1f32f8ee"
         ],
-        "x": 1195,
-        "y": 480,
+        "x": 1075,
+        "y": 620,
         "wires": []
     },
     {
         "id": "5638c682e2ac2fba",
         "type": "link out",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "evening",
         "mode": "link",
         "links": [
             "4d9c62d6c2145813"
         ],
-        "x": 1195,
-        "y": 520,
+        "x": 1075,
+        "y": 660,
         "wires": []
     },
     {
         "id": "5a10fc701135b50d",
         "type": "link out",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "night",
         "mode": "link",
         "links": [
             "71f42f61777d49d9"
         ],
-        "x": 1195,
-        "y": 560,
+        "x": 1075,
+        "y": 700,
         "wires": []
     },
     {
         "id": "ea959d418216fe68",
         "type": "link in",
-        "z": "ff0141ba0f0c7234",
+        "z": "cbd68ba9caa96a3d",
         "g": "78e09083a861e13e",
         "name": "time",
         "links": [
             "a9ea7694289d75de"
         ],
-        "x": 935,
-        "y": 480,
+        "x": 815,
+        "y": 620,
         "wires": [
             [
                 "65ab6145dd1c2e19"
@@ -3796,442 +4026,25 @@
         ]
     },
     {
-        "id": "59e320abec722230",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "morning",
-        "mode": "link",
-        "links": [
-            "2bb38044a932fa69",
-            "52f0cba3f9b87632",
-            "df41f3a116d28de2"
-        ],
-        "x": 415,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "52a74204d47efd1e",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "night",
-        "mode": "link",
-        "links": [
-            "012902774c9657f1",
-            "0acba8178934baa1",
-            "2bb38044a932fa69"
-        ],
-        "x": 415,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "9b05a84bf2e36872",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "tribal",
-        "mode": "link",
-        "links": [
-            "510f4653645e17d0"
-        ],
-        "x": 615,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "6051debe54e3825e",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "spooky",
-        "mode": "link",
-        "links": [
-            "feaf54e6c16337c1"
-        ],
-        "x": 615,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "13ec2fe1e16094a1",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "jolly",
-        "mode": "link",
-        "links": [
-            "510f4653645e17d0",
-            "cb0bc87b9e465a2f",
-            "feaf54e6c16337c1"
-        ],
-        "x": 615,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "84118b9049ec3439",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "standard",
-        "mode": "link",
-        "links": [
-            "b11c745f6ce17117"
-        ],
-        "x": 615,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "4bb92f343cc9a859",
-        "type": "link in",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "time",
-        "links": [
-            "a9ea7694289d75de"
-        ],
-        "x": 175,
-        "y": 460,
-        "wires": [
-            [
-                "06e95c81925fd3c3"
-            ]
-        ]
-    },
-    {
-        "id": "74f456c57bd0405f",
-        "type": "delay",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "3",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 290,
-        "y": 100,
-        "wires": [
-            [
-                "3db511b8fbb93369"
-            ]
-        ]
-    },
-    {
-        "id": "3db511b8fbb93369",
-        "type": "mqtt out",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "722d62f3b93039c3",
-        "x": 430,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "efbd1b79e54e0bf7",
-        "type": "link in",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "send to broker",
-        "links": [
-            "4b2e5cdaca43a71b",
-            "968fd6d85ac60a62",
-            "54bbaac5bafb7512",
-            "00b200c8b96373d9",
-            "01dabb1829a3e85e",
-            "22a8b1377a9c1022"
-        ],
-        "x": 175,
-        "y": 100,
-        "wires": [
-            [
-                "74f456c57bd0405f"
-            ]
-        ]
-    },
-    {
-        "id": "d935f691d63e1e77",
-        "type": "status",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "mqtt queue status",
-        "scope": [
-            "74f456c57bd0405f"
-        ],
-        "x": 270,
-        "y": 160,
-        "wires": [
-            [
-                "3a71b6d844f7acb7"
-            ]
-        ]
-    },
-    {
-        "id": "ec3b19f7f91f026d",
-        "type": "status",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "mqtt connection status",
-        "scope": [
-            "3db511b8fbb93369"
-        ],
-        "x": 260,
-        "y": 200,
-        "wires": [
-            [
-                "4f8791884f618315"
-            ]
-        ]
-    },
-    {
-        "id": "1a9f2ae66bc3b97b",
-        "type": "ui_text",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "group": "d198490f207c2a62",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "MQTT Queue Status",
-        "label": "Queue",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 640,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "c985b6125c7dee4a",
-        "type": "ui_text",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "group": "d198490f207c2a62",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "MQTT Connection Status",
-        "label": "Queue",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 650,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "3a71b6d844f7acb7",
-        "type": "change",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "parse status",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$substringAfter(status.text, 'node-red:common.status.')",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 160,
-        "wires": [
-            [
-                "1a9f2ae66bc3b97b"
-            ]
-        ]
-    },
-    {
-        "id": "4f8791884f618315",
-        "type": "change",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "parse status",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$substringAfter(status.text, 'node-red:common.status.')",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 200,
-        "wires": [
-            [
-                "c985b6125c7dee4a"
-            ]
-        ]
-    },
-    {
-        "id": "af1881c6e1166196",
+        "id": "328cfa2f66d59d33",
         "type": "comment",
-        "z": "ff0141ba0f0c7234",
-        "g": "276fb48c5a5f5cf0",
-        "name": "send all mqtt messages through this link",
-        "info": "",
-        "x": 310,
-        "y": 60,
+        "z": "cbd68ba9caa96a3d",
+        "g": "98cf3b8910bc4f22",
+        "name": "{\"time\":time,\"theme\":theme,\"enable\":boolean}",
+        "info": "Forward time and date based event messages to the parts of the flow responsible for triggering home automation device control commands.",
+        "x": 930,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "34385092a355cd47",
+        "id": "09c239a9814d1f12",
         "type": "comment",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "handle nodered/automation/time events",
+        "z": "cbd68ba9caa96a3d",
+        "g": "8a031cfeade40a06",
+        "name": "send individual MQTT events for \"time,\" \"theme,\" \"bedtime\" etc. each time the corresponding value changes",
         "info": "",
-        "x": 310,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "6d664c1fce229c1e",
-        "type": "comment",
-        "z": "ff0141ba0f0c7234",
-        "g": "78e09083a861e13e",
-        "name": "handle nodered/automation/time events",
-        "info": "",
-        "x": 1070,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "06e95c81925fd3c3",
-        "type": "switch",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "time",
-        "property": "payload.time",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "morning",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "evening",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "night",
-                "vt": "str"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 270,
-        "y": 460,
-        "wires": [
-            [
-                "59e320abec722230"
-            ],
-            [
-                "ded409ca4a47d4fa"
-            ],
-            [
-                "52a74204d47efd1e"
-            ]
-        ],
-        "info": "// nrlint no-overlapping-nodes:off\n"
-    },
-    {
-        "id": "8a9ced356d9b863b",
-        "type": "switch",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "theme",
-        "property": "payload.theme",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "tribal",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "spooky",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "jolly",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 4,
-        "x": 450,
-        "y": 420,
-        "wires": [
-            [
-                "9b05a84bf2e36872"
-            ],
-            [
-                "6051debe54e3825e"
-            ],
-            [
-                "13ec2fe1e16094a1"
-            ],
-            [
-                "84118b9049ec3439"
-            ]
-        ],
-        "info": "// nrlint no-overlapping-nodes:off\n"
-    },
-    {
-        "id": "6957440564321846",
-        "type": "link out",
-        "z": "ff0141ba0f0c7234",
-        "g": "053656a9e6f3379c",
-        "name": "evening",
-        "mode": "link",
-        "links": [
-            "fe5fdd858e8b907d"
-        ],
-        "x": 415,
-        "y": 500,
+        "x": 740,
+        "y": 80,
         "wires": []
     },
     {
@@ -4515,7 +4328,9 @@
             "5950aa6c0df32eb2",
             "4ed8bcf218333395",
             "59e320abec722230",
-            "52a74204d47efd1e"
+            "52a74204d47efd1e",
+            "ab665e209a4a31e1",
+            "6cca47f04425da1a"
         ],
         "x": 155,
         "y": 380,
@@ -4578,7 +4393,8 @@
             "2272d3c9be7a6390",
             "bbabd588c05b979f",
             "b8723d53ddad808a",
-            "84118b9049ec3439"
+            "84118b9049ec3439",
+            "c801b336a9c5a749"
         ],
         "x": 155,
         "y": 420,
@@ -4646,7 +4462,9 @@
             "6a4e3c8d5c47d1b7",
             "758cfea08b622975",
             "9b05a84bf2e36872",
-            "13ec2fe1e16094a1"
+            "13ec2fe1e16094a1",
+            "0df8d40082857308",
+            "872e6e623f129968"
         ],
         "x": 155,
         "y": 460,
@@ -4715,7 +4533,9 @@
             "e0a9d45fbfcb3532",
             "758cfea08b622975",
             "6051debe54e3825e",
-            "13ec2fe1e16094a1"
+            "13ec2fe1e16094a1",
+            "b476c6da590fdcd1",
+            "872e6e623f129968"
         ],
         "x": 155,
         "y": 500,
@@ -4778,7 +4598,8 @@
             "81221f83aad45655",
             "83b840b1c5858876",
             "758cfea08b622975",
-            "13ec2fe1e16094a1"
+            "13ec2fe1e16094a1",
+            "872e6e623f129968"
         ],
         "x": 155,
         "y": 540,
@@ -4841,7 +4662,8 @@
             "e53fa5ad2c0bc25a",
             "23eec62f6bec1030",
             "5950aa6c0df32eb2",
-            "59e320abec722230"
+            "59e320abec722230",
+            "ab665e209a4a31e1"
         ],
         "x": 155,
         "y": 60,
@@ -4904,7 +4726,8 @@
             "4c171923173c6e68",
             "b290a3d4ebcd7653",
             "4ed8bcf218333395",
-            "52a74204d47efd1e"
+            "52a74204d47efd1e",
+            "6cca47f04425da1a"
         ],
         "x": 155,
         "y": 100,
@@ -4968,7 +4791,8 @@
             "b77799d3430f62c7",
             "6f67a01c3ee8a16f",
             "b29a7ab55a3476e5",
-            "6957440564321846"
+            "6957440564321846",
+            "d847113762fd444d"
         ],
         "x": 155,
         "y": 140,
@@ -5034,7 +4858,8 @@
             "e53fa5ad2c0bc25a",
             "23eec62f6bec1030",
             "5950aa6c0df32eb2",
-            "59e320abec722230"
+            "59e320abec722230",
+            "ab665e209a4a31e1"
         ],
         "x": 155,
         "y": 240,
@@ -5099,7 +4924,8 @@
             "4c171923173c6e68",
             "b290a3d4ebcd7653",
             "4ed8bcf218333395",
-            "52a74204d47efd1e"
+            "52a74204d47efd1e",
+            "6cca47f04425da1a"
         ],
         "x": 155,
         "y": 280,
@@ -5406,7 +5232,7 @@
         "type": "link out",
         "z": "c7141ffb22d64190",
         "g": "4e52881346c9e44b",
-        "name": "link out 1",
+        "name": "send to broker",
         "mode": "link",
         "links": [
             "efbd1b79e54e0bf7"
@@ -5673,20 +5499,87 @@
         "wires": []
     },
     {
+        "id": "74f456c57bd0405f",
+        "type": "delay",
+        "z": "c7141ffb22d64190",
+        "g": "276fb48c5a5f5cf0",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "3",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1070,
+        "y": 740,
+        "wires": [
+            [
+                "3db511b8fbb93369"
+            ]
+        ]
+    },
+    {
+        "id": "3db511b8fbb93369",
+        "type": "mqtt out",
+        "z": "c7141ffb22d64190",
+        "g": "276fb48c5a5f5cf0",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "722d62f3b93039c3",
+        "x": 1210,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "efbd1b79e54e0bf7",
+        "type": "link in",
+        "z": "c7141ffb22d64190",
+        "g": "276fb48c5a5f5cf0",
+        "name": "send to broker",
+        "links": [
+            "4b2e5cdaca43a71b",
+            "968fd6d85ac60a62",
+            "54bbaac5bafb7512",
+            "00b200c8b96373d9",
+            "01dabb1829a3e85e",
+            "22a8b1377a9c1022"
+        ],
+        "x": 955,
+        "y": 740,
+        "wires": [
+            [
+                "74f456c57bd0405f"
+            ]
+        ]
+    },
+    {
         "id": "2f6cc09457939ce2",
         "type": "subflow:9c4e4702e4660adf",
         "z": "1cf0490e7de2f93d",
-        "g": "87285e6bf01cff03",
+        "g": "b48f76e13fc77aa7",
         "name": "",
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "POWERVIEW_ADDRESS",
+                "value": "ADDRESS",
                 "type": "env"
             }
         ],
-        "x": 220,
-        "y": 240,
+        "x": 240,
+        "y": 180,
         "wires": [
             [
                 "63300052daf495e4"
@@ -5697,7 +5590,7 @@
         "id": "7173aa38c9fa93dc",
         "type": "link in",
         "z": "1cf0490e7de2f93d",
-        "g": "87285e6bf01cff03",
+        "g": "b48f76e13fc77aa7",
         "name": "activate powerview scene",
         "links": [
             "9f3d946a03de6aa8",
@@ -5711,8 +5604,8 @@
             "96e7a29d96084487",
             "dcd2a91c5972ccf0"
         ],
-        "x": 55,
-        "y": 240,
+        "x": 75,
+        "y": 180,
         "wires": [
             [
                 "2f6cc09457939ce2"
@@ -5728,12 +5621,12 @@
         "env": [
             {
                 "name": "ADDRESS",
-                "value": "POWERVIEW_ADDRESS",
+                "value": "ADDRESS",
                 "type": "env"
             }
         ],
-        "x": 600,
-        "y": 100,
+        "x": 620,
+        "y": 120,
         "wires": [
             [
                 "85c26fe91dc71759"
@@ -5759,8 +5652,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 870,
-        "y": 60,
+        "x": 890,
+        "y": 80,
         "wires": [
             [
                 "96e7a29d96084487"
@@ -5785,8 +5678,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 120,
-        "y": 100,
+        "x": 140,
+        "y": 120,
         "wires": [
             [
                 "7026f2de142e8ef2"
@@ -5814,8 +5707,8 @@
         "payloadType": "date",
         "topic": "topic",
         "topicType": "msg",
-        "x": 330,
-        "y": 100,
+        "x": 350,
+        "y": 120,
         "wires": [
             [
                 "942f0a1ef3d8ade3"
@@ -5835,8 +5728,8 @@
             "0b72197569340d63",
             "5a10fc701135b50d"
         ],
-        "x": 155,
-        "y": 340,
+        "x": 735,
+        "y": 280,
         "wires": [
             [
                 "16c6de044f949382"
@@ -5863,8 +5756,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 340,
+        "x": 880,
+        "y": 280,
         "wires": [
             [
                 "dcd2a91c5972ccf0"
@@ -5889,8 +5782,8 @@
             "92c2876f08baadd9",
             "5638c682e2ac2fba"
         ],
-        "x": 155,
-        "y": 380,
+        "x": 735,
+        "y": 320,
         "wires": [
             [
                 "4f656e2b5766e68f"
@@ -5917,8 +5810,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 380,
+        "x": 880,
+        "y": 320,
         "wires": [
             [
                 "dcd2a91c5972ccf0"
@@ -5935,8 +5828,8 @@
         "links": [
             "b13e36ae61e678c5"
         ],
-        "x": 155,
-        "y": 420,
+        "x": 735,
+        "y": 360,
         "wires": [
             [
                 "a0e918936b64e067"
@@ -5963,8 +5856,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 300,
-        "y": 420,
+        "x": 880,
+        "y": 360,
         "wires": [
             [
                 "dcd2a91c5972ccf0"
@@ -5981,8 +5874,8 @@
         "links": [
             "55f89a635c93f337"
         ],
-        "x": 155,
-        "y": 460,
+        "x": 735,
+        "y": 400,
         "wires": [
             [
                 "1fcfbbdf6167f8c8"
@@ -6009,8 +5902,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 290,
-        "y": 460,
+        "x": 870,
+        "y": 400,
         "wires": [
             [
                 "dcd2a91c5972ccf0"
@@ -6021,10 +5914,10 @@
         "id": "63300052daf495e4",
         "type": "subflow:7b61502c01a97f85",
         "z": "1cf0490e7de2f93d",
-        "g": "87285e6bf01cff03",
+        "g": "b48f76e13fc77aa7",
         "name": "",
-        "x": 450,
-        "y": 240,
+        "x": 430,
+        "y": 180,
         "wires": []
     },
     {
@@ -6033,8 +5926,8 @@
         "z": "1cf0490e7de2f93d",
         "g": "b48f76e13fc77aa7",
         "name": "",
-        "x": 850,
-        "y": 140,
+        "x": 830,
+        "y": 160,
         "wires": []
     },
     {
@@ -6047,8 +5940,8 @@
         "links": [
             "7173aa38c9fa93dc"
         ],
-        "x": 1015,
-        "y": 60,
+        "x": 1035,
+        "y": 80,
         "wires": []
     },
     {
@@ -6061,8 +5954,8 @@
         "links": [
             "7173aa38c9fa93dc"
         ],
-        "x": 455,
-        "y": 400,
+        "x": 1035,
+        "y": 340,
         "wires": []
     },
     {
@@ -6818,7 +6711,7 @@
     {
         "id": "6781ffdcbd1da527",
         "type": "mqtt in",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "5a55da7dc4d6079a",
         "name": "",
         "topic": "cpu/+/+",
@@ -6829,8 +6722,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 90,
-        "y": 60,
+        "x": 630,
+        "y": 560,
         "wires": [
             [
                 "53c22067c03e3e89"
@@ -6840,7 +6733,7 @@
     {
         "id": "53c22067c03e3e89",
         "type": "function",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "5a55da7dc4d6079a",
         "name": "cache metrics",
         "func": "const topic = msg.topic.split('/')\nconst cache = context.get('cache') || {}\nconst cpu = cache[topic[1]] || {}\n\ncpu[topic[2]] = msg.payload\ncache[topic[1]] = cpu\ncontext.set('cache', cache)\nmsg.payload = cache\nreturn msg",
@@ -6849,8 +6742,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
-        "y": 60,
+        "x": 780,
+        "y": 560,
         "wires": [
             [
                 "deed3f975e1ed407"
@@ -6860,21 +6753,21 @@
     {
         "id": "deed3f975e1ed407",
         "type": "ui_template",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "5a55da7dc4d6079a",
         "group": "ec2f34e30f977387",
         "name": "CPU",
         "order": 2,
-        "width": "0",
-        "height": "0",
-        "format": "<div>\n    <div ng-repeat=\"(host, metrics) in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <table>\n            <caption>{{host}}</caption>\n            <tr>\n                <th>metric</th>\n                <th>value</th>\n            </tr>\n            <tr ng-repeat=\"(label, value) in metrics\">\n                <td>{{label}}</td>\n                <td>{{value}}</td>\n            </tr>\n        </table>\n    </div>\n</div>",
+        "width": "6",
+        "height": "10",
+        "format": "<style>\n    table {\n        width: 100%;\n    }\n    th, td {\n        width: 50%;\n        margin: 2px;\n        padding: 2px;\n    }\n</style>\n<div>\n    <div ng-repeat=\"(host, metrics) in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <table>\n            <caption>{{host}}</caption>\n            <tr>\n                <th>metric</th>\n                <th>value</th>\n            </tr>\n            <tr ng-repeat=\"(label, value) in metrics\">\n                <td>{{label}}</td>\n                <td>{{value}}</td>\n            </tr>\n        </table>\n    </div>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 390,
-        "y": 60,
+        "x": 930,
+        "y": 560,
         "wires": [
             []
         ]
@@ -6882,7 +6775,7 @@
     {
         "id": "ece6886e7cb007db",
         "type": "mqtt in",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "66a5571991777139",
         "name": "",
         "topic": "hue/+/status",
@@ -6894,7 +6787,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 110,
-        "y": 160,
+        "y": 560,
         "wires": [
             [
                 "33b4cddfbae33a1b"
@@ -6904,7 +6797,7 @@
     {
         "id": "2d68844e4116a52b",
         "type": "mqtt in",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "66a5571991777139",
         "name": "",
         "topic": "hue/+/open",
@@ -6916,7 +6809,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 120,
-        "y": 240,
+        "y": 640,
         "wires": [
             [
                 "33b4cddfbae33a1b"
@@ -6926,7 +6819,7 @@
     {
         "id": "33b4cddfbae33a1b",
         "type": "function",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "66a5571991777139",
         "name": "count",
         "func": "const counts = context.get('counts') || {}\nconst count = counts[msg.topic] || { count: 0 }\n\ncount.value = JSON.stringify(msg.payload, null, ' ')\ncount.count += 1\ncounts[msg.topic] =  count\ncontext.set('counts', counts)\nmsg.payload = counts\nreturn msg",
@@ -6936,7 +6829,7 @@
         "finalize": "",
         "libs": [],
         "x": 270,
-        "y": 200,
+        "y": 600,
         "wires": [
             [
                 "686c0b44b5df673f"
@@ -6946,21 +6839,21 @@
     {
         "id": "686c0b44b5df673f",
         "type": "ui_template",
-        "z": "0ea3334f7a8cb5be",
+        "z": "b12fd38c090c51f2",
         "g": "66a5571991777139",
         "group": "03b0e40844d33477",
         "name": "Hue Connection",
         "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<div>\n    <div ng-repeat=\"(topic,count) in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <table style=\"width:100%\">\n            <caption>{{topic}}</caption>\n            <tr>\n                <th style=\"text-align:left\">count</th>\n                <th style=\"text-align:left\">value</th>\n            </tr>\n            <tr>\n                <td>{{count.count}}</td>\n                <td>\n                    <pre>{{count.value}}</pre>\n                </td>\n            </tr>\n        </table>\n    </div>\n</div>",
+        "width": "6",
+        "height": "10",
+        "format": "<style>\n    table {\n        width: 100%;\n    }\n    td, th {\n        padding: 2px;\n        margin: 2px;\n    }\n    th {\n        width: 25%;\n    }\n</style>\n<div>\n    <div ng-repeat=\"(topic,count) in msg.payload\">\n        <hr ng-if=\"$index > 0\">\n        <table>\n            <caption>{{topic}}</caption>\n            <tr>\n                <th>count</th>\n                <td>{{count.count}}</td>\n            </tr>\n            <tr>\n                <th>value</th>\n                <td><pre>{{count.value}}</pre></td>\n            </tr>\n        </table>\n    </div>\n</div>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
         "x": 420,
-        "y": 200,
+        "y": 600,
         "wires": [
             []
         ]
