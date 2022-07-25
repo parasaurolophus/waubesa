@@ -713,36 +713,7 @@
         "y": 19,
         "w": 1112,
         "h": 182,
-        "info": "This part of the flow uses the [suncalc](https://www.npmjs.com/package/suncalc) package and JavaScript's built in `Date` capabilities to send various MQTT messages each time their corresponding payloads change.\n\nThere are two principal event messages that are used to drive home automation:\n\n| Topic                                | Payload                                                                                         |\n|--------------------------------------|-------------------------------------------------------------------------------------------------|\n| `nodered/automation/time`            | One of five distinct string values, described below                                             |\n| `nodered/automation/theme`           | One of four distinct string values, described below                                             |\n\nThe _time_ payload is used to turn on and off lights and to open and close window shades according to the position of the sun. The _theme_ payload is used to select holiday themed lighting schemes, where appropriate.\n\nIn addition, this flow emits a number of additional messages for monitoring and debugging purposes. These correspond to intermediate values used in calculating the _time_ and _theme_ payloads:\n\n| Topic                                | Payload                                                                                         |\n|--------------------------------------|-------------------------------------------------------------------------------------------------|\n| `nodered/automation/now`             | The timestamp of the current time when the latest values for all these messages were calculated |\n| `nodered/automation/altitude`        | The sun's current altitude, in radians                                                          |\n| `nodered/automation/azimuth`         | The sun's current azimuth, in radians                                                           |\n| `nodered/automation/sunrise`         | Timestamp at which _time_ will transition from `night` to `morning`                             |\n| `nodered/automation/midday`          | Timestamp at which _time_ will transition from `morning` to `midday`                            |\n| `nodered/automation/afternoon`       | Timestamp at which _time_ will transition from `midday` to `afternoon`                          |\n| `nodered/automation/sunset`          | Timestamp at which _time_ will transition from `afternoon` to `evening`                         |\n| `nodered/automation/bedtime`         | Timestamp at which _time_ will transition from `evening` to `night`, as described below         |\n| `nodered/automation/zenith/time`     | The time at which the sun will reach its greatest altitude during the current day               |\n| `nodered/automation/zenith/altitude` | The sun's greatest altitude during the current day                                              |\n| `nodered/automation/zenith/azimuth`  | The sun's azimuth at the time of its greatest altitude during the current day                   |\n\n> This flow makes the following assumptions:\n>\n> - The Node-RED host machine is configured to use the correct time zone\n>\n> - The `${LATITUDE}` and `${LONGITUDE}` environment variables are set to the correct geographical coordinates\n>\n> where \"correct\" means the location of the devices being controlled by the automation driven by these flows. In particular, for these flows to work sensibly, the host machine's time zone and the values for the geographical coordinates must be consistent with one another.\n>\n> &nbsp;\n>\n> It is worth emphasizing that each of the preceding MQTT messages are only sent when their individual payload values change. For example, the _now_, _altitude_ and _azimuth_ messages are each sent once every minute. The others are only sent once when the flow first starts up and then once per day while the flow is running. The corresponding calculations are also split between two `function` nodes, to avoid redundantly calculating things like the sun position times of day.\n\n### `nodered/automation/time`\n\nThe payload of _time_ events will be one of the following strings:\n\n| `msg.payload` | Description                                                                                                                 |\n|---------------|-----------------------------------------------------------------------------------------------------------------------------|\n| `morning`     | Sunrise to one hour before the sun has reach its highest point in the sky for the current day (loosely, the sun's \"zenith\") |\n| `midday`      | Two hours before the sun's zenith to two hours after                                                                        |\n| `afternoon`   | Two hours after the sun's zenith to sunset                                                                                  |\n| `evening`     | Sunset to \"bedtime,\" as described below                                                                                     |\n| `night`       | Bedtime to sunrise                                                                                                          |\n\n### `nodered/automation/theme`\n\nThe payload of _theme_ events will be one of the following strings:\n\n| `msg.payload`| Description                           |\n|--------------|---------------------------------------|\n| `tribal`     | July 1 - 4 (US Independence Day)      |\n| `spooky`     | Any day in October (Halloween)        |\n| `jolly`      | Any day in December (Winter Solstice) |\n| `standard`   | Any other day                         |\n\n### `nodered/automation/bedtime`\n\nThe _bedtime_ timestamp is calculated to be a randomized value that is the later of:\n\n- A randomly selected time between 9:30PM (21:30) and 10:30PM (22:30)\n\n- A randomly selected time between 30 and 60 minutes after sunset\n\nThe intent is tht bedtime be slightly randomized to give the illusion of the home being occupied even when no-one is present to manually turn on and off lights, open and close window coverings etc."
-    },
-    {
-        "id": "b438e0cbd64ef6ce",
-        "type": "group",
-        "z": "b12fd38c090c51f2",
-        "name": "Display a chart of daytime sun positions on a given date",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "c27168b168847790",
-            "3a39c550369bac31",
-            "15ce56cf1449ce52",
-            "f33b94d2cc59c348",
-            "f72b11239792afcf",
-            "4dd293c16815dce3",
-            "8fe5e01fe99f5026",
-            "e7bc056a5ca25bc5",
-            "f9a4b2c24da44638",
-            "eb296b561972b772"
-        ],
-        "x": 14,
-        "y": 119,
-        "w": 1072,
-        "h": 162
+        "info": "This part of the flow uses the [suncalc](https://www.npmjs.com/package/suncalc) package and JavaScript's built in `Date` capabilities to send various MQTT messages each time their corresponding payloads change.\n\nThere are two principal event messages that are used to drive home automation:\n\n| Topic                                | Payload                                                                                         |\n|--------------------------------------|-------------------------------------------------------------------------------------------------|\n| `nodered/automation/time`            | One of five distinct string values, described below                                             |\n| `nodered/automation/theme`           | One of four distinct string values, described below                                             |\n\nThe _time_ payload is used to turn on and off lights and to open and close window shades according to the position of the sun. The _theme_ payload is used to select holiday themed lighting schemes, where appropriate.\n\nIn addition, this flow emits a number of additional messages for monitoring and debugging purposes. These correspond to intermediate values used in calculating the _time_ payload:\n\n| Topic                                | Payload                                                                                         |\n|--------------------------------------|-------------------------------------------------------------------------------------------------|\n| `nodered/automation/sunrise`         | Timestamp at which _time_ will transition from `night` to `morning`                             |\n| `nodered/automation/midday`          | Timestamp at which _time_ will transition from `morning` to `midday`                            |\n| `nodered/automation/afternoon`       | Timestamp at which _time_ will transition from `midday` to `afternoon`                          |\n| `nodered/automation/sunset`          | Timestamp at which _time_ will transition from `afternoon` to `evening`                         |\n| `nodered/automation/bedtime`         | Timestamp at which _time_ will transition from `evening` to `night`, as described below         |\n| `nodered/automation/zenith/time`     | The time at which the sun will reach its greatest altitude during the current day               |\n| `nodered/automation/zenith/altitude` | The sun's greatest altitude during the current day                                              |\n| `nodered/automation/zenith/azimuth`  | The sun's azimuth at the time of its greatest altitude during the current day                   |\n\n> This flow makes the following assumptions:\n>\n> - The Node-RED host machine is configured to use the correct time zone\n>\n> - The `${LATITUDE}` and `${LONGITUDE}` environment variables are set to the correct geographical coordinates\n>\n> where \"correct\" means the location of the devices being controlled by the automation driven by these flows. In particular, for these flows to work sensibly, the host machine's time zone and the values for the geographical coordinates must be consistent with one another.\n>\n> &nbsp;\n>\n> It is worth emphasizing that each of the preceding MQTT messages are only sent when their individual payload values change. The _time_ payload changes five times per day, _theme_ and the other message payloads listed above change only once per day. The calculations are also split across separate `function` nodes so as to avoid redundancy.\n\n### `nodered/automation/time`\n\nThe payload of _time_ events will be one of the following strings:\n\n| `msg.payload` | Description                                                                                                                 |\n|---------------|-----------------------------------------------------------------------------------------------------------------------------|\n| `morning`     | Sunrise to one hour before the sun has reach its highest point in the sky for the current day (loosely, the sun's \"zenith\") |\n| `midday`      | Two hours before the sun's zenith to two hours after                                                                        |\n| `afternoon`   | Two hours after the sun's zenith to sunset                                                                                  |\n| `evening`     | Sunset to \"bedtime,\" as described below                                                                                     |\n| `night`       | Bedtime to sunrise                                                                                                          |\n\n### `nodered/automation/theme`\n\nThe payload of _theme_ events will be one of the following strings:\n\n| `msg.payload`| Description                           |\n|--------------|---------------------------------------|\n| `tribal`     | July 1 - 4 (US Independence Day)      |\n| `spooky`     | Any day in October (Halloween)        |\n| `jolly`      | Any day in December (Winter Solstice) |\n| `standard`   | Any other day                         |\n\n### `nodered/automation/bedtime`\n\nThe _bedtime_ timestamp is calculated to be a randomized value that is the later of:\n\n- A randomly selected time between 9:30PM (21:30) and 10:30PM (22:30)\n\n- A randomly selected time between 30 and 60 minutes after sunset\n\nThe intent is tht bedtime be slightly randomized to give the illusion of the home being occupied even when no-one is present to manually turn on and off lights, open and close window coverings etc."
     },
     {
         "id": "8a81267cb12384d5",
@@ -770,14 +741,10 @@
             "03b32d05f0dc98c7",
             "3a0d9afd6a91a4b8",
             "119dc5e83c2a078f",
-            "b403745b92a95d79",
-            "c6ad3ce00565e461",
-            "fb5206dc8bb107e5",
-            "61c5be84a6996eee",
-            "a921a5a41ab154fc"
+            "b403745b92a95d79"
         ],
-        "x": 14,
-        "y": 299,
+        "x": 34,
+        "y": 39,
         "w": 1232,
         "h": 202
     },
@@ -874,31 +841,6 @@
         "w": 772,
         "h": 322,
         "info": "The nodes in this group include a number of subflows that address the V2 API on a particular Philips Hue Bridge. The following environment variables are set at the group level, and inherited by the subflows:\n\n| Environment Variable | Description                                                                                       |\n|----------------------|---------------------------------------------------------------------------------------------------|\n| `BRIDGE`             | The name of the bridge to use to differentiate it from other instances in global and flow context |\n| `ADDRESS`            | The IP address or host name of the particular bridge                                              |\n| `KEY`                | The client access key to pass in request headers                                                  |\n| `TOPIC`              | The base topic prefix for MQTT messages emitted by this part of the flow                          |\n\n> Note that the subflows used in this group include one that can be used to obtain a token to use as the value for `${KEY}`.\n\nThe nodes in this group include a `ui_template` which is fed by a subflow that processes incoming messages from the Hue Bridge API V2 server-sent event stream. This means that you don't need to create custom dashboard controls for your particular Hue rooms and zones.\n\n> Currently, this approach is implemented only for `md-switch` elements that turn on or off a room or zone, and `md-button` elements that activate Hue scenes. More work will be needed to extend this approach for accessories like motion sensors.\n\nThe dynamically-generated UI relies on two subflows, both included in this group:\n\n- _Hue to MQTT_ subscribes to server-sent events and forwards them as MQTT messages\n\n- _Hue Dashboard Controls_ listens for those MQTT messages and dynamically populates the dashboard\n\n> MQTT retained messages are used as intermediaries in this flow primarily as a persistence mechanism.\n\nThe _Hue to MQTT_ subflow depends on [EventSource](https://flows.nodered.org/node/@parasaurolophus/node-red-eventsource) in order to listen for Server-Sent Events (SSE) from the Hue Bridge. See <https://flows.nodered.org/node/@parasaurolophus/node-red-eventsource> for more information."
-    },
-    {
-        "id": "4b0f721c48fca435",
-        "type": "group",
-        "z": "b12fd38c090c51f2",
-        "name": "sun-positions CSV service",
-        "style": {
-            "stroke": "none",
-            "fill": "#000000",
-            "fill-opacity": "0.1",
-            "label": true,
-            "color": "#000000"
-        },
-        "nodes": [
-            "8b169767a6b4cbd9",
-            "dbca9a86d3bcf1ec",
-            "f33c29023f26968a",
-            "8d0db05f4d495979",
-            "ba54b4d206406127",
-            "b1ebe60c0c09e6c1"
-        ],
-        "x": 14,
-        "y": 19,
-        "w": 1012,
-        "h": 82
     },
     {
         "id": "f8dce80b21d7f706",
@@ -1109,12 +1051,12 @@
         },
         "nodes": [
             "6781ffdcbd1da527",
-            "53c22067c03e3e89",
-            "deed3f975e1ed407"
+            "791f9984c81334b6",
+            "6af856fe216d56f0"
         ],
-        "x": 554,
-        "y": 519,
-        "w": 452,
+        "x": 654,
+        "y": 259,
+        "w": 612,
         "h": 82
     },
     {
@@ -1135,8 +1077,8 @@
             "33b4cddfbae33a1b",
             "686c0b44b5df673f"
         ],
-        "x": 14,
-        "y": 519,
+        "x": 34,
+        "y": 259,
         "w": 512,
         "h": 162
     },
@@ -1391,17 +1333,6 @@
         "name": "Hue Connection",
         "tab": "ec4d94df679f3b11",
         "order": 3,
-        "disp": true,
-        "width": "6",
-        "collapse": true,
-        "className": ""
-    },
-    {
-        "id": "8055574ccb17e8ed",
-        "type": "ui_group",
-        "name": "Sun Position",
-        "tab": "ec4d94df679f3b11",
-        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": true,
@@ -3403,17 +3334,12 @@
         "z": "cbd68ba9caa96a3d",
         "g": "8a031cfeade40a06",
         "name": "now",
-        "func": "/*global suncalc*/\n\nconst date = new Date(msg.payload.now)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst position = suncalc.getPosition(date, latitude, longitude)\n\nconst payload = {\n    now: msg.payload.now,\n    altitude: position.altitude,\n    azimuth: position.azimuth\n}\n\nfor (const key in msg.payload.daily) {\n\n    payload[key] = msg.payload.daily[key]\n\n}\n\nif (payload.now > payload.sunrise && payload.now < payload.bedtime) {\n\n    if (payload.now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (payload.now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (payload.now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (const key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
+        "func": "const now = msg.payload.now\n\nconst payload = {}\n\nfor (const key in msg.payload.daily) {\n\n    payload[key] = msg.payload.daily[key]\n\n}\n\nif (now > payload.sunrise && now < payload.bedtime) {\n\n    if (now < payload.midday) {\n\n        payload.time = 'morning'\n\n    } else if (now < payload.afternoon) {\n\n        payload.time = 'midday'\n\n    } else if (now < payload.sunset) {\n\n        payload.time = 'afternoon'\n\n    } else {\n\n        payload.time = 'evening'\n\n    }\n\n} else {\n\n    payload.time = 'night'\n\n}\n\nnode.status({\n    text: payload.time,\n    shape: 'dot',\n    fill: 'blue'\n})\n\n/**\n* @param {string} topic\n* @param {{ [x: string]: any; now?: any; altitude?: any; azimuth?: any; }} payload\n* @param {{ topic: string; payload: any; qos: number; retain: boolean; }[]} msgs\n*/\nfunction splitPayload(topic, payload, msgs) {\n\n    for (const key in payload) {\n\n        const value = payload[key]\n\n        if ((typeof value) == 'object') {\n\n            msgs = msgs.concat(splitPayload(topic + key + '/', value, []))\n\n        } else {\n\n            msgs.push({\n                topic: topic + key,\n                payload: value\n            })\n        }\n    }\n\n    return msgs\n\n}\n\nconst msgs = splitPayload('', payload, [])\n\nreturn [msgs]",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [
-            {
-                "var": "suncalc",
-                "module": "suncalc"
-            }
-        ],
+        "libs": [],
         "x": 550,
         "y": 120,
         "wires": [
@@ -5959,178 +5885,6 @@
         "wires": []
     },
     {
-        "id": "c27168b168847790",
-        "type": "ui_chart",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "Sun Position",
-        "group": "8055574ccb17e8ed",
-        "order": 3,
-        "width": "6",
-        "height": "6",
-        "label": "",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "-3.14159",
-        "ymax": "3.14159",
-        "removeOlder": 1,
-        "removeOlderPoints": "1000",
-        "removeOlderUnit": "86400",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 610,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3a39c550369bac31",
-        "type": "inject",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "at start",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 160,
-        "y": 180,
-        "wires": [
-            [
-                "15ce56cf1449ce52"
-            ]
-        ]
-    },
-    {
-        "id": "15ce56cf1449ce52",
-        "type": "ui_date_picker",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "",
-        "label": "Date",
-        "group": "8055574ccb17e8ed",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 290,
-        "y": 200,
-        "wires": [
-            [
-                "f33b94d2cc59c348"
-            ]
-        ]
-    },
-    {
-        "id": "f33b94d2cc59c348",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "sun positions",
-        "func": "/*global suncalc*/\n\nconst msg2 = RED.util.cloneMessage(msg)\nconst msg3 = RED.util.cloneMessage(msg)\nconst latitude = env.get('LATITUDE')\nconst longitude = env.get('LONGITUDE')\nconst date = new Date(msg.payload)\nconst positions = []\nconst altitudes = []\nconst azimuths = []\nconst times = suncalc.getTimes(date, latitude, longitude)\nconst sunrise = times.sunrise.getTime()\nconst sunset = times.sunset.getTime()\nconst zenith = {\n    time: 0,\n    altitude: -(Math.PI / 2),\n    azimuth: 0\n}\n\nfor (let minute = sunrise; minute < sunset; minute += 60000) {\n\n    const position = suncalc.getPosition(new Date(minute), latitude, longitude)\n\n    position.time = minute\n    positions.push(position)\n    altitudes.push({ x: minute, y: position.altitude })\n    azimuths.push({ x: minute, y: position.azimuth })\n\n    if (position.altitude > zenith.altitude) {\n\n        zenith.time = minute\n        zenith.altitude = position.altitude\n        zenith.azimuth = position.azimuth\n\n    }\n}\n\nmsg.payload = [{\n    \"series\": [\"altitude\", \"azimuth\"],\n    \"data\": [\n        altitudes,\n        azimuths\n    ],\n    \"labels\": [\"\"]\n}]\n\nmsg2.payload = zenith\nmsg3.payload = positions\n\nreturn [\n    msg,\n    msg2,\n    msg3\n]",
-        "outputs": 3,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "suncalc",
-                "module": "suncalc"
-            }
-        ],
-        "x": 430,
-        "y": 200,
-        "wires": [
-            [
-                "c27168b168847790"
-            ],
-            [
-                "4dd293c16815dce3"
-            ],
-            [
-                "e7bc056a5ca25bc5"
-            ]
-        ],
-        "outputLabels": [
-            "chart",
-            "zenith",
-            "positions"
-        ]
-    },
-    {
-        "id": "f72b11239792afcf",
-        "type": "ui_template",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "group": "8055574ccb17e8ed",
-        "name": "Zenith",
-        "order": 2,
-        "width": "6",
-        "height": "2",
-        "format": "<div>\n    <table width=\"100%\" cellspacing=\"5px\" cellpadding=\"5px\">\n        <caption>zenith</caption>\n        <tr>\n            <th>time</th>\n            <th>altitude</th>\n            <th>azimuth</th>\n        </tr>\n        <tr>\n            <td>{{msg.payload.time}}</td>\n            <td>{{msg.payload.altitude}}</td>\n            <td>{{msg.payload.azimuth}}</td>\n        </tr>\n    </table>\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 750,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4dd293c16815dce3",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "format zenith",
-        "func": "/**\n* @param {number} radians\n*/\nfunction truncate(radians) {\n\n    const decimals = 10000000\n    return Math.round(radians * decimals) / decimals\n\n}\n\nmsg.payload.time = new Date(msg.payload.time).toLocaleTimeString()\nmsg.payload.altitude = truncate(msg.payload.altitude)\nmsg.payload.azimuth = truncate(msg.payload.azimuth)\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 610,
-        "y": 200,
-        "wires": [
-            [
-                "f72b11239792afcf"
-            ]
-        ]
-    },
-    {
         "id": "3ffae20118b3f324",
         "type": "ui_text",
         "z": "b12fd38c090c51f2",
@@ -6144,8 +5898,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 360,
-        "y": 460,
+        "x": 380,
+        "y": 200,
         "wires": []
     },
     {
@@ -6162,8 +5916,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 760,
-        "y": 460,
+        "x": 780,
+        "y": 200,
         "wires": []
     },
     {
@@ -6180,8 +5934,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 1160,
-        "y": 340,
+        "x": 1180,
+        "y": 80,
         "wires": []
     },
     {
@@ -6198,8 +5952,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 370,
-        "y": 340,
+        "x": 390,
+        "y": 80,
         "wires": []
     },
     {
@@ -6216,8 +5970,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 360,
-        "y": 400,
+        "x": 380,
+        "y": 140,
         "wires": []
     },
     {
@@ -6233,8 +5987,8 @@
                 "type": "str"
             }
         ],
-        "x": 160,
-        "y": 460,
+        "x": 180,
+        "y": 200,
         "wires": [
             [
                 "3ffae20118b3f324"
@@ -6254,8 +6008,8 @@
                 "type": "str"
             }
         ],
-        "x": 550,
-        "y": 460,
+        "x": 570,
+        "y": 200,
         "wires": [
             [
                 "056b4e63ec2cd405"
@@ -6275,8 +6029,8 @@
                 "type": "str"
             }
         ],
-        "x": 960,
-        "y": 340,
+        "x": 980,
+        "y": 80,
         "wires": [
             [
                 "64f954fed4bbe73e"
@@ -6297,8 +6051,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 340,
+        "x": 170,
+        "y": 80,
         "wires": [
             [
                 "4332d4706a43e2f6"
@@ -6319,8 +6073,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 400,
+        "x": 170,
+        "y": 140,
         "wires": [
             [
                 "9e522923ebcadd47"
@@ -6340,8 +6094,8 @@
                 "type": "str"
             }
         ],
-        "x": 560,
-        "y": 340,
+        "x": 580,
+        "y": 80,
         "wires": [
             [
                 "b403745b92a95d79"
@@ -6361,8 +6115,8 @@
                 "type": "str"
             }
         ],
-        "x": 560,
-        "y": 400,
+        "x": 580,
+        "y": 140,
         "wires": [
             [
                 "119dc5e83c2a078f"
@@ -6383,8 +6137,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 760,
-        "y": 400,
+        "x": 780,
+        "y": 140,
         "wires": []
     },
     {
@@ -6401,312 +6155,9 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 760,
-        "y": 340,
+        "x": 780,
+        "y": 80,
         "wires": []
-    },
-    {
-        "id": "c6ad3ce00565e461",
-        "type": "ui_text",
-        "z": "b12fd38c090c51f2",
-        "g": "8a81267cb12384d5",
-        "group": "25c7f0078ed443dd",
-        "order": 10,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Altitude",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1160,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "fb5206dc8bb107e5",
-        "type": "ui_text",
-        "z": "b12fd38c090c51f2",
-        "g": "8a81267cb12384d5",
-        "group": "25c7f0078ed443dd",
-        "order": 11,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Azimuth",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1160,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "61c5be84a6996eee",
-        "type": "mqtt in",
-        "z": "b12fd38c090c51f2",
-        "g": "8a81267cb12384d5",
-        "name": "",
-        "topic": "nodered/automation/altitude",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 960,
-        "y": 400,
-        "wires": [
-            [
-                "c6ad3ce00565e461"
-            ]
-        ]
-    },
-    {
-        "id": "a921a5a41ab154fc",
-        "type": "mqtt in",
-        "z": "b12fd38c090c51f2",
-        "g": "8a81267cb12384d5",
-        "name": "",
-        "topic": "nodered/automation/azimuth",
-        "qos": "2",
-        "datatype": "json",
-        "broker": "722d62f3b93039c3",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 960,
-        "y": 460,
-        "wires": [
-            [
-                "fb5206dc8bb107e5"
-            ]
-        ]
-    },
-    {
-        "id": "8fe5e01fe99f5026",
-        "type": "inject",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "every morning",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 04 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 220,
-        "wires": [
-            [
-                "15ce56cf1449ce52"
-            ]
-        ]
-    },
-    {
-        "id": "e7bc056a5ca25bc5",
-        "type": "change",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "sun-positions",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 650,
-        "y": 240,
-        "wires": [
-            [
-                "f9a4b2c24da44638"
-            ]
-        ]
-    },
-    {
-        "id": "f9a4b2c24da44638",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "name": "url",
-        "func": "/*global os*/\n\nmsg.payload = 'http://' + os.hostname + '.local:1880/sunpositions'\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "os",
-                "module": "os"
-            }
-        ],
-        "x": 830,
-        "y": 240,
-        "wires": [
-            [
-                "eb296b561972b772"
-            ]
-        ]
-    },
-    {
-        "id": "eb296b561972b772",
-        "type": "ui_template",
-        "z": "b12fd38c090c51f2",
-        "g": "b438e0cbd64ef6ce",
-        "group": "8055574ccb17e8ed",
-        "name": "Download CSV",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"width:100%;text-align:center;\">\n    <a style=\"color:white;text-decoration:none;\" href=\"{{msg.payload}}\">Download</a>\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 980,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8b169767a6b4cbd9",
-        "type": "http response",
-        "z": "b12fd38c090c51f2",
-        "g": "4b0f721c48fca435",
-        "name": "",
-        "statusCode": "",
-        "headers": {},
-        "x": 950,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "dbca9a86d3bcf1ec",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "4b0f721c48fca435",
-        "name": "response",
-        "func": "const date = new Date()\nconst timestamp = '-' +\n    date.getFullYear() +\n    '-' +\n    String(date.getMonth() + 1).padStart(2, '0') +\n    '-' +\n    String(date.getDate()).padStart(2, '0')\n\nmsg.headers = {\n    'Content-Type': 'text/plain; charset=UTF-8',\n    'Content-Disposition': 'attachment; filename=\"sun-positions' + timestamp + '.csv\"'\n}\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 820,
-        "y": 60,
-        "wires": [
-            [
-                "8b169767a6b4cbd9"
-            ]
-        ]
-    },
-    {
-        "id": "f33c29023f26968a",
-        "type": "http in",
-        "z": "b12fd38c090c51f2",
-        "g": "4b0f721c48fca435",
-        "name": "",
-        "url": "/sunpositions",
-        "method": "get",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 130,
-        "y": 60,
-        "wires": [
-            [
-                "ba54b4d206406127"
-            ]
-        ]
-    },
-    {
-        "id": "8d0db05f4d495979",
-        "type": "csv",
-        "z": "b12fd38c090c51f2",
-        "g": "4b0f721c48fca435",
-        "name": "",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "all",
-        "multi": "one",
-        "ret": "\\n",
-        "temp": "time,altitude,azimuth",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 690,
-        "y": 60,
-        "wires": [
-            [
-                "dbca9a86d3bcf1ec"
-            ]
-        ]
-    },
-    {
-        "id": "ba54b4d206406127",
-        "type": "change",
-        "z": "b12fd38c090c51f2",
-        "g": "4b0f721c48fca435",
-        "name": "global.sun-positions",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "sun-positions",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 340,
-        "y": 60,
-        "wires": [
-            [
-                "b1ebe60c0c09e6c1"
-            ]
-        ]
-    },
-    {
-        "id": "b1ebe60c0c09e6c1",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "4b0f721c48fca435",
-        "name": "format for csv",
-        "func": "msg.payload.forEach((/** @type {{ time: string | number | Date; }} */ position) => {\n\n    position.time = new Date(position.time).toLocaleTimeString()\n\n})\n\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 60,
-        "wires": [
-            [
-                "8d0db05f4d495979"
-            ]
-        ]
     },
     {
         "id": "6781ffdcbd1da527",
@@ -6714,7 +6165,7 @@
         "z": "b12fd38c090c51f2",
         "g": "5a55da7dc4d6079a",
         "name": "",
-        "topic": "cpu/+/+",
+        "topic": "cpu/+/temperature",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "722d62f3b93039c3",
@@ -6722,54 +6173,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 630,
-        "y": 560,
+        "x": 770,
+        "y": 300,
         "wires": [
             [
-                "53c22067c03e3e89"
+                "791f9984c81334b6"
             ]
-        ]
-    },
-    {
-        "id": "53c22067c03e3e89",
-        "type": "function",
-        "z": "b12fd38c090c51f2",
-        "g": "5a55da7dc4d6079a",
-        "name": "cache metrics",
-        "func": "const topic = msg.topic.split('/')\nconst cache = context.get('cache') || {}\nconst cpu = cache[topic[1]] || {}\n\ncpu[topic[2]] = msg.payload\ncache[topic[1]] = cpu\ncontext.set('cache', cache)\nmsg.payload = cache\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 780,
-        "y": 560,
-        "wires": [
-            [
-                "deed3f975e1ed407"
-            ]
-        ]
-    },
-    {
-        "id": "deed3f975e1ed407",
-        "type": "ui_template",
-        "z": "b12fd38c090c51f2",
-        "g": "5a55da7dc4d6079a",
-        "group": "ec2f34e30f977387",
-        "name": "CPU",
-        "order": 2,
-        "width": "6",
-        "height": "10",
-        "format": "<style>\n    table {\n        width: 100%;\n    }\n    th, td {\n        width: 50%;\n        margin: 2px;\n        padding: 2px;\n    }\n</style>\n<div>\n    <div ng-repeat=\"(host, metrics) in msg.payload\">\n        <div ng-if=\"$index > 0\">\n            <hr>\n        </div>\n        <table>\n            <caption>{{host}}</caption>\n            <tr>\n                <th>metric</th>\n                <th>value</th>\n            </tr>\n            <tr ng-repeat=\"(label, value) in metrics\">\n                <td>{{label}}</td>\n                <td>{{value}}</td>\n            </tr>\n        </table>\n    </div>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 930,
-        "y": 560,
-        "wires": [
-            []
         ]
     },
     {
@@ -6786,8 +6195,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 110,
-        "y": 560,
+        "x": 130,
+        "y": 300,
         "wires": [
             [
                 "33b4cddfbae33a1b"
@@ -6808,8 +6217,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 120,
-        "y": 640,
+        "x": 140,
+        "y": 380,
         "wires": [
             [
                 "33b4cddfbae33a1b"
@@ -6828,8 +6237,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 600,
+        "x": 290,
+        "y": 340,
         "wires": [
             [
                 "686c0b44b5df673f"
@@ -6852,8 +6261,81 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 420,
-        "y": 600,
+        "x": 440,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "791f9984c81334b6",
+        "type": "change",
+        "z": "b12fd38c090c51f2",
+        "g": "5a55da7dc4d6079a",
+        "name": "$split(topic,'/')[1]",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$split(topic,'/')[1]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 300,
+        "wires": [
+            [
+                "6af856fe216d56f0"
+            ]
+        ]
+    },
+    {
+        "id": "6af856fe216d56f0",
+        "type": "ui_chart",
+        "z": "b12fd38c090c51f2",
+        "g": "5a55da7dc4d6079a",
+        "name": "CPU Temperature",
+        "group": "ec2f34e30f977387",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "bezier",
+        "nodata": "Waiting for temperature readings..",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1150,
+        "y": 300,
         "wires": [
             []
         ]
